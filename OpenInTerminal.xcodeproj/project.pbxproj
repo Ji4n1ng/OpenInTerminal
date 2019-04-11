@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		956C38B7225F7701001CB769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C38B6225F7701001CB769 /* Assets.xcassets */; };
 		956C38C3225F793C001CB769 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C38C2225F793C001CB769 /* main.swift */; };
+		956C38C8225F7E30001CB769 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C38C6225F7E30001CB769 /* Finder.swift */; };
+		956C38C9225F7E30001CB769 /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C38C7225F7E30001CB769 /* Terminal.swift */; };
+		956C38CC225F7E45001CB769 /* TerminalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C38CA225F7E45001CB769 /* TerminalApp.swift */; };
+		956C38CD225F7E45001CB769 /* iTermApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C38CB225F7E45001CB769 /* iTermApp.swift */; };
+		956C38CF225F7E49001CB769 /* TerminalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C38CE225F7E49001CB769 /* TerminalProtocol.swift */; };
+		956C38D2225F7E76001CB769 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C38D0225F7E76001CB769 /* Error.swift */; };
+		956C38D3225F7E76001CB769 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C38D1225F7E76001CB769 /* Log.swift */; };
+		956C38E1225F840F001CB769 /* icon_terminal_white.icns in Resources */ = {isa = PBXBuildFile; fileRef = 956C38DD225F840F001CB769 /* icon_terminal_white.icns */; };
+		956C38E2225F840F001CB769 /* icon_iterm_white.icns in Resources */ = {isa = PBXBuildFile; fileRef = 956C38DE225F840F001CB769 /* icon_iterm_white.icns */; };
+		956C38E3225F840F001CB769 /* icon_iterm_dark.icns in Resources */ = {isa = PBXBuildFile; fileRef = 956C38DF225F840F001CB769 /* icon_iterm_dark.icns */; };
+		956C38E4225F840F001CB769 /* icon_terminal_dark.icns in Resources */ = {isa = PBXBuildFile; fileRef = 956C38E0225F840F001CB769 /* icon_terminal_dark.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +28,17 @@
 		956C38BB225F7701001CB769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		956C38BC225F7701001CB769 /* OpenInTerminal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenInTerminal.entitlements; sourceTree = "<group>"; };
 		956C38C2225F793C001CB769 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		956C38C6225F7E30001CB769 /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
+		956C38C7225F7E30001CB769 /* Terminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Terminal.swift; sourceTree = "<group>"; };
+		956C38CA225F7E45001CB769 /* TerminalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalApp.swift; sourceTree = "<group>"; };
+		956C38CB225F7E45001CB769 /* iTermApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTermApp.swift; sourceTree = "<group>"; };
+		956C38CE225F7E49001CB769 /* TerminalProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalProtocol.swift; sourceTree = "<group>"; };
+		956C38D0225F7E76001CB769 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		956C38D1225F7E76001CB769 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		956C38DD225F840F001CB769 /* icon_terminal_white.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon_terminal_white.icns; path = icons/icon_terminal_white.icns; sourceTree = SOURCE_ROOT; };
+		956C38DE225F840F001CB769 /* icon_iterm_white.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon_iterm_white.icns; path = icons/icon_iterm_white.icns; sourceTree = SOURCE_ROOT; };
+		956C38DF225F840F001CB769 /* icon_iterm_dark.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon_iterm_dark.icns; path = icons/icon_iterm_dark.icns; sourceTree = SOURCE_ROOT; };
+		956C38E0225F840F001CB769 /* icon_terminal_dark.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon_terminal_dark.icns; path = icons/icon_terminal_dark.icns; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,11 +72,46 @@
 			isa = PBXGroup;
 			children = (
 				956C38C2225F793C001CB769 /* main.swift */,
+				956C38CE225F7E49001CB769 /* TerminalProtocol.swift */,
+				956C38D0225F7E76001CB769 /* Error.swift */,
+				956C38D1225F7E76001CB769 /* Log.swift */,
+				956C38C4225F7DB7001CB769 /* Terminals */,
+				956C38C5225F7E17001CB769 /* ScriptingBridge */,
+				956C38D4225F7F2A001CB769 /* Resources */,
 				956C38B6225F7701001CB769 /* Assets.xcassets */,
 				956C38BB225F7701001CB769 /* Info.plist */,
 				956C38BC225F7701001CB769 /* OpenInTerminal.entitlements */,
 			);
 			path = OpenInTerminal;
+			sourceTree = "<group>";
+		};
+		956C38C4225F7DB7001CB769 /* Terminals */ = {
+			isa = PBXGroup;
+			children = (
+				956C38CB225F7E45001CB769 /* iTermApp.swift */,
+				956C38CA225F7E45001CB769 /* TerminalApp.swift */,
+			);
+			path = Terminals;
+			sourceTree = "<group>";
+		};
+		956C38C5225F7E17001CB769 /* ScriptingBridge */ = {
+			isa = PBXGroup;
+			children = (
+				956C38C6225F7E30001CB769 /* Finder.swift */,
+				956C38C7225F7E30001CB769 /* Terminal.swift */,
+			);
+			path = ScriptingBridge;
+			sourceTree = "<group>";
+		};
+		956C38D4225F7F2A001CB769 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				956C38DF225F840F001CB769 /* icon_iterm_dark.icns */,
+				956C38DE225F840F001CB769 /* icon_iterm_white.icns */,
+				956C38E0225F840F001CB769 /* icon_terminal_dark.icns */,
+				956C38DD225F840F001CB769 /* icon_terminal_white.icns */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +147,11 @@
 					956C38B0225F7701001CB769 = {
 						CreatedOnToolsVersion = 10.2;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -116,7 +178,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956C38E4225F840F001CB769 /* icon_terminal_dark.icns in Resources */,
+				956C38E2225F840F001CB769 /* icon_iterm_white.icns in Resources */,
+				956C38E3225F840F001CB769 /* icon_iterm_dark.icns in Resources */,
 				956C38B7225F7701001CB769 /* Assets.xcassets in Resources */,
+				956C38E1225F840F001CB769 /* icon_terminal_white.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956C38C9225F7E30001CB769 /* Terminal.swift in Sources */,
+				956C38CC225F7E45001CB769 /* TerminalApp.swift in Sources */,
 				956C38C3225F793C001CB769 /* main.swift in Sources */,
+				956C38CD225F7E45001CB769 /* iTermApp.swift in Sources */,
+				956C38C8225F7E30001CB769 /* Finder.swift in Sources */,
+				956C38D2225F7E76001CB769 /* Error.swift in Sources */,
+				956C38D3225F7E76001CB769 /* Log.swift in Sources */,
+				956C38CF225F7E49001CB769 /* TerminalProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,9 +325,7 @@
 		956C38C0225F7701001CB769 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = OpenInTerminal/OpenInTerminal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C8VX3ZLX5U;
@@ -263,6 +334,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -273,9 +345,7 @@
 		956C38C1225F7701001CB769 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = OpenInTerminal/OpenInTerminal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C8VX3ZLX5U;
@@ -284,6 +354,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
