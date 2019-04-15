@@ -18,9 +18,27 @@ final class iTermApp : Terminal {
         
         let source = """
         tell application "iTerm"
-            create window with default profile
-            tell current session of current window
-                write text "cd \(url.path.pathEscaped); clear"
+            set isRunning to (application "iTerm" is running)
+            activate
+        
+            tell current window
+        
+                if (count of tabs) < 1 then
+                    create window with default profile
+                    set isRunning to false
+                end if
+        
+                if isRunning then
+                    set newTab to (create tab with default profile)
+        
+                    tell newTab
+                        select
+                    end tell
+                end if
+        
+                tell current session
+                    write text "cd \(url.path.itermEscaped); clear"
+                end tell
             end tell
         end tell
         """
@@ -43,7 +61,7 @@ final class iTermApp : Terminal {
 extension String {
     
     // FIXME: if path contains "\", application will crash.
-    var pathEscaped: String {
+    var itermEscaped: String {
         
         var result = ""
         let set = CharacterSet.alphanumerics

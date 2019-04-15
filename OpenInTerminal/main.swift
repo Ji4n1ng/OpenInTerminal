@@ -75,7 +75,7 @@ do {
     }
     
     // TODO: User can choose which terminal to open
-    let term = iTermApp() // iTermApp() TerminalApp()
+    let term = TerminalApp() // TerminalApp() iTermApp() HyperApp()
     try term.open(path)
     
 } catch {

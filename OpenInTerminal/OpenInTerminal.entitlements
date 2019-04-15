@@ -8,6 +8,7 @@
 		<string>com.apple.Terminal</string>
 		<string>com.apple.Finder</string>
 		<string>com.googlecode.iterm2</string>
+		<string>co.zeit.hyper</string>
 	</array>
 </dict>
 </plist>

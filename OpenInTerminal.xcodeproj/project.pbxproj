@@ -20,6 +20,9 @@
 		956C38E2225F840F001CB769 /* icon_iterm_white.icns in Resources */ = {isa = PBXBuildFile; fileRef = 956C38DE225F840F001CB769 /* icon_iterm_white.icns */; };
 		956C38E3225F840F001CB769 /* icon_iterm_dark.icns in Resources */ = {isa = PBXBuildFile; fileRef = 956C38DF225F840F001CB769 /* icon_iterm_dark.icns */; };
 		956C38E4225F840F001CB769 /* icon_terminal_dark.icns in Resources */ = {isa = PBXBuildFile; fileRef = 956C38E0225F840F001CB769 /* icon_terminal_dark.icns */; };
+		95C6B9EC2264BCD40004709B /* HyperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6B9EB2264BCD40004709B /* HyperApp.swift */; };
+		95C6B9F32264CA480004709B /* icon_hyper_dark.icns in Resources */ = {isa = PBXBuildFile; fileRef = 95C6B9F12264CA480004709B /* icon_hyper_dark.icns */; };
+		95C6B9F42264CA480004709B /* icon_hyper_white.icns in Resources */ = {isa = PBXBuildFile; fileRef = 95C6B9F22264CA480004709B /* icon_hyper_white.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		956C38DE225F840F001CB769 /* icon_iterm_white.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon_iterm_white.icns; path = icons/icon_iterm_white.icns; sourceTree = SOURCE_ROOT; };
 		956C38DF225F840F001CB769 /* icon_iterm_dark.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon_iterm_dark.icns; path = icons/icon_iterm_dark.icns; sourceTree = SOURCE_ROOT; };
 		956C38E0225F840F001CB769 /* icon_terminal_dark.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon_terminal_dark.icns; path = icons/icon_terminal_dark.icns; sourceTree = SOURCE_ROOT; };
+		95C6B9EB2264BCD40004709B /* HyperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperApp.swift; sourceTree = "<group>"; };
+		95C6B9F12264CA480004709B /* icon_hyper_dark.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon_hyper_dark.icns; path = icons/icon_hyper_dark.icns; sourceTree = SOURCE_ROOT; };
+		95C6B9F22264CA480004709B /* icon_hyper_white.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon_hyper_white.icns; path = icons/icon_hyper_white.icns; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +94,9 @@
 		956C38C4225F7DB7001CB769 /* Terminals */ = {
 			isa = PBXGroup;
 			children = (
-				956C38CB225F7E45001CB769 /* iTermApp.swift */,
 				956C38CA225F7E45001CB769 /* TerminalApp.swift */,
+				956C38CB225F7E45001CB769 /* iTermApp.swift */,
+				95C6B9EB2264BCD40004709B /* HyperApp.swift */,
 			);
 			path = Terminals;
 			sourceTree = "<group>";
@@ -110,6 +117,8 @@
 				956C38DE225F840F001CB769 /* icon_iterm_white.icns */,
 				956C38E0225F840F001CB769 /* icon_terminal_dark.icns */,
 				956C38DD225F840F001CB769 /* icon_terminal_white.icns */,
+				95C6B9F12264CA480004709B /* icon_hyper_dark.icns */,
+				95C6B9F22264CA480004709B /* icon_hyper_white.icns */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -180,6 +189,8 @@
 			files = (
 				956C38E4225F840F001CB769 /* icon_terminal_dark.icns in Resources */,
 				956C38E2225F840F001CB769 /* icon_iterm_white.icns in Resources */,
+				95C6B9F42264CA480004709B /* icon_hyper_white.icns in Resources */,
+				95C6B9F32264CA480004709B /* icon_hyper_dark.icns in Resources */,
 				956C38E3225F840F001CB769 /* icon_iterm_dark.icns in Resources */,
 				956C38B7225F7701001CB769 /* Assets.xcassets in Resources */,
 				956C38E1225F840F001CB769 /* icon_terminal_white.icns in Resources */,
@@ -197,6 +208,7 @@
 				956C38CC225F7E45001CB769 /* TerminalApp.swift in Sources */,
 				956C38C3225F793C001CB769 /* main.swift in Sources */,
 				956C38CD225F7E45001CB769 /* iTermApp.swift in Sources */,
+				95C6B9EC2264BCD40004709B /* HyperApp.swift in Sources */,
 				956C38C8225F7E30001CB769 /* Finder.swift in Sources */,
 				956C38D2225F7E76001CB769 /* Error.swift in Sources */,
 				956C38D3225F7E76001CB769 /* Log.swift in Sources */,
