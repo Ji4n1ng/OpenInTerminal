@@ -1,22 +1,22 @@
  # OpenInTerminal
 
-✨ Finder Toolbar app for macOS to open the current directory in `Terminal` or `iTerm`. 
+✨ Finder Toolbar app for macOS to open the current directory in `Terminal`, [`iTerm`](https://www.iterm2.com/) or [`Hyper`](https://github.com/zeit/hyper). 
 
 [中文说明](./README-zh.md)
 
 ## How to use 🚀
 
-### 1) Open Current Directory from Toolbar
+### 1) Open current directory from toolbar
 
 ![run](./screenshots/run.gif)
 
-### 2) Open Selected folder or file from Toolbar
+### 2) Open selected folder or file from Toolbar
 
 ![run2](./screenshots/run2.gif)
 
 ### 3) Other
 
-If neither Finder window is opened nor the folder is selected, this app will open `home directory` in `Terminal` or `iTerm`.
+If neither Finder window is opened nor the folder is selected, this app will open `home directory` in `Terminal`,  `iTerm` or `Hyper`.
 
 ## How to Install 🖥
 
@@ -51,7 +51,17 @@ xcodebuild
 
 1. Dynamically change icon depending on Dark Mode.
 2. User can choose which terminal to open.
-3. 🐞 Fix: If path include `\`, the app will crash when openning in iTerm.
+
+## Changes 🗒
+
+**version 0.1.1**
+
+- Support `Hyper`
+- Give priority to creating a new tab when opening iTerm
+
+**version 0.1.0**
+
+- First release
 
 ## Special Thanks to ❤️
 
