@@ -34,7 +34,8 @@ final class HyperApp : Terminal {
     
 }
 
-extension String {
+
+fileprivate extension String {
     
     // FIXME: if path contains "\", application will crash.
     var hyperEscaped: String {

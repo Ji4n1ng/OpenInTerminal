@@ -19,7 +19,7 @@ import ScriptingBridge
 /// If neither of two cases, then return an empty path.
 func getPathToFrontFinderWindowOrSelectedFile() throws -> String {
     
-    let finder = SBApplication(bundleIdentifier: "com.apple.Finder")! as FinderApplication
+    let finder = SBApplication(bundleIdentifier: Config.Finder.id)! as FinderApplication
     
     var target: FinderItem
     
@@ -72,9 +72,10 @@ do {
         path = NSHomeDirectory()
     }
     
-    if let terminal = TerminalManager.pickTerminalAlert() {
+    if let terminal = TerminalManager.shared.getTerminal() {
         try terminal.open(path)
     }
 } catch {
+    
     log(error, .error)
 }

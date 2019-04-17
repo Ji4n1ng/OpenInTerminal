@@ -10,45 +10,47 @@ import AppKit
 
 class TerminalManager {
     
-    static func pickTerminalAlert() -> Terminal? {
+    static let shared: TerminalManager = TerminalManager()
+    
+    func getTerminal() -> Terminal? {
+        
+        if let defaultTerminal = Config.userPreferredTerminal {
+            return defaultTerminal.instance()
+        }
+        
+        guard let selectedTerminal = pickTerminalAlert() else {
+            return nil
+        }
+        
+        UserDefaults.standard.set(selectedTerminal.rawValue, forKey: Config.Key.terminalBundleIdentifier)
+        
+        return selectedTerminal.instance()
+    }
+    
+    private func pickTerminalAlert() -> TerminalType? {
+        
         let alert = NSAlert()
         
         alert.messageText = "Open In?"
-        alert.informativeText = "Choose which terminal application to open this directory in."
+        alert.informativeText = "Please select one of the following terminals as the default terminal to open."
         
         alert.addButton(withTitle: "Cancel")
-        alert.addButton(withTitle: "Terminal")
-        alert.addButton(withTitle: "iTerm")
-        alert.addButton(withTitle: "Hyper")
+        alert.addButton(withTitle: TerminalType.hyper.name)
+        alert.addButton(withTitle: TerminalType.iTerm.name)
+        alert.addButton(withTitle: TerminalType.terminal.name)
         
         let modalResult = alert.runModal()
         
         switch modalResult {
+            
         case .alertFirstButtonReturn:
             return nil
         case .alertSecondButtonReturn:
-            return TerminalType.terminal.instance()
+            return .hyper
         case .alertThirdButtonReturn:
-            return TerminalType.iTerm.instance()
+            return .iTerm
         default:
-            return TerminalType.hyper.instance()
-        }
-    }
-}
-
-enum TerminalType: String {
-    case terminal
-    case iTerm
-    case hyper
-    
-    func instance() -> Terminal {
-        switch self {
-        case .terminal:
-            return TerminalApp()
-        case .iTerm:
-            return iTermApp()
-        case .hyper:
-            return HyperApp()
+            return .terminal
         }
     }
 }

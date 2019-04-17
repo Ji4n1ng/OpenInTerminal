@@ -1,4 +1,4 @@
-  # OpenInTerminal
+# OpenInTerminal
 
 ✨ Finder Toolbar app for macOS to open the current directory in `Terminal`, [`iTerm`](https://www.iterm2.com/) or [`Hyper`](https://github.com/zeit/hyper). 
 

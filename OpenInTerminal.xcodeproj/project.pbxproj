@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		478A1F4122664B82009B82D4 /* TerminalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478A1F4022664B82009B82D4 /* TerminalManager.swift */; };
+		950387D12266CD790083A4A8 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950387D02266CD790083A4A8 /* Config.swift */; };
 		956C38B7225F7701001CB769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C38B6225F7701001CB769 /* Assets.xcassets */; };
 		956C38C3225F793C001CB769 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C38C2225F793C001CB769 /* main.swift */; };
 		956C38C8225F7E30001CB769 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C38C6225F7E30001CB769 /* Finder.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		478A1F4022664B82009B82D4 /* TerminalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalManager.swift; sourceTree = "<group>"; };
+		950387D02266CD790083A4A8 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		956C38B1225F7701001CB769 /* OpenInTerminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenInTerminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C38B6225F7701001CB769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		956C38BB225F7701001CB769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				956C38C2225F793C001CB769 /* main.swift */,
 				956C38CE225F7E49001CB769 /* TerminalProtocol.swift */,
 				478A1F4022664B82009B82D4 /* TerminalManager.swift */,
+				950387D02266CD790083A4A8 /* Config.swift */,
 				956C38D0225F7E76001CB769 /* Error.swift */,
 				956C38D1225F7E76001CB769 /* Log.swift */,
 				956C38C4225F7DB7001CB769 /* Terminals */,
@@ -211,6 +214,7 @@
 				956C38CC225F7E45001CB769 /* TerminalApp.swift in Sources */,
 				956C38C3225F793C001CB769 /* main.swift in Sources */,
 				956C38CD225F7E45001CB769 /* iTermApp.swift in Sources */,
+				950387D12266CD790083A4A8 /* Config.swift in Sources */,
 				95C6B9EC2264BCD40004709B /* HyperApp.swift in Sources */,
 				478A1F4122664B82009B82D4 /* TerminalManager.swift in Sources */,
 				956C38C8225F7E30001CB769 /* Finder.swift in Sources */,

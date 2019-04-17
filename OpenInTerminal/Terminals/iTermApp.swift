@@ -37,7 +37,7 @@ final class iTermApp : Terminal {
                 end if
         
                 tell current session
-                    write text "cd \(url.path.itermEscaped); clear"
+                    write text "cd \(url.path.itermEscaped)"
                 end tell
             end tell
         end tell
@@ -58,7 +58,7 @@ final class iTermApp : Terminal {
 }
 
 
-extension String {
+fileprivate extension String {
     
     // FIXME: if path contains "\", application will crash.
     var itermEscaped: String {
