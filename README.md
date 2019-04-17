@@ -14,18 +14,26 @@
 
 ![run2](./screenshots/run2.gif)
 
-### 3) Other
+### 3) Set default terminal
 
-If neither Finder window is opened nor the folder is selected, this app will open `home directory` in `Terminal`,  `iTerm` or `Hyper`.
+You are asked to set the default terminal to open after first launch.
+
+![selector](./screenshots/selector.png)
+
+The selection box will not appear after you have set the default terminal. If you want to reset the default terminal, please enter the following command in the terminal. Then just run the application again.
+
+```
+defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
+```
 
 ## How to Install 🖥
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
-3. Right click on the Finder toolbar. Choose `Customize Toolbar`. Drag the app into Finder Toolbar.
+3. Hold down the `Cmd` key and drag the app into Finder Toolbar.
 4. Done.
 
->  ⚠️ macOS will ask your permissions to access Finder and Terminal (or iTerm) when you run the app for the first time. Please give the application permissions.
+>  ⚠️ macOS will ask your permissions to access Finder and Terminal (iTerm or Hyper) when you run the app for the first time. Please give the application permissions.
 
 ![toolbar](./screenshots/toolbar.gif)
 
@@ -51,6 +59,11 @@ xcodebuild
 
 ## Changes 🗒
 
+**version 0.2.0**
+
+- Add terminal selector
+- Cancel running `clear` command when opening iTerm
+
 **version 0.1.1**
 
 - Support `Hyper`
@@ -61,6 +74,12 @@ xcodebuild
 - First release
 
 ## Special Thanks to ❤️
+
+### Contributors
+
+- [Camji55](https://github.com/Camji55)
+
+### Reference projects
 
 - [jbtule/cdto](https://github.com/jbtule/cdto)
 - [es-kumagai/OpenTerminal](https://github.com/es-kumagai/OpenTerminal)

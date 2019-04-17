@@ -17,7 +17,7 @@ final class TerminalApp : Terminal {
             throw OITError.wrongUrl
         }
         
-        let terminal = SBApplication(bundleIdentifier: "com.apple.Terminal")! as TerminalApplication
+        let terminal = SBApplication(bundleIdentifier: TerminalType.terminal.rawValue)! as TerminalApplication
         
         guard let open = terminal.open else {
             throw OITError.cannotAccessTerminal
