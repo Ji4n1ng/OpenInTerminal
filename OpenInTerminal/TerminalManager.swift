@@ -34,10 +34,11 @@ class TerminalManager {
         alert.messageText = "Open In?"
         alert.informativeText = "Please select one of the following terminals as the default terminal to open."
         
-        alert.addButton(withTitle: "Cancel")
-        alert.addButton(withTitle: TerminalType.hyper.name)
-        alert.addButton(withTitle: TerminalType.iTerm.name)
-        alert.addButton(withTitle: TerminalType.terminal.name)
+        // Add button and avoid the focus ring
+        alert.addButton(withTitle: "Cancel").refusesFirstResponder = true
+        alert.addButton(withTitle: TerminalType.hyper.name).refusesFirstResponder = true
+        alert.addButton(withTitle: TerminalType.iTerm.name).refusesFirstResponder = true
+        alert.addButton(withTitle: TerminalType.terminal.name).refusesFirstResponder = true
         
         let modalResult = alert.runModal()
         
