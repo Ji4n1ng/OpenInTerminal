@@ -3,61 +3,61 @@
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "icon_terminal_white-16.png",
+      "filename" : "icon_terminal_white_16.png",
       "scale" : "1x"
     },
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "icon_terminal_white-32.png",
+      "filename" : "icon_terminal_white_16@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "icon_terminal_white-32.png",
+      "filename" : "icon_terminal_white_32.png",
       "scale" : "1x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "icon_terminal_white-64.png",
+      "filename" : "icon_terminal_white_32@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "icon_terminal_white-128.png",
+      "filename" : "icon_terminal_white_128.png",
       "scale" : "1x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "icon_terminal_white-256.png",
+      "filename" : "icon_terminal_white_128@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "icon_terminal_white-256.png",
+      "filename" : "icon_terminal_white_256.png",
       "scale" : "1x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "icon_terminal_white-512.png",
+      "filename" : "icon_terminal_white_512.png",
       "scale" : "2x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "icon_terminal_white-512.png",
+      "filename" : "icon_terminal_white _256@2x.png",
       "scale" : "1x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "icon_terminal_white-1024.png",
+      "filename" : "icon_terminal_white_512@2x.png",
       "scale" : "2x"
     }
   ],
