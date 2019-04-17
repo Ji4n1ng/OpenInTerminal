@@ -65,20 +65,16 @@ func getPathToFrontFinderWindowOrSelectedFile() throws -> String {
     return url.absoluteString
 }
 
-
 do {
-    
     var path = try getPathToFrontFinderWindowOrSelectedFile()
     if path == "" {
         // No Finder windows are opened or selected, so open home directory
         path = NSHomeDirectory()
     }
     
-    // TODO: User can choose which terminal to open
-    let term = TerminalApp() // TerminalApp() iTermApp() HyperApp()
-    try term.open(path)
-    
+    if let terminal = TerminalManager.pickTerminalAlert() {
+        try terminal.open(path)
+    }
 } catch {
-    
     log(error, .error)
 }

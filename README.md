@@ -1,4 +1,4 @@
- # OpenInTerminal
+  # OpenInTerminal
 
 ✨ Finder Toolbar app for macOS to open the current directory in `Terminal`, [`iTerm`](https://www.iterm2.com/) or [`Hyper`](https://github.com/zeit/hyper). 
 
@@ -45,12 +45,9 @@ cd OpenInTerminal
 xcodebuild
 ```
 
-> If you want to change default terminal, edit it in `main.swift`. I will try my best to solve this problem in a more elegant way.
-
 ## TODO 👨‍💻
 
 1. Dynamically change icon depending on Dark Mode.
-2. User can choose which terminal to open.
 
 ## Changes 🗒
 
