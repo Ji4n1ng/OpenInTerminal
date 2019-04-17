@@ -33,7 +33,7 @@ defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
 
 >  ⚠️ 当您第一次运行应用程序时，macOS 将要求访问 `访达` 和 `终端`（或 `iTerm`）的权限。请给予应用程序权限。
 
-![toolbar](./screenshots/toolbar.gif)
+![toolbar](./screenshots/drag_to_toolbar.gif)
 
 ### 如果你正在使用深色模式 (Dark Mode)
 

@@ -35,7 +35,7 @@ defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
 
 >  ⚠️ macOS will ask your permissions to access Finder and Terminal (iTerm or Hyper) when you run the app for the first time. Please give the application permissions.
 
-![toolbar](./screenshots/toolbar.gif)
+![toolbar](./screenshots/drag_to_toolbar.gif)
 
 ### If you are using Dark Mode
 
