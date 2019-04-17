@@ -16,7 +16,7 @@
 
 在第一次运行应用的时候，你需要选择默认终端。
 
-![selector](/Users/jianing/Program/GitHub/OpenInTerminal/screenshots/selector.png)
+![selector](./screenshots/selector.png)
 
 当你设置了默认终端之后，选择框将不会再出现。如果你想要重新设置默认终端，请在终端中输入以下命令。然后重新运行应用。
 
