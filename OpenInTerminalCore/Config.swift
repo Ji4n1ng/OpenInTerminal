@@ -33,7 +33,7 @@ struct Config {
 }
 
 
-enum TerminalType: String {
+public enum TerminalType: String {
     
     case terminal = "com.apple.Terminal"
     case iTerm = "com.googlecode.iterm2"

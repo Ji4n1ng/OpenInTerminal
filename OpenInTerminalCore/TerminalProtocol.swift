@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Terminal {
+public protocol Terminal {
     
     func open(_ path: String) throws
     
