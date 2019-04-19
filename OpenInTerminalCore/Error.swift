@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum OITError: Error {
+public enum OITError: Error {
     
     case cannotAccessFinder
     case cannotAccessTerminal
@@ -20,7 +20,7 @@ enum OITError: Error {
 
 extension OITError : CustomStringConvertible {
 
-    var description: String {
+    public var description: String {
 
         switch self {
             

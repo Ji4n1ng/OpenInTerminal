@@ -41,7 +41,7 @@ class FinderSync: FIFinderSync {
     }
     
     @objc func openTerminal() {
-         DistributedNotificationCenter.default().post(name: NSNotification.Name("openTerminal"), object: nil)
+        DistributedNotificationCenter.default().post(name: NSNotification.Name("openTerminal"), object: nil)
     }
     
     @objc func openITerm() {
@@ -49,7 +49,7 @@ class FinderSync: FIFinderSync {
     }
     
     @objc func openHyper() {
-         DistributedNotificationCenter.default().post(name: NSNotification.Name("openHyper"), object: nil)
+        DistributedNotificationCenter.default().post(name: NSNotification.Name("openHyper"), object: nil)
     }
 }
 

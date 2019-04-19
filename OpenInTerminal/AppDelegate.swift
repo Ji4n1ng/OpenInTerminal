@@ -16,6 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(openTerminal), name: NSNotification.Name("openTerminal"), object: nil)
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(openITerm), name: NSNotification.Name("openITerm"), object: nil)
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(openHyper), name: NSNotification.Name("openHyper"), object: nil)
+        
+        TerminalManager.shared.openTerminal()
     }
     
     func applicationWillTerminate(_ notification: Notification) {
