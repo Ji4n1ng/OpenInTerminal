@@ -42,7 +42,7 @@ defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
 
 ![toolbar](./screenshots/drag_to_toolbar.gif)
 
-###Manual
+### Manual
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
