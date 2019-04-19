@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum LogType: String {
+enum LogType: String {
     case ln = "✏️"
     case warn = "⚠️"
     case error = "❗️"
@@ -18,7 +18,7 @@ public enum LogType: String {
     case fuck = "🖕"
 }
 
-public func log<T>(_ message: T,
+func log<T>(_ message: T,
             _ type: LogType = .ln,
             file: String = #file,
             method: String = #function,

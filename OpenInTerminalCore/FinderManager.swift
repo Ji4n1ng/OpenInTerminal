@@ -9,7 +9,7 @@
 import Cocoa
 import ScriptingBridge
 
-public class FinderManager: NSObject {
+public class FinderManager {
     
     public static var shared = FinderManager()
     
