@@ -60,4 +60,23 @@ public class FinderManager {
         
         return url.absoluteString
     }
+    
+    private func applicationExists(_ application: String) -> Bool {
+        do {
+            return try FileManager.default.contentsOfDirectory(atPath: "/Applications").contains("\(application).app")
+        } catch {
+            return false
+        }
+    }
+    
+    public func terminalIsInstalled(_ terminalType: TerminalType) -> Bool {
+        switch terminalType {
+        case .terminal:
+            return true
+        case .iTerm:
+            return self.applicationExists("iTerm")
+        case .hyper:
+            return self.applicationExists("Hyper")
+        }
+    }
 }

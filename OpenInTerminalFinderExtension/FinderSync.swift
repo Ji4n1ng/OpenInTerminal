@@ -28,8 +28,15 @@ class FinderSync: FIFinderSync {
         // Produce a menu for the extension.
         let menu = NSMenu(title: "")
         menu.addItem(withTitle: "Terminal", action: #selector(openTerminal), keyEquivalent: "")
-        menu.addItem(withTitle: "iTerm", action: #selector(openITerm), keyEquivalent: "")
-        menu.addItem(withTitle: "Hyper", action: #selector(openHyper), keyEquivalent: "")
+        
+        if FinderManager.shared.terminalIsInstalled(.iTerm) {
+            menu.addItem(withTitle: "iTerm", action: #selector(openITerm), keyEquivalent: "")
+        }
+        
+        if FinderManager.shared.terminalIsInstalled(.hyper) {
+            menu.addItem(withTitle: "Hyper", action: #selector(openHyper), keyEquivalent: "")
+        }
+        
         return menu
     }
     
