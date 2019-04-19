@@ -23,7 +23,6 @@
 		4725255A2268100F003C50DF /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472525582268100F003C50DF /* FinderSync.swift */; };
 		4725256222681098003C50DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725256122681098003C50DF /* AppDelegate.swift */; };
 		472525812268112F003C50DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4725257E2268112F003C50DF /* Assets.xcassets */; };
-		472525822268112F003C50DF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4725257F2268112F003C50DF /* Info.plist */; };
 		47252586226812AB003C50DF /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
 		47252587226812AB003C50DF /* OpenInTerminalCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4725258A226812AB003C50DF /* OpenInTerminalFinderExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4725254A22680FEB003C50DF /* OpenInTerminalFinderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -359,7 +358,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				47A9A93C22697BFA00E92B54 /* Main.storyboard in Resources */,
-				472525822268112F003C50DF /* Info.plist in Resources */,
 				472525812268112F003C50DF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +435,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -469,7 +467,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -494,11 +492,12 @@
 		4725255422680FEB003C50DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OpenInTerminalFinderExtension/OpenInTerminalFinderExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				INFOPLIST_FILE = OpenInTerminalFinderExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -517,11 +516,12 @@
 		4725255522680FEB003C50DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OpenInTerminalFinderExtension/OpenInTerminalFinderExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				INFOPLIST_FILE = OpenInTerminalFinderExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,7 +544,7 @@
 				CODE_SIGN_ENTITLEMENTS = OpenInTerminal/OpenInTerminal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				INFOPLIST_FILE = OpenInTerminal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -565,7 +565,7 @@
 				CODE_SIGN_ENTITLEMENTS = OpenInTerminal/OpenInTerminal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				INFOPLIST_FILE = OpenInTerminal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
