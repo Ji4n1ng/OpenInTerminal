@@ -99,8 +99,6 @@
 		4725257E2268112F003C50DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4725257F2268112F003C50DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47A9A92222697A2200E92B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		47A9A92E22697A2200E92B54 /* testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testUITests.swift; sourceTree = "<group>"; };
-		47A9A93022697A2200E92B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,22 +194,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		47A9A92D22697A2200E92B54 /* testUITests */ = {
-			isa = PBXGroup;
-			children = (
-				47A9A92E22697A2200E92B54 /* testUITests.swift */,
-				47A9A93022697A2200E92B54 /* Info.plist */,
-			);
-			path = testUITests;
-			sourceTree = "<group>";
-		};
 		956C38A8225F7701001CB769 = {
 			isa = PBXGroup;
 			children = (
 				4725256022681098003C50DF /* OpenInTerminal */,
 				4725251222680E87003C50DF /* OpenInTerminalCore */,
 				4725254B22680FEB003C50DF /* OpenInTerminalFinderExtension */,
-				47A9A92D22697A2200E92B54 /* testUITests */,
 				956C38B2225F7701001CB769 /* Products */,
 				4725258F22681424003C50DF /* Frameworks */,
 			);
