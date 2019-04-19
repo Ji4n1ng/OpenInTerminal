@@ -1,6 +1,6 @@
 ---
-title: 'Feature Request'
-name: 'Feature Request'
+title: 'Feature request'
+name: 'Feature request'
 labels: enhancement
 about: 'Request a new feature'
 ---
