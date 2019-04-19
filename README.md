@@ -26,7 +26,23 @@ The selection box will not appear after you have set the default terminal. If yo
 defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
 ```
 
-## How to Install 🖥
+## How to install 🖥
+
+### Homebrew
+
+1. Run the following command
+
+   ```
+   brew cask install openinterminal
+   ```
+
+2. In `/Applications` folder, hold down the `Cmd` key and drag the app into Finder Toolbar.
+
+3. Done
+
+![toolbar](./screenshots/drag_to_toolbar.gif)
+
+###Manual
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
@@ -35,11 +51,9 @@ defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
 
 >  ⚠️ macOS will ask your permissions to access Finder and Terminal (iTerm or Hyper) when you run the app for the first time. Please give the application permissions.
 
-![toolbar](./screenshots/drag_to_toolbar.gif)
-
 ### If you are using Dark Mode
 
-I provided several icons along with the app in the release. You can right click on the app and select `Get Info`. Drag the icon to cover the default icon.
+I provided several icons along with the app in the [release](https://github.com/Ji4n1ng/OpenInTerminal/releases). You can right click on the app and select `Get Info`. Drag the icon to cover the default icon.
 
 ![change_icon](./screenshots/change_icon.gif)
 
@@ -53,9 +67,11 @@ cd OpenInTerminal
 xcodebuild
 ```
 
-## TODO 👨‍💻
+## Todo 👨‍💻
 
-1. Dynamically change icon depending on Dark Mode.
+- ~~Dynamically change icon depending on Dark Mode.~~
+
+If you have a good idea, welcome to open a new `issue` .
 
 ## Changes 🗒
 
