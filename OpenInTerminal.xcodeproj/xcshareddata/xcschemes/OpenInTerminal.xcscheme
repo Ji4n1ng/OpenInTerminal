@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "956C38B0225F7701001CB769"
+               BlueprintIdentifier = "4725255E22681098003C50DF"
                BuildableName = "OpenInTerminal.app"
                BlueprintName = "OpenInTerminal"
                ReferencedContainer = "container:OpenInTerminal.xcodeproj">
@@ -28,11 +28,21 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4725256F22681099003C50DF"
+               BuildableName = "OpenInTerminalUITests.xctest"
+               BlueprintName = "OpenInTerminalUITests"
+               ReferencedContainer = "container:OpenInTerminal.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "956C38B0225F7701001CB769"
+            BlueprintIdentifier = "4725255E22681098003C50DF"
             BuildableName = "OpenInTerminal.app"
             BlueprintName = "OpenInTerminal"
             ReferencedContainer = "container:OpenInTerminal.xcodeproj">
@@ -55,7 +65,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "956C38B0225F7701001CB769"
+            BlueprintIdentifier = "4725255E22681098003C50DF"
             BuildableName = "OpenInTerminal.app"
             BlueprintName = "OpenInTerminal"
             ReferencedContainer = "container:OpenInTerminal.xcodeproj">
@@ -74,7 +84,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "956C38B0225F7701001CB769"
+            BlueprintIdentifier = "4725255E22681098003C50DF"
             BuildableName = "OpenInTerminal.app"
             BlueprintName = "OpenInTerminal"
             ReferencedContainer = "container:OpenInTerminal.xcodeproj">
