@@ -2,6 +2,7 @@
 title: 'Bug report'
 name: 'Bug report'
 labels: bug
+about: 'Use this issue template to report a bug.'
 ---
 
 ## What is the issue?
