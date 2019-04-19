@@ -44,7 +44,7 @@ public enum TerminalType: String {
         case .terminal:
             return "Terminal"
         case .iTerm:
-            return "iTerm2"
+            return "iTerm"
         case .hyper:
             return "Hyper"
         }

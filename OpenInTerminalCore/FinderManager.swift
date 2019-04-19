@@ -13,6 +13,13 @@ public class FinderManager {
     
     public static var shared = FinderManager()
     
+    /// Get path to front Finder window or selected file
+    ///
+    /// This method first checks if the user has selected files or folders.
+    /// If so, return the path to the first selected one.
+    /// Or check if the user has opened the Finder windows.
+    /// If so, return the path to the top window.
+    /// If neither of two cases, then return an empty path.
     public func getPathToFrontFinderWindowOrSelectedFile() throws -> String {
         
         let finder = SBApplication(bundleIdentifier: Config.Finder.id)! as FinderApplication
@@ -61,6 +68,7 @@ public class FinderManager {
         return url.absoluteString
     }
     
+    /// Determine if the app exists in the `/Applications` folder
     private func applicationExists(_ application: String) -> Bool {
         do {
             return try FileManager.default.contentsOfDirectory(atPath: "/Applications").contains("\(application).app")
@@ -69,14 +77,15 @@ public class FinderManager {
         }
     }
     
+    /// Determine if the user has installed a terminal
     public func terminalIsInstalled(_ terminalType: TerminalType) -> Bool {
         switch terminalType {
         case .terminal:
             return true
         case .iTerm:
-            return self.applicationExists("iTerm")
+            return self.applicationExists(TerminalType.iTerm.name)
         case .hyper:
-            return self.applicationExists("Hyper")
+            return self.applicationExists(TerminalType.hyper.name)
         }
     }
 }
