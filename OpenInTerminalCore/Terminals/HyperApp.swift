@@ -39,6 +39,6 @@ fileprivate extension String {
     
     // FIXME: if path contains "\", application will crash.
     var hyperEscaped: String {
-        return self.replacingOccurrences(of: " ", with: "\\\\ ")
+        return self.replacingOccurrences(of: " ", with: "\\\\ ").replacingOccurrences(of: "(", with: "\\\\(").replacingOccurrences(of: ")", with: "\\\\)")
     }
 }
