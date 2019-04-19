@@ -22,13 +22,32 @@ You are asked to set the default terminal to open after first launch.
 
 The selection box will not appear after you have set the default terminal. If you want to reset the default terminal, please enter the following command in the terminal. Then just run the application again.
 
+For **version 0.3.0**:
+
+```
+defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
+```
+
+For **version 0.2.0**:
+
 ```
 defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
 ```
 
 ## How to install 🖥
 
-### Homebrew
+> Because updates are frequent, it is recommended to manually download the latest version.
+
+### Manual (latest version: 0.3.0)
+
+1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
+2. Move the app into `/Applications`.
+3. Hold down the `Cmd` key and drag the app into Finder Toolbar.
+4. Done.
+
+![toolbar](./screenshots/drag_to_toolbar.gif)
+
+### Homebrew (current version 0.2.0)
 
 1. Run the following command
 
@@ -39,15 +58,6 @@ defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
 2. In `/Applications` folder, hold down the `Cmd` key and drag the app into Finder Toolbar.
 
 3. Done
-
-![toolbar](./screenshots/drag_to_toolbar.gif)
-
-### Manual
-
-1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
-2. Move the app into `/Applications`.
-3. Hold down the `Cmd` key and drag the app into Finder Toolbar.
-4. Done.
 
 >  ⚠️ macOS will ask your permissions to access Finder and Terminal (iTerm or Hyper) when you run the app for the first time. Please give the application permissions.
 
@@ -69,11 +79,35 @@ xcodebuild
 
 ## Todo 👨‍💻
 
+- Drop down menu in `FinderSync Extension`  ✅ By [Camji55](https://github.com/Camji55)
+- `Preferences` panel which can allow users to set up to open new windows or new tabs.
+- Open in `VSCode` / `Atom` / `Sublime`? (This needs discussion)
+- Supporting keyboard shortcuts
+
 - ~~Dynamically change icon depending on Dark Mode.~~
 
 If you have a good idea, welcome to open a new `issue` .
 
+## FAQ ❓
+
+#### 1. I accidentally clicked on the `Don't Allow`  button.
+
+You can run the following command in the terminal. This will reset the permissions in the System Preferences.
+
+```
+tccutil reset AppleEvents
+```
+
+#### 2. Special character in the `path`.
+
+`Terminal` supports all special characters. However `iTerm` and `Hyper` do not support backslash `\` and double quotes `"` in the path.
+
 ## Changes 🗒
+
+**version 0.3.0**
+
+- Change name to `OpenInTerminal-Lite` (`OpenInTerminal` will come as a more powerful version in the future.)
+- Fix a bug that some special characters in the path would crash the program when opening Hyper.
 
 **version 0.2.0**
 
