@@ -162,9 +162,9 @@
 		4725253722680F13003C50DF /* Terminals */ = {
 			isa = PBXGroup;
 			children = (
-				4725253922680F4B003C50DF /* HyperApp.swift */,
-				4725253A22680F4B003C50DF /* iTermApp.swift */,
 				4725253822680F4B003C50DF /* TerminalApp.swift */,
+				4725253A22680F4B003C50DF /* iTermApp.swift */,
+				4725253922680F4B003C50DF /* HyperApp.swift */,
 			);
 			path = Terminals;
 			sourceTree = "<group>";

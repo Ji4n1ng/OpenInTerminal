@@ -37,8 +37,21 @@ final class HyperApp : Terminal {
 
 fileprivate extension String {
     
-    // FIXME: if path contains "\", application will crash.
+    // FIXME: if path contains "\" or """, application will crash.
+    // Special symbols have been tested, except for backslashes and double quotes.
     var hyperEscaped: String {
-        return self.replacingOccurrences(of: " ", with: "\\\\ ").replacingOccurrences(of: "(", with: "\\\\(").replacingOccurrences(of: ")", with: "\\\\)")
+        
+        var result = ""
+        let set: [Character] = [" ", "(", ")", "&", "|", ";",
+                   "\"", "'", "<", ">", "`"]
+        
+        for char in self {
+            if set.contains(char) {
+                result += "\\\\"
+            }
+            result.append(char)
+        }
+        
+        return result
     }
 }

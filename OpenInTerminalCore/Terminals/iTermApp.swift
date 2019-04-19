@@ -60,7 +60,8 @@ final class iTermApp : Terminal {
 
 fileprivate extension String {
     
-    // FIXME: if path contains "\", application will crash.
+    // FIXME: if path contains "\" or """, application will crash.
+    // Special symbols have been tested, except for backslashes and double quotes.
     var itermEscaped: String {
         
         var result = ""
