@@ -1,5 +1,6 @@
 ---
 title: 'Bug report'
+name: 'Bug report'
 labels: bug
 ---
 
