@@ -24,11 +24,11 @@
 		4725256222681098003C50DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725256122681098003C50DF /* AppDelegate.swift */; };
 		472525812268112F003C50DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4725257E2268112F003C50DF /* Assets.xcassets */; };
 		472525822268112F003C50DF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4725257F2268112F003C50DF /* Info.plist */; };
-		4725258522681143003C50DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4725258422681143003C50DF /* Main.storyboard */; };
 		47252586226812AB003C50DF /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
 		47252587226812AB003C50DF /* OpenInTerminalCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4725258A226812AB003C50DF /* OpenInTerminalFinderExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4725254A22680FEB003C50DF /* OpenInTerminalFinderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4725259022681424003C50DF /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
+		47A9A93C22697BFA00E92B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A9A92122697A2200E92B54 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +98,7 @@
 		4725257D2268112F003C50DF /* OpenInTerminal.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = OpenInTerminal.entitlements; sourceTree = "<group>"; };
 		4725257E2268112F003C50DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4725257F2268112F003C50DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4725258422681143003C50DF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		47A9A92222697A2200E92B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				4725256122681098003C50DF /* AppDelegate.swift */,
-				4725258422681143003C50DF /* Main.storyboard */,
+				47A9A92122697A2200E92B54 /* Main.storyboard */,
 				4725257E2268112F003C50DF /* Assets.xcassets */,
 				4725257F2268112F003C50DF /* Info.plist */,
 				4725257D2268112F003C50DF /* OpenInTerminal.entitlements */,
@@ -358,7 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4725258522681143003C50DF /* Main.storyboard in Resources */,
+				47A9A93C22697BFA00E92B54 /* Main.storyboard in Resources */,
 				472525822268112F003C50DF /* Info.plist in Resources */,
 				472525812268112F003C50DF /* Assets.xcassets in Resources */,
 			);
@@ -415,6 +415,17 @@
 			targetProxy = 4725258B226812AB003C50DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		47A9A92122697A2200E92B54 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47A9A92222697A2200E92B54 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4725251B22680E87003C50DF /* Debug */ = {
