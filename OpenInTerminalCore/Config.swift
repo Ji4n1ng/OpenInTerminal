@@ -39,7 +39,7 @@ public enum TerminalType: String {
     case iTerm = "com.googlecode.iterm2"
     case hyper = "co.zeit.hyper"
     
-    var name: String {
+    public var name: String {
         switch self {
         case .terminal:
             return "Terminal"

@@ -27,29 +27,35 @@ class FinderSync: FIFinderSync {
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
         // Produce a menu for the extension.
         let menu = NSMenu(title: "")
-        menu.addItem(withTitle: "Terminal", action: #selector(openTerminal), keyEquivalent: "")
+        menu.addItem(withTitle: TerminalType.terminal.name,
+                     action: #selector(openTerminal),
+                     keyEquivalent: "")
         
         if FinderManager.shared.terminalIsInstalled(.iTerm) {
-            menu.addItem(withTitle: "iTerm", action: #selector(openITerm), keyEquivalent: "")
+            menu.addItem(withTitle: TerminalType.iTerm.name,
+                         action: #selector(openITerm),
+                         keyEquivalent: "")
         }
         
         if FinderManager.shared.terminalIsInstalled(.hyper) {
-            menu.addItem(withTitle: "Hyper", action: #selector(openHyper), keyEquivalent: "")
+            menu.addItem(withTitle: TerminalType.hyper.name,
+                         action: #selector(openHyper),
+                         keyEquivalent: "")
         }
         
         return menu
     }
     
     @objc func openTerminal() {
-        DistributedNotificationCenter.default().post(name: NSNotification.Name("openTerminal"), object: nil)
+        OpenNotifier.postNotification(.openTerminal)
     }
     
     @objc func openITerm() {
-        DistributedNotificationCenter.default().post(name: NSNotification.Name("openITerm"), object: nil)
+        OpenNotifier.postNotification(.openITerm)
     }
     
     @objc func openHyper() {
-        DistributedNotificationCenter.default().post(name: NSNotification.Name("openHyper"), object: nil)
+        OpenNotifier.postNotification(.openHyper)
     }
 }
 

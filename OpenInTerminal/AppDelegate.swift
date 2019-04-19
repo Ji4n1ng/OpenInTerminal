@@ -13,17 +13,17 @@ import OpenInTerminalCore
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-        DistributedNotificationCenter.default().addObserver(self, selector: #selector(openTerminal), name: NSNotification.Name("openTerminal"), object: nil)
-        DistributedNotificationCenter.default().addObserver(self, selector: #selector(openITerm), name: NSNotification.Name("openITerm"), object: nil)
-        DistributedNotificationCenter.default().addObserver(self, selector: #selector(openHyper), name: NSNotification.Name("openHyper"), object: nil)
+        OpenNotifier.addObserver(observer: self, selector: .openTerminalNotification, notification: .openTerminal)
+        OpenNotifier.addObserver(observer: self, selector: .openITermNotification, notification: .openITerm)
+        OpenNotifier.addObserver(observer: self, selector: .openHyperNotification, notification: .openHyper)
         
         TerminalManager.shared.openTerminal()
     }
     
     func applicationWillTerminate(_ notification: Notification) {
-        DistributedNotificationCenter.default().removeObserver(self, name: NSNotification.Name("openTerminal"), object: nil)
-        DistributedNotificationCenter.default().removeObserver(self, name:NSNotification.Name("openITerm"), object: nil)
-        DistributedNotificationCenter.default().removeObserver(self, name: NSNotification.Name("openHyper"), object: nil)
+        OpenNotifier.removeObserver(observer: self, notification: .openTerminal)
+        OpenNotifier.removeObserver(observer: self, notification: .openITerm)
+        OpenNotifier.removeObserver(observer: self, notification: .openHyper)
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
@@ -43,3 +43,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         TerminalManager.shared.openTerminal(.hyper)
     }
 }
+
+fileprivate extension Selector {
+    static let openTerminalNotification = #selector(AppDelegate.openTerminal)
+    static let openITermNotification = #selector(AppDelegate.openITerm)
+    static let openHyperNotification = #selector(AppDelegate.openHyper)
+}
+
