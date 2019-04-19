@@ -2,7 +2,7 @@
 title: 'Bug report'
 name: 'Bug report'
 labels: bug
-about: 'Report a bug.'
+about: 'Report a bug'
 ---
 
 ## What is the issue?
