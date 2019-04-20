@@ -32,6 +32,10 @@
 		95163CD4226998ED007C006F /* OpenNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD3226998ED007C006F /* OpenNotifier.swift */; };
 		95163CD52269A09D007C006F /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD12269979E007C006F /* Notifier.swift */; };
 		95163CD62269A09F007C006F /* OpenNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD3226998ED007C006F /* OpenNotifier.swift */; };
+		9521EDCA226B3F93008445D1 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9521EDC9226B3F93008445D1 /* Preferences.storyboard */; };
+		9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCB226B475E008445D1 /* PreferencesViewController.swift */; };
+		9521EDCE226B47A5008445D1 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCD226B47A5008445D1 /* PreferencesWindowController.swift */; };
+		9521EDD0226B4BE6008445D1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCF226B4BE6008445D1 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +108,10 @@
 		47A9A92222697A2200E92B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95163CD12269979E007C006F /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		95163CD3226998ED007C006F /* OpenNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNotifier.swift; sourceTree = "<group>"; };
+		9521EDC9226B3F93008445D1 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		9521EDCB226B475E008445D1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		9521EDCD226B47A5008445D1 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		9521EDCF226B4BE6008445D1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,8 +196,9 @@
 				4725257E2268112F003C50DF /* Assets.xcassets */,
 				4725257F2268112F003C50DF /* Info.plist */,
 				4725257D2268112F003C50DF /* OpenInTerminal.entitlements */,
-				95163CD12269979E007C006F /* Notifier.swift */,
-				95163CD3226998ED007C006F /* OpenNotifier.swift */,
+				9521EDCF226B4BE6008445D1 /* Config.swift */,
+				9521EDD1226B4BEF008445D1 /* Notifier */,
+				9521EDC8226B3F41008445D1 /* PreferencesWindow */,
 			);
 			path = OpenInTerminal;
 			sourceTree = "<group>";
@@ -199,6 +208,25 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9521EDC8226B3F41008445D1 /* PreferencesWindow */ = {
+			isa = PBXGroup;
+			children = (
+				9521EDC9226B3F93008445D1 /* Preferences.storyboard */,
+				9521EDCB226B475E008445D1 /* PreferencesViewController.swift */,
+				9521EDCD226B47A5008445D1 /* PreferencesWindowController.swift */,
+			);
+			path = PreferencesWindow;
+			sourceTree = "<group>";
+		};
+		9521EDD1226B4BEF008445D1 /* Notifier */ = {
+			isa = PBXGroup;
+			children = (
+				95163CD12269979E007C006F /* Notifier.swift */,
+				95163CD3226998ED007C006F /* OpenNotifier.swift */,
+			);
+			path = Notifier;
 			sourceTree = "<group>";
 		};
 		956C38A8225F7701001CB769 = {
@@ -365,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9521EDCA226B3F93008445D1 /* Preferences.storyboard in Resources */,
 				47A9A93C22697BFA00E92B54 /* Main.storyboard in Resources */,
 				472525812268112F003C50DF /* Assets.xcassets in Resources */,
 			);
@@ -407,7 +436,10 @@
 			files = (
 				4725256222681098003C50DF /* AppDelegate.swift in Sources */,
 				95163CD22269979E007C006F /* Notifier.swift in Sources */,
+				9521EDCE226B47A5008445D1 /* PreferencesWindowController.swift in Sources */,
 				95163CD4226998ED007C006F /* OpenNotifier.swift in Sources */,
+				9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */,
+				9521EDD0226B4BE6008445D1 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

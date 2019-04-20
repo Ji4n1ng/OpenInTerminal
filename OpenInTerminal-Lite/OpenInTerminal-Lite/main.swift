@@ -23,5 +23,5 @@ do {
 
 } catch {
     
-    print(error)
+    log(error)
 }
