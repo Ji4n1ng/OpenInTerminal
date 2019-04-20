@@ -21,7 +21,7 @@ class FinderSync: FIFinderSync {
     }
     
     override var toolbarItemImage: NSImage {
-        return NSImage(named: "TerminalIcon")!
+        return NSImage(named: "Icon")!
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
