@@ -1,0 +1,5 @@
+language: objective-c
+os: osx
+osx_image: xcode10.2
+xcode_project: OpenInTerminal.xcworkspace
+xcode_scheme: OpenInTerminal
