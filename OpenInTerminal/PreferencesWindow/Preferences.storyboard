@@ -59,7 +59,7 @@
         <!--General-->
         <scene sceneID="lyQ-BP-dP2">
             <objects>
-                <viewController title="General" id="Gn1-zC-bzB" customClass="PreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="General" id="Gn1-zC-bzB" customClass="GeneralPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="T7Z-PU-Qyb">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="218"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -109,7 +109,7 @@
         <!--Terminal-->
         <scene sceneID="75c-0T-1MT">
             <objects>
-                <viewController title="Terminal" id="s5W-qL-1Xs" customClass="PreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Terminal" id="s5W-qL-1Xs" customClass="TerminalPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" focusRingType="none" appearanceType="aqua" id="jOR-Px-swx">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="328"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -123,14 +123,6 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ge2-li-kY0">
-                                <rect key="frame" x="140" y="273" width="63" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Visible" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="g5y-3V-yib">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfP-wJ-Qeb">
                                 <rect key="frame" x="140" y="239" width="261" height="28"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -165,6 +157,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="iTermVisibleButtonClicked:" target="s5W-qL-1Xs" id="eUS-6K-KH5"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAq-CP-ISu">
                                 <rect key="frame" x="140" y="74" width="63" height="18"/>
@@ -173,6 +168,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="hyperVisibleButtonClicked:" target="s5W-qL-1Xs" id="dR8-82-S09"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34e-do-VFy">
                                 <rect key="frame" x="259" y="214" width="44" height="18"/>
@@ -181,6 +179,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="terminalTabButtonClicked:" target="s5W-qL-1Xs" id="ztQ-ZF-qb0"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2nf-5P-a3Z">
                                 <rect key="frame" x="259" y="113" width="44" height="18"/>
@@ -189,6 +190,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="iTermTabButtonClicked:" target="s5W-qL-1Xs" id="W9n-fu-ipu"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uYA-Cw-jN7">
                                 <rect key="frame" x="140" y="113" width="71" height="18"/>
@@ -197,14 +201,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMD-GX-OKs">
-                                <rect key="frame" x="140" y="47" width="71" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="Window" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="bkO-EE-csT">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
+                                <connections>
+                                    <action selector="iTermWindowButtonClicked:" target="s5W-qL-1Xs" id="rbX-7o-sbS"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RUk-AV-Pdr">
                                 <rect key="frame" x="140" y="214" width="71" height="18"/>
@@ -213,6 +212,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="terminalWindowButtonClicked:" target="s5W-qL-1Xs" id="arl-oM-jgJ"/>
+                                </connections>
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEK-cG-vAm">
                                 <rect key="frame" x="140" y="179" width="261" height="28"/>
@@ -223,16 +225,28 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xTj-UT-6nP">
-                                <rect key="frame" x="259" y="46" width="44" height="18"/>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ge2-li-kY0">
+                                <rect key="frame" x="140" y="272" width="67" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="Tab" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="NNV-Mr-pZT">
+                                <buttonCell key="cell" type="check" title="Visible" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="g5y-3V-yib">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="terminalVisibleButtonClicked:" target="s5W-qL-1Xs" id="CZj-nO-Q11"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="hyperVisibleButton" destination="CAq-CP-ISu" id="0Db-Kn-Cja"/>
+                        <outlet property="iTermTabButton" destination="2nf-5P-a3Z" id="2ii-bw-XL0"/>
+                        <outlet property="iTermVisibleButton" destination="XfW-1H-W2T" id="fhJ-sg-HFJ"/>
+                        <outlet property="iTermWindowButton" destination="uYA-Cw-jN7" id="p3e-cu-pVw"/>
+                        <outlet property="terminalTabButton" destination="34e-do-VFy" id="fLH-oM-IXM"/>
+                        <outlet property="terminalVisibleButton" destination="ge2-li-kY0" id="bq0-Xi-dwk"/>
+                        <outlet property="terminalWindowButton" destination="RUk-AV-Pdr" id="Rd0-BQ-KKY"/>
+                    </connections>
                 </viewController>
                 <customObject id="mlw-wX-Yfn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,7 +255,7 @@
         <!--Advanced-->
         <scene sceneID="pTk-2Y-BtO">
             <objects>
-                <viewController title="Advanced" id="nyi-fa-RMp" customClass="PreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Advanced" id="nyi-fa-RMp" sceneMemberID="viewController">
                     <view key="view" id="xWG-gT-gc1">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

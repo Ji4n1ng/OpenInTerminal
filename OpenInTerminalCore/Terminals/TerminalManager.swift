@@ -48,6 +48,18 @@ public class TerminalManager {
         return option.map(NewOptionType.init(rawValue: )) ?? nil
     }
     
+    public func setNewOption(_ terminal: TerminalType, _ newOption: NewOptionType) {
+        
+        switch terminal {
+        case .terminal:
+            Defaults[.terminalNewOption] = newOption.rawValue
+        case .iTerm:
+            Defaults[.iTermNewOption] = newOption.rawValue
+        case .hyper:
+            Defaults[.hyperNewOption] = newOption.rawValue
+        }
+    }
+    
     public func getVisible(_ terminal: TerminalType) -> VisibleType? {
         var visible: String?
         switch terminal {
@@ -60,6 +72,18 @@ public class TerminalManager {
         }
         
         return visible.map(VisibleType.init(rawValue: )) ?? nil
+    }
+    
+    public func setVisible(_ terminal: TerminalType, _ visible: VisibleType) {
+        
+        switch terminal {
+        case .terminal:
+            Defaults[.terminalVisible] = visible.rawValue
+        case .iTerm:
+            Defaults[.iTermVisible] = visible.rawValue
+        case .hyper:
+            Defaults[.hyperVisible] = visible.rawValue
+        }
     }
     
     public func openTerminal(_ terminalType: TerminalType) {

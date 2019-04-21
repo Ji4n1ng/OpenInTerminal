@@ -43,6 +43,9 @@
 		9590B697226C6E8600362B93 /* VSCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B696226C6E8600362B93 /* VSCodeApp.swift */; };
 		9590B699226C6E9600362B93 /* AtomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B698226C6E9600362B93 /* AtomApp.swift */; };
 		9590B69B226C6EA200362B93 /* SublimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69A226C6EA200362B93 /* SublimeApp.swift */; };
+		9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */; };
+		9590B6A1226CBC1D00362B93 /* TerminalPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B6A0226CBC1D00362B93 /* TerminalPreferencesViewController.swift */; };
+		9590B6A3226CBC3E00362B93 /* AdvancedPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B6A2226CBC3E00362B93 /* AdvancedPreferencesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +129,9 @@
 		9590B696226C6E8600362B93 /* VSCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodeApp.swift; sourceTree = "<group>"; };
 		9590B698226C6E9600362B93 /* AtomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomApp.swift; sourceTree = "<group>"; };
 		9590B69A226C6EA200362B93 /* SublimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SublimeApp.swift; sourceTree = "<group>"; };
+		9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
+		9590B6A0226CBC1D00362B93 /* TerminalPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalPreferencesViewController.swift; sourceTree = "<group>"; };
+		9590B6A2226CBC3E00362B93 /* AdvancedPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPreferencesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +239,9 @@
 				9521EDC9226B3F93008445D1 /* Preferences.storyboard */,
 				9521EDCB226B475E008445D1 /* PreferencesViewController.swift */,
 				9521EDCD226B47A5008445D1 /* PreferencesWindowController.swift */,
+				9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */,
+				9590B6A0226CBC1D00362B93 /* TerminalPreferencesViewController.swift */,
+				9590B6A2226CBC3E00362B93 /* AdvancedPreferencesViewController.swift */,
 			);
 			path = PreferencesWindow;
 			sourceTree = "<group>";
@@ -470,12 +479,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */,
 				4725256222681098003C50DF /* AppDelegate.swift in Sources */,
+				9590B6A3226CBC3E00362B93 /* AdvancedPreferencesViewController.swift in Sources */,
 				95163CD22269979E007C006F /* Notifier.swift in Sources */,
 				9521EDCE226B47A5008445D1 /* PreferencesWindowController.swift in Sources */,
 				95163CD4226998ED007C006F /* OpenNotifier.swift in Sources */,
 				9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */,
 				9521EDD0226B4BE6008445D1 /* Config.swift in Sources */,
+				9590B6A1226CBC1D00362B93 /* TerminalPreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
