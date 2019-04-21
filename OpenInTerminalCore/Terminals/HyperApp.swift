@@ -8,28 +8,35 @@
 
 import Foundation
 
-final class HyperApp : Terminal {
+final class HyperApp : Openable {
     
-    func open(_ path: String) throws {
+    func open(_ path: String, _ newOption: NewOptionType) throws {
         
         guard let url = URL(string: path) else {
             throw OITError.wrongUrl
         }
         
-        let source = """
-        do shell script "open -a Hyper \(url.path.hyperEscaped)"
-        """
-        
-        let script = NSAppleScript(source: source)!
-        
-        var error: NSDictionary?
-        
-        script.executeAndReturnError(&error)
-        
-        if error != nil {
-            log(error, .error)
-            throw OITError.cannotAccessHyper
+        if newOption == .window {
+            
+            let source = """
+            do shell script "open -a Hyper \(url.path.hyperEscaped)"
+            """
+            
+            let script = NSAppleScript(source: source)!
+            
+            var error: NSDictionary?
+            
+            script.executeAndReturnError(&error)
+            
+            if error != nil {
+                log(error, .error)
+                throw OITError.cannotAccessHyper
+            }
+            
+        } else {
+            // TODO: open a new tab when opening Hyper
         }
+        
     }
     
 }

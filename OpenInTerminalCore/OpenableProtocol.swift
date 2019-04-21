@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol Terminal {
+public protocol Openable {
     
-    func open(_ path: String) throws
-    
+    func open(_ path: String, _ newOption: NewOptionType) throws
+
 }

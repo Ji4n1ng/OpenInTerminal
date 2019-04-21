@@ -18,7 +18,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         createStatusBar()
         addObserver()
-//        TerminalManager.shared.openTerminal()
     }
     
     func applicationWillTerminate(_ notification: Notification) {

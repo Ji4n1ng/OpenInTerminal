@@ -8,40 +8,53 @@
 
 import Foundation
 
-final class iTermApp : Terminal {
+final class iTermApp : Openable {
     
-    func open(_ path: String) throws {
+    func open(_ path: String, _ newOption: NewOptionType) throws {
         
         guard let url = URL(string: path) else {
             throw OITError.wrongUrl
         }
         
-        let source = """
-        tell application "iTerm"
-            set isRunning to (application "iTerm" is running)
-            activate
+        var source: String
         
-            tell current window
-        
-                if (count of tabs) < 1 then
-                    create window with default profile
-                    set isRunning to false
-                end if
-        
-                if isRunning then
-                    set newTab to (create tab with default profile)
-        
-                    tell newTab
-                        select
-                    end tell
-                end if
-        
-                tell current session
-                    write text "cd \(url.path.itermEscaped)"
+        if newOption == .window {
+            source = """
+            tell application "iTerm"
+                create window with default profile
+                tell current session of current window
+                    write text "cd \(url.path.itermEscaped); clear"
                 end tell
             end tell
-        end tell
-        """
+            """
+        } else {
+            source = """
+            tell application "iTerm"
+                set isRunning to (application "iTerm" is running)
+                activate
+            
+                tell current window
+            
+                    if (count of tabs) < 1 then
+                        create window with default profile
+                        set isRunning to false
+                    end if
+            
+                    if isRunning then
+                        set newTab to (create tab with default profile)
+            
+                        tell newTab
+                            select
+                        end tell
+                    end if
+            
+                    tell current session
+                        write text "cd \(url.path.itermEscaped)"
+                    end tell
+                end tell
+            end tell
+            """
+        }
         
         let script = NSAppleScript(source: source)!
         

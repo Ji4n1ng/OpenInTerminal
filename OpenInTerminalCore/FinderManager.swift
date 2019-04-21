@@ -13,14 +13,8 @@ public class FinderManager {
     
     public static var shared = FinderManager()
     
-    /// Get path to front Finder window or selected file
-    ///
-    /// This method first checks if the user has selected files or folders.
-    /// If so, return the path to the first selected one.
-    /// Or check if the user has opened the Finder windows.
-    /// If so, return the path to the top window.
-    /// If neither of two cases, then return an empty path.
-    public func getPathToFrontFinderWindowOrSelectedFile() throws -> String {
+    /// Get full path to front Finder window or selected file
+    public func getFullPathToFrontFinderWindowOrSelectedFile() throws -> String {
         
         let finder = SBApplication(bundleIdentifier: Config.Finder.id)! as FinderApplication
         
@@ -47,13 +41,26 @@ public class FinderManager {
             target = (firstWindow as! FinderFinderWindow).target?.get() as! FinderItem
         }
         
-        var isDirectory: ObjCBool = false
-        
         guard let targetUrl = target.URL,
             let url = URL(string: targetUrl) else {
                 log("target url nil", .warn)
                 return ""
         }
+        
+        return url.absoluteString
+    }
+    
+    /// Get path to front Finder window or selected file.
+    /// If the selected one is file, return it's parent path.
+    public func getPathToFrontFinderWindowOrSelectedFile() throws -> String {
+        
+        let fullPath = try getFullPathToFrontFinderWindowOrSelectedFile()
+        
+        guard let url = URL(string: fullPath) else {
+            throw OITError.wrongUrl
+        }
+        
+        var isDirectory: ObjCBool = false
         
         guard FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory) else {
             log("file does not exist", .warn)
