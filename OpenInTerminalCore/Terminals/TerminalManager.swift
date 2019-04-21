@@ -48,18 +48,39 @@ public class TerminalManager {
         return option.map(NewOptionType.init(rawValue: )) ?? nil
     }
     
-    public func getVisble(_ terminal: TerminalType) -> VisibleType? {
-        var visble: String?
+    public func getVisible(_ terminal: TerminalType) -> VisibleType? {
+        var visible: String?
         switch terminal {
         case .terminal:
-            visble = Defaults[.terminalVisible]
+            visible = Defaults[.terminalVisible]
         case .iTerm:
-            visble = Defaults[.iTermVisible]
+            visible = Defaults[.iTermVisible]
         case .hyper:
-            visble = Defaults[.hyperVisible]
+            visible = Defaults[.hyperVisible]
         }
         
-        return visble.map(VisibleType.init(rawValue: )) ?? nil
+        return visible.map(VisibleType.init(rawValue: )) ?? nil
+    }
+    
+    public func openTerminal(_ terminalType: TerminalType) {
+        do {
+            var path = try FinderManager.shared.getPathToFrontFinderWindowOrSelectedFile()
+            if path == "" {
+                // No Finder windows are opened or selected, so open home directory
+                path = NSHomeDirectory()
+            }
+            
+            let terminal = terminalType.instance()
+            
+            if let newOption = TerminalManager.shared.getNewOption(terminalType) {
+                try terminal.open(path, newOption)
+            } else {
+                try terminal.open(path, .window)
+            }
+            
+        } catch {
+            log(error, .error)
+        }
     }
     
     // MARK: private methods
