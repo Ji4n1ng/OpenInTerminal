@@ -13,6 +13,7 @@ import OpenInTerminalCore
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        OpenNotifier.addObserver(observer: self, selector: .openInDefaultTerminalNotification, notification: .openDefaultTerminal)
         OpenNotifier.addObserver(observer: self, selector: .openTerminalNotification, notification: .openTerminal)
         OpenNotifier.addObserver(observer: self, selector: .openITermNotification, notification: .openITerm)
         OpenNotifier.addObserver(observer: self, selector: .openHyperNotification, notification: .openHyper)
@@ -21,6 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationWillTerminate(_ notification: Notification) {
+        OpenNotifier.removeObserver(observer: self, notification: .openDefaultTerminal)
         OpenNotifier.removeObserver(observer: self, notification: .openTerminal)
         OpenNotifier.removeObserver(observer: self, notification: .openITerm)
         OpenNotifier.removeObserver(observer: self, notification: .openHyper)
@@ -29,6 +31,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         TerminalManager.shared.openTerminal()
         return true
+    }
+    
+    @objc func openDefaultTerminal() {
+        TerminalManager.shared.openTerminal()
     }
     
     @objc func openTerminal() {
@@ -45,6 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 fileprivate extension Selector {
+    static let openInDefaultTerminalNotification = #selector(AppDelegate.openDefaultTerminal)
     static let openTerminalNotification = #selector(AppDelegate.openTerminal)
     static let openITermNotification = #selector(AppDelegate.openITerm)
     static let openHyperNotification = #selector(AppDelegate.openHyper)
