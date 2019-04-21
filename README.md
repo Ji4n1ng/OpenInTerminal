@@ -22,7 +22,7 @@ You are asked to set the default terminal to open after first launch.
 
 The selection box will not appear after you have set the default terminal. If you want to reset the default terminal, please enter the following command in the terminal. Then just run the application again.
 
-For **version 0.3.0**:
+For **version 0.3.0 and above**:
 
 ```
 defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
@@ -34,11 +34,35 @@ For **version 0.2.0**:
 defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
 ```
 
+### 4) Open in a new Tab or Window
+
+When you are using `Terminal` and `iTerm`, you can set a default to open a new tab or window. The **default** is to open a new window. 
+
+For `Terminal`:
+
+```
+# Open a new Tab
+defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption "tab"
+# Open a new Window
+defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption "window"
+```
+
+For `iTerm`:
+
+```
+# Open a new Tab
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "tab"
+# Open a new Window
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
+```
+
+For `Hyper` users, it is more recommended to open a new tab.
+
 ## How to install 🖥
 
 > Because updates are frequent, it is recommended to manually download the latest version.
 
-### Manual (latest version: 0.3.0)
+### Manual (latest version: 0.4.0)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
@@ -103,6 +127,10 @@ tccutil reset AppleEvents
 `Terminal` supports all special characters. However `iTerm` and `Hyper` do not support backslash `\` and double quotes `"` in the path.
 
 ## Changes 🗒
+
+**version 0.4.0**
+
+- You can set a default to open a new tab or window when using `Terminal` and `Hyper`.
 
 **version 0.3.0**
 

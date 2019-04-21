@@ -32,11 +32,35 @@ defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
 defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
 ```
 
+### 4) 打开新的标签页或者窗口
+
+当你在使用 `Terminal` 或者 `iTerm`，你可以设置默认打开一个新的标签页或者窗口。**默认**是打开新的窗口。
+
+对于 `Terminal`:
+
+```
+# 打开新的标签页
+defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption "tab"
+# 打开新的窗口
+defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption "window"
+```
+
+对于 `iTerm`:
+
+```
+# 打开新的标签页
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "tab"
+# 打开新的窗口
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
+```
+
+对于 `Hyper` 用户来说，更推荐打开新的标签页。
+
 ## 如何安装 🖥
 
 > 因为更新较为频繁，所以更推荐手动下载最新版本
 
-### 手动安装 (最新版本：0.3.0)
+### 手动安装 (最新版本：0.4.0)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -101,6 +125,10 @@ tccutil reset AppleEvents
 `Terminal` 支持所有特殊字符。然而 `iTerm` 和 `Hyper` 不支持反斜线 `\` 和双引号 `"`。
 
 ## 版本变动 🗒
+
+**version 0.4.0**
+
+- 当使用 `Terminal` 和 `iTerm` 的时候，你可以设置默认打开新的标签页或者窗口。
 
 **version 0.3.0**
 
