@@ -17,9 +17,18 @@ do {
         path = NSHomeDirectory()
     }
 
-    if let terminal = TerminalManager.shared.getTerminal() {
-        try terminal.open(path)
+    guard let terminalType = TerminalManager.shared.getTerminal() else {
+        throw OITLError.cannotGetTerminal
     }
+    
+    let terminal = terminalType.instance()
+    
+    if let newOption = TerminalManager.shared.getNewOption(terminalType) {
+        try terminal.open(path, newOption)
+    } else {
+        try terminal.open(path, .window)
+    }
+    
 
 } catch {
     

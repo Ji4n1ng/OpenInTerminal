@@ -16,27 +16,20 @@ final class HyperApp : Openable {
             throw OITError.wrongUrl
         }
         
-        if newOption == .window {
-            
-            let source = """
-            do shell script "open -a Hyper \(url.path.hyperEscaped)"
-            """
-            
-            let script = NSAppleScript(source: source)!
-            
-            var error: NSDictionary?
-            
-            script.executeAndReturnError(&error)
-            
-            if error != nil {
-                log(error, .error)
-                throw OITError.cannotAccessHyper
-            }
-            
-        } else {
-            // TODO: open a new tab when opening Hyper
-        }
+        let source = """
+        do shell script "open -a Hyper \(url.path.hyperEscaped)"
+        """
         
+        let script = NSAppleScript(source: source)!
+        
+        var error: NSDictionary?
+        
+        script.executeAndReturnError(&error)
+        
+        if error != nil {
+            log(error, .error)
+            throw OITError.cannotAccessHyper
+        }
     }
     
 }

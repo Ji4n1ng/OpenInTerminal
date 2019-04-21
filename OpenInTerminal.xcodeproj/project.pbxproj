@@ -42,7 +42,7 @@
 		9590B695226C6E7400362B93 /* EditorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B694226C6E7400362B93 /* EditorManager.swift */; };
 		9590B697226C6E8600362B93 /* VSCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B696226C6E8600362B93 /* VSCodeApp.swift */; };
 		9590B699226C6E9600362B93 /* AtomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B698226C6E9600362B93 /* AtomApp.swift */; };
-		9590B69B226C6EA200362B93 /* Sublime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69A226C6EA200362B93 /* Sublime.swift */; };
+		9590B69B226C6EA200362B93 /* SublimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69A226C6EA200362B93 /* SublimeApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,7 +125,7 @@
 		9590B694226C6E7400362B93 /* EditorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorManager.swift; sourceTree = "<group>"; };
 		9590B696226C6E8600362B93 /* VSCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodeApp.swift; sourceTree = "<group>"; };
 		9590B698226C6E9600362B93 /* AtomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomApp.swift; sourceTree = "<group>"; };
-		9590B69A226C6EA200362B93 /* Sublime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sublime.swift; sourceTree = "<group>"; };
+		9590B69A226C6EA200362B93 /* SublimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SublimeApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,7 +274,7 @@
 				9590B694226C6E7400362B93 /* EditorManager.swift */,
 				9590B696226C6E8600362B93 /* VSCodeApp.swift */,
 				9590B698226C6E9600362B93 /* AtomApp.swift */,
-				9590B69A226C6EA200362B93 /* Sublime.swift */,
+				9590B69A226C6EA200362B93 /* SublimeApp.swift */,
 			);
 			path = Editors;
 			sourceTree = "<group>";
@@ -448,7 +448,7 @@
 				9590B693226C6DE900362B93 /* EditorType.swift in Sources */,
 				9590B68E226C04E000362B93 /* Defaults.swift in Sources */,
 				4725253322680EF9003C50DF /* OpenableProtocol.swift in Sources */,
-				9590B69B226C6EA200362B93 /* Sublime.swift in Sources */,
+				9590B69B226C6EA200362B93 /* SublimeApp.swift in Sources */,
 				9590B695226C6E7400362B93 /* EditorManager.swift in Sources */,
 				4725254122680F5A003C50DF /* Finder.swift in Sources */,
 				9590B697226C6E8600362B93 /* VSCodeApp.swift in Sources */,

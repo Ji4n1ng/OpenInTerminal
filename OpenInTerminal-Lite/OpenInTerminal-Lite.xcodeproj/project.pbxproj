@@ -11,6 +11,7 @@
 		95163CF22269F104007C006F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CF12269F104007C006F /* main.swift */; };
 		95163CF42269F209007C006F /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95163CF32269F209007C006F /* OpenInTerminalCore.framework */; };
 		95163CF52269F209007C006F /* OpenInTerminalCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95163CF32269F209007C006F /* OpenInTerminalCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9590B69D226C715100362B93 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69C226C715100362B93 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,7 @@
 		95163CEB2269F0C3007C006F /* OpenInTerminal_Lite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenInTerminal_Lite.entitlements; sourceTree = "<group>"; };
 		95163CF12269F104007C006F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95163CF32269F209007C006F /* OpenInTerminalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenInTerminalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9590B69C226C715100362B93 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				95163CF12269F104007C006F /* main.swift */,
+				9590B69C226C715100362B93 /* Error.swift */,
 				95163CE52269F0C3007C006F /* Assets.xcassets */,
 				95163CEA2269F0C3007C006F /* Info.plist */,
 				95163CEB2269F0C3007C006F /* OpenInTerminal_Lite.entitlements */,
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9590B69D226C715100362B93 /* Error.swift in Sources */,
 				95163CF22269F104007C006F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

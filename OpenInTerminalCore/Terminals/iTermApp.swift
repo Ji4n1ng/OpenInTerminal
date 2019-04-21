@@ -23,7 +23,7 @@ final class iTermApp : Openable {
             tell application "iTerm"
                 create window with default profile
                 tell current session of current window
-                    write text "cd \(url.path.itermEscaped); clear"
+                    write text "cd \(url.path.itermEscaped)"
                 end tell
             end tell
             """
