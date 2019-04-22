@@ -89,41 +89,26 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 
 ![change_icon](./screenshots/change_icon-zh.gif)
 
-## 如何构建 🔨
-
-`Mojave build passing ✅`
-
-```
-git clone https://github.com/Ji4n1ng/OpenInTerminal
-cd OpenInTerminal
-xcodebuild
-```
-
 ## 将要做的事 👨‍💻
 
 - `FinderSync Extension` 下拉菜单。 ✅ 由 [Camji55](https://github.com/Camji55) 完成
-- `Preferences` panel which can allow users to set up to open new windows or new tabs.
+- `Preferences` panel which can allow users to set up to open new windows or new tabs. ✅ 
 - 打开 `VSCode` / `Atom` / `Sublime` (这还需要讨论)
 - 支持键盘快捷键
 
-- ~~根据深色模式（Dark  Mode）动态替换暗色图标~~
 
 如果你有好的想法，欢迎去新建一个 `issue` 来讨论。
 
 ## 常见问题 ❓
 
-#### 1. 我不小心点了不授权的按钮
+<details><summary>1. 我不小心点了不授权的按钮</summary><br>
+<p>你可以运行以下命令。这会重置系统设置里的权限。</p>
+<pre><code>tccutil reset AppleEvents</code></pre>
+</details>
 
-你可以运行一下命令。这会重置系统设置里的权限。
-
-```
-tccutil reset AppleEvents
-```
-
-#### 2. 路径里的特殊字符
-
-`Terminal` 支持所有特殊字符。然而 `iTerm` 和 `Hyper` 不支持反斜线 `\` 和双引号 `"`。
-
+<details><summary>2. 路径里的特殊字符</summary><br>
+<p>请不要在路径中使用反斜线 <code>\</code> 和双引号 <code>"</code>。</p>
+</details>
 ## 版本变动 🗒
 
 **version 0.4.0**
@@ -135,19 +120,23 @@ tccutil reset AppleEvents
 - 更名为 `OpenInTerminal-Lite` (`OpenInTerminal` 将会在未来以功能更强大的版本出现)
 - 解决了当打开 Hyper 的时候，特殊字符导致程序崩溃的 bug
 
-**version 0.2.0**
-
-- 增加终端选择框
-- 在打开 iTerm 的时候，取消执行 `clear` 命令
-
-**version 0.1.1**
-
-- 支持 `Hyper`
-- 在打开 iTerm 的时候，优先新建一个 tab 标签页。
-
-**version 0.1.0**
-
-- 第一次 release
+<details><summary>旧版本</summary><br>
+<p><strong>version 0.2.0</strong></p>
+<ul>
+<li>增加终端选择框</li>
+<li>在打开 iTerm 的时候，取消执行 <code>clear</code> 命令</li>
+</ul>
+<p><strong>version 0.1.1</strong></p>
+<ul>
+<li>支持 <code>Hyper</code></li>
+<li>在打开 iTerm 的时候，优先新建一个 tab 标签页。</li>
+</ul>
+<p><strong>version 0.1.0</strong></p>
+<ul>
+<li>第一次 release</li>
+</ul>
+<br>
+</details>
 
 ## 特别感谢 ❤️
 

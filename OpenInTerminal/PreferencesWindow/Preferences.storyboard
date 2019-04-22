@@ -255,7 +255,7 @@
         <!--Advanced-->
         <scene sceneID="pTk-2Y-BtO">
             <objects>
-                <viewController title="Advanced" id="nyi-fa-RMp" sceneMemberID="viewController">
+                <viewController title="Advanced" id="nyi-fa-RMp" customClass="AdvancedPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="xWG-gT-gc1">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

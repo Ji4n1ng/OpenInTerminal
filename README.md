@@ -91,40 +91,27 @@ I provided several icons along with the app in the [release](https://github.com/
 
 ![change_icon](./screenshots/change_icon.gif)
 
-## How to build 🔨
-
-`Mojave build passing ✅`
-
-```
-git clone https://github.com/Ji4n1ng/OpenInTerminal
-cd OpenInTerminal
-xcodebuild
-```
-
 ## Todo 👨‍💻
 
 - Drop down menu in `FinderSync Extension`  ✅ By [Camji55](https://github.com/Camji55)
-- `Preferences` panel which can allow users to set up to open new windows or new tabs.
+- `Preferences` panel which can allow users to set up to open new windows or new tabs. ✅
 - Open in `VSCode` / `Atom` / `Sublime`? (This needs discussion)
 - Supporting keyboard shortcuts
 
-- ~~Dynamically change icon depending on Dark Mode.~~
 
 If you have a good idea, welcome to open a new `issue` .
 
 ## FAQ ❓
 
-#### 1. I accidentally clicked on the `Don't Allow`  button.
+<details><summary>1. I accidentally clicked on the <code>Don't Allow</code>  button.</summary><br>
+<p>You can run the following command in the terminal. This will reset the permissions in the System Preferences.</p>
+<pre><code>tccutil reset AppleEvents
+</code></pre>
+</details>
+<details><summary>2. Special characters in the <code>path</code>.</summary><br>
+<p>Please do not use backslash <code>\</code> and double quotes <code>"</code>   in the path</p>
+</details>
 
-You can run the following command in the terminal. This will reset the permissions in the System Preferences.
-
-```
-tccutil reset AppleEvents
-```
-
-#### 2. Special character in the `path`.
-
-`Terminal` supports all special characters. However `iTerm` and `Hyper` do not support backslash `\` and double quotes `"` in the path.
 
 ## Changes 🗒
 
@@ -137,20 +124,23 @@ tccutil reset AppleEvents
 - Change name to `OpenInTerminal-Lite` (`OpenInTerminal` will come as a more powerful version in the future.)
 - Fix a bug that some special characters in the path would crash the program when opening Hyper.
 
-**version 0.2.0**
-
-- Add terminal selector
-- Cancel running `clear` command when opening iTerm
-
-**version 0.1.1**
-
-- Support `Hyper`
-- Give priority to creating a new tab when opening iTerm
-
-**version 0.1.0**
-
-- First release
-
+<details><summary>old version</summary><br>
+<p><strong>version 0.2.0</strong></p>
+<ul>
+<li>Add terminal selector</li>
+<li>Cancel running <code>clear</code> command when opening iTerm</li>
+</ul>
+<p><strong>version 0.1.1</strong></p>
+<ul>
+<li>Support <code>Hyper</code></li>
+<li>Give priority to creating a new tab when opening iTerm</li>
+</ul>
+<p><strong>version 0.1.0</strong></p>
+<ul>
+<li>First release</li>
+</ul>
+<br>
+</details>
 ## Special Thanks to ❤️
 
 ### Contributors
