@@ -109,6 +109,7 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 <details><summary>2. 路径里的特殊字符</summary><br>
 <p>请不要在路径中使用反斜线 <code>\</code> 和双引号 <code>"</code>。</p>
 </details>
+
 ## 版本变动 🗒
 
 **version 0.4.0**
