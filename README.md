@@ -99,7 +99,7 @@ I provided several icons along with the app in the [release](https://github.com/
 - Supporting keyboard shortcuts
 
 
-If you have a good idea, feel welcome to open a new `issue` .
+If you have a good idea, feel welcome to open a new [issue](https://github.com/Ji4n1ng/OpenInTerminal/issues/new/choose).
 
 ## FAQ ❓
 
