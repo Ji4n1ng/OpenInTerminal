@@ -37,6 +37,9 @@ extension AppDelegate {
     
     func addObserver() {
         OpenNotifier.addObserver(observer: self,
+                                 selector: #selector(openDefaultTerminal),
+                                 notification: .openDefaultTerminal)
+        OpenNotifier.addObserver(observer: self,
                                  selector: #selector(openTerminal),
                                  notification: .openTerminal)
         OpenNotifier.addObserver(observer: self,
@@ -48,12 +51,21 @@ extension AppDelegate {
     }
     
     func removeObserver() {
+        OpenNotifier.removeObserver(observer: self, notification: .openDefaultTerminal)
         OpenNotifier.removeObserver(observer: self, notification: .openTerminal)
         OpenNotifier.removeObserver(observer: self, notification: .openITerm)
         OpenNotifier.removeObserver(observer: self, notification: .openHyper)
     }
     
     // MARK: Notification Actions
+    
+    @objc func openDefaultTerminal() {
+        guard let terminalType = TerminalManager.shared.getDefaultTerminal() else {
+            return
+        }
+        
+        TerminalManager.shared.openTerminal(terminalType)
+    }
     
     @objc func openTerminal() {
         TerminalManager.shared.openTerminal(.terminal)
@@ -79,7 +91,7 @@ extension AppDelegate {
         icon.isTemplate = true // Support Dark Mode
         item.button?.image = icon
         
-        let statusBarMenu = NSMenu()
+        let statusBarMe<#TerminalType#>nu = NSMenu()
         
         let preferencesItem = NSMenuItem(title: "Preferences...",
                                          action: #selector(showPreferences(_:)),

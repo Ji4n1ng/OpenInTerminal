@@ -14,14 +14,14 @@ public class TerminalManager {
     
     // MARK: public methods
     
-    /// get terminal from UserDefaults or AlertBox
+    /// get default terminal from UserDefaults or AlertBox
     ///
     /// First get the default terminal.
     /// If there is no default function, then the user will pick a terminal in AlertBox.
     /// Used in OpenInTerminal-Lite
-    public func getTerminal() -> TerminalType? {
+    public func getDefaultTerminal() -> TerminalType? {
         
-        if let defaultTerminal = getDefaultTerminal() {
+        if let defaultTerminal = getUserDefaultTerminal() {
             return defaultTerminal
         }
         
@@ -109,7 +109,7 @@ public class TerminalManager {
     
     // MARK: private methods
     
-    private func getDefaultTerminal() -> TerminalType? {
+    private func getUserDefaultTerminal() -> TerminalType? {
         return Defaults[.defaultTerminal]
             .map(TerminalType.init(rawValue: )) ?? nil
     }

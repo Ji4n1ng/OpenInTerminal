@@ -14,6 +14,7 @@ public class OpenNotifier: Notifier {
 //    public static let shared: OpenNotifier = OpenNotifier()
 
     public enum Notification: String {
+        case openDefaultTerminal
         case openTerminal
         case openITerm
         case openHyper
