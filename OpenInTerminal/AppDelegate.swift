@@ -91,7 +91,7 @@ extension AppDelegate {
         icon.isTemplate = true // Support Dark Mode
         item.button?.image = icon
         
-        let statusBarMe<#TerminalType#>nu = NSMenu()
+        let statusBarMenu = NSMenu()
         
         let preferencesItem = NSMenuItem(title: "Preferences...",
                                          action: #selector(showPreferences(_:)),
