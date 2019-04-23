@@ -1,6 +1,10 @@
-# OpenInTerminal
-
-✨ Finder Toolbar app for macOS to open the current directory in `Terminal`, [`iTerm`](https://www.iterm2.com/) or [`Hyper`](https://github.com/zeit/hyper). 
+<p align="center">
+  <img width="100%" src="https://user-images.githubusercontent.com/2769158/56519814-d8e38580-64f7-11e9-9f7b-802ba6ffd376.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.0"><img src="https://img.shields.io/badge/Version-0.4.0-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
+  <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
+  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
+</p>
 
 [中文说明](./README-zh.md)
 
