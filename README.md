@@ -71,12 +71,12 @@ For `Hyper` users, it is more recommended to open a new tab.
 
 ![toolbar](./screenshots/drag_to_toolbar.gif)
 
-### Homebrew (current version 0.2.0)
+### Homebrew (current version 0.4.0)
 
 1. Run the following command
 
    ```
-   brew cask install openinterminal
+   brew cask install openinterminal-lite
    ```
 
 2. In `/Applications` folder, hold down the `Cmd` key and drag the app into Finder Toolbar.

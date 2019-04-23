@@ -69,12 +69,12 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 
 ![toolbar](./screenshots/drag_to_toolbar-zh.gif)
 
-### Homebrew (最新版本：0.2.0)
+### Homebrew (最新版本：0.4.0)
 
 1. 运行以下命令
 
    ```
-   brew cask install openinterminal
+   brew cask install openinterminal-lite
    ```
 
 2. 在 `应用程序` 文件夹中，按住 `Cmd` 键，然后将应用拖到访达工具栏中。
