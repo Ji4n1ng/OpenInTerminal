@@ -1,6 +1,10 @@
- # OpenInTerminal
-
-一个可以在终端（[`iTerm`](https://www.iterm2.com/) 或 [`Hyper`](https://github.com/zeit/hyper)）中打开当前目录的访达工具栏应用程序。
+<p align="center">
+  <img width="100%" src="./screenshots/header-zh.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.1"><img src="https://img.shields.io/badge/Version-0.4.1-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
+  <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
+  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
+</p>
 
 ## 如何使用 🚀
 
@@ -26,11 +30,15 @@
 defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
 ```
 
-**版本 0.2.0**：
+<details><summary><strong>版本 0.2.0</strong>:</summary><br>
+<code>defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier</code>
+<br>
+</details>
 
-```
-defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
-```
+<details><summary>设置 <strong>Alacritty</strong> 为默认终端:</summary><br>
+<code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier io.alacritty </code>
+<br>
+</details>
 
 ### 4) 打开新的标签页或者窗口
 
@@ -56,11 +64,13 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 
 对于 `Hyper` 用户来说，更推荐打开新的标签页。
 
+对于 `Alacritty` 用户来说，目前只支持打开新的窗口。
+
 ## 如何安装 🖥
 
 > 因为更新较为频繁，所以更推荐手动下载最新版本
 
-### 手动安装 (最新版本：0.4.0)
+### 手动安装 (最新版本：0.4.1)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -111,6 +121,10 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 </details>
 
 ## 版本变动 🗒
+
+**version 0.4.1**
+
+- 支持 `Alacritty`
 
 **version 0.4.0**
 
