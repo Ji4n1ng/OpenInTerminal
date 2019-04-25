@@ -93,6 +93,8 @@ public class FinderManager {
             return self.applicationExists(TerminalType.iTerm.name)
         case .hyper:
             return self.applicationExists(TerminalType.hyper.name)
+        case .alacritty:
+            return self.applicationExists(TerminalType.alacritty.name)
         }
     }
 }

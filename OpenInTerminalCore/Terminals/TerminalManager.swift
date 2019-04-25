@@ -43,6 +43,8 @@ public class TerminalManager {
             option = Defaults[.iTermNewOption]
         case .hyper:
             option = Defaults[.hyperNewOption]
+        case .alacritty:
+            option = Defaults[.alacrittyNewOption]
         }
         
         return option.map(NewOptionType.init(rawValue: )) ?? nil
@@ -57,6 +59,8 @@ public class TerminalManager {
             Defaults[.iTermNewOption] = newOption.rawValue
         case .hyper:
             Defaults[.hyperNewOption] = newOption.rawValue
+        case .alacritty:
+            Defaults[.alacrittyNewOption] = newOption.rawValue
         }
     }
     
@@ -69,6 +73,8 @@ public class TerminalManager {
             visible = Defaults[.iTermVisible]
         case .hyper:
             visible = Defaults[.hyperVisible]
+        case .alacritty:
+            visible = Defaults[.alacrittyVisible]
         }
         
         return visible.map(VisibleType.init(rawValue: )) ?? nil
@@ -83,6 +89,8 @@ public class TerminalManager {
             Defaults[.iTermVisible] = visible.rawValue
         case .hyper:
             Defaults[.hyperVisible] = visible.rawValue
+        case .alacritty:
+            Defaults[.alacrittyVisible] = visible.rawValue
         }
     }
     
