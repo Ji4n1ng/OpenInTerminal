@@ -14,6 +14,7 @@ enum OITError: Error {
     case cannotAccessTerminal
     case cannotAccessIterm
     case cannotAccessHyper
+    case cannotAccessAlacritty
     case wrongUrl
     
 }
@@ -32,6 +33,8 @@ extension OITError : CustomStringConvertible {
             return "Cannot access iTerm, please check permissions."
         case .cannotAccessHyper:
             return "Cannot access Hyper, please check permissions."
+        case .cannotAccessAlacritty:
+            return "Cannot access Alacritty, please check permissions."
         case .wrongUrl:
             return "Oops, got a wrong url"
         }

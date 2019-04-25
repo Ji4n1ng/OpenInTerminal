@@ -28,6 +28,7 @@
 		4725258A226812AB003C50DF /* OpenInTerminalFinderExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4725254A22680FEB003C50DF /* OpenInTerminalFinderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4725259022681424003C50DF /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
 		47A9A93C22697BFA00E92B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A9A92122697A2200E92B54 /* Main.storyboard */; };
+		950A4E692271EEC8002A9548 /* AlacrittyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950A4E682271EEC8002A9548 /* AlacrittyApp.swift */; };
 		95163CD22269979E007C006F /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD12269979E007C006F /* Notifier.swift */; };
 		95163CD4226998ED007C006F /* OpenNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD3226998ED007C006F /* OpenNotifier.swift */; };
 		95163CD52269A09D007C006F /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD12269979E007C006F /* Notifier.swift */; };
@@ -117,6 +118,7 @@
 		4725257E2268112F003C50DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4725257F2268112F003C50DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47A9A92222697A2200E92B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		950A4E682271EEC8002A9548 /* AlacrittyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlacrittyApp.swift; sourceTree = "<group>"; };
 		95163CD12269979E007C006F /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		95163CD3226998ED007C006F /* OpenNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNotifier.swift; sourceTree = "<group>"; };
 		9521EDC9226B3F93008445D1 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				4725253822680F4B003C50DF /* TerminalApp.swift */,
 				4725253A22680F4B003C50DF /* iTermApp.swift */,
 				4725253922680F4B003C50DF /* HyperApp.swift */,
+				950A4E682271EEC8002A9548 /* AlacrittyApp.swift */,
 			);
 			path = Terminals;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				9590B695226C6E7400362B93 /* EditorManager.swift in Sources */,
 				4725254122680F5A003C50DF /* Finder.swift in Sources */,
 				9590B697226C6E8600362B93 /* VSCodeApp.swift in Sources */,
+				950A4E692271EEC8002A9548 /* AlacrittyApp.swift in Sources */,
 				9590B699226C6E9600362B93 /* AtomApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
