@@ -1,6 +1,6 @@
 <p align="center">
-  <img width="100%" src="https://user-images.githubusercontent.com/2769158/56519814-d8e38580-64f7-11e9-9f7b-802ba6ffd376.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.0"><img src="https://img.shields.io/badge/Version-0.4.0-blue.svg?longCache=true&style=for-the-badge"></a>
+  <img width="100%" src="./screenshots/header.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.1"><img src="https://img.shields.io/badge/Version-0.4.1-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -32,11 +32,15 @@ For **version 0.3.0 and above**:
 defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
 ```
 
-For **version 0.2.0**:
+<details><summary>For <strong>version 0.2.0</strong>:</summary><br>
+<code>defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier</code>
+<br>
+</details>
 
-```
-defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier
-```
+<details><summary>Set <strong>Alacritty</strong> as the default terminal:</summary><br>
+<code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier io.alacritty </code>
+<br>
+</details>
 
 ### 4) Open in a new Tab or Window
 
@@ -62,11 +66,13 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 
 For `Hyper` users, it is more recommended to open a new tab.
 
+For `Alacritty` users, it is only supported to open a new window now.
+
 ## How to install 🖥
 
 > Because updates are frequent, it is recommended to manually download the latest version.
 
-### Manual (latest version: 0.4.0)
+### Manual (latest version: 0.4.1)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
@@ -75,12 +81,12 @@ For `Hyper` users, it is more recommended to open a new tab.
 
 ![toolbar](./screenshots/drag_to_toolbar.gif)
 
-### Homebrew (current version 0.2.0)
+### Homebrew (current version 0.4.0)
 
 1. Run the following command
 
    ```
-   brew cask install openinterminal
+   brew cask install openinterminal-lite
    ```
 
 2. In `/Applications` folder, hold down the `Cmd` key and drag the app into Finder Toolbar.
@@ -112,11 +118,16 @@ If you have a good idea, welcome to open a new `issue` .
 <pre><code>tccutil reset AppleEvents
 </code></pre>
 </details>
+
 <details><summary>2. Special characters in the <code>path</code>.</summary><br>
 <p>Please do not use backslash <code>\</code> and double quotes <code>"</code>   in the path</p>
 </details>
 
 ## Changes 🗒
+
+**version 0.4.1**
+
+- Support `Alacritty`
 
 **version 0.4.0**
 
