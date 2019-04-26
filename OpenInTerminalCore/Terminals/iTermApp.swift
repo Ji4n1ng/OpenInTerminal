@@ -8,9 +8,9 @@
 
 import Foundation
 
-final class iTermApp : Openable {
+final class iTermApp: Terminal {
     
-    func open(_ path: String, _ newOption: NewOptionType) throws {
+    func open(_ path: String, _ newOption: NewOptionType, _ clear: ClearOptionType) throws {
         
         guard let url = URL(string: path) else {
             throw OITError.wrongUrl
@@ -18,12 +18,14 @@ final class iTermApp : Openable {
         
         var source: String
         
+        let clearCommand = clear == .clear ? ";clear" : ""
+        
         if newOption == .window {
             source = """
             tell application "iTerm"
                 create window with default profile
                 tell current session of current window
-                    write text "cd \(url.path.itermEscaped)"
+                    write text "cd \(url.path.itermEscaped)\(clearCommand)"
                 end tell
             end tell
             """
@@ -49,7 +51,7 @@ final class iTermApp : Openable {
                     end if
             
                     tell current session
-                        write text "cd \(url.path.itermEscaped)"
+                        write text "cd \(url.path.itermEscaped)\(clearCommand)"
                     end tell
                 end tell
             end tell

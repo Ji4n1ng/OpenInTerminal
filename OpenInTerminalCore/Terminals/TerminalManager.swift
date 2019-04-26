@@ -16,8 +16,7 @@ public class TerminalManager {
     
     /// get default terminal from UserDefaults or AlertBox
     ///
-    /// First get the default terminal.
-    /// If there is no default function, then the user will pick a terminal in AlertBox.
+    /// If there is no default terminal, then the user will pick a terminal in AlertBox.
     /// Used in OpenInTerminal-Lite
     public func getDefaultTerminal() -> TerminalType? {
         
@@ -64,6 +63,32 @@ public class TerminalManager {
         }
     }
     
+    public func getClearOption(_ terminal: TerminalType) -> ClearOptionType? {
+        var option: String?
+        switch terminal {
+        case .terminal:
+            option = Defaults[.terminalClear]
+        case .iTerm:
+            option = Defaults[.iTermClear]
+        case .hyper, .alacritty:
+            return .clear
+        }
+        
+        return option.map(ClearOptionType.init(rawValue: )) ?? nil
+    }
+    
+    public func setClearOption(_ terminal: TerminalType, _ clearOption: ClearOptionType) {
+        
+        switch terminal {
+        case .terminal:
+            Defaults[.terminalClear] = clearOption.rawValue
+        case .iTerm:
+            Defaults[.iTermClear] = clearOption.rawValue
+        case .hyper, .alacritty:
+            return
+        }
+    }
+    
     public func getVisible(_ terminal: TerminalType) -> VisibleType? {
         var visible: String?
         switch terminal {
@@ -104,12 +129,9 @@ public class TerminalManager {
             
             let terminal = terminalType.instance()
             
-            if let newOption = TerminalManager.shared.getNewOption(terminalType) {
-                try terminal.open(path, newOption)
-            } else {
-                try terminal.open(path, .window)
-            }
-            
+            let newOption = TerminalManager.shared.getNewOption(terminalType) ?? .window
+            let clearOption = TerminalManager.shared.getClearOption(terminalType) ?? .noClear
+            try terminal.open(path, newOption, clearOption)
         } catch {
             log(error, .error)
         }

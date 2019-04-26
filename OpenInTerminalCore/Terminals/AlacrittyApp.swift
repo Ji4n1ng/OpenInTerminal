@@ -8,9 +8,9 @@
 
 import Foundation
 
-final class AlacrittyApp : Openable {
+final class AlacrittyApp: Terminal {
     
-    func open(_ path: String, _ newOption: NewOptionType) throws {
+    func open(_ path: String, _ newOption: NewOptionType, _ clear: ClearOptionType) throws {
         
         guard let url = URL(string: path) else {
             throw OITError.wrongUrl

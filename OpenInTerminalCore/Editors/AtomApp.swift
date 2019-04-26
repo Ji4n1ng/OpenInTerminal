@@ -8,10 +8,28 @@
 
 import Foundation
 
-final class AtomApp : Openable {
+final class AtomApp: Editor {
     
-    func open(_ path: String, _ newOption: NewOptionType) throws {
+    func open(_ path: String) throws {
         
+        guard let url = URL(string: path) else {
+            throw OITError.wrongUrl
+        }
+        
+        let source = """
+        do shell script "open -a Atom \(url.path.editorEscaped)"
+        """
+        
+        let script = NSAppleScript(source: source)!
+        
+        var error: NSDictionary?
+        
+        script.executeAndReturnError(&error)
+        
+        if error != nil {
+            log(error, .error)
+            throw OITError.cannotAccessAtom
+        }
     }
     
 }

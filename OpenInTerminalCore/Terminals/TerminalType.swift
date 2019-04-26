@@ -28,7 +28,7 @@ public enum TerminalType: String {
         }
     }
     
-    public func instance() -> Openable {
+    public func instance() -> Terminal {
         switch self {
         case .terminal:
             return TerminalApp()

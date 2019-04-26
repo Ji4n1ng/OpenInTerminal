@@ -84,17 +84,18 @@ public class FinderManager {
         }
     }
     
-    /// Determine if the user has installed a terminal
+    /// Determine if the user has installed the terminal
     public func terminalIsInstalled(_ terminalType: TerminalType) -> Bool {
         switch terminalType {
         case .terminal:
             return true
-        case .iTerm:
-            return self.applicationExists(TerminalType.iTerm.name)
-        case .hyper:
-            return self.applicationExists(TerminalType.hyper.name)
-        case .alacritty:
-            return self.applicationExists(TerminalType.alacritty.name)
+        case .iTerm, .hyper, .alacritty:
+            return self.applicationExists(terminalType.name)
         }
+    }
+    
+    /// Determine if the user has installed the editor
+    public func editorIsInstalled(_ editorType: EditorType) -> Bool {
+        return self.applicationExists(editorType.name)
     }
 }

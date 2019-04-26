@@ -10,7 +10,7 @@
 		4725251522680E87003C50DF /* OpenInTerminalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4725251322680E87003C50DF /* OpenInTerminalCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4725252F22680EE0003C50DF /* TerminalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725252E22680EE0003C50DF /* TerminalManager.swift */; };
 		4725253122680EF3003C50DF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725253022680EF3003C50DF /* Config.swift */; };
-		4725253322680EF9003C50DF /* OpenableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725253222680EF8003C50DF /* OpenableProtocol.swift */; };
+		4725253322680EF9003C50DF /* TerminalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725253222680EF8003C50DF /* TerminalProtocol.swift */; };
 		4725253522680EFD003C50DF /* FinderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725253422680EFD003C50DF /* FinderManager.swift */; };
 		4725253B22680F4B003C50DF /* TerminalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725253822680F4B003C50DF /* TerminalApp.swift */; };
 		4725253C22680F4B003C50DF /* HyperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725253922680F4B003C50DF /* HyperApp.swift */; };
@@ -35,8 +35,8 @@
 		95163CD62269A09F007C006F /* OpenNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD3226998ED007C006F /* OpenNotifier.swift */; };
 		9521EDCA226B3F93008445D1 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9521EDC9226B3F93008445D1 /* Preferences.storyboard */; };
 		9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCB226B475E008445D1 /* PreferencesViewController.swift */; };
-		9521EDCE226B47A5008445D1 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCD226B47A5008445D1 /* PreferencesWindowController.swift */; };
 		9521EDD0226B4BE6008445D1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCF226B4BE6008445D1 /* Config.swift */; };
+		954EFA932273643C001E101E /* EditorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EFA922273643C001E101E /* EditorProtocol.swift */; };
 		9584EDF2226DEF79003C7EE8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		9590B68E226C04E000362B93 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B68D226C04E000362B93 /* Defaults.swift */; };
 		9590B691226C6DB000362B93 /* TerminalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B690226C6DB000362B93 /* TerminalType.swift */; };
@@ -46,8 +46,7 @@
 		9590B699226C6E9600362B93 /* AtomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B698226C6E9600362B93 /* AtomApp.swift */; };
 		9590B69B226C6EA200362B93 /* SublimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69A226C6EA200362B93 /* SublimeApp.swift */; };
 		9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */; };
-		9590B6A1226CBC1D00362B93 /* TerminalPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B6A0226CBC1D00362B93 /* TerminalPreferencesViewController.swift */; };
-		9590B6A3226CBC3E00362B93 /* AdvancedPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B6A2226CBC3E00362B93 /* AdvancedPreferencesViewController.swift */; };
+		9590B6A1226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +97,7 @@
 		4725251422680E87003C50DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4725252E22680EE0003C50DF /* TerminalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalManager.swift; sourceTree = "<group>"; };
 		4725253022680EF3003C50DF /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		4725253222680EF8003C50DF /* OpenableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenableProtocol.swift; sourceTree = "<group>"; };
+		4725253222680EF8003C50DF /* TerminalProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalProtocol.swift; sourceTree = "<group>"; };
 		4725253422680EFD003C50DF /* FinderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderManager.swift; sourceTree = "<group>"; };
 		4725253822680F4B003C50DF /* TerminalApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalApp.swift; sourceTree = "<group>"; };
 		4725253922680F4B003C50DF /* HyperApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyperApp.swift; sourceTree = "<group>"; };
@@ -123,8 +122,8 @@
 		95163CD3226998ED007C006F /* OpenNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNotifier.swift; sourceTree = "<group>"; };
 		9521EDC9226B3F93008445D1 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		9521EDCB226B475E008445D1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		9521EDCD226B47A5008445D1 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		9521EDCF226B4BE6008445D1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		954EFA922273643C001E101E /* EditorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorProtocol.swift; sourceTree = "<group>"; };
 		9584EDEF226DEEC7003C7EE8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		9584EDF3226DEF79003C7EE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9584EDF5226DEFC0003C7EE8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -136,8 +135,7 @@
 		9590B698226C6E9600362B93 /* AtomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomApp.swift; sourceTree = "<group>"; };
 		9590B69A226C6EA200362B93 /* SublimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SublimeApp.swift; sourceTree = "<group>"; };
 		9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
-		9590B6A0226CBC1D00362B93 /* TerminalPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalPreferencesViewController.swift; sourceTree = "<group>"; };
-		9590B6A2226CBC3E00362B93 /* AdvancedPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPreferencesViewController.swift; sourceTree = "<group>"; };
+		9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderExtensionPreferencesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +168,6 @@
 		4725251222680E87003C50DF /* OpenInTerminalCore */ = {
 			isa = PBXGroup;
 			children = (
-				4725253222680EF8003C50DF /* OpenableProtocol.swift */,
 				4725253422680EFD003C50DF /* FinderManager.swift */,
 				4725253022680EF3003C50DF /* Config.swift */,
 				9590B68D226C04E000362B93 /* Defaults.swift */,
@@ -197,6 +194,7 @@
 		4725253722680F13003C50DF /* Terminals */ = {
 			isa = PBXGroup;
 			children = (
+				4725253222680EF8003C50DF /* TerminalProtocol.swift */,
 				9590B690226C6DB000362B93 /* TerminalType.swift */,
 				4725252E22680EE0003C50DF /* TerminalManager.swift */,
 				4725253822680F4B003C50DF /* TerminalApp.swift */,
@@ -246,10 +244,8 @@
 			children = (
 				9521EDC9226B3F93008445D1 /* Preferences.storyboard */,
 				9521EDCB226B475E008445D1 /* PreferencesViewController.swift */,
-				9521EDCD226B47A5008445D1 /* PreferencesWindowController.swift */,
 				9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */,
-				9590B6A0226CBC1D00362B93 /* TerminalPreferencesViewController.swift */,
-				9590B6A2226CBC3E00362B93 /* AdvancedPreferencesViewController.swift */,
+				9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */,
 			);
 			path = PreferencesWindow;
 			sourceTree = "<group>";
@@ -287,6 +283,7 @@
 		9590B68F226C6D5C00362B93 /* Editors */ = {
 			isa = PBXGroup;
 			children = (
+				954EFA922273643C001E101E /* EditorProtocol.swift */,
 				9590B692226C6DE900362B93 /* EditorType.swift */,
 				9590B694226C6E7400362B93 /* EditorManager.swift */,
 				9590B696226C6E8600362B93 /* VSCodeApp.swift */,
@@ -454,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				954EFA932273643C001E101E /* EditorProtocol.swift in Sources */,
 				4725252F22680EE0003C50DF /* TerminalManager.swift in Sources */,
 				4725253B22680F4B003C50DF /* TerminalApp.swift in Sources */,
 				4725254422680F7C003C50DF /* Log.swift in Sources */,
@@ -466,7 +464,7 @@
 				4725253C22680F4B003C50DF /* HyperApp.swift in Sources */,
 				9590B693226C6DE900362B93 /* EditorType.swift in Sources */,
 				9590B68E226C04E000362B93 /* Defaults.swift in Sources */,
-				4725253322680EF9003C50DF /* OpenableProtocol.swift in Sources */,
+				4725253322680EF9003C50DF /* TerminalProtocol.swift in Sources */,
 				9590B69B226C6EA200362B93 /* SublimeApp.swift in Sources */,
 				9590B695226C6E7400362B93 /* EditorManager.swift in Sources */,
 				4725254122680F5A003C50DF /* Finder.swift in Sources */,
@@ -492,13 +490,11 @@
 			files = (
 				9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */,
 				4725256222681098003C50DF /* AppDelegate.swift in Sources */,
-				9590B6A3226CBC3E00362B93 /* AdvancedPreferencesViewController.swift in Sources */,
 				95163CD22269979E007C006F /* Notifier.swift in Sources */,
-				9521EDCE226B47A5008445D1 /* PreferencesWindowController.swift in Sources */,
 				95163CD4226998ED007C006F /* OpenNotifier.swift in Sources */,
 				9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */,
 				9521EDD0226B4BE6008445D1 /* Config.swift in Sources */,
-				9590B6A1226CBC1D00362B93 /* TerminalPreferencesViewController.swift in Sources */,
+				9590B6A1226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

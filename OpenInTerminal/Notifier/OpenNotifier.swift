@@ -18,6 +18,12 @@ public class OpenNotifier: Notifier {
         case openTerminal
         case openITerm
         case openHyper
+        case openAlacritty
+        
+        case openDefaultEditor
+        case openVSCode
+        case openAtom
+        case openSublime
     }
     
     

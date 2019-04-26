@@ -9,9 +9,9 @@
 import Foundation
 import ScriptingBridge
 
-final class TerminalApp : Openable {
+final class TerminalApp: Terminal {
 
-    func open(_ path: String, _ newOption: NewOptionType) throws {
+    func open(_ path: String, _ newOption: NewOptionType, _ clear: ClearOptionType) throws {
         
         guard let url = URL(string: path) else {
             throw OITError.wrongUrl
@@ -31,16 +31,18 @@ final class TerminalApp : Openable {
             
         } else {
             
+            let clearCommand = clear == .clear ? ";clear" : ""
+            
             let source = """
             if not application "Terminal" is running then
                 tell application "Terminal"
-                    do script "cd \(url.path.terminalEscaped)"
+                    do script "cd \(url.path.terminalEscaped)\(clearCommand)"
                     activate
                 end tell
             else
                 tell application "Terminal"
                     if not (exists window 1) then
-                        do script "cd \(url.path.terminalEscaped)"
+                        do script "cd \(url.path.terminalEscaped)\(clearCommand)"
                         activate
                     else
                         activate
@@ -48,7 +50,7 @@ final class TerminalApp : Openable {
                         repeat while contents of selected tab of window 1 starts with linefeed
                             delay 0.01
                         end repeat
-                        do script "cd \(url.path.terminalEscaped)" in window 1
+                        do script "cd \(url.path.terminalEscaped)\(clearCommand)" in window 1
                     end if
                 end tell
             end if

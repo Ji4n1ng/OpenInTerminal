@@ -25,8 +25,14 @@ extension DefaultsKeys {
     
     // The values corresponding to the following keys are String.
     
+    // value example: FirstUsage._true.rawValue
+    static let firstUsage = DefaultsKey<String>("OIT_FirstUsage")
+    
     // value example: TerminalType.terminal.rawValue
     static let defaultTerminal = DefaultsKey<String>("OIT_TerminalBundleIdentifier")
+    
+    // value example: TerminalType.terminal.rawValue
+    static let defaultEditor = DefaultsKey<String>("OIT_EditorBundleIdentifier")
     
     // value example: VisibleType.visble.rawValue
     static let terminalVisible = DefaultsKey<String>("OIT_TerminalVisible")
@@ -42,6 +48,10 @@ extension DefaultsKeys {
     static let iTermNewOption = DefaultsKey<String>("OIT_iTermNewOption")
     static let hyperNewOption = DefaultsKey<String>("OIT_HyperNewOption")
     static let alacrittyNewOption = DefaultsKey<String>("OIT_AlacrittyNewOption")
+    
+    // value example: ClearType.clear.rawValue
+    static let terminalClear = DefaultsKey<String>("OIT_TerminalClear")
+    static let iTermClear = DefaultsKey<String>("OIT_iTermClear")
     
     static let copyPathToClipboardVisible = DefaultsKey<String>("OIT_CopyPathToClipboardVisible")
     
