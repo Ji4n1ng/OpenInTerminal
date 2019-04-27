@@ -11,7 +11,7 @@ import OpenInTerminalCore
 
 do {
     
-    guard let terminalType = TerminalManager.shared.getDefaultTerminal() else {
+    guard let terminalType = TerminalManager.shared.getOrPickDefaultTerminal() else {
         throw OITLError.cannotGetTerminal
     }
     

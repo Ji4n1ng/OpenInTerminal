@@ -9,8 +9,8 @@
 import Cocoa
 import Foundation
 
-struct Config {
-    
+struct Constant {
+    static let none = "None"
 }
 
 extension NSImage {

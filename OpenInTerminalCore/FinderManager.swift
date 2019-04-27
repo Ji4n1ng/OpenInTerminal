@@ -16,7 +16,7 @@ public class FinderManager {
     /// Get full path to front Finder window or selected file
     public func getFullPathToFrontFinderWindowOrSelectedFile() throws -> String {
         
-        let finder = SBApplication(bundleIdentifier: Config.Finder.id)! as FinderApplication
+        let finder = SBApplication(bundleIdentifier: Constants.Finder.id)! as FinderApplication
         
         var target: FinderItem
         
@@ -92,12 +92,12 @@ public class FinderManager {
         case .terminal:
             return true
         case .iTerm, .hyper, .alacritty:
-            return self.applicationExists(terminalType.name)
+            return self.applicationExists(terminalType.rawValue)
         }
     }
     
     /// Determine if the user has installed the editor
     public func editorIsInstalled(_ editorType: EditorType) -> Bool {
-        return self.applicationExists(editorType.name)
+        return self.applicationExists(editorType.fullName)
     }
 }

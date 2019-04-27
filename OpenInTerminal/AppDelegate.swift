@@ -137,7 +137,7 @@ extension AppDelegate {
     // MARK: Notification Actions
     
     @objc func openDefaultTerminal() {
-        guard let terminalType = TerminalManager.shared.getDefaultTerminal() else {
+        guard let terminalType = TerminalManager.shared.getOrPickDefaultTerminal() else {
             return
         }
         
@@ -161,7 +161,7 @@ extension AppDelegate {
     }
     
     @objc func openDefaultEditor() {
-        guard let editorType = EditorManager.shared.getDefaultEditor() else {
+        guard let editorType = EditorManager.shared.getOrPickDefaultEditor() else {
             return
         }
         

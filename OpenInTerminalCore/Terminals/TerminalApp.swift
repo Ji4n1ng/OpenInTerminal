@@ -19,7 +19,7 @@ final class TerminalApp: Terminal {
         
         if newOption == .window {
             
-            let terminal = SBApplication(bundleIdentifier: TerminalType.terminal.rawValue)! as TerminalApplication
+            let terminal = SBApplication(bundleIdentifier: TerminalType.terminal.bundleId)! as TerminalApplication
             
             guard let open = terminal.open else {
                 throw OITError.cannotAccessTerminal

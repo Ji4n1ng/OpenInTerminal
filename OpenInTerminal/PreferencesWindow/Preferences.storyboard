@@ -84,29 +84,27 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R8D-f0-J22">
-                                            <rect key="frame" x="138" y="15" width="156" height="25"/>
-                                            <popUpButtonCell key="cell" type="push" title="VS Code" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Lxu-R7-gbi" id="sHo-F2-jzK">
-                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="menu"/>
-                                                <menu key="menu" id="9Kd-Lm-gKf">
-                                                    <items>
-                                                        <menuItem title="VS Code" state="on" id="Lxu-R7-gbi"/>
-                                                    </items>
-                                                </menu>
-                                            </popUpButtonCell>
-                                        </popUpButton>
                                         <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AaU-k8-Gb7">
                                             <rect key="frame" x="138" y="57" width="156" height="25"/>
-                                            <popUpButtonCell key="cell" type="push" title="Terminal" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="P5Z-Yb-lu7" id="vl7-Er-jal">
+                                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="vl7-Er-jal">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="menu"/>
-                                                <menu key="menu" id="hTS-Lg-LKV">
-                                                    <items>
-                                                        <menuItem title="Terminal" state="on" id="P5Z-Yb-lu7"/>
-                                                    </items>
-                                                </menu>
+                                                <menu key="menu" id="hTS-Lg-LKV"/>
                                             </popUpButtonCell>
+                                            <connections>
+                                                <action selector="defaultTerminalButtonClicked:" target="Gn1-zC-bzB" id="KuC-2Y-YvG"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R8D-f0-J22">
+                                            <rect key="frame" x="138" y="15" width="156" height="25"/>
+                                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="sHo-F2-jzK">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" id="9Kd-Lm-gKf"/>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <action selector="defaultEditorButtonClicked:" target="Gn1-zC-bzB" id="FGq-Du-JmR"/>
+                                            </connections>
                                         </popUpButton>
                                     </subviews>
                                     <constraints>
@@ -135,6 +133,9 @@
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="launchButtonClicked:" target="Gn1-zC-bzB" id="3ju-vK-uPW"/>
+                                        </connections>
                                     </button>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hwv-gc-vIr">
                                         <rect key="frame" x="0.0" y="58" width="310" height="14"/>
@@ -167,6 +168,9 @@
                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
+                                                <connections>
+                                                    <action selector="quickOpenButtonClicked:" target="Gn1-zC-bzB" id="bYe-de-E9g"/>
+                                                </connections>
                                             </button>
                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ybg-LK-qWi">
                                                 <rect key="frame" x="16" y="0.0" width="296" height="28"/>
@@ -215,6 +219,12 @@
                             <constraint firstItem="siD-hz-NIk" firstAttribute="top" secondItem="mA5-EO-f9U" secondAttribute="bottom" constant="20" id="zfI-xg-gIe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="defaultEditorButton" destination="R8D-f0-J22" id="krg-qv-BAe"/>
+                        <outlet property="defaultTerminalButton" destination="AaU-k8-Gb7" id="bmA-od-3vf"/>
+                        <outlet property="launchButton" destination="5f2-iR-JzT" id="RyF-g2-HEg"/>
+                        <outlet property="quickOpenButton" destination="VGA-Ho-z5c" id="UCz-Gh-gzP"/>
+                    </connections>
                 </viewController>
                 <customObject id="7th-7A-0Xc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

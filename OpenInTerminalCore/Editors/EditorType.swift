@@ -10,11 +10,11 @@ import Foundation
 
 public enum EditorType: String {
     
-    case vscode = "com.microsoft.VSCode"
-    case atom = "com.github.atom"
-    case sublime = "com.sublimetext.3"
+    case vscode = "VSCode"
+    case atom = "Atom"
+    case sublime = "Sublime"
     
-    public var name: String {
+    public var fullName: String {
         switch self {
         case .vscode:
             return "Visual Studio Code"
@@ -25,14 +25,14 @@ public enum EditorType: String {
         }
     }
     
-    public var abbreviation: String {
+    public var bundleId: String {
         switch self {
         case .vscode:
-            return "VS Code"
+            return "com.microsoft.VSCode"
         case .atom:
-            return "Atom"
+            return "com.github.atom"
         case .sublime:
-            return "Sublime"
+            return "com.sublimetext.3"
         }
     }
     

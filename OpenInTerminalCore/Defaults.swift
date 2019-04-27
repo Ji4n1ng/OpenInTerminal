@@ -26,34 +26,23 @@ extension DefaultsKeys {
     // The values corresponding to the following keys are String.
     
     // value example: FirstUsage._true.rawValue
-    static let firstUsage = DefaultsKey<String>("OIT_FirstUsage")
+    static let firstUsage = DefaultsKey<String>(Constants.Key.firstUsage)
     
     // value example: TerminalType.terminal.rawValue
-    static let defaultTerminal = DefaultsKey<String>("OIT_TerminalBundleIdentifier")
+    static let defaultTerminal = DefaultsKey<String>(Constants.Key.defaultTerminal)
     
-    // value example: TerminalType.terminal.rawValue
-    static let defaultEditor = DefaultsKey<String>("OIT_EditorBundleIdentifier")
-    
-    // value example: VisibleType.visble.rawValue
-    static let terminalVisible = DefaultsKey<String>("OIT_TerminalVisible")
-    static let iTermVisible = DefaultsKey<String>("OIT_iTermVisible")
-    static let hyperVisible = DefaultsKey<String>("OIT_HyperVisible")
-    static let alacrittyVisible = DefaultsKey<String>("OIT_AlacrittyVisible")
-    static let vscodeVisible = DefaultsKey<String>("OIT_VSCodeVisible")
-    static let atomVisible = DefaultsKey<String>("OIT_AtomVisible")
-    static let sublimeVisible = DefaultsKey<String>("OIT_SublimeVisible")
+    // value example: EditorType.vscode.rawValue
+    static let defaultEditor = DefaultsKey<String>(Constants.Key.defaultEditor)
     
     // value example: NewOptionType.window.rawValue
-    static let terminalNewOption = DefaultsKey<String>("OIT_TerminalNewOption")
-    static let iTermNewOption = DefaultsKey<String>("OIT_iTermNewOption")
-    static let hyperNewOption = DefaultsKey<String>("OIT_HyperNewOption")
-    static let alacrittyNewOption = DefaultsKey<String>("OIT_AlacrittyNewOption")
+    static let terminalNewOption = DefaultsKey<String>(Constants.Key.terminalNewOption)
+    static let iTermNewOption = DefaultsKey<String>(Constants.Key.iTermNewOption)
     
     // value example: ClearType.clear.rawValue
-    static let terminalClear = DefaultsKey<String>("OIT_TerminalClear")
-    static let iTermClear = DefaultsKey<String>("OIT_iTermClear")
+    static let terminalClear = DefaultsKey<String>(Constants.Key.terminalClearOption)
+    static let iTermClear = DefaultsKey<String>(Constants.Key.iTermClearOption)
     
-    static let copyPathToClipboardVisible = DefaultsKey<String>("OIT_CopyPathToClipboardVisible")
+    static let copyPathToClipboardVisible = DefaultsKey<String>(Constants.Key.copyPathToClipboardVisible)
     
 }
 

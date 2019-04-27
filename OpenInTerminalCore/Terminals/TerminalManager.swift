@@ -14,13 +14,16 @@ public class TerminalManager {
     
     // MARK: public methods
     
-    /// get default terminal from UserDefaults or AlertBox
-    ///
-    /// If there is no default terminal, then the user will pick a terminal in AlertBox.
-    /// Used in OpenInTerminal-Lite
+    /// get default terminal from UserDefaults
     public func getDefaultTerminal() -> TerminalType? {
+        return Defaults[.defaultTerminal]
+            .map(TerminalType.init(rawValue: )) ?? nil
+    }
+    
+    /// get default terminal from UserDefaults or AlertBox
+    public func getOrPickDefaultTerminal() -> TerminalType? {
         
-        if let defaultTerminal = getUserDefaultTerminal() {
+        if let defaultTerminal = getDefaultTerminal() {
             return defaultTerminal
         }
         
@@ -28,9 +31,17 @@ public class TerminalManager {
             return nil
         }
         
-        Defaults[.defaultTerminal] = selectedTerminal.rawValue
+        setDefaultTerminal(selectedTerminal)
         
         return selectedTerminal
+    }
+    
+    public func setDefaultTerminal(_ terminal: TerminalType) {
+        Defaults[.defaultTerminal] = terminal.rawValue
+    }
+    
+    public func removeDefaultTerminal() {
+        Defaults.removeObject(forKey: Constants.Key.defaultTerminal)
     }
     
     public func getNewOption(_ terminal: TerminalType) -> NewOptionType? {
@@ -40,10 +51,8 @@ public class TerminalManager {
             option = Defaults[.terminalNewOption]
         case .iTerm:
             option = Defaults[.iTermNewOption]
-        case .hyper:
-            option = Defaults[.hyperNewOption]
-        case .alacritty:
-            option = Defaults[.alacrittyNewOption]
+        case .hyper, .alacritty:
+            return nil
         }
         
         return option.map(NewOptionType.init(rawValue: )) ?? nil
@@ -56,10 +65,8 @@ public class TerminalManager {
             Defaults[.terminalNewOption] = newOption.rawValue
         case .iTerm:
             Defaults[.iTermNewOption] = newOption.rawValue
-        case .hyper:
-            Defaults[.hyperNewOption] = newOption.rawValue
-        case .alacritty:
-            Defaults[.alacrittyNewOption] = newOption.rawValue
+        case .hyper, .alacritty:
+            return
         }
     }
     
@@ -71,7 +78,7 @@ public class TerminalManager {
         case .iTerm:
             option = Defaults[.iTermClear]
         case .hyper, .alacritty:
-            return .clear
+            return nil
         }
         
         return option.map(ClearOptionType.init(rawValue: )) ?? nil
@@ -86,36 +93,6 @@ public class TerminalManager {
             Defaults[.iTermClear] = clearOption.rawValue
         case .hyper, .alacritty:
             return
-        }
-    }
-    
-    public func getVisible(_ terminal: TerminalType) -> VisibleType? {
-        var visible: String?
-        switch terminal {
-        case .terminal:
-            visible = Defaults[.terminalVisible]
-        case .iTerm:
-            visible = Defaults[.iTermVisible]
-        case .hyper:
-            visible = Defaults[.hyperVisible]
-        case .alacritty:
-            visible = Defaults[.alacrittyVisible]
-        }
-        
-        return visible.map(VisibleType.init(rawValue: )) ?? nil
-    }
-    
-    public func setVisible(_ terminal: TerminalType, _ visible: VisibleType) {
-        
-        switch terminal {
-        case .terminal:
-            Defaults[.terminalVisible] = visible.rawValue
-        case .iTerm:
-            Defaults[.iTermVisible] = visible.rawValue
-        case .hyper:
-            Defaults[.hyperVisible] = visible.rawValue
-        case .alacritty:
-            Defaults[.alacrittyVisible] = visible.rawValue
         }
     }
     
@@ -141,11 +118,6 @@ public class TerminalManager {
     
     // MARK: private methods
     
-    private func getUserDefaultTerminal() -> TerminalType? {
-        return Defaults[.defaultTerminal]
-            .map(TerminalType.init(rawValue: )) ?? nil
-    }
-    
     private func pickTerminalAlert() -> TerminalType? {
         
         let alert = NSAlert()
@@ -155,9 +127,9 @@ public class TerminalManager {
         
         // Add button and avoid the focus ring
         alert.addButton(withTitle: "Cancel").refusesFirstResponder = true
-        alert.addButton(withTitle: TerminalType.hyper.name).refusesFirstResponder = true
-        alert.addButton(withTitle: TerminalType.iTerm.name).refusesFirstResponder = true
-        alert.addButton(withTitle: TerminalType.terminal.name).refusesFirstResponder = true
+        alert.addButton(withTitle: TerminalType.hyper.rawValue).refusesFirstResponder = true
+        alert.addButton(withTitle: TerminalType.iTerm.rawValue).refusesFirstResponder = true
+        alert.addButton(withTitle: TerminalType.terminal.rawValue).refusesFirstResponder = true
         
         let modalResult = alert.runModal()
         

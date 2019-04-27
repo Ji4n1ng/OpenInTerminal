@@ -14,12 +14,16 @@ public class EditorManager {
     
     // MARK: public methods
     
-    /// get default editor from UserDefaults or AlertBox
-    ///
-    /// If there is no default editor, then the user will pick a terminal in AlertBox.
+    /// get default editor from UserDefaults
     public func getDefaultEditor() -> EditorType? {
+        return Defaults[.defaultEditor]
+            .map(EditorType.init(rawValue: )) ?? nil
+    }
+    
+    /// get default editor from UserDefaults or AlertBox
+    public func getOrPickDefaultEditor() -> EditorType? {
         
-        if let defaultEditor = getUserDefaultEditor() {
+        if let defaultEditor = getDefaultEditor() {
             return defaultEditor
         }
         
@@ -27,35 +31,17 @@ public class EditorManager {
             return nil
         }
         
-        Defaults[.defaultEditor] = selectedEditor.rawValue
+        setDefaultEditor(selectedEditor)
         
         return selectedEditor
     }
     
-    public func getVisible(_ editor: EditorType) -> VisibleType? {
-        var visble: String?
-        switch editor {
-        case .vscode:
-            visble = Defaults[.vscodeVisible]
-        case .atom:
-            visble = Defaults[.atomVisible]
-        case .sublime:
-            visble = Defaults[.sublimeVisible]
-        }
-        
-        return visble.map(VisibleType.init(rawValue: )) ?? nil
+    public func setDefaultEditor(_ editor: EditorType) {
+        Defaults[.defaultEditor] = editor.rawValue
     }
     
-    public func setVisible(_ editor: EditorType, _ visible: VisibleType) {
-        
-        switch editor {
-        case .vscode:
-            Defaults[.vscodeVisible] = visible.rawValue
-        case .atom:
-            Defaults[.atomVisible] = visible.rawValue
-        case .sublime:
-            Defaults[.sublimeVisible] = visible.rawValue
-        }
+    public func removeDefaultEditor() {
+        Defaults.removeObject(forKey: Constants.Key.defaultEditor)
     }
     
     public func openEditor(_ editorType: EditorType) {
@@ -79,11 +65,6 @@ public class EditorManager {
     
     // MARK: private methods
     
-    private func getUserDefaultEditor() -> EditorType? {
-        return Defaults[.defaultEditor]
-            .map(EditorType.init(rawValue: )) ?? nil
-    }
-    
     private func pickEditorAlert() -> EditorType? {
         
         let alert = NSAlert()
@@ -93,9 +74,9 @@ public class EditorManager {
         
         // Add button and avoid the focus ring
         alert.addButton(withTitle: "Cancel").refusesFirstResponder = true
-        alert.addButton(withTitle: EditorType.sublime.abbreviation).refusesFirstResponder = true
-        alert.addButton(withTitle: EditorType.atom.abbreviation).refusesFirstResponder = true
-        alert.addButton(withTitle: EditorType.vscode.abbreviation).refusesFirstResponder = true
+        alert.addButton(withTitle: EditorType.sublime.rawValue).refusesFirstResponder = true
+        alert.addButton(withTitle: EditorType.atom.rawValue).refusesFirstResponder = true
+        alert.addButton(withTitle: EditorType.vscode.rawValue).refusesFirstResponder = true
         
         let modalResult = alert.runModal()
         

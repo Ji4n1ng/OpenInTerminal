@@ -10,21 +10,21 @@ import Foundation
 
 public enum TerminalType: String {
     
-    case terminal = "com.apple.Terminal"
-    case iTerm = "com.googlecode.iterm2"
-    case hyper = "co.zeit.hyper"
-    case alacritty = "io.alacritty"
+    case terminal = "Terminal"
+    case iTerm = "iTerm"
+    case hyper = "Hyper"
+    case alacritty = "Alacritty"
     
-    public var name: String {
+    public var bundleId: String {
         switch self {
         case .terminal:
-            return "Terminal"
+            return "com.apple.Terminal"
         case .iTerm:
-            return "iTerm"
+            return "com.googlecode.iterm2"
         case .hyper:
-            return "Hyper"
+            return "co.zeit.hyper"
         case .alacritty:
-            return "Alacritty"
+            return "io.alacritty"
         }
     }
     

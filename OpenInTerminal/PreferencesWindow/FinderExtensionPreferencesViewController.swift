@@ -66,10 +66,10 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
             textField.isEnabled = isInstalled
             if isInstalled {
                 textField.textColor = .labelColor
-                textField.stringValue = "\(terminal.name)"
+                textField.stringValue = "\(terminal.rawValue)"
             } else {
                 textField.textColor = .secondaryLabelColor
-                textField.stringValue = "\(terminal.name) (Not Installed)"
+                textField.stringValue = "\(terminal.rawValue) (Not Installed)"
             }
         }
         
@@ -83,10 +83,10 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
             textField.isEnabled = isInstalled
             if isInstalled {
                 textField.textColor = .labelColor
-                textField.stringValue = "\(editor.name)"
+                textField.stringValue = "\(editor.fullName)"
             } else {
                 textField.textColor = .secondaryLabelColor
-                textField.stringValue = "\(editor.name) (Not Installed)"
+                textField.stringValue = "\(editor.fullName) (Not Installed)"
             }
         }
     }

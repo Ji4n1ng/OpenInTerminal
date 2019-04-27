@@ -49,24 +49,24 @@ class FinderSync: FIFinderSync {
         
         case .toolbarItemMenu:
         
-            menu.addItem(withTitle: TerminalType.terminal.name,
+            menu.addItem(withTitle: TerminalType.terminal.rawValue,
                          action: #selector(openTerminal),
                          keyEquivalent: "")
 
             if FinderManager.shared.terminalIsInstalled(.iTerm) {
-                menu.addItem(withTitle: TerminalType.iTerm.name,
+                menu.addItem(withTitle: TerminalType.iTerm.rawValue,
                              action: #selector(openITerm),
                              keyEquivalent: "")
             }
         
             if FinderManager.shared.terminalIsInstalled(.hyper) {
-                menu.addItem(withTitle: TerminalType.hyper.name,
+                menu.addItem(withTitle: TerminalType.hyper.rawValue,
                              action: #selector(openHyper),
                              keyEquivalent: "")
             }
             
             if FinderManager.shared.terminalIsInstalled(.alacritty) {
-                menu.addItem(withTitle: TerminalType.alacritty.name,
+                menu.addItem(withTitle: TerminalType.alacritty.rawValue,
                              action: #selector(openAlacritty),
                              keyEquivalent: "")
             }
@@ -78,21 +78,21 @@ class FinderSync: FIFinderSync {
             var hasEditor = false
             
             if FinderManager.shared.editorIsInstalled(.vscode) {
-                menu.addItem(withTitle: EditorType.vscode.name,
+                menu.addItem(withTitle: EditorType.vscode.fullName,
                              action: #selector(openVSCode),
                              keyEquivalent: "")
                 hasEditor = true
             }
         
             if FinderManager.shared.editorIsInstalled(.atom)  {
-                menu.addItem(withTitle: EditorType.atom.name,
+                menu.addItem(withTitle: EditorType.atom.fullName,
                              action: #selector(openAtom),
                              keyEquivalent: "")
                 hasEditor = true
             }
             
             if FinderManager.shared.editorIsInstalled(.sublime) {
-                menu.addItem(withTitle: EditorType.sublime.name,
+                menu.addItem(withTitle: EditorType.sublime.fullName,
                              action: #selector(openSublime),
                              keyEquivalent: "")
                 hasEditor = true
