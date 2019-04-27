@@ -60,8 +60,13 @@ public class EditorManager {
     
     public func openEditor(_ editorType: EditorType) {
         do {
-            let path = try FinderManager.shared.getFullPathToFrontFinderWindowOrSelectedFile()
-            guard path != "" else { return }
+            var path = try FinderManager.shared.getFullPathToFrontFinderWindowOrSelectedFile()
+            if path == "" {
+                // No Finder window and no file selected.
+                let homePath = NSHomeDirectory()
+                guard let homeUrl = URL(string: homePath) else { return }
+                path = homeUrl.appendingPathComponent("Desktop").path
+            }
             
             let editor = editorType.instance()
             

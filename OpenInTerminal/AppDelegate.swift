@@ -113,6 +113,10 @@ extension AppDelegate {
         OpenNotifier.addObserver(observer: self,
                                  selector: #selector(openSublime),
                                  notification: .openSublime)
+        
+        OpenNotifier.addObserver(observer: self,
+                                 selector: #selector(copyPathToClipboard),
+                                 notification: .copyPathToClipboard)
     }
     
     func removeObserver() {
@@ -126,6 +130,8 @@ extension AppDelegate {
         OpenNotifier.removeObserver(observer: self, notification: .openVSCode)
         OpenNotifier.removeObserver(observer: self, notification: .openAtom)
         OpenNotifier.removeObserver(observer: self, notification: .openSublime)
+        
+        OpenNotifier.removeObserver(observer: self, notification: .copyPathToClipboard)
     }
     
     // MARK: Notification Actions
@@ -174,5 +180,25 @@ extension AppDelegate {
         EditorManager.shared.openEditor(.sublime)
     }
     
-    
+    @objc func copyPathToClipboard() {
+        do {
+            var path = try FinderManager.shared.getFullPathToFrontFinderWindowOrSelectedFile()
+            if path == "" {
+                // No Finder window and no file selected.
+                let homePath = NSHomeDirectory()
+                guard let homeUrl = URL(string: homePath) else { return }
+                path = homeUrl.appendingPathComponent("Desktop").path
+            } else {
+                guard let url = URL(string: path) else { return }
+                path = url.path
+            }
+            
+            // Set string
+            NSPasteboard.general.clearContents()
+            NSPasteboard.general.setString(path, forType: .string)
+            
+        } catch {
+            log(error, .error)
+        }
+    }
 }

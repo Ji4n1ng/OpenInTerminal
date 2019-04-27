@@ -123,8 +123,10 @@ public class TerminalManager {
         do {
             var path = try FinderManager.shared.getPathToFrontFinderWindowOrSelectedFile()
             if path == "" {
-                // No Finder windows are opened or selected, so open home directory
-                path = NSHomeDirectory()
+                // No Finder window and no file selected.
+                let homePath = NSHomeDirectory()
+                guard let homeUrl = URL(string: homePath) else { return }
+                path = homeUrl.appendingPathComponent("Desktop").path
             }
             
             let terminal = terminalType.instance()

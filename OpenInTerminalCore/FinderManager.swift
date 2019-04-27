@@ -56,6 +56,8 @@ public class FinderManager {
         
         let fullPath = try getFullPathToFrontFinderWindowOrSelectedFile()
         
+        guard fullPath != "" else { return "" }
+        
         guard let url = URL(string: fullPath) else {
             throw OITError.wrongUrl
         }

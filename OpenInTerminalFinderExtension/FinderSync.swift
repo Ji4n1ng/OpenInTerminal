@@ -43,61 +43,70 @@ class FinderSync: FIFinderSync {
             menu.addItem(withTitle: "Open with Default Editor",
                          action: #selector(openDefaultEditor),
                          keyEquivalent: "")
+            menu.addItem(withTitle: "Copy path to Clipboard",
+                         action: #selector(copyPathToClipboard),
+                         keyEquivalent: "")
         
         case .toolbarItemMenu:
-            var hasTerminal = false
         
-            if FinderManager.shared.terminalIsInstalled(.terminal) {
-                menu.addItem(withTitle: TerminalType.terminal.name,
-                             action: #selector(openTerminal),
-                             keyEquivalent: "")
-                hasTerminal = true
-            }
-        
+            menu.addItem(withTitle: TerminalType.terminal.name,
+                         action: #selector(openTerminal),
+                         keyEquivalent: "")
+
             if FinderManager.shared.terminalIsInstalled(.iTerm) {
                 menu.addItem(withTitle: TerminalType.iTerm.name,
                              action: #selector(openITerm),
                              keyEquivalent: "")
-                hasTerminal = true
             }
         
             if FinderManager.shared.terminalIsInstalled(.hyper) {
                 menu.addItem(withTitle: TerminalType.hyper.name,
                              action: #selector(openHyper),
                              keyEquivalent: "")
-                hasTerminal = true
             }
             
             if FinderManager.shared.terminalIsInstalled(.alacritty) {
                 menu.addItem(withTitle: TerminalType.alacritty.name,
                              action: #selector(openAlacritty),
                              keyEquivalent: "")
-                hasTerminal = true
             }
             
-            if hasTerminal {
-                let separator = NSMenuItem.separator()
-                separator.title = "------------------"
-                menu.addItem(separator)
-            }
+            let separator = NSMenuItem.separator()
+            separator.title = "-----------------------"
+            menu.addItem(separator)
+            
+            var hasEditor = false
             
             if FinderManager.shared.editorIsInstalled(.vscode) {
                 menu.addItem(withTitle: EditorType.vscode.name,
                              action: #selector(openVSCode),
                              keyEquivalent: "")
+                hasEditor = true
             }
         
             if FinderManager.shared.editorIsInstalled(.atom)  {
                 menu.addItem(withTitle: EditorType.atom.name,
                              action: #selector(openAtom),
                              keyEquivalent: "")
+                hasEditor = true
             }
             
             if FinderManager.shared.editorIsInstalled(.sublime) {
                 menu.addItem(withTitle: EditorType.sublime.name,
                              action: #selector(openSublime),
                              keyEquivalent: "")
+                hasEditor = true
             }
+            
+            if hasEditor {
+                let separator = NSMenuItem.separator()
+                separator.title = "-----------------------"
+                menu.addItem(separator)
+            }
+            
+            menu.addItem(withTitle: "Copy path to Clipboard",
+                         action: #selector(copyPathToClipboard),
+                         keyEquivalent: "")
         default:
             break
         }
@@ -141,6 +150,10 @@ class FinderSync: FIFinderSync {
     
     @objc func openSublime() {
         OpenNotifier.postNotification(.openSublime)
+    }
+    
+    @objc func copyPathToClipboard() {
+        OpenNotifier.postNotification(.copyPathToClipboard)
     }
 }
 
