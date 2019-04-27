@@ -8,6 +8,7 @@
 
 import Cocoa
 import OpenInTerminalCore
+import ServiceManagement
 
 class GeneralPreferencesViewController: PreferencesViewController {
 
@@ -27,6 +28,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        refreshButtonState()
         refreshDefaultTerminal()
         refreshDefaultEditor()
     }
@@ -37,10 +39,26 @@ class GeneralPreferencesViewController: PreferencesViewController {
     
     // MARK: Refresh UI
     
+    func refreshButtonState() {
+        guard let launchAtLogin = CoreManager.shared.launchAtLogin else {
+            log("Launch at Login is not set", .error)
+            launchButton.isEnabled = false
+            return
+        }
+        launchButton.state = launchAtLogin == ._true ? .on : .off
+        
+        guard let quickOpen = CoreManager.shared.quickOpen else {
+            log("Quick Open is not set", .error)
+            quickOpenButton.isEnabled = false
+            return
+        }
+        quickOpenButton.state = quickOpen == ._true ? .on : .off
+    }
+    
     func refreshDefaultTerminal() {
         defaultTerminalButton.removeAllItems()
         
-        defaultTerminalButton.addItem(withTitle: Constant.none)
+        defaultTerminalButton.addItem(withTitle: Constants.none)
         
         let terminals: [TerminalType] =
             [.terminal, .iTerm, .hyper, .alacritty]
@@ -56,7 +74,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
             let index = defaultTerminalButton.indexOfItem(withTitle: defaultTerminal.rawValue)
             defaultTerminalButton.selectItem(at: index)
         } else {
-            let index = defaultTerminalButton.indexOfItem(withTitle: Constant.none)
+            let index = defaultTerminalButton.indexOfItem(withTitle: Constants.none)
             defaultTerminalButton.selectItem(at: index)
         }
     }
@@ -64,7 +82,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
     func refreshDefaultEditor() {
         defaultEditorButton.removeAllItems()
         
-        defaultEditorButton.addItem(withTitle: Constant.none)
+        defaultEditorButton.addItem(withTitle: Constants.none)
         
         let editors: [EditorType] =
             [.vscode, .atom, .sublime]
@@ -80,7 +98,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
             let index = defaultEditorButton.indexOfItem(withTitle: defaultEditor.rawValue)
             defaultEditorButton.selectItem(at: index)
         } else {
-            let index = defaultEditorButton.indexOfItem(withTitle: Constant.none)
+            let index = defaultEditorButton.indexOfItem(withTitle: Constants.none)
             defaultEditorButton.selectItem(at: index)
         }
     }
@@ -88,11 +106,19 @@ class GeneralPreferencesViewController: PreferencesViewController {
     // MARK: Button Actions
     
     @IBAction func launchButtonClicked(_ sender: NSButton) {
-        
+        let isLaunch = launchButton.state == .on
+        let launchAtLogin: BoolType = isLaunch ? ._true : ._false
+        CoreManager.shared.launchAtLogin = launchAtLogin
+        SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, isLaunch)
     }
     
     @IBAction func quickOpenButtonClicked(_ sender: NSButton) {
+        let quickOpen: BoolType = quickOpenButton.state == .on ? ._true : ._false
+        CoreManager.shared.quickOpen = quickOpen
         
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.setStatusToggle()
+        log("Quick Open set to \(sender.state.rawValue)")
     }
     
     @IBAction func defaultTerminalButtonClicked(_ sender: NSPopUpButton) {
@@ -100,7 +126,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         let index = sender.indexOfSelectedItem
         let title = itemTitles[index]
 
-        if title == Constant.none {
+        if title == Constants.none {
             TerminalManager.shared.removeDefaultTerminal()
         }
         
@@ -114,7 +140,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         let index = sender.indexOfSelectedItem
         let title = itemTitles[index]
         
-        if title == Constant.none {
+        if title == Constants.none {
             EditorManager.shared.removeDefaultEditor()
         }
         

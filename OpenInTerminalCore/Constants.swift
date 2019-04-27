@@ -8,19 +8,6 @@
 
 import Foundation
 
-public struct OITCoreConfig {
-    
-    public static var firstUsage: FirstUsageType {
-        if Defaults[.firstUsage] == nil {
-            Defaults[.firstUsage] = FirstUsageType._false.rawValue
-            return ._true
-        } else {
-            return ._false
-        }
-    }
-    
-}
-
 struct Constants {
     
     struct Finder {
@@ -29,6 +16,8 @@ struct Constants {
     
     struct Key {
         static let firstUsage = "OIT_FirstUsage"
+        static let launchAtLogin = "OIT_LaunchAtLogin"
+        static let quickOpen = "OIT_QuickOpen"
         
         static let defaultTerminal = "OIT_TerminalBundleIdentifier"
         static let defaultEditor = "OIT_EditorBundleIdentifier"
@@ -59,7 +48,7 @@ public enum ClearOptionType: String {
     case noClear
 }
 
-public enum FirstUsageType: String {
+public enum BoolType: String {
     case _true
     case _false
 }

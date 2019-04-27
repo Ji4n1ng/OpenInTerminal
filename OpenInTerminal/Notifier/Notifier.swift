@@ -47,11 +47,11 @@ public extension Notifier where Notification.RawValue == String {
     
     // Add
     
-    static func addObserver(observer: AnyObject, selector: Selector, notification: Notification) {
+    static func addObserver(observer: AnyObject, selector: Selector, notification: Notification, object: String? = nil) {
         let name = nameFor(notification: notification)
         
         DistributedNotificationCenter.default()
-            .addObserver(observer, selector: selector, name: NSNotification.Name(rawValue: name), object: nil)
+            .addObserver(observer, selector: selector, name: NSNotification.Name(rawValue: name), object: object)
     }
     
     // Remove

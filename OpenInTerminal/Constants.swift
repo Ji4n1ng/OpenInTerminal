@@ -9,8 +9,10 @@
 import Cocoa
 import Foundation
 
-struct Constant {
+struct Constants {
     static let none = "None"
+    
+    static let launcherAppIdentifier = "wang.jianing.OpenInTerminalHelper"
 }
 
 extension NSImage {

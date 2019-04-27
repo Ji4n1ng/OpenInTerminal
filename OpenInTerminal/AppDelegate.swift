@@ -8,20 +8,45 @@
 
 import Cocoa
 import OpenInTerminalCore
+import ServiceManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    var statusItem: NSStatusItem?
+    // MARK: Properties
+    
     var preferencesController: NSWindowController?
     
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    
+    lazy var statusBarMenu: NSMenu = {
+        let menu = NSMenu()
+        let preferencesItem = NSMenuItem(title: "Preferences...",
+                                         action: #selector(showPreferences(_:)),
+                                         keyEquivalent: "")
+        let quitItem = NSMenuItem(title: "Quit",
+                                  action: #selector(quit),
+                                  keyEquivalent: "")
+        [preferencesItem, NSMenuItem.separator(), quitItem].forEach {
+            menu.addItem($0)
+        }
+        return menu
+    }()
+    
+    // MARK: Lifecycle
+    
     func applicationDidFinishLaunching(_ notification: Notification) {
-        createStatusBarItem()
+//        SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, false)
+//        CoreManager.shared.removeAllUserDefaults()
+        CoreManager.shared.firstSetup()
+        terminateOpenInTerminalHelper()
         addObserver()
+        setStatusBarIcon()
+        setStatusToggle()
     }
     
     func applicationWillTerminate(_ notification: Notification) {
-        NSStatusBar.system.removeStatusItem(statusItem!)
+        NSStatusBar.system.removeStatusItem(statusItem)
         
         removeObserver()
     }
@@ -33,34 +58,43 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate {
     
-    // MARK: Status Bar
+    // MARK: Status Bar Item
     
-    func createStatusBarItem() {
-        
-        let statusBar = NSStatusBar.system
-        
-        let item = statusBar.statusItem(withLength: NSStatusItem.variableLength)
-        
+    func setStatusBarIcon() {
         let icon = NSImage(assetIdentifier: .StatusBarIcon)
         icon.isTemplate = true // Support Dark Mode
-        item.button?.image = icon
-        
-        let statusBarMenu = NSMenu()
-        
-        let preferencesItem = NSMenuItem(title: "Preferences...",
-                                         action: #selector(showPreferences(_:)),
-                                         keyEquivalent: "")
-        
-        let quitItem = NSMenuItem(title: "Quit",
-                                  action: #selector(quit),
-                                  keyEquivalent: "")
-        
-        [preferencesItem, NSMenuItem.separator(), quitItem].forEach {
-            statusBarMenu.addItem($0)
+        DispatchQueue.main.async {
+            self.statusItem.button?.image = icon
         }
+    }
+    
+    func setStatusToggle() {
+        guard let quickOpen = CoreManager.shared.quickOpen else { return }
         
-        item.menu = statusBarMenu
-        statusItem = item
+        if quickOpen == ._true {
+            statusItem.menu = nil
+            if let button = statusItem.button {
+                button.action = #selector(statusBarButtonClicked)
+                button.sendAction(on: [.leftMouseUp, .leftMouseDown,
+                                       .rightMouseUp, .rightMouseDown])
+            }
+        } else {
+            statusItem.menu = statusBarMenu
+        }
+    }
+    
+    @objc func statusBarButtonClicked(sender: NSStatusBarButton) {
+        let event = NSApp.currentEvent!
+        
+        if event.type == .rightMouseDown || event.type == .rightMouseUp
+            || event.modifierFlags.contains(.control)
+        {
+            statusItem.menu = statusBarMenu
+            statusItem.button?.performClick(self)
+            statusItem.menu = nil
+        } else if event.type == .leftMouseUp {
+            openDefaultTerminal()
+        }
     }
     
     // MARK: Status Bar Menu Actions
@@ -79,7 +113,21 @@ extension AppDelegate {
     }
     
     @objc func quit() {
-        log("quit")
+        LaunchNotifier.postNotification(.terminateApp, object: Bundle.main.bundleIdentifier!)
+        NSApp.terminate(self)
+    }
+    
+    // MARK: OpenInTerminalHelper
+    
+    func terminateOpenInTerminalHelper() {
+        let isRunning = NSWorkspace.shared.runningApplications.contains {
+            $0.bundleIdentifier == Constants.launcherAppIdentifier
+        }
+        
+        if isRunning {
+            LaunchNotifier.postNotification(.terminateApp, object: Bundle.main.bundleIdentifier!)
+        }
+        
     }
     
     // MARK: Notification

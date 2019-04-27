@@ -25,8 +25,10 @@ extension DefaultsKeys {
     
     // The values corresponding to the following keys are String.
     
-    // value example: FirstUsage._true.rawValue
+    // value example: BoolType._true.rawValue
     static let firstUsage = DefaultsKey<String>(Constants.Key.firstUsage)
+    static let launchAtLogin = DefaultsKey<String>(Constants.Key.launchAtLogin)
+    static let quickOpen = DefaultsKey<String>(Constants.Key.quickOpen)
     
     // value example: TerminalType.terminal.rawValue
     static let defaultTerminal = DefaultsKey<String>(Constants.Key.defaultTerminal)
@@ -39,8 +41,8 @@ extension DefaultsKeys {
     static let iTermNewOption = DefaultsKey<String>(Constants.Key.iTermNewOption)
     
     // value example: ClearType.clear.rawValue
-    static let terminalClear = DefaultsKey<String>(Constants.Key.terminalClearOption)
-    static let iTermClear = DefaultsKey<String>(Constants.Key.iTermClearOption)
+    static let terminalClearOption = DefaultsKey<String>(Constants.Key.terminalClearOption)
+    static let iTermClearOption = DefaultsKey<String>(Constants.Key.iTermClearOption)
     
     static let copyPathToClipboardVisible = DefaultsKey<String>(Constants.Key.copyPathToClipboardVisible)
     

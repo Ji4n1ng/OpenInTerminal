@@ -74,9 +74,9 @@ public class TerminalManager {
         var option: String?
         switch terminal {
         case .terminal:
-            option = Defaults[.terminalClear]
+            option = Defaults[.terminalClearOption]
         case .iTerm:
-            option = Defaults[.iTermClear]
+            option = Defaults[.iTermClearOption]
         case .hyper, .alacritty:
             return nil
         }
@@ -88,9 +88,9 @@ public class TerminalManager {
         
         switch terminal {
         case .terminal:
-            Defaults[.terminalClear] = clearOption.rawValue
+            Defaults[.terminalClearOption] = clearOption.rawValue
         case .iTerm:
-            Defaults[.iTermClear] = clearOption.rawValue
+            Defaults[.iTermClearOption] = clearOption.rawValue
         case .hyper, .alacritty:
             return
         }
