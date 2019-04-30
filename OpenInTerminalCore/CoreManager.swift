@@ -43,8 +43,8 @@ public class CoreManager {
     
     public func firstSetup() {
         guard firstUsage == ._true else { return }
-        log("First Setup")
-        Defaults[.launchAtLogin] = BoolType._false.rawValue
+        logw("First Setup")
+//        Defaults[.launchAtLogin] = BoolType._false.rawValue
         Defaults[.quickOpen] = BoolType._false.rawValue
         Defaults.removeObject(forKey: Constants.Key.defaultTerminal)
         Defaults.removeObject(forKey: Constants.Key.defaultEditor)
@@ -56,7 +56,7 @@ public class CoreManager {
     }
     
     public func removeAllUserDefaults() {
-        log("Remove all UserDefaults", .warn)
+        logw("Remove all UserDefaults")
         let domain = Bundle.main.bundleIdentifier!
         Defaults.removePersistentDomain(forName: domain)
         Defaults.synchronize()

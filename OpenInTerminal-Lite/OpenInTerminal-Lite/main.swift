@@ -18,6 +18,5 @@ do {
     TerminalManager.shared.openTerminal(terminalType)
     
 } catch {
-    
-    log(error)
+    logw(error.localizedDescription)
 }

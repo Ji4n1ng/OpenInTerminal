@@ -59,7 +59,7 @@ public class EditorManager {
             try editor.open(path)
             
         } catch {
-            log(error, .error)
+            logw(error.localizedDescription)
         }
     }
     

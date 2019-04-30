@@ -10,8 +10,8 @@
         <scene sceneID="HW7-s8-hqp">
             <objects>
                 <customObject id="ov8-72-M4k" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <windowController id="oOf-8k-ODW" sceneMemberID="viewController">
-                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="5f3-UK-Rft">
+                <windowController id="oOf-8k-ODW" customClass="PreferencesWindowController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="5f3-UK-Rft">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="425" y="461" width="350" height="270"/>
@@ -59,7 +59,7 @@
             <objects>
                 <viewController title="General" id="Gn1-zC-bzB" customClass="GeneralPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" focusRingType="none" id="T7Z-PU-Qyb">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="254"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="210"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="siD-hz-NIk">
@@ -125,40 +125,8 @@
                                 </constraints>
                             </box>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mA5-EO-f9U">
-                                <rect key="frame" x="20" y="140" width="310" height="94"/>
+                                <rect key="frame" x="20" y="140" width="310" height="50"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5f2-iR-JzT">
-                                        <rect key="frame" x="-2" y="78" width="213" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Launch OpenInTerminal at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="T2H-ps-5wf">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="launchButtonClicked:" target="Gn1-zC-bzB" id="3ju-vK-uPW"/>
-                                        </connections>
-                                    </button>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hwv-gc-vIr">
-                                        <rect key="frame" x="0.0" y="58" width="310" height="14"/>
-                                        <subviews>
-                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="RNa-IC-EXD">
-                                                <rect key="frame" x="16" y="0.0" width="233" height="14"/>
-                                                <textFieldCell key="cell" title="Start OpenInTerminal automatically at login." id="8dm-1h-GvA">
-                                                    <font key="font" metaFont="smallSystem"/>
-                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="RNa-IC-EXD" firstAttribute="leading" secondItem="Hwv-gc-vIr" secondAttribute="leading" constant="18" id="XcQ-Ud-p6Y"/>
-                                        </constraints>
-                                        <visibilityPriorities>
-                                            <integer value="1000"/>
-                                        </visibilityPriorities>
-                                        <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                        </customSpacing>
-                                    </stackView>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ErX-63-Xad">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
                                         <subviews>
@@ -194,17 +162,10 @@
                                         </customSpacing>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Hwv-gc-vIr" firstAttribute="trailing" secondItem="ErX-63-Xad" secondAttribute="trailing" id="xK9-hb-mqM"/>
-                                </constraints>
                                 <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
                                     <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
@@ -222,7 +183,6 @@
                     <connections>
                         <outlet property="defaultEditorButton" destination="R8D-f0-J22" id="krg-qv-BAe"/>
                         <outlet property="defaultTerminalButton" destination="AaU-k8-Gb7" id="bmA-od-3vf"/>
-                        <outlet property="launchButton" destination="5f2-iR-JzT" id="RyF-g2-HEg"/>
                         <outlet property="quickOpenButton" destination="VGA-Ho-z5c" id="UCz-Gh-gzP"/>
                     </connections>
                 </viewController>

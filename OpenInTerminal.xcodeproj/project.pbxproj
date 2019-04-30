@@ -29,22 +29,17 @@
 		4725259022681424003C50DF /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
 		950A4E692271EEC8002A9548 /* AlacrittyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950A4E682271EEC8002A9548 /* AlacrittyApp.swift */; };
 		9511D89522747334008E52B9 /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511D89422747334008E52B9 /* CoreManager.swift */; };
-		9511D89D22748449008E52B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511D89C22748449008E52B9 /* AppDelegate.swift */; };
-		9511D89F2274844A008E52B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9511D89E2274844A008E52B9 /* Assets.xcassets */; };
-		9511D8A9227485C9008E52B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9511D8A8227485C9008E52B9 /* Main.storyboard */; };
 		9511D8AC22749582008E52B9 /* LaunchNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511D8AB22749582008E52B9 /* LaunchNotifier.swift */; };
-		9511D8AD22749586008E52B9 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD12269979E007C006F /* Notifier.swift */; };
-		9511D8AE22749588008E52B9 /* LaunchNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511D8AB22749582008E52B9 /* LaunchNotifier.swift */; };
-		9511D8B42274A285008E52B9 /* OpenInTerminalHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9511D89A22748449008E52B9 /* OpenInTerminalHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		95163CD22269979E007C006F /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD12269979E007C006F /* Notifier.swift */; };
 		95163CD4226998ED007C006F /* OpenNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD3226998ED007C006F /* OpenNotifier.swift */; };
 		95163CD52269A09D007C006F /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD12269979E007C006F /* Notifier.swift */; };
 		95163CD62269A09F007C006F /* OpenNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD3226998ED007C006F /* OpenNotifier.swift */; };
+		951A3EBD2278A6F700E8DB61 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A3EBC2278A6F700E8DB61 /* StatusMenuController.swift */; };
+		951A3EBF2278A70F00E8DB61 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951A3EBE2278A70F00E8DB61 /* MainMenu.xib */; };
 		9521EDCA226B3F93008445D1 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9521EDC9226B3F93008445D1 /* Preferences.storyboard */; };
 		9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCB226B475E008445D1 /* PreferencesViewController.swift */; };
 		9521EDD0226B4BE6008445D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCF226B4BE6008445D1 /* Constants.swift */; };
 		954EFA932273643C001E101E /* EditorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EFA922273643C001E101E /* EditorProtocol.swift */; };
-		9557D3D52274A78D00CE34FA /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9557D3D42274A78C00CE34FA /* ServiceManagement.framework */; };
 		9584EDF2226DEF79003C7EE8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		9590B68E226C04E000362B93 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B68D226C04E000362B93 /* Defaults.swift */; };
 		9590B691226C6DB000362B93 /* TerminalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B690226C6DB000362B93 /* TerminalType.swift */; };
@@ -55,6 +50,7 @@
 		9590B69B226C6EA200362B93 /* SublimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69A226C6EA200362B93 /* SublimeApp.swift */; };
 		9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */; };
 		9590B6A1226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */; };
+		95F5BED5227734E800D505A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +99,6 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				9511D8B42274A285008E52B9 /* OpenInTerminalHelper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,15 +131,11 @@
 		4725257F2268112F003C50DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		950A4E682271EEC8002A9548 /* AlacrittyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlacrittyApp.swift; sourceTree = "<group>"; };
 		9511D89422747334008E52B9 /* CoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
-		9511D89A22748449008E52B9 /* OpenInTerminalHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenInTerminalHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9511D89C22748449008E52B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9511D89E2274844A008E52B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9511D8A32274844A008E52B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9511D8A42274844A008E52B9 /* OpenInTerminalHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenInTerminalHelper.entitlements; sourceTree = "<group>"; };
-		9511D8A8227485C9008E52B9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9511D8AB22749582008E52B9 /* LaunchNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNotifier.swift; sourceTree = "<group>"; };
 		95163CD12269979E007C006F /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		95163CD3226998ED007C006F /* OpenNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNotifier.swift; sourceTree = "<group>"; };
+		951A3EBC2278A6F700E8DB61 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		951A3EBE2278A70F00E8DB61 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		9521EDC9226B3F93008445D1 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		9521EDCB226B475E008445D1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		9521EDCF226B4BE6008445D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -161,6 +152,7 @@
 		9590B69A226C6EA200362B93 /* SublimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SublimeApp.swift; sourceTree = "<group>"; };
 		9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderExtensionPreferencesViewController.swift; sourceTree = "<group>"; };
+		95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,15 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9557D3D52274A78D00CE34FA /* ServiceManagement.framework in Frameworks */,
 				47252586226812AB003C50DF /* OpenInTerminalCore.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9511D89722748449008E52B9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +239,8 @@
 			children = (
 				4725256122681098003C50DF /* AppDelegate.swift */,
 				9521EDCF226B4BE6008445D1 /* Constants.swift */,
+				951A3EBE2278A70F00E8DB61 /* MainMenu.xib */,
+				951A3EBC2278A6F700E8DB61 /* StatusMenuController.swift */,
 				9521EDD1226B4BEF008445D1 /* Notifier */,
 				9521EDC8226B3F41008445D1 /* PreferencesWindow */,
 				9511D8AA22748FD6008E52B9 /* Assets */,
@@ -270,22 +256,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9511D89B22748449008E52B9 /* OpenInTerminalHelper */ = {
-			isa = PBXGroup;
-			children = (
-				9511D89C22748449008E52B9 /* AppDelegate.swift */,
-				9511D89E2274844A008E52B9 /* Assets.xcassets */,
-				9511D8A32274844A008E52B9 /* Info.plist */,
-				9511D8A42274844A008E52B9 /* OpenInTerminalHelper.entitlements */,
-			);
-			path = OpenInTerminalHelper;
-			sourceTree = "<group>";
-		};
 		9511D8AA22748FD6008E52B9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				4725257E2268112F003C50DF /* Assets.xcassets */,
-				9511D8A8227485C9008E52B9 /* Main.storyboard */,
 				4725257F2268112F003C50DF /* Info.plist */,
 				4725257D2268112F003C50DF /* OpenInTerminal.entitlements */,
 				9584EDF4226DEF79003C7EE8 /* Localizable.strings */,
@@ -297,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				9521EDC9226B3F93008445D1 /* Preferences.storyboard */,
+				95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */,
 				9521EDCB226B475E008445D1 /* PreferencesViewController.swift */,
 				9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */,
 				9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */,
@@ -320,7 +295,6 @@
 				4725256022681098003C50DF /* OpenInTerminal */,
 				4725251222680E87003C50DF /* OpenInTerminalCore */,
 				4725254B22680FEB003C50DF /* OpenInTerminalFinderExtension */,
-				9511D89B22748449008E52B9 /* OpenInTerminalHelper */,
 				956C38B2225F7701001CB769 /* Products */,
 				4725258F22681424003C50DF /* Frameworks */,
 			);
@@ -332,7 +306,6 @@
 				4725251122680E87003C50DF /* OpenInTerminalCore.framework */,
 				4725254A22680FEB003C50DF /* OpenInTerminalFinderExtension.appex */,
 				4725255F22681098003C50DF /* OpenInTerminal.app */,
-				9511D89A22748449008E52B9 /* OpenInTerminalHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -421,23 +394,6 @@
 			productReference = 4725255F22681098003C50DF /* OpenInTerminal.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9511D89922748449008E52B9 /* OpenInTerminalHelper */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9511D8A52274844A008E52B9 /* Build configuration list for PBXNativeTarget "OpenInTerminalHelper" */;
-			buildPhases = (
-				9511D89622748449008E52B9 /* Sources */,
-				9511D89722748449008E52B9 /* Frameworks */,
-				9511D89822748449008E52B9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OpenInTerminalHelper;
-			productName = OpenInTerminalHelper;
-			productReference = 9511D89A22748449008E52B9 /* OpenInTerminalHelper.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -465,12 +421,12 @@
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
 								enabled = 0;
 							};
 						};
-					};
-					9511D89922748449008E52B9 = {
-						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
@@ -491,7 +447,6 @@
 				4725255E22681098003C50DF /* OpenInTerminal */,
 				4725251022680E87003C50DF /* OpenInTerminalCore */,
 				4725254922680FEB003C50DF /* OpenInTerminalFinderExtension */,
-				9511D89922748449008E52B9 /* OpenInTerminalHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -517,17 +472,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9521EDCA226B3F93008445D1 /* Preferences.storyboard in Resources */,
+				951A3EBF2278A70F00E8DB61 /* MainMenu.xib in Resources */,
 				9584EDF2226DEF79003C7EE8 /* Localizable.strings in Resources */,
 				472525812268112F003C50DF /* Assets.xcassets in Resources */,
-				9511D8A9227485C9008E52B9 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9511D89822748449008E52B9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9511D89F2274844A008E52B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,22 +525,14 @@
 			files = (
 				9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */,
 				4725256222681098003C50DF /* AppDelegate.swift in Sources */,
+				951A3EBD2278A6F700E8DB61 /* StatusMenuController.swift in Sources */,
 				9511D8AC22749582008E52B9 /* LaunchNotifier.swift in Sources */,
 				95163CD22269979E007C006F /* Notifier.swift in Sources */,
 				95163CD4226998ED007C006F /* OpenNotifier.swift in Sources */,
 				9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */,
+				95F5BED5227734E800D505A0 /* PreferencesWindowController.swift in Sources */,
 				9521EDD0226B4BE6008445D1 /* Constants.swift in Sources */,
 				9590B6A1226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9511D89622748449008E52B9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9511D89D22748449008E52B9 /* AppDelegate.swift in Sources */,
-				9511D8AE22749588008E52B9 /* LaunchNotifier.swift in Sources */,
-				9511D8AD22749586008E52B9 /* Notifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,7 +691,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -774,49 +712,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		9511D8A62274844A008E52B9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = OpenInTerminalHelper/OpenInTerminalHelper.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = C8VX3ZLX5U;
-				INFOPLIST_FILE = OpenInTerminalHelper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.OpenInTerminalHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		9511D8A72274844A008E52B9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = OpenInTerminalHelper/OpenInTerminalHelper.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = C8VX3ZLX5U;
-				INFOPLIST_FILE = OpenInTerminalHelper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.OpenInTerminalHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -964,15 +859,6 @@
 			buildConfigurations = (
 				4725257822681099003C50DF /* Debug */,
 				4725257922681099003C50DF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9511D8A52274844A008E52B9 /* Build configuration list for PBXNativeTarget "OpenInTerminalHelper" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9511D8A62274844A008E52B9 /* Debug */,
-				9511D8A72274844A008E52B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

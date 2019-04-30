@@ -112,7 +112,7 @@ public class TerminalManager {
             let clearOption = TerminalManager.shared.getClearOption(terminalType) ?? .noClear
             try terminal.open(path, newOption, clearOption)
         } catch {
-            log(error, .error)
+            logw(error.localizedDescription)
         }
     }
     

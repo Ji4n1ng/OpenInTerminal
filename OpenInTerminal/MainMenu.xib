@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="c7U-hO-KhD" id="6aq-AV-TWP"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="xFr-z9-DsJ" customClass="StatusMenuController" customModule="OpenInTerminal" customModuleProvider="target">
+            <connections>
+                <outlet property="copyPathMenuItem" destination="qAr-jJ-wpJ" id="c6N-Ea-YRn"/>
+                <outlet property="defaultEditorMenuItem" destination="Zth-1M-1Lo" id="bw4-82-Mty"/>
+                <outlet property="defaultTerminalMenuItem" destination="bMb-Lp-IHe" id="bew-Bk-lA6"/>
+                <outlet property="preferencesMenuItem" destination="UPk-SM-iWa" id="ca5-kt-bXJ"/>
+                <outlet property="quitMenuItem" destination="h2a-ug-O2T" id="hvL-68-064"/>
+                <outlet property="statusMenu" destination="Hp5-zS-8KF" id="0Nh-0E-UKl"/>
+            </connections>
+        </customObject>
+        <customObject id="c7U-hO-KhD" userLabel="Delegate" customClass="AppDelegate" customModule="OpenInTerminal" customModuleProvider="target">
+            <connections>
+                <outlet property="statusBarMenu" destination="Hp5-zS-8KF" id="Fp9-eh-hpZ"/>
+            </connections>
+        </customObject>
+        <menu id="Hp5-zS-8KF">
+            <items>
+                <menuItem title="Open with Default Terminal" id="bMb-Lp-IHe">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openDefaultTerminal:" target="xFr-z9-DsJ" id="AiG-rU-N3Y"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Open with Default Editor" id="Zth-1M-1Lo">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openDefaultEditor:" target="xFr-z9-DsJ" id="McZ-8S-4C0"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Copy path to Clipboard" id="qAr-jJ-wpJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="copyPathToClipboard:" target="xFr-z9-DsJ" id="g3F-O4-Ydf"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="s0I-d5-G8a"/>
+                <menuItem title="Preferences..." id="UPk-SM-iWa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showPreferences:" target="xFr-z9-DsJ" id="ePD-XV-Rfn"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit" id="h2a-ug-O2T">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quit:" target="xFr-z9-DsJ" id="fn6-gp-8xq"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-698" y="-192"/>
+        </menu>
+    </objects>
+</document>

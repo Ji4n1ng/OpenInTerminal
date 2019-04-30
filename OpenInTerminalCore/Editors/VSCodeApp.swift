@@ -27,7 +27,6 @@ final class VSCodeApp: Editor {
         script.executeAndReturnError(&error)
         
         if error != nil {
-            log(error, .error)
             throw OITError.cannotAccessVSCode
         }
     }

@@ -11,8 +11,6 @@ import Foundation
 
 struct Constants {
     static let none = "None"
-    
-    static let launcherAppIdentifier = "wang.jianing.OpenInTerminalHelper"
 }
 
 extension NSImage {

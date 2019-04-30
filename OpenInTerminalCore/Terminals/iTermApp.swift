@@ -65,7 +65,6 @@ final class iTermApp: Terminal {
         script.executeAndReturnError(&error)
         
         if error != nil {
-            log(error, .error)
             throw OITError.cannotAccessIterm
         }
     }

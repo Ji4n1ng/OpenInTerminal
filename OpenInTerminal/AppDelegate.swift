@@ -8,38 +8,26 @@
 
 import Cocoa
 import OpenInTerminalCore
-import ServiceManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: Properties
     
-    var preferencesController: NSWindowController?
-    
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
-    lazy var statusBarMenu: NSMenu = {
-        let menu = NSMenu()
-        let preferencesItem = NSMenuItem(title: "Preferences...",
-                                         action: #selector(showPreferences(_:)),
-                                         keyEquivalent: "")
-        let quitItem = NSMenuItem(title: "Quit",
-                                  action: #selector(quit),
-                                  keyEquivalent: "")
-        [preferencesItem, NSMenuItem.separator(), quitItem].forEach {
-            menu.addItem($0)
-        }
-        return menu
+    @IBOutlet weak var statusBarMenu: NSMenu!
+    
+    lazy var preferencesWindowController: PreferencesWindowController = {
+        let storyboard = NSStoryboard(storyboardIdentifier: .Preferences)
+        return storyboard.instantiateInitialController() as? PreferencesWindowController ?? PreferencesWindowController()
     }()
     
     // MARK: Lifecycle
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-//        SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, false)
 //        CoreManager.shared.removeAllUserDefaults()
         CoreManager.shared.firstSetup()
-        terminateOpenInTerminalHelper()
         addObserver()
         setStatusBarIcon()
         setStatusToggle()
@@ -95,39 +83,6 @@ extension AppDelegate {
         } else if event.type == .leftMouseUp {
             openDefaultTerminal()
         }
-    }
-    
-    // MARK: Status Bar Menu Actions
-    
-    @objc func showPreferences(_ sender: Any) {
-        
-        if preferencesController == nil {
-            let storyboard = NSStoryboard(storyboardIdentifier: .Preferences)
-            preferencesController = storyboard.instantiateInitialController() as? NSWindowController
-        }
-        
-        if preferencesController != nil {
-            preferencesController!.showWindow(sender)
-        }
-        
-    }
-    
-    @objc func quit() {
-        LaunchNotifier.postNotification(.terminateApp, object: Bundle.main.bundleIdentifier!)
-        NSApp.terminate(self)
-    }
-    
-    // MARK: OpenInTerminalHelper
-    
-    func terminateOpenInTerminalHelper() {
-        let isRunning = NSWorkspace.shared.runningApplications.contains {
-            $0.bundleIdentifier == Constants.launcherAppIdentifier
-        }
-        
-        if isRunning {
-            LaunchNotifier.postNotification(.terminateApp, object: Bundle.main.bundleIdentifier!)
-        }
-        
     }
     
     // MARK: Notification
@@ -246,7 +201,7 @@ extension AppDelegate {
             NSPasteboard.general.setString(path, forType: .string)
             
         } catch {
-            log(error, .error)
+            logw(error.localizedDescription)
         }
     }
 }

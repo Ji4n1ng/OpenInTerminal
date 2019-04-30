@@ -35,7 +35,7 @@ public class FinderManager {
             // Check if there are opened finder windows
             guard let windows = finder.FinderWindows?(),
                 let firstWindow = windows.firstObject else {
-                    log("No Finder windows are opened or selected", .warn)
+                    print("No Finder windows are opened or selected")
                     return ""
             }
             target = (firstWindow as! FinderFinderWindow).target?.get() as! FinderItem
@@ -43,7 +43,7 @@ public class FinderManager {
         
         guard let targetUrl = target.URL,
             let url = URL(string: targetUrl) else {
-                log("target url nil", .warn)
+                print("target url nil")
                 return ""
         }
         
@@ -65,7 +65,7 @@ public class FinderManager {
         var isDirectory: ObjCBool = false
         
         guard FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory) else {
-            log("file does not exist", .warn)
+            print("file does not exist")
             return ""
         }
         

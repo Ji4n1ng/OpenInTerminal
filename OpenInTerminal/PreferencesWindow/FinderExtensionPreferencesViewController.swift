@@ -116,10 +116,6 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
                     windowButton.state = .off
                     tabButton.state = .on
                 }
-            } else {
-                // First usage. There is no UserDefaults
-                log("First usage. Setting Buttons NewOption")
-                TerminalManager.shared.setNewOption(terminal, .window)
             }
         }
     }
@@ -133,10 +129,6 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
             let _clearOption = TerminalManager.shared.getClearOption(terminal)
             if let clearOption = _clearOption {
                 button.state = clearOption == .clear ? .on : .off
-            } else {
-                // First usage. There is no UserDefaults
-                log("First usage. Setting Buttons NewOption")
-                TerminalManager.shared.setClearOption(terminal, .noClear)
             }
         }
     }

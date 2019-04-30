@@ -14,7 +14,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
 
     // MARK: Properties
 
-    @IBOutlet weak var launchButton: NSButton!
+//    @IBOutlet weak var launchButton: NSButton!
     @IBOutlet weak var quickOpenButton: NSButton!
     @IBOutlet weak var defaultTerminalButton: NSPopUpButton!
     @IBOutlet weak var defaultEditorButton: NSPopUpButton!
@@ -40,18 +40,10 @@ class GeneralPreferencesViewController: PreferencesViewController {
     // MARK: Refresh UI
     
     func refreshButtonState() {
-        guard let launchAtLogin = CoreManager.shared.launchAtLogin else {
-            log("Launch at Login is not set", .error)
-            launchButton.isEnabled = false
-            return
-        }
-        launchButton.state = launchAtLogin == ._true ? .on : .off
+//        guard let launchAtLogin = CoreManager.shared.launchAtLogin else { return }
+//        launchButton.state = launchAtLogin == ._true ? .on : .off
         
-        guard let quickOpen = CoreManager.shared.quickOpen else {
-            log("Quick Open is not set", .error)
-            quickOpenButton.isEnabled = false
-            return
-        }
+        guard let quickOpen = CoreManager.shared.quickOpen else { return }
         quickOpenButton.state = quickOpen == ._true ? .on : .off
     }
     
@@ -105,12 +97,12 @@ class GeneralPreferencesViewController: PreferencesViewController {
     
     // MARK: Button Actions
     
-    @IBAction func launchButtonClicked(_ sender: NSButton) {
-        let isLaunch = launchButton.state == .on
-        let launchAtLogin: BoolType = isLaunch ? ._true : ._false
-        CoreManager.shared.launchAtLogin = launchAtLogin
-        SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, isLaunch)
-    }
+//    @IBAction func launchButtonClicked(_ sender: NSButton) {
+//        let isLaunch = launchButton.state == .on
+//        let launchAtLogin: BoolType = isLaunch ? ._true : ._false
+//        CoreManager.shared.launchAtLogin = launchAtLogin
+//        SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, isLaunch)
+//    }
     
     @IBAction func quickOpenButtonClicked(_ sender: NSButton) {
         let quickOpen: BoolType = quickOpenButton.state == .on ? ._true : ._false
@@ -118,7 +110,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.setStatusToggle()
-        log("Quick Open set to \(sender.state.rawValue)")
+        logw("Quick Open set to \(sender.state.rawValue)")
     }
     
     @IBAction func defaultTerminalButtonClicked(_ sender: NSPopUpButton) {
