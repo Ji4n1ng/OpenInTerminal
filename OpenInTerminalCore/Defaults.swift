@@ -28,7 +28,8 @@ extension DefaultsKeys {
     // value example: BoolType._true.rawValue
     static let firstUsage = DefaultsKey<String>(Constants.Key.firstUsage)
     static let launchAtLogin = DefaultsKey<String>(Constants.Key.launchAtLogin)
-    static let quickOpen = DefaultsKey<String>(Constants.Key.quickOpen)
+    static let quickToggle = DefaultsKey<String>(Constants.Key.quickToggle)
+    static let quickToggleType = DefaultsKey<String>(Constants.Key.quickToggleType)
     
     // value example: TerminalType.terminal.rawValue
     static let defaultTerminal = DefaultsKey<String>(Constants.Key.defaultTerminal)

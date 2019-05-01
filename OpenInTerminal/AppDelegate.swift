@@ -57,7 +57,7 @@ extension AppDelegate {
     }
     
     func setStatusToggle() {
-        guard let quickOpen = CoreManager.shared.quickOpen else { return }
+        guard let quickOpen = CoreManager.shared.quickToggle else { return }
         
         if quickOpen == ._true {
             statusItem.menu = nil
@@ -81,7 +81,16 @@ extension AppDelegate {
             statusItem.button?.performClick(self)
             statusItem.menu = nil
         } else if event.type == .leftMouseUp {
-            openDefaultTerminal()
+            if let quickToggleType = CoreManager.shared.quickToggleType {
+                switch quickToggleType {
+                case .openWithDefaultTerminal:
+                    openDefaultTerminal()
+                case .openWithDefaultEditor:
+                    openDefaultEditor()
+                case .copyPathToClipboard:
+                    copyPathToClipboard()
+                }
+            }
         }
     }
     

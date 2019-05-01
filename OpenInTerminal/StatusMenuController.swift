@@ -40,15 +40,15 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     // MARK: Menu Item Actions
     
     @IBAction func openDefaultTerminal(_ sender: NSMenuItem) {
-        
+        (NSApplication.shared.delegate as? AppDelegate)?.openDefaultTerminal()
     }
     
     @IBAction func openDefaultEditor(_ sender: NSMenuItem) {
-        
+        (NSApplication.shared.delegate as? AppDelegate)?.openDefaultEditor()
     }
     
     @IBAction func copyPathToClipboard(_ sender: NSMenuItem) {
-        
+        (NSApplication.shared.delegate as? AppDelegate)?.copyPathToClipboard()
     }
     
     @IBAction func showPreferences(_ sender: NSMenuItem) {
@@ -58,7 +58,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
     
     @IBAction func quit(_ sender: NSMenuItem) {
-        
+        NSApp.terminate(self)
     }
     
 }

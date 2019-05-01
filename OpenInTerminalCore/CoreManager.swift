@@ -31,13 +31,23 @@ public class CoreManager {
         }
     }
     
-    public var quickOpen: BoolType? {
+    public var quickToggle: BoolType? {
         get {
-            return Defaults[.quickOpen].map(BoolType.init(rawValue: )) ?? nil
+            return Defaults[.quickToggle].map(BoolType.init(rawValue: )) ?? nil
         }
         
         set {
-            Defaults[.quickOpen] = newValue?.rawValue
+            Defaults[.quickToggle] = newValue?.rawValue
+        }
+    }
+    
+    public var quickToggleType: QuickToggleType? {
+        get {
+            return Defaults[.quickToggleType].map(QuickToggleType.init(rawValue: )) ?? nil
+        }
+        
+        set {
+            Defaults[.quickToggleType] = newValue?.rawValue
         }
     }
     
@@ -45,7 +55,8 @@ public class CoreManager {
         guard firstUsage == ._true else { return }
         logw("First Setup")
 //        Defaults[.launchAtLogin] = BoolType._false.rawValue
-        Defaults[.quickOpen] = BoolType._false.rawValue
+        Defaults[.quickToggle] = BoolType._false.rawValue
+        Defaults[.quickToggleType] = QuickToggleType.openWithDefaultTerminal.rawValue
         Defaults.removeObject(forKey: Constants.Key.defaultTerminal)
         Defaults.removeObject(forKey: Constants.Key.defaultEditor)
         Defaults[.terminalNewOption] = NewOptionType.window.rawValue

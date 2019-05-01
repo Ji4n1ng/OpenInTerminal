@@ -15,7 +15,8 @@ class GeneralPreferencesViewController: PreferencesViewController {
     // MARK: Properties
 
 //    @IBOutlet weak var launchButton: NSButton!
-    @IBOutlet weak var quickOpenButton: NSButton!
+    @IBOutlet weak var quickToggleButton: NSButton!
+    @IBOutlet weak var chooseToggleActionButton: NSPopUpButton!
     @IBOutlet weak var defaultTerminalButton: NSPopUpButton!
     @IBOutlet weak var defaultEditorButton: NSPopUpButton!
     
@@ -43,8 +44,20 @@ class GeneralPreferencesViewController: PreferencesViewController {
 //        guard let launchAtLogin = CoreManager.shared.launchAtLogin else { return }
 //        launchButton.state = launchAtLogin == ._true ? .on : .off
         
-        guard let quickOpen = CoreManager.shared.quickOpen else { return }
-        quickOpenButton.state = quickOpen == ._true ? .on : .off
+        guard let quickToggle = CoreManager.shared.quickToggle else { return }
+        quickToggleButton.state = quickToggle.bool ? .on : .off
+        chooseToggleActionButton.isEnabled = quickToggle.bool
+        
+        let toggleTypes: [QuickToggleType] =
+            [.openWithDefaultTerminal, .openWithDefaultEditor, .copyPathToClipboard]
+        toggleTypes.forEach {
+            chooseToggleActionButton.addItem(withTitle: $0.rawValue)
+        }
+        
+        if let quickToggleType = CoreManager.shared.quickToggleType {
+            let index = chooseToggleActionButton.indexOfItem(withTitle: quickToggleType.rawValue)
+            chooseToggleActionButton.selectItem(at: index)
+        }
     }
     
     func refreshDefaultTerminal() {
@@ -104,13 +117,25 @@ class GeneralPreferencesViewController: PreferencesViewController {
 //        SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, isLaunch)
 //    }
     
-    @IBAction func quickOpenButtonClicked(_ sender: NSButton) {
-        let quickOpen: BoolType = quickOpenButton.state == .on ? ._true : ._false
-        CoreManager.shared.quickOpen = quickOpen
+    
+    @IBAction func quickToggleButtonClicked(_ sender: NSButton) {
+        let quickToggle: BoolType = quickToggleButton.state == .on ? ._true : ._false
+        CoreManager.shared.quickToggle = quickToggle
+        chooseToggleActionButton.isEnabled = quickToggle.bool
         
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.setStatusToggle()
         logw("Quick Open set to \(sender.state.rawValue)")
+    }
+    
+    @IBAction func chooseToggleActionButtonClicked(_ sender: NSPopUpButton) {
+        let itemTitles = sender.itemTitles
+        let index = sender.indexOfSelectedItem
+        let title = itemTitles[index]
+        
+        if let quickToggleType = QuickToggleType(rawValue: title) {
+            CoreManager.shared.quickToggleType = quickToggleType
+        }
     }
     
     @IBAction func defaultTerminalButtonClicked(_ sender: NSPopUpButton) {

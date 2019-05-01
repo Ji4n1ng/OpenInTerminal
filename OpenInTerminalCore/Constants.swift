@@ -17,7 +17,8 @@ struct Constants {
     struct Key {
         static let firstUsage = "OIT_FirstUsage"
         static let launchAtLogin = "OIT_LaunchAtLogin"
-        static let quickOpen = "OIT_QuickOpen"
+        static let quickToggle = "OIT_QuickToggle"
+        static let quickToggleType = "OIT_QuickToggleType"
         
         static let defaultTerminal = "OIT_TerminalBundleIdentifier"
         static let defaultEditor = "OIT_EditorBundleIdentifier"
@@ -31,6 +32,12 @@ struct Constants {
         static let copyPathToClipboardVisible = "OIT_CopyPathToClipboardVisible"
     }
 
+}
+
+public enum QuickToggleType: String {
+    case openWithDefaultTerminal = "Open with Default Terminal"
+    case openWithDefaultEditor = "Open with Default Editor"
+    case copyPathToClipboard = "Copy Path to Clipboard"
 }
 
 public enum NewOptionType: String {
@@ -51,4 +58,14 @@ public enum ClearOptionType: String {
 public enum BoolType: String {
     case _true
     case _false
+    
+    public var bool: Bool {
+        get {
+            return self == ._true
+        }
+        
+        set {
+            self = newValue ? ._true : ._false
+        }
+    }
 }
