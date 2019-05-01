@@ -50,6 +50,7 @@
 		9590B69B226C6EA200362B93 /* SublimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69A226C6EA200362B93 /* SublimeApp.swift */; };
 		9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */; };
 		9590B6A1226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */; };
+		95BAA1822279E28D005E1DAC /* AboutPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */; };
 		95F5BED5227734E800D505A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,7 @@
 		9590B69A226C6EA200362B93 /* SublimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SublimeApp.swift; sourceTree = "<group>"; };
 		9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderExtensionPreferencesViewController.swift; sourceTree = "<group>"; };
+		95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
 		95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -275,6 +277,7 @@
 				9521EDCB226B475E008445D1 /* PreferencesViewController.swift */,
 				9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */,
 				9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */,
+				95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */,
 			);
 			path = PreferencesWindow;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */,
 				4725256222681098003C50DF /* AppDelegate.swift in Sources */,
 				951A3EBD2278A6F700E8DB61 /* StatusMenuController.swift in Sources */,
+				95BAA1822279E28D005E1DAC /* AboutPreferencesViewController.swift in Sources */,
 				9511D8AC22749582008E52B9 /* LaunchNotifier.swift in Sources */,
 				95163CD22269979E007C006F /* Notifier.swift in Sources */,
 				95163CD4226998ED007C006F /* OpenNotifier.swift in Sources */,
