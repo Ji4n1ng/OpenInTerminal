@@ -36,7 +36,6 @@
 		95163CD62269A09F007C006F /* OpenNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD3226998ED007C006F /* OpenNotifier.swift */; };
 		951A3EBD2278A6F700E8DB61 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A3EBC2278A6F700E8DB61 /* StatusMenuController.swift */; };
 		951A3EBF2278A70F00E8DB61 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951A3EBE2278A70F00E8DB61 /* MainMenu.xib */; };
-		9521EDCA226B3F93008445D1 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9521EDC9226B3F93008445D1 /* Preferences.storyboard */; };
 		9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCB226B475E008445D1 /* PreferencesViewController.swift */; };
 		9521EDD0226B4BE6008445D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCF226B4BE6008445D1 /* Constants.swift */; };
 		954EFA932273643C001E101E /* EditorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EFA922273643C001E101E /* EditorProtocol.swift */; };
@@ -51,6 +50,9 @@
 		9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */; };
 		9590B6A1226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */; };
 		95BAA1822279E28D005E1DAC /* AboutPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */; };
+		95C6C339227A9EE600F157C4 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C6C33B227A9EE600F157C4 /* Preferences.storyboard */; };
+		95C6C340227AA1CB00F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
+		95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		95F5BED5227734E800D505A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */; };
 /* End PBXBuildFile section */
 
@@ -137,7 +139,6 @@
 		95163CD3226998ED007C006F /* OpenNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNotifier.swift; sourceTree = "<group>"; };
 		951A3EBC2278A6F700E8DB61 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		951A3EBE2278A70F00E8DB61 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		9521EDC9226B3F93008445D1 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		9521EDCB226B475E008445D1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		9521EDCF226B4BE6008445D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		954EFA922273643C001E101E /* EditorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorProtocol.swift; sourceTree = "<group>"; };
@@ -154,6 +155,9 @@
 		9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderExtensionPreferencesViewController.swift; sourceTree = "<group>"; };
 		95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
+		95C6C33A227A9EE600F157C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preferences.storyboard; sourceTree = "<group>"; };
+		95C6C33D227A9EEA00F157C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
+		95C6C33F227A9EEC00F157C4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
 		95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -272,7 +276,7 @@
 		9521EDC8226B3F41008445D1 /* PreferencesWindow */ = {
 			isa = PBXGroup;
 			children = (
-				9521EDC9226B3F93008445D1 /* Preferences.storyboard */,
+				95C6C33B227A9EE600F157C4 /* Preferences.storyboard */,
 				95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */,
 				9521EDCB226B475E008445D1 /* PreferencesViewController.swift */,
 				9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */,
@@ -459,6 +463,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C6C340227AA1CB00F157C4 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				472525592268100F003C50DF /* FinderAssets.xcassets in Resources */,
+				95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9521EDCA226B3F93008445D1 /* Preferences.storyboard in Resources */,
+				95C6C339227A9EE600F157C4 /* Preferences.storyboard in Resources */,
 				951A3EBF2278A70F00E8DB61 /* MainMenu.xib in Resources */,
 				9584EDF2226DEF79003C7EE8 /* Localizable.strings in Resources */,
 				472525812268112F003C50DF /* Assets.xcassets in Resources */,
@@ -563,6 +569,16 @@
 				9584EDF5226DEFC0003C7EE8 /* zh-Hans */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		95C6C33B227A9EE600F157C4 /* Preferences.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95C6C33A227A9EE600F157C4 /* Base */,
+				95C6C33D227A9EEA00F157C4 /* en */,
+				95C6C33F227A9EEC00F157C4 /* zh-Hans */,
+			);
+			name = Preferences.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

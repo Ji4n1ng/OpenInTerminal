@@ -72,7 +72,7 @@
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mkc-zC-sfG">
                                             <rect key="frame" x="21" y="62" width="107" height="17"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Default Terminal:" id="aRo-sy-WpK">
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Default Terminal:" id="aRo-sy-WpK">
                                                 <font key="font" usesAppearanceFont="YES"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -80,7 +80,7 @@
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0O8-UX-yZT">
                                             <rect key="frame" x="8" y="20" width="120" height="17"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Default Text Editor:" id="Xfc-rf-FkX">
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Default Text Editor:" id="Xfc-rf-FkX">
                                                 <font key="font" usesAppearanceFont="YES"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -112,9 +112,11 @@
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="0O8-UX-yZT" secondAttribute="bottom" constant="20" id="3Ag-Jp-VE8"/>
                                         <constraint firstAttribute="bottom" secondItem="R8D-f0-J22" secondAttribute="bottom" constant="18" id="Le5-W1-MFI"/>
+                                        <constraint firstItem="0O8-UX-yZT" firstAttribute="leading" secondItem="JZS-d4-7Et" secondAttribute="leading" constant="10" id="RcW-yS-clA"/>
                                         <constraint firstAttribute="trailing" secondItem="R8D-f0-J22" secondAttribute="trailing" constant="19" id="SBF-M1-4cM"/>
                                         <constraint firstItem="R8D-f0-J22" firstAttribute="top" secondItem="AaU-k8-Gb7" secondAttribute="bottom" constant="21" id="SfO-JD-Pu0"/>
                                         <constraint firstAttribute="trailing" secondItem="AaU-k8-Gb7" secondAttribute="trailing" constant="19" id="ZB4-Lf-795"/>
+                                        <constraint firstItem="Mkc-zC-sfG" firstAttribute="leading" secondItem="JZS-d4-7Et" secondAttribute="leading" constant="23" id="cXG-NB-6wb"/>
                                         <constraint firstItem="0O8-UX-yZT" firstAttribute="top" secondItem="Mkc-zC-sfG" secondAttribute="bottom" constant="25" id="e62-rZ-qlv"/>
                                         <constraint firstAttribute="trailing" secondItem="0O8-UX-yZT" secondAttribute="trailing" constant="184" id="gBS-4f-ula"/>
                                         <constraint firstItem="AaU-k8-Gb7" firstAttribute="leading" secondItem="Mkc-zC-sfG" secondAttribute="trailing" constant="14" id="gOh-V3-JA8"/>
@@ -152,9 +154,6 @@
                                                             <font key="font" metaFont="menu"/>
                                                             <menu key="menu" id="5wI-2k-ZrL"/>
                                                         </popUpButtonCell>
-                                                        <connections>
-                                                            <action selector="chooseToggleActionButtonClicked:" target="Gn1-zC-bzB" id="VWa-62-z02"/>
-                                                        </connections>
                                                     </popUpButton>
                                                 </subviews>
                                                 <visibilityPriorities>
@@ -216,7 +215,7 @@
                 </viewController>
                 <customObject id="7th-7A-0Xc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-592" y="1019"/>
+            <point key="canvasLocation" x="-591" y="1019"/>
         </scene>
         <!--Toolbar-->
         <scene sceneID="75c-0T-1MT">

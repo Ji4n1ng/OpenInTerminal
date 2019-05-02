@@ -69,11 +69,12 @@ public class EditorManager {
         
         let alert = NSAlert()
         
-        alert.messageText = "Open In?"
-        alert.informativeText = "Please select one of the following editors as the default editor to open."
+        alert.messageText = NSLocalizedString("alert.pick_editor_title", comment: "Open In?")
+        alert.informativeText = NSLocalizedString("alert.pick_editor_description", comment: "Please select one of the following editors as the default editor to open.")
         
         // Add button and avoid the focus ring
-        alert.addButton(withTitle: "Cancel").refusesFirstResponder = true
+        let cancelString = NSLocalizedString("general.cancel", comment: "Cancel")
+        alert.addButton(withTitle: cancelString).refusesFirstResponder = true
         alert.addButton(withTitle: EditorType.sublime.rawValue).refusesFirstResponder = true
         alert.addButton(withTitle: EditorType.atom.rawValue).refusesFirstResponder = true
         alert.addButton(withTitle: EditorType.vscode.rawValue).refusesFirstResponder = true

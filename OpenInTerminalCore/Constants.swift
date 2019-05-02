@@ -35,9 +35,20 @@ struct Constants {
 }
 
 public enum QuickToggleType: String {
-    case openWithDefaultTerminal = "Open with Default Terminal"
-    case openWithDefaultEditor = "Open with Default Editor"
-    case copyPathToClipboard = "Copy Path to Clipboard"
+    case openWithDefaultTerminal
+    case openWithDefaultEditor
+    case copyPathToClipboard
+    
+    public var name: String {
+        switch self {
+        case .openWithDefaultTerminal:
+        return NSLocalizedString("menu.open_with_default_terminal", comment: "Open with default Terminal")
+        case .openWithDefaultEditor:
+        return NSLocalizedString("menu.open_with_default_editor", comment: "Open with default Editor")
+        case .copyPathToClipboard:
+        return NSLocalizedString("menu.copy_path_to_clipboard", comment: "Copy path to Clipboard")
+        }
+    }
 }
 
 public enum NewOptionType: String {

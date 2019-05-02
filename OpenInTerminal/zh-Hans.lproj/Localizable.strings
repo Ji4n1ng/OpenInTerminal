@@ -5,3 +5,22 @@
   Created by Jianing Wang on 2019/4/22.
   Copyright © 2019 Jianing Wang. All rights reserved.
 */
+
+"general.ok" = "好";
+"general.cancel" = "取消";
+
+"menu.open_with_default_terminal" = "打开默认终端";
+"menu.open_with_default_editor" = "打开默认编辑器";
+"menu.copy_path_to_clipboard" = "拷贝路径到粘贴板";
+
+"menu.preferences" = "偏好设置...";
+"menu.quit" = "退出";
+
+"pref.toolbar.not_installed" = "未安装";
+
+"alert.pick_terminal_title" = "打开?";
+"alert.pick_terminal_description" = "请在下面的终端中选择一个作为默认终端。";
+
+"alert.pick_editor_title" = "打开?";
+"alert.pick_editor_description" = "请在下面的编辑器中选择一个作为默认编辑器。";
+

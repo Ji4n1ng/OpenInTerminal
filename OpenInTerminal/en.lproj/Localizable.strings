@@ -5,3 +5,22 @@
   Created by Jianing Wang on 2019/4/22.
   Copyright © 2019 Jianing Wang. All rights reserved.
 */
+
+"general.ok" = "OK";
+"general.cancel" = "Cancel";
+
+"menu.open_with_default_terminal" = "Open with default Terminal";
+"menu.open_with_default_editor" = "Open with default Editor";
+"menu.copy_path_to_clipboard" = "Copy path to Clipboard";
+
+"menu.preferences" = "Preferences...";
+"menu.quit" = "Quit";
+
+"pref.toolbar.not_installed" = "Not Installed";
+
+"alert.pick_terminal_title" = "Open In?";
+"alert.pick_terminal_description" = "Please select one of the following terminals as the default terminal to open.";
+
+"alert.pick_editor_title" = "Open In?";
+"alert.pick_editor_description" = "Please select one of the following editors as the default editor to open.";
+

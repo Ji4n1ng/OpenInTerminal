@@ -30,11 +30,13 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         //Edit printToConsole parameter in Edit Scheme > Run > Arguments > Environment Variables
         Log.logger.printToConsole = ProcessInfo.processInfo.environment["print_log"] == "true"
         
-        
 //        statusMenu.delegate = self
-//        preferencesMenuItem.title = NSLocalizedString("menu.preferences", comment: "Preferences...")
-//        quitMenuItem.title = NSLocalizedString("menu.quit", comment: "Quit Shifty")
-
+        
+        defaultTerminalMenuItem.title = NSLocalizedString("menu.open_with_default_terminal", comment: "Open with default Terminal")
+        defaultEditorMenuItem.title = NSLocalizedString("menu.open_with_default_editor", comment: "Open with default Editor")
+        copyPathMenuItem.title = NSLocalizedString("menu.copy_path_to_clipboard", comment: "Copy path to Clipboard")
+        preferencesMenuItem.title = NSLocalizedString("menu.preferences", comment: "Preferences...")
+        quitMenuItem.title = NSLocalizedString("menu.quit", comment: "Quit")
     }
     
     // MARK: Menu Item Actions

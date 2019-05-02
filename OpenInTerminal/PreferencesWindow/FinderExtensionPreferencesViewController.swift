@@ -69,7 +69,8 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
                 textField.stringValue = "\(terminal.rawValue)"
             } else {
                 textField.textColor = .secondaryLabelColor
-                textField.stringValue = "\(terminal.rawValue) (Not Installed)"
+                let notInstalledString = NSLocalizedString("pref.toolbar.not_installed", comment: "Not Installed")
+                textField.stringValue = "\(terminal.rawValue) (\(notInstalledString))"
             }
         }
         
@@ -86,7 +87,8 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
                 textField.stringValue = "\(editor.fullName)"
             } else {
                 textField.textColor = .secondaryLabelColor
-                textField.stringValue = "\(editor.fullName) (Not Installed)"
+                let notInstalledString = NSLocalizedString("pref.toolbar.not_installed", comment: "Not Installed")
+                textField.stringValue = "\(editor.fullName) (\(notInstalledString))"
             }
         }
     }
@@ -96,9 +98,9 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
         terminalTabButton.isEnabled = terminalTextField.isEnabled
         terminalClearButton.isEnabled = terminalTextField.isEnabled
 
-        iTermWindowButton.isEnabled = terminalTextField.isEnabled
-        iTermTabButton.isEnabled = terminalTextField.isEnabled
-        iTermClearButton.isEnabled = terminalTextField.isEnabled
+        iTermWindowButton.isEnabled = iTermTextField.isEnabled
+        iTermTabButton.isEnabled = iTermTextField.isEnabled
+        iTermClearButton.isEnabled = iTermTextField.isEnabled
     }
     
     func refreshButtonNewOptionState() {

@@ -1,0 +1,114 @@
+
+/* Class = "NSTextFieldCell"; title = "❤️ Special thanks to:"; ObjectID = "0Gy-jf-q6v"; */
+"0Gy-jf-q6v.title" = "❤️ 特别致谢:";
+
+/* Class = "NSTextFieldCell"; title = "Sublime Text"; ObjectID = "3Xd-Ub-1BR"; */
+"3Xd-Ub-1BR.title" = "Sublime Text";
+
+/* Class = "NSButtonCell"; title = "Clear"; ObjectID = "4Sj-C3-SOm"; */
+"4Sj-C3-SOm.title" = "Clear";
+
+/* Class = "NSButtonCell"; title = "Tab"; ObjectID = "4ss-CQ-brT"; */
+"4ss-CQ-brT.title" = "标签页";
+
+/* Class = "NSTextFieldCell"; title = "If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu."; ObjectID = "592-4p-Ybh"; */
+"592-4p-Ybh.title" = "启用后，点击菜单栏图标以快速启动你所选择的操作。辅助点按（右键）以打开菜单。";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
+"5f3-UK-Rft.title" = "偏好设置";
+
+/* Class = "NSTextFieldCell"; title = "Open a new window or a new tab when opening a path in terminal."; ObjectID = "BrI-hE-Mff"; */
+"BrI-hE-Mff.title" = "当打开终端时，打开一个新的窗口或者标签页。";
+
+/* Class = "NSTextFieldCell"; title = "It is only supported to open a new window now."; ObjectID = "Dyx-zg-hYe"; */
+"Dyx-zg-hYe.title" = "现在仅支持打开一个新的窗口。";
+
+/* Class = "NSTextFieldCell"; title = "Visual Studio Code"; ObjectID = "FW0-5J-5aA"; */
+"FW0-5J-5aA.title" = "Visual Studio Code";
+
+/* Class = "NSTextFieldCell"; title = "It is more recommended to open a new tab."; ObjectID = "G69-k2-hgn"; */
+"G69-k2-hgn.title" = "更推荐打开一个新的标签页。";
+
+/* Class = "NSViewController"; title = "General"; ObjectID = "Gn1-zC-bzB"; */
+"Gn1-zC-bzB.title" = "通用";
+
+/* Class = "NSButtonCell"; title = "支付宝"; ObjectID = "HUx-Wz-JJm"; */
+"HUx-Wz-JJm.title" = "支付宝";
+
+/* Class = "NSTextFieldCell"; title = "👨‍💻 GitHub:"; ObjectID = "How-dP-tcX"; */
+"How-dP-tcX.title" = "👨‍💻 GitHub:";
+
+/* Class = "NSButtonCell"; title = "@Camji55"; ObjectID = "IJL-uk-uO5"; */
+"IJL-uk-uO5.title" = "@Camji55";
+
+/* Class = "NSButtonCell"; title = "contact@jianing.wang"; ObjectID = "IPL-yO-Vkp"; */
+"IPL-yO-Vkp.title" = "contact@jianing.wang";
+
+/* Class = "NSTextFieldCell"; title = "0.1.0"; ObjectID = "Jnf-AX-bIr"; */
+"Jnf-AX-bIr.title" = "0.1.0";
+
+/* Class = "NSTextFieldCell"; title = "💸 Donate:"; ObjectID = "Kua-ZD-31F"; */
+"Kua-ZD-31F.title" = "💸 捐献:";
+
+/* Class = "NSTextFieldCell"; title = "🐦 Twitter:"; ObjectID = "NZE-zU-6ss"; */
+"NZE-zU-6ss.title" = "🐦 推特:";
+
+/* Class = "NSTextFieldCell"; title = "✉️ Contact:"; ObjectID = "Vu4-Wz-Agk"; */
+"Vu4-Wz-Agk.title" = "✉️ 联系:";
+
+/* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
+"Xfc-rf-FkX.title" = "默认文本编辑器:";
+
+/* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
+"aRo-sy-WpK.title" = "默认终端:";
+
+/* Class = "NSTextFieldCell"; title = "Atom"; ObjectID = "aXu-a5-jQP"; */
+"aXu-a5-jQP.title" = "Atom";
+
+/* Class = "NSTextFieldCell"; title = "Alacritty"; ObjectID = "bCi-r8-MrK"; */
+"bCi-r8-MrK.title" = "Alacritty";
+
+/* Class = "NSTextFieldCell"; title = "Hyper"; ObjectID = "bT7-LU-sov"; */
+"bT7-LU-sov.title" = "Hyper";
+
+/* Class = "NSButtonCell"; title = "PayPal"; ObjectID = "dC4-C7-fEL"; */
+"dC4-C7-fEL.title" = "PayPal";
+
+/* Class = "NSButtonCell"; title = "github.com/Ji4n1ng/OpenInTerminal"; ObjectID = "f2V-P5-pQI"; */
+"f2V-P5-pQI.title" = "github.com/Ji4n1ng/OpenInTerminal";
+
+/* Class = "NSTextFieldCell"; title = "Terminal"; ObjectID = "fA9-Hd-yjp"; */
+"fA9-Hd-yjp.title" = "Terminal";
+
+/* Class = "NSTextFieldCell"; title = "Execute `clear` command after opening terminal."; ObjectID = "gkO-IQ-Ogp"; */
+"gkO-IQ-Ogp.title" = "在打开终端后，执行 `clear` 命令";
+
+/* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
+"gy9-lb-m8d.title" = "快速切换";
+
+/* Class = "NSViewController"; title = "About"; ObjectID = "k6X-N1-mVu"; */
+"k6X-N1-mVu.title" = "关于";
+
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal"; ObjectID = "mOB-su-ZM1"; */
+"mOB-su-ZM1.title" = "OpenInTerminal";
+
+/* Class = "NSButtonCell"; title = "Window"; ObjectID = "mTs-8c-pgj"; */
+"mTs-8c-pgj.title" = "窗口";
+
+/* Class = "NSButtonCell"; title = "Tab"; ObjectID = "nYS-rF-JCL"; */
+"nYS-rF-JCL.title" = "标签页";
+
+/* Class = "NSViewController"; title = "Toolbar"; ObjectID = "s5W-qL-1Xs"; */
+"s5W-qL-1Xs.title" = "工具栏";
+
+/* Class = "NSButtonCell"; title = "Window"; ObjectID = "sik-wU-ZF2"; */
+"sik-wU-ZF2.title" = "窗口";
+
+/* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */
+"tR5-me-DTK.title" = "@Ji4n1ng";
+
+/* Class = "NSButtonCell"; title = "Clear"; ObjectID = "u88-wh-Kds"; */
+"u88-wh-Kds.title" = "Clear";
+
+/* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
+"yIW-2a-15A.title" = "iTerm";
