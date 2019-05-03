@@ -34,7 +34,7 @@
                     <tabViewItems>
                         <tabViewItem identifier="" image="NSPreferencesGeneral" id="87n-1W-bcb"/>
                         <tabViewItem image="ToolbarCustomize" id="nuJ-iU-x7x"/>
-                        <tabViewItem image="NSAdvanced" id="F6w-SR-MIp"/>
+                        <tabViewItem image="logo" id="F6w-SR-MIp"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="L0t-Of-tQY">
@@ -534,7 +534,7 @@
                 </viewController>
                 <customObject id="mlw-wX-Yfn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-37" y="1121.5"/>
+            <point key="canvasLocation" x="-62" y="1122"/>
         </scene>
         <!--About-->
         <scene sceneID="pky-u0-lts">
@@ -781,12 +781,12 @@
                 </viewController>
                 <customObject id="r1e-Ze-Lr7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="1022"/>
+            <point key="canvasLocation" x="867" y="1022"/>
         </scene>
     </scenes>
     <resources>
-        <image name="NSAdvanced" width="32" height="32"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
         <image name="ToolbarCustomize" width="1024" height="1024"/>
+        <image name="logo" width="1024" height="1024"/>
     </resources>
 </document>
