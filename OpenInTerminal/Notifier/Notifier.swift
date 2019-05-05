@@ -42,7 +42,7 @@ public extension Notifier where Notification.RawValue == String {
         let name = nameFor(notification: notification)
         
         DistributedNotificationCenter.default()
-            .post(name: NSNotification.Name(rawValue: name), object: object, userInfo: userInfo)
+            .postNotificationName(NSNotification.Name(rawValue: name), object: object, userInfo: userInfo, deliverImmediately: true)
     }
     
     // Add
