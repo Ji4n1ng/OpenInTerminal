@@ -36,6 +36,9 @@
 		95163CF12269F104007C006F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95163CF32269F209007C006F /* OpenInTerminalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenInTerminalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9590B69C226C715100362B93 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		D0C631E3227F8637002C4AA0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D0C631E4227F8637002C4AA0 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D0C631E5227F8637002C4AA0 /* Global.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Global.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 			children = (
 				95163CF32269F209007C006F /* OpenInTerminalCore.framework */,
 				95163CE22269F0C2007C006F /* OpenInTerminal-Lite */,
+				D0C631E2227F8637002C4AA0 /* Configuration */,
 				95163CE12269F0C2007C006F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +81,17 @@
 				95163CEB2269F0C3007C006F /* OpenInTerminal_Lite.entitlements */,
 			);
 			path = "OpenInTerminal-Lite";
+			sourceTree = "<group>";
+		};
+		D0C631E2227F8637002C4AA0 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D0C631E3227F8637002C4AA0 /* Debug.xcconfig */,
+				D0C631E4227F8637002C4AA0 /* Release.xcconfig */,
+				D0C631E5227F8637002C4AA0 /* Global.xcconfig */,
+			);
+			name = Configuration;
+			path = ../Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +180,7 @@
 /* Begin XCBuildConfiguration section */
 		95163CEC2269F0C3007C006F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0C631E5227F8637002C4AA0 /* Global.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -195,7 +211,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -226,6 +241,7 @@
 		};
 		95163CED2269F0C3007C006F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0C631E5227F8637002C4AA0 /* Global.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -256,7 +272,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -283,9 +298,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				INFOPLIST_FILE = "OpenInTerminal-Lite/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,9 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				INFOPLIST_FILE = "OpenInTerminal-Lite/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
