@@ -13,15 +13,21 @@ English | [中文说明](./README-zh.md)
 
 ### 1) Open current directory in Terminal (or Editor)
 
-![open-in-terminal](./screenshots/main-open-in-terminal.gif)
+<div>
+  <img src="./screenshots/main-open-in-terminal.gif" width="600px">
+</div>
 
 ### 2) Open selected folder or file in Terminal (or Editor)
 
-![open-in-editor](./screenshots/main-open-in-editor.gif)
+<div>
+  <img src="./screenshots/main-open-in-editor.gif" width="600px">
+</div>
 
 ### 3) Copy path of the selected file or Finder window to Clipboard
 
-![copy-path-to-clipboard](./screenshots/main-copy-path-to-clipboard.gif)
+<div>
+  <img src="./screenshots/main-copy-path-to-clipboard.gif" width="600px">
+</div>
 
 ### More features
 
@@ -55,7 +61,9 @@ Please check the document: [English](./README-Lite.md) | [中文说明](README-L
 
 Go to `System Preferences` -> `Extensions` -> `Finder Extensions`, check the permission button as below.
 
-![finder-extension-permission](./screenshots/finder-extension-permission.png)
+<div>
+  <img src="./screenshots/finder-extension-permission.png" width="450px">
+</div>
 
 ### 3. Set OpenInTerminal to launch at login
 
@@ -63,7 +71,9 @@ Just check the `Launch OpenInTerminal at login` button in `Preferences`.
 
 > Because the Finder Extension does not work when the main app is not running, it is very recommended to set OpenInTerminal to launch at login.
 
-![pref-general](./screenshots/pref-general.png)
+<div>
+  <img src="./screenshots/pref-general.png" width="400px">
+</div>
 
 ## Todo 👨‍💻
 

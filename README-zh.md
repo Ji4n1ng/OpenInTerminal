@@ -12,15 +12,21 @@
 
 ### 1) 在终端（或编辑器）中打开当前目录
 
-![open-in-terminal](./screenshots/main-open-in-terminal.gif)
+<div>
+  <img src="./screenshots/main-open-in-terminal.gif" width="600px">
+</div>
 
 ### 2) 在终端（或编辑器）中打开选择的文件夹或文件
 
-![open-in-editor](./screenshots/main-open-in-editor.gif)
+<div>
+  <img src="./screenshots/main-open-in-editor.gif" width="600px">
+</div>
 
 ### 3）将已选择的文件或者访达窗口的路径拷贝到粘贴板
 
-![copy-path-to-clipboard](./screenshots/main-copy-path-to-clipboard.gif)
+<div>
+  <img src="./screenshots/main-copy-path-to-clipboard.gif" width="600px">
+</div>
 
 ### 更多功能
 
@@ -52,7 +58,9 @@
 
 去 `系统偏好设置` -> `扩展` -> `访达扩展`，打开下图中的权限按钮。
 
-![finder-extension-permission](./screenshots/finder-extension-permission-zh.png)
+<div>
+  <img src="./screenshots/finder-extension-permission-zh.png" width="450px">
+</div>
 
 ### 3. 将 OpenInTerminal 设置为开机启动
 
@@ -60,7 +68,9 @@
 
 > 如果 OpenInTerminal 主应用不运行， Finder 扩展将不会工作。所以更推荐将 OpenInTerminal 设置为自动启动。
 
-![pref-general](./screenshots/pref-general-zh.png)
+<div>
+  <img src="./screenshots/pref-general-zh.png" width="400px">
+</div>
 
 ## 常见问题 ❓
 
