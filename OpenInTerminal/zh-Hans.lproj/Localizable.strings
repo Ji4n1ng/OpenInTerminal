@@ -27,3 +27,6 @@
 
 "alert.reset_preferences_title" = "重置用户偏好设置?";
 "alert.reset_preferences_description" = "⚠️ 注意这将会重置所有用户偏好设置";
+
+"toolbar.item_name" = "Open in Terminal";
+"toolbar.item_tooltip" = "打开当前路径到终端";

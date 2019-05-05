@@ -19,11 +19,13 @@ class FinderSync: FIFinderSync {
     }
 
     override var toolbarItemName: String {
-        return "Open In Terminal"
+        return NSLocalizedString("toolbar.item_name",
+                                 comment: "Open in Terminal")
     }
     
     override var toolbarItemToolTip: String {
-        return "Open the current directory in the Terminal."
+        return NSLocalizedString("toolbar.item_tooltip",
+                                 comment: "打开当前路径到终端")
     }
     
     override var toolbarItemImage: NSImage {
@@ -37,13 +39,16 @@ class FinderSync: FIFinderSync {
         switch menuKind {
 
         case .contextualMenuForContainer, .contextualMenuForItems:
-            menu.addItem(withTitle: "Open with Default Terminal",
+            menu.addItem(withTitle: NSLocalizedString("menu.open_with_default_terminal",
+                                                      comment: "Open with default Terminal"),
                          action: #selector(openDefaultTerminal),
                          keyEquivalent: "")
-            menu.addItem(withTitle: "Open with Default Editor",
+            menu.addItem(withTitle: NSLocalizedString("menu.open_with_default_editor",
+                                                      comment: "Open with default Editor"),
                          action: #selector(openDefaultEditor),
                          keyEquivalent: "")
-            menu.addItem(withTitle: "Copy path to Clipboard",
+            menu.addItem(withTitle: NSLocalizedString("menu.copy_path_to_clipboard",
+                                                      comment: "Copy path to Clipboard"),
                          action: #selector(copyPathToClipboard),
                          keyEquivalent: "")
         
@@ -104,7 +109,8 @@ class FinderSync: FIFinderSync {
                 menu.addItem(separator)
             }
             
-            menu.addItem(withTitle: "Copy path to Clipboard",
+            menu.addItem(withTitle: NSLocalizedString("menu.copy_path_to_clipboard",
+                                                      comment: "Copy path to Clipboard"),
                          action: #selector(copyPathToClipboard),
                          keyEquivalent: "")
         default:

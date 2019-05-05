@@ -27,3 +27,6 @@
 
 "alert.reset_preferences_title" = "Reset User Preferences?";
 "alert.reset_preferences_description" = "⚠️ Note that this will reset all user preferences";
+
+"toolbar.item_name" = "Open in Terminal";
+"toolbar.item_tooltip" = "Open the current directory in the Terminal.";
