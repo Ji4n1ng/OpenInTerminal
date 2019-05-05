@@ -46,7 +46,6 @@
 		9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCB226B475E008445D1 /* PreferencesViewController.swift */; };
 		9521EDD0226B4BE6008445D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCF226B4BE6008445D1 /* Constants.swift */; };
 		954EFA932273643C001E101E /* EditorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EFA922273643C001E101E /* EditorProtocol.swift */; };
-		9571DA82227E6CCB0076AA64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725253022680EF3003C50DF /* Constants.swift */; };
 		9584EDF2226DEF79003C7EE8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		9590B68E226C04E000362B93 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B68D226C04E000362B93 /* Defaults.swift */; };
 		9590B691226C6DB000362B93 /* TerminalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B690226C6DB000362B93 /* TerminalType.swift */; };
@@ -615,7 +614,6 @@
 				95F5BED5227734E800D505A0 /* PreferencesWindowController.swift in Sources */,
 				9521EDD0226B4BE6008445D1 /* Constants.swift in Sources */,
 				9590B6A1226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift in Sources */,
-				9571DA82227E6CCB0076AA64 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
