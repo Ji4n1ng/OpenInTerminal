@@ -788,7 +788,7 @@
                                                     <action selector="paypalButtonClicked:" target="k6X-N1-mVu" id="Zme-qY-9dX"/>
                                                 </connections>
                                             </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YuZ-SB-JI0">
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YuZ-SB-JI0" customClass="LinkButton" customModule="OpenInTerminal" customModuleProvider="target">
                                                 <rect key="frame" x="130" y="0.0" width="41" height="17"/>
                                                 <buttonCell key="cell" type="bevel" title="Alipay" bezelStyle="regularSquare" alignment="center" inset="2" id="Sw7-of-ecf">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
