@@ -8,6 +8,7 @@
 
 import Cocoa
 import OpenInTerminalCore
+import ServiceManagement
 
 class AdvancedPreferencesViewController: PreferencesViewController {
 
@@ -41,6 +42,7 @@ class AdvancedPreferencesViewController: PreferencesViewController {
             print("Cancel Resetting User Preferences")
         case .alertSecondButtonReturn:
             logw("Reset User Preferences")
+            SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, false)
             CoreManager.shared.removeAllUserDefaults()
             CoreManager.shared.firstSetup()
         default:
