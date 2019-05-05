@@ -62,6 +62,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         chooseToggleActionButton.removeAllItems()
         [quickToggleTerminalMenuItem, quickToggleEditorMenuItem,
          quickToggleCopyPathMenuItem].forEach {
+            $0.target = self
             chooseToggleActionButton.menu?.addItem($0)
         }
     }
@@ -145,7 +146,6 @@ class GeneralPreferencesViewController: PreferencesViewController {
         SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, isLaunch)
     }
     
-    
     @IBAction func quickToggleButtonClicked(_ sender: NSButton) {
         let quickToggle: BoolType = quickToggleButton.state == .on ? ._true : ._false
         CoreManager.shared.quickToggle = quickToggle
@@ -155,16 +155,6 @@ class GeneralPreferencesViewController: PreferencesViewController {
         appDelegate.setStatusToggle()
         logw("Quick Toggle set to \(sender.state.rawValue)")
     }
-    
-//    @IBAction func chooseToggleActionButtonClicked(_ sender: NSPopUpButton) {
-//        let itemTitles = sender.itemTitles
-//        let index = sender.indexOfSelectedItem
-//        let title = itemTitles[index]
-//
-//        if let quickToggleType = QuickToggleType(rawValue: title) {
-//            CoreManager.shared.quickToggleType = quickToggleType
-//        }
-//    }
     
     @IBAction func defaultTerminalButtonClicked(_ sender: NSPopUpButton) {
         let itemTitles = sender.itemTitles
@@ -194,17 +184,17 @@ class GeneralPreferencesViewController: PreferencesViewController {
         }
     }
     
-    @objc func quickToggleTerminalClicked() {
+    @objc func quickToggleTerminalClicked(_ sender: NSMenuItem) {
         CoreManager.shared.quickToggleType = .openWithDefaultTerminal
         chooseToggleActionButton.select(quickToggleTerminalMenuItem)
     }
     
-    @objc func quickToggleEditorClicked() {
+    @objc func quickToggleEditorClicked(_ sender: NSMenuItem) {
         CoreManager.shared.quickToggleType = .openWithDefaultEditor
         chooseToggleActionButton.select(quickToggleEditorMenuItem)
     }
     
-    @objc func quickToggleCopyPathClicked() {
+    @objc func quickToggleCopyPathClicked(_ sender: NSMenuItem) {
         CoreManager.shared.quickToggleType = .copyPathToClipboard
         chooseToggleActionButton.select(quickToggleCopyPathMenuItem)
     }
