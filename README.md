@@ -33,7 +33,7 @@ English | [中文说明](./README-zh.md)
 
 ### I still want to use OpenInTerminal-Lite
 
-Please check the document: [English]() | [中文说明](./README-Lite.md)
+Please check the document: [English](./README-Lite.md) | [中文说明](README-Lite-zh.md)
 
 ## How to install 🖥
 
@@ -86,6 +86,7 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 <details><summary>3. Special characters in the <code>path</code>.</summary><br>
 <p>Please do not use backslash <code>\</code> and double quotes <code>"</code> in the path.</p>
 </details>
+
 ## Changes 🗒
 
 **version 0.9.0**
