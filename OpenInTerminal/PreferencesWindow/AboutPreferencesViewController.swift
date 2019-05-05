@@ -44,6 +44,11 @@ class AboutPreferencesViewController: PreferencesViewController {
         NSWorkspace.shared.open(url)
     }
     
+    @IBAction func weChatPayButtonClicked(_ sender: NSButton) {
+        guard let url = URL(string: "https://github.com/Ji4n1ng/OpenInTerminal") else { return }
+        NSWorkspace.shared.open(url)
+    }
+    
     @IBAction func camji55ButtonClicked(_ sender: NSButton) {
         guard let url = URL(string: "https://github.com/Camji55") else { return }
         NSWorkspace.shared.open(url)   

@@ -33,7 +33,7 @@
 "Gn1-zC-bzB.title" = "通用";
 
 /* Class = "NSButtonCell"; title = "支付宝"; ObjectID = "HUx-Wz-JJm"; */
-"HUx-Wz-JJm.title" = "支付宝";
+"HUx-Wz-JJm.title" = "微信";
 
 /* Class = "NSTextFieldCell"; title = "👨‍💻 GitHub:"; ObjectID = "How-dP-tcX"; */
 "How-dP-tcX.title" = "👨‍💻 GitHub:";
@@ -116,5 +116,17 @@
 /* Class = "NSButtonCell"; title = "Launch OpenInTerminal at login"; ObjectID = "ZbK-xW-anT"; */
 "ZbK-xW-anT.title" = "自动启动";
 
-/* Class = "NSTextFieldCell"; title = "If enabled, OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
 "ngT-lX-vFA.title" = "启用后，OpenInTerminal 将会在登录时自动启动。";
+
+/* Class = "NSTextFieldCell"; title = " ⚠️ Note that this will reset all user preferences"; ObjectID = "2Rg-te-FPU"; */
+"2Rg-te-FPU.title" = "⚠️ 注意这将会重置所有用户偏好设置";
+
+/* Class = "NSViewController"; title = "Advanced"; ObjectID = "H3q-JS-Bu4"; */
+"H3q-JS-Bu4.title" = "高级";
+
+/* Class = "NSButtonCell"; title = "Reset preferences"; ObjectID = "jyI-H7-qN3"; */
+"jyI-H7-qN3.title" = "重置设置";
+
+/* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
+"Sw7-of-ecf.title" = "支付宝";

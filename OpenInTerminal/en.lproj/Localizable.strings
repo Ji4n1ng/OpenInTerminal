@@ -8,6 +8,7 @@
 
 "general.ok" = "OK";
 "general.cancel" = "Cancel";
+"general.yes" = "Yes";
 
 "menu.open_with_default_terminal" = "Open with default Terminal";
 "menu.open_with_default_editor" = "Open with default Editor";
@@ -24,3 +25,5 @@
 "alert.pick_editor_title" = "Open In?";
 "alert.pick_editor_description" = "Please select one of the following editors as the default editor to open.";
 
+"alert.reset_preferences_title" = "Reset User Preferences?";
+"alert.reset_preferences_description" = "⚠️ Note that this will reset all user preferences";

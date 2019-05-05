@@ -34,6 +34,7 @@
                     <tabViewItems>
                         <tabViewItem identifier="" image="NSPreferencesGeneral" id="87n-1W-bcb"/>
                         <tabViewItem image="ToolbarCustomize" id="nuJ-iU-x7x"/>
+                        <tabViewItem image="NSAdvanced" id="gmA-Me-2UL"/>
                         <tabViewItem image="logo" id="F6w-SR-MIp"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
@@ -49,6 +50,7 @@
                         <outlet property="tabView" destination="L0t-Of-tQY" id="PaA-k2-tlX"/>
                         <segue destination="Gn1-zC-bzB" kind="relationship" relationship="tabItems" id="kJo-Dr-36g"/>
                         <segue destination="s5W-qL-1Xs" kind="relationship" relationship="tabItems" id="VpS-dg-hMc"/>
+                        <segue destination="H3q-JS-Bu4" kind="relationship" relationship="tabItems" id="rqi-WK-zvU"/>
                         <segue destination="k6X-N1-mVu" kind="relationship" relationship="tabItems" id="1b4-g9-rGj"/>
                     </connections>
                 </tabViewController>
@@ -571,7 +573,62 @@
                 </viewController>
                 <customObject id="mlw-wX-Yfn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="1122"/>
+            <point key="canvasLocation" x="-144" y="1121.5"/>
+        </scene>
+        <!--Advanced-->
+        <scene sceneID="X6j-fK-tNl">
+            <objects>
+                <viewController title="Advanced" id="H3q-JS-Bu4" customClass="AdvancedPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="pw0-CT-Gco">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="84"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTF-y0-mpo">
+                                <rect key="frame" x="20" y="20" width="310" height="44"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qri-L6-ZRL">
+                                        <rect key="frame" x="-0.5" y="21" width="125" height="23"/>
+                                        <buttonCell key="cell" type="roundTextured" title="Reset preferences" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jyI-H7-qN3">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="resetPreferencesButtonClicked:" target="H3q-JS-Bu4" id="bEV-WK-RrH"/>
+                                        </connections>
+                                    </button>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3HK-ud-hMQ">
+                                        <rect key="frame" x="-2" y="0.0" width="252" height="14"/>
+                                        <textFieldCell key="cell" selectable="YES" title="⚠️ Note that this will reset all user preferences" id="2Rg-te-FPU">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cTF-y0-mpo" secondAttribute="trailing" constant="20" id="66z-SA-rLl"/>
+                            <constraint firstItem="cTF-y0-mpo" firstAttribute="top" secondItem="pw0-CT-Gco" secondAttribute="top" constant="20" id="7LV-eG-3yO"/>
+                            <constraint firstAttribute="bottom" secondItem="cTF-y0-mpo" secondAttribute="bottom" constant="20" id="9AS-iQ-E7g"/>
+                            <constraint firstItem="cTF-y0-mpo" firstAttribute="leading" secondItem="pw0-CT-Gco" secondAttribute="leading" constant="20" id="9zU-5K-5al"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resetPreferencesButton" destination="qri-L6-ZRL" id="cHB-aG-Whi"/>
+                    </connections>
+                </viewController>
+                <customObject id="aPm-8i-YIB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="279" y="952"/>
         </scene>
         <!--About-->
         <scene sceneID="pky-u0-lts">
@@ -710,7 +767,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgk-r7-9TN">
-                                        <rect key="frame" x="0.0" y="32" width="174" height="17"/>
+                                        <rect key="frame" x="0.0" y="32" width="231" height="17"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1om-sX-E6f">
                                                 <rect key="frame" x="-2" y="0.0" width="74" height="17"/>
@@ -731,15 +788,26 @@
                                                     <action selector="paypalButtonClicked:" target="k6X-N1-mVu" id="Zme-qY-9dX"/>
                                                 </connections>
                                             </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4yg-oj-mt1" customClass="LinkButton" customModule="OpenInTerminal" customModuleProvider="target">
-                                                <rect key="frame" x="130" y="0.0" width="44" height="17"/>
-                                                <buttonCell key="cell" type="bevel" title="支付宝" bezelStyle="regularSquare" alignment="center" inset="2" id="HUx-Wz-JJm">
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YuZ-SB-JI0">
+                                                <rect key="frame" x="130" y="0.0" width="41" height="17"/>
+                                                <buttonCell key="cell" type="bevel" title="Alipay" bezelStyle="regularSquare" alignment="center" inset="2" id="Sw7-of-ecf">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <color key="contentTintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                                 <connections>
-                                                    <action selector="alipayButtonClicked:" target="k6X-N1-mVu" id="laa-o3-nyS"/>
+                                                    <action selector="alipayButtonClicked:" target="k6X-N1-mVu" id="cYG-Ep-Gi4"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4yg-oj-mt1" customClass="LinkButton" customModule="OpenInTerminal" customModuleProvider="target">
+                                                <rect key="frame" x="179" y="0.0" width="52" height="17"/>
+                                                <buttonCell key="cell" type="bevel" title="WeChat" bezelStyle="regularSquare" alignment="center" inset="2" id="HUx-Wz-JJm">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <color key="contentTintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                                <connections>
+                                                    <action selector="weChatPayButtonClicked:" target="k6X-N1-mVu" id="kCG-ab-xjx"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -747,8 +815,10 @@
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
@@ -818,10 +888,11 @@
                 </viewController>
                 <customObject id="r1e-Ze-Lr7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="1022"/>
+            <point key="canvasLocation" x="721" y="1022"/>
         </scene>
     </scenes>
     <resources>
+        <image name="NSAdvanced" width="32" height="32"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
         <image name="ToolbarCustomize" width="1024" height="1024"/>
         <image name="logo" width="1024" height="1024"/>

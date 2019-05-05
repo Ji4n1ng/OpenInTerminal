@@ -26,7 +26,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: Lifecycle
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-//        CoreManager.shared.removeAllUserDefaults()
         CoreManager.shared.firstSetup()
         addObserver()
         terminateOpenInTerminalHelper()

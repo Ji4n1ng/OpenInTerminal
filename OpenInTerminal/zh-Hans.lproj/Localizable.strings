@@ -8,6 +8,7 @@
 
 "general.ok" = "好";
 "general.cancel" = "取消";
+"general.yes" = "是的";
 
 "menu.open_with_default_terminal" = "打开默认终端";
 "menu.open_with_default_editor" = "打开默认编辑器";
@@ -24,3 +25,5 @@
 "alert.pick_editor_title" = "打开?";
 "alert.pick_editor_description" = "请在下面的编辑器中选择一个作为默认编辑器。";
 
+"alert.reset_preferences_title" = "重置用户偏好设置?";
+"alert.reset_preferences_description" = "⚠️ 注意这将会重置所有用户偏好设置";
