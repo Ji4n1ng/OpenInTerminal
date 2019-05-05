@@ -23,7 +23,7 @@ public extension Notifier where Notification.RawValue == String {
     
     // MARK: - Instance Methods
     
-    // Pot
+    // Post
     
     func postNotification(notification: Notification, object: String? = nil) {
         Self.postNotification(notification, object: object)

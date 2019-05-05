@@ -14,7 +14,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
 
     // MARK: Properties
 
-//    @IBOutlet weak var launchButton: NSButton!
+    @IBOutlet weak var launchButton: NSButton!
     @IBOutlet weak var quickToggleButton: NSButton!
     @IBOutlet weak var chooseToggleActionButton: NSPopUpButton!
     @IBOutlet weak var defaultTerminalButton: NSPopUpButton!
@@ -69,8 +69,8 @@ class GeneralPreferencesViewController: PreferencesViewController {
     // MARK: Refresh UI
     
     func refreshButtonState() {
-//        guard let launchAtLogin = CoreManager.shared.launchAtLogin else { return }
-//        launchButton.state = launchAtLogin == ._true ? .on : .off
+        guard let launchAtLogin = CoreManager.shared.launchAtLogin else { return }
+        launchButton.state = launchAtLogin == ._true ? .on : .off
         
         guard let quickToggle = CoreManager.shared.quickToggle else { return }
         quickToggleButton.state = quickToggle.bool ? .on : .off
@@ -138,12 +138,12 @@ class GeneralPreferencesViewController: PreferencesViewController {
     
     // MARK: Button Actions
     
-//    @IBAction func launchButtonClicked(_ sender: NSButton) {
-//        let isLaunch = launchButton.state == .on
-//        let launchAtLogin: BoolType = isLaunch ? ._true : ._false
-//        CoreManager.shared.launchAtLogin = launchAtLogin
-//        SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, isLaunch)
-//    }
+    @IBAction func launchButtonClicked(_ sender: NSButton) {
+        let isLaunch = launchButton.state == .on
+        let launchAtLogin: BoolType = isLaunch ? ._true : ._false
+        CoreManager.shared.launchAtLogin = launchAtLogin
+        SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, isLaunch)
+    }
     
     
     @IBAction func quickToggleButtonClicked(_ sender: NSButton) {

@@ -60,6 +60,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
     
     @IBAction func quit(_ sender: NSMenuItem) {
+        LaunchNotifier.postNotification(.terminateApp, object: Bundle.main.bundleIdentifier!)
         NSApp.terminate(self)
     }
     

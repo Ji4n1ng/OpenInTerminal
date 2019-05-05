@@ -54,7 +54,7 @@ public class CoreManager {
     public func firstSetup() {
         guard firstUsage == ._true else { return }
         logw("First Setup")
-//        Defaults[.launchAtLogin] = BoolType._false.rawValue
+        Defaults[.launchAtLogin] = BoolType._false.rawValue
         Defaults[.quickToggle] = BoolType._false.rawValue
         Defaults[.quickToggleType] = QuickToggleType.openWithDefaultTerminal.rawValue
         Defaults.removeObject(forKey: Constants.Key.defaultTerminal)

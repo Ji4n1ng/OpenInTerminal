@@ -61,7 +61,7 @@
             <objects>
                 <viewController title="General" id="Gn1-zC-bzB" customClass="GeneralPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" focusRingType="none" id="T7Z-PU-Qyb">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="217"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="261"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="siD-hz-NIk">
@@ -129,8 +129,42 @@
                                 </constraints>
                             </box>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mA5-EO-f9U">
-                                <rect key="frame" x="20" y="140" width="310" height="57"/>
+                                <rect key="frame" x="20" y="140" width="310" height="101"/>
                                 <subviews>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PHM-Im-Rbw">
+                                        <rect key="frame" x="0.0" y="65" width="278" height="36"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sat-kH-K8O">
+                                                <rect key="frame" x="-2" y="20" width="213" height="18"/>
+                                                <buttonCell key="cell" type="check" title="Launch OpenInTerminal at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ZbK-xW-anT">
+                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="launchButtonClicked:" target="Gn1-zC-bzB" id="e8e-Xt-vgc"/>
+                                                </connections>
+                                            </button>
+                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ct1-0Y-gVn">
+                                                <rect key="frame" x="18" y="0.0" width="262" height="14"/>
+                                                <textFieldCell key="cell" selectable="YES" title="OpenInTerminal will automatically launch at login." id="ngT-lX-vFA">
+                                                    <font key="font" metaFont="smallSystem"/>
+                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ct1-0Y-gVn" firstAttribute="leading" secondItem="PHM-Im-Rbw" secondAttribute="leading" constant="20" id="dBZ-c0-C1K"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ErX-63-Xad">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="57"/>
                                         <subviews>
@@ -190,8 +224,10 @@
                                 </subviews>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
@@ -210,12 +246,13 @@
                         <outlet property="chooseToggleActionButton" destination="Kdm-9l-2u4" id="FlA-5C-clg"/>
                         <outlet property="defaultEditorButton" destination="R8D-f0-J22" id="krg-qv-BAe"/>
                         <outlet property="defaultTerminalButton" destination="AaU-k8-Gb7" id="bmA-od-3vf"/>
+                        <outlet property="launchButton" destination="Sat-kH-K8O" id="ULF-Ao-sZa"/>
                         <outlet property="quickToggleButton" destination="VGA-Ho-z5c" id="Z2a-fo-5GU"/>
                     </connections>
                 </viewController>
                 <customObject id="7th-7A-0Xc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-591" y="1019"/>
+            <point key="canvasLocation" x="-587" y="1041"/>
         </scene>
         <!--Toolbar-->
         <scene sceneID="75c-0T-1MT">

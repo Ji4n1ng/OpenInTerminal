@@ -29,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        CoreManager.shared.removeAllUserDefaults()
         CoreManager.shared.firstSetup()
         addObserver()
+        terminateOpenInTerminalHelper()
         setStatusBarIcon()
         setStatusToggle()
     }
@@ -91,6 +92,16 @@ extension AppDelegate {
                     copyPathToClipboard()
                 }
             }
+        }
+    }
+    
+    func terminateOpenInTerminalHelper() {
+        let isRunning = NSWorkspace.shared.runningApplications.contains {
+            $0.bundleIdentifier == Constants.launcherAppIdentifier
+        }
+        
+        if isRunning {
+            LaunchNotifier.postNotification(.terminateApp, object: Bundle.main.bundleIdentifier!)
         }
     }
     

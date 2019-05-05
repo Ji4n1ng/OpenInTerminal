@@ -59,6 +59,9 @@
 /* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
 "Xfc-rf-FkX.title" = "Default Text Editor:";
 
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at login"; ObjectID = "ZbK-xW-anT"; */
+"ZbK-xW-anT.title" = "Launch OpenInTerminal at login";
+
 /* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
 "aRo-sy-WpK.title" = "Default Terminal:";
 
@@ -97,6 +100,9 @@
 
 /* Class = "NSButtonCell"; title = "Tab"; ObjectID = "nYS-rF-JCL"; */
 "nYS-rF-JCL.title" = "Tab";
+
+/* Class = "NSTextFieldCell"; title = "If enabled, OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
+"ngT-lX-vFA.title" = "OpenInTerminal will automatically launch at login.";
 
 /* Class = "NSViewController"; title = "Toolbar"; ObjectID = "s5W-qL-1Xs"; */
 "s5W-qL-1Xs.title" = "Toolbar";

@@ -112,3 +112,9 @@
 
 /* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
 "yIW-2a-15A.title" = "iTerm";
+
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at login"; ObjectID = "ZbK-xW-anT"; */
+"ZbK-xW-anT.title" = "自动启动";
+
+/* Class = "NSTextFieldCell"; title = "If enabled, OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
+"ngT-lX-vFA.title" = "启用后，OpenInTerminal 将会在登录时自动启动。";
