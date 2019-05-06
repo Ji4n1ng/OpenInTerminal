@@ -70,8 +70,6 @@ For `Alacritty` users, it is only supported to open a new window now.
 
 ## How to install 🖥
 
-> Because updates are frequent, it is recommended to manually download the latest version.
-
 ### Manual (latest version: 0.4.1)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
@@ -81,7 +79,7 @@ For `Alacritty` users, it is only supported to open a new window now.
 
 ![toolbar](./screenshots/lite-drag_to_toolbar.gif)
 
-### Homebrew (current version 0.4.0)
+### Homebrew (latest version 0.4.1)
 
 1. Run the following command
 

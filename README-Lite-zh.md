@@ -5,7 +5,6 @@
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
-
 [English](./README-Lite.md) | 中文说明
 
 ## 如何使用 🚀
@@ -70,8 +69,6 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 
 ## 如何安装 🖥
 
-> 因为更新较为频繁，所以更推荐手动下载最新版本
-
 ### 手动安装 (最新版本：0.4.1)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
@@ -81,7 +78,7 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 
 ![toolbar](./screenshots/lite-drag_to_toolbar.gif)
 
-### Homebrew (最新版本：0.4.0)
+### Homebrew (最新版本：0.4.1)
 
 1. 运行以下命令
 

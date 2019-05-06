@@ -6,7 +6,6 @@
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
 
-
 English | [中文说明](./README-zh.md)
 
 ## How to use 🚀
@@ -37,7 +36,11 @@ English | [中文说明](./README-zh.md)
 - ✅ Quick toggle the specified action from Menu bar.
 - ✅ Support Dark Mode.
 
-### I still want to use OpenInTerminal-Lite
+## OpenInTerminal and OpenInTerminal-Lite 👀
+
+There are a normal version and a lite version of OpenInTerminal. If you only need to open the terminal and don't need to keep the application in the background, then you can use `OpenInTerminal-Lite`. If you like more powerful features, then you can use `OpenInTerminal`.
+
+For `OpenInTerminal-Lite` users:
 
 Please check the document: [English](./README-Lite.md) | [中文说明](README-Lite-zh.md)
 
@@ -45,7 +48,15 @@ Please check the document: [English](./README-Lite.md) | [中文说明](README-L
 
 ### 1. Download
 
-#### a) Homebrew (come soon)
+#### a) Homebrew (latest version: 0.9.0)
+
+1. Run the following command.
+
+   ```
+   brew cask install openinterminal
+   ```
+
+2. Done.
 
 #### b) Manual (latest version: 0.9.0)
 
@@ -59,7 +70,7 @@ Please check the document: [English](./README-Lite.md) | [中文说明](README-L
 
 ### 2. Check Finder Extension permission
 
-Go to `System Preferences` -> `Extensions` -> `Finder Extensions`, check the permission button as below.
+Open the OpenInTerminal app. Go to `System Preferences` -> `Extensions` -> `Finder Extensions`, check the permission button as below.
 
 <div>
   <img src="./screenshots/finder-extension-permission.png" width="450px">
@@ -84,16 +95,20 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 
 ## FAQ ❓
 
-<details><summary>1. Finder Extension doesn't work</summary><br>
+<details><summary>1. What is the difference between OpenInTerminal and OpenInTerminal-Lite?</summary><br>
+<p>OpenInTerminal currently has a normal version and a lite version. If you only need to open the terminal and don't need to keep the application in the background, then you can use the Lite version. If you like more powerful features, then choose the normal version. </p>
+</details>
+
+<details><summary>2. Finder Extension doesn't work</summary><br>
 <p>Please check if there is an OpenInTerminal(main app) icon in the status bar. The Finder Extension will always be in the toolbar. But if the main app is not open, it will not work. It is recommended to set OpenInTerminal to launch at login in Preferences.</p>
 </details>
 
-<details><summary>2. I accidentally clicked on the <code>Don't Allow</code>  button.</summary><br>
+<details><summary>3. I accidentally clicked on the <code>Don't Allow</code>  button.</summary><br>
 <p>You can run the following command in the terminal. This will reset the permissions in the System Preferences.</p>
 <br><code>tccutil reset AppleEvents</code><br>
 </details>
 
-<details><summary>3. Special characters in the <code>path</code>.</summary><br>
+<details><summary>4. Special characters in the <code>path</code>.</summary><br>
 <p>Please do not use backslash <code>\</code> and double quotes <code>"</code> in the path.</p>
 </details>
 

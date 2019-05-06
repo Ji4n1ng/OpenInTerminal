@@ -36,7 +36,11 @@
 - ✅ 从菜单栏快速启动指定动作
 - ✅ 支持 Dark Mode
 
-### 我仍然想用 OpenInTerminal-Lite
+## OpenInTerminal 和 OpenInTerminal-Lite 👀
+
+OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终端而且不需要应用一直常驻后台，那么你可以选择 `OpenInTerminal-Lite` 版。如果你喜欢更强大的功能，那么你可以选择`OpenInTerminal`。
+
+对于 `OpenInTerminal-Lite` 用户：
 
 请看文档： [English](./README-Lite.md) | [中文说明](README-Lite-zh.md)
 
@@ -44,7 +48,15 @@
 
 ### 1. 下载
 
-#### a) Homebrew (即将支持)
+#### a) Homebrew (最新版本：0.9.0)
+
+1. 运行以下命令。
+
+   ```
+   brew cask install openinterminal
+   ```
+
+2. 完成。
 
 #### b) 手动 (最新版本：0.9.0)
 
@@ -56,7 +68,7 @@
 
 ### 2. 打开 Finder 扩展权限
 
-去 `系统偏好设置` -> `扩展` -> `访达扩展`，打开下图中的权限按钮。
+打开 OpenInTerminal 应用。去 `系统偏好设置` -> `扩展` -> `访达扩展`，打开下图中的权限按钮。
 
 <div>
   <img src="./screenshots/finder-extension-permission-zh.png" width="450px">
@@ -74,16 +86,20 @@
 
 ## 常见问题 ❓
 
-<details><summary>1. Finder 扩展不工作了</summary><br>
+<details><summary>1. OpenInTerminal 和 OpenInTerminal-Lite 的区别是什么？</summary><br>
+<p>OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终端而且不需要应用一直常驻后台，那么你可以选择 Lite 版。如果你喜欢更强大的功能，那么你可以选择正常版。</p>
+</details>
+
+<details><summary>2. Finder 扩展不工作了</summary><br>
 <p>请检查 OpenInTerminal（主应用）的图标是否在菜单栏中。因为 Finder 扩展会一直在 Finder 工具栏中，所以当主应用不运行时 Finder 扩展无法工作。推荐在偏好设置中将 OpenInTerminal 设置为自动启动。</p>
 </details>
 
-<details><summary>2. 我不小心点了不授权的按钮</summary><br>
+<details><summary>3. 我不小心点了不授权的按钮</summary><br>
 <p>你可以运行以下命令。这会重置系统设置里的权限。</p>
 <pre><code>tccutil reset AppleEvents</code></pre>
 </details>
 
-<details><summary>3. 路径里的特殊字符</summary><br>
+<details><summary>4. 路径里的特殊字符</summary><br>
 <p>请不要在路径中使用反斜线 <code>\</code> 和双引号 <code>"</code>。</p>
 </details>
 
