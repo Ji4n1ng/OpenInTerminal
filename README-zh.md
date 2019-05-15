@@ -1,10 +1,11 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.9.0"><img src="https://img.shields.io/badge/Version-0.9.0-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.9.1"><img src="https://img.shields.io/badge/Version-0.9.1-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
+
 
 [English](./README.md) | 中文说明
 
@@ -49,7 +50,7 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终�
 
 ### 1. 下载
 
-#### a) Homebrew (最新版本：0.9.0)
+#### a) Homebrew (当前版本：0.9.0)
 
 1. 运行以下命令。
 
@@ -59,7 +60,7 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终�
 
 2. 完成。
 
-#### b) 手动 (最新版本：0.9.0)
+#### b) 手动 (最新版本：0.9.1)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。

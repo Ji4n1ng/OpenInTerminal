@@ -1,10 +1,11 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.1"><img src="https://img.shields.io/badge/Version-0.4.1-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.2"><img src="https://img.shields.io/badge/Version-0.4.2-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
+
 
 English | [中文说明](README-Lite-zh.md)
 
@@ -25,8 +26,6 @@ You are asked to set the default terminal to open after first launch.
 ![selector](./screenshots/lite-selector.png)
 
 The selection box will not appear after you have set the default terminal. If you want to reset the default terminal, please enter the following command in the terminal. Then just run the application again.
-
-For **version 0.3.0 and above**:
 
 ```
 defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
@@ -66,7 +65,7 @@ For `Alacritty` users, it is only supported to open a new window now.
 
 ## How to install 🖥
 
-### Manual (latest version: 0.4.1)
+### Manual (latest version: 0.4.2)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
@@ -113,7 +112,7 @@ I provided several icons along with the app in the [release](https://github.com/
 
 - Support French
 
-- Thanks to [filmgirl](https://github.com/filmgirl) for alternative dark terminal icon.
+- Thanks to [filmgirl](https://github.com/filmgirl) for providing alternative dark terminal icon.
 
 **version 0.4.1**
 

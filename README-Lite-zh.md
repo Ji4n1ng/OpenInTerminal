@@ -1,10 +1,11 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.1"><img src="https://img.shields.io/badge/Version-0.4.1-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.2"><img src="https://img.shields.io/badge/Version-0.4.2-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
+
 [English](./README-Lite.md) | 中文说明
 
 ## 如何使用 🚀
@@ -25,16 +26,10 @@
 
 当你设置了默认终端之后，选择框将不会再出现。如果你想要重新设置默认终端，请在终端中输入以下命令。然后重新运行应用。
 
-**版本 0.3.0**：
-
 ```
 defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
 ```
 
-<details><summary><strong>版本 0.2.0</strong>:</summary><br>
-<code>defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier</code>
-<br>
-</details>
 
 <details><summary>设置 <strong>Alacritty</strong> 为默认终端:</summary><br>
 <code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier io.alacritty </code>
@@ -49,18 +44,18 @@ defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
 
 ```
 # 打开新的标签页
-defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption "tab"
+defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption tab
 # 打开新的窗口
-defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption "window"
+defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption window
 ```
 
 对于 `iTerm`:
 
 ```
 # 打开新的标签页
-defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "tab"
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption tab
 # 打开新的窗口
-defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 ```
 
 对于 `Hyper` 用户来说，更推荐打开新的标签页。
@@ -69,7 +64,7 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 
 ## 如何安装 🖥
 
-### 手动安装 (最新版本：0.4.1)
+### 手动安装 (最新版本：0.4.2)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。

@@ -1,10 +1,11 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.9.0"><img src="https://img.shields.io/badge/Version-0.9.0-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.9.1"><img src="https://img.shields.io/badge/Version-0.9.1-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
+
 
 English | [中文说明](./README-zh.md)
 
@@ -49,7 +50,7 @@ Please check the document: [English](./README-Lite.md) | [中文说明](README-L
 
 ### 1. Download
 
-#### a) Homebrew (latest version: 0.9.0)
+#### a) Homebrew (current version: 0.9.0)
 
 1. Run the following command.
 
@@ -59,7 +60,7 @@ Please check the document: [English](./README-Lite.md) | [中文说明](README-L
 
 2. Done.
 
-#### b) Manual (latest version: 0.9.0)
+#### b) Manual (latest version: 0.9.1)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
