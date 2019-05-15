@@ -111,20 +111,26 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 
 ## 版本变动 🗒
 
+**version 0.4.2**
+
+- 支持 French
+
+- 感谢 [filmgirl](https://github.com/filmgirl) 提供的图标
+
 **version 0.4.1**
 
 - 支持 `Alacritty`
 
-**version 0.4.0**
-
-- 当使用 `Terminal` 和 `iTerm` 的时候，你可以设置默认打开新的标签页或者窗口。
-
-**version 0.3.0**
-
-- 更名为 `OpenInTerminal-Lite` (`OpenInTerminal` 将会在未来以功能更强大的版本出现)
-- 解决了当打开 Hyper 的时候，特殊字符导致程序崩溃的 bug
-
 <details><summary>旧版本</summary><br>
+<p><strong>version 0.4.0</strong></p>
+<ul>
+<li>当使用 Terminal 和 iTerm 的时候，你可以设置默认打开新的标签页或者窗口。</li>
+</ul>
+<p><strong>version 0.3.0</strong></p>
+<ul>
+<li>更名为 OpenInTerminal-Lite (OpenInTerminal 将会在未来以功能更强大的版本出现)</li>
+<li>解决了当打开 Hyper 的时候，特殊字符导致程序崩溃的 bug</li>
+</ul>
 <p><strong>version 0.2.0</strong></p>
 <ul>
 <li>增加终端选择框</li>
@@ -147,6 +153,10 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
 ### 贡献者
 
 - [Camji55](https://github.com/Camji55)
+
+### 译者
+
+- [Dorian Eydoux](https://github.com/dorianeydx)
 
 ### 参考项目
 

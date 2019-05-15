@@ -32,10 +32,6 @@ For **version 0.3.0 and above**:
 defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
 ```
 
-<details><summary>For <strong>version 0.2.0</strong>:</summary><br>
-<code>defaults remove wang.jianing.OpenInTerminal OIT_TerminalBundleIdentifier</code>
-<br>
-</details>
 
 <details><summary>Set <strong>Alacritty</strong> as the default terminal:</summary><br>
 <code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier io.alacritty </code>
@@ -50,18 +46,18 @@ For `Terminal`:
 
 ```
 # Open a new Tab
-defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption "tab"
+defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption tab
 # Open a new Window
-defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption "window"
+defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption window
 ```
 
 For `iTerm`:
 
 ```
 # Open a new Tab
-defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "tab"
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption tab
 # Open a new Window
-defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption "window"
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 ```
 
 For `Hyper` users, it is more recommended to open a new tab.
@@ -113,20 +109,26 @@ I provided several icons along with the app in the [release](https://github.com/
 
 ## Changes 🗒
 
+**version 0.4.2**
+
+- Support French
+
+- Thanks to [filmgirl](https://github.com/filmgirl) for alternative dark terminal icon.
+
 **version 0.4.1**
 
 - Support `Alacritty`
 
-**version 0.4.0**
-
-- You can set a default to open a new tab or window when using `Terminal` and `Hyper`.
-
-**version 0.3.0**
-
-- Change name to `OpenInTerminal-Lite` (`OpenInTerminal` will come as a more powerful version in the future.)
-- Fix a bug that some special characters in the path would crash the program when opening Hyper.
-
 <details><summary>old version</summary><br>
+<p><strong>version 0.4.0</strong></p>
+<ul>
+<li>You can set a default to open a new tab or window when using Terminal and Hyper.</li>
+</ul>
+<p><strong>version 0.3.0</strong></p>
+<ul>
+<li>Change name to OpenInTerminal-Lite (OpenInTerminal will come as a more powerful version in the future.)</li>
+<li>Fix a bug that some special characters in the path would crash the program when opening Hyper.</li>
+</ul>
 <p><strong>version 0.2.0</strong></p>
 <ul>
 <li>Add terminal selector</li>
@@ -149,6 +151,10 @@ I provided several icons along with the app in the [release](https://github.com/
 ### Contributors
 
 - [Camji55](https://github.com/Camji55)
+
+### Translators
+
+- [Dorian Eydoux](https://github.com/dorianeydx)
 
 ### Reference projects
 
