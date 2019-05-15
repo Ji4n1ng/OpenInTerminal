@@ -62,6 +62,7 @@
 		95C6C340227AA1CB00F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		95F5BED5227734E800D505A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */; };
+		95FC9244228BAD6900F51DF2 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C6C33B227A9EE600F157C4 /* Preferences.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,8 @@
 		95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
 		95C6C33A227A9EE600F157C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preferences.storyboard; sourceTree = "<group>"; };
 		95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		95FC9242228BAAD600F51DF2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Preferences.strings; sourceTree = "<group>"; };
+		95FC9243228BAAD600F51DF2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D0C631DF227F862E002C4AA0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D0C631E0227F862E002C4AA0 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		D0C631E1227F862E002C4AA0 /* Global.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Global.xcconfig; sourceTree = "<group>"; };
@@ -523,6 +526,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				fr,
 			);
 			mainGroup = 956C38A8225F7701001CB769;
 			productRefGroup = 956C38B2225F7701001CB769 /* Products */;
@@ -550,6 +554,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95FC9244228BAD6900F51DF2 /* Preferences.storyboard in Resources */,
 				472525592268100F003C50DF /* FinderAssets.xcassets in Resources */,
 				95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */,
 			);
@@ -674,6 +679,7 @@
 			children = (
 				9584EDF3226DEF79003C7EE8 /* en */,
 				9584EDF5226DEFC0003C7EE8 /* zh-Hans */,
+				95FC9243228BAAD600F51DF2 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -684,6 +690,7 @@
 				95C6C33A227A9EE600F157C4 /* Base */,
 				95187369227DD74B000CCB3A /* zh-Hans */,
 				9571DA88227E78B00076AA64 /* en */,
+				95FC9242228BAAD600F51DF2 /* fr */,
 			);
 			name = Preferences.storyboard;
 			sourceTree = "<group>";

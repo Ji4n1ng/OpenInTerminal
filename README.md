@@ -35,6 +35,7 @@ English | [中文说明](./README-zh.md)
 - ✅ Set to open a new tab or window.
 - ✅ Quick toggle the specified action from Menu bar.
 - ✅ Support Dark Mode.
+- ✅ Support English, Chinese and French.
 
 ## OpenInTerminal and OpenInTerminal-Lite 👀
 
@@ -114,11 +115,15 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 
 ## Changes 🗒
 
-**version 0.9.0**
+**version 0.9.1**
 
-OpenInTerminal has been released after several weeks of development. If you have suggestions or there are bugs, please feel free to open an issue.
+Support French.
 
 <details><summary>old version</summary><br>
+<p><strong>version 0.9.0</strong></p>
+<ul>
+<li>OpenInTerminal has been released after several weeks of development. If you have suggestions or there are bugs, please feel free to open an issue.</li>
+</ul>
 <p><strong>version 0.4.1</strong></p>
 <ul>
 <li>Support <code>Alacritty</code></li>
@@ -154,6 +159,10 @@ OpenInTerminal has been released after several weeks of development. If you have
 ### Contributors
 
 - [Camji55](https://github.com/Camji55)
+
+### Translators
+
+- [Dorian Eydoux](https://github.com/dorianeydx)
 
 ### Reference projects
 

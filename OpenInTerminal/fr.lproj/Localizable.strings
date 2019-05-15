@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  OpenInTerminal
+
+  Created by Jianing Wang on 2019/4/22.
+  Copyright © 2019 Jianing Wang. All rights reserved.
+*/
+
+"general.ok" = "OK";
+"general.cancel" = "Annuler";
+"general.yes" = "Oui";
+
+"menu.open_with_default_terminal" = "Ouvrir avec le terminal par défaut";
+"menu.open_with_default_editor" = "Ouvrir avec l’éditeur par défaut";
+"menu.copy_path_to_clipboard" = "Copier le chemin d’accès";
+
+"menu.preferences" = "Préférences...";
+"menu.quit" = "Quitter";
+
+"pref.toolbar.not_installed" = "Pas installé";
+
+"alert.pick_terminal_title" = "Ouvrir avec?";
+"alert.pick_terminal_description" = "Veuillez sélectionner l’un de ses terminaux ci-dessous pour être utilisé comme terminal par défaut.";
+
+"alert.pick_editor_title" = "Ouvrir avec?";
+"alert.pick_editor_description" = "Veuillez sélectionner l’un de ses éditeurs ci-dessous pour être utilisé comme éditeur par défaut.";
+
+"alert.reset_preferences_title" = "Réinitialiser les préférences l’utilisateur?";
+"alert.reset_preferences_description" = "⚠️ Notez que cela réinitialisera toutes les préférences de l'utilisateur";
+
+"toolbar.item_name" = "Ouvrir dans le terminal";
+"toolbar.item_tooltip" = "Ouvrir le dossier actuel dans le terminal";

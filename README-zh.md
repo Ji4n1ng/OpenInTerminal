@@ -35,6 +35,7 @@
 - ✅ 设置为打开新的窗口或者标签页
 - ✅ 从菜单栏快速启动指定动作
 - ✅ 支持 Dark Mode
+- ✅ 支持中文，英语和法语
 
 ## OpenInTerminal 和 OpenInTerminal-Lite 👀
 
@@ -105,12 +106,15 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终�
 
 ## 版本变动 🗒
 
-**version 0.9.0**
+**version 0.9.1**
 
-OpenInTerminal 经过几周的开发现在已经发行了。如果你有任何建议或者有 BUG，欢迎新建一个 issue。
-
+支持法语。
 
 <details><summary>旧版本</summary><br>
+<p><strong>version 0.9.0</strong></p>
+<ul>
+<li>OpenInTerminal 经过几周的开发现在已经发行了。如果你有任何建议或者要报告 BUG，欢迎新建一个 issue。</li>
+</ul>
 <p><strong>version 0.4.1</strong></p>
 <ul>
 <li>支持 <code>Alacritty</code></li>
@@ -146,6 +150,10 @@ OpenInTerminal 经过几周的开发现在已经发行了。如果你有任何�
 ### 贡献者
 
 - [Camji55](https://github.com/Camji55)
+
+### 译者
+
+- [Dorian Eydoux](https://github.com/dorianeydx)
 
 ### 参考项目
 
