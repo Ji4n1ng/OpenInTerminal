@@ -1,10 +1,11 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.2"><img src="https://img.shields.io/badge/Version-0.4.2-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.3"><img src="https://img.shields.io/badge/Version-0.4.3-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
+
 
 [English](./README-Lite.md) | 中文说明
 
@@ -64,16 +65,7 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 
 ## 如何安装 🖥
 
-### 手动安装 (最新版本：0.4.2)
-
-1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
-2. 将应用移动到 `应用程序` 文件夹。
-3. 按住 `Cmd` 键，然后将应用拖到访达工具栏中。
-4. 完成。
-
-![toolbar](./screenshots/lite-drag_to_toolbar.gif)
-
-### Homebrew (最新版本：0.4.1)
+### Homebrew (最新版本：0.4.3)
 
 1. 运行以下命令
 
@@ -86,6 +78,15 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 3. 完成
 
 >  ⚠️ 当您第一次运行应用程序时，macOS 将要求访问 `访达` 和 `终端`（或 `iTerm`）的权限。请给予应用程序权限。
+
+![toolbar](./screenshots/lite-drag_to_toolbar.gif)
+
+### 手动安装 (最新版本：0.4.3)
+
+1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
+2. 将应用移动到 `应用程序` 文件夹。
+3. 按住 `Cmd` 键，然后将应用拖到访达工具栏中。
+4. 完成。
 
 ### 如果你正在使用深色模式 (Dark Mode)
 
@@ -103,8 +104,11 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 <details><summary>2. 路径里的特殊字符</summary><br>
 <p>请不要在路径中使用反斜线 <code>\</code> 和双引号 <code>"</code>。</p>
 </details>
-
 ## 版本变动 🗒
+
+**version 0.4.3**
+
+- 修复了本地化的 bug
 
 **version 0.4.2**
 

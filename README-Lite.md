@@ -1,11 +1,10 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.2"><img src="https://img.shields.io/badge/Version-0.4.2-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.3"><img src="https://img.shields.io/badge/Version-0.4.3-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
-
 
 English | [中文说明](README-Lite-zh.md)
 
@@ -65,16 +64,7 @@ For `Alacritty` users, it is only supported to open a new window now.
 
 ## How to install 🖥
 
-### Manual (latest version: 0.4.2)
-
-1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
-2. Move the app into `/Applications`.
-3. Hold down the `Cmd` key and drag the app into Finder Toolbar.
-4. Done.
-
-![toolbar](./screenshots/lite-drag_to_toolbar.gif)
-
-### Homebrew (latest version 0.4.1)
+### Homebrew (latest version 0.4.3)
 
 1. Run the following command
 
@@ -87,6 +77,15 @@ For `Alacritty` users, it is only supported to open a new window now.
 3. Done
 
 >  ⚠️ macOS will ask your permissions to access Finder and Terminal (iTerm or Hyper) when you run the app for the first time. Please give the application permissions.
+
+![toolbar](./screenshots/lite-drag_to_toolbar.gif)
+
+### Manual (latest version: 0.4.3)
+
+1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
+2. Move the app into `/Applications`.
+3. Hold down the `Cmd` key and drag the app into Finder Toolbar.
+4. Done.
 
 ### If you are using Dark Mode
 
@@ -105,8 +104,11 @@ I provided several icons along with the app in the [release](https://github.com/
 <details><summary>2. Special characters in the <code>path</code>.</summary><br>
 <p>Please do not use backslash <code>\</code> and double quotes <code>"</code>   in the path</p>
 </details>
-
 ## Changes 🗒
+
+**version 0.4.3**
+
+- Fix localization bug
 
 **version 0.4.2**
 
