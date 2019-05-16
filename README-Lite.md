@@ -104,6 +104,7 @@ I provided several icons along with the app in the [release](https://github.com/
 <details><summary>2. Special characters in the <code>path</code>.</summary><br>
 <p>Please do not use backslash <code>\</code> and double quotes <code>"</code>   in the path</p>
 </details>
+
 ## Changes 🗒
 
 **version 0.4.3**
