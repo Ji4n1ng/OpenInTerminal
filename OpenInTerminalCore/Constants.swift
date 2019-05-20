@@ -35,6 +35,7 @@ struct Constants {
 }
 
 public enum QuickToggleType: String {
+    
     case openWithDefaultTerminal
     case openWithDefaultEditor
     case copyPathToClipboard

@@ -18,6 +18,7 @@ enum OITError: Error {
     case cannotAccessVSCode
     case cannotAccessAtom
     case cannotAccessSublime
+    case cannotAccessVSCodium
     case wrongUrl
     
 }
@@ -44,6 +45,8 @@ extension OITError : CustomStringConvertible {
             return "Cannot access Atom, please check permissions."
         case .cannotAccessSublime:
             return "Cannot access Sublime, please check permissions."
+        case .cannotAccessVSCodium:
+            return "Cannot access VSCodium, please check permissions."
         case .wrongUrl:
             return "Oops, got a wrong url"
         }

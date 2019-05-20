@@ -103,6 +103,13 @@ class FinderSync: FIFinderSync {
                 hasEditor = true
             }
             
+            if FinderManager.shared.editorIsInstalled(.vscodium) {
+                menu.addItem(withTitle: EditorType.vscodium.fullName,
+                             action: #selector(openVSCodium),
+                             keyEquivalent: "")
+                hasEditor = true
+            }
+            
             if hasEditor {
                 let separator = NSMenuItem.separator()
                 separator.title = "-----------------------"
@@ -156,6 +163,10 @@ class FinderSync: FIFinderSync {
     
     @objc func openSublime() {
         OpenNotifier.postNotification(.openSublime)
+    }
+    
+    @objc func openVSCodium() {
+        OpenNotifier.postNotification(.openVSCodium)
     }
     
     @objc func copyPathToClipboard() {

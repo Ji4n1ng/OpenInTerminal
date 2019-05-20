@@ -13,6 +13,7 @@ public enum EditorType: String {
     case vscode = "VSCode"
     case atom = "Atom"
     case sublime = "Sublime"
+    case vscodium = "VSCodium"
     
     public var fullName: String {
         switch self {
@@ -22,6 +23,8 @@ public enum EditorType: String {
             return "Atom"
         case .sublime:
             return "Sublime Text"
+        case .vscodium:
+            return "VSCodium"
         }
     }
     
@@ -33,6 +36,8 @@ public enum EditorType: String {
             return "com.github.atom"
         case .sublime:
             return "com.sublimetext.3"
+        case .vscodium:
+            return "com.visualstudio.code.oss"
         }
     }
     
@@ -44,6 +49,8 @@ public enum EditorType: String {
             return AtomApp()
         case .sublime:
             return SublimeApp()
+        case .vscodium:
+            return VSCodiumApp()
         }
     }
 }

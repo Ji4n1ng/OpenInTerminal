@@ -135,6 +135,9 @@ extension AppDelegate {
         OpenNotifier.addObserver(observer: self,
                                  selector: #selector(openSublime),
                                  notification: .openSublime)
+        OpenNotifier.addObserver(observer: self,
+                                 selector: #selector(openVSCodium),
+                                 notification: .openVSCodium)
         
         OpenNotifier.addObserver(observer: self,
                                  selector: #selector(copyPathToClipboard),
@@ -152,6 +155,7 @@ extension AppDelegate {
         OpenNotifier.removeObserver(observer: self, notification: .openVSCode)
         OpenNotifier.removeObserver(observer: self, notification: .openAtom)
         OpenNotifier.removeObserver(observer: self, notification: .openSublime)
+        OpenNotifier.removeObserver(observer: self, notification: .openVSCodium)
         
         OpenNotifier.removeObserver(observer: self, notification: .copyPathToClipboard)
     }
@@ -200,6 +204,10 @@ extension AppDelegate {
     
     @objc func openSublime() {
         EditorManager.shared.openEditor(.sublime)
+    }
+    
+    @objc func openVSCodium() {
+        EditorManager.shared.openEditor(.vscodium)
     }
     
     @objc func copyPathToClipboard() {

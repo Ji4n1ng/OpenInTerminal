@@ -21,6 +21,7 @@ public class OpenNotifier: Notifier {
         case openVSCode
         case openAtom
         case openSublime
+        case openVSCodium
         
         case copyPathToClipboard
     }

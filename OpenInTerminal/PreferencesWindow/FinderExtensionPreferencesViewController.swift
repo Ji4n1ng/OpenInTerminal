@@ -18,7 +18,6 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var terminalTabButton: NSButton!
     @IBOutlet weak var terminalClearButton: NSButton!
     
-    
     @IBOutlet weak var iTermTextField: NSTextField!
     @IBOutlet weak var iTermWindowButton: NSButton!
     @IBOutlet weak var iTermTabButton: NSButton!
@@ -31,6 +30,7 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var vscodeTextField: NSTextField!
     @IBOutlet weak var atomTextField: NSTextField!
     @IBOutlet weak var sublimeTextField: NSTextField!
+    @IBOutlet weak var vscodiumTextField: NSTextField!
     
     // MARK: Lifecycle
     
@@ -77,7 +77,8 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
         let editors: [(EditorType, NSTextField)] =
             [(.vscode, vscodeTextField),
              (.atom, atomTextField),
-             (.sublime, sublimeTextField)]
+             (.sublime, sublimeTextField),
+             (.vscodium, vscodiumTextField)]
         
         editors.forEach { editor, textField in
             let isInstalled = FinderManager.shared.editorIsInstalled(editor)

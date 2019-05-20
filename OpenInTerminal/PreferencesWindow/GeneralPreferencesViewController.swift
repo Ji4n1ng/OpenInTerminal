@@ -119,7 +119,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         defaultEditorButton.addItem(withTitle: Constants.none)
         
         let editors: [EditorType] =
-            [.vscode, .atom, .sublime]
+            [.vscode, .atom, .sublime, .vscodium]
         
         editors.forEach { editor in
             let isInstalled = FinderManager.shared.editorIsInstalled(editor)
