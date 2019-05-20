@@ -130,3 +130,22 @@
 
 /* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
 "yIW-2a-15A.title" = "iTerm";
+
+/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
+"FpP-Q9-flS.title" = "Raccourcis";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
+"Mqt-Fp-Ssl.title" = "Ouvrir avec le terminal par défaut:";
+
+/* Class = "NSTextFieldCell"; title = "VSCodium"; ObjectID = "SFC-3T-3pr"; */
+"SFC-3T-3pr.title" = "VSCodium";
+
+/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
+"Xd9-iA-emU.title" = "Copier le chemin d’accès:";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
+"bvy-v3-hhf.title" = "Ouvrir avec l’éditeur par défaut:";
+
+/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
+"jcs-Ou-OZ2.title" = "Réinitialiser";
+

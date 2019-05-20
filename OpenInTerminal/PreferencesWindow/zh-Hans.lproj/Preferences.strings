@@ -130,3 +130,22 @@
 
 /* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
 "Sw7-of-ecf.title" = "支付宝";
+
+/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
+"FpP-Q9-flS.title" = "快捷键";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
+"Mqt-Fp-Ssl.title" = "打开默认终端:";
+
+/* Class = "NSTextFieldCell"; title = "VSCodium"; ObjectID = "SFC-3T-3pr"; */
+"SFC-3T-3pr.title" = "VSCodium";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
+"bvy-v3-hhf.title" = "打开默认编辑器:";
+
+/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
+"Xd9-iA-emU.title" = "拷贝路径到粘贴板:";
+
+/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
+"jcs-Ou-OZ2.title" = "重置";
+

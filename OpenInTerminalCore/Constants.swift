@@ -29,7 +29,6 @@ struct Constants {
         static let terminalClearOption = "OIT_TerminalClearOption"
         static let iTermClearOption = "OIT_iTermClearOption"
         
-        static let copyPathToClipboardVisible = "OIT_CopyPathToClipboardVisible"
     }
 
 }

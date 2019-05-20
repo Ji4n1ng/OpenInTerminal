@@ -29,6 +29,9 @@
 /* Class = "NSTextFieldCell"; title = "Visual Studio Code"; ObjectID = "FW0-5J-5aA"; */
 "FW0-5J-5aA.title" = "Visual Studio Code";
 
+/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
+"FpP-Q9-flS.title" = "Shortcuts";
+
 /* Class = "NSTextFieldCell"; title = "It is more recommended to open a new tab."; ObjectID = "G69-k2-hgn"; */
 "G69-k2-hgn.title" = "It is more recommended to open a new tab.";
 
@@ -56,14 +59,23 @@
 /* Class = "NSTextFieldCell"; title = "💸 Donate:"; ObjectID = "Kua-ZD-31F"; */
 "Kua-ZD-31F.title" = "💸 Donate:";
 
+/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
+"Mqt-Fp-Ssl.title" = "Open with default Terminal:";
+
 /* Class = "NSTextFieldCell"; title = "🐦 Twitter:"; ObjectID = "NZE-zU-6ss"; */
 "NZE-zU-6ss.title" = "🐦 Twitter:";
+
+/* Class = "NSTextFieldCell"; title = "VSCodium"; ObjectID = "SFC-3T-3pr"; */
+"SFC-3T-3pr.title" = "VSCodium";
 
 /* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
 "Sw7-of-ecf.title" = "Alipay";
 
 /* Class = "NSTextFieldCell"; title = "✉️ Contact:"; ObjectID = "Vu4-Wz-Agk"; */
 "Vu4-Wz-Agk.title" = "✉️ Contact:";
+
+/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
+"Xd9-iA-emU.title" = "Copy path in Clipboard:";
 
 /* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
 "Xfc-rf-FkX.title" = "Default Text Editor:";
@@ -83,6 +95,9 @@
 /* Class = "NSTextFieldCell"; title = "Hyper"; ObjectID = "bT7-LU-sov"; */
 "bT7-LU-sov.title" = "Hyper";
 
+/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
+"bvy-v3-hhf.title" = "Open with default Editor:";
+
 /* Class = "NSButtonCell"; title = "PayPal"; ObjectID = "dC4-C7-fEL"; */
 "dC4-C7-fEL.title" = "PayPal";
 
@@ -97,6 +112,9 @@
 
 /* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
 "gy9-lb-m8d.title" = "Quick Toggle";
+
+/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
+"jcs-Ou-OZ2.title" = "Reset";
 
 /* Class = "NSButtonCell"; title = "Reset preferences"; ObjectID = "jyI-H7-qN3"; */
 "jyI-H7-qN3.title" = "Reset preferences";

@@ -10,8 +10,15 @@ import Cocoa
 import Foundation
 
 struct Constants {
+    
     static let none = "None"
     static let launcherAppIdentifier = "wang.jianing.OpenInTerminalHelper"
+    
+    struct Key {
+        static let defaultTerminalShortcut = "OIT_DefaultTerminalShortcut"
+        static let defaultEditorShortcut = "OIT_DefaultEditorShortcut"
+        static let copyPathShortcut = "OIT_CopyPathShortcut"
+    }
 }
 
 extension NSImage {

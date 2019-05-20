@@ -8,6 +8,7 @@
 
 import Cocoa
 import OpenInTerminalCore
+import MASShortcut
 
 class StatusMenuController: NSObject, NSMenuDelegate {
     
@@ -30,13 +31,36 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         //Edit printToConsole parameter in Edit Scheme > Run > Arguments > Environment Variables
         Log.logger.printToConsole = ProcessInfo.processInfo.environment["print_log"] == "true"
         
-//        statusMenu.delegate = self
+        statusMenu.delegate = self
         
         defaultTerminalMenuItem.title = NSLocalizedString("menu.open_with_default_terminal", comment: "Open with default Terminal")
         defaultEditorMenuItem.title = NSLocalizedString("menu.open_with_default_editor", comment: "Open with default Editor")
         copyPathMenuItem.title = NSLocalizedString("menu.copy_path_to_clipboard", comment: "Copy path to Clipboard")
         preferencesMenuItem.title = NSLocalizedString("menu.preferences", comment: "Preferences...")
         quitMenuItem.title = NSLocalizedString("menu.quit", comment: "Quit")
+    }
+    
+    func menuWillOpen(_ menu: NSMenu) {
+        let menuItems: [(NSMenuItem, String)] =
+            [(defaultTerminalMenuItem, Constants.Key.defaultTerminalShortcut),
+             (defaultEditorMenuItem, Constants.Key.defaultEditorShortcut),
+             (copyPathMenuItem, Constants.Key.copyPathShortcut)]
+        
+        menuItems.forEach { item, key in
+            assignKeyboardShortcutToMenuItem(item, userDefaultsKey: key)
+        }
+    }
+    
+    func assignKeyboardShortcutToMenuItem(_ menuItem: NSMenuItem, userDefaultsKey: String) {
+        if let data = UserDefaults.standard.value(forKey: userDefaultsKey),
+            let shortcut = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as? MASShortcut {
+            let flags = NSEvent.ModifierFlags.init(rawValue: shortcut.modifierFlags)
+            menuItem.keyEquivalentModifierMask = flags
+            menuItem.keyEquivalent = shortcut.keyCodeString.lowercased()
+        } else {
+            menuItem.keyEquivalentModifierMask = []
+            menuItem.keyEquivalent = ""
+        }
     }
     
     // MARK: Menu Item Actions
