@@ -1,10 +1,11 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.9.1"><img src="https://img.shields.io/badge/Version-0.9.1-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.0"><img src="https://img.shields.io/badge/Version-0.10.0-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
+
 
 
 English | [中文说明](./README-zh.md)
@@ -32,8 +33,9 @@ English | [中文说明](./README-zh.md)
 ### More features
 
 - ✅ Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty).
-- ✅ Support [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/) and [Sublime Text](https://www.sublimetext.com/).
+- ✅ Support [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/) and [VSCodium](https://github.com/VSCodium/vscodium).
 - ✅ Set to open a new tab or window.
+- ✅ Support keyboard shortcuts.
 - ✅ Quick toggle the specified action from Menu bar.
 - ✅ Support Dark Mode.
 - ✅ Support English, Chinese and French.
@@ -60,7 +62,7 @@ Please check the document: [English](./README-Lite.md) | [中文说明](README-L
 
 2. Done.
 
-#### b) Manual (latest version: 0.9.1)
+#### b) Manual (latest version: 0.10.0)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
@@ -90,8 +92,6 @@ Just check the `Launch OpenInTerminal at login` button in `Preferences`.
 
 ## Todo 👨‍💻
 
-- Supporting keyboard shortcuts
-
 
 If you have a good idea, feel welcome to open a new [issue](https://github.com/Ji4n1ng/OpenInTerminal/issues/new/choose).
 
@@ -114,7 +114,16 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 <p>Please do not use backslash <code>\</code> and double quotes <code>"</code> in the path.</p>
 </details>
 
+<details><summary>5. Open two Terminal windows on Mojave</summary><br>
+<p>This problem usually occurs when Terminal is first started. So you can use <code>⌘W</code> to close Terminal window instead of using <code>⌘Q</code> to quit Terminal.</p>
+</details>
+
 ## Changes 🗒
+
+**version 0.10.0**
+
+- Support keyboard shortcuts.
+- Support VSCodium.
 
 **version 0.9.1**
 

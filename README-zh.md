@@ -1,10 +1,11 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.9.1"><img src="https://img.shields.io/badge/Version-0.9.1-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.0"><img src="https://img.shields.io/badge/Version-0.10.0-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
+
 
 
 [English](./README.md) | 中文说明
@@ -32,8 +33,9 @@
 ### 更多功能
 
 - ✅ 支持 Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) 和 [Alacritty](https://github.com/jwilm/alacritty).
-- ✅ 支持 [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/) 和 [Sublime Text](https://www.sublimetext.com/).
+- ✅ 支持 [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/) 和  [VSCodium](https://github.com/VSCodium/vscodium).
 - ✅ 设置为打开新的窗口或者标签页
+- ✅ 支持键盘快捷键
 - ✅ 从菜单栏快速启动指定动作
 - ✅ 支持 Dark Mode
 - ✅ 支持中文，英语和法语
@@ -60,7 +62,7 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终�
 
 2. 完成。
 
-#### b) 手动 (最新版本：0.9.1)
+#### b) 手动 (最新版本：0.10.0)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -105,7 +107,16 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终�
 <p>请不要在路径中使用反斜线 <code>\</code> 和双引号 <code>"</code>。</p>
 </details>
 
+<details><summary>5. 在 Mojave 上打开了两个终端窗口</summary><br>
+<p>这个问题只发生在第一次启动终端的时候。所以，你可以通过 <code>⌘W</code> 来关闭终端的窗口，而不是用 <code>⌘Q</code> 来退出终端。</p>
+</details>
+
 ## 版本变动 🗒
+
+**version 0.10.0**
+
+- 支持键盘快捷键
+- 支持 VSCodium
 
 **version 0.9.1**
 
