@@ -52,7 +52,7 @@ Please check the document: [English](./README-Lite.md) | [中文说明](README-L
 
 ### 1. Download
 
-#### a) Homebrew (current version: 0.9.1)
+#### a) Homebrew (current version: 0.10.0)
 
 1. Run the following command.
 
