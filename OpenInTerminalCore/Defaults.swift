@@ -43,7 +43,6 @@ extension DefaultsKeys {
     
     // value example: ClearType.clear.rawValue
     static let terminalClearOption = DefaultsKey<String>(Constants.Key.terminalClearOption)
-    static let iTermClearOption = DefaultsKey<String>(Constants.Key.iTermClearOption)
     
 }
 

@@ -58,13 +58,25 @@ public class TerminalManager {
         return option.map(NewOptionType.init(rawValue: )) ?? nil
     }
     
-    public func setNewOption(_ terminal: TerminalType, _ newOption: NewOptionType) {
+    public func setNewOption(_ terminal: TerminalType, _ newOption: NewOptionType) throws {
         
         switch terminal {
         case .terminal:
             Defaults[.terminalNewOption] = newOption.rawValue
         case .iTerm:
             Defaults[.iTermNewOption] = newOption.rawValue
+            
+            let option = newOption == .window ? "true" : "false"
+            
+            let source = """
+            do shell script "defaults write \(TerminalType.iTerm.bundleId) OpenFileInNewWindows -bool \(option)"
+            """
+            let script = NSAppleScript(source: source)!
+            var error: NSDictionary?
+            script.executeAndReturnError(&error)
+            if error != nil {
+                throw OITError.cannotSetItermNewOption
+            }
         case .hyper, .alacritty:
             return
         }
@@ -75,9 +87,7 @@ public class TerminalManager {
         switch terminal {
         case .terminal:
             option = Defaults[.terminalClearOption]
-        case .iTerm:
-            option = Defaults[.iTermClearOption]
-        case .hyper, .alacritty:
+        case .iTerm, .hyper, .alacritty:
             return nil
         }
         
@@ -89,9 +99,7 @@ public class TerminalManager {
         switch terminal {
         case .terminal:
             Defaults[.terminalClearOption] = clearOption.rawValue
-        case .iTerm:
-            Defaults[.iTermClearOption] = clearOption.rawValue
-        case .hyper, .alacritty:
+        case .iTerm, .hyper, .alacritty:
             return
         }
     }

@@ -62,7 +62,6 @@ public class CoreManager {
         Defaults[.terminalNewOption] = NewOptionType.window.rawValue
         Defaults[.iTermNewOption] = NewOptionType.window.rawValue
         Defaults[.terminalClearOption] = ClearOptionType.noClear.rawValue
-        Defaults[.iTermClearOption] = ClearOptionType.noClear.rawValue
         Defaults.synchronize()
     }
     

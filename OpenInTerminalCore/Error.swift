@@ -20,6 +20,7 @@ enum OITError: Error {
     case cannotAccessSublime
     case cannotAccessVSCodium
     case wrongUrl
+    case cannotSetItermNewOption
     
 }
 
@@ -49,6 +50,8 @@ extension OITError : CustomStringConvertible {
             return "Cannot access VSCodium, please check permissions."
         case .wrongUrl:
             return "Oops, got a wrong url"
+        case .cannotSetItermNewOption:
+            return "Cannot set iTerm new option"
         }
     }
 }

@@ -27,7 +27,6 @@ struct Constants {
         static let iTermNewOption = "OIT_iTermNewOption"
         
         static let terminalClearOption = "OIT_TerminalClearOption"
-        static let iTermClearOption = "OIT_iTermClearOption"
         
     }
 

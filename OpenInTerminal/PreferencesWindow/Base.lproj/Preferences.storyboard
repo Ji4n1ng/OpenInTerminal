@@ -227,14 +227,14 @@
             <objects>
                 <viewController title="Toolbar" id="s5W-qL-1Xs" customClass="FinderExtensionPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" focusRingType="none" id="jOR-Px-swx">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="439"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="423"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxi-dF-LO8">
-                                <rect key="frame" x="20" y="133" width="340" height="286"/>
+                                <rect key="frame" x="20" y="139" width="340" height="264"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YDG-6D-DhJ">
-                                        <rect key="frame" x="-2" y="269" width="59" height="17"/>
+                                        <rect key="frame" x="-2" y="247" width="59" height="17"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Terminal" id="fA9-Hd-yjp">
                                             <font key="font" metaFont="systemSemibold" size="13"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -242,7 +242,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n57-Vv-qqL">
-                                        <rect key="frame" x="0.0" y="165" width="340" height="96"/>
+                                        <rect key="frame" x="0.0" y="143" width="340" height="96"/>
                                         <subviews>
                                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="40" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z7T-EA-JXL">
                                                 <rect key="frame" x="20" y="80" width="149" height="16"/>
@@ -324,10 +324,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3k-yj-yxK">
-                                        <rect key="frame" x="0.0" y="94" width="169" height="63"/>
+                                        <rect key="frame" x="0.0" y="94" width="169" height="41"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wVI-dH-WOK">
-                                                <rect key="frame" x="-2" y="46" width="40" height="17"/>
+                                                <rect key="frame" x="-2" y="24" width="40" height="17"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="iTerm" id="yIW-2a-15A">
                                                     <font key="font" metaFont="systemSemibold" size="13"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -335,7 +335,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="40" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="04S-wL-cdO">
-                                                <rect key="frame" x="20" y="22" width="149" height="16"/>
+                                                <rect key="frame" x="20" y="0.0" width="149" height="16"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Jp-pe-FCb">
                                                         <rect key="frame" x="-1" y="-1" width="71" height="18"/>
@@ -367,28 +367,15 @@
                                                     <real value="3.4028234663852886e+38"/>
                                                 </customSpacing>
                                             </stackView>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="exi-Cz-dy8">
-                                                <rect key="frame" x="18" y="-2" width="54" height="18"/>
-                                                <buttonCell key="cell" type="check" title="Clear" bezelStyle="regularSquare" imagePosition="left" inset="2" id="u88-wh-Kds">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="iTermClearButtonClicked:" target="s5W-qL-1Xs" id="Gqe-E5-AJW"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="exi-Cz-dy8" firstAttribute="leading" secondItem="a3k-yj-yxK" secondAttribute="leading" constant="20" id="Xt9-FA-lZh"/>
                                             <constraint firstItem="04S-wL-cdO" firstAttribute="leading" secondItem="a3k-yj-yxK" secondAttribute="leading" constant="20" id="o3f-5r-RyI"/>
                                         </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
-                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
@@ -474,7 +461,7 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e4W-Gy-mcj">
-                                <rect key="frame" x="20" y="33" width="120" height="92"/>
+                                <rect key="frame" x="20" y="39" width="120" height="92"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ATh-GK-Nb9">
                                         <rect key="frame" x="-2" y="75" width="124" height="17"/>
@@ -535,7 +522,6 @@
                         <outlet property="alacrittyTextField" destination="Mx4-aq-XS9" id="pqV-UT-h1a"/>
                         <outlet property="atomTextField" destination="JUf-uB-85A" id="Zqd-bB-NKf"/>
                         <outlet property="hyperTextField" destination="btg-Vx-4Pl" id="ngx-02-cs4"/>
-                        <outlet property="iTermClearButton" destination="exi-Cz-dy8" id="ze3-5g-wTW"/>
                         <outlet property="iTermTabButton" destination="Lmz-5e-p2j" id="Vr0-XJ-pnx"/>
                         <outlet property="iTermTextField" destination="wVI-dH-WOK" id="oeJ-Rq-h9e"/>
                         <outlet property="iTermWindowButton" destination="2Jp-pe-FCb" id="weB-Ix-KHl"/>
@@ -550,7 +536,7 @@
                 </viewController>
                 <customObject id="mlw-wX-Yfn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-132" y="1129.5"/>
+            <point key="canvasLocation" x="-132" y="1121.5"/>
         </scene>
         <!--Advanced-->
         <scene sceneID="X6j-fK-tNl">
