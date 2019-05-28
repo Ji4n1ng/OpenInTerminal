@@ -5,6 +5,7 @@
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
+
 [English](../README.md) | 中文说明
 
 ## 如何使用 🚀
@@ -107,6 +108,7 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终�
 <details><summary>5. 在 Mojave 上打开了两个终端窗口</summary><br>
 <p>这个问题只发生在第一次启动终端的时候。所以，你可以通过 <code>⌘W</code> 来关闭终端的窗口，而不是用 <code>⌘Q</code> 来退出终端。</p>
 </details>
+
 ## 版本变动 🗒
 
 **version 0.10.1**

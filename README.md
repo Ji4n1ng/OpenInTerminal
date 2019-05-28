@@ -6,9 +6,6 @@
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
 
-
-
-
 English | [中文说明](./Resources/README-zh.md)
 
 ## How to use 🚀
@@ -18,16 +15,19 @@ English | [中文说明](./Resources/README-zh.md)
 <div>
   <img src="./Resources/screenshots/main-open-in-terminal.gif" width="600px">
 </div>
+
 ### 2) Open selected folder or file in Terminal (or Editor)
 
 <div>
   <img src="./Resources/screenshots/main-open-in-editor.gif" width="600px">
 </div>
+
 ### 3) Copy path of the selected file or Finder window to Clipboard
 
 <div>
   <img src="./Resources/screenshots/main-copy-path-to-clipboard.gif" width="600px">
 </div>
+
 ### More features
 
 - ✅ Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty).
@@ -86,8 +86,8 @@ Just check the `Launch OpenInTerminal at login` button in `Preferences`.
 <div>
   <img src="./Resources/screenshots/pref-general.png" width="400px">
 </div>
-## Todo 👨‍💻
 
+## Todo 👨‍💻
 
 If you have a good idea, feel welcome to open a new [issue](https://github.com/Ji4n1ng/OpenInTerminal/issues/new/choose).
 
@@ -119,7 +119,7 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 **version 0.10.1**
 
 - Thanks to [pynixwang](https://github.com/pynixwang)'s suggestions. iTerm will not leave `cd xxx` in history.
-- You need to reclick the `window` button or the `tab` button of iTerm in `Perferences`.
+- You need to click the `window` button or the `tab` button of iTerm again in `Preferences`.
 
 **version 0.10.0**
 
