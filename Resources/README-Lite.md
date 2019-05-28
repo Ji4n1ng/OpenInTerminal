@@ -61,15 +61,14 @@ defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool false
 defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 ```
 
-<details><summary>old versions:</summary><br>
-<code>
-# Open a new Tab<br>
-defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption tab<br>
-# Open a new Window<br>
+old versions:
+
+```
+# Open a new Tab
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption tab
+# Open a new Window
 defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
-</code>
-<br>
-</details>
+```
 
 For `Hyper` users, it is more recommended to open a new tab.
 
@@ -117,6 +116,7 @@ I provided several icons along with the app in the [release](https://github.com/
 <details><summary>2. Special characters in the <code>path</code>.</summary><br>
 <p>Please do not use backslash <code>\</code> and double quotes <code>"</code>   in the path</p>
 </details>
+
 ## Changes 🗒
 
 **version 0.4.4**

@@ -77,6 +77,7 @@ Open the OpenInTerminal app. Go to `System Preferences` -> `Extensions` -> `Find
 <div>
   <img src="./Resources/screenshots/finder-extension-permission.png" width="450px">
 </div>
+
 ### 3. Set OpenInTerminal to launch at login
 
 Just check the `Launch OpenInTerminal at login` button in `Preferences`.

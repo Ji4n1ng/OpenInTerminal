@@ -6,8 +6,6 @@
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
 
-
-
 [English](./README-Lite.md) | 中文说明
 
 ## 如何使用 🚀
@@ -31,7 +29,6 @@
 ```
 defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
 ```
-
 
 <details><summary>设置 <strong>Alacritty</strong> 为默认终端:</summary><br>
 <code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier io.alacritty </code>
@@ -62,16 +59,15 @@ defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool false
 defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 ```
 
+老版本：
 
-<details><summary>老版本：</summary><br>
-<code>
-# 打开新的标签页<br>
-defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption tab<br>
-# 打开新的窗口<br>
+```
+# 打开新的标签页
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption tab
+# 打开新的窗口
 defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
-</code>
-<br>
-</details>
+```
+
 对于 `Hyper` 用户来说，更推荐打开新的标签页。
 
 对于 `Alacritty` 用户来说，目前只支持打开新的窗口。
