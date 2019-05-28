@@ -8,4 +8,5 @@ env:
 script:
   set -o pipefail &&
   travis_retry
+  pod install
   xcodebuild clean build -scheme OpenInTerminal -sdk macosx -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGN_REQUIRED=NO | xcpretty -f `xcpretty-travis-formatter`

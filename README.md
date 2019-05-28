@@ -1,6 +1,6 @@
 <p align="center">
-  <img width="100%" src="./screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.0"><img src="https://img.shields.io/badge/Version-0.10.0-blue.svg?longCache=true&style=for-the-badge"></a>
+  <img width="100%" src="./Resources/screenshots/readme-header.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.1"><img src="https://img.shields.io/badge/Version-0.10.1-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -8,28 +8,26 @@
 
 
 
-English | [中文说明](./README-zh.md)
+
+English | [中文说明](./Resources/README-zh.md)
 
 ## How to use 🚀
 
 ### 1) Open current directory in Terminal (or Editor)
 
 <div>
-  <img src="./screenshots/main-open-in-terminal.gif" width="600px">
+  <img src="./Resources/screenshots/main-open-in-terminal.gif" width="600px">
 </div>
-
 ### 2) Open selected folder or file in Terminal (or Editor)
 
 <div>
-  <img src="./screenshots/main-open-in-editor.gif" width="600px">
+  <img src="./Resources/screenshots/main-open-in-editor.gif" width="600px">
 </div>
-
 ### 3) Copy path of the selected file or Finder window to Clipboard
 
 <div>
-  <img src="./screenshots/main-copy-path-to-clipboard.gif" width="600px">
+  <img src="./Resources/screenshots/main-copy-path-to-clipboard.gif" width="600px">
 </div>
-
 ### More features
 
 - ✅ Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty).
@@ -46,7 +44,7 @@ There are a normal version and a lite version of OpenInTerminal. If you only nee
 
 For `OpenInTerminal-Lite` users:
 
-Please check the document: [English](./README-Lite.md) | [中文说明](README-Lite-zh.md)
+Please check the document: [English](./Resources/README-Lite.md) | [中文说明](./Resources/README-Lite-zh.md)
 
 ## How to install 🖥
 
@@ -62,7 +60,7 @@ Please check the document: [English](./README-Lite.md) | [中文说明](README-L
 
 2. Done.
 
-#### b) Manual (latest version: 0.10.0)
+#### b) Manual (latest version: 0.10.1)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
@@ -77,9 +75,8 @@ Please check the document: [English](./README-Lite.md) | [中文说明](README-L
 Open the OpenInTerminal app. Go to `System Preferences` -> `Extensions` -> `Finder Extensions`, check the permission button as below.
 
 <div>
-  <img src="./screenshots/finder-extension-permission.png" width="450px">
+  <img src="./Resources/screenshots/finder-extension-permission.png" width="450px">
 </div>
-
 ### 3. Set OpenInTerminal to launch at login
 
 Just check the `Launch OpenInTerminal at login` button in `Preferences`.
@@ -87,9 +84,8 @@ Just check the `Launch OpenInTerminal at login` button in `Preferences`.
 > Because the Finder Extension does not work when the main app is not running, it is very recommended to set OpenInTerminal to launch at login.
 
 <div>
-  <img src="./screenshots/pref-general.png" width="400px">
+  <img src="./Resources/screenshots/pref-general.png" width="400px">
 </div>
-
 ## Todo 👨‍💻
 
 
@@ -120,16 +116,21 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 
 ## Changes 🗒
 
+**version 0.10.1**
+
+- Thanks to [pynixwang](https://github.com/pynixwang)'s suggestions. iTerm will not leave `cd xxx` in history.
+- You need to reclick the `window` button or the `tab` button of iTerm in `Perferences`.
+
 **version 0.10.0**
 
 - Support keyboard shortcuts.
 - Support VSCodium.
 
-**version 0.9.1**
-
-Support French.
-
 <details><summary>old version</summary><br>
+<p><strong>version 0.9.1</strong></p>
+<ul>
+<li>Support French.</li>
+</ul>
 <p><strong>version 0.9.0</strong></p>
 <ul>
 <li>OpenInTerminal has been released after several weeks of development. If you have suggestions or there are bugs, please feel free to open an issue.</li>

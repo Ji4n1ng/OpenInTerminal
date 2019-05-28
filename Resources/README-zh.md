@@ -1,14 +1,11 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.0"><img src="https://img.shields.io/badge/Version-0.10.0-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.1"><img src="https://img.shields.io/badge/Version-0.10.1-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
-
-
-
-[English](./README.md) | 中文说明
+[English](../README.md) | 中文说明
 
 ## 如何使用 🚀
 
@@ -62,7 +59,7 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终�
 
 2. 完成。
 
-#### b) 手动 (最新版本：0.10.0)
+#### b) 手动 (最新版本：0.10.1)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -110,19 +107,24 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终�
 <details><summary>5. 在 Mojave 上打开了两个终端窗口</summary><br>
 <p>这个问题只发生在第一次启动终端的时候。所以，你可以通过 <code>⌘W</code> 来关闭终端的窗口，而不是用 <code>⌘Q</code> 来退出终端。</p>
 </details>
-
 ## 版本变动 🗒
+
+**version 0.10.1**
+
+- 感谢 [pynixwang](https://github.com/pynixwang) 的建议。iTerm 现在不会在 history 中留下 `cd xxx`。
+
+- 你需要在偏好设置中重新点击 iTerm 的 `window` 或者 `tab` 按钮。
 
 **version 0.10.0**
 
 - 支持键盘快捷键
 - 支持 VSCodium
 
-**version 0.9.1**
-
-支持法语。
-
 <details><summary>旧版本</summary><br>
+<p><strong>version 0.9.1</strong></p>
+<ul>
+<li>支持法语。</li>
+</ul>
 <p><strong>version 0.9.0</strong></p>
 <ul>
 <li>OpenInTerminal 经过几周的开发现在已经发行了。如果你有任何建议或者要报告 BUG，欢迎新建一个 issue。</li>

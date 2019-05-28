@@ -1,10 +1,11 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.3"><img src="https://img.shields.io/badge/Version-0.4.3-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.4"><img src="https://img.shields.io/badge/Version-0.4.4-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
+
 
 
 [English](./README-Lite.md) | 中文说明
@@ -41,7 +42,7 @@ defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
 
 当你在使用 `Terminal` 或者 `iTerm`，你可以设置默认打开一个新的标签页或者窗口。**默认**是打开新的窗口。
 
-对于 `Terminal`:
+#### 对于 Terminal:
 
 ```
 # 打开新的标签页
@@ -50,15 +51,27 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption tab
 defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption window
 ```
 
-对于 `iTerm`:
+#### 对于 iTerm:
+
+版本 0.4.4 及以上：
 
 ```
 # 打开新的标签页
-defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption tab
+defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool false
 # 打开新的窗口
-defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
+defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 ```
 
+
+<details><summary>老版本：</summary><br>
+<code>
+# 打开新的标签页<br>
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption tab<br>
+# 打开新的窗口<br>
+defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
+</code>
+<br>
+</details>
 对于 `Hyper` 用户来说，更推荐打开新的标签页。
 
 对于 `Alacritty` 用户来说，目前只支持打开新的窗口。
@@ -81,7 +94,7 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 
 ![toolbar](./screenshots/lite-drag_to_toolbar.gif)
 
-### 手动安装 (最新版本：0.4.3)
+### 手动安装 (最新版本：0.4.4)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -107,6 +120,11 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 
 ## 版本变动 🗒
 
+**version 0.4.4**
+
+- 感谢 [pynixwang](https://github.com/pynixwang) 的建议。iTerm 现在不会在 history 中留下 `cd xxx`。
+- 修复了启动程序时图标在 Dock 栏闪动的问题。
+
 **version 0.4.3**
 
 - 修复了本地化的 bug
@@ -114,14 +132,13 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 **version 0.4.2**
 
 - 支持 French
-
 - 感谢 [filmgirl](https://github.com/filmgirl) 提供的图标
 
-**version 0.4.1**
-
-- 支持 `Alacritty`
-
 <details><summary>旧版本</summary><br>
+<p><strong>version 0.4.1</strong></p>
+<ul>
+<li>支持 Alacritty</li>
+</ul>
 <p><strong>version 0.4.0</strong></p>
 <ul>
 <li>当使用 Terminal 和 iTerm 的时候，你可以设置默认打开新的标签页或者窗口。</li>
