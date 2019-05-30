@@ -74,7 +74,7 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 
 ## 如何安装 🖥
 
-### Homebrew (最新版本：0.4.3)
+### Homebrew (最新版本：0.4.4)
 
 1. 运行以下命令
 

@@ -76,7 +76,7 @@ For `Alacritty` users, it is only supported to open a new window now.
 
 ## How to install 🖥
 
-### Homebrew (current version 0.4.3)
+### Homebrew (current version 0.4.4)
 
 1. Run the following command
 
