@@ -37,6 +37,7 @@ English | [中文说明](./Resources/README-zh.md)
 - ✅ Quick toggle the specified action from Menu bar.
 - ✅ Support Dark Mode.
 - ✅ Support English, Chinese and French.
+- ⬜️ Switch AppIcon for Dark/Light mode.
 
 ## OpenInTerminal and OpenInTerminal-Lite 👀
 
