@@ -37,7 +37,6 @@ English | [中文说明](./Resources/README-zh.md)
 - ✅ Quick toggle the specified action from Menu bar.
 - ✅ Support Dark Mode.
 - ✅ Support English, Chinese and French.
-- ⬜️ Switch AppIcon for Dark/Light mode.
 
 ## OpenInTerminal and OpenInTerminal-Lite 👀
 
@@ -90,6 +89,8 @@ Just check the `Launch OpenInTerminal at login` button in `Preferences`.
 </div>
 
 ## Todo 👨‍💻
+
+- [ ] Switch AppIcon for Dark/Light mode.
 
 If you have a good idea, feel welcome to open a new [issue](https://github.com/Ji4n1ng/OpenInTerminal/issues/new/choose).
 
