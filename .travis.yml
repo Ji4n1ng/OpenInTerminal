@@ -9,7 +9,7 @@ cache: cocoapods
 podfile: Example/Podfile
 before_install:
   - gem install cocoapods # Since Travis is not always on latest version
-  - pod install --project-directory=Example
+  - pod install #--project-directory=Example
 script:
   set -o pipefail &&
   travis_retry
