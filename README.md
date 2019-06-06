@@ -176,7 +176,7 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 
 ### Translators
 
-- [Dorian Eydoux](https://github.com/dorianeydx)
+- [Dorian Eydoux](https://github.com/dorian-eydoux)
 
 ### Reference projects
 
