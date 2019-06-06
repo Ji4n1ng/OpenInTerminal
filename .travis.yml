@@ -5,12 +5,9 @@ matrix:
 env:
   global:
     - LC_CTYPE=en_US.UTF-8
-cache: cocoapods
-podfile: Example/Podfile
 before_install:
   - gem install cocoapods # Since Travis is not always on latest version
-  - pod install #--project-directory=Example
+  - pod install
 script:
-  set -o pipefail &&
-  travis_retry
-  xcodebuild clean build -scheme OpenInTerminal -sdk macosx -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGN_REQUIRED=NO | xcpretty -f `xcpretty-travis-formatter`
+  - set -o pipefail
+  - xcodebuild -workspace OpenInTerminal.xcworkspace -scheme OpenInTerminal -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
