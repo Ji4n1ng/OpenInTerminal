@@ -14,8 +14,17 @@ class FinderSync: FIFinderSync {
     
     override init() {
         super.init()
-        let pathURL = URL(fileURLWithPath: "/", isDirectory: true)
-        FIFinderSyncController.default().directoryURLs = Set([pathURL])
+        let finderSync = FIFinderSyncController.default()
+        if let mountedVolumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: [.skipHiddenVolumes]) {
+            finderSync.directoryURLs = Set<URL>(mountedVolumes)
+        }
+        // Monitor volumes
+        let notificationCenter = NSWorkspace.shared.notificationCenter
+        notificationCenter.addObserver(forName: NSWorkspace.didMountNotification, object: nil, queue: .main) { notification in
+            if let volumeURL = notification.userInfo?[NSWorkspace.volumeURLUserInfoKey] as? URL {
+                finderSync.directoryURLs.insert(volumeURL)
+            }
+        }
     }
 
     override var toolbarItemName: String {
