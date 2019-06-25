@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  OpenInEditor-Lite
+
+  Created by Jianing Wang on 2019/6/25.
+  Copyright © 2019 Jianing Wang. All rights reserved.
+*/
+
+"general.ok" = "好";
+"general.cancel" = "取消";
+"general.yes" = "是的";
+
+"alert.pick_editor_title" = "打开?";
+"alert.pick_editor_description" = "请在下面的编辑器中选择一个作为默认编辑器。";
