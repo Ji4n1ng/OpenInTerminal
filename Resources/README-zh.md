@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.1"><img src="https://img.shields.io/badge/Version-0.10.1-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.2"><img src="https://img.shields.io/badge/Version-0.10.2-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -38,9 +38,9 @@
 - ✅ 支持 Dark Mode
 - ✅ 支持中文，英语和法语
 
-## OpenInTerminal 和 OpenInTerminal-Lite 👀
+## OpenInTerminal 和 OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
-OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终端而且不需要应用一直常驻后台，那么你可以选择 `OpenInTerminal-Lite` 版。如果你喜欢更强大的功能，那么你可以选择`OpenInTerminal`。
+OpenInTerminal 目前有正常版和 Lite 版。如果你喜欢更强大的功能和图形化设置界面，那么你可以选择`OpenInTerminal`。如果你仅仅需要打开终端或编辑器而不需要应用一直常驻后台，那么你可以选择 `OpenInTerminal-Lite` 版。
 
 对于 `OpenInTerminal-Lite` 用户：
 
@@ -60,7 +60,7 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终�
 
 2. 完成。
 
-#### b) 手动 (最新版本：0.10.1)
+#### b) 手动 (最新版本：0.10.2)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -110,6 +110,10 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终�
 </details>
 
 ## 版本变动 🗒
+
+**version 0.10.2**
+
+- 修复：Finder 右键菜单在其他盘上不显示。
 
 **version 0.10.1**
 

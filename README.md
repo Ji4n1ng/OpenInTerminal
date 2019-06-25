@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./Resources/screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.1"><img src="https://img.shields.io/badge/Version-0.10.1-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.2"><img src="https://img.shields.io/badge/Version-0.10.2-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -38,9 +38,9 @@ English | [中文说明](./Resources/README-zh.md)
 - ✅ Support Dark Mode.
 - ✅ Support English, Chinese and French.
 
-## OpenInTerminal and OpenInTerminal-Lite 👀
+## OpenInTerminal and OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
-There are a normal version and a lite version of OpenInTerminal. If you only need to open the terminal and don't need to keep the application in the background, then you can use `OpenInTerminal-Lite`. If you like more powerful features, then you can use `OpenInTerminal`.
+There are a normal version and a lite version of OpenInTerminal. If you like more powerful features and GUI preferences, then you can use `OpenInTerminal`. If you just need to open terminal or editor and don't want to keep the application in the background, then you can use `OpenInTerminal-Lite`. 
 
 For `OpenInTerminal-Lite` users:
 
@@ -60,7 +60,7 @@ Please check the document: [English](./Resources/README-Lite.md) | [中文说明
 
 2. Done.
 
-#### b) Manual (latest version: 0.10.1)
+#### b) Manual (latest version: 0.10.2)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
@@ -118,6 +118,10 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 </details>
 
 ## Changes 🗒
+
+**version 0.10.2**
+
+- Fix: Finder context menu does not appear on other disks.
 
 **version 0.10.1**
 
