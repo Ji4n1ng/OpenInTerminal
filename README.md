@@ -50,7 +50,7 @@ Please check the document: [English](./Resources/README-Lite.md) | [中文说明
 
 ### 1. Download
 
-#### a) Homebrew (current version: 0.10.1)
+#### a) Homebrew (current version: 0.10.2)
 
 1. Run the following command.
 
@@ -60,7 +60,7 @@ Please check the document: [English](./Resources/README-Lite.md) | [中文说明
 
 2. Done.
 
-#### b) Manual (latest version: 0.10.2)
+#### b) Manual (latest version: 0.10.3)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 

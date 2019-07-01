@@ -50,7 +50,7 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你喜欢更强大的功�
 
 ### 1. 下载
 
-#### a) Homebrew (当前版本：0.10.1)
+#### a) Homebrew (当前版本：0.10.2)
 
 1. 运行以下命令。
 
@@ -60,7 +60,7 @@ OpenInTerminal 目前有正常版和 Lite 版。如果你喜欢更强大的功�
 
 2. 完成。
 
-#### b) 手动 (最新版本：0.10.2)
+#### b) 手动 (最新版本：0.10.3)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。

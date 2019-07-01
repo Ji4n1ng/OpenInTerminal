@@ -45,7 +45,7 @@ English | [中文说明](README-Lite-zh.md)
   <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
 </div>
 
-### Manual (latest version: 0.4.4)
+### Manual (latest version: 0.4.5)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
