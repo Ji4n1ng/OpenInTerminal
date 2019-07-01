@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -632,16 +632,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OpenInTerminal/Pods-OpenInTerminal-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MASShortcut/MASShortcut.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-OpenInTerminal/Pods-OpenInTerminal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASShortcut.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-OpenInTerminal/Pods-OpenInTerminal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -886,6 +881,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 0.10.3;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -910,6 +906,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MARKETING_VERSION = 0.10.3;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
