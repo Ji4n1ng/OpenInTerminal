@@ -27,12 +27,12 @@ English | [中文说明](README-Lite-zh.md)
 
 ### Homebrew (current version 0.4.5)
 
->  ⚠️ OpenInEditor-Lite currently can only be installed by manual.
-
 1. Run the following command
 
    ```
    brew cask install openinterminal-lite
+   # or
+   brew cask install openineditor-lite
    ```
 
 2. In `/Applications` folder, hold down the `Cmd` key and drag the app into Finder Toolbar.
