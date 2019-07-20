@@ -48,19 +48,28 @@ class FinderSync: FIFinderSync {
         switch menuKind {
 
         case .contextualMenuForContainer, .contextualMenuForItems:
-            menu.addItem(withTitle: NSLocalizedString("menu.open_with_default_terminal",
-                                                      comment: "Open with default Terminal"),
-                         action: #selector(openDefaultTerminal),
-                         keyEquivalent: "")
-            menu.addItem(withTitle: NSLocalizedString("menu.open_with_default_editor",
-                                                      comment: "Open with default Editor"),
-                         action: #selector(openDefaultEditor),
-                         keyEquivalent: "")
-            menu.addItem(withTitle: NSLocalizedString("menu.copy_path_to_clipboard",
-                                                      comment: "Copy path to Clipboard"),
-                         action: #selector(copyPathToClipboard),
-                         keyEquivalent: "")
-        
+            
+            let openInTerminalItem = NSMenuItem(title: NSLocalizedString("menu.open_with_default_terminal",
+                                                                         comment: "Open with default Terminal"),
+                                                action: #selector(openDefaultTerminal),
+                                                keyEquivalent: "")
+            openInTerminalItem.image = NSImage(named: "context_menu_icon_terminal")
+            menu.addItem(openInTerminalItem)
+            
+            let openInEditorItem = NSMenuItem(title: NSLocalizedString("menu.open_with_default_editor",
+                                                                         comment: "Open with default Editor"),
+                                                action: #selector(openDefaultEditor),
+                                                keyEquivalent: "")
+            openInEditorItem.image = NSImage(named: "context_menu_icon_editor")
+            menu.addItem(openInEditorItem)
+            
+            let copyPathItem = NSMenuItem(title: NSLocalizedString("menu.copy_path_to_clipboard",
+                                                                   comment: "Copy path to Clipboard"),
+                                                action: #selector(copyPathToClipboard),
+                                                keyEquivalent: "")
+            copyPathItem.image = NSImage(named: "context_menu_icon_path")
+            menu.addItem(copyPathItem)
+            
         case .toolbarItemMenu:
         
             menu.addItem(withTitle: TerminalType.terminal.rawValue,

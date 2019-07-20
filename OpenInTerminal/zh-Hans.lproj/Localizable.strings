@@ -10,9 +10,9 @@
 "general.cancel" = "取消";
 "general.yes" = "是的";
 
-"menu.open_with_default_terminal" = "打开默认终端";
-"menu.open_with_default_editor" = "打开默认编辑器";
-"menu.copy_path_to_clipboard" = "拷贝路径到粘贴板";
+"menu.open_with_default_terminal" = "打开终端";
+"menu.open_with_default_editor" = "打开编辑器";
+"menu.copy_path_to_clipboard" = "拷贝路径";
 
 "menu.preferences" = "偏好设置...";
 "menu.quit" = "退出";

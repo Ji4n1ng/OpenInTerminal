@@ -10,8 +10,8 @@
 "general.cancel" = "Annuler";
 "general.yes" = "Oui";
 
-"menu.open_with_default_terminal" = "Ouvrir avec le terminal par défaut";
-"menu.open_with_default_editor" = "Ouvrir avec l’éditeur par défaut";
+"menu.open_with_default_terminal" = "Ouvrir dans le terminal";
+"menu.open_with_default_editor" = "Ouvrir dans l'éditeur";
 "menu.copy_path_to_clipboard" = "Copier le chemin d’accès";
 
 "menu.preferences" = "Préférences...";
