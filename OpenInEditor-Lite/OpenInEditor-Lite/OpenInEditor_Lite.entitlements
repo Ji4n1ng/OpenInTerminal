@@ -13,6 +13,7 @@
 		<string>com.microsoft.VSCode</string>
 		<string>com.github.atom</string>
 		<string>com.sublimetext.3</string>
+		<string>com.barebones.bbedit</string>
 	</array>
 </dict>
 </plist>

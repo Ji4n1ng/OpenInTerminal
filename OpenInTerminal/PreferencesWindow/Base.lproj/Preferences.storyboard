@@ -227,11 +227,11 @@
             <objects>
                 <viewController title="Toolbar" id="s5W-qL-1Xs" customClass="FinderExtensionPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" focusRingType="none" id="jOR-Px-swx">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="423"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="426"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxi-dF-LO8">
-                                <rect key="frame" x="20" y="143" width="340" height="260"/>
+                                <rect key="frame" x="20" y="146" width="340" height="260"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YDG-6D-DhJ">
                                         <rect key="frame" x="-2" y="244" width="59" height="16"/>
@@ -461,10 +461,10 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e4W-Gy-mcj">
-                                <rect key="frame" x="20" y="47" width="120" height="88"/>
+                                <rect key="frame" x="20" y="26" width="120" height="112"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ATh-GK-Nb9">
-                                        <rect key="frame" x="-2" y="72" width="124" height="16"/>
+                                        <rect key="frame" x="-2" y="96" width="124" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Visual Studio Code" id="FW0-5J-5aA">
                                             <font key="font" metaFont="systemSemibold" size="13"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -472,7 +472,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JUf-uB-85A">
-                                        <rect key="frame" x="-2" y="48" width="38" height="16"/>
+                                        <rect key="frame" x="-2" y="72" width="38" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Atom" id="aXu-a5-jQP">
                                             <font key="font" metaFont="systemSemibold" size="13"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -480,7 +480,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zHm-c4-qKu">
-                                        <rect key="frame" x="-2" y="24" width="86" height="16"/>
+                                        <rect key="frame" x="-2" y="48" width="86" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Sublime Text" id="3Xd-Ub-1BR">
                                             <font key="font" metaFont="systemSemibold" size="13"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -488,8 +488,16 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I0A-cT-SW1">
-                                        <rect key="frame" x="-2" y="0.0" width="71" height="16"/>
+                                        <rect key="frame" x="-2" y="24" width="71" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="VSCodium" id="SFC-3T-3pr">
+                                            <font key="font" metaFont="systemSemibold" size="13"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="paV-cF-WMg">
+                                        <rect key="frame" x="-2" y="0.0" width="47" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="BBEdit" id="MLU-yh-FPM">
                                             <font key="font" metaFont="systemSemibold" size="13"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -501,8 +509,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -521,6 +531,7 @@
                     <connections>
                         <outlet property="alacrittyTextField" destination="Mx4-aq-XS9" id="pqV-UT-h1a"/>
                         <outlet property="atomTextField" destination="JUf-uB-85A" id="Zqd-bB-NKf"/>
+                        <outlet property="bbeditTextField" destination="paV-cF-WMg" id="N13-Uc-oCT"/>
                         <outlet property="hyperTextField" destination="btg-Vx-4Pl" id="ngx-02-cs4"/>
                         <outlet property="iTermTabButton" destination="Lmz-5e-p2j" id="Vr0-XJ-pnx"/>
                         <outlet property="iTermTextField" destination="wVI-dH-WOK" id="oeJ-Rq-h9e"/>
@@ -536,7 +547,7 @@
                 </viewController>
                 <customObject id="mlw-wX-Yfn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-132" y="1121.5"/>
+            <point key="canvasLocation" x="-132" y="1123"/>
         </scene>
         <!--Advanced-->
         <scene sceneID="X6j-fK-tNl">
