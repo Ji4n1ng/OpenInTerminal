@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.5"><img src="https://img.shields.io/badge/Version-0.4.5-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.0"><img src="https://img.shields.io/badge/Version-1.0.0-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -45,7 +45,7 @@ English | [中文说明](README-Lite-zh.md)
   <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
 </div>
 
-### Manual (latest version: 0.4.5)
+### Manual (latest version: 1.0.0)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
@@ -73,12 +73,17 @@ defaults remove wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier
 ```
 
 <details><summary>Set <strong>Alacritty</strong> as the default terminal:</summary><br>
-<code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier io.alacritty </code>
+<code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty </code>
 <br>
 </details>
 
 <details><summary>Set <strong>VSCodium</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier com.visualstudio.code.oss </code>
+<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium </code>
+<br>
+</details>
+
+<details><summary>Set <strong>BBEdit</strong> as the default editor:</summary><br>
+<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit </code>
 <br>
 </details>
 
@@ -147,6 +152,11 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 </details>
 
 ## Changes 🗒
+
+**version 1.0.0**
+
+- Support BBEdit
+- Fix: check application folder under home directory
 
 **version 0.4.4**
 

@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.4.5"><img src="https://img.shields.io/badge/Version-0.4.5-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.0"><img src="https://img.shields.io/badge/Version-1.0.0-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -44,7 +44,7 @@
   <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
 </div>
 
-### 手动安装 (最新版本：0.4.5)
+### 手动安装 (最新版本：1.0.0)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -72,12 +72,17 @@ defaults remove wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier
 ```
 
 <details><summary>设置 <strong>Alacritty</strong> 为默认终端:</summary><br>
-<code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier io.alacritty </code>
+<code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty </code>
 <br>
 </details>
 
 <details><summary>设置 <strong>VSCodium</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier com.visualstudio.code.oss </code>
+<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium </code>
+<br>
+</details>
+
+<details><summary>设置 <strong>BBEdit</strong> 为默认编辑器:</summary><br>
+<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit </code>
 <br>
 </details>
 
@@ -145,6 +150,11 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 </details>
 
 ## 版本变动 🗒
+
+**version 1.0.0**
+
+- 支持 BBEdit
+- 修复：检查用户目录底下的应用程序文件夹
 
 **version 0.4.4**
 
