@@ -79,8 +79,21 @@ public class FinderManager {
     
     /// Determine if the app exists in the `/Applications` folder
     private func applicationExists(_ application: String) -> Bool {
+        let applicationDir = "/Applications"
+        
+        var homeApplicationDirURL: URL
+        if #available(OSX 10.12, *) {
+            homeApplicationDirURL = FileManager.default.homeDirectoryForCurrentUser
+        } else {
+            // Fallback on earlier versions
+            homeApplicationDirURL = URL(fileURLWithPath: NSHomeDirectory())
+        }
+        homeApplicationDirURL.appendPathComponent("Applications")
+        
         do {
-            return try FileManager.default.contentsOfDirectory(atPath: "/Applications").contains("\(application).app")
+            let isInApplication =  try FileManager.default.contentsOfDirectory(atPath: applicationDir ).contains("\(application).app")
+            let isInHomeApplication = try FileManager.default.contentsOfDirectory(atPath: homeApplicationDirURL.path).contains("\(application).app")
+            return isInApplication || isInHomeApplication
         } catch {
             return false
         }
