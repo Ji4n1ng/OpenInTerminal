@@ -12,17 +12,7 @@ public class OpenNotifier: Notifier {
 
     public enum Notification: String {
         case openDefaultTerminal
-        case openTerminal
-        case openITerm
-        case openHyper
-        case openAlacritty
-        
         case openDefaultEditor
-        case openVSCode
-        case openAtom
-        case openSublime
-        case openVSCodium
-        
         case copyPathToClipboard
     }
     

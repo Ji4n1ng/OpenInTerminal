@@ -111,34 +111,8 @@ extension AppDelegate {
                                  selector: #selector(openDefaultTerminal),
                                  notification: .openDefaultTerminal)
         OpenNotifier.addObserver(observer: self,
-                                 selector: #selector(openTerminal),
-                                 notification: .openTerminal)
-        OpenNotifier.addObserver(observer: self,
-                                 selector: #selector(openITerm),
-                                 notification: .openITerm)
-        OpenNotifier.addObserver(observer: self,
-                                 selector: #selector(openHyper),
-                                 notification: .openHyper)
-        OpenNotifier.addObserver(observer: self,
-                                 selector: #selector(openAlacritty),
-                                 notification: .openAlacritty)
-        
-        OpenNotifier.addObserver(observer: self,
                                  selector: #selector(openDefaultEditor),
                                  notification: .openDefaultEditor)
-        OpenNotifier.addObserver(observer: self,
-                                 selector: #selector(openVSCode),
-                                 notification: .openVSCode)
-        OpenNotifier.addObserver(observer: self,
-                                 selector: #selector(openAtom),
-                                 notification: .openAtom)
-        OpenNotifier.addObserver(observer: self,
-                                 selector: #selector(openSublime),
-                                 notification: .openSublime)
-        OpenNotifier.addObserver(observer: self,
-                                 selector: #selector(openVSCodium),
-                                 notification: .openVSCodium)
-        
         OpenNotifier.addObserver(observer: self,
                                  selector: #selector(copyPathToClipboard),
                                  notification: .copyPathToClipboard)
@@ -146,17 +120,7 @@ extension AppDelegate {
     
     func removeObserver() {
         OpenNotifier.removeObserver(observer: self, notification: .openDefaultTerminal)
-        OpenNotifier.removeObserver(observer: self, notification: .openTerminal)
-        OpenNotifier.removeObserver(observer: self, notification: .openITerm)
-        OpenNotifier.removeObserver(observer: self, notification: .openHyper)
-        OpenNotifier.removeObserver(observer: self, notification: .openAlacritty)
-        
         OpenNotifier.removeObserver(observer: self, notification: .openDefaultEditor)
-        OpenNotifier.removeObserver(observer: self, notification: .openVSCode)
-        OpenNotifier.removeObserver(observer: self, notification: .openAtom)
-        OpenNotifier.removeObserver(observer: self, notification: .openSublime)
-        OpenNotifier.removeObserver(observer: self, notification: .openVSCodium)
-        
         OpenNotifier.removeObserver(observer: self, notification: .copyPathToClipboard)
     }
     
@@ -170,44 +134,12 @@ extension AppDelegate {
         TerminalManager.shared.openTerminal(terminalType)
     }
     
-    @objc func openTerminal() {
-        TerminalManager.shared.openTerminal(.terminal)
-    }
-    
-    @objc func openITerm() {
-        TerminalManager.shared.openTerminal(.iTerm)
-    }
-    
-    @objc func openHyper() {
-        TerminalManager.shared.openTerminal(.hyper)
-    }
-    
-    @objc func openAlacritty() {
-        TerminalManager.shared.openTerminal(.alacritty)
-    }
-    
     @objc func openDefaultEditor() {
         guard let editorType = EditorManager.shared.getOrPickDefaultEditor() else {
             return
         }
         
         EditorManager.shared.openEditor(editorType)
-    }
-    
-    @objc func openVSCode() {
-        EditorManager.shared.openEditor(.vscode)
-    }
-    
-    @objc func openAtom() {
-        EditorManager.shared.openEditor(.atom)
-    }
-    
-    @objc func openSublime() {
-        EditorManager.shared.openEditor(.sublime)
-    }
-    
-    @objc func openVSCodium() {
-        EditorManager.shared.openEditor(.vscodium)
     }
     
     @objc func copyPathToClipboard() {

@@ -8,7 +8,6 @@
 
 import Cocoa
 import FinderSync
-import OpenInTerminalCore
 
 class FinderSync: FIFinderSync {
     
@@ -34,7 +33,7 @@ class FinderSync: FIFinderSync {
     
     override var toolbarItemToolTip: String {
         return NSLocalizedString("toolbar.item_tooltip",
-                                 comment: "打开当前路径到终端")
+                                 comment: "Open current directory in Terminal.")
     }
     
     override var toolbarItemImage: NSImage {
@@ -42,12 +41,12 @@ class FinderSync: FIFinderSync {
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
-        // Produce a menu for the extension.
+        
         let menu = NSMenu(title: "")
         
         switch menuKind {
 
-        case .contextualMenuForContainer, .contextualMenuForItems:
+        case .contextualMenuForContainer, .contextualMenuForItems, .toolbarItemMenu:
             
             let openInTerminalItem = NSMenuItem(title: NSLocalizedString("menu.open_with_default_terminal",
                                                                          comment: "Open with default Terminal"),
@@ -70,74 +69,6 @@ class FinderSync: FIFinderSync {
             copyPathItem.image = NSImage(named: "context_menu_icon_path")
             menu.addItem(copyPathItem)
             
-        case .toolbarItemMenu:
-        
-            menu.addItem(withTitle: TerminalType.terminal.rawValue,
-                         action: #selector(openTerminal),
-                         keyEquivalent: "")
-
-            if FinderManager.shared.terminalIsInstalled(.iTerm) {
-                menu.addItem(withTitle: TerminalType.iTerm.rawValue,
-                             action: #selector(openITerm),
-                             keyEquivalent: "")
-            }
-        
-            if FinderManager.shared.terminalIsInstalled(.hyper) {
-                menu.addItem(withTitle: TerminalType.hyper.rawValue,
-                             action: #selector(openHyper),
-                             keyEquivalent: "")
-            }
-            
-            if FinderManager.shared.terminalIsInstalled(.alacritty) {
-                menu.addItem(withTitle: TerminalType.alacritty.rawValue,
-                             action: #selector(openAlacritty),
-                             keyEquivalent: "")
-            }
-            
-            let separator = NSMenuItem.separator()
-            separator.title = "-----------------------"
-            menu.addItem(separator)
-            
-            var hasEditor = false
-            
-            if FinderManager.shared.editorIsInstalled(.vscode) {
-                menu.addItem(withTitle: EditorType.vscode.fullName,
-                             action: #selector(openVSCode),
-                             keyEquivalent: "")
-                hasEditor = true
-            }
-        
-            if FinderManager.shared.editorIsInstalled(.atom)  {
-                menu.addItem(withTitle: EditorType.atom.fullName,
-                             action: #selector(openAtom),
-                             keyEquivalent: "")
-                hasEditor = true
-            }
-            
-            if FinderManager.shared.editorIsInstalled(.sublime) {
-                menu.addItem(withTitle: EditorType.sublime.fullName,
-                             action: #selector(openSublime),
-                             keyEquivalent: "")
-                hasEditor = true
-            }
-            
-            if FinderManager.shared.editorIsInstalled(.vscodium) {
-                menu.addItem(withTitle: EditorType.vscodium.fullName,
-                             action: #selector(openVSCodium),
-                             keyEquivalent: "")
-                hasEditor = true
-            }
-            
-            if hasEditor {
-                let separator = NSMenuItem.separator()
-                separator.title = "-----------------------"
-                menu.addItem(separator)
-            }
-            
-            menu.addItem(withTitle: NSLocalizedString("menu.copy_path_to_clipboard",
-                                                      comment: "Copy path to Clipboard"),
-                         action: #selector(copyPathToClipboard),
-                         keyEquivalent: "")
         default:
             break
         }
@@ -151,40 +82,8 @@ class FinderSync: FIFinderSync {
         OpenNotifier.postNotification(.openDefaultTerminal)
     }
     
-    @objc func openTerminal() {
-        OpenNotifier.postNotification(.openTerminal)
-    }
-    
-    @objc func openITerm() {
-        OpenNotifier.postNotification(.openITerm)
-    }
-    
-    @objc func openHyper() {
-        OpenNotifier.postNotification(.openHyper)
-    }
-    
-    @objc func openAlacritty() {
-        OpenNotifier.postNotification(.openAlacritty)
-    }
-    
     @objc func openDefaultEditor() {
         OpenNotifier.postNotification(.openDefaultEditor)
-    }
-    
-    @objc func openVSCode() {
-        OpenNotifier.postNotification(.openVSCode)
-    }
-    
-    @objc func openAtom() {
-        OpenNotifier.postNotification(.openAtom)
-    }
-    
-    @objc func openSublime() {
-        OpenNotifier.postNotification(.openSublime)
-    }
-    
-    @objc func openVSCodium() {
-        OpenNotifier.postNotification(.openVSCodium)
     }
     
     @objc func copyPathToClipboard() {
