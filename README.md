@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./Resources/screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/0.10.3"><img src="https://img.shields.io/badge/Version-0.10.3-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.1"><img src="https://img.shields.io/badge/Version-2.0.1-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -31,7 +31,7 @@ English | [中文说明](./Resources/README-zh.md)
 ### More features
 
 - ✅ Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty).
-- ✅ Support [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/) and [VSCodium](https://github.com/VSCodium/vscodium).
+- ✅ Support [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium) and [BBEdit](https://www.barebones.com/products/bbedit/).
 - ✅ Set to open a new tab or window.
 - ✅ Support keyboard shortcuts.
 - ✅ Quick toggle the specified action from Menu bar.
@@ -60,7 +60,7 @@ Please check the document: [English](./Resources/README-Lite.md) | [中文说明
 
 2. Done.
 
-#### b) Manual (latest version: 0.10.3)
+#### b) Manual (latest version: 2.0.1)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
@@ -118,6 +118,12 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 </details>
 
 ## Changes 🗒
+
+**version 2.0.1**
+
+- Support BBEdit
+- Add icon in Finder context menu
+- Fix: check application folder under home directory
 
 **version 0.10.2**
 
