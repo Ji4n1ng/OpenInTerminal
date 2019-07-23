@@ -7,7 +7,7 @@
 </p>
 
 
-English | [中文说明](README-Lite-zh.md)
+English | [中文说明](./README-Lite-zh.md)
 
 ## How to use 🚀
 

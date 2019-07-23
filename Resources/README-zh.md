@@ -8,43 +8,38 @@
 
 [English](../README.md) | 中文说明
 
+[OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md)
+
 ## 如何使用 🚀
 
-### 1) 在终端（或编辑器）中打开当前目录
-
-<div>
-  <img src="./screenshots/main-open-in-terminal.gif" width="600px">
-</div>
-
-### 2) 在终端（或编辑器）中打开选择的文件夹或文件
-
-<div>
-  <img src="./screenshots/main-open-in-editor.gif" width="600px">
-</div>
-
-### 3）将已选择的文件或者访达窗口的路径拷贝到粘贴板
-
-<div>
-  <img src="./screenshots/main-copy-path-to-clipboard.gif" width="600px">
-</div>
+| 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
+| --- | --- | --- |
+| 在终端（或编辑器）中打开当前目录 | ![](./screenshots/main-open-in-terminal.gif) | ![](./screenshots/lite-run.gif) |
+| 在终端（或编辑器）中打开选择的文件夹或文件 | ![](./screenshots/main-open-in-editor.gif) | ![](./screenshots/lite-run-editor.gif) |
+| 将已选择的文件或者访达窗口的路径拷贝到粘贴板 | ![](./screenshots/main-copy-path-to-clipboard.gif) |  ❌ Not Supported |
 
 ### 更多功能
 
-- ✅ 支持 Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) 和 [Alacritty](https://github.com/jwilm/alacritty).
-- ✅ 支持 [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/)，[VSCodium](https://github.com/VSCodium/vscodium) 和 [BBEdit](https://www.barebones.com/products/bbedit/).
-- ✅ 设置为打开新的窗口或者标签页
-- ✅ 支持键盘快捷键
-- ✅ 从菜单栏快速启动指定动作
-- ✅ 支持 Dark Mode
-- ✅ 支持中文，英语和法语
+| 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
+| --- | --- | --- |
+| 支持 Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
+| 支持 [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium) and [BBEdit](https://www.barebones.com/products/bbedit/). | ✅ | ✅ |
+| 设置为打开新的窗口或者标签页 | ✅ | ✅ |
+| 支持中文，英语和法语 | ✅ | ✅ |
+| 图形化设置界面 | ✅ | ❌ |
+| 支持键盘快捷键 | ✅ | ❌ |
+| 支持 Dark Mode | ✅ | ❌ |
+| 不需要后台运行 | ❌ | ✅ |
 
 ## OpenInTerminal 和 OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
-OpenInTerminal 目前有正常版和 Lite 版。如果你喜欢更强大的功能和图形化设置界面，那么你可以选择`OpenInTerminal`。如果你仅仅需要打开终端或编辑器而不需要应用一直常驻后台，那么你可以选择 `OpenInTerminal-Lite` 版。
+选择哪个？这两个应用都是我的孩子。如果你喜欢更强大的功能和图形化设置界面，那么你可以选择 `OpenInTerminal`。如果你仅仅需要打开终端或编辑器而不需要应用一直常驻后台，那么你可以选择 `OpenInTerminal-Lite`。
+
+对于我而言，我更喜欢 `OpenInTerminal-Lite`，它只需要点击一次来完成功能（另一个需要点击两次😂），而且更轻量一些。
 
 对于 `OpenInTerminal-Lite` 用户：
 
-请看文档： [English](./README-Lite.md) | [中文说明](README-Lite-zh.md)
+请看文档： [English](./README-Lite.md) | [中文说明](./README-Lite-zh.md)
 
 ## 如何安装 🖥
 

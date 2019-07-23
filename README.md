@@ -6,45 +6,40 @@
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
 
-English | [中文说明](./Resources/README-zh.md)
+English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
+
+[OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md)
 
 ## How to use 🚀
 
-### 1) Open current directory in Terminal (or Editor)
-
-<div>
-  <img src="./Resources/screenshots/main-open-in-terminal.gif" width="600px">
-</div>
-
-### 2) Open selected folder or file in Terminal (or Editor)
-
-<div>
-  <img src="./Resources/screenshots/main-open-in-editor.gif" width="600px">
-</div>
-
-### 3) Copy path of the selected file or Finder window to Clipboard
-
-<div>
-  <img src="./Resources/screenshots/main-copy-path-to-clipboard.gif" width="600px">
-</div>
+| Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
+| --- | --- | --- |
+| Open current directory in Terminal (or Editor) | ![](./Resources/screenshots/main-open-in-terminal.gif) | ![](./Resources/screenshots/lite-run.gif) |
+| Open selected folder or file in Terminal (or Editor) | ![](./Resources/screenshots/main-open-in-editor.gif) | ![](./Resources/screenshots/lite-run-editor.gif) |
+| Copy path of the selected file or Finder window to Clipboard | ![](./Resources/screenshots/main-copy-path-to-clipboard.gif) |  ❌ Not Supported |
 
 ### More features
 
-- ✅ Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty).
-- ✅ Support [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium) and [BBEdit](https://www.barebones.com/products/bbedit/).
-- ✅ Set to open a new tab or window.
-- ✅ Support keyboard shortcuts.
-- ✅ Quick toggle the specified action from Menu bar.
-- ✅ Support Dark Mode.
-- ✅ Support English, Chinese and French.
+| Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
+| --- | --- | --- |
+| Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
+| Support [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium) and [BBEdit](https://www.barebones.com/products/bbedit/). | ✅ | ✅ |
+| Set to open a new tab or window. | ✅ | ✅ |
+| Support English, Chinese and French. | ✅ | ✅ |
+| GUI preferences | ✅ | ❌ |
+| Support keyboard shortcuts. | ✅ | ❌ |
+| Support Dark Mode. | ✅ | ❌ |
+| No need to run in the background | ❌ | ✅ |
 
 ## OpenInTerminal and OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
-There are a normal version and a lite version of OpenInTerminal. If you like more powerful features and GUI preferences, then you can use `OpenInTerminal`. If you just need to open terminal or editor and don't want to keep the application in the background, then you can use `OpenInTerminal-Lite`. 
+Which one to choose? Both of these apps are my children. If you like more powerful features and GUI preferences, then you can use `OpenInTerminal`. If you just need to open terminal or editor and don't want to keep the application in the background, then you can use `OpenInTerminal-Lite`. 
+
+For me, I prefer the Lite version, which only needs to click once to complete the function (and the other needs to click twice 😂), and it is more lightweight.
 
 For `OpenInTerminal-Lite` users:
 
-Please check the document: [English](./Resources/README-Lite.md) | [中文说明](./Resources/README-Lite-zh.md)
+Please check the document: [OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md)
 
 ## How to install 🖥
 
@@ -52,11 +47,9 @@ Please check the document: [English](./Resources/README-Lite.md) | [中文说明
 
 #### a) Homebrew (current version: 2.0.1)
 
-1. Run the following command.
-
-   ```
-   brew cask install openinterminal
-   ```
+```
+brew cask install openinterminal
+```
 
 2. Done.
 
