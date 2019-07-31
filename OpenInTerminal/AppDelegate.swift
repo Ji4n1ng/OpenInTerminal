@@ -29,7 +29,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         CoreManager.shared.firstSetup()
         addObserver()
         terminateOpenInTerminalHelper()
-        setStatusBarIcon()
+        setStatusItemIcon()
+        setStatusItemVisible()
         setStatusToggle()
     }
     
@@ -40,6 +41,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag {
+            preferencesWindowController.window?.makeKeyAndOrderFront(self)
+        }
+        
         return true
     }
 }
@@ -48,7 +53,7 @@ extension AppDelegate {
     
     // MARK: Status Bar Item
     
-    func setStatusBarIcon() {
+    func setStatusItemIcon() {
         let icon = NSImage(assetIdentifier: .StatusBarIcon)
         icon.isTemplate = true // Support Dark Mode
         DispatchQueue.main.async {
@@ -56,10 +61,14 @@ extension AppDelegate {
         }
     }
     
+    func setStatusItemVisible() {
+        let isHideStatusItem = CoreManager.shared.hideStatusItem.bool
+        statusItem.isVisible = !isHideStatusItem
+    }
+    
     func setStatusToggle() {
-        guard let quickOpen = CoreManager.shared.quickToggle else { return }
-        
-        if quickOpen == ._true {
+        let isQuickToogle = CoreManager.shared.quickToggle.bool
+        if isQuickToogle {
             statusItem.menu = nil
             if let button = statusItem.button {
                 button.action = #selector(statusBarButtonClicked)
@@ -73,7 +82,6 @@ extension AppDelegate {
     
     @objc func statusBarButtonClicked(sender: NSStatusBarButton) {
         let event = NSApp.currentEvent!
-        
         if event.type == .rightMouseDown || event.type == .rightMouseUp
             || event.modifierFlags.contains(.control)
         {

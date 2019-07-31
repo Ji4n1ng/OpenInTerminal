@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C05AF434635A492DDBB61186C285645"
+               BlueprintIdentifier = "2B2B481A164695722839BD581D442457"
                BuildableName = "MASShortcut.framework"
                BlueprintName = "MASShortcut"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "48F896945821344EB133264C259DF7B6"
+               BlueprintIdentifier = "95C218C4B8EE18337FE28B74FF6DC2F1"
                BuildableName = "Pods_OpenInTerminal.framework"
                BlueprintName = "Pods-OpenInTerminal"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

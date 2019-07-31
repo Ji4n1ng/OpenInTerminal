@@ -30,13 +30,13 @@
         </customObject>
         <menu id="Hp5-zS-8KF">
             <items>
-                <menuItem title="Open with default Terminal" id="bMb-Lp-IHe">
+                <menuItem title="Open in Terminal" id="bMb-Lp-IHe">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="openDefaultTerminal:" target="xFr-z9-DsJ" id="AiG-rU-N3Y"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Open with default Editor" id="Zth-1M-1Lo">
+                <menuItem title="Open in Editor" id="Zth-1M-1Lo">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="openDefaultEditor:" target="xFr-z9-DsJ" id="McZ-8S-4C0"/>

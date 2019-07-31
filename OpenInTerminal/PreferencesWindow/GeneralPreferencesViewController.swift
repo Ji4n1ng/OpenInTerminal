@@ -17,6 +17,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var launchButton: NSButton!
     @IBOutlet weak var quickToggleButton: NSButton!
     @IBOutlet weak var chooseToggleActionButton: NSPopUpButton!
+    @IBOutlet weak var hideStatusItemButton: NSButton!
     @IBOutlet weak var defaultTerminalButton: NSPopUpButton!
     @IBOutlet weak var defaultEditorButton: NSPopUpButton!
     
@@ -70,12 +71,15 @@ class GeneralPreferencesViewController: PreferencesViewController {
     // MARK: Refresh UI
     
     func refreshButtonState() {
-        guard let launchAtLogin = CoreManager.shared.launchAtLogin else { return }
-        launchButton.state = launchAtLogin == ._true ? .on : .off
+        let isLaunchAtLogin = CoreManager.shared.launchAtLogin.bool
+        launchButton.state = isLaunchAtLogin ? .on : .off
         
-        guard let quickToggle = CoreManager.shared.quickToggle else { return }
-        quickToggleButton.state = quickToggle.bool ? .on : .off
-        chooseToggleActionButton.isEnabled = quickToggle.bool
+        let isHideStatusItem = CoreManager.shared.hideStatusItem.bool
+        hideStatusItemButton.state = isHideStatusItem ? .on : .off
+        
+        let isQuickToggle = CoreManager.shared.quickToggle.bool
+        quickToggleButton.state = isQuickToggle ? .on : .off
+        chooseToggleActionButton.isEnabled = isQuickToggle
         
         if let quickToggleType = CoreManager.shared.quickToggleType {
             switch quickToggleType {
@@ -141,15 +145,22 @@ class GeneralPreferencesViewController: PreferencesViewController {
     
     @IBAction func launchButtonClicked(_ sender: NSButton) {
         let isLaunch = launchButton.state == .on
-        let launchAtLogin: BoolType = isLaunch ? ._true : ._false
-        CoreManager.shared.launchAtLogin = launchAtLogin
+        CoreManager.shared.launchAtLogin.bool = isLaunch
         SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, isLaunch)
     }
     
+    @IBAction func hideStatusItemButtonTapped(_ sender: NSButton) {
+        let isHide = hideStatusItemButton.state == .on
+        CoreManager.shared.hideStatusItem.bool = isHide
+        
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.setStatusItemVisible()
+    }
+    
     @IBAction func quickToggleButtonClicked(_ sender: NSButton) {
-        let quickToggle: BoolType = quickToggleButton.state == .on ? ._true : ._false
-        CoreManager.shared.quickToggle = quickToggle
-        chooseToggleActionButton.isEnabled = quickToggle.bool
+        let isQuickToggle = quickToggleButton.state == .on
+        CoreManager.shared.quickToggle.bool = isQuickToggle
+        chooseToggleActionButton.isEnabled = isQuickToggle
         
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.setStatusToggle()

@@ -17,6 +17,7 @@ struct Constants {
     struct Key {
         static let firstUsage = "OIT_FirstUsage"
         static let launchAtLogin = "OIT_LaunchAtLogin"
+        static let hideStatusItem = "OIT_HideStatusItem"
         static let quickToggle = "OIT_QuickToggle"
         static let quickToggleType = "OIT_QuickToggleType"
         
@@ -68,6 +69,10 @@ public enum ClearOptionType: String {
 public enum BoolType: String {
     case _true
     case _false
+    
+    public init(_ boolValue: Bool) {
+        self = boolValue ? ._true : ._false
+    }
     
     public var bool: Bool {
         get {

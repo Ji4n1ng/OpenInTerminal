@@ -14,6 +14,7 @@
 		<string>com.github.atom</string>
 		<string>com.sublimetext.3</string>
 		<string>com.barebones.bbedit</string>
+		<string>com.microsoft.VSCodeInsiders</string>
 	</array>
 </dict>
 </plist>

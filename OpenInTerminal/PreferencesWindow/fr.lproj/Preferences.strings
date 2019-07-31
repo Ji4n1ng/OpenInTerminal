@@ -146,3 +146,11 @@
 /* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
 "jcs-Ou-OZ2.title" = "Réinitialiser";
 
+/* Class = "NSTextFieldCell"; title = "BBEdit"; ObjectID = "MLU-yh-FPM"; */
+"MLU-yh-FPM.title" = "BBEdit";
+
+/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
+"BUH-CU-WBW.title" = "Masquer l'icône de la barre d'état";
+
+/* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
+"Upf-HU-iaN.title" = "Vous devez rouvrir l'application pour afficher les préférences.";
