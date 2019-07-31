@@ -31,6 +31,7 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var sublimeTextField: NSTextField!
     @IBOutlet weak var vscodiumTextField: NSTextField!
     @IBOutlet weak var bbeditTextField: NSTextField!
+    @IBOutlet weak var vscodeInsidersTextField: NSTextField!
     
     // MARK: Lifecycle
     
@@ -79,7 +80,8 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
              (.atom, atomTextField),
              (.sublime, sublimeTextField),
              (.vscodium, vscodiumTextField),
-             (.bbedit, bbeditTextField)]
+             (.bbedit, bbeditTextField),
+             (.vscodeInsiders, vscodeInsidersTextField)]
         
         editors.forEach { editor, textField in
             let isInstalled = FinderManager.shared.editorIsInstalled(editor)

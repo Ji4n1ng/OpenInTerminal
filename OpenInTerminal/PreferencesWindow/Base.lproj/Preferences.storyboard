@@ -251,11 +251,11 @@
             <objects>
                 <viewController title="Toolbar" id="s5W-qL-1Xs" customClass="FinderExtensionPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" focusRingType="none" id="jOR-Px-swx">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="450"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="464"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxi-dF-LO8">
-                                <rect key="frame" x="20" y="166" width="340" height="264"/>
+                                <rect key="frame" x="20" y="180" width="340" height="264"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YDG-6D-DhJ">
                                         <rect key="frame" x="-2" y="247" width="59" height="17"/>
@@ -485,11 +485,19 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e4W-Gy-mcj">
-                                <rect key="frame" x="20" y="41" width="120" height="117"/>
+                                <rect key="frame" x="20" y="30" width="183" height="142"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ATh-GK-Nb9">
-                                        <rect key="frame" x="-2" y="100" width="124" height="17"/>
+                                        <rect key="frame" x="-2" y="125" width="124" height="17"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Visual Studio Code" id="FW0-5J-5aA">
+                                            <font key="font" metaFont="systemSemibold" size="13"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YXB-rA-esy">
+                                        <rect key="frame" x="-2" y="100" width="187" height="17"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Visual Studio Code - Insiders" id="uyo-0a-oKi">
                                             <font key="font" metaFont="systemSemibold" size="13"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -534,8 +542,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -565,13 +575,14 @@
                         <outlet property="terminalTabButton" destination="hrQ-zE-MC4" id="sph-lq-OKB"/>
                         <outlet property="terminalTextField" destination="YDG-6D-DhJ" id="dsZ-oJ-huh"/>
                         <outlet property="terminalWindowButton" destination="PO6-Ar-lmN" id="jr6-i6-H0M"/>
+                        <outlet property="vscodeInsidersTextField" destination="YXB-rA-esy" id="fT4-vm-Hka"/>
                         <outlet property="vscodeTextField" destination="ATh-GK-Nb9" id="ufo-fn-JoQ"/>
                         <outlet property="vscodiumTextField" destination="I0A-cT-SW1" id="kgP-h9-rbd"/>
                     </connections>
                 </viewController>
                 <customObject id="mlw-wX-Yfn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-132" y="1135"/>
+            <point key="canvasLocation" x="-132" y="1142"/>
         </scene>
         <!--Advanced-->
         <scene sceneID="X6j-fK-tNl">

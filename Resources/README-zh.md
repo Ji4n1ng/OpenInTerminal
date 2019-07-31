@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.1"><img src="https://img.shields.io/badge/Version-2.0.1-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.2"><img src="https://img.shields.io/badge/Version-2.0.2-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -47,19 +47,14 @@
 
 #### a) Homebrew (当前版本：2.0.1)
 
-1. 运行以下命令。
+```
+brew cask install openinterminal
+```
 
-   ```
-   brew cask install openinterminal
-   ```
-
-2. 完成。
-
-#### b) 手动 (最新版本：2.0.1)
+#### b) 手动 (最新版本：2.0.2)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
-3. 完成。
 
 > ⚠️ 当您第一次运行应用程序时，macOS 将要求访问 `访达` 和 `终端`（或 `iTerm`）的权限。请给予应用程序权限。
 
@@ -106,28 +101,32 @@
 
 ## 版本变动 🗒
 
+**version 2.0.2**
+
+- 支持 Visual Studio Code - Insiders
+- 支持隐藏状态栏图标
+
 **version 2.0.1**
 
 - 支持 BBEdit
 - 在访达右键菜单中添加图标
 - 修复：检查用户目录底下的应用程序文件夹
 
-**version 0.10.2**
-
-- 修复：Finder 右键菜单在其他盘上不显示。
-
-**version 0.10.1**
-
-- 感谢 [pynixwang](https://github.com/pynixwang) 的建议。iTerm 现在不会在 history 中留下 `cd xxx`。
-
-- 你需要在偏好设置中重新点击 iTerm 的 `window` 或者 `tab` 按钮。
-
-**version 0.10.0**
-
-- 支持键盘快捷键
-- 支持 VSCodium
-
 <details><summary>旧版本</summary><br>
+<p><strong>version 0.10.2</strong></p>
+<ul>
+<li>修复：Finder 右键菜单在其他盘上不显示。</li>
+</ul>
+<p><strong>version 0.10.1</strong></p>
+<ul>
+<li>iTerm 现在不会在 history 中留下 `cd xxx`。</li>
+<li>你需要在偏好设置中重新点击 iTerm 的 `window` 或者 `tab` 按钮。</li>
+</ul>
+<p><strong>version 0.10.0</strong></p>
+<ul>
+<li>支持键盘快捷键</li>
+<li>支持 VSCodium</li>
+</ul>
 <p><strong>version 0.9.1</strong></p>
 <ul>
 <li>支持法语。</li>

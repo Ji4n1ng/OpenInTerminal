@@ -154,3 +154,6 @@
 
 /* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
 "Upf-HU-iaN.title" = "Vous devez rouvrir l'application pour afficher les préférences.";
+
+/* Class = "NSTextFieldCell"; title = "Visual Studio Code - Insiders"; ObjectID = "uyo-0a-oKi"; */
+"uyo-0a-oKi.title" = "Visual Studio Code - Insiders";

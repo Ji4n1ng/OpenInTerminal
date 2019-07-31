@@ -152,5 +152,8 @@
 /* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */
 "tR5-me-DTK.title" = "@Ji4n1ng";
 
+/* Class = "NSTextFieldCell"; title = "Visual Studio Code - Insiders"; ObjectID = "uyo-0a-oKi"; */
+"uyo-0a-oKi.title" = "Visual Studio Code - Insiders";
+
 /* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
 "yIW-2a-15A.title" = "iTerm";

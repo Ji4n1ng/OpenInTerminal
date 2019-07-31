@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./Resources/screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.1"><img src="https://img.shields.io/badge/Version-2.0.1-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.2"><img src="https://img.shields.io/badge/Version-2.0.2-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -51,15 +51,11 @@ Please check the document: [OpenInTerminal-Lite English](./Resources/README-Lite
 brew cask install openinterminal
 ```
 
-2. Done.
-
-#### b) Manual (latest version: 2.0.1)
+#### b) Manual (latest version: 2.0.2)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
 2. Move the app into `/Applications`.
-
-3. Done.
 
 > ⚠️ macOS will ask your permissions to access Finder and other applications when you run the app for the first time. Please give OpenInTerminal the permissions.
 
@@ -112,27 +108,32 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 
 ## Changes 🗒
 
+**version 2.0.2**
+
+- Support Visual Studio Code - Insiders
+- Support for hiding the status bar icon
+
 **version 2.0.1**
 
 - Support BBEdit
 - Add icon in Finder context menu
 - Fix: check application folder under home directory
 
-**version 0.10.2**
-
-- Fix: Finder context menu does not appear on other disks.
-
-**version 0.10.1**
-
-- Thanks to [pynixwang](https://github.com/pynixwang)'s suggestions. iTerm will not leave `cd xxx` in history.
-- You need to click the `window` button or the `tab` button of iTerm again in `Preferences`.
-
-**version 0.10.0**
-
-- Support keyboard shortcuts.
-- Support VSCodium.
-
 <details><summary>old version</summary><br>
+<p><strong>version 0.10.2</strong></p>
+<ul>
+<li>Fix: Finder context menu does not appear on other disks.</li>
+</ul>
+<p><strong>version 0.10.1</strong></p>
+<ul>
+<li>iTerm will not leave `cd xxx` in history.</li>
+<li>You need to click the `window` button or the `tab` button of iTerm again in `Preferences`.</li>
+</ul>
+<p><strong>version 0.10.0</strong></p>
+<ul>
+<li>Support keyboard shortcuts.</li>
+<li>Support VSCodium.</li>
+</ul>
 <p><strong>version 0.9.1</strong></p>
 <ul>
 <li>Support French.</li>
