@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.0"><img src="https://img.shields.io/badge/Version-1.0.0-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.1"><img src="https://img.shields.io/badge/Version-1.0.1-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -28,15 +28,13 @@
 
 1. 运行以下命令
 
-   ```
-   brew cask install openinterminal-lite
-   # 或者
-   brew cask install openineditor-lite
-   ```
+```
+brew cask install openinterminal-lite
+# 或者
+brew cask install openineditor-lite
+```
 
 2. 在 `应用程序` 文件夹中，按住 `Cmd` 键，然后将应用拖到访达工具栏中。
-
-3. 完成
 
 >  ⚠️ 当您第一次运行应用程序时，macOS 将要求访问 `访达` 和 `终端`（或 `iTerm`）的权限。请给予应用程序权限。
 
@@ -44,12 +42,11 @@
   <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
 </div>
 
-### 手动安装 (最新版本：1.0.0)
+### 手动安装 (最新版本：1.0.1)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
 3. 按住 `Cmd` 键，然后将应用拖到访达工具栏中。
-4. 完成。
 
 ## 设置 🔨 
 
@@ -83,6 +80,11 @@ defaults remove wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier
 
 <details><summary>设置 <strong>BBEdit</strong> 为默认编辑器:</summary><br>
 <code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit </code>
+<br>
+</details>
+
+<details><summary>设置 <strong>Visual Studio Code - Insiders</strong> 为默认编辑器:</summary><br>
+<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders </code>
 <br>
 </details>
 
@@ -151,26 +153,29 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 
 ## 版本变动 🗒
 
+**version 1.0.1**
+
+- 支持 Visual Studio Code - Insiders
+
 **version 1.0.0**
 
 - 支持 BBEdit
 - 修复：检查用户目录底下的应用程序文件夹
 
-**version 0.4.4**
-
-- 感谢 [pynixwang](https://github.com/pynixwang) 的建议。iTerm 现在不会在 history 中留下 `cd xxx`。
-- 修复了启动程序时图标在 Dock 栏闪动的问题。
-
-**version 0.4.3**
-
-- 修复了本地化的 bug
-
-**version 0.4.2**
-
-- 支持 French
-- 感谢 [filmgirl](https://github.com/filmgirl) 提供的图标
-
 <details><summary>旧版本</summary><br>
+<p><strong>version 0.4.4</strong></p>
+<ul>
+<li>iTerm 现在不会在 history 中留下 `cd xxx`。</li>
+<li>修复了启动程序时图标在 Dock 栏闪动的问题。</li>
+</ul>
+<p><strong>version 0.4.3</strong></p>
+<ul>
+<li>修复了本地化的 bug</li>
+</ul>
+<p><strong>version 0.4.2</strong></p>
+<ul>
+<li>支持法语</li>
+</ul>
 <p><strong>version 0.4.1</strong></p>
 <ul>
 <li>支持 Alacritty</li>

@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.0"><img src="https://img.shields.io/badge/Version-1.0.0-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.1"><img src="https://img.shields.io/badge/Version-1.0.1-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -29,15 +29,13 @@ English | [中文说明](./README-Lite-zh.md)
 
 1. Run the following command
 
-   ```
-   brew cask install openinterminal-lite
-   # or
-   brew cask install openineditor-lite
-   ```
+```
+brew cask install openinterminal-lite
+# or
+brew cask install openineditor-lite
+```
 
 2. In `/Applications` folder, hold down the `Cmd` key and drag the app into Finder Toolbar.
-
-3. Done
 
 >  ⚠️ macOS will ask your permissions to access Finder and Terminal (iTerm or Hyper) when you run the app for the first time. Please give the application permissions.
 
@@ -45,12 +43,11 @@ English | [中文说明](./README-Lite-zh.md)
   <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
 </div>
 
-### Manual (latest version: 1.0.0)
+### Manual (latest version: 1.0.1)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
 3. Hold down the `Cmd` key and drag the app into Finder Toolbar.
-4. Done.
 
 ## Settings 🔨
 
@@ -84,6 +81,11 @@ defaults remove wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier
 
 <details><summary>Set <strong>BBEdit</strong> as the default editor:</summary><br>
 <code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit </code>
+<br>
+</details>
+
+<details><summary>Set <strong>Visual Studio Code - Insiders</strong> as the default editor:</summary><br>
+<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders </code>
 <br>
 </details>
 
@@ -153,27 +155,29 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 
 ## Changes 🗒
 
+**version 1.0.1**
+
+- Support Visual Studio Code - Insiders
+
 **version 1.0.0**
 
 - Support BBEdit
 - Fix: check application folder under home directory
 
-**version 0.4.4**
-
-- Thanks to [pynixwang](https://github.com/pynixwang)'s suggestions. iTerm will not leave 'cd xxx' in history.
-- Fix: icon will not flash in dock
-
-**version 0.4.3**
-
-- Fix localization bug
-
-**version 0.4.2**
-
-- Support French
-
-- Thanks to [filmgirl](https://github.com/filmgirl) for providing alternative dark terminal icon.
-
 <details><summary>old version</summary><br>
+<p><strong>version 0.4.4</strong></p>
+<ul>
+<li>iTerm will not leave 'cd xxx' in history.</li>
+<li>Fix: icon will not flash in dock</li>
+</ul>
+<p><strong>version 0.4.3</strong></p>
+<ul>
+<li>Fix localization bug</li>
+</ul>
+<p><strong>version 0.4.2</strong></p>
+<ul>
+<li>Support French</li>
+</ul>
 <p><strong>version 0.4.1</strong></p>
 <ul>
 <li>Support Alacritty</li>
