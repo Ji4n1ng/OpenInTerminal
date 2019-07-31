@@ -23,7 +23,7 @@
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
 | 支持 Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
-| 支持 [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium) and [BBEdit](https://www.barebones.com/products/bbedit/). | ✅ | ✅ |
+| 支持 [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium) and [BBEdit](https://www.barebones.com/products/bbedit/). | ✅ | ✅ |
 | 设置为打开新的窗口或者标签页 | ✅ | ✅ |
 | 支持中文，英语和法语 | ✅ | ✅ |
 | 图形化设置界面 | ✅ | ❌ |

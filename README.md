@@ -23,7 +23,7 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
 | Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
 | Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
-| Support [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium) and [BBEdit](https://www.barebones.com/products/bbedit/). | ✅ | ✅ |
+| Support [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium) and [BBEdit](https://www.barebones.com/products/bbedit/). | ✅ | ✅ |
 | Set to open a new tab or window. | ✅ | ✅ |
 | Support English, Chinese and French. | ✅ | ✅ |
 | GUI preferences | ✅ | ❌ |
