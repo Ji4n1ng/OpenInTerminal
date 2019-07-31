@@ -27,7 +27,7 @@ final class SublimeApp: Editor {
         script.executeAndReturnError(&error)
         
         if error != nil {
-            throw OITError.cannotAccessSublime
+            throw OITError.cannotAccessApp(EditorType.sublime.rawValue)
         }
     }
     

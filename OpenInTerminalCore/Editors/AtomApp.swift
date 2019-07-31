@@ -27,7 +27,7 @@ final class AtomApp: Editor {
         script.executeAndReturnError(&error)
         
         if error != nil {
-            throw OITError.cannotAccessAtom
+            throw OITError.cannotAccessApp(EditorType.atom.rawValue)
         }
     }
     

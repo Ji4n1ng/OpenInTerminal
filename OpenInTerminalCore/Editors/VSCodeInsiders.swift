@@ -1,14 +1,14 @@
 //
-//  BBEditApp.swift
+//  VSCodeInsiders.swift
 //  OpenInTerminalCore
 //
-//  Created by Jianing Wang on 2019/7/21.
+//  Created by Jianing Wang on 2019/7/31.
 //  Copyright © 2019 Jianing Wang. All rights reserved.
 //
 
 import Foundation
 
-final class BBEditApp: Editor {
+final class VSCodeInsidersApp: Editor {
     
     func open(_ path: String) throws {
         
@@ -17,7 +17,7 @@ final class BBEditApp: Editor {
         }
         
         let source = """
-        do shell script "open -a BBEdit \(url.path.editorEscaped)"
+        do shell script "open -a Visual\\\\ Studio\\\\ Code\\\\ -\\\\ Insiders \(url.path.editorEscaped)"
         """
         
         let script = NSAppleScript(source: source)!
@@ -27,7 +27,7 @@ final class BBEditApp: Editor {
         script.executeAndReturnError(&error)
         
         if error != nil {
-            throw OITError.cannotAccessApp(EditorType.bbedit.rawValue)
+            throw OITError.cannotAccessApp(EditorType.vscodeInsiders.rawValue)
         }
     }
     

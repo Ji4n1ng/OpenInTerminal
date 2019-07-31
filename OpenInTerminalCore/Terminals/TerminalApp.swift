@@ -22,7 +22,7 @@ final class TerminalApp: Terminal {
             let terminal = SBApplication(bundleIdentifier: TerminalType.terminal.bundleId)! as TerminalApplication
             
             guard let open = terminal.open else {
-                throw OITError.cannotAccessTerminal
+                throw OITError.cannotAccessApp(TerminalType.terminal.rawValue)
             }
             
             open([url])
@@ -63,7 +63,7 @@ final class TerminalApp: Terminal {
             script.executeAndReturnError(&error)
             
             if error != nil {
-                throw OITError.cannotAccessTerminal
+                throw OITError.cannotAccessApp(TerminalType.terminal.rawValue)
             }
         }
         

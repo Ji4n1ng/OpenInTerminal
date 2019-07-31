@@ -27,7 +27,7 @@ final class HyperApp: Terminal {
         script.executeAndReturnError(&error)
         
         if error != nil {
-            throw OITError.cannotAccessHyper
+            throw OITError.cannotAccessApp(TerminalType.hyper.rawValue)
         }
     }
     

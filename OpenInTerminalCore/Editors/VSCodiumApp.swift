@@ -27,7 +27,7 @@ final class VSCodiumApp: Editor {
         script.executeAndReturnError(&error)
         
         if error != nil {
-            throw OITError.cannotAccessVSCodium
+            throw OITError.cannotAccessApp(EditorType.vscodium.rawValue)
         }
     }
     

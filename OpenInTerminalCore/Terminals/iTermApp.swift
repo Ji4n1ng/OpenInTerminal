@@ -29,7 +29,7 @@ final class iTermApp: Terminal {
         script.executeAndReturnError(&error)
         
         if error != nil {
-            throw OITError.cannotAccessIterm
+            throw OITError.cannotAccessApp(TerminalType.iTerm.rawValue)
         }
     }
     
