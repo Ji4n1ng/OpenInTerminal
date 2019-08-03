@@ -45,7 +45,7 @@ Please check the document: [OpenInTerminal-Lite English](./Resources/README-Lite
 
 ### 1. Download
 
-#### a) Homebrew (current version: 2.0.1)
+#### a) Homebrew (current version: 2.0.3)
 
 ```
 brew cask install openinterminal

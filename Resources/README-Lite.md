@@ -25,7 +25,7 @@ English | [中文说明](./README-Lite-zh.md)
 
 ## How to install 🖥
 
-### Homebrew (current version: 1.0.0)
+### Homebrew (current version: 1.0.1)
 
 1. Run the following command
 

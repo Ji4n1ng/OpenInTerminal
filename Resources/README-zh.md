@@ -45,7 +45,7 @@
 
 ### 1. 下载
 
-#### a) Homebrew (当前版本：2.0.1)
+#### a) Homebrew (当前版本：2.0.3)
 
 ```
 brew cask install openinterminal
