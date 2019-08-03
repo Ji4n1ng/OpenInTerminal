@@ -52,21 +52,24 @@ class FinderSync: FIFinderSync {
                                                                          comment: "Open with default Terminal"),
                                                 action: #selector(openDefaultTerminal),
                                                 keyEquivalent: "")
-            openInTerminalItem.image = NSImage(named: "context_menu_icon_terminal")
+            let terminalIcon = NSImage(named: "context_menu_icon_terminal")!
+            openInTerminalItem.image = terminalIcon
             menu.addItem(openInTerminalItem)
             
             let openInEditorItem = NSMenuItem(title: NSLocalizedString("menu.open_with_default_editor",
                                                                          comment: "Open with default Editor"),
                                                 action: #selector(openDefaultEditor),
                                                 keyEquivalent: "")
-            openInEditorItem.image = NSImage(named: "context_menu_icon_editor")
+            let editorIcon = NSImage(named: "context_menu_icon_editor")!
+            openInEditorItem.image = editorIcon
             menu.addItem(openInEditorItem)
             
             let copyPathItem = NSMenuItem(title: NSLocalizedString("menu.copy_path_to_clipboard",
                                                                    comment: "Copy path to Clipboard"),
                                                 action: #selector(copyPathToClipboard),
                                                 keyEquivalent: "")
-            copyPathItem.image = NSImage(named: "context_menu_icon_path")
+            let copyPathIcon = NSImage(named: "context_menu_icon_path")
+            copyPathItem.image = copyPathIcon
             menu.addItem(copyPathItem)
             
         default:
