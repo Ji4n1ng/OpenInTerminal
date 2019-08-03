@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./Resources/screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.2"><img src="https://img.shields.io/badge/Version-2.0.2-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.3"><img src="https://img.shields.io/badge/Version-2.0.3-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -51,7 +51,7 @@ Please check the document: [OpenInTerminal-Lite English](./Resources/README-Lite
 brew cask install openinterminal
 ```
 
-#### b) Manual (latest version: 2.0.2)
+#### b) Manual (latest version: 2.0.3)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
@@ -107,6 +107,10 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 </details>
 
 ## Changes 🗒
+
+**version 2.0.3**
+
+- Fix: Finder context menu icon supports dark mode
 
 **version 2.0.2**
 

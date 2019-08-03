@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.2"><img src="https://img.shields.io/badge/Version-2.0.2-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.3"><img src="https://img.shields.io/badge/Version-2.0.3-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -51,7 +51,7 @@
 brew cask install openinterminal
 ```
 
-#### b) 手动 (最新版本：2.0.2)
+#### b) 手动 (最新版本：2.0.3)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -100,6 +100,10 @@ brew cask install openinterminal
 </details>
 
 ## 版本变动 🗒
+
+**version 2.0.3**
+
+- 修复：访达右键菜单图标支持黑暗模式
 
 **version 2.0.2**
 
