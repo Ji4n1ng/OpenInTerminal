@@ -1,5 +1,5 @@
 //
-//  VSCodeInsiders.swift
+//  VSCodeInsidersApp.swift
 //  OpenInTerminalCore
 //
 //  Created by Jianing Wang on 2019/7/31.

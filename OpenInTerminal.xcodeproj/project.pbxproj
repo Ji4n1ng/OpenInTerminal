@@ -45,6 +45,7 @@
 		9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCB226B475E008445D1 /* PreferencesViewController.swift */; };
 		9521EDD0226B4BE6008445D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCF226B4BE6008445D1 /* Constants.swift */; };
 		954EFA932273643C001E101E /* EditorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EFA922273643C001E101E /* EditorProtocol.swift */; };
+		956BCE1022F80D6C00310B56 /* TextMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BCE0F22F80D6C00310B56 /* TextMateApp.swift */; };
 		9571DA84227E6FFF0076AA64 /* AdvancedPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571DA83227E6FFF0076AA64 /* AdvancedPreferencesViewController.swift */; };
 		957B75DF2292358E00E35061 /* VSCodiumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957B75DE2292358E00E35061 /* VSCodiumApp.swift */; };
 		9584EDF2226DEF79003C7EE8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
@@ -62,7 +63,7 @@
 		95C6C340227AA1CB00F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		95C6F81C22E37D59001C6374 /* BBEditApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F81B22E37D59001C6374 /* BBEditApp.swift */; };
-		95E7170C22F1370F000E331A /* VSCodeInsiders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7170B22F1370F000E331A /* VSCodeInsiders.swift */; };
+		95E7170C22F1370F000E331A /* VSCodeInsidersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */; };
 		95F5BED5227734E800D505A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */; };
 		95FC9244228BAD6900F51DF2 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C6C33B227A9EE600F157C4 /* Preferences.storyboard */; };
 		CF7258BBE507C21AABDF27E6 /* Pods_OpenInTerminal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1463FD2DA3F2CBDE5C98A8F7 /* Pods_OpenInTerminal.framework */; };
@@ -164,6 +165,7 @@
 		9521EDCF226B4BE6008445D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		954EFA922273643C001E101E /* EditorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorProtocol.swift; sourceTree = "<group>"; };
 		9557D3D42274A78C00CE34FA /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		956BCE0F22F80D6C00310B56 /* TextMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMateApp.swift; sourceTree = "<group>"; };
 		9571DA83227E6FFF0076AA64 /* AdvancedPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPreferencesViewController.swift; sourceTree = "<group>"; };
 		957B75DE2292358E00E35061 /* VSCodiumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodiumApp.swift; sourceTree = "<group>"; };
 		957B75E72292C56700E35061 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Preferences.strings; sourceTree = "<group>"; };
@@ -181,7 +183,7 @@
 		95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
 		95C6C33A227A9EE600F157C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preferences.storyboard; sourceTree = "<group>"; };
 		95C6F81B22E37D59001C6374 /* BBEditApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBEditApp.swift; sourceTree = "<group>"; };
-		95E7170B22F1370F000E331A /* VSCodeInsiders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodeInsiders.swift; sourceTree = "<group>"; };
+		95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodeInsidersApp.swift; sourceTree = "<group>"; };
 		95E7170E22F18AD2000E331A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
 		95E7171222F19272000E331A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
 		95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -394,7 +396,8 @@
 				9590B69A226C6EA200362B93 /* SublimeApp.swift */,
 				957B75DE2292358E00E35061 /* VSCodiumApp.swift */,
 				95C6F81B22E37D59001C6374 /* BBEditApp.swift */,
-				95E7170B22F1370F000E331A /* VSCodeInsiders.swift */,
+				95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */,
+				956BCE0F22F80D6C00310B56 /* TextMateApp.swift */,
 			);
 			path = Editors;
 			sourceTree = "<group>";
@@ -654,11 +657,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956BCE1022F80D6C00310B56 /* TextMateApp.swift in Sources */,
 				9511D89522747334008E52B9 /* CoreManager.swift in Sources */,
 				954EFA932273643C001E101E /* EditorProtocol.swift in Sources */,
 				4725252F22680EE0003C50DF /* TerminalManager.swift in Sources */,
 				4725253B22680F4B003C50DF /* TerminalApp.swift in Sources */,
-				95E7170C22F1370F000E331A /* VSCodeInsiders.swift in Sources */,
+				95E7170C22F1370F000E331A /* VSCodeInsidersApp.swift in Sources */,
 				4725254422680F7C003C50DF /* Log.swift in Sources */,
 				4725254522680F7C003C50DF /* Error.swift in Sources */,
 				4725253D22680F4B003C50DF /* iTermApp.swift in Sources */,
