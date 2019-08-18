@@ -8,6 +8,7 @@
 
 import Cocoa
 import OpenInTerminalCore
+import MASShortcut
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -32,6 +33,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setStatusItemIcon()
         setStatusItemVisible()
         setStatusToggle()
+        
+        // bind global shortcuts
+        bindShortcuts()
     }
     
     func applicationWillTerminate(_ notification: Notification) {
@@ -169,6 +173,26 @@ extension AppDelegate {
             
         } catch {
             logw(error.localizedDescription)
+        }
+    }
+}
+
+extension AppDelegate {
+    // global shortcuts
+    func bindShortcuts() {
+        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.defaultTerminalShortcut) {
+            let appDelegate = NSApplication.shared.delegate as! AppDelegate
+            appDelegate.openDefaultTerminal()
+        }
+        
+        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.defaultEditorShortcut) {
+            let appDelegate = NSApplication.shared.delegate as! AppDelegate
+            appDelegate.openDefaultEditor()
+        }
+        
+        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.copyPathShortcut) {
+            let appDelegate = NSApplication.shared.delegate as! AppDelegate
+            appDelegate.copyPathToClipboard()
         }
     }
 }
