@@ -12,7 +12,7 @@ import ServiceManagement
 import MASShortcut
 
 class AdvancedPreferencesViewController: PreferencesViewController {
-
+    
     @IBOutlet weak var defaultTerminalShortcut: MASShortcutView!
     @IBOutlet weak var defaultEditorShortcut: MASShortcutView!
     @IBOutlet weak var copyPathShortcut: MASShortcutView!
@@ -26,26 +26,8 @@ class AdvancedPreferencesViewController: PreferencesViewController {
         defaultTerminalShortcut.associatedUserDefaultsKey = Constants.Key.defaultTerminalShortcut
         defaultEditorShortcut.associatedUserDefaultsKey = Constants.Key.defaultEditorShortcut
         copyPathShortcut.associatedUserDefaultsKey = Constants.Key.copyPathShortcut
-        
-        bindShortcuts()
     }
     
-    func bindShortcuts() {
-        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.defaultTerminalShortcut) {
-            let appDelegate = NSApplication.shared.delegate as! AppDelegate
-            appDelegate.openDefaultTerminal()
-        }
-        
-        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.defaultEditorShortcut) {
-            let appDelegate = NSApplication.shared.delegate as! AppDelegate
-            appDelegate.openDefaultEditor()
-        }
-        
-        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.copyPathShortcut) {
-            let appDelegate = NSApplication.shared.delegate as! AppDelegate
-            appDelegate.copyPathToClipboard()
-        }
-    }
     
     // MARK: Button Actions
     
