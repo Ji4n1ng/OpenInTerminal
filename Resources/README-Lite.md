@@ -1,11 +1,10 @@
 <p align="center">
   <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.1"><img src="https://img.shields.io/badge/Version-1.0.1-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.2"><img src="https://img.shields.io/badge/Version-1.0.2-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
 </p>
-
 
 English | [中文说明](./README-Lite-zh.md)
 
@@ -25,7 +24,7 @@ English | [中文说明](./README-Lite-zh.md)
 
 ## How to install 🖥
 
-### Homebrew (current version: 1.0.1)
+### Homebrew (current version: 1.0.2)
 
 1. Run the following command
 
@@ -43,7 +42,7 @@ brew cask install openineditor-lite
   <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
 </div>
 
-### Manual (latest version: 1.0.1)
+### Manual (latest version: 1.0.2)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
@@ -70,22 +69,27 @@ defaults remove wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier
 ```
 
 <details><summary>Set <strong>Alacritty</strong> as the default terminal:</summary><br>
-<code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty </code>
+<code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty</code>
 <br>
 </details>
 
 <details><summary>Set <strong>VSCodium</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium </code>
+<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium</code>
 <br>
 </details>
 
 <details><summary>Set <strong>BBEdit</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit </code>
+<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit</code>
 <br>
 </details>
 
 <details><summary>Set <strong>Visual Studio Code - Insiders</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders </code>
+<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders</code>
+<br>
+</details>
+
+<details><summary>Set <strong>TextMate</strong> as the default editor:</summary><br>
+<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate</code>
 <br>
 </details>
 
@@ -114,22 +118,11 @@ defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption window
 
 #### For iTerm:
 
-version 0.4.4 and above:
-
 ```
 # Open a new Tab
 defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool false
 # Open a new Window
 defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
-```
-
-old versions:
-
-```
-# Open a new Tab
-defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption tab
-# Open a new Window
-defaults write wang.jianing.OpenInTerminal-Lite OIT_iTermNewOption window
 ```
 
 For `Hyper` users, it is more recommended to open a new tab.
@@ -154,6 +147,11 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 </details>
 
 ## Changes 🗒
+
+**version 1.0.2**
+
+- Support TextMate.
+- Change OpenInEditor-Lite default icon.
 
 **version 1.0.1**
 

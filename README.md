@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./Resources/screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.3"><img src="https://img.shields.io/badge/Version-2.0.3-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.4"><img src="https://img.shields.io/badge/Version-2.0.4-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -23,7 +23,7 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
 | Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
 | Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
-| Support [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium) and [BBEdit](https://www.barebones.com/products/bbedit/). | ✅ | ✅ |
+| Support [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/) and [TextMate](https://macromates.com). | ✅ | ✅ |
 | Set to open a new tab or window. | ✅ | ✅ |
 | Support English, Chinese and French. | ✅ | ✅ |
 | GUI preferences | ✅ | ❌ |
@@ -45,13 +45,13 @@ Please check the document: [OpenInTerminal-Lite English](./Resources/README-Lite
 
 ### 1. Download
 
-#### a) Homebrew (current version: 2.0.3)
+#### a) Homebrew (current version: 2.0.4)
 
 ```
 brew cask install openinterminal
 ```
 
-#### b) Manual (latest version: 2.0.3)
+#### b) Manual (latest version: 2.0.4)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
@@ -108,22 +108,27 @@ If you have a good idea, feel welcome to open a new [issue](https://github.com/J
 
 ## Changes 🗒
 
+**version 2.0.4**
+
+- Support TextMate
+- Fix: keyboard shortcut bug
+
 **version 2.0.3**
 
 - Fix: Finder context menu icon supports dark mode
 
-**version 2.0.2**
-
-- Support Visual Studio Code - Insiders
-- Support for hiding the status bar icon
-
-**version 2.0.1**
-
-- Support BBEdit
-- Add icon in Finder context menu
-- Fix: check application folder under home directory
-
 <details><summary>old version</summary><br>
+<p><strong>version 2.0.2</strong></p>
+<ul>
+<li>Support Visual Studio Code - Insiders</li>
+<li>Support for hiding the status bar icon</li>
+</ul>
+<p><strong>version 2.0.1</strong></p>
+<ul>
+<li>Support BBEdit</li>
+<li>Add icon in Finder context menu</li>
+<li>Fix: check application folder under home directory</li>
+</ul>
 <p><strong>version 0.10.2</strong></p>
 <ul>
 <li>Fix: Finder context menu does not appear on other disks.</li>

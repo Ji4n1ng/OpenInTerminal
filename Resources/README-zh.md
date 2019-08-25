@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.3"><img src="https://img.shields.io/badge/Version-2.0.3-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.4"><img src="https://img.shields.io/badge/Version-2.0.4-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -22,8 +22,8 @@
 
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| 支持 Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
-| 支持 [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium) and [BBEdit](https://www.barebones.com/products/bbedit/). | ✅ | ✅ |
+| 支持 Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) 和 [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
+| 支持 [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/) 和 [TextMate](https://macromates.com). | ✅ | ✅ |
 | 设置为打开新的窗口或者标签页 | ✅ | ✅ |
 | 支持中文，英语和法语 | ✅ | ✅ |
 | 图形化设置界面 | ✅ | ❌ |
@@ -45,13 +45,13 @@
 
 ### 1. 下载
 
-#### a) Homebrew (当前版本：2.0.3)
+#### a) Homebrew (当前版本：2.0.4)
 
 ```
 brew cask install openinterminal
 ```
 
-#### b) 手动 (最新版本：2.0.3)
+#### b) 手动 (最新版本：2.0.4)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -97,76 +97,6 @@ brew cask install openinterminal
 
 <details><summary>5. 在 Mojave 上打开了两个终端窗口</summary><br>
 <p>这个问题只发生在第一次启动终端的时候。所以，你可以通过 <code>⌘W</code> 来关闭终端的窗口，而不是用 <code>⌘Q</code> 来退出终端。</p>
-</details>
-
-## 版本变动 🗒
-
-**version 2.0.3**
-
-- 修复：访达右键菜单图标支持黑暗模式
-
-**version 2.0.2**
-
-- 支持 Visual Studio Code - Insiders
-- 支持隐藏状态栏图标
-
-**version 2.0.1**
-
-- 支持 BBEdit
-- 在访达右键菜单中添加图标
-- 修复：检查用户目录底下的应用程序文件夹
-
-<details><summary>旧版本</summary><br>
-<p><strong>version 0.10.2</strong></p>
-<ul>
-<li>修复：Finder 右键菜单在其他盘上不显示。</li>
-</ul>
-<p><strong>version 0.10.1</strong></p>
-<ul>
-<li>iTerm 现在不会在 history 中留下 `cd xxx`。</li>
-<li>你需要在偏好设置中重新点击 iTerm 的 `window` 或者 `tab` 按钮。</li>
-</ul>
-<p><strong>version 0.10.0</strong></p>
-<ul>
-<li>支持键盘快捷键</li>
-<li>支持 VSCodium</li>
-</ul>
-<p><strong>version 0.9.1</strong></p>
-<ul>
-<li>支持法语。</li>
-</ul>
-<p><strong>version 0.9.0</strong></p>
-<ul>
-<li>OpenInTerminal 经过几周的开发现在已经发行了。如果你有任何建议或者要报告 BUG，欢迎新建一个 issue。</li>
-</ul>
-<p><strong>version 0.4.1</strong></p>
-<ul>
-<li>支持 <code>Alacritty</code></li>
-</ul>
-<p><strong>version 0.4.0</strong></p>
-<ul>
-<li>当使用 Terminal 和 iTerm 的时候，你可以设置默认打开新的标签页或者窗口。</li>
-</ul>
-<p><strong>version 0.3.0</strong></p>
-<ul>
-<li>更名为 OpenInTerminal-Lite (OpenInTerminal 将会在未来以功能更强大的版本出现)</li>
-<li>解决了当打开 Hyper 的时候，特殊字符导致程序崩溃的 bug</li>
-</ul>
-<p><strong>version 0.2.0</strong></p>
-<ul>
-<li>增加终端选择框</li>
-<li>在打开 iTerm 的时候，取消执行 <code>clear</code> 命令</li>
-</ul>
-<p><strong>version 0.1.1</strong></p>
-<ul>
-<li>支持 <code>Hyper</code></li>
-<li>在打开 iTerm 的时候，优先新建一个 tab 标签页。</li>
-</ul>
-<p><strong>version 0.1.0</strong></p>
-<ul>
-<li>第一次 release</li>
-</ul>
-<br>
 </details>
 
 ## 特别感谢 ❤️
