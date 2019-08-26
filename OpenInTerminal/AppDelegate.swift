@@ -34,6 +34,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setStatusItemVisible()
         setStatusToggle()
         
+        logw("")
+        logw("App launched")
+        logw("macOS \(ProcessInfo().operatingSystemVersionString)")
+        logw("OpenInTerminal Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "")")
+        
         // bind global shortcuts
         bindShortcuts()
     }
@@ -42,6 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSStatusBar.system.removeStatusItem(statusItem)
         
         removeObserver()
+        logw("App terminated")
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
