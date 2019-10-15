@@ -10,12 +10,16 @@ import Foundation
 import OpenInTerminalCore
 
 do {
-    
-    guard let editorType = EditorManager.shared.getOrPickDefaultEditor() else {
-        throw OITLError.cannotGetEditor
+
+    if let editorType = DefaultsManager.shared.defaultEditor {
+        EditorManager.shared.openEditor(editorType)
+    } else {
+        guard let selectedEditor = EditorManager.shared.pickEditorAlert() else {
+            throw OITLError.cannotGetEditor
+        }
+        DefaultsManager.shared.defaultEditor = selectedEditor
+        EditorManager.shared.openEditor(selectedEditor)
     }
-    
-    EditorManager.shared.openEditor(editorType)
     
 } catch {
     logw(error.localizedDescription)

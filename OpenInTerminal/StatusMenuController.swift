@@ -33,8 +33,24 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         
         statusMenu.delegate = self
         
-        defaultTerminalMenuItem.title = NSLocalizedString("menu.open_with_default_terminal", comment: "Open with default Terminal")
-        defaultEditorMenuItem.title = NSLocalizedString("menu.open_with_default_editor", comment: "Open with default Editor")
+        var terminalTitle = ""
+        if let terminal = DefaultsManager.shared.defaultTerminal {
+            terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + terminal.rawValue
+        } else {
+            terminalTitle = NSLocalizedString("menu.open_with_default_terminal",
+                                              comment: "Open with default Terminal")
+        }
+        defaultTerminalMenuItem.title = terminalTitle
+        
+        var editorTitle = ""
+        if let editor = DefaultsManager.shared.defaultEditor {
+            editorTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + editor.rawValue
+        } else {
+            editorTitle = NSLocalizedString("menu.open_with_default_editor",
+                                            comment: "Open with default Editor")
+        }
+        defaultEditorMenuItem.title = editorTitle
+        
         copyPathMenuItem.title = NSLocalizedString("menu.copy_path_to_clipboard", comment: "Copy path to Clipboard")
         preferencesMenuItem.title = NSLocalizedString("menu.preferences", comment: "Preferences...")
         quitMenuItem.title = NSLocalizedString("menu.quit", comment: "Quit")

@@ -23,10 +23,11 @@ class DefaultsKey<ValueType>: DefaultsKeys {
 
 extension DefaultsKeys {
     
-    // The values corresponding to the following keys are String.
+    // The type of values corresponding to the following keys is String.
     
     // value example: BoolType._true.rawValue
     static let firstUsage = DefaultsKey<String>(Constants.Key.firstUsage)
+    static let standaloneOperation = DefaultsKey<String>(Constants.Key.standaloneOperation)
     static let launchAtLogin = DefaultsKey<String>(Constants.Key.launchAtLogin)
     static let hideStatusItem = DefaultsKey<String>(Constants.Key.hideStatusItem)
     static let quickToggle = DefaultsKey<String>(Constants.Key.quickToggle)
@@ -48,6 +49,7 @@ extension DefaultsKeys {
 }
 
 let Defaults = UserDefaults.standard
+let GroupDefaults = UserDefaults(suiteName: Constants.groupIdentifier)
 
 extension UserDefaults {
     subscript(key: DefaultsKey<String>) -> String? {

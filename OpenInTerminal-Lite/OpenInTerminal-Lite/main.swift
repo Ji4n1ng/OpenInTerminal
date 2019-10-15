@@ -10,12 +10,16 @@ import Foundation
 import OpenInTerminalCore
 
 do {
-    
-    guard let terminalType = TerminalManager.shared.getOrPickDefaultTerminal() else {
-        throw OITLError.cannotGetTerminal
+
+    if let terminalType = DefaultsManager.shared.defaultTerminal {
+        TerminalManager.shared.openTerminal(terminalType)
+    } else {
+        guard let selectedTerminal = TerminalManager.shared.pickTerminalAlert() else {
+            throw OITLError.cannotGetTerminal
+        }
+        DefaultsManager.shared.defaultTerminal = selectedTerminal
+        TerminalManager.shared.openTerminal(selectedTerminal)
     }
-    
-    TerminalManager.shared.openTerminal(terminalType)
     
 } catch {
     logw(error.localizedDescription)

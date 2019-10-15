@@ -14,6 +14,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
 
     // MARK: Properties
 
+    @IBOutlet weak var standaloneOperationMode: NSButton!
     @IBOutlet weak var launchButton: NSButton!
     @IBOutlet weak var quickToggleButton: NSButton!
     @IBOutlet weak var chooseToggleActionButton: NSPopUpButton!
@@ -71,17 +72,21 @@ class GeneralPreferencesViewController: PreferencesViewController {
     // MARK: Refresh UI
     
     func refreshButtonState() {
-        let isLaunchAtLogin = CoreManager.shared.launchAtLogin.bool
+        if let isStandaloneMode = DefaultsManager.shared.isStandaloneOperation {
+            standaloneOperationMode.state = isStandaloneMode.bool ? .on : .off
+        }
+        
+        let isLaunchAtLogin = DefaultsManager.shared.isLaunchAtLogin.bool
         launchButton.state = isLaunchAtLogin ? .on : .off
         
-        let isHideStatusItem = CoreManager.shared.hideStatusItem.bool
+        let isHideStatusItem = DefaultsManager.shared.isHideStatusItem.bool
         hideStatusItemButton.state = isHideStatusItem ? .on : .off
         
-        let isQuickToggle = CoreManager.shared.quickToggle.bool
+        let isQuickToggle = DefaultsManager.shared.isQuickToggle.bool
         quickToggleButton.state = isQuickToggle ? .on : .off
         chooseToggleActionButton.isEnabled = isQuickToggle
         
-        if let quickToggleType = CoreManager.shared.quickToggleType {
+        if let quickToggleType = DefaultsManager.shared.quickToggleType {
             switch quickToggleType {
             case .openWithDefaultTerminal:
                 chooseToggleActionButton.select(quickToggleTerminalMenuItem)
@@ -108,7 +113,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
             }
         }
         
-        if let defaultTerminal = TerminalManager.shared.getDefaultTerminal() {
+        if let defaultTerminal = DefaultsManager.shared.defaultTerminal {
             let index = defaultTerminalButton.indexOfItem(withTitle: defaultTerminal.rawValue)
             defaultTerminalButton.selectItem(at: index)
         } else {
@@ -132,7 +137,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
             }
         }
         
-        if let defaultEditor = EditorManager.shared.getDefaultEditor() {
+        if let defaultEditor = DefaultsManager.shared.defaultEditor {
             let index = defaultEditorButton.indexOfItem(withTitle: defaultEditor.rawValue)
             defaultEditorButton.selectItem(at: index)
         } else {
@@ -143,15 +148,21 @@ class GeneralPreferencesViewController: PreferencesViewController {
     
     // MARK: Button Actions
     
+    
+    @IBAction func standaloneModeButtonClicked(_ sender: NSButton) {
+        let isStandalone = standaloneOperationMode.state == .on
+        DefaultsManager.shared.isStandaloneOperation = BoolType(isStandalone)
+    }
+    
     @IBAction func launchButtonClicked(_ sender: NSButton) {
         let isLaunch = launchButton.state == .on
-        CoreManager.shared.launchAtLogin.bool = isLaunch
+        DefaultsManager.shared.isLaunchAtLogin.bool = isLaunch
         SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, isLaunch)
     }
     
     @IBAction func hideStatusItemButtonTapped(_ sender: NSButton) {
         let isHide = hideStatusItemButton.state == .on
-        CoreManager.shared.hideStatusItem.bool = isHide
+        DefaultsManager.shared.isHideStatusItem.bool = isHide
         
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.setStatusItemVisible()
@@ -159,7 +170,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
     
     @IBAction func quickToggleButtonClicked(_ sender: NSButton) {
         let isQuickToggle = quickToggleButton.state == .on
-        CoreManager.shared.quickToggle.bool = isQuickToggle
+        DefaultsManager.shared.isQuickToggle.bool = isQuickToggle
         chooseToggleActionButton.isEnabled = isQuickToggle
         
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
@@ -173,11 +184,11 @@ class GeneralPreferencesViewController: PreferencesViewController {
         let title = itemTitles[index]
 
         if title == Constants.none {
-            TerminalManager.shared.removeDefaultTerminal()
+            DefaultsManager.shared.removeDefaultTerminal()
         }
         
         if let terminal = TerminalType(rawValue: title) {
-            TerminalManager.shared.setDefaultTerminal(terminal)
+            DefaultsManager.shared.defaultTerminal = terminal
         }
     }
     
@@ -187,26 +198,26 @@ class GeneralPreferencesViewController: PreferencesViewController {
         let title = itemTitles[index]
         
         if title == Constants.none {
-            EditorManager.shared.removeDefaultEditor()
+            DefaultsManager.shared.removeDefaultEditor()
         }
         
         if let editor = EditorType(rawValue: title) {
-            EditorManager.shared.setDefaultEditor(editor)
+            DefaultsManager.shared.defaultEditor = editor
         }
     }
     
     @objc func quickToggleTerminalClicked(_ sender: NSMenuItem) {
-        CoreManager.shared.quickToggleType = .openWithDefaultTerminal
+        DefaultsManager.shared.quickToggleType = .openWithDefaultTerminal
         chooseToggleActionButton.select(quickToggleTerminalMenuItem)
     }
     
     @objc func quickToggleEditorClicked(_ sender: NSMenuItem) {
-        CoreManager.shared.quickToggleType = .openWithDefaultEditor
+        DefaultsManager.shared.quickToggleType = .openWithDefaultEditor
         chooseToggleActionButton.select(quickToggleEditorMenuItem)
     }
     
     @objc func quickToggleCopyPathClicked(_ sender: NSMenuItem) {
-        CoreManager.shared.quickToggleType = .copyPathToClipboard
+        DefaultsManager.shared.quickToggleType = .copyPathToClipboard
         chooseToggleActionButton.select(quickToggleCopyPathMenuItem)
     }
 }

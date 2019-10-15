@@ -13,6 +13,7 @@ struct Constants {
     
     static let none = "None"
     static let launcherAppIdentifier = "wang.jianing.OpenInTerminalHelper"
+    static let finderExtensionIdentifier = "wang.jianing.OpenInTerminal.OpenInTerminalFinderExtension"
     
     struct Key {
         static let defaultTerminalShortcut = "OIT_DefaultTerminalShortcut"

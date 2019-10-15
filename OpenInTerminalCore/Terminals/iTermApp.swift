@@ -12,16 +12,13 @@ final class iTermApp: Terminal {
     
     func open(_ path: String, _ newOption: NewOptionType, _ clear: ClearOptionType) throws {
         
-        guard let url = URL(string: path) else {
-            throw OITError.wrongUrl
-        }
-        
         let source = """
-        tell application "iTerm"
-            open "\(url.path)"
-        end tell
+        do shell script "open -a iTerm \(path.editorEscaped)"
         """
         
+//        tell application "iTerm"
+//            open "\(url.path)"
+//        end tell
         let script = NSAppleScript(source: source)!
         
         var error: NSDictionary?

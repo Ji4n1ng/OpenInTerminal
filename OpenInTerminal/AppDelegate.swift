@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: Lifecycle
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-        CoreManager.shared.firstSetup()
+        DefaultsManager.shared.firstSetup()
         addObserver()
         terminateOpenInTerminalHelper()
         setStatusItemIcon()
@@ -41,6 +41,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // bind global shortcuts
         bindShortcuts()
+        
+        do {
+            // check scripts and install them if needed
+            try checkScripts()
+        } catch {
+            logw(error.localizedDescription)
+        }
     }
     
     func applicationWillTerminate(_ notification: Notification) {
@@ -57,6 +64,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         return true
     }
+    
 }
 
 extension AppDelegate {
@@ -72,12 +80,12 @@ extension AppDelegate {
     }
     
     func setStatusItemVisible() {
-        let isHideStatusItem = CoreManager.shared.hideStatusItem.bool
+        let isHideStatusItem = DefaultsManager.shared.isHideStatusItem.bool
         statusItem.isVisible = !isHideStatusItem
     }
     
     func setStatusToggle() {
-        let isQuickToogle = CoreManager.shared.quickToggle.bool
+        let isQuickToogle = DefaultsManager.shared.isQuickToggle.bool
         if isQuickToogle {
             statusItem.menu = nil
             if let button = statusItem.button {
@@ -99,7 +107,7 @@ extension AppDelegate {
             statusItem.button?.performClick(self)
             statusItem.menu = nil
         } else if event.type == .leftMouseUp {
-            if let quickToggleType = CoreManager.shared.quickToggleType {
+            if let quickToggleType = DefaultsManager.shared.quickToggleType {
                 switch quickToggleType {
                 case .openWithDefaultTerminal:
                     openDefaultTerminal()
@@ -122,7 +130,7 @@ extension AppDelegate {
         }
     }
     
-    // MARK: Notification
+    // MARK: - Notification
     
     func addObserver() {
         OpenNotifier.addObserver(observer: self,
@@ -145,19 +153,27 @@ extension AppDelegate {
     // MARK: Notification Actions
     
     @objc func openDefaultTerminal() {
-        guard let terminalType = TerminalManager.shared.getOrPickDefaultTerminal() else {
-            return
+        if let terminalType = DefaultsManager.shared.defaultTerminal {
+            TerminalManager.shared.openTerminal(terminalType)
+        } else {
+            guard let selectedTerminal = TerminalManager.shared.pickTerminalAlert() else {
+                return
+            }
+            DefaultsManager.shared.defaultTerminal = selectedTerminal
+            TerminalManager.shared.openTerminal(selectedTerminal)
         }
-        
-        TerminalManager.shared.openTerminal(terminalType)
     }
     
     @objc func openDefaultEditor() {
-        guard let editorType = EditorManager.shared.getOrPickDefaultEditor() else {
-            return
+        if let editorType = DefaultsManager.shared.defaultEditor {
+            EditorManager.shared.openEditor(editorType)
+        } else {
+            guard let selectedEditor = EditorManager.shared.pickEditorAlert() else {
+                return
+            }
+            DefaultsManager.shared.defaultEditor = selectedEditor
+            EditorManager.shared.openEditor(selectedEditor)
         }
-        
-        EditorManager.shared.openEditor(editorType)
     }
     
     @objc func copyPathToClipboard() {
@@ -184,7 +200,7 @@ extension AppDelegate {
 }
 
 extension AppDelegate {
-    // global shortcuts
+    // MARK: - Global Shortcuts
     func bindShortcuts() {
         MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.defaultTerminalShortcut) {
             let appDelegate = NSApplication.shared.delegate as! AppDelegate

@@ -14,36 +14,6 @@ public class EditorManager {
     
     // MARK: public methods
     
-    /// get default editor from UserDefaults
-    public func getDefaultEditor() -> EditorType? {
-        return Defaults[.defaultEditor]
-            .map(EditorType.init(rawValue: )) ?? nil
-    }
-    
-    /// get default editor from UserDefaults or AlertBox
-    public func getOrPickDefaultEditor() -> EditorType? {
-        
-        if let defaultEditor = getDefaultEditor() {
-            return defaultEditor
-        }
-        
-        guard let selectedEditor = pickEditorAlert() else {
-            return nil
-        }
-        
-        setDefaultEditor(selectedEditor)
-        
-        return selectedEditor
-    }
-    
-    public func setDefaultEditor(_ editor: EditorType) {
-        Defaults[.defaultEditor] = editor.rawValue
-    }
-    
-    public func removeDefaultEditor() {
-        Defaults.removeObject(forKey: Constants.Key.defaultEditor)
-    }
-    
     public func openEditor(_ editorType: EditorType) {
         do {
             var path = try FinderManager.shared.getFullPathToFrontFinderWindowOrSelectedFile()
@@ -63,9 +33,7 @@ public class EditorManager {
         }
     }
     
-    // MARK: private methods
-    
-    private func pickEditorAlert() -> EditorType? {
+    public func pickEditorAlert() -> EditorType? {
         
         let alert = NSAlert()
         

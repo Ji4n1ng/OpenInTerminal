@@ -10,11 +10,14 @@ import Foundation
 
 struct Constants {
     
+    static let groupIdentifier = "group.wang.jianing.OpenInTerminal"
+    
     struct Finder {
         static let id = "com.apple.Finder"
     }
     
     struct Key {
+        static let standaloneOperation = "OIT_FinderExtensionStandaloneOperation"
         static let firstUsage = "OIT_FirstUsage"
         static let launchAtLogin = "OIT_LaunchAtLogin"
         static let hideStatusItem = "OIT_HideStatusItem"
@@ -28,7 +31,6 @@ struct Constants {
         static let iTermNewOption = "OIT_iTermNewOption"
         
         static let terminalClearOption = "OIT_TerminalClearOption"
-        
     }
 
 }

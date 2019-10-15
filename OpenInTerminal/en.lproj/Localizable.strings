@@ -10,6 +10,7 @@
 "general.cancel" = "Cancel";
 "general.yes" = "Yes";
 
+"menu.open_in" = "Open in ";
 "menu.open_with_default_terminal" = "Open in Terminal";
 "menu.open_with_default_editor" = "Open in Editor";
 "menu.copy_path_to_clipboard" = "Copy path";

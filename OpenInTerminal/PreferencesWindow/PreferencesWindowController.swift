@@ -14,6 +14,4 @@ class PreferencesWindowController: NSWindowController {
         super.windowDidLoad()
     }
     
-    
-
 }

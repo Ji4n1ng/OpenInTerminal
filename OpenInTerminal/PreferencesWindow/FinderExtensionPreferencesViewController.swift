@@ -100,9 +100,14 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     }
     
     func refreshButtonEnabledState() {
-        terminalWindowButton.isEnabled = terminalTextField.isEnabled
-        terminalTabButton.isEnabled = terminalTextField.isEnabled
-        terminalClearButton.isEnabled = terminalTextField.isEnabled
+        var isStandaloneMode = false
+        if let isStandaloneOperation = DefaultsManager.shared.isStandaloneOperation {
+            isStandaloneMode = isStandaloneOperation.bool
+        }
+        
+        terminalWindowButton.isEnabled = terminalTextField.isEnabled && !isStandaloneMode
+        terminalTabButton.isEnabled = terminalTextField.isEnabled && !isStandaloneMode
+        terminalClearButton.isEnabled = terminalTextField.isEnabled && !isStandaloneMode
 
         iTermWindowButton.isEnabled = iTermTextField.isEnabled
         iTermTabButton.isEnabled = iTermTextField.isEnabled
@@ -114,7 +119,7 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
              (.iTerm, iTermWindowButton, iTermTabButton)]
         
         terminals.forEach { terminal, windowButton, tabButton in
-            let _newOption = TerminalManager.shared.getNewOption(terminal)
+            let _newOption = DefaultsManager.shared.getNewOption(terminal)
             if let newOption = _newOption {
                 if newOption == .window {
                     windowButton.state = .on
@@ -132,7 +137,7 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
             [(.terminal, terminalClearButton)]
         
         terminals.forEach { terminal, button in
-            let _clearOption = TerminalManager.shared.getClearOption(terminal)
+            let _clearOption = DefaultsManager.shared.getClearOption(terminal)
             if let clearOption = _clearOption {
                 button.state = clearOption == .clear ? .on : .off
             }
@@ -144,7 +149,7 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     @IBAction func terminalWindowButtonClicked(_ sender: NSButton) {
         terminalTabButton.state = .off
         do {
-            try TerminalManager.shared.setNewOption(.terminal, .window)
+            try DefaultsManager.shared.setNewOption(.terminal, .window)
         } catch {
             logw(error.localizedDescription)
         }
@@ -153,7 +158,7 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     @IBAction func terminalTabButtonClicked(_ sender: NSButton) {
         terminalWindowButton.state = .off
         do {
-            try TerminalManager.shared.setNewOption(.terminal, .tab)
+            try DefaultsManager.shared.setNewOption(.terminal, .tab)
         } catch {
             logw(error.localizedDescription)
         }
@@ -161,13 +166,13 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     
     @IBAction func terminalClearButtonClicked(_ sender: NSButton) {
         let clearOption: ClearOptionType = terminalClearButton.state == .on ? .clear : .noClear
-        TerminalManager.shared.setClearOption(.terminal, clearOption)
+        DefaultsManager.shared.setClearOption(.terminal, clearOption)
     }
     
     @IBAction func iTermWindowButtonClicked(_ sender: NSButton) {
         iTermTabButton.state = .off
         do {
-            try TerminalManager.shared.setNewOption(.iTerm, .window)
+            try DefaultsManager.shared.setNewOption(.iTerm, .window)
         } catch {
             logw(error.localizedDescription)
         }
@@ -176,7 +181,7 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     @IBAction func iTermTabButtonClicked(_ sender: NSButton) {
         iTermWindowButton.state = .off
         do {
-            try TerminalManager.shared.setNewOption(.iTerm, .tab)
+            try DefaultsManager.shared.setNewOption(.iTerm, .tab)
         } catch {
             logw(error.localizedDescription)
         }

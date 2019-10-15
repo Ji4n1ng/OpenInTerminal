@@ -10,6 +10,7 @@
 "general.cancel" = "取消";
 "general.yes" = "是的";
 
+"menu.open_in" = "打开 ";
 "menu.open_with_default_terminal" = "打开终端";
 "menu.open_with_default_editor" = "打开编辑器";
 "menu.copy_path_to_clipboard" = "拷贝路径";

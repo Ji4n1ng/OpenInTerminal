@@ -13,20 +13,35 @@ final class TerminalApp: Terminal {
 
     func open(_ path: String, _ newOption: NewOptionType, _ clear: ClearOptionType) throws {
         
-        guard let url = URL(string: path) else {
+        if let isIndependentRun = DefaultsManager.shared.isStandaloneOperation, isIndependentRun.bool {
+            let source = """
+            do shell script "open -a Terminal \(path.terminalEscaped)"
+            """
+            
+            let script = NSAppleScript(source: source)!
+            var error: NSDictionary?
+            script.executeAndReturnError(&error)
+            if error != nil {
+                throw OITError.cannotAccessApp(TerminalType.terminal.rawValue)
+            }
+            return
+        }
+        
+        var encodePath = path
+        if let urlEncodePath = path.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+            encodePath = urlEncodePath
+        }
+        guard let url = URL(string: encodePath) else {
             throw OITError.wrongUrl
         }
         
         if newOption == .window {
             
             let terminal = SBApplication(bundleIdentifier: TerminalType.terminal.bundleId)! as TerminalApplication
-            
             guard let open = terminal.open else {
                 throw OITError.cannotAccessApp(TerminalType.terminal.rawValue)
             }
-            
             open([url])
-            
             terminal.activate()
             
         } else {
@@ -57,11 +72,8 @@ final class TerminalApp: Terminal {
             """
             
             let script = NSAppleScript(source: source)!
-            
             var error: NSDictionary?
-            
             script.executeAndReturnError(&error)
-            
             if error != nil {
                 throw OITError.cannotAccessApp(TerminalType.terminal.rawValue)
             }
