@@ -162,4 +162,4 @@
 "Fsh-GR-OxF.title" = "访达扩展独立运行模式";
 
 /* Class = "NSTextFieldCell"; title = "If enabled, Finder Extension can run without main app. But this mode doesn't support preferences in `Toobar`."; ObjectID = "ggs-Mm-RPd"; */
-"ggs-Mm-RPd.title" = "启用后，访达扩展可以不依赖主应用运行。但是不支持`工具栏`里的一些功能。";
+"ggs-Mm-RPd.title" = "启用后，访达扩展可以不依赖主应用运行。但是该模式不支持`工具栏`里的一些功能以及快捷键。";

@@ -162,4 +162,4 @@
 "Fsh-GR-OxF.title" = "Finder Extension Standalone Operation Mode";
 
 /* Class = "NSTextFieldCell"; title = "If enabled, Finder Extension can run without main app. But this mode doesn't support preferences in `Toobar`."; ObjectID = "ggs-Mm-RPd"; */
-"ggs-Mm-RPd.title" = "If enabled, Finder Extension can run without main app. But it doesn't support some preferences in `Toobar`.";
+"ggs-Mm-RPd.title" = "If enabled, Finder Extension can run without main app. But it doesn't support some preferences in `Toobar` and keyboard shortcuts.";

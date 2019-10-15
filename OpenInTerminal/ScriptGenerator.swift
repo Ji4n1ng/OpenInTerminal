@@ -112,8 +112,7 @@ func checkScripts() throws {
 }
 
 fileprivate extension String {
-    // FIXME: if path contains "\" or """, application will crash.
-    // Special symbols have been tested, except for backslashes and double quotes.
+    
     var escaped: String {
         
         var result = ""

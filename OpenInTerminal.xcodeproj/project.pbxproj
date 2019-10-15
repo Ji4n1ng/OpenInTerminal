@@ -45,6 +45,8 @@
 		9521EDD0226B4BE6008445D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCF226B4BE6008445D1 /* Constants.swift */; };
 		954D67CF235570D5007702D0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67CE235570D5007702D0 /* Error.swift */; };
 		954D67D12355AD36007702D0 /* ScriptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67D02355AD36007702D0 /* ScriptGenerator.swift */; };
+		954D67D22355F80E007702D0 /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
+		954D67D32355F80E007702D0 /* OpenInTerminalCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		954EFA932273643C001E101E /* EditorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EFA922273643C001E101E /* EditorProtocol.swift */; };
 		956BCE1022F80D6C00310B56 /* TextMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BCE0F22F80D6C00310B56 /* TextMateApp.swift */; };
 		9571DA84227E6FFF0076AA64 /* AdvancedPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571DA83227E6FFF0076AA64 /* AdvancedPreferencesViewController.swift */; };
@@ -86,6 +88,13 @@
 			remoteGlobalIDString = 4725254922680FEB003C50DF;
 			remoteInfo = OpenInTerminalFinderExtension;
 		};
+		954D67D42355F80E007702D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 956C38A9225F7701001CB769 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4725251022680E87003C50DF;
+			remoteInfo = OpenInTerminalCore;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +128,17 @@
 			files = (
 				9518739C227DF655000CCB3A /* OpenInTerminalHelper.app in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		954D67D62355F80E007702D0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				954D67D32355F80E007702D0 /* OpenInTerminalCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -210,6 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				954D67D22355F80E007702D0 /* OpenInTerminalCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,10 +478,12 @@
 				4725254622680FEB003C50DF /* Sources */,
 				4725254722680FEB003C50DF /* Frameworks */,
 				4725254822680FEB003C50DF /* Resources */,
+				954D67D62355F80E007702D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				954D67D52355F80E007702D0 /* PBXTargetDependency */,
 			);
 			name = OpenInTerminalFinderExtension;
 			productName = OpenInTerminalFinderExtension;
@@ -745,6 +768,11 @@
 			target = 4725254922680FEB003C50DF /* OpenInTerminalFinderExtension */;
 			targetProxy = 4725258B226812AB003C50DF /* PBXContainerItemProxy */;
 		};
+		954D67D52355F80E007702D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4725251022680E87003C50DF /* OpenInTerminalCore */;
+			targetProxy = 954D67D42355F80E007702D0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -899,7 +927,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.0.4;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -924,7 +952,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.0.4;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
