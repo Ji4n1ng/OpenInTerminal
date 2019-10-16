@@ -10,7 +10,7 @@
 
 [OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md)
 
-> 需要你的帮助！最近我签名 2.1.0 版本时，遇到了一个签名问题。请看 #61 。非常感谢！
+> 需要你的帮助！最近我签名 2.1.0 版本时，遇到了一个签名问题。请看 [#61](https://github.com/Ji4n1ng/OpenInTerminal/issues/61)。非常感谢！
 
 ## 如何使用 🚀
 
@@ -92,7 +92,7 @@ brew cask install openinterminal
 
 最近由于奇怪的 bug，签名过的 OpenInTerminal 不能在其他 Mac 上运行。我不明白什么原因。如果你能支持我购买苹果开发者证书，我将非常感激。（99美元对于学生来说，并不是一个小的数字，它几乎是我三个星期的生活费。）
 
-或者，有人能帮我解决这个问题也可以。请看 #61 。非常感谢！
+或者，有人能帮我解决这个问题也可以。请看 [#61](https://github.com/Ji4n1ng/OpenInTerminal/issues/61)。非常感谢！
 
 | PayPal | 支付宝 | 微信 |
 | --- | --- | --- |
