@@ -17,7 +17,7 @@ final class SublimeApp: Editor {
         }
         
         let source = """
-        do shell script "open -a Sublime\\\\ Text \(url.path.editorEscaped)"
+        do shell script "open -a Sublime\\\\ Text \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!

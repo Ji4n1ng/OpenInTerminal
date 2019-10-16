@@ -62,6 +62,7 @@
 		9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */; };
 		9590B6A1226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */; };
 		95BAA1822279E28D005E1DAC /* AboutPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */; };
+		95BC5EC52356B48400F00391 /* ScriptProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BC5EC42356B48400F00391 /* ScriptProtocol.swift */; };
 		95C6C339227A9EE600F157C4 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C6C33B227A9EE600F157C4 /* Preferences.storyboard */; };
 		95C6C340227AA1CB00F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
@@ -204,6 +205,7 @@
 		9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderExtensionPreferencesViewController.swift; sourceTree = "<group>"; };
 		95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
+		95BC5EC42356B48400F00391 /* ScriptProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptProtocol.swift; sourceTree = "<group>"; };
 		95C6C33A227A9EE600F157C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preferences.storyboard; sourceTree = "<group>"; };
 		95C6F81B22E37D59001C6374 /* BBEditApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBEditApp.swift; sourceTree = "<group>"; };
 		95DFC1232354A2C300941D3A /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				4725254322680F7C003C50DF /* Error.swift */,
 				4725254222680F7C003C50DF /* Log.swift */,
 				4725253422680EFD003C50DF /* FinderManager.swift */,
+				95BC5EC42356B48400F00391 /* ScriptProtocol.swift */,
 				4725253722680F13003C50DF /* Terminals */,
 				9590B68F226C6D5C00362B93 /* Editors */,
 				4725253622680F07003C50DF /* ScriptingBridge */,
@@ -700,6 +703,7 @@
 				4725254022680F5A003C50DF /* Terminal.swift in Sources */,
 				4725253C22680F4B003C50DF /* HyperApp.swift in Sources */,
 				9590B693226C6DE900362B93 /* EditorType.swift in Sources */,
+				95BC5EC52356B48400F00391 /* ScriptProtocol.swift in Sources */,
 				9590B68E226C04E000362B93 /* Defaults.swift in Sources */,
 				4725253322680EF9003C50DF /* TerminalProtocol.swift in Sources */,
 				9590B69B226C6EA200362B93 /* SublimeApp.swift in Sources */,

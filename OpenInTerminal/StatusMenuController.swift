@@ -21,18 +21,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     
     // MARK: Menu life cycle
     
-    override func awakeFromNib() {
-        Log.logger.directory = "~/Library/Logs/OpenInTerminal"
-        #if DEBUG
-        Log.logger.name = "OpenInTerminal-debug"
-        #else
-        Log.logger.name = "OpenInTerminal"
-        #endif
-        //Edit printToConsole parameter in Edit Scheme > Run > Arguments > Environment Variables
-        Log.logger.printToConsole = ProcessInfo.processInfo.environment["print_log"] == "true"
-        
-        statusMenu.delegate = self
-        
+    func setMenuItemTitle() {
         var terminalTitle = ""
         if let terminal = DefaultsManager.shared.defaultTerminal {
             terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + terminal.rawValue
@@ -50,6 +39,19 @@ class StatusMenuController: NSObject, NSMenuDelegate {
                                             comment: "Open with default Editor")
         }
         defaultEditorMenuItem.title = editorTitle
+    }
+    
+    override func awakeFromNib() {
+        Log.logger.directory = "~/Library/Logs/OpenInTerminal"
+        #if DEBUG
+        Log.logger.name = "OpenInTerminal-debug"
+        #else
+        Log.logger.name = "OpenInTerminal"
+        #endif
+        //Edit printToConsole parameter in Edit Scheme > Run > Arguments > Environment Variables
+        Log.logger.printToConsole = ProcessInfo.processInfo.environment["print_log"] == "true"
+        
+        statusMenu.delegate = self
         
         copyPathMenuItem.title = NSLocalizedString("menu.copy_path_to_clipboard", comment: "Copy path to Clipboard")
         preferencesMenuItem.title = NSLocalizedString("menu.preferences", comment: "Preferences...")
@@ -57,6 +59,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
     
     func menuWillOpen(_ menu: NSMenu) {
+        setMenuItemTitle()
         let menuItems: [(NSMenuItem, String)] =
             [(defaultTerminalMenuItem, Constants.Key.defaultTerminalShortcut),
              (defaultEditorMenuItem, Constants.Key.defaultEditorShortcut),

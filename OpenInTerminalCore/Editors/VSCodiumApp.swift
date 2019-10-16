@@ -17,7 +17,7 @@ final class VSCodiumApp: Editor {
         }
         
         let source = """
-        do shell script "open -a VSCodium \(url.path.editorEscaped)"
+        do shell script "open -a VSCodium \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!

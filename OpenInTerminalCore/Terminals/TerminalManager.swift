@@ -27,8 +27,7 @@ public class TerminalManager {
             let terminal = terminalType.instance()
             
             let newOption = DefaultsManager.shared.getNewOption(terminalType) ?? .window
-            let clearOption = DefaultsManager.shared.getClearOption(terminalType) ?? .noClear
-            try terminal.open(path, newOption, clearOption)
+            try terminal.open(path, newOption)
         } catch {
             logw(error.localizedDescription)
         }

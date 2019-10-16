@@ -10,14 +10,14 @@ import Foundation
 
 final class HyperApp: Terminal {
     
-    func open(_ path: String, _ newOption: NewOptionType, _ clear: ClearOptionType) throws {
+    func open(_ path: String, _ newOption: NewOptionType) throws {
         
-//        guard let url = URL(string: path) else {
-//            throw OITError.wrongUrl
-//        }
+        guard let url = URL(string: path) else {
+            throw OITError.wrongUrl
+        }
         
         let source = """
-        do shell script "open -a Hyper \(path.editorEscaped)"
+        do shell script "open -a Hyper \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!

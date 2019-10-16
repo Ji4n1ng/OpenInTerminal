@@ -104,31 +104,28 @@ class FinderSync: FIFinderSync {
     // MARK: Notification Actions
     
     @objc func openDefaultTerminal() {
-        if let isStandaloneOperation = DefaultsManager.shared.isStandaloneOperation,
-            isStandaloneOperation.bool {
-            if let terminal = DefaultsManager.shared.defaultTerminal {
-                guard let scriptPath = fileScriptPath(fileName: terminal.rawValue) else { return }
-                guard FileManager.default.fileExists(atPath: scriptPath.path) else { return }
-                guard let script = try? NSUserAppleScriptTask(url: scriptPath) else { return }
-                script.execute(completionHandler: nil)
-            }
+        guard let terminal = DefaultsManager.shared.defaultTerminal else { return }
+        var scriptPath: URL
+        if terminal == .terminal,
+            let newOption = DefaultsManager.shared.getNewOption(.terminal),
+            newOption == .tab {
+            guard let fileScriptPath = fileScriptPath(fileName: terminal.rawValue + "-tab") else { return }
+            scriptPath = fileScriptPath
         } else {
-            OpenNotifier.postNotification(.openDefaultTerminal)
+            guard let fileScriptPath = fileScriptPath(fileName: terminal.rawValue) else { return }
+            scriptPath = fileScriptPath
         }
+        guard FileManager.default.fileExists(atPath: scriptPath.path) else { return }
+        guard let script = try? NSUserAppleScriptTask(url: scriptPath) else { return }
+        script.execute(completionHandler: nil)
     }
     
     @objc func openDefaultEditor() {
-        if let isStandaloneOperation = DefaultsManager.shared.isStandaloneOperation,
-            isStandaloneOperation.bool {
-            if let editor = DefaultsManager.shared.defaultEditor {
-                guard let scriptPath = fileScriptPath(fileName: editor.rawValue) else { return }
-                guard FileManager.default.fileExists(atPath: scriptPath.path) else { return }
-                guard let script = try? NSUserAppleScriptTask(url: scriptPath) else { return }
-                script.execute(completionHandler: nil)
-            }
-        } else {
-            OpenNotifier.postNotification(.openDefaultEditor)
-        }
+        guard let editor = DefaultsManager.shared.defaultEditor else { return }
+        guard let scriptPath = fileScriptPath(fileName: editor.rawValue) else { return }
+        guard FileManager.default.fileExists(atPath: scriptPath.path) else { return }
+        guard let script = try? NSUserAppleScriptTask(url: scriptPath) else { return }
+        script.execute(completionHandler: nil)
     }
     
     @objc func copyPathToClipboard() {

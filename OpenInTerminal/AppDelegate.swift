@@ -13,7 +13,7 @@ import MASShortcut
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    // MARK: Properties
+    // MARK: - Properties
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
@@ -24,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return storyboard.instantiateInitialController() as? PreferencesWindowController ?? PreferencesWindowController()
     }()
     
-    // MARK: Lifecycle
+    // MARK: - Lifecycle
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         DefaultsManager.shared.firstSetup()
@@ -69,7 +69,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate {
     
-    // MARK: Status Bar Item
+    // MARK: - Status Bar Item
     
     func setStatusItemIcon() {
         let icon = NSImage(assetIdentifier: .StatusBarIcon)
@@ -200,7 +200,9 @@ extension AppDelegate {
 }
 
 extension AppDelegate {
+    
     // MARK: - Global Shortcuts
+    
     func bindShortcuts() {
         MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.defaultTerminalShortcut) {
             let appDelegate = NSApplication.shared.delegate as! AppDelegate

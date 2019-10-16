@@ -10,15 +10,16 @@ import Foundation
 
 final class iTermApp: Terminal {
     
-    func open(_ path: String, _ newOption: NewOptionType, _ clear: ClearOptionType) throws {
+    func open(_ path: String, _ newOption: NewOptionType) throws {
+        
+        guard let url = URL(string: path) else {
+            throw OITError.wrongUrl
+        }
         
         let source = """
-        do shell script "open -a iTerm \(path.editorEscaped)"
+        do shell script "open -a iTerm \(url.path.specialCharEscaped)"
         """
         
-//        tell application "iTerm"
-//            open "\(url.path)"
-//        end tell
         let script = NSAppleScript(source: source)!
         
         var error: NSDictionary?
@@ -30,4 +31,25 @@ final class iTermApp: Terminal {
         }
     }
     
+}
+
+extension String {
+    
+    // FIXME: if path contains "\" or """, application will crash.
+    // Special symbols have been tested, except for backslashes and double quotes.
+    var specialCharEscaped: String {
+        
+        var result = ""
+        let set: [Character] = [" ", "(", ")", "&", "|", ";",
+                                "\"", "'", "<", ">", "`"]
+        
+        for char in self {
+            if set.contains(char) {
+                result += "\\\\"
+            }
+            result.append(char)
+        }
+        
+        return result
+    }
 }

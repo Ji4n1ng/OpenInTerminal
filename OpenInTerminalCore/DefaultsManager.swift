@@ -23,38 +23,13 @@ public class DefaultsManager {
     
     // MARK: - General Settings
     
-    public var isStandaloneOperation: BoolType? {
-        get {
-            // OpenInTerminal-Lite and OpenInEditor-Lite don't have Group UserDefaults.
-            guard let groupDefaults = GroupDefaults else { return nil }
-            // OpenInTerminal or OpenInTerminal FinderSync
-            let defaultValue = groupDefaults[.standaloneOperation].map(BoolType.init(rawValue: )) ?? nil
-            if let boolValue = defaultValue {
-                return boolValue
-            } else {
-                // Since we have inited all the values at first setup, if we still get a nil value,
-                // that means bad guys changed it to arbitrarily string.
-                // We should changed it to default value.
-                groupDefaults[.standaloneOperation] = BoolType._true.rawValue
-                return ._true
-            }
-        }
-        
-        set {
-            guard let newValue = newValue else { return }
-            if let groupDefaults = GroupDefaults {
-                groupDefaults[.standaloneOperation] = newValue.rawValue
-            }
-        }
-    }
-    
     public var defaultTerminal: TerminalType? {
         get {
             if let groupDefaults = GroupDefaults {
                 return groupDefaults[.defaultTerminal]
                     .map(TerminalType.init(rawValue: )) ?? nil
             } else {
-                // OpenInTerminal-Lite or OpenInEditor-Lite
+                // OpenInTerminal-Lite and OpenInEditor-Lite don't have Group UserDefaults.
                 return Defaults[.defaultTerminal]
                     .map(TerminalType.init(rawValue: )) ?? nil
             }
@@ -110,6 +85,9 @@ public class DefaultsManager {
             if let boolValue = defaultValue {
                 return boolValue
             } else {
+                // Since we have inited all the values at first setup, if we still get a nil value,
+                // that means bad guys changed it to arbitrarily string.
+                // We should changed it to default value.
                 Defaults[.launchAtLogin] = BoolType._false.rawValue
                 return ._false
             }
@@ -168,9 +146,17 @@ public class DefaultsManager {
         var option: String?
         switch terminal {
         case .terminal:
-            option = Defaults[.terminalNewOption]
+            if let groupDefaults = GroupDefaults {
+                option = groupDefaults[.terminalNewOption]
+            } else {
+                option = Defaults[.terminalNewOption]
+            }
         case .iTerm:
-            option = Defaults[.iTermNewOption]
+            if let groupDefaults = GroupDefaults {
+                option = groupDefaults[.iTermNewOption]
+            } else {
+                option = Defaults[.iTermNewOption]
+            }
         case .hyper, .alacritty:
             return nil
         }
@@ -179,12 +165,17 @@ public class DefaultsManager {
     }
     
     public func setNewOption(_ terminal: TerminalType, _ newOption: NewOptionType) throws {
-        
         switch terminal {
         case .terminal:
             Defaults[.terminalNewOption] = newOption.rawValue
+            if let groupDefaults = GroupDefaults {
+                groupDefaults[.terminalNewOption] = newOption.rawValue
+            }
         case .iTerm:
             Defaults[.iTermNewOption] = newOption.rawValue
+            if let groupDefaults = GroupDefaults {
+                groupDefaults[.iTermNewOption] = newOption.rawValue
+            }
             
             let option = newOption == .window ? "true" : "false"
             
@@ -202,37 +193,16 @@ public class DefaultsManager {
         }
     }
     
-    public func getClearOption(_ terminal: TerminalType) -> ClearOptionType? {
-        var option: String?
-        switch terminal {
-        case .terminal:
-            option = Defaults[.terminalClearOption]
-        case .iTerm, .hyper, .alacritty:
-            return nil
-        }
-        
-        return option.map(ClearOptionType.init(rawValue: )) ?? nil
-    }
-    
-    public func setClearOption(_ terminal: TerminalType, _ clearOption: ClearOptionType) {
-        
-        switch terminal {
-        case .terminal:
-            Defaults[.terminalClearOption] = clearOption.rawValue
-        case .iTerm, .hyper, .alacritty:
-            return
-        }
-    }
-    
     // MARK: - Advanced Settings
     
     public func firstSetup() {
         guard isFirstUsage == ._true else { return }
         logw("First Setup")
         if let grounpDefaults = GroupDefaults {
-            grounpDefaults[.standaloneOperation] = BoolType._true.rawValue
             grounpDefaults.removeObject(forKey: Constants.Key.defaultTerminal)
             grounpDefaults.removeObject(forKey: Constants.Key.defaultEditor)
+            grounpDefaults[.terminalNewOption] = NewOptionType.window.rawValue
+            grounpDefaults[.iTermNewOption] = NewOptionType.window.rawValue
             grounpDefaults.synchronize()
         }
         Defaults[.launchAtLogin] = BoolType._false.rawValue
@@ -243,7 +213,6 @@ public class DefaultsManager {
         Defaults.removeObject(forKey: Constants.Key.defaultEditor)
         Defaults[.terminalNewOption] = NewOptionType.window.rawValue
         Defaults[.iTermNewOption] = NewOptionType.window.rawValue
-        Defaults[.terminalClearOption] = ClearOptionType.noClear.rawValue
         Defaults.synchronize()
     }
     
@@ -251,7 +220,7 @@ public class DefaultsManager {
         logw("Remove all UserDefaults")
         if let grounpDefaults = GroupDefaults {
             grounpDefaults.removePersistentDomain(forName: Constants.groupIdentifier)
-            Defaults.synchronize()
+            grounpDefaults.synchronize()
         }
         let domain = Bundle.main.bundleIdentifier!
         Defaults.removePersistentDomain(forName: domain)

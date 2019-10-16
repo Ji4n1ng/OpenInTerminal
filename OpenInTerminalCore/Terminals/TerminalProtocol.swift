@@ -10,6 +10,6 @@ import Foundation
 
 public protocol Terminal {
     
-    func open(_ path: String, _ newOption: NewOptionType, _ clear: ClearOptionType) throws
+    func open(_ path: String, _ newOption: NewOptionType) throws
 
 }

@@ -27,7 +27,6 @@ extension DefaultsKeys {
     
     // value example: BoolType._true.rawValue
     static let firstUsage = DefaultsKey<String>(Constants.Key.firstUsage)
-    static let standaloneOperation = DefaultsKey<String>(Constants.Key.standaloneOperation)
     static let launchAtLogin = DefaultsKey<String>(Constants.Key.launchAtLogin)
     static let hideStatusItem = DefaultsKey<String>(Constants.Key.hideStatusItem)
     static let quickToggle = DefaultsKey<String>(Constants.Key.quickToggle)
@@ -42,9 +41,6 @@ extension DefaultsKeys {
     // value example: NewOptionType.window.rawValue
     static let terminalNewOption = DefaultsKey<String>(Constants.Key.terminalNewOption)
     static let iTermNewOption = DefaultsKey<String>(Constants.Key.iTermNewOption)
-    
-    // value example: ClearType.clear.rawValue
-    static let terminalClearOption = DefaultsKey<String>(Constants.Key.terminalClearOption)
     
 }
 

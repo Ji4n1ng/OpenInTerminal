@@ -17,7 +17,7 @@ final class TextMateApp: Editor {
         }
         
         let source = """
-        do shell script "open -a TextMate \(url.path.editorEscaped)"
+        do shell script "open -a TextMate \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!

@@ -75,3 +75,48 @@ public enum EditorType: String {
         }
     }
 }
+
+extension EditorType: Scriptable {
+    
+    public func getScript() -> String {
+        let escapedName = self.fullName.nameSpaceEscaped
+        
+        let script = """
+        tell application "Finder"
+            set finderSelList to selection as alias list
+        end tell
+
+        set thePath to ""
+
+        if finderSelList ≠ {} then
+            repeat with i in finderSelList
+                set contents of i to POSIX path of (contents of i)
+            end repeat
+            
+            set thePath to item 1 of finderSelList
+        end if
+
+        if finderSelList = {} then
+            tell application "Finder"
+                set thePath to POSIX path of ((target of front Finder window) as text)
+            end tell
+        end if
+
+        tell application "Finder"
+            do shell script "open -a \(escapedName) " & quoted form of thePath
+        end tell
+        """
+        
+        return script
+    }
+    
+}
+
+extension String {
+    
+    /// handle space in name
+    var nameSpaceEscaped: String {
+        let replaced = self.replacingOccurrences(of: " ", with: "\\\\ ")
+        return replaced
+    }
+}

@@ -8,9 +8,6 @@
 /* Class = "NSTextFieldCell"; title = "Sublime Text"; ObjectID = "3Xd-Ub-1BR"; */
 "3Xd-Ub-1BR.title" = "Sublime Text";
 
-/* Class = "NSButtonCell"; title = "Clear"; ObjectID = "4Sj-C3-SOm"; */
-"4Sj-C3-SOm.title" = "Nettoyage";
-
 /* Class = "NSButtonCell"; title = "Tab"; ObjectID = "4ss-CQ-brT"; */
 "4ss-CQ-brT.title" = "Onglet";
 
@@ -92,9 +89,6 @@
 /* Class = "NSTextFieldCell"; title = "Terminal"; ObjectID = "fA9-Hd-yjp"; */
 "fA9-Hd-yjp.title" = "Terminal";
 
-/* Class = "NSTextFieldCell"; title = "Execute `clear` command after opening terminal."; ObjectID = "gkO-IQ-Ogp"; */
-"gkO-IQ-Ogp.title" = "Exécute la commande `clear` à l’ouverture du terminal.";
-
 /* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
 "gy9-lb-m8d.title" = "Exécution rapide";
 
@@ -157,9 +151,3 @@
 
 /* Class = "NSTextFieldCell"; title = "Visual Studio Code - Insiders"; ObjectID = "uyo-0a-oKi"; */
 "uyo-0a-oKi.title" = "Visual Studio Code - Insiders";
-
-/* Class = "NSButtonCell"; title = "Finder Extension Standalone Operation Mode"; ObjectID = "Fsh-GR-OxF"; */
-"Fsh-GR-OxF.title" = "Mode d'opération autonome de Finder Extension";
-
-/* Class = "NSTextFieldCell"; title = "If enabled, Finder Extension can run without main app. But this mode doesn't support preferences in `Toobar`."; ObjectID = "ggs-Mm-RPd"; */
-"ggs-Mm-RPd.title" = "Si cela est activé, Finder Extension peut s'exécuter sans l'application principale. Mais il ne supporte pas certaines préférences dans `Toobar` et les raccourcis clavier.";

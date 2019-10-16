@@ -62,31 +62,13 @@
         <scene sceneID="lyQ-BP-dP2">
             <objects>
                 <viewController title="General" id="Gn1-zC-bzB" customClass="GeneralPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" focusRingType="none" misplaced="YES" id="T7Z-PU-Qyb">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="399"/>
+                    <view key="view" focusRingType="none" id="T7Z-PU-Qyb">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="325"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mA5-EO-f9U">
-                                <rect key="frame" x="20" y="138" width="340" height="225"/>
+                                <rect key="frame" x="20" y="138" width="340" height="167"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jzg-eP-7bV">
-                                        <rect key="frame" x="-2" y="209" width="296" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Finder Extension Standalone Operation Mode" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Fsh-GR-OxF">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="standaloneModeButtonClicked:" target="Gn1-zC-bzB" id="5Br-gN-im9"/>
-                                        </connections>
-                                    </button>
-                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-is-5tU">
-                                        <rect key="frame" x="18" y="175" width="324" height="28"/>
-                                        <textFieldCell key="cell" selectable="YES" title="If enabled, Finder Extension can run without main app. But this mode doesn't support preferences in `Toobar`." id="ggs-Mm-RPd">
-                                            <font key="font" metaFont="smallSystem"/>
-                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sat-kH-K8O">
                                         <rect key="frame" x="-2" y="151" width="216" height="18"/>
                                         <buttonCell key="cell" type="check" title="Launch OpenInTerminal at Login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ZbK-xW-anT">
@@ -153,7 +135,6 @@
                                 <constraints>
                                     <constraint firstItem="ct1-0Y-gVn" firstAttribute="leading" secondItem="mA5-EO-f9U" secondAttribute="leading" constant="20" id="662-zn-0gM"/>
                                     <constraint firstItem="6Fo-aC-2Mp" firstAttribute="leading" secondItem="mA5-EO-f9U" secondAttribute="leading" constant="20" id="8uS-S9-Jls"/>
-                                    <constraint firstItem="pBa-is-5tU" firstAttribute="leading" secondItem="mA5-EO-f9U" secondAttribute="leading" constant="20" id="BDn-cV-ll5"/>
                                     <constraint firstAttribute="trailing" secondItem="Kdm-9l-2u4" secondAttribute="trailing" id="ZCx-ja-8mJ"/>
                                     <constraint firstItem="Kdm-9l-2u4" firstAttribute="leading" secondItem="mA5-EO-f9U" secondAttribute="leading" constant="20" id="cZR-9S-S5P"/>
                                     <constraint firstItem="ybg-LK-qWi" firstAttribute="leading" secondItem="mA5-EO-f9U" secondAttribute="leading" constant="20" id="tX6-7b-1oR"/>
@@ -166,12 +147,8 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -263,7 +240,6 @@
                         <outlet property="hideStatusItemButton" destination="r3V-mR-QUG" id="dcb-ua-B4X"/>
                         <outlet property="launchButton" destination="Sat-kH-K8O" id="ULF-Ao-sZa"/>
                         <outlet property="quickToggleButton" destination="VGA-Ho-z5c" id="Z2a-fo-5GU"/>
-                        <outlet property="standaloneOperationMode" destination="jzg-eP-7bV" id="jtQ-ye-fEH"/>
                     </connections>
                 </viewController>
                 <customObject id="7th-7A-0Xc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -275,14 +251,14 @@
             <objects>
                 <viewController title="Toolbar" id="s5W-qL-1Xs" customClass="FinderExtensionPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" focusRingType="none" id="jOR-Px-swx">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="493"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="445"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxi-dF-LO8">
-                                <rect key="frame" x="20" y="213" width="340" height="260"/>
+                                <rect key="frame" x="20" y="209" width="340" height="216"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YDG-6D-DhJ">
-                                        <rect key="frame" x="-2" y="244" width="59" height="16"/>
+                                        <rect key="frame" x="-2" y="200" width="59" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Terminal" id="fA9-Hd-yjp">
                                             <font key="font" metaFont="systemSemibold" size="13"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -290,10 +266,10 @@
                                         </textFieldCell>
                                     </textField>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n57-Vv-qqL">
-                                        <rect key="frame" x="0.0" y="140" width="340" height="96"/>
+                                        <rect key="frame" x="0.0" y="140" width="340" height="52"/>
                                         <subviews>
                                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="40" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z7T-EA-JXL">
-                                                <rect key="frame" x="20" y="80" width="149" height="16"/>
+                                                <rect key="frame" x="20" y="36" width="149" height="16"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PO6-Ar-lmN">
                                                         <rect key="frame" x="-1" y="-1" width="71" height="18"/>
@@ -326,26 +302,8 @@
                                                 </customSpacing>
                                             </stackView>
                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dIs-mN-a0t">
-                                                <rect key="frame" x="18" y="44" width="324" height="28"/>
+                                                <rect key="frame" x="18" y="0.0" width="324" height="28"/>
                                                 <textFieldCell key="cell" title="Open a new window or a new tab when opening a path in terminal." id="BrI-hE-Mff">
-                                                    <font key="font" metaFont="smallSystem"/>
-                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vON-yc-d7s">
-                                                <rect key="frame" x="18" y="20" width="54" height="18"/>
-                                                <buttonCell key="cell" type="check" title="Clear" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4Sj-C3-SOm">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="terminalClearButtonClicked:" target="s5W-qL-1Xs" id="xKP-cH-81Z"/>
-                                                </connections>
-                                            </button>
-                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="t3f-88-I6z">
-                                                <rect key="frame" x="18" y="0.0" width="263" height="14"/>
-                                                <textFieldCell key="cell" title="Execute `clear` command after opening terminal." id="gkO-IQ-Ogp">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -353,20 +311,14 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="t3f-88-I6z" firstAttribute="leading" secondItem="n57-Vv-qqL" secondAttribute="leading" constant="20" id="0uZ-Dr-9C2"/>
-                                            <constraint firstItem="vON-yc-d7s" firstAttribute="leading" secondItem="n57-Vv-qqL" secondAttribute="leading" constant="20" id="B6Q-fm-NDK"/>
                                             <constraint firstItem="dIs-mN-a0t" firstAttribute="leading" secondItem="n57-Vv-qqL" secondAttribute="leading" constant="20" id="UZD-Zu-2wq"/>
                                             <constraint firstItem="Z7T-EA-JXL" firstAttribute="leading" secondItem="n57-Vv-qqL" secondAttribute="leading" constant="20" id="vnD-b6-krh"/>
                                         </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
@@ -509,7 +461,7 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e4W-Gy-mcj">
-                                <rect key="frame" x="20" y="45" width="183" height="160"/>
+                                <rect key="frame" x="20" y="41" width="183" height="160"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ATh-GK-Nb9">
                                         <rect key="frame" x="-2" y="144" width="124" height="16"/>
@@ -605,7 +557,6 @@
                         <outlet property="iTermTextField" destination="wVI-dH-WOK" id="oeJ-Rq-h9e"/>
                         <outlet property="iTermWindowButton" destination="2Jp-pe-FCb" id="weB-Ix-KHl"/>
                         <outlet property="sublimeTextField" destination="zHm-c4-qKu" id="c9P-OW-3KO"/>
-                        <outlet property="terminalClearButton" destination="vON-yc-d7s" id="oHq-7C-Vx0"/>
                         <outlet property="terminalTabButton" destination="hrQ-zE-MC4" id="sph-lq-OKB"/>
                         <outlet property="terminalTextField" destination="YDG-6D-DhJ" id="dsZ-oJ-huh"/>
                         <outlet property="terminalWindowButton" destination="PO6-Ar-lmN" id="jr6-i6-H0M"/>
@@ -617,7 +568,7 @@
                 </viewController>
                 <customObject id="mlw-wX-Yfn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-132" y="1156.5"/>
+            <point key="canvasLocation" x="-132" y="1132.5"/>
         </scene>
         <!--Advanced-->
         <scene sceneID="X6j-fK-tNl">

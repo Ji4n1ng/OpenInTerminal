@@ -8,9 +8,6 @@
 /* Class = "NSTextFieldCell"; title = "Sublime Text"; ObjectID = "3Xd-Ub-1BR"; */
 "3Xd-Ub-1BR.title" = "Sublime Text";
 
-/* Class = "NSButtonCell"; title = "Clear"; ObjectID = "4Sj-C3-SOm"; */
-"4Sj-C3-SOm.title" = "Clear";
-
 /* Class = "NSButtonCell"; title = "Tab"; ObjectID = "4ss-CQ-brT"; */
 "4ss-CQ-brT.title" = "Tab";
 
@@ -116,9 +113,6 @@
 /* Class = "NSTextFieldCell"; title = "Terminal"; ObjectID = "fA9-Hd-yjp"; */
 "fA9-Hd-yjp.title" = "Terminal";
 
-/* Class = "NSTextFieldCell"; title = "Execute `clear` command after opening terminal."; ObjectID = "gkO-IQ-Ogp"; */
-"gkO-IQ-Ogp.title" = "Execute `clear` command after opening terminal.";
-
 /* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
 "gy9-lb-m8d.title" = "Quick Toggle";
 
@@ -160,6 +154,3 @@
 
 /* Class = "NSButtonCell"; title = "Finder Extension Standalone Operation Mode"; ObjectID = "Fsh-GR-OxF"; */
 "Fsh-GR-OxF.title" = "Finder Extension Standalone Operation Mode";
-
-/* Class = "NSTextFieldCell"; title = "If enabled, Finder Extension can run without main app. But this mode doesn't support preferences in `Toobar`."; ObjectID = "ggs-Mm-RPd"; */
-"ggs-Mm-RPd.title" = "If enabled, Finder Extension can run without main app. But it doesn't support some preferences in `Toobar` and keyboard shortcuts.";

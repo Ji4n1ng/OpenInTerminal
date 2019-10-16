@@ -17,7 +17,7 @@ final class BBEditApp: Editor {
         }
         
         let source = """
-        do shell script "open -a BBEdit \(url.path.editorEscaped)"
+        do shell script "open -a BBEdit \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!

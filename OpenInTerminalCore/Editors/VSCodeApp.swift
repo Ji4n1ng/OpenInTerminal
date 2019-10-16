@@ -17,7 +17,7 @@ final class VSCodeApp: Editor {
         }
         
         let source = """
-        do shell script "open -a Visual\\\\ Studio\\\\ Code \(url.path.editorEscaped)"
+        do shell script "open -a Visual\\\\ Studio\\\\ Code \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!
@@ -31,25 +31,4 @@ final class VSCodeApp: Editor {
         }
     }
     
-}
-
-extension String {
-    
-    // FIXME: if path contains "\" or """, application will crash.
-    // Special symbols have been tested, except for backslashes and double quotes.
-    var editorEscaped: String {
-        
-        var result = ""
-        let set: [Character] = [" ", "(", ")", "&", "|", ";",
-                                "\"", "'", "<", ">", "`"]
-        
-        for char in self {
-            if set.contains(char) {
-                result += "\\\\"
-            }
-            result.append(char)
-        }
-        
-        return result
-    }
 }

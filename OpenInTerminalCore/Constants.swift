@@ -17,7 +17,6 @@ struct Constants {
     }
     
     struct Key {
-        static let standaloneOperation = "OIT_FinderExtensionStandaloneOperation"
         static let firstUsage = "OIT_FirstUsage"
         static let launchAtLogin = "OIT_LaunchAtLogin"
         static let hideStatusItem = "OIT_HideStatusItem"
@@ -29,8 +28,6 @@ struct Constants {
         
         static let terminalNewOption = "OIT_TerminalNewOption"
         static let iTermNewOption = "OIT_iTermNewOption"
-        
-        static let terminalClearOption = "OIT_TerminalClearOption"
     }
 
 }
@@ -56,16 +53,6 @@ public enum QuickToggleType: String {
 public enum NewOptionType: String {
     case tab
     case window
-}
-
-public enum VisibleType: String {
-    case visible
-    case invisible
-}
-
-public enum ClearOptionType: String {
-    case clear
-    case noClear
 }
 
 public enum BoolType: String {

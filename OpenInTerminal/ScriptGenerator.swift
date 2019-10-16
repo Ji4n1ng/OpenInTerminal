@@ -22,93 +22,91 @@ func checkScripts() throws {
                                                 attributes: nil)
     }
     
-    let terminals: [TerminalType] = [.terminal, .iTerm, .hyper, .alacritty]
+    func writeScriptIfNeeded(at path: URL, with script: String) throws {
+        if FileManager.default.fileExists(atPath: path.path) {
+            return
+        }
+        try script.write(to: path, atomically: true, encoding: String.Encoding.utf8)
+    }
     
+    // write terminal scripts
+    let terminals: [TerminalType] = [.terminal, .iTerm, .hyper, .alacritty]
     try terminals.forEach { terminal in
         let scriptPath = finderExScriptPath
             .appendingPathComponent(terminal.rawValue)
             .appendingPathExtension("scpt")
-        
-        if FileManager.default.fileExists(atPath: scriptPath.path) {
-            return
-        }
-        
-        let script = """
-        tell application "Finder"
-            set finderSelList to selection as alias list
-        end tell
-
-        set thePath to ""
-
-        if finderSelList ≠ {} then
-            repeat with i in finderSelList
-                set contents of i to POSIX path of (contents of i)
-            end repeat
-            
-            set thePath to item 1 of finderSelList
-        end if
-
-        if finderSelList = {} then
-            tell application "Finder"
-                set thePath to POSIX path of ((target of front Finder window) as text)
-            end tell
-        end if
-
-        tell application "Finder"
-            try
-                do shell script "cd " & quoted form of thePath
-                do shell script "open -a \(terminal.rawValue) " & quoted form of thePath
-            on error
-                set cwd to POSIX path of ((target of front Finder window) as text)
-                do shell script "open -a \(terminal.rawValue) " & quoted form of cwd
-            end try
-        end tell
-        """
-        
-        try script.write(to: scriptPath, atomically: true, encoding: String.Encoding.utf8)
+        try writeScriptIfNeeded(at: scriptPath, with: terminal.getScript())
     }
     
+    // write editor scripts
     let editors: [EditorType] = [.vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate]
-    
     try editors.forEach { editor in
         let scriptPath = finderExScriptPath
             .appendingPathComponent(editor.rawValue)
             .appendingPathExtension("scpt")
-        
-        if FileManager.default.fileExists(atPath: scriptPath.path) {
-            return
-        }
-        
-        let escapedName = editor.fullName.escaped
-        
-        let script = """
-        tell application "Finder"
-            set finderSelList to selection as alias list
-        end tell
-
-        set thePath to ""
-
-        if finderSelList ≠ {} then
-            repeat with i in finderSelList
-                set contents of i to POSIX path of (contents of i)
-            end repeat
-            
-            set thePath to item 1 of finderSelList
-        end if
-
-        if finderSelList = {} then
-            tell application "Finder"
-                set thePath to POSIX path of ((target of front Finder window) as text)
-            end tell
-        end if
-
-        tell application "Finder"
-            do shell script "open -a \(escapedName) " & quoted form of thePath
-        end tell
-        """
-        
-        try script.write(to: scriptPath, atomically: true, encoding: String.Encoding.utf8)
+        try writeScriptIfNeeded(at: scriptPath, with: editor.getScript())
     }
+    
+    // write terminal new tab script
+    let terminalTabScriptPath = finderExScriptPath
+        .appendingPathComponent(TerminalType.terminal.rawValue + "-tab")
+        .appendingPathExtension("scpt")
+    let terminalTabScript = """
+    tell application "Finder"
+        set finderSelList to selection as alias list
+    end tell
+
+    set thePath to ""
+
+    if finderSelList ≠ {} then
+        repeat with i in finderSelList
+            set contents of i to POSIX path of (contents of i)
+        end repeat
+        
+        set thePath to item 1 of finderSelList
+    end if
+
+    if finderSelList = {} then
+        tell application "Finder"
+            set thePath to POSIX path of ((target of front Finder window) as text)
+        end tell
+    end if
+
+    tell application "Finder"
+        try
+            do shell script "cd " & quoted form of thePath
+        on error
+            try
+                set thePath to POSIX path of ((target of front Finder window) as text)
+                do shell script "cd " & quoted form of thePath
+            on error
+                set thePath to POSIX path of (path to desktop)
+            end try
+        end try
+    end tell
+
+    if not application "Terminal" is running then
+        tell application "Terminal"
+            do script "cd " & quoted form of thePath
+            activate
+        end tell
+    else
+        tell application "Terminal"
+            if not (exists window 1) then
+                do script "cd " & quoted form of thePath
+                activate
+            else
+                activate
+                tell application "System Events" to keystroke "t" using command down
+                repeat while contents of selected tab of window 1 starts with linefeed
+                    delay 0.01
+                end repeat
+                do script "cd " & quoted form of thePath in window 1
+            end if
+        end tell
+    end if
+    """
+    try writeScriptIfNeeded(at: terminalTabScriptPath, with: terminalTabScript)
 }
 
 fileprivate extension String {

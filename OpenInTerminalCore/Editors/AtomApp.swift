@@ -17,7 +17,7 @@ final class AtomApp: Editor {
         }
         
         let source = """
-        do shell script "open -a Atom \(url.path.editorEscaped)"
+        do shell script "open -a Atom \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!

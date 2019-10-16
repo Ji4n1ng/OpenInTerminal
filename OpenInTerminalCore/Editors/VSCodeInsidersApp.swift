@@ -17,7 +17,7 @@ final class VSCodeInsidersApp: Editor {
         }
         
         let source = """
-        do shell script "open -a Visual\\\\ Studio\\\\ Code\\\\ -\\\\ Insiders \(url.path.editorEscaped)"
+        do shell script "open -a Visual\\\\ Studio\\\\ Code\\\\ -\\\\ Insiders \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!

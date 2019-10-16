@@ -14,7 +14,6 @@ class GeneralPreferencesViewController: PreferencesViewController {
 
     // MARK: Properties
 
-    @IBOutlet weak var standaloneOperationMode: NSButton!
     @IBOutlet weak var launchButton: NSButton!
     @IBOutlet weak var quickToggleButton: NSButton!
     @IBOutlet weak var chooseToggleActionButton: NSPopUpButton!
@@ -72,10 +71,6 @@ class GeneralPreferencesViewController: PreferencesViewController {
     // MARK: Refresh UI
     
     func refreshButtonState() {
-        if let isStandaloneMode = DefaultsManager.shared.isStandaloneOperation {
-            standaloneOperationMode.state = isStandaloneMode.bool ? .on : .off
-        }
-        
         let isLaunchAtLogin = DefaultsManager.shared.isLaunchAtLogin.bool
         launchButton.state = isLaunchAtLogin ? .on : .off
         
@@ -147,12 +142,6 @@ class GeneralPreferencesViewController: PreferencesViewController {
     }
     
     // MARK: Button Actions
-    
-    
-    @IBAction func standaloneModeButtonClicked(_ sender: NSButton) {
-        let isStandalone = standaloneOperationMode.state == .on
-        DefaultsManager.shared.isStandaloneOperation = BoolType(isStandalone)
-    }
     
     @IBAction func launchButtonClicked(_ sender: NSButton) {
         let isLaunch = launchButton.state == .on

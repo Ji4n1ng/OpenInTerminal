@@ -10,10 +10,14 @@ import Foundation
 
 final class AlacrittyApp: Terminal {
     
-    func open(_ path: String, _ newOption: NewOptionType, _ clear: ClearOptionType) throws {
+    func open(_ path: String, _ newOption: NewOptionType) throws {
+        
+        guard let url = URL(string: path) else {
+            throw OITError.wrongUrl
+        }
         
         let source = """
-        do shell script "open -na alacritty --args --working-directory  \(path.editorEscaped)"
+        do shell script "open -na alacritty --args --working-directory \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!
