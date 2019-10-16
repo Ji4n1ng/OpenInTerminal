@@ -48,6 +48,18 @@ brew cask install openineditor-lite
 2. 将应用移动到 `应用程序` 文件夹。
 3. 按住 `Cmd` 键，然后将应用拖到访达工具栏中。
 
+## 支持 ❤️
+
+你好，我是 Ji4n1ng。我是一名学生，OpenInTerminal 是我空余时间维护的一个开源项目。它是免费且开源的。
+
+最近由于奇怪的 bug，签名过的 OpenInTerminal 不能在其他 Mac 上运行。我不明白什么原因。如果你能支持我购买苹果开发者证书，我将非常感激。（99美元对于学生来说，并不是一个小的数字，它几乎是我三个星期的生活费。）
+
+或者，有人能帮我解决这个问题也可以。请看 #61 。非常感谢！
+
+| PayPal | 支付宝 | 微信 |
+| --- | --- | --- |
+| [paypal.me/ji4n1ng](https://www.paypal.me/ji4n1ng) | ![AliPay](./screenshots/Alipay.jpg) | ![WeChatPay](./screenshots/WeChatPay.jpg) |
+
 ## 设置 🔨 
 
 ### 1) 设置默认终端（或编辑器）

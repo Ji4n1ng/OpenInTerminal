@@ -10,6 +10,8 @@
 
 [OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md)
 
+> 需要你的帮助！最近我签名 2.1.0 版本时，遇到了一个签名问题。请看 #61 。非常感谢！
+
 ## 如何使用 🚀
 
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
@@ -75,6 +77,26 @@ brew cask install openinterminal
 <div>
   <img src="./screenshots/pref-general-zh.png" width="400px">
 </div>
+
+## 即将到来的功能 🎉
+
+🎉 OpenInTerminal 版本 2.1.0 终于支持访达扩展独立运行了。不需要让 OpenInTerminal 运行在后台。
+
+- 访达扩展独立运行模式。
+- 访达右键菜单根据当前设置的默认终端或者编辑器来更改标题。
+- 打开 iTerm 时，新建一个分割的窗格。
+
+## 支持 ❤️
+
+你好，我是 Ji4n1ng。我是一名学生，OpenInTerminal 是我空余时间维护的一个开源项目。它是免费且开源的。
+
+最近由于奇怪的 bug，签名过的 OpenInTerminal 不能在其他 Mac 上运行。我不明白什么原因。如果你能支持我购买苹果开发者证书，我将非常感激。（99美元对于学生来说，并不是一个小的数字，它几乎是我三个星期的生活费。）
+
+或者，有人能帮我解决这个问题也可以。请看 #61 。非常感谢！
+
+| PayPal | 支付宝 | 微信 |
+| --- | --- | --- |
+| [paypal.me/ji4n1ng](https://www.paypal.me/ji4n1ng) | ![AliPay](./screenshots/Alipay.jpg) | ![WeChatPay](./screenshots/WeChatPay.jpg) |
 
 ## 常见问题 ❓
 

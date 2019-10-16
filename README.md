@@ -10,6 +10,8 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
 
 [OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md)
 
+> HELP WANTED! Recently I have a signature problem with the version `2.1.0`. Please see #61 . Thanks a lot!
+
 ## How to use 🚀
 
 | Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
@@ -79,9 +81,27 @@ Just check the `Launch OpenInTerminal at login` button in `Preferences`.
 
 ## Todo 👨‍💻
 
-- [ ] Switch AppIcon for Dark/Light mode.
-
 If you have a good idea, feel welcome to open a new [issue](https://github.com/Ji4n1ng/OpenInTerminal/issues/new/choose).
+
+## The upcoming festures 🎉
+
+🎉 OpenInTerminal finally supports Finder Extersion Standalone Operation Mode in version 2.1.0. It is not necessary to run OpenInTerminal in the background.
+
+- Finder Extension Standalone Operation Mode.
+- Finder context menu title will change to the current default terminal / editor.
+- Open iTerm with split pane.
+
+## Support ❤️
+
+Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project I maintain in my spare time. It is free and open source. 
+
+Recently because of strange bugs, signed OpenInTerminal(new version 2.1.0) cannot run on other computers. I don't know why. I will be very grateful that you can support me in purchasing an Apple Developer account ($99 is not a small number for students, it is close to my three-week living expenses.). 
+
+Or someone can help me solve this problem. Please see #61 . Thanks a lot!
+
+| PayPal | AliPay | WeChat Pay |
+| --- | --- | --- |
+| [paypal.me/ji4n1ng](https://www.paypal.me/ji4n1ng) | ![AliPay](./Resources/screenshots/Alipay.jpg) | ![WeChatPay](./Resources/screenshots/WeChatPay.jpg) |
 
 ## FAQ ❓
 

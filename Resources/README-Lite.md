@@ -48,6 +48,18 @@ brew cask install openineditor-lite
 2. Move the app into `/Applications`.
 3. Hold down the `Cmd` key and drag the app into Finder Toolbar.
 
+## Support ❤️
+
+Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project I maintain in my spare time. It is free and open source. 
+
+Recently because of strange bugs, signed OpenInTerminal(new version 2.1.0) cannot run on other computers. I don't know why. I will be very grateful that you can support me in purchasing an Apple Developer account ($99 is not a small number for students, it is close to my three-week living expenses.). 
+
+Or someone can help me solve this problem. Please see #61 . Thanks a lot!
+
+| PayPal | AliPay | WeChat Pay |
+| --- | --- | --- |
+| [paypal.me/ji4n1ng](https://www.paypal.me/ji4n1ng) | ![AliPay](./screenshots/Alipay.jpg) | ![WeChatPay](./screenshots/WeChatPay.jpg) |
+
 ## Settings 🔨
 
 ### 1) Set default terminal (or editor)
