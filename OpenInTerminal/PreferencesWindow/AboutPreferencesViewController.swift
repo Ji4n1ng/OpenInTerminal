@@ -40,12 +40,12 @@ class AboutPreferencesViewController: PreferencesViewController {
     }
     
     @IBAction func alipayButtonClicked(_ sender: NSButton) {
-        guard let url = URL(string: "https://github.com/Ji4n1ng/OpenInTerminal/blob/master/screenshots/Alipay.jpg") else { return }
+        guard let url = URL(string: "https://github.com/Ji4n1ng/OpenInTerminal/blob/master/Resources/screenshots/Alipay.jpg") else { return }
         NSWorkspace.shared.open(url)
     }
     
     @IBAction func weChatPayButtonClicked(_ sender: NSButton) {
-        guard let url = URL(string: "https://github.com/Ji4n1ng/OpenInTerminal/blob/master/screenshots/WeChatPay.jpg") else { return }
+        guard let url = URL(string: "https://github.com/Ji4n1ng/OpenInTerminal/blob/master/Resources/screenshots/WeChatPay.jpg") else { return }
         NSWorkspace.shared.open(url)
     }
     
