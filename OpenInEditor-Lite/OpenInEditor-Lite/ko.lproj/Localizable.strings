@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  OpenInEditor-Lite
+
+  Created by Fernando on 2019/11/23.
+  Copyright © 2019 Fernando. All rights reserved.
+*/
+
+"general.ok" = "확인";
+"general.cancel" = "닫기";
+"general.yes" = "네";
+
+"alert.pick_editor_title" = "여시겠습니까?";
+"alert.pick_editor_description" = "다음 리스트에서 기본이 될 에디터 프로그램을 선택해주세요.";

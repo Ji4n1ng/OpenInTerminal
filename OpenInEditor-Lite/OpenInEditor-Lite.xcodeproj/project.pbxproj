@@ -30,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		82AE667823896C4E00F4DB4D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A0744722C2083E00A42BC8 /* OpenInEditor-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenInEditor-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A0744C22C2083E00A42BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95A0745122C2083E00A42BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 				Base,
 				"zh-Hans",
 				fr,
+				ko,
 			);
 			mainGroup = 95A0743E22C2083E00A42BC8;
 			productRefGroup = 95A0744822C2083E00A42BC8 /* Products */;
@@ -176,6 +178,7 @@
 				95A0746322C217E800A42BC8 /* en */,
 				95A0746522C217EC00A42BC8 /* zh-Hans */,
 				95A0746622C217EF00A42BC8 /* fr */,
+				82AE667823896C4E00F4DB4D /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

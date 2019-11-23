@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  OpenInTerminal-Lite
+
+  Created by Fernando on 2019/11/23.
+  Copyright © 2019 Fernando. All rights reserved.
+*/
+
+"general.ok" = "확인";
+"general.cancel" = "닫기";
+"general.yes" = "네";
+
+"alert.pick_terminal_title" = "여시겠습니까?";
+"alert.pick_terminal_description" = "다음 리스트에서 기본이 될 터미널 프로그램을 선택해주세요.";
