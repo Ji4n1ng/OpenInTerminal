@@ -83,7 +83,7 @@ Just check the `Launch OpenInTerminal at login` button in `Preferences`.
 
 If you have a good idea, feel welcome to open a new [issue](https://github.com/Ji4n1ng/OpenInTerminal/issues/new/choose).
 
-## The upcoming festures 🎉
+## Upcoming Features 🎉
 
 🎉 OpenInTerminal finally supports Finder Extersion Standalone Operation Mode in version 2.1.0. It is not necessary to run OpenInTerminal in the background.
 
