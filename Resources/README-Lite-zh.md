@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.2"><img src="https://img.shields.io/badge/Version-1.0.2-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.3"><img src="https://img.shields.io/badge/Version-1.0.3-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -42,7 +42,7 @@ brew cask install openineditor-lite
   <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
 </div>
 
-### 手动安装 (最新版本：1.0.2)
+### 手动安装 (最新版本：1.0.3)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -75,33 +75,33 @@ brew cask install openineditor-lite
 
 ```
 # 对于 OpenInTerminal-Lite:
-defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
+defaults remove wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
 # 对于 OpenInEditor-Lite:
-defaults remove wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier
+defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
 ```
 
 <details><summary>设置 <strong>Alacritty</strong> 为默认终端:</summary><br>
-<code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty</code>
+<code>defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty</code>
 <br>
 </details>
 
 <details><summary>设置 <strong>VSCodium</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium</code>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium</code>
 <br>
 </details>
 
 <details><summary>设置 <strong>BBEdit</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit</code>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit</code>
 <br>
 </details>
 
 <details><summary>设置 <strong>Visual Studio Code - Insiders</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders</code>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders</code>
 <br>
 </details>
 
 <details><summary>设置 <strong>TextMate</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate</code>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate</code>
 <br>
 </details>
 
@@ -123,9 +123,9 @@ defaults remove wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier
 
 ```
 # 打开新的标签页
-defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption tab
+defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalNewOption tab
 # 打开新的窗口
-defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption window
+defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalNewOption window
 ```
 
 #### 对于 iTerm:
@@ -166,6 +166,7 @@ defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 ### 译者
 
 - [Dorian Eydoux](https://github.com/dorianeydx)
+- [techinpark](https://github.com/techinpark)
 
 ### 参考项目
 

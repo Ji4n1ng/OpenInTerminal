@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.2"><img src="https://img.shields.io/badge/Version-1.0.2-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.3"><img src="https://img.shields.io/badge/Version-1.0.3-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -42,7 +42,7 @@ brew cask install openineditor-lite
   <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
 </div>
 
-### Manual (latest version: 1.0.2)
+### Manual (latest version: 1.0.3)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
@@ -75,33 +75,33 @@ The selection box will not appear after you have set the default terminal. If yo
 
 ```
 # For OpenInTerminal-Lite:
-defaults remove wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
+defaults remove wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
 # For OpenInEditor-Lite:
-defaults remove wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier
+defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
 ```
 
 <details><summary>Set <strong>Alacritty</strong> as the default terminal:</summary><br>
-<code>defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty</code>
+<code>defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty</code>
 <br>
 </details>
 
 <details><summary>Set <strong>VSCodium</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium</code>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium</code>
 <br>
 </details>
 
 <details><summary>Set <strong>BBEdit</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit</code>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit</code>
 <br>
 </details>
 
 <details><summary>Set <strong>Visual Studio Code - Insiders</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders</code>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders</code>
 <br>
 </details>
 
 <details><summary>Set <strong>TextMate</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate</code>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate</code>
 <br>
 </details>
 
@@ -123,9 +123,9 @@ When you are using `Terminal` and `iTerm`, you can set a default to open a new t
 
 ```
 # Open a new Tab
-defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption tab
+defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalNewOption tab
 # Open a new Window
-defaults write wang.jianing.OpenInTerminal-Lite OIT_TerminalNewOption window
+defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalNewOption window
 ```
 
 #### For iTerm:
@@ -159,6 +159,11 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 </details>
 
 ## Changes 🗒
+
+**version 1.0.3**
+
+- Signed the application with the developer account. Bundle ID has changed.
+- Support Korean.
 
 **version 1.0.2**
 
@@ -227,6 +232,7 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 ### Translators
 
 - [Dorian Eydoux](https://github.com/dorianeydx)
+- [techinpark](https://github.com/techinpark)
 
 ### Reference projects
 
