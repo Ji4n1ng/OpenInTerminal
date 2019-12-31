@@ -46,7 +46,18 @@ public enum TerminalType: String {
 extension TerminalType: Scriptable {
     
     public func getScript() -> String {
-        let escapedName = self.rawValue.nameSpaceEscaped
+        var openScript = ""
+        switch self {
+        case .alacritty:
+            openScript = """
+            do shell script "open -na Alacritty --args --working-directory " & quoted form of thePath
+            """
+        default:
+            let escapedName = self.rawValue.nameSpaceEscaped
+            openScript = """
+            do shell script "open -a \(escapedName) " & quoted form of thePath
+            """
+        }
         let script = """
         tell application "Finder"
             set finderSelList to selection as alias list
@@ -81,7 +92,7 @@ extension TerminalType: Scriptable {
             end try
         end tell
 
-        do shell script "open -a \(escapedName) " & quoted form of thePath
+        \(openScript)
         """
         return script
     }

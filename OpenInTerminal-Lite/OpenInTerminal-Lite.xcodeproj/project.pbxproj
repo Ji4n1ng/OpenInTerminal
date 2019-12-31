@@ -38,6 +38,7 @@
 		95163CF12269F104007C006F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95163CF32269F209007C006F /* OpenInTerminalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenInTerminalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9590B69C226C715100362B93 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		9595D2A123BAD74D006CBB36 /* OpenInTerminal-Lite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OpenInTerminal-Lite.entitlements"; sourceTree = "<group>"; };
 		95ECC131228CF99F00416AA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95ECC133228CF9A100416AA2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		95ECC134228CF9A200416AA2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		95163CE22269F0C2007C006F /* OpenInTerminal-Lite */ = {
 			isa = PBXGroup;
 			children = (
+				9595D2A123BAD74D006CBB36 /* OpenInTerminal-Lite.entitlements */,
 				95163CF12269F104007C006F /* main.swift */,
 				9590B69C226C715100362B93 /* Error.swift */,
 				95163CE52269F0C3007C006F /* Assets.xcassets */,
@@ -324,16 +326,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = "OpenInTerminal-Lite/OpenInTerminal-Lite.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "OpenInTerminal-Lite/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.OpenInTerminal-Lite";
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInTerminal-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -345,16 +350,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = "OpenInTerminal-Lite/OpenInTerminal-Lite.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "OpenInTerminal-Lite/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.OpenInTerminal-Lite";
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInTerminal-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

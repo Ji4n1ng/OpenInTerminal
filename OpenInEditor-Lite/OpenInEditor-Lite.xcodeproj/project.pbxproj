@@ -31,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		82AE667823896C4E00F4DB4D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9595D2A223BAD7EE006CBB36 /* OpenInEditor-Lite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OpenInEditor-Lite.entitlements"; sourceTree = "<group>"; };
 		95A0744722C2083E00A42BC8 /* OpenInEditor-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenInEditor-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A0744C22C2083E00A42BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95A0745122C2083E00A42BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		95A0744922C2083E00A42BC8 /* OpenInEditor-Lite */ = {
 			isa = PBXGroup;
 			children = (
+				9595D2A223BAD7EE006CBB36 /* OpenInEditor-Lite.entitlements */,
 				95A0745C22C2141700A42BC8 /* main.swift */,
 				95A0745E22C2155800A42BC8 /* Error.swift */,
 				95A0744C22C2083E00A42BC8 /* Assets.xcassets */,
@@ -307,18 +309,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = "OpenInEditor-Lite/OpenInEditor-Lite.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = C8VX3ZLX5U;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "OpenInEditor-Lite/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.OpenInEditor-Lite";
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInEditor-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -328,18 +332,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_ENTITLEMENTS = "OpenInEditor-Lite/OpenInEditor-Lite.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = C8VX3ZLX5U;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "OpenInEditor-Lite/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.0.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.OpenInEditor-Lite";
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInEditor-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

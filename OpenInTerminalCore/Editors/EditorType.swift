@@ -17,6 +17,7 @@ public enum EditorType: String {
     case bbedit = "BBEdit"
     case vscodeInsiders = "VSCodeInsiders"
     case textMate = "TextMate"
+    case cotEditor = "CotEditor"
     
     public var fullName: String {
         switch self {
@@ -34,6 +35,8 @@ public enum EditorType: String {
             return "Visual Studio Code - Insiders"
         case .textMate:
             return "TextMate"
+        case .cotEditor:
+            return "CotEditor"
         }
     }
     
@@ -53,6 +56,8 @@ public enum EditorType: String {
             return "com.microsoft.VSCodeInsiders"
         case .textMate:
             return "com.macromates.TextMate"
+        case .cotEditor:
+            return ""
         }
     }
     
@@ -72,6 +77,8 @@ public enum EditorType: String {
             return VSCodeInsidersApp()
         case .textMate:
             return TextMateApp()
+        case .cotEditor:
+            return CotEditorApp()
         }
     }
 }

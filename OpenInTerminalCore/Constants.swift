@@ -10,7 +10,9 @@ import Foundation
 
 struct Constants {
     
-    static let groupIdentifier = "group.wang.jianing.OpenInTerminal"
+    static let groupIdentifier = "group.wang.jianing.app.OpenInTerminal"
+    static let openInTerminalLiteIdentifier = "wang.jianing.app.OpenInTerminal-Lite"
+    static let openInEditorLiteIdentifier = "wang.jianing.app.OpenInEditor-Lite"
     
     struct Finder {
         static let id = "com.apple.Finder"

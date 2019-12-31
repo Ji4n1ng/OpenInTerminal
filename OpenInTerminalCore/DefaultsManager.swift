@@ -12,6 +12,14 @@ public class DefaultsManager {
     
     public static var shared = DefaultsManager()
     
+    public var currentDefaults: UserDefaults {
+        if Bundle.main.bundleIdentifier == Constants.openInTerminalLiteIdentifier || Bundle.main.bundleIdentifier == Constants.openInEditorLiteIdentifier {
+            return Defaults
+        } else {
+            return GroupDefaults ?? Defaults
+        }
+    }
+    
     public var isFirstUsage: BoolType {
         if Defaults[.firstUsage] == nil {
             Defaults[.firstUsage] = BoolType._false.rawValue
@@ -25,118 +33,94 @@ public class DefaultsManager {
     
     public var defaultTerminal: TerminalType? {
         get {
-            if let groupDefaults = GroupDefaults {
-                return groupDefaults[.defaultTerminal]
-                    .map(TerminalType.init(rawValue: )) ?? nil
-            } else {
-                // OpenInTerminal-Lite and OpenInEditor-Lite don't have Group UserDefaults.
-                return Defaults[.defaultTerminal]
-                    .map(TerminalType.init(rawValue: )) ?? nil
-            }
+            return currentDefaults[.defaultTerminal]
+                .map(TerminalType.init(rawValue: )) ?? nil
         }
         
         set {
             guard let newValue = newValue else { return }
-            Defaults[.defaultTerminal] = newValue.rawValue
-            if let groupDefaults = GroupDefaults {
-                groupDefaults[.defaultTerminal] = newValue.rawValue
-            }
+            currentDefaults[.defaultTerminal] = newValue.rawValue
         }
     }
     
     public func removeDefaultTerminal() {
-        Defaults.removeObject(forKey: Constants.Key.defaultTerminal)
-        if let groupDefaults = GroupDefaults {
-            groupDefaults.removeObject(forKey: Constants.Key.defaultTerminal)
-        }
+        currentDefaults.removeObject(forKey: Constants.Key.defaultTerminal)
     }
     
     public var defaultEditor: EditorType? {
         get {
-            if let groupDefaults = GroupDefaults {
-                return groupDefaults[.defaultEditor]
-                    .map(EditorType.init(rawValue: )) ?? nil
-            } else {
-                // OpenInTerminal-Lite or OpenInEditor-Lite
-                return Defaults[.defaultEditor]
-                    .map(EditorType.init(rawValue: )) ?? nil
-            }
+            return currentDefaults[.defaultEditor]
+                .map(EditorType.init(rawValue: )) ?? nil
         }
         
         set {
             guard let newValue = newValue else { return }
-            Defaults[.defaultEditor] = newValue.rawValue
-            if let groupDefaults = GroupDefaults {
-                groupDefaults[.defaultEditor] = newValue.rawValue
-            }
+            currentDefaults[.defaultEditor] = newValue.rawValue
         }
     }
     
     public func removeDefaultEditor() {
-        Defaults.removeObject(forKey: Constants.Key.defaultEditor)
-        if let groupDefaults = GroupDefaults {
-            groupDefaults.removeObject(forKey: Constants.Key.defaultEditor)
-        }
+        currentDefaults.removeObject(forKey: Constants.Key.defaultEditor)
     }
     
     public var isLaunchAtLogin: BoolType {
         get {
-            let defaultValue = Defaults[.launchAtLogin].map(BoolType.init(rawValue: )) ?? nil
+            let defaultValue = currentDefaults[.launchAtLogin].map(BoolType.init(rawValue: )) ?? nil
             if let boolValue = defaultValue {
                 return boolValue
             } else {
-                // Since we have inited all the values at first setup, if we still get a nil value,
+                // Since we have initialized all the values at first setup, if we still get a nil value,
                 // that means bad guys changed it to arbitrarily string.
                 // We should changed it to default value.
-                Defaults[.launchAtLogin] = BoolType._false.rawValue
+                currentDefaults[.launchAtLogin] = BoolType._false.rawValue
                 return ._false
             }
         }
         
         set {
-            Defaults[.launchAtLogin] = newValue.rawValue
+            currentDefaults[.launchAtLogin] = newValue.rawValue
         }
     }
     
     public var isHideStatusItem: BoolType {
         get {
-            let defaultValue = Defaults[.hideStatusItem].map(BoolType.init(rawValue: )) ?? nil
+            let defaultValue = currentDefaults[.hideStatusItem].map(BoolType.init(rawValue: )) ?? nil
             if let boolValue = defaultValue {
                 return boolValue
             } else {
-                Defaults[.hideStatusItem] = BoolType._false.rawValue
+                currentDefaults[.hideStatusItem] = BoolType._false.rawValue
                 return ._false
             }
         }
         
         set {
-            Defaults[.hideStatusItem] = newValue.rawValue
+            currentDefaults[.hideStatusItem] = newValue.rawValue
         }
     }
     
     public var isQuickToggle: BoolType {
         get {
-            let defaultValue = Defaults[.quickToggle].map(BoolType.init(rawValue: )) ?? nil
+            let defaultValue = currentDefaults[.quickToggle].map(BoolType.init(rawValue: )) ?? nil
             if let boolValue = defaultValue {
                 return boolValue
             } else {
-                Defaults[.quickToggle] = BoolType._false.rawValue
+                currentDefaults[.quickToggle] = BoolType._false.rawValue
                 return ._false
             }
         }
         
         set {
-            Defaults[.quickToggle] = newValue.rawValue
+            currentDefaults[.quickToggle] = newValue.rawValue
         }
     }
     
     public var quickToggleType: QuickToggleType? {
         get {
-            return Defaults[.quickToggleType].map(QuickToggleType.init(rawValue: )) ?? nil
+            return currentDefaults[.quickToggleType].map(QuickToggleType.init(rawValue: )) ?? nil
         }
         
         set {
-            Defaults[.quickToggleType] = newValue?.rawValue
+            currentDefaults[.quickToggleType] = newValue?.rawValue
         }
     }
     
@@ -146,17 +130,9 @@ public class DefaultsManager {
         var option: String?
         switch terminal {
         case .terminal:
-            if let groupDefaults = GroupDefaults {
-                option = groupDefaults[.terminalNewOption]
-            } else {
-                option = Defaults[.terminalNewOption]
-            }
+            option = currentDefaults[.terminalNewOption]
         case .iTerm:
-            if let groupDefaults = GroupDefaults {
-                option = groupDefaults[.iTermNewOption]
-            } else {
-                option = Defaults[.iTermNewOption]
-            }
+            option = currentDefaults[.iTermNewOption]
         case .hyper, .alacritty:
             return nil
         }
@@ -172,10 +148,7 @@ public class DefaultsManager {
                 groupDefaults[.terminalNewOption] = newOption.rawValue
             }
         case .iTerm:
-            Defaults[.iTermNewOption] = newOption.rawValue
-            if let groupDefaults = GroupDefaults {
-                groupDefaults[.iTermNewOption] = newOption.rawValue
-            }
+            currentDefaults[.iTermNewOption] = newOption.rawValue
             
             let option = newOption == .window ? "true" : "false"
             
@@ -198,33 +171,21 @@ public class DefaultsManager {
     public func firstSetup() {
         guard isFirstUsage == ._true else { return }
         logw("First Setup")
-        if let grounpDefaults = GroupDefaults {
-            grounpDefaults.removeObject(forKey: Constants.Key.defaultTerminal)
-            grounpDefaults.removeObject(forKey: Constants.Key.defaultEditor)
-            grounpDefaults[.terminalNewOption] = NewOptionType.window.rawValue
-            grounpDefaults[.iTermNewOption] = NewOptionType.window.rawValue
-            grounpDefaults.synchronize()
-        }
-        Defaults[.launchAtLogin] = BoolType._false.rawValue
-        Defaults[.hideStatusItem] = BoolType._false.rawValue
-        Defaults[.quickToggle] = BoolType._false.rawValue
-        Defaults[.quickToggleType] = QuickToggleType.openWithDefaultTerminal.rawValue
-        Defaults.removeObject(forKey: Constants.Key.defaultTerminal)
-        Defaults.removeObject(forKey: Constants.Key.defaultEditor)
-        Defaults[.terminalNewOption] = NewOptionType.window.rawValue
-        Defaults[.iTermNewOption] = NewOptionType.window.rawValue
-        Defaults.synchronize()
+        currentDefaults[.launchAtLogin] = BoolType._false.rawValue
+        currentDefaults[.hideStatusItem] = BoolType._false.rawValue
+        currentDefaults[.quickToggle] = BoolType._false.rawValue
+        currentDefaults[.quickToggleType] = QuickToggleType.openWithDefaultTerminal.rawValue
+        currentDefaults.removeObject(forKey: Constants.Key.defaultTerminal)
+        currentDefaults.removeObject(forKey: Constants.Key.defaultEditor)
+        currentDefaults[.terminalNewOption] = NewOptionType.window.rawValue
+        currentDefaults[.iTermNewOption] = NewOptionType.window.rawValue
+        currentDefaults.synchronize()
     }
     
     public func removeAllUserDefaults() {
         logw("Remove all UserDefaults")
-        if let grounpDefaults = GroupDefaults {
-            grounpDefaults.removePersistentDomain(forName: Constants.groupIdentifier)
-            grounpDefaults.synchronize()
-        }
-        let domain = Bundle.main.bundleIdentifier!
-        Defaults.removePersistentDomain(forName: domain)
-        Defaults.synchronize()
+        currentDefaults.removePersistentDomain(forName: Constants.groupIdentifier)
+        currentDefaults.synchronize()
     }
     
 }
