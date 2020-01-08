@@ -18,6 +18,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var quickToggleButton: NSButton!
     @IBOutlet weak var chooseToggleActionButton: NSPopUpButton!
     @IBOutlet weak var hideStatusItemButton: NSButton!
+    @IBOutlet weak var hideContextMemuItemsButton: NSButton!
     @IBOutlet weak var defaultTerminalButton: NSPopUpButton!
     @IBOutlet weak var defaultEditorButton: NSPopUpButton!
     
@@ -77,6 +78,9 @@ class GeneralPreferencesViewController: PreferencesViewController {
         let isHideStatusItem = DefaultsManager.shared.isHideStatusItem.bool
         hideStatusItemButton.state = isHideStatusItem ? .on : .off
         
+        let isHideContextMenuItems = DefaultsManager.shared.isHideContextMenuItems.bool
+        hideContextMemuItemsButton.state = isHideContextMenuItems ? .on : .off
+        
         let isQuickToggle = DefaultsManager.shared.isQuickToggle.bool
         quickToggleButton.state = isQuickToggle ? .on : .off
         chooseToggleActionButton.isEnabled = isQuickToggle
@@ -98,10 +102,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         
         defaultTerminalButton.addItem(withTitle: Constants.none)
         
-        let terminals: [TerminalType] =
-            [.terminal, .iTerm, .hyper, .alacritty]
-        
-        terminals.forEach { terminal in
+        Constants.allTerminals.forEach { terminal in
             let isInstalled = FinderManager.shared.terminalIsInstalled(terminal)
             if isInstalled {
                 defaultTerminalButton.addItem(withTitle: terminal.rawValue)
@@ -122,10 +123,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         
         defaultEditorButton.addItem(withTitle: Constants.none)
         
-        let editors: [EditorType] =
-            [.vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate]
-        
-        editors.forEach { editor in
+        Constants.allEditors.forEach { editor in
             let isInstalled = FinderManager.shared.editorIsInstalled(editor)
             if isInstalled {
                 defaultEditorButton.addItem(withTitle: editor.rawValue)
@@ -155,6 +153,11 @@ class GeneralPreferencesViewController: PreferencesViewController {
         
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.setStatusItemVisible()
+    }
+    
+    @IBAction func hideContextMenuItemsButtonTapped(_ sender: NSButton) {
+        let isHide = hideContextMemuItemsButton.state == .on
+        DefaultsManager.shared.isHideContextMenuItems.bool = isHide
     }
     
     @IBAction func quickToggleButtonClicked(_ sender: NSButton) {

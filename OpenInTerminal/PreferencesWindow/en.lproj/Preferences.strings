@@ -5,9 +5,6 @@
 /* Class = "NSTextFieldCell"; title = "⚠️ Note that this will reset all user preferences"; ObjectID = "2Rg-te-FPU"; */
 "2Rg-te-FPU.title" = "⚠️ Note that this will reset all user preferences";
 
-/* Class = "NSTextFieldCell"; title = "Sublime Text"; ObjectID = "3Xd-Ub-1BR"; */
-"3Xd-Ub-1BR.title" = "Sublime Text";
-
 /* Class = "NSButtonCell"; title = "Tab"; ObjectID = "4ss-CQ-brT"; */
 "4ss-CQ-brT.title" = "Tab";
 
@@ -23,17 +20,14 @@
 /* Class = "NSTextFieldCell"; title = "Open a new window or a new tab when opening a path in terminal."; ObjectID = "BrI-hE-Mff"; */
 "BrI-hE-Mff.title" = "Open a new window or a new tab when opening a path in terminal.";
 
-/* Class = "NSTextFieldCell"; title = "It is only supported to open a new window now."; ObjectID = "Dyx-zg-hYe"; */
-"Dyx-zg-hYe.title" = "It is only supported to open a new window now.";
-
-/* Class = "NSTextFieldCell"; title = "Visual Studio Code"; ObjectID = "FW0-5J-5aA"; */
-"FW0-5J-5aA.title" = "Visual Studio Code";
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "Dyx-zg-hYe"; */
+"Dyx-zg-hYe.title" = "None";
 
 /* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
 "FpP-Q9-flS.title" = "Shortcuts";
 
-/* Class = "NSTextFieldCell"; title = "It is more recommended to open a new tab."; ObjectID = "G69-k2-hgn"; */
-"G69-k2-hgn.title" = "It is more recommended to open a new tab.";
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "G69-k2-hgn"; */
+"G69-k2-hgn.title" = "None";
 
 /* Class = "NSViewController"; title = "General"; ObjectID = "Gn1-zC-bzB"; */
 "Gn1-zC-bzB.title" = "General";
@@ -59,17 +53,11 @@
 /* Class = "NSTextFieldCell"; title = "💸 Donate:"; ObjectID = "Kua-ZD-31F"; */
 "Kua-ZD-31F.title" = "💸 Donate:";
 
-/* Class = "NSTextFieldCell"; title = "BBEdit"; ObjectID = "MLU-yh-FPM"; */
-"MLU-yh-FPM.title" = "BBEdit";
-
 /* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
 "Mqt-Fp-Ssl.title" = "Open with default Terminal:";
 
 /* Class = "NSTextFieldCell"; title = "🐦 Twitter:"; ObjectID = "NZE-zU-6ss"; */
 "NZE-zU-6ss.title" = "🐦 Twitter:";
-
-/* Class = "NSTextFieldCell"; title = "VSCodium"; ObjectID = "SFC-3T-3pr"; */
-"SFC-3T-3pr.title" = "VSCodium";
 
 /* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
 "Sw7-of-ecf.title" = "Alipay";
@@ -92,14 +80,11 @@
 /* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
 "aRo-sy-WpK.title" = "Default Terminal:";
 
-/* Class = "NSTextFieldCell"; title = "Atom"; ObjectID = "aXu-a5-jQP"; */
-"aXu-a5-jQP.title" = "Atom";
+/* Class = "NSTextFieldCell"; title = "Not Installed Applications"; ObjectID = "bCi-r8-MrK"; */
+"bCi-r8-MrK.title" = "Not Installed Applications";
 
-/* Class = "NSTextFieldCell"; title = "Alacritty"; ObjectID = "bCi-r8-MrK"; */
-"bCi-r8-MrK.title" = "Alacritty";
-
-/* Class = "NSTextFieldCell"; title = "Hyper"; ObjectID = "bT7-LU-sov"; */
-"bT7-LU-sov.title" = "Hyper";
+/* Class = "NSTextFieldCell"; title = "Installed Supported Applications"; ObjectID = "bT7-LU-sov"; */
+"bT7-LU-sov.title" = "Installed Supported Applications";
 
 /* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
 "bvy-v3-hhf.title" = "Open with default Editor:";
@@ -140,17 +125,14 @@
 /* Class = "NSViewController"; title = "Toolbar"; ObjectID = "s5W-qL-1Xs"; */
 "s5W-qL-1Xs.title" = "Toolbar";
 
+/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
+"sG4-nK-ghj.title" = "Hide Context Menu Items";
+
 /* Class = "NSButtonCell"; title = "Window"; ObjectID = "sik-wU-ZF2"; */
 "sik-wU-ZF2.title" = "Window";
 
 /* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */
 "tR5-me-DTK.title" = "@Ji4n1ng";
 
-/* Class = "NSTextFieldCell"; title = "Visual Studio Code - Insiders"; ObjectID = "uyo-0a-oKi"; */
-"uyo-0a-oKi.title" = "Visual Studio Code - Insiders";
-
 /* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
 "yIW-2a-15A.title" = "iTerm";
-
-/* Class = "NSButtonCell"; title = "Finder Extension Standalone Operation Mode"; ObjectID = "Fsh-GR-OxF"; */
-"Fsh-GR-OxF.title" = "Finder Extension Standalone Operation Mode";

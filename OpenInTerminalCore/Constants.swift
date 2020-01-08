@@ -22,6 +22,7 @@ struct Constants {
         static let firstUsage = "OIT_FirstUsage"
         static let launchAtLogin = "OIT_LaunchAtLogin"
         static let hideStatusItem = "OIT_HideStatusItem"
+        static let hideContextMenuItems = "OIT_HideContextMenuItems"
         static let quickToggle = "OIT_QuickToggle"
         static let quickToggleType = "OIT_QuickToggleType"
         

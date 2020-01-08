@@ -5,9 +5,6 @@
 /* Class = "NSTextFieldCell"; title = "⚠️ Note that this will reset all user preferences"; ObjectID = "2Rg-te-FPU"; */
 "2Rg-te-FPU.title" = "⚠️ Notez que cela réinitialisera toutes les préférences de l'utilisateur";
 
-/* Class = "NSTextFieldCell"; title = "Sublime Text"; ObjectID = "3Xd-Ub-1BR"; */
-"3Xd-Ub-1BR.title" = "Sublime Text";
-
 /* Class = "NSButtonCell"; title = "Tab"; ObjectID = "4ss-CQ-brT"; */
 "4ss-CQ-brT.title" = "Onglet";
 
@@ -17,17 +14,20 @@
 /* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
 "5f3-UK-Rft.title" = "Préférences";
 
+/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
+"BUH-CU-WBW.title" = "Masquer l'icône de la barre d'état";
+
 /* Class = "NSTextFieldCell"; title = "Open a new window or a new tab when opening a path in terminal."; ObjectID = "BrI-hE-Mff"; */
 "BrI-hE-Mff.title" = "Ouvre une nouvelle fenêtre ou un nouvel onglet à l’ouverture du chemin d’accès dans le terminal.";
 
-/* Class = "NSTextFieldCell"; title = "It is only supported to open a new window now."; ObjectID = "Dyx-zg-hYe"; */
-"Dyx-zg-hYe.title" = "Il supporte uniquement l’ouverture dans une nouvelle fenêtre.";
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "Dyx-zg-hYe"; */
+"Dyx-zg-hYe.title" = "Aucun";
 
-/* Class = "NSTextFieldCell"; title = "Visual Studio Code"; ObjectID = "FW0-5J-5aA"; */
-"FW0-5J-5aA.title" = "Visual Studio Code";
+/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
+"FpP-Q9-flS.title" = "Raccourcis";
 
-/* Class = "NSTextFieldCell"; title = "It is more recommended to open a new tab."; ObjectID = "G69-k2-hgn"; */
-"G69-k2-hgn.title" = "Il est plus recommandé l’ouverture dans un nouvel onglet.";
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "G69-k2-hgn"; */
+"G69-k2-hgn.title" = "Aucun";
 
 /* Class = "NSViewController"; title = "General"; ObjectID = "Gn1-zC-bzB"; */
 "Gn1-zC-bzB.title" = "Général";
@@ -53,32 +53,41 @@
 /* Class = "NSTextFieldCell"; title = "💸 Donate:"; ObjectID = "Kua-ZD-31F"; */
 "Kua-ZD-31F.title" = "💸 Faire un don:";
 
+/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
+"Mqt-Fp-Ssl.title" = "Ouvrir avec le terminal par défaut:";
+
 /* Class = "NSTextFieldCell"; title = "🐦 Twitter:"; ObjectID = "NZE-zU-6ss"; */
 "NZE-zU-6ss.title" = "🐦 Twitter:";
 
 /* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
 "Sw7-of-ecf.title" = "Alipay";
 
+/* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
+"Upf-HU-iaN.title" = "Vous devez rouvrir l'application pour afficher les préférences.";
+
 /* Class = "NSTextFieldCell"; title = "✉️ Contact:"; ObjectID = "Vu4-Wz-Agk"; */
 "Vu4-Wz-Agk.title" = "✉️ Contact:";
+
+/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
+"Xd9-iA-emU.title" = "Copier le chemin d’accès:";
 
 /* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
 "Xfc-rf-FkX.title" = "Éditeur par défaut:";
 
-/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at login"; ObjectID = "ZbK-xW-anT"; */
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at Login"; ObjectID = "ZbK-xW-anT"; */
 "ZbK-xW-anT.title" = "Lancer OpenInTerminal à l’ouverture de la session";
 
 /* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
 "aRo-sy-WpK.title" = "Terminal par défaut:";
 
-/* Class = "NSTextFieldCell"; title = "Atom"; ObjectID = "aXu-a5-jQP"; */
-"aXu-a5-jQP.title" = "Atom";
+/* Class = "NSTextFieldCell"; title = "Not Installed Applications"; ObjectID = "bCi-r8-MrK"; */
+"bCi-r8-MrK.title" = "Applications non installées";
 
-/* Class = "NSTextFieldCell"; title = "Alacritty"; ObjectID = "bCi-r8-MrK"; */
-"bCi-r8-MrK.title" = "Alacritty";
+/* Class = "NSTextFieldCell"; title = "Installed Supported Applications"; ObjectID = "bT7-LU-sov"; */
+"bT7-LU-sov.title" = "Applications prises en charge installées";
 
-/* Class = "NSTextFieldCell"; title = "Hyper"; ObjectID = "bT7-LU-sov"; */
-"bT7-LU-sov.title" = "Hyper";
+/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
+"bvy-v3-hhf.title" = "Ouvrir avec l’éditeur par défaut:";
 
 /* Class = "NSButtonCell"; title = "PayPal"; ObjectID = "dC4-C7-fEL"; */
 "dC4-C7-fEL.title" = "PayPal";
@@ -91,6 +100,9 @@
 
 /* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
 "gy9-lb-m8d.title" = "Exécution rapide";
+
+/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
+"jcs-Ou-OZ2.title" = "Réinitialiser";
 
 /* Class = "NSButtonCell"; title = "Reset preferences"; ObjectID = "jyI-H7-qN3"; */
 "jyI-H7-qN3.title" = "Réinitialiser les préférences";
@@ -108,10 +120,13 @@
 "nYS-rF-JCL.title" = "Onglet";
 
 /* Class = "NSTextFieldCell"; title = "OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
-"ngT-lX-vFA.title" = "OpenInTerminal sera automatiquement lancé à l’ouverture de la session";
+"ngT-lX-vFA.title" = "OpenInTerminal sera automatiquement lancé à l’ouverture de la session.";
 
 /* Class = "NSViewController"; title = "Toolbar"; ObjectID = "s5W-qL-1Xs"; */
 "s5W-qL-1Xs.title" = "Bar d’outils";
+
+/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
+"sG4-nK-ghj.title" = "Masquer les éléments du menu contextuel";
 
 /* Class = "NSButtonCell"; title = "Window"; ObjectID = "sik-wU-ZF2"; */
 "sik-wU-ZF2.title" = "Fenêtre";
@@ -121,33 +136,3 @@
 
 /* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
 "yIW-2a-15A.title" = "iTerm";
-
-/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
-"FpP-Q9-flS.title" = "Raccourcis";
-
-/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
-"Mqt-Fp-Ssl.title" = "Ouvrir avec le terminal par défaut:";
-
-/* Class = "NSTextFieldCell"; title = "VSCodium"; ObjectID = "SFC-3T-3pr"; */
-"SFC-3T-3pr.title" = "VSCodium";
-
-/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
-"Xd9-iA-emU.title" = "Copier le chemin d’accès:";
-
-/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
-"bvy-v3-hhf.title" = "Ouvrir avec l’éditeur par défaut:";
-
-/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
-"jcs-Ou-OZ2.title" = "Réinitialiser";
-
-/* Class = "NSTextFieldCell"; title = "BBEdit"; ObjectID = "MLU-yh-FPM"; */
-"MLU-yh-FPM.title" = "BBEdit";
-
-/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
-"BUH-CU-WBW.title" = "Masquer l'icône de la barre d'état";
-
-/* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
-"Upf-HU-iaN.title" = "Vous devez rouvrir l'application pour afficher les préférences.";
-
-/* Class = "NSTextFieldCell"; title = "Visual Studio Code - Insiders"; ObjectID = "uyo-0a-oKi"; */
-"uyo-0a-oKi.title" = "Visual Studio Code - Insiders";

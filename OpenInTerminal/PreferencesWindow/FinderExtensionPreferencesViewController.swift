@@ -12,7 +12,10 @@ import OpenInTerminalCore
 class FinderExtensionPreferencesViewController: PreferencesViewController {
     
     // MARK: Properties
-
+    
+    @IBOutlet weak var installedApplicationsTextField: NSTextField!
+    @IBOutlet weak var notInstalledApplicationsTextField: NSTextField!
+    
     @IBOutlet weak var terminalTextField: NSTextField!
     @IBOutlet weak var terminalWindowButton: NSButton!
     @IBOutlet weak var terminalTabButton: NSButton!
@@ -20,18 +23,6 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var iTermTextField: NSTextField!
     @IBOutlet weak var iTermWindowButton: NSButton!
     @IBOutlet weak var iTermTabButton: NSButton!
-    
-    @IBOutlet weak var hyperTextField: NSTextField!
-    
-    @IBOutlet weak var alacrittyTextField: NSTextField!
-    
-    @IBOutlet weak var vscodeTextField: NSTextField!
-    @IBOutlet weak var atomTextField: NSTextField!
-    @IBOutlet weak var sublimeTextField: NSTextField!
-    @IBOutlet weak var vscodiumTextField: NSTextField!
-    @IBOutlet weak var bbeditTextField: NSTextField!
-    @IBOutlet weak var vscodeInsidersTextField: NSTextField!
-    @IBOutlet weak var textMateTextField: NSTextField!
     
     // MARK: Lifecycle
     
@@ -42,7 +33,7 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        
+        refreshInstalledApplicationsTextField()
         refreshTextFieldEnabledState()
         refreshButtonNewOptionState()
         refreshButtonEnabledState()
@@ -54,12 +45,38 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     
     // MARK: Refresh UI
     
+    func refreshInstalledApplicationsTextField() {
+        let installedTerminals = Constants.allTerminals.filter {
+            FinderManager.shared.terminalIsInstalled($0)
+        }.map {
+            $0.rawValue
+        }
+        let installedEditors = Constants.allEditors.filter {
+            FinderManager.shared.editorIsInstalled($0)
+        }.map {
+            $0.fullName
+        }
+        let installedApps = installedTerminals + installedEditors
+        installedApplicationsTextField.stringValue = installedApps.sorted().joined(separator: ", ")
+        
+        let notInstalledTerminals = Constants.allTerminals.filter {
+            !FinderManager.shared.terminalIsInstalled($0)
+        }.map {
+            $0.rawValue
+        }
+        let notInstalledEditors = Constants.allEditors.filter {
+            !FinderManager.shared.editorIsInstalled($0)
+        }.map {
+            $0.fullName
+        }
+        let notInstalledApps = notInstalledTerminals + notInstalledEditors
+        notInstalledApplicationsTextField.stringValue = notInstalledApps.sorted().joined(separator: ", ")
+    }
+    
     func refreshTextFieldEnabledState() {
         let terminals: [(TerminalType, NSTextField)] =
             [(.terminal, terminalTextField),
-             (.iTerm, iTermTextField),
-             (.hyper, hyperTextField),
-             (.alacritty, alacrittyTextField)]
+             (.iTerm, iTermTextField)]
 
         terminals.forEach { terminal, textField in
             let isInstalled = FinderManager.shared.terminalIsInstalled(terminal)
@@ -71,28 +88,6 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
                 textField.textColor = .secondaryLabelColor
                 let notInstalledString = NSLocalizedString("pref.toolbar.not_installed", comment: "Not Installed")
                 textField.stringValue = "\(terminal.rawValue) (\(notInstalledString))"
-            }
-        }
-        
-        let editors: [(EditorType, NSTextField)] =
-            [(.vscode, vscodeTextField),
-             (.atom, atomTextField),
-             (.sublime, sublimeTextField),
-             (.vscodium, vscodiumTextField),
-             (.bbedit, bbeditTextField),
-             (.vscodeInsiders, vscodeInsidersTextField),
-             (.textMate, textMateTextField)]
-        
-        editors.forEach { editor, textField in
-            let isInstalled = FinderManager.shared.editorIsInstalled(editor)
-            textField.isEnabled = isInstalled
-            if isInstalled {
-                textField.textColor = .labelColor
-                textField.stringValue = "\(editor.fullName)"
-            } else {
-                textField.textColor = .secondaryLabelColor
-                let notInstalledString = NSLocalizedString("pref.toolbar.not_installed", comment: "Not Installed")
-                textField.stringValue = "\(editor.fullName) (\(notInstalledString))"
             }
         }
     }

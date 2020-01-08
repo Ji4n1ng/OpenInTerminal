@@ -98,6 +98,22 @@ public class DefaultsManager {
         }
     }
     
+    public var isHideContextMenuItems: BoolType {
+        get {
+            let defaultValue = currentDefaults[.hideContextMenuItems].map(BoolType.init(rawValue: )) ?? nil
+            if let boolValue = defaultValue {
+                return boolValue
+            } else {
+                currentDefaults[.hideContextMenuItems] = BoolType._false.rawValue
+                return ._false
+            }
+        }
+        
+        set {
+            currentDefaults[.hideContextMenuItems] = newValue.rawValue
+        }
+    }
+    
     public var isQuickToggle: BoolType {
         get {
             let defaultValue = currentDefaults[.quickToggle].map(BoolType.init(rawValue: )) ?? nil

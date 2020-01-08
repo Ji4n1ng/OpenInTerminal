@@ -43,11 +43,12 @@ class FinderSync: FIFinderSync {
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
         
-        let menu = NSMenu(title: "")
+        var menu = NSMenu(title: "")
         
-        switch menuKind {
-
-        case .contextualMenuForContainer, .contextualMenuForItems, .toolbarItemMenu:
+        func createMenu() -> NSMenu {
+            
+            let menu = NSMenu(title: "")
+            
             var terminalTitle = ""
             if let terminal = DefaultsManager.shared.defaultTerminal {
                 terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + terminal.rawValue
@@ -83,6 +84,23 @@ class FinderSync: FIFinderSync {
             let copyPathIcon = NSImage(named: "context_menu_icon_path")
             copyPathItem.image = copyPathIcon
             menu.addItem(copyPathItem)
+            
+            return menu
+        }
+        
+        switch menuKind {
+
+        case .contextualMenuForContainer,
+             .contextualMenuForItems:
+            let isHideContextMenuItems = DefaultsManager.shared.isHideContextMenuItems.bool
+            if isHideContextMenuItems {
+                break
+            } else {
+                menu = createMenu()
+            }
+            
+        case .toolbarItemMenu:
+            menu = createMenu()
             
         default:
             break

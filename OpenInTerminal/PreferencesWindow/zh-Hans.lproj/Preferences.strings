@@ -2,8 +2,8 @@
 /* Class = "NSTextFieldCell"; title = "❤️ Special thanks to:"; ObjectID = "0Gy-jf-q6v"; */
 "0Gy-jf-q6v.title" = "❤️ 特别致谢:";
 
-/* Class = "NSTextFieldCell"; title = "Sublime Text"; ObjectID = "3Xd-Ub-1BR"; */
-"3Xd-Ub-1BR.title" = "Sublime Text";
+/* Class = "NSTextFieldCell"; title = "⚠️ Note that this will reset all user preferences"; ObjectID = "2Rg-te-FPU"; */
+"2Rg-te-FPU.title" = "⚠️ 注意这将会重置所有用户偏好设置";
 
 /* Class = "NSButtonCell"; title = "Tab"; ObjectID = "4ss-CQ-brT"; */
 "4ss-CQ-brT.title" = "标签页";
@@ -14,22 +14,28 @@
 /* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
 "5f3-UK-Rft.title" = "偏好设置";
 
+/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
+"BUH-CU-WBW.title" = "隐藏状态栏图标";
+
 /* Class = "NSTextFieldCell"; title = "Open a new window or a new tab when opening a path in terminal."; ObjectID = "BrI-hE-Mff"; */
 "BrI-hE-Mff.title" = "当打开终端时，打开一个新的窗口或者标签页。";
 
-/* Class = "NSTextFieldCell"; title = "It is only supported to open a new window now."; ObjectID = "Dyx-zg-hYe"; */
-"Dyx-zg-hYe.title" = "现在仅支持打开一个新的窗口。";
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "Dyx-zg-hYe"; */
+"Dyx-zg-hYe.title" = "无";
 
-/* Class = "NSTextFieldCell"; title = "Visual Studio Code"; ObjectID = "FW0-5J-5aA"; */
-"FW0-5J-5aA.title" = "Visual Studio Code";
+/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
+"FpP-Q9-flS.title" = "快捷键";
 
-/* Class = "NSTextFieldCell"; title = "It is more recommended to open a new tab."; ObjectID = "G69-k2-hgn"; */
-"G69-k2-hgn.title" = "更推荐打开一个新的标签页。";
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "G69-k2-hgn"; */
+"G69-k2-hgn.title" = "无";
 
 /* Class = "NSViewController"; title = "General"; ObjectID = "Gn1-zC-bzB"; */
 "Gn1-zC-bzB.title" = "通用";
 
-/* Class = "NSButtonCell"; title = "支付宝"; ObjectID = "HUx-Wz-JJm"; */
+/* Class = "NSViewController"; title = "Advanced"; ObjectID = "H3q-JS-Bu4"; */
+"H3q-JS-Bu4.title" = "高级";
+
+/* Class = "NSButtonCell"; title = "WeChat"; ObjectID = "HUx-Wz-JJm"; */
 "HUx-Wz-JJm.title" = "微信";
 
 /* Class = "NSTextFieldCell"; title = "👨‍💻 GitHub:"; ObjectID = "How-dP-tcX"; */
@@ -47,26 +53,41 @@
 /* Class = "NSTextFieldCell"; title = "💸 Donate:"; ObjectID = "Kua-ZD-31F"; */
 "Kua-ZD-31F.title" = "💸 支持:";
 
+/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
+"Mqt-Fp-Ssl.title" = "打开默认终端:";
+
 /* Class = "NSTextFieldCell"; title = "🐦 Twitter:"; ObjectID = "NZE-zU-6ss"; */
 "NZE-zU-6ss.title" = "🐦 推特:";
+
+/* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
+"Sw7-of-ecf.title" = "支付宝";
+
+/* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
+"Upf-HU-iaN.title" = "你需要重新打开应用来显示偏好设置。";
 
 /* Class = "NSTextFieldCell"; title = "✉️ Contact:"; ObjectID = "Vu4-Wz-Agk"; */
 "Vu4-Wz-Agk.title" = "✉️ 联系:";
 
+/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
+"Xd9-iA-emU.title" = "拷贝路径到粘贴板:";
+
 /* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
-"Xfc-rf-FkX.title" = "默认文本编辑器:";
+"Xfc-rf-FkX.title" = "默认编辑器:";
+
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at Login"; ObjectID = "ZbK-xW-anT"; */
+"ZbK-xW-anT.title" = "开机自动启动";
 
 /* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
 "aRo-sy-WpK.title" = "默认终端:";
 
-/* Class = "NSTextFieldCell"; title = "Atom"; ObjectID = "aXu-a5-jQP"; */
-"aXu-a5-jQP.title" = "Atom";
+/* Class = "NSTextFieldCell"; title = "Not Installed Applications"; ObjectID = "bCi-r8-MrK"; */
+"bCi-r8-MrK.title" = "未安装的应用";
 
-/* Class = "NSTextFieldCell"; title = "Alacritty"; ObjectID = "bCi-r8-MrK"; */
-"bCi-r8-MrK.title" = "Alacritty";
+/* Class = "NSTextFieldCell"; title = "Installed Supported Applications"; ObjectID = "bT7-LU-sov"; */
+"bT7-LU-sov.title" = "已安装的受支持的应用";
 
-/* Class = "NSTextFieldCell"; title = "Hyper"; ObjectID = "bT7-LU-sov"; */
-"bT7-LU-sov.title" = "Hyper";
+/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
+"bvy-v3-hhf.title" = "打开默认编辑器:";
 
 /* Class = "NSButtonCell"; title = "PayPal"; ObjectID = "dC4-C7-fEL"; */
 "dC4-C7-fEL.title" = "PayPal";
@@ -78,7 +99,13 @@
 "fA9-Hd-yjp.title" = "Terminal";
 
 /* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
-"gy9-lb-m8d.title" = "快速切换";
+"gy9-lb-m8d.title" = "快速启动";
+
+/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
+"jcs-Ou-OZ2.title" = "重置";
+
+/* Class = "NSButtonCell"; title = "Reset preferences"; ObjectID = "jyI-H7-qN3"; */
+"jyI-H7-qN3.title" = "重置设置";
 
 /* Class = "NSViewController"; title = "About"; ObjectID = "k6X-N1-mVu"; */
 "k6X-N1-mVu.title" = "关于";
@@ -92,8 +119,14 @@
 /* Class = "NSButtonCell"; title = "Tab"; ObjectID = "nYS-rF-JCL"; */
 "nYS-rF-JCL.title" = "标签页";
 
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
+"ngT-lX-vFA.title" = "启用后，OpenInTerminal 将会在登录时自动启动。";
+
 /* Class = "NSViewController"; title = "Toolbar"; ObjectID = "s5W-qL-1Xs"; */
 "s5W-qL-1Xs.title" = "工具栏";
+
+/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
+"sG4-nK-ghj.title" = "隐藏上下文菜单项";
 
 /* Class = "NSButtonCell"; title = "Window"; ObjectID = "sik-wU-ZF2"; */
 "sik-wU-ZF2.title" = "窗口";
@@ -103,51 +136,3 @@
 
 /* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
 "yIW-2a-15A.title" = "iTerm";
-
-/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at login"; ObjectID = "ZbK-xW-anT"; */
-"ZbK-xW-anT.title" = "自动启动";
-
-/* Class = "NSTextFieldCell"; title = "OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
-"ngT-lX-vFA.title" = "启用后，OpenInTerminal 将会在登录时自动启动。";
-
-/* Class = "NSTextFieldCell"; title = " ⚠️ Note that this will reset all user preferences"; ObjectID = "2Rg-te-FPU"; */
-"2Rg-te-FPU.title" = "⚠️ 注意这将会重置所有用户偏好设置";
-
-/* Class = "NSViewController"; title = "Advanced"; ObjectID = "H3q-JS-Bu4"; */
-"H3q-JS-Bu4.title" = "高级";
-
-/* Class = "NSButtonCell"; title = "Reset preferences"; ObjectID = "jyI-H7-qN3"; */
-"jyI-H7-qN3.title" = "重置设置";
-
-/* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
-"Sw7-of-ecf.title" = "支付宝";
-
-/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
-"FpP-Q9-flS.title" = "快捷键";
-
-/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
-"Mqt-Fp-Ssl.title" = "打开默认终端:";
-
-/* Class = "NSTextFieldCell"; title = "VSCodium"; ObjectID = "SFC-3T-3pr"; */
-"SFC-3T-3pr.title" = "VSCodium";
-
-/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
-"bvy-v3-hhf.title" = "打开默认编辑器:";
-
-/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
-"Xd9-iA-emU.title" = "拷贝路径到粘贴板:";
-
-/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
-"jcs-Ou-OZ2.title" = "重置";
-
-/* Class = "NSTextFieldCell"; title = "BBEdit"; ObjectID = "MLU-yh-FPM"; */
-"MLU-yh-FPM.title" = "BBEdit";
-
-/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
-"BUH-CU-WBW.title" = "隐藏状态栏图标";
-
-/* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
-"Upf-HU-iaN.title" = "你需要重新打开应用来显示偏好设置。";
-
-/* Class = "NSTextFieldCell"; title = "Visual Studio Code - Insiders"; ObjectID = "uyo-0a-oKi"; */
-"uyo-0a-oKi.title" = "Visual Studio Code - Insiders";

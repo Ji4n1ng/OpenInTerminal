@@ -1,14 +1,14 @@
 //
-//  CotEditor.swift
+//  MacVim.swift
 //  OpenInTerminalCore
 //
-//  Created by Jianing Wang on 2019/12/30.
-//  Copyright © 2019 Jianing Wang. All rights reserved.
+//  Created by Jianing Wang on 2020/1/8.
+//  Copyright © 2020 Jianing Wang. All rights reserved.
 //
 
 import Foundation
 
-final class CotEditorApp: Editor {
+final class MacVimApp: Editor {
     
     func open(_ path: String) throws {
         
@@ -17,7 +17,7 @@ final class CotEditorApp: Editor {
         }
         
         let source = """
-        do shell script "open -a CotEditor \(url.path.specialCharEscaped)"
+        do shell script "open -a MacVim \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!
@@ -27,9 +27,8 @@ final class CotEditorApp: Editor {
         script.executeAndReturnError(&error)
         
         if error != nil {
-            throw OITError.cannotAccessApp(EditorType.cotEditor.rawValue)
+            throw OITError.cannotAccessApp(EditorType.macVim.rawValue)
         }
     }
     
 }
-

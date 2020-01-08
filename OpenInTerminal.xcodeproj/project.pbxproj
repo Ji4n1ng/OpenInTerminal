@@ -41,6 +41,7 @@
 		9518739C227DF655000CCB3A /* OpenInTerminalHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95187389227DF492000CCB3A /* OpenInTerminalHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		951A3EBD2278A6F700E8DB61 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A3EBC2278A6F700E8DB61 /* StatusMenuController.swift */; };
 		951A3EBF2278A70F00E8DB61 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951A3EBE2278A70F00E8DB61 /* MainMenu.xib */; };
+		951FC31323C611E600A51B50 /* MacVimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC31223C611E600A51B50 /* MacVimApp.swift */; };
 		9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCB226B475E008445D1 /* PreferencesViewController.swift */; };
 		9521EDD0226B4BE6008445D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCF226B4BE6008445D1 /* Constants.swift */; };
 		954D67CF235570D5007702D0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67CE235570D5007702D0 /* Error.swift */; };
@@ -61,6 +62,7 @@
 		9590B69B226C6EA200362B93 /* SublimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69A226C6EA200362B93 /* SublimeApp.swift */; };
 		9590B69F226CBC0000362B93 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */; };
 		9590B6A1226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */; };
+		9595D2A023BA0E7F006CBB36 /* CotEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D29F23BA0E7F006CBB36 /* CotEditorApp.swift */; };
 		95BAA1822279E28D005E1DAC /* AboutPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */; };
 		95BC5EC52356B48400F00391 /* ScriptProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BC5EC42356B48400F00391 /* ScriptProtocol.swift */; };
 		95C6C339227A9EE600F157C4 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C6C33B227A9EE600F157C4 /* Preferences.storyboard */; };
@@ -183,6 +185,10 @@
 		95187395227DF493000CCB3A /* OpenInTerminalHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenInTerminalHelper.entitlements; sourceTree = "<group>"; };
 		951A3EBC2278A6F700E8DB61 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		951A3EBE2278A70F00E8DB61 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		951FC31223C611E600A51B50 /* MacVimApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacVimApp.swift; sourceTree = "<group>"; };
+		951FC31523C624A400A51B50 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
+		951FC31723C624A700A51B50 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
+		951FC31923C624A900A51B50 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Preferences.strings; sourceTree = "<group>"; };
 		9521EDCB226B475E008445D1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		9521EDCF226B4BE6008445D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		954D67CE235570D5007702D0 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -192,7 +198,6 @@
 		956BCE0F22F80D6C00310B56 /* TextMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMateApp.swift; sourceTree = "<group>"; };
 		9571DA83227E6FFF0076AA64 /* AdvancedPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPreferencesViewController.swift; sourceTree = "<group>"; };
 		957B75DE2292358E00E35061 /* VSCodiumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodiumApp.swift; sourceTree = "<group>"; };
-		957B75E72292C56700E35061 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Preferences.strings; sourceTree = "<group>"; };
 		9584EDF3226DEF79003C7EE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9584EDF5226DEFC0003C7EE8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		9590B68D226C04E000362B93 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
@@ -204,14 +209,13 @@
 		9590B69A226C6EA200362B93 /* SublimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SublimeApp.swift; sourceTree = "<group>"; };
 		9590B69E226CBC0000362B93 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		9590B6A0226CBC1D00362B93 /* FinderExtensionPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderExtensionPreferencesViewController.swift; sourceTree = "<group>"; };
+		9595D29F23BA0E7F006CBB36 /* CotEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CotEditorApp.swift; sourceTree = "<group>"; };
 		95BAA1812279E28D005E1DAC /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
 		95BC5EC42356B48400F00391 /* ScriptProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptProtocol.swift; sourceTree = "<group>"; };
 		95C6C33A227A9EE600F157C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preferences.storyboard; sourceTree = "<group>"; };
 		95C6F81B22E37D59001C6374 /* BBEditApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBEditApp.swift; sourceTree = "<group>"; };
 		95DFC1232354A2C300941D3A /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodeInsidersApp.swift; sourceTree = "<group>"; };
-		95E7170E22F18AD2000E331A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
-		95E7171222F19272000E331A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
 		95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		95FC9243228BAAD600F51DF2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D0C631DF227F862E002C4AA0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -428,6 +432,8 @@
 				95C6F81B22E37D59001C6374 /* BBEditApp.swift */,
 				95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */,
 				956BCE0F22F80D6C00310B56 /* TextMateApp.swift */,
+				9595D29F23BA0E7F006CBB36 /* CotEditorApp.swift */,
+				951FC31223C611E600A51B50 /* MacVimApp.swift */,
 			);
 			path = Editors;
 			sourceTree = "<group>";
@@ -689,6 +695,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9595D2A023BA0E7F006CBB36 /* CotEditorApp.swift in Sources */,
 				956BCE1022F80D6C00310B56 /* TextMateApp.swift in Sources */,
 				954EFA932273643C001E101E /* EditorProtocol.swift in Sources */,
 				4725252F22680EE0003C50DF /* TerminalManager.swift in Sources */,
@@ -712,6 +719,7 @@
 				9590B695226C6E7400362B93 /* EditorManager.swift in Sources */,
 				4725254122680F5A003C50DF /* Finder.swift in Sources */,
 				9590B697226C6E8600362B93 /* VSCodeApp.swift in Sources */,
+				951FC31323C611E600A51B50 /* MacVimApp.swift in Sources */,
 				950A4E692271EEC8002A9548 /* AlacrittyApp.swift in Sources */,
 				9590B699226C6E9600362B93 /* AtomApp.swift in Sources */,
 				957B75DF2292358E00E35061 /* VSCodiumApp.swift in Sources */,
@@ -802,9 +810,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				95C6C33A227A9EE600F157C4 /* Base */,
-				957B75E72292C56700E35061 /* fr */,
-				95E7170E22F18AD2000E331A /* zh-Hans */,
-				95E7171222F19272000E331A /* en */,
+				951FC31523C624A400A51B50 /* en */,
+				951FC31723C624A700A51B50 /* zh-Hans */,
+				951FC31923C624A900A51B50 /* fr */,
 			);
 			name = Preferences.storyboard;
 			sourceTree = "<group>";
@@ -820,7 +828,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -833,7 +841,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.astranno.OpenInTerminalCore;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminalCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -883,7 +891,7 @@
 				CODE_SIGN_ENTITLEMENTS = OpenInTerminalFinderExtension/OpenInTerminalFinderExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminalFinderExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -892,7 +900,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.astranno.OpenInTerminal.OpenInTerminalFinderExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -909,7 +917,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminalFinderExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -918,7 +926,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.astranno.OpenInTerminal.OpenInTerminalFinderExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -936,7 +944,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -944,8 +952,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.astranno.OpenInTerminal;
+				MARKETING_VERSION = 2.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -962,7 +970,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -970,8 +978,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.astranno.OpenInTerminal;
+				MARKETING_VERSION = 2.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -985,7 +993,7 @@
 				CODE_SIGN_ENTITLEMENTS = OpenInTerminalHelper/OpenInTerminalHelper.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminalHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -993,7 +1001,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.astranno.OpenInTerminalHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminalHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1008,7 +1016,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9HL3TFS6J;
+				DEVELOPMENT_TEAM = Q33U8R4U57;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminalHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1016,7 +1024,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.astranno.OpenInTerminalHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminalHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

@@ -9,10 +9,10 @@
 import Foundation
 import OpenInTerminalCore
 
-/// Install AppleScripts to $HOME/Library/Application Scripts/wang.jianing.OpenInTerminalFinderExtension
+/// Install AppleScripts to $HOME/Library/Application Scripts/wang.jianing.app.OpenInTerminalFinderExtension
 func checkScripts() throws {
     guard var scriptFolderPath = try? FileManager.default.url(for: .applicationScriptsDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else {
-        throw OITMError.cannotAccessPath("$HOME/Library/Application Scripts/wang.jianing.OpenInTerminal")
+        throw OITMError.cannotAccessPath("$HOME/Library/Application Scripts/wang.jianing.app.OpenInTerminal")
     }
     scriptFolderPath.deleteLastPathComponent()
     let finderExScriptPath = scriptFolderPath.appendingPathComponent(Constants.finderExtensionIdentifier)
@@ -30,7 +30,7 @@ func checkScripts() throws {
     }
     
     // write terminal scripts
-    let terminals: [TerminalType] = [.terminal, .iTerm, .hyper, .alacritty]
+    let terminals: [TerminalType] = Constants.allTerminals
     try terminals.forEach { terminal in
         let scriptPath = finderExScriptPath
             .appendingPathComponent(terminal.rawValue)
@@ -39,7 +39,7 @@ func checkScripts() throws {
     }
     
     // write editor scripts
-    let editors: [EditorType] = [.vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate]
+    let editors: [EditorType] = Constants.allEditors
     try editors.forEach { editor in
         let scriptPath = finderExScriptPath
             .appendingPathComponent(editor.rawValue)
