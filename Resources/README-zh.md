@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/readme-header-zh.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.0.5"><img src="https://img.shields.io/badge/Version-2.0.5-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.1.1"><img src="https://img.shields.io/badge/Version-2.1.1-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -9,8 +9,6 @@
 [English](../README.md) | 中文说明
 
 [OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md)
-
-> 需要你的帮助！最近我签名 2.1.0 版本时，遇到了一个签名问题。请看 [#61](https://github.com/Ji4n1ng/OpenInTerminal/issues/61)。非常感谢！
 
 ## 如何使用 🚀
 
@@ -25,7 +23,7 @@
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
 | 支持 Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) 和 [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
-| 支持 [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/) 和 [TextMate](https://macromates.com). | ✅ | ✅ |
+| 支持 [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/) 和 [MacVim](https://github.com/macvim-dev/macvim)。 | ✅ | ✅ |
 | 设置为打开新的窗口或者标签页 | ✅ | ✅ |
 | 支持中文，英语和法语 | ✅ | ✅ |
 | 图形化设置界面 | ✅ | ❌ |
@@ -35,9 +33,9 @@
 
 ## OpenInTerminal 和 OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
-选择哪个？这两个应用都是我的孩子。如果你喜欢更强大的功能和图形化设置界面，那么你可以选择 `OpenInTerminal`。如果你仅仅需要打开终端或编辑器而不需要应用一直常驻后台，那么你可以选择 `OpenInTerminal-Lite`。
+选择哪个？这两个应用都是我的孩子。如果你喜欢更强大的功能和图形化设置界面，那么你可以选择 `OpenInTerminal`。如果你仅仅需要更快速且更稳定地打开终端或编辑器，那么你可以选择 `OpenInTerminal-Lite`。
 
-对于我而言，我更喜欢 `OpenInTerminal-Lite`，它只需要点击一次来完成功能（另一个需要点击两次😂），而且更轻量一些。
+对于我而言，我更喜欢 `OpenInTerminal-Lite`，它只需要点击一次来完成功能（另一个需要点击两次😂），而且它更轻量一些。
 
 对于 `OpenInTerminal-Lite` 用户：
 
@@ -47,13 +45,13 @@
 
 ### 1. 下载
 
-#### a) Homebrew (当前版本：2.0.5)
+#### a) Homebrew (当前版本：2.1.1)
 
 ```
 brew cask install openinterminal
 ```
 
-#### b) 手动 (最新版本：2.0.5)
+#### b) 手动 (最新版本：2.1.1)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -68,31 +66,9 @@ brew cask install openinterminal
   <img src="./screenshots/finder-extension-permission-zh.png" width="450px">
 </div>
 
-### 3. 将 OpenInTerminal 设置为开机启动
-
-勾选 `偏好设置` 中的 `自动启动` 按钮即可。
-
-> 如果 OpenInTerminal 主应用不运行， Finder 扩展将不会工作。所以更推荐将 OpenInTerminal 设置为自动启动。
-
-<div>
-  <img src="./screenshots/pref-general-zh.png" width="400px">
-</div>
-
-## 即将到来的功能 🎉
-
-🎉 OpenInTerminal 版本 2.1.0 终于支持访达扩展独立运行了。不需要让 OpenInTerminal 运行在后台。
-
-- 访达扩展独立运行模式。
-- 访达右键菜单根据当前设置的默认终端或者编辑器来更改标题。
-- 打开 iTerm 时，新建一个分割的窗格。
-
 ## 支持 ❤️
 
-你好，我是 Ji4n1ng。我是一名学生，OpenInTerminal 是我空余时间维护的一个开源项目。它是免费且开源的。
-
-最近由于奇怪的 bug，签名过的 OpenInTerminal 不能在其他 Mac 上运行。我不明白什么原因。如果你能支持我购买苹果开发者证书，我将非常感激。（99美元对于学生来说，并不是一个小的数字，它几乎是我三个星期的生活费。）
-
-或者，有人能帮我解决这个问题也可以。请看 [#61](https://github.com/Ji4n1ng/OpenInTerminal/issues/61)。非常感谢！
+你好，我是 Ji4n1ng。我是一名学生，OpenInTerminal 是我空余时间维护的一个开源项目。它是免费且开源的。如果你能支持我购买苹果开发者账号，我将非常感激。一年 99 美元的花费对于学生来说，并不是一个小的数字，它几乎是我三个星期的生活费。
 
 | PayPal | 支付宝 | 微信 |
 | --- | --- | --- |
@@ -104,21 +80,21 @@ brew cask install openinterminal
 <p>OpenInTerminal 目前有正常版和 Lite 版。如果你仅仅需要打开终端而且不需要应用一直常驻后台，那么你可以选择 Lite 版。如果你喜欢更强大的功能，那么你可以选择正常版。</p>
 </details>
 
-<details><summary>2. Finder 扩展不工作了</summary><br>
-<p>请检查 OpenInTerminal（主应用）的图标是否在菜单栏中。因为 Finder 扩展会一直在 Finder 工具栏中，所以当主应用不运行时 Finder 扩展无法工作。推荐在偏好设置中将 OpenInTerminal 设置为自动启动。</p>
-</details>
-
-<details><summary>3. 我不小心点了不授权的按钮</summary><br>
+<details><summary>2. 我不小心点了不授权的按钮</summary><br>
 <p>你可以运行以下命令。这会重置系统设置里的权限。</p>
 <pre><code>tccutil reset AppleEvents</code></pre>
 </details>
 
-<details><summary>4. 路径里的特殊字符</summary><br>
+<details><summary>3. 路径里的特殊字符</summary><br>
 <p>请不要在路径中使用反斜线 <code>\</code> 和双引号 <code>"</code>。</p>
 </details>
 
-<details><summary>5. 在 Mojave 上打开了两个终端窗口</summary><br>
+<details><summary>4. 在 Mojave 上打开了两个终端窗口</summary><br>
 <p>这个问题只发生在第一次启动终端的时候。所以，你可以通过 <code>⌘W</code> 来关闭终端的窗口，而不是用 <code>⌘Q</code> 来退出终端。</p>
+</details>
+
+<details><summary>5. 访达扩展独立运行模式</summary><br>
+<p>访达扩展目前完全依赖于 AppleScript 以便于能够独立运行。所以很难保证它的稳定性。当你发现访达扩展不能正常工作的时候，你需要按住 <code>Option(⌥)</code> 键，右键点击访达并选择 <code>重启</code>。</p>
 </details>
 
 ## 特别感谢 ❤️
