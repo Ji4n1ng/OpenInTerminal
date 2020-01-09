@@ -107,6 +107,18 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 <p>Currently Finder extension is completely dependent on AppleScript in order to run independently. So it is hard to guarantee its stability. When you find that Finder extension doesn't work properly, you need to hold down the <code>Option(⌥)</code> key, right-click on Finder, and select <code>Relaunch</code>.</p>
 </details>
 
+<details><summary>6. OpenInTerminal doesn't work as I expected</summary><br>
+<p>OpenInTerminal will open terminal or editor as the following order:</p>
+<ul>
+<li>1. Open the file or folder that you selected.</li>
+<li>2. Open the top Finder window.</li>
+<li>3. Neither. Then open the desktop.</li>
+</ul>
+<p>For example, if you select a file in the bottom Finder window and you want to open the above Finder window in terminal, this will not work as you expected according to the above order.</p>
+<p>Q: I right-click on the desktop but no terminal or editor appears. But actions in status bar menu work.</p>
+<p>A: Try to select a file(folder) or open a Finder window. Because when you right-click on the desktop and nothing is selected, system does not provide program with the path of selected files. Under this situation, the program does not work.<br>Currently they(Fidner extension and actions in status bar menu) do not work as the same way. Finder extension is completely dependent on AppleScript in order to run independently, while status bar icon works as before. So they have different behaviors. This problem will be improved in the future.</p>
+</details>
+
 ## Changes 🗒
 
 **version 2.1.1**
