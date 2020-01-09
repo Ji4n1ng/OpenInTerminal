@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.3"><img src="https://img.shields.io/badge/Version-1.0.3-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.0"><img src="https://img.shields.io/badge/Version-1.1.0-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -24,7 +24,7 @@ English | [中文说明](./README-Lite-zh.md)
 
 ## How to install 🖥
 
-### Homebrew (current version: 1.0.2)
+### Homebrew (current version: 1.1.0)
 
 1. Run the following command
 
@@ -42,7 +42,7 @@ brew cask install openineditor-lite
   <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
 </div>
 
-### Manual (latest version: 1.0.3)
+### Manual (latest version: 1.1.0)
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
@@ -50,11 +50,7 @@ brew cask install openineditor-lite
 
 ## Support ❤️
 
-Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project I maintain in my spare time. It is free and open source. 
-
-Recently because of strange bugs, signed OpenInTerminal(new version 2.1.0) cannot run on other computers. I don't know why. I will be very grateful that you can support me in purchasing an Apple Developer account ($99 is not a small number for students, it is close to my three-week living expenses.). 
-
-Or someone can help me solve this problem. Please see #61 . Thanks a lot!
+Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project I maintain in my spare time. It is free and open source. I will be very grateful that you can support me in purchasing an Apple Developer account. $99/year is not a small expense for students. It's close to my three-week living expenses. Thanks a lot!
 
 | PayPal | AliPay | WeChat Pay |
 | --- | --- | --- |
@@ -102,6 +98,16 @@ defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
 
 <details><summary>Set <strong>TextMate</strong> as the default editor:</summary><br>
 <code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate</code>
+<br>
+</details>
+
+<details><summary>Set <strong>CotEditor</strong> as the default editor:</summary><br>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CotEditor</code>
+<br>
+</details>
+
+<details><summary>Set <strong>MacVim</strong> as the default editor:</summary><br>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier MacVim</code>
 <br>
 </details>
 
@@ -160,29 +166,33 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 
 ## Changes 🗒
 
+**version 1.1.0**
+
+- Support CotEditor and MacVim.
+
 **version 1.0.3**
 
 - Signed the application with the developer account. Bundle ID has changed.
 - Support Korean.
 
-**version 1.0.2**
-
-- Support TextMate.
-- Change OpenInEditor-Lite default icon.
-
-**version 1.0.1**
-
-- Support Visual Studio Code - Insiders
-
-**version 1.0.0**
-
-- Support BBEdit
-- Fix: check application folder under home directory
-
 <details><summary>old version</summary><br>
+<p><strong>version 1.0.2</strong></p>
+<ul>
+<li>Support TextMate</li>
+<li>Change OpenInEditor-Lite default icon</li>
+</ul>
+<p><strong>version 1.0.1</strong></p>
+<ul>
+<li>Support Visual Studio Code - Insiders</li>
+</ul>
+<p><strong>version 1.0.0</strong></p>
+<ul>
+<li>Support BBEdit</li>
+<li>Fix: check application folder under home directory</li>
+</ul>
 <p><strong>version 0.4.4</strong></p>
 <ul>
-<li>iTerm will not leave 'cd xxx' in history.</li>
+<li>iTerm will not leave 'cd xxx' in history</li>
 <li>Fix: icon will not flash in dock</li>
 </ul>
 <p><strong>version 0.4.3</strong></p>

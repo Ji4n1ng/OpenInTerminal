@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.0.3"><img src="https://img.shields.io/badge/Version-1.0.3-blue.svg?longCache=true&style=for-the-badge"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.0"><img src="https://img.shields.io/badge/Version-1.1.0-blue.svg?longCache=true&style=for-the-badge"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
@@ -24,7 +24,7 @@
 
 ## 如何安装 🖥
 
-### Homebrew (当前版本：1.0.2)
+### Homebrew (当前版本：1.1.0)
 
 1. 运行以下命令
 
@@ -42,7 +42,7 @@ brew cask install openineditor-lite
   <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
 </div>
 
-### 手动安装 (最新版本：1.0.3)
+### 手动安装 (最新版本：1.1.0)
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -50,11 +50,7 @@ brew cask install openineditor-lite
 
 ## 支持 ❤️
 
-你好，我是 Ji4n1ng。我是一名学生，OpenInTerminal 是我空余时间维护的一个开源项目。它是免费且开源的。
-
-最近由于奇怪的 bug，签名过的 OpenInTerminal 不能在其他 Mac 上运行。我不明白什么原因。如果你能支持我购买苹果开发者证书，我将非常感激。（99美元对于学生来说，并不是一个小的数字，它几乎是我三个星期的生活费。）
-
-或者，有人能帮我解决这个问题也可以。请看 #61 。非常感谢！
+你好，我是 Ji4n1ng。我是一名学生，OpenInTerminal 是我空余时间维护的一个开源项目。它是免费且开源的。如果你能支持我购买苹果开发者账号，我将非常感激。一年 99 美元的花费对于学生来说，并不是一个小的数字，它几乎是我三个星期的生活费。非常感谢！
 
 | PayPal | 支付宝 | 微信 |
 | --- | --- | --- |
@@ -102,6 +98,16 @@ defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
 
 <details><summary>设置 <strong>TextMate</strong> 为默认编辑器:</summary><br>
 <code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate</code>
+<br>
+</details>
+
+<details><summary>设置 <strong>CotEditor</strong> 为默认编辑器:</summary><br>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CotEditor</code>
+<br>
+</details>
+
+<details><summary>设置 <strong>MacVim</strong> 为默认编辑器:</summary><br>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier MacVim</code>
 <br>
 </details>
 
