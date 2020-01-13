@@ -119,6 +119,17 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 <p>A: Try to select a file(folder) or open a Finder window. Because when you right-click on the desktop and nothing is selected, system does not provide program with the path of selected files. Under this situation, the program does not work.<br>Currently they(Fidner extension and actions in status bar menu) do not work as the same way. Finder extension is completely dependent on AppleScript in order to run independently, while status bar icon works as before. So they have different behaviors. This problem will be improved in the future.</p>
 </details>
 
+<details><summary>7. The implementation mechanism of OpenInTerminal and why there are two versions.</summary><br>
+<p>There are two ways to achieve "open in terminal".</p>
+<ul>
+<li>1. ScriptingBridge. It's faster and more stable than the second one, although the differences are small. <code>OpenInTerminal-Lite</code> and actions of <code>OpenInTerminal</code> in status bar menu are based on this way. Its disadvantage is that applications which use ScriptingBridge to access user's directory infomation or something else cannot be sandboxed.</li>
+<li>2. AppleScript. Finder extension of <code>OpenInTerminal</code> is completely dependent on AppleScript in order to run independently. The first way cannot be applied to Finder extension because it is required to be sandboxed.</li>
+</ul>
+<p>Some people want OpenInTerminal to be fast and stable(the lite version), while others want OpenInTerminal to be powerful and easier to configure(the normal version). Some people hope that OpenInTerminal can automatically adapt to dark mode(the normal version), while others just want to open the terminal with one click(the lite version).</p>
+<p>When one version can no longer meet these needs, OpenInTerminal was split into a normal version and a lite version a few months ago.</p>
+<p>(BTW, I know there are apps that are sandboxed and  can achieve the same effect as OpenInTerminal. But I don't know how it implements this. If anyone knows it and is willing to talk to me, that would be great. I'm very happy to make OpenInTerminal more perfect so that one version is enough.😀)</p>
+</details>
+
 ## Changes 🗒
 
 **version 2.1.1**

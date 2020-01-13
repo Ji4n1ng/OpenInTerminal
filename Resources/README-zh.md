@@ -109,6 +109,17 @@ brew cask install openinterminal
 <p>答：选中一个文件（文件夹）或者打开一个访达窗口。因为当你右键点击桌面的时候，没有任何东西是被选中的状态，所以系统并不能把选中文件的路径提供给程序使用。在这种情况下，程序将不能正常工作。<br>目前访达扩展和状态栏菜单中的功能并不是同一种方式来实现的。访达扩展为了能够独立运行，现在完全基于 AppleScript。然而状态栏菜单中的功能的实现方式还和以前一样。所以它们会有不同的表现行为。这个问题会在未来得到改进。</p>
 </details>
 
+<details><summary>7. OpenInTerminal 的实现机制以及为什么会有两个版本。</summary><br>
+<p>有两种方法可以实现“打开终端”。</p>
+<ul>
+<li>1. ScriptingBridge。它比第二种方式更快更稳定，尽管两者差异很小。<code>OpenInTerminal-Lite</code> 和 <code>OpenInTerminal</code> 中的状态栏菜单操作都是基于这种方式的。它的缺点是使用 ScriptingBridge 访问用户目录信息或其他内容的应用程序不能是沙盒的。</li>
+<li>2. AppleScript。为了能够独立运行，<code>OpenInTerminal</code> 的访达扩展完全依赖 AppleScript。第一种方法不能应用于访达扩展，因为它必须是沙盒的。</li>
+</ul>
+<p>有些人希望 OpenInTerminal 快速且稳定（精简版），而另一些人希望 OpenInTerminal 功能强大且易于配置（普通版）。有些人希望 OpenInTerminal 能够自动适配黑暗模式（普通版），而另一些人只想一键打开终端（精简版）。</p>
+<p>当一个版本不再满足这些需求时，OpenInTerminal 在几个月之前分化为普通版和精简版。</p>
+<p>（顺便说一句，我知道有些应用程序是沙盒化的，并且可以达到和 OpenInTerminal 相同的效果。但是我不知道它是怎么实现的。如果有人知道它并愿意与我交谈，那就太好了。我非常愿意使 OpenInTerminal 变得更加完美，以至于一个版本就足够了。😀）</p>
+</details>
+
 ## 特别感谢 ❤️
 
 ### 贡献者
