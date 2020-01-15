@@ -54,7 +54,7 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 
 | PayPal | AliPay | WeChat Pay |
 | --- | --- | --- |
-| [paypal.me/ji4n1ng](https://www.paypal.me/ji4n1ng) | ![AliPay](./screenshots/Alipay.jpg) | ![WeChatPay](./screenshots/WeChatPay.jpg) |
+| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | ![AliPay](./screenshots/Alipay.jpg) | ![WeChatPay](./screenshots/WeChatPay.jpg) |
 
 ## Settings 🔨
 
