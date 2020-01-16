@@ -29,7 +29,6 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
 | GUI preferences | ✅ | ❌ |
 | Support keyboard shortcuts. | ✅ | ❌ |
 | Support Dark Mode. | ✅ | ❌ |
-| No need to run in the background | ❌ | ✅ |
 
 ## OpenInTerminal and OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 

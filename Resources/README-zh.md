@@ -29,7 +29,6 @@
 | 图形化设置界面 | ✅ | ❌ |
 | 支持键盘快捷键 | ✅ | ❌ |
 | 支持 Dark Mode | ✅ | ❌ |
-| 不需要后台运行 | ❌ | ✅ |
 
 ## OpenInTerminal 和 OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
