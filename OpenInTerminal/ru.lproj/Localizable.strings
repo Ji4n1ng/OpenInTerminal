@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  OpenInTerminal
+
+  Created by Egor Lazarev on 2020/1/30.
+  Copyright © 2019 Egor Lazarev. All rights reserved.
+*/
+
+"general.ok" = "OK";
+"general.cancel" = "Отменить";
+"general.yes" = "Да";
+
+"menu.open_in" = "Открыть в ";
+"menu.open_with_default_terminal" = "Открыть через Терминал";
+"menu.open_with_default_editor" = "Открыть в редакторе";
+"menu.copy_path_to_clipboard" = "Скопировать путь";
+
+"menu.preferences" = "Настройки...";
+"menu.quit" = "Выйти";
+
+"pref.toolbar.not_installed" = "Не установлено";
+
+"alert.pick_terminal_title" = "Открыть в?";
+"alert.pick_terminal_description" = "Пожалуйста, выберите один из доступных терминалов для установки по-умолчанию.";
+
+"alert.pick_editor_title" = "Открыть в?";
+"alert.pick_editor_description" = "Пожалуйста, выберите один из доступных редакторов для установки по-умолчанию.";
+
+"alert.reset_preferences_title" = "Сбросить пользовательские настройки?";
+"alert.reset_preferences_description" = "⚠️ Все пользовательские настройки будут сброшены";
+
+"toolbar.item_name" = "Открыть через Терминал";
+"toolbar.item_tooltip" = "Открыть текущую директорию через Терминал.";
