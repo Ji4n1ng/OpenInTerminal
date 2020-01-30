@@ -45,6 +45,7 @@
 		D0C631E3227F8637002C4AA0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D0C631E4227F8637002C4AA0 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		D0C631E5227F8637002C4AA0 /* Global.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Global.xcconfig; sourceTree = "<group>"; };
+		E197D59B23E299B900C5A893 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +155,7 @@
 				"zh-Hans",
 				fr,
 				ko,
+				ru,
 			);
 			mainGroup = 95163CD72269F0C2007C006F;
 			productRefGroup = 95163CE12269F0C2007C006F /* Products */;
@@ -197,6 +199,7 @@
 				95ECC133228CF9A100416AA2 /* zh-Hans */,
 				95ECC134228CF9A200416AA2 /* fr */,
 				82AE667723896ADB00F4DB4D /* ko */,
+				E197D59B23E299B900C5A893 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
