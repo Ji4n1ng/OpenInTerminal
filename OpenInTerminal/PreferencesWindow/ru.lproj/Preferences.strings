@@ -1,0 +1,138 @@
+
+/* Class = "NSTextFieldCell"; title = "❤️ Special thanks to:"; ObjectID = "0Gy-jf-q6v"; */
+"0Gy-jf-q6v.title" = "❤️ Особое спасибо:";
+
+/* Class = "NSTextFieldCell"; title = "⚠️ Note that this will reset all user preferences"; ObjectID = "2Rg-te-FPU"; */
+"2Rg-te-FPU.title" = "⚠️ Все пользовательские настройки будут сброшены";
+
+/* Class = "NSButtonCell"; title = "Tab"; ObjectID = "4ss-CQ-brT"; */
+"4ss-CQ-brT.title" = "Вкладка";
+
+/* Class = "NSTextFieldCell"; title = "If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu."; ObjectID = "592-4p-Ybh"; */
+"592-4p-Ybh.title" = "Если включено, нажмите по иконке в меню, чтобы переключить действие. Правый клик для открытия меню.";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
+"5f3-UK-Rft.title" = "Настройки";
+
+/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
+"BUH-CU-WBW.title" = "Скрыть иконку в строке состояния";
+
+/* Class = "NSTextFieldCell"; title = "Open a new window or a new tab when opening a path in terminal."; ObjectID = "BrI-hE-Mff"; */
+"BrI-hE-Mff.title" = "Открыть новое окно или новую вкладку при открытии пути в терминале.";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "Dyx-zg-hYe"; */
+"Dyx-zg-hYe.title" = "Нет";
+
+/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
+"FpP-Q9-flS.title" = "Ярлыки";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "G69-k2-hgn"; */
+"G69-k2-hgn.title" = "Нет";
+
+/* Class = "NSViewController"; title = "General"; ObjectID = "Gn1-zC-bzB"; */
+"Gn1-zC-bzB.title" = "Основные";
+
+/* Class = "NSViewController"; title = "Advanced"; ObjectID = "H3q-JS-Bu4"; */
+"H3q-JS-Bu4.title" = "Расширенные";
+
+/* Class = "NSButtonCell"; title = "WeChat"; ObjectID = "HUx-Wz-JJm"; */
+"HUx-Wz-JJm.title" = "WeChat";
+
+/* Class = "NSTextFieldCell"; title = "👨‍💻 GitHub:"; ObjectID = "How-dP-tcX"; */
+"How-dP-tcX.title" = "👨‍💻 GitHub:";
+
+/* Class = "NSButtonCell"; title = "@Camji55"; ObjectID = "IJL-uk-uO5"; */
+"IJL-uk-uO5.title" = "@Camji55";
+
+/* Class = "NSButtonCell"; title = "contact@jianing.wang"; ObjectID = "IPL-yO-Vkp"; */
+"IPL-yO-Vkp.title" = "contact@jianing.wang";
+
+/* Class = "NSTextFieldCell"; title = "0.1.0"; ObjectID = "Jnf-AX-bIr"; */
+"Jnf-AX-bIr.title" = "0.1.0";
+
+/* Class = "NSTextFieldCell"; title = "💸 Donate:"; ObjectID = "Kua-ZD-31F"; */
+"Kua-ZD-31F.title" = "💸 Пожертвования:";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
+"Mqt-Fp-Ssl.title" = "Открыть через Терминал по-умолчанию:";
+
+/* Class = "NSTextFieldCell"; title = "🐦 Twitter:"; ObjectID = "NZE-zU-6ss"; */
+"NZE-zU-6ss.title" = "🐦 Twitter:";
+
+/* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
+"Sw7-of-ecf.title" = "Alipay";
+
+/* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
+"Upf-HU-iaN.title" = "Перезапустите приложения, чтобы отобразить Настройки.";
+
+/* Class = "NSTextFieldCell"; title = "✉️ Contact:"; ObjectID = "Vu4-Wz-Agk"; */
+"Vu4-Wz-Agk.title" = "✉️ Связаться:";
+
+/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
+"Xd9-iA-emU.title" = "Скопировать путь в буфер обмена:";
+
+/* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
+"Xfc-rf-FkX.title" = "Текстовый редактор по-умолчанию:";
+
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at Login"; ObjectID = "ZbK-xW-anT"; */
+"ZbK-xW-anT.title" = "Запускать OpenInTerminal автоматически";
+
+/* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
+"aRo-sy-WpK.title" = "Терминал по-умолчанию:";
+
+/* Class = "NSTextFieldCell"; title = "Not Installed Applications"; ObjectID = "bCi-r8-MrK"; */
+"bCi-r8-MrK.title" = "Нет установленных приложений";
+
+/* Class = "NSTextFieldCell"; title = "Installed Supported Applications"; ObjectID = "bT7-LU-sov"; */
+"bT7-LU-sov.title" = "Установленные поддерживаемые приложения";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
+"bvy-v3-hhf.title" = "Открыть в редакторе по-умолчанию:";
+
+/* Class = "NSButtonCell"; title = "PayPal"; ObjectID = "dC4-C7-fEL"; */
+"dC4-C7-fEL.title" = "PayPal";
+
+/* Class = "NSButtonCell"; title = "github.com/Ji4n1ng/OpenInTerminal"; ObjectID = "f2V-P5-pQI"; */
+"f2V-P5-pQI.title" = "github.com/Ji4n1ng/OpenInTerminal";
+
+/* Class = "NSTextFieldCell"; title = "Terminal"; ObjectID = "fA9-Hd-yjp"; */
+"fA9-Hd-yjp.title" = "Терминал";
+
+/* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
+"gy9-lb-m8d.title" = "Быстрое переключение";
+
+/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
+"jcs-Ou-OZ2.title" = "Сброс";
+
+/* Class = "NSButtonCell"; title = "Reset preferences"; ObjectID = "jyI-H7-qN3"; */
+"jyI-H7-qN3.title" = "Сбросить настройки";
+
+/* Class = "NSViewController"; title = "About"; ObjectID = "k6X-N1-mVu"; */
+"k6X-N1-mVu.title" = "О приложении";
+
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal"; ObjectID = "mOB-su-ZM1"; */
+"mOB-su-ZM1.title" = "OpenInTerminal";
+
+/* Class = "NSButtonCell"; title = "Window"; ObjectID = "mTs-8c-pgj"; */
+"mTs-8c-pgj.title" = "Окно";
+
+/* Class = "NSButtonCell"; title = "Tab"; ObjectID = "nYS-rF-JCL"; */
+"nYS-rF-JCL.title" = "Вкладка";
+
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
+"ngT-lX-vFA.title" = "OpenInTerminal будет автоматически запускаться при старте системы";
+
+/* Class = "NSViewController"; title = "Toolbar"; ObjectID = "s5W-qL-1Xs"; */
+"s5W-qL-1Xs.title" = "Панель инструментов";
+
+/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
+"sG4-nK-ghj.title" = "Скрыть строки из контекстного меню";
+
+/* Class = "NSButtonCell"; title = "Window"; ObjectID = "sik-wU-ZF2"; */
+"sik-wU-ZF2.title" = "Окно";
+
+/* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */
+"tR5-me-DTK.title" = "@Ji4n1ng";
+
+/* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
+"yIW-2a-15A.title" = "iTerm";

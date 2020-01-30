@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  OpenInTerminal-Lite
+
+  Created by Jianing Wang on 2019/5/16.
+  Copyright © 2019 Jianing Wang. All rights reserved.
+*/
+
+"general.ok" = "OK";
+"general.cancel" = "Отменить";
+"general.yes" = "Да";
+
+"alert.pick_terminal_title" = "Открыть в?";
+"alert.pick_terminal_description" = "Пожалуйста, выберите один из доступных терминалов для установки по-умолчанию.";

@@ -222,6 +222,8 @@
 		D0C631E0227F862E002C4AA0 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		D0C631E1227F862E002C4AA0 /* Global.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Global.xcconfig; sourceTree = "<group>"; };
 		DF259B7197D7D4AF21BFC5F5 /* Pods-OpenInTerminal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenInTerminal.release.xcconfig"; path = "Target Support Files/Pods-OpenInTerminal/Pods-OpenInTerminal.release.xcconfig"; sourceTree = "<group>"; };
+		E197D59823E296EB00C5A893 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Preferences.strings; sourceTree = "<group>"; };
+		E197D59A23E2973800C5A893 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -593,6 +595,7 @@
 				Base,
 				"zh-Hans",
 				fr,
+				ru,
 			);
 			mainGroup = 956C38A8225F7701001CB769;
 			productRefGroup = 956C38B2225F7701001CB769 /* Products */;
@@ -802,6 +805,7 @@
 				9584EDF3226DEF79003C7EE8 /* en */,
 				9584EDF5226DEFC0003C7EE8 /* zh-Hans */,
 				95FC9243228BAAD600F51DF2 /* fr */,
+				E197D59A23E2973800C5A893 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -813,6 +817,7 @@
 				951FC31523C624A400A51B50 /* en */,
 				951FC31723C624A700A51B50 /* zh-Hans */,
 				951FC31923C624A900A51B50 /* fr */,
+				E197D59823E296EB00C5A893 /* ru */,
 			);
 			name = Preferences.storyboard;
 			sourceTree = "<group>";
