@@ -5,7 +5,7 @@ DEPENDENCIES:
   - MASShortcut
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - MASShortcut
 
 SPEC CHECKSUMS:
@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 2b4279d7287cc3966eddd506fd6403f275c5b72d
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.9.1

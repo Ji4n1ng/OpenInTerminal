@@ -61,37 +61,27 @@ extension TerminalType: Scriptable {
         let script = """
         tell application "Finder"
             set finderSelList to selection as alias list
-        end tell
-
-        set thePath to ""
-
-        if finderSelList ≠ {} then
-            repeat with i in finderSelList
-                set contents of i to POSIX path of (contents of i)
-            end repeat
             
-            set thePath to item 1 of finderSelList
-        end if
-
-        if finderSelList = {} then
-            tell application "Finder"
-                set thePath to POSIX path of ((target of front Finder window) as text)
-            end tell
-        end if
-
-        tell application "Finder"
-            try
-                do shell script "cd " & quoted form of thePath
-            on error
+            if finderSelList ≠ {} then
+                set theSelected to item 1 of finderSelList
+                set thePath to POSIX path of (contents of theSelected)
                 try
-                    set thePath to POSIX path of ((target of front Finder window) as text)
                     do shell script "cd " & quoted form of thePath
                 on error
-                    set thePath to POSIX path of (path to desktop)
+                    set thePath to POSIX path of ((container of theSelected) as text)
                 end try
-            end try
+            end if
+            
+            if finderSelList = {} then
+                tell application "Finder"
+                    try
+                        set thePath to POSIX path of ((target of front Finder window) as text)
+                    on error
+                        set thePath to POSIX path of (path to desktop)
+                    end try
+                end tell
+            end if
         end tell
-
         \(openScript)
         """
         return script

@@ -24,7 +24,12 @@ func checkScripts() throws {
     
     func writeScriptIfNeeded(at path: URL, with script: String) throws {
         if FileManager.default.fileExists(atPath: path.path) {
-            return
+            // check if the existing file's content is the same as `script`
+            let existingScript = try String(contentsOf: path, encoding: String.Encoding.utf8)
+            if existingScript == script {
+                // don't need to write again
+                return
+            }
         }
         try script.write(to: path, atomically: true, encoding: String.Encoding.utf8)
     }
@@ -54,35 +59,26 @@ func checkScripts() throws {
     let terminalTabScript = """
     tell application "Finder"
         set finderSelList to selection as alias list
-    end tell
-
-    set thePath to ""
-
-    if finderSelList ≠ {} then
-        repeat with i in finderSelList
-            set contents of i to POSIX path of (contents of i)
-        end repeat
         
-        set thePath to item 1 of finderSelList
-    end if
-
-    if finderSelList = {} then
-        tell application "Finder"
-            set thePath to POSIX path of ((target of front Finder window) as text)
-        end tell
-    end if
-
-    tell application "Finder"
-        try
-            do shell script "cd " & quoted form of thePath
-        on error
+        if finderSelList ≠ {} then
+            set theSelected to item 1 of finderSelList
+            set thePath to POSIX path of (contents of theSelected)
             try
-                set thePath to POSIX path of ((target of front Finder window) as text)
                 do shell script "cd " & quoted form of thePath
             on error
-                set thePath to POSIX path of (path to desktop)
+                set thePath to POSIX path of ((container of theSelected) as text)
             end try
-        end try
+        end if
+        
+        if finderSelList = {} then
+            tell application "Finder"
+                try
+                    set thePath to POSIX path of ((target of front Finder window) as text)
+                on error
+                    set thePath to POSIX path of (path to desktop)
+                end try
+            end tell
+        end if
     end tell
 
     if not application "Terminal" is running then
@@ -107,22 +103,4 @@ func checkScripts() throws {
     end if
     """
     try writeScriptIfNeeded(at: terminalTabScriptPath, with: terminalTabScript)
-}
-
-fileprivate extension String {
-    
-    var escaped: String {
-        
-        var result = ""
-        let set: [Character] = [" "]
-        
-        for char in self {
-            if set.contains(char) {
-                result += "\\\\"
-            }
-            result.append(char)
-        }
-        
-        return result
-    }
 }
