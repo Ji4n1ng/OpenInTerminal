@@ -28,8 +28,8 @@ struct Constants {
     
     /// .terminal, .iTerm, .hyper, .alacritty
     static let allTerminals: [TerminalType] = [.terminal, .iTerm, .hyper, .alacritty]
-    /// .vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate, .cotEditor, .macVim
-    static let allEditors: [EditorType] = [.vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate, .cotEditor, .macVim]
+    /// .vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate, .cotEditor, .macVim, .phpStorm
+    static let allEditors: [EditorType] = [.vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate, .cotEditor, .macVim, .phpStorm]
 }
 
 extension NSImage {

@@ -70,6 +70,7 @@
 		95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		95C6F81C22E37D59001C6374 /* BBEditApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F81B22E37D59001C6374 /* BBEditApp.swift */; };
 		95DD6296243B211B003550B3 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD6295243B211B003550B3 /* ArrayExtensions.swift */; };
+		95DD629C243B4420003550B3 /* PhpStormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD629B243B4420003550B3 /* PhpStormApp.swift */; };
 		95DFC1242354A2C300941D3A /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DFC1232354A2C300941D3A /* DefaultsManager.swift */; };
 		95E7170C22F1370F000E331A /* VSCodeInsidersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */; };
 		95F5BED5227734E800D505A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */; };
@@ -216,6 +217,7 @@
 		95C6F81B22E37D59001C6374 /* BBEditApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBEditApp.swift; sourceTree = "<group>"; };
 		95DD6295243B211B003550B3 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		95DD629A243B3F96003550B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
+		95DD629B243B4420003550B3 /* PhpStormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhpStormApp.swift; sourceTree = "<group>"; };
 		95DFC1232354A2C300941D3A /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodeInsidersApp.swift; sourceTree = "<group>"; };
 		95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 				956BCE0F22F80D6C00310B56 /* TextMateApp.swift */,
 				9595D29F23BA0E7F006CBB36 /* CotEditorApp.swift */,
 				951FC31223C611E600A51B50 /* MacVimApp.swift */,
+				95DD629B243B4420003550B3 /* PhpStormApp.swift */,
 			);
 			path = Editors;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95DD629C243B4420003550B3 /* PhpStormApp.swift in Sources */,
 				9595D2A023BA0E7F006CBB36 /* CotEditorApp.swift in Sources */,
 				956BCE1022F80D6C00310B56 /* TextMateApp.swift in Sources */,
 				954EFA932273643C001E101E /* EditorProtocol.swift in Sources */,

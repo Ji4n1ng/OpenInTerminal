@@ -19,6 +19,7 @@ public enum EditorType: String {
     case textMate = "TextMate"
     case cotEditor = "CotEditor"
     case macVim = "MacVim"
+    case phpStorm = "PhpStorm"
     
     public var fullName: String {
         switch self {
@@ -40,6 +41,8 @@ public enum EditorType: String {
             return "CotEditor"
         case .macVim:
             return "MacVim"
+        case .phpStorm:
+            return "PhpStorm"
         }
     }
     
@@ -62,6 +65,8 @@ public enum EditorType: String {
         case .cotEditor:
             return ""
         case .macVim:
+            return ""
+        case .phpStorm:
             return ""
         }
     }
@@ -86,6 +91,8 @@ public enum EditorType: String {
             return CotEditorApp()
         case .macVim:
             return MacVimApp()
+        case .phpStorm:
+            return PhpStormApp()
         }
     }
 }
@@ -112,6 +119,8 @@ public extension EditorType {
             self = .cotEditor
         case "MacVim":
             self = .macVim
+        case "PhpStorm":
+            self = .phpStorm
         default:
             return nil
         }
