@@ -1,9 +1,10 @@
 <p align="center">
-  <img width="100%" src="./Resources/screenshots/readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.1.1"><img src="https://img.shields.io/badge/Version-2.1.1-blue.svg?longCache=true&style=for-the-badge"></a>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
-  <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
-  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
+  <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588733-b7e38400-7871-11ea-9c3d-0f6a3c252225.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.1.1"><img src="https://img.shields.io/badge/Version-2.1.1-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg
+  "></a>
+  <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
+  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
 
 English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
@@ -14,18 +15,18 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
 
 | Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| Open current directory in Terminal (or Editor) | ![](./Resources/screenshots/main-open-in-terminal.gif) | ![](./Resources/screenshots/lite-run.gif) |
-| Open selected folder or file in Terminal (or Editor) | ![](./Resources/screenshots/main-open-in-editor.gif) | ![](./Resources/screenshots/lite-run-editor.gif) |
-| Copy path of the selected file or Finder window to Clipboard | ![](./Resources/screenshots/main-copy-path-to-clipboard.gif) |  ❌ Not Supported |
+| Open current directory in Terminal (or Editor) | ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif) | ![](https://user-images.githubusercontent.com/11001224/78589363-b23a6e00-7872-11ea-841d-79227b1125ce.gif) |
+| Open selected folder or file in Terminal (or Editor) | ![](https://user-images.githubusercontent.com/11001224/78589369-b36b9b00-7872-11ea-8a9e-e3f23e7ce80e.gif) | ![](https://user-images.githubusercontent.com/11001224/78589359-afd81400-7872-11ea-8032-8035d4412b19.gif) |
 
 ### More features
 
 | Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
 | Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
-| Support [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/) and [MacVim](https://github.com/macvim-dev/macvim). | ✅ | ✅ |
+| Support [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim) and [PhpStorm](https://www.jetbrains.com/phpstorm/). | ✅ | ✅ |
 | Set to open a new tab or window. | ✅ | ✅ |
-| Support English, Chinese and French. | ✅ | ✅ |
+| Support English, Chinese, French and Russian. | ✅ | ✅ |
+| Copy path of the selected file or Finder window to Clipboard | ✅ |  ❌ |
 | GUI preferences | ✅ | ❌ |
 | Support keyboard shortcuts. | ✅ | ❌ |
 | Support Dark Mode. | ✅ | ❌ |
@@ -44,13 +45,13 @@ Please check the document: [OpenInTerminal-Lite English](./Resources/README-Lite
 
 ### 1. Download
 
-#### a) Homebrew (current version: 2.1.1)
+#### a) Homebrew
 
 ```
 brew cask install openinterminal
 ```
 
-#### b) Manual (latest version: 2.1.1)
+#### b) Manual
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
@@ -63,7 +64,7 @@ brew cask install openinterminal
 Open the OpenInTerminal app. Go to `System Preferences` -> `Extensions` -> `Finder Extensions`, check the permission button as below.
 
 <div>
-  <img src="./Resources/screenshots/finder-extension-permission.png" width="450px">
+  <img src="https://user-images.githubusercontent.com/11001224/78590336-448f4180-7874-11ea-827c-ad3a7bffca5e.png" width="400px">
 </div>
 
 ## Todo 👨‍💻
