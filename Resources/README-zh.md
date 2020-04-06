@@ -1,12 +1,12 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588733-b7e38400-7871-11ea-9c3d-0f6a3c252225.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.1.1"><img src="https://img.shields.io/badge/Version-2.1.1-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.2.0"><img src="https://img.shields.io/badge/Version-2.2.0-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg
   "></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
-  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
+  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
-https://img.shields.io/badge/language-Swift5-orange.svg
+
 [English](../README.md) | 中文说明
 
 [OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md)
@@ -15,18 +15,18 @@ https://img.shields.io/badge/language-Swift5-orange.svg
 
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| 在终端（或编辑器）中打开当前目录 | ![](./screenshots/main-open-in-terminal.gif) | ![](./screenshots/lite-run.gif) |
-| 在终端（或编辑器）中打开选择的文件夹或文件 | ![](./screenshots/main-open-in-editor.gif) | ![](./screenshots/lite-run-editor.gif) |
-| 将已选择的文件或者访达窗口的路径拷贝到粘贴板 | ![](./screenshots/main-copy-path-to-clipboard.gif) |  ❌ Not Supported |
+| 在终端（或编辑器）中打开当前目录 | ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif) | ![](https://user-images.githubusercontent.com/11001224/78589363-b23a6e00-7872-11ea-841d-79227b1125ce.gif) |
+| 在终端（或编辑器）中打开选择的文件夹或文件 | ![](https://user-images.githubusercontent.com/11001224/78589369-b36b9b00-7872-11ea-8a9e-e3f23e7ce80e.gif) | ![](https://user-images.githubusercontent.com/11001224/78589359-afd81400-7872-11ea-8032-8035d4412b19.gif) |
 
 ### 更多功能
 
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| 支持 Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) 和 [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
-| 支持 [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/) 和 [MacVim](https://github.com/macvim-dev/macvim)。 | ✅ | ✅ |
+| 支持 Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) 和 [Alacritty](https://github.com/jwilm/alacritty) | ✅ | ✅ |
+| 支持 [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim) 和 [PhpStorm](https://www.jetbrains.com/phpstorm/) | ✅ | ✅ |
 | 设置为打开新的窗口或者标签页 | ✅ | ✅ |
-| 支持中文，英语和法语 | ✅ | ✅ |
+| 支持中文，英语，法语和俄语 | ✅ | ✅ |
+| 将已选择的文件或者访达窗口的路径拷贝到粘贴板 | ✅ | ❌ |
 | 图形化设置界面 | ✅ | ❌ |
 | 支持键盘快捷键 | ✅ | ❌ |
 | 支持 Dark Mode | ✅ | ❌ |
@@ -45,13 +45,13 @@ https://img.shields.io/badge/language-Swift5-orange.svg
 
 ### 1. 下载
 
-#### a) Homebrew (当前版本：2.1.1)
+#### a) Homebrew
 
 ```
 brew cask install openinterminal
 ```
 
-#### b) 手动 (最新版本：2.1.1)
+#### b) 手动
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -63,7 +63,7 @@ brew cask install openinterminal
 打开 OpenInTerminal 应用。去 `系统偏好设置` -> `扩展` -> `访达扩展`，打开下图中的权限按钮。
 
 <div>
-  <img src="./screenshots/finder-extension-permission-zh.png" width="450px">
+  <img src="https://user-images.githubusercontent.com/11001224/78590335-435e1480-7874-11ea-8adf-124f09c5b15e.png" width="400px">
 </div>
 
 ## 支持 ❤️
@@ -72,7 +72,8 @@ brew cask install openinterminal
 
 | PayPal | 支付宝 | 微信 |
 | --- | --- | --- |
-| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | ![AliPay](./screenshots/Alipay.jpg) | ![WeChatPay](./screenshots/WeChatPay.jpg) |
+| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Support-Alipay.jpg" width="50%"> | <img src="./Support-WeChatPay.jpg" width="50%"> |
+
 
 ## 常见问题 ❓
 
@@ -129,6 +130,7 @@ brew cask install openinterminal
 ### 译者
 
 - [Dorian Eydoux](https://github.com/dorianeydx)
+- [Egor](https://github.com/Rogue85)
 
 ### 参考项目
 

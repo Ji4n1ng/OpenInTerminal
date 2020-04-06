@@ -1,9 +1,9 @@
 <p align="center">
-  <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.0"><img src="https://img.shields.io/badge/Version-1.1.0-blue.svg?longCache=true&style=for-the-badge"></a>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
-  <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
-  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
+  <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588756-bf0a9200-7871-11ea-9aba-b00284c07c21.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.1"><img src="https://img.shields.io/badge/Version-1.1.1-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
+  <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
+  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
 
 [English](./README-Lite.md) | 中文说明
@@ -13,18 +13,19 @@
 ### 1) 在终端（或编辑器）中打开当前目录
 
 <div>
-  <img src="./screenshots/lite-run.gif" width="600px">
+  <img src="https://user-images.githubusercontent.com/11001224/78589363-b23a6e00-7872-11ea-841d-79227b1125ce.gif" width="600px">
 </div>
+
 
 ### 2) 在终端（或编辑器）中打开选择的文件夹或文件
 
 <div>
-  <img src="./screenshots/lite-run-editor.gif" width="600px">
+  <img src="https://user-images.githubusercontent.com/11001224/78589359-afd81400-7872-11ea-8032-8035d4412b19.gif" width="600px">
 </div>
 
 ## 如何安装 🖥
 
-### Homebrew (当前版本：1.1.0)
+### Homebrew
 
 1. 运行以下命令
 
@@ -39,10 +40,10 @@ brew cask install openineditor-lite
 >  ⚠️ 当您第一次运行应用程序时，macOS 将要求访问 `访达` 和 `终端`（或 `iTerm`）的权限。请给予应用程序权限。
 
 <div>
-  <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
+  <img src="https://user-images.githubusercontent.com/11001224/78590414-67215a80-7874-11ea-97a1-fb8996db6984.gif" width="600px">
 </div>
 
-### 手动安装 (最新版本：1.1.0)
+### 手动安装
 
 1. 从 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中下载。
 2. 将应用移动到 `应用程序` 文件夹。
@@ -54,7 +55,7 @@ brew cask install openineditor-lite
 
 | PayPal | 支付宝 | 微信 |
 | --- | --- | --- |
-| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | ![AliPay](./screenshots/Alipay.jpg) | ![WeChatPay](./screenshots/WeChatPay.jpg) |
+| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Support-Alipay.jpg" width="50%"> | <img src="./Support-WeChatPay.jpg" width="50%"> |
 
 ## 设置 🔨 
 
@@ -63,8 +64,8 @@ brew cask install openineditor-lite
 在第一次运行应用的时候，你需要选择默认终端。
 
 <div>
-  <img src="./screenshots/lite-terminal-selector.png" width="45%">
-  <img src="./screenshots/lite-editor-selector.png" width="45%">
+  <img src="https://user-images.githubusercontent.com/11001224/78600459-8b396780-7885-11ea-8226-2fe45e539134.png" width="45%">
+  <img src="https://user-images.githubusercontent.com/11001224/78600438-88d70d80-7885-11ea-9bcb-d70fcaaf7334.png" width="45%">
 </div>
 
 当你设置了默认终端之后，选择框将不会再出现。如果你想要重新设置默认终端，请在终端中输入以下命令。然后重新运行应用。
@@ -111,14 +112,19 @@ defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
 <br>
 </details>
 
+<details><summary>设置 <strong>PhpStorm</strong> 为默认编辑器:</summary><br>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PhpStorm</code>
+<br>
+</details>
+
 ### 2) 如果你正在使用深色模式 (Dark Mode)
 
 我在 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中提供了几个图标。 您可以右键单击该应用程序并选择 `显示简介`。 拖动图标进行更改。
 
 <div>
-  <img src="./screenshots/lite-icons.png" width="600px">
+  <img src="https://user-images.githubusercontent.com/11001224/78600452-8aa0d100-7885-11ea-8a90-cc88b9233dac.png" width="600px">
   <br>
-  <img src="./screenshots/lite-change_icon-zh.gif" width="600px">
+  <img src="https://user-images.githubusercontent.com/11001224/78590421-68eb1e00-7874-11ea-91e3-61cfd5ba3a26.gif" width="600px">
 </div>
 
 ### 3) 打开新的标签页或者窗口
@@ -173,6 +179,7 @@ defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 
 - [Dorian Eydoux](https://github.com/dorianeydx)
 - [techinpark](https://github.com/techinpark)
+- [Egor](https://github.com/Rogue85)
 
 ### 参考项目
 

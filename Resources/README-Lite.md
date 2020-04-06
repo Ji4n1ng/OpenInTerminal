@@ -1,9 +1,9 @@
 <p align="center">
-  <img width="100%" src="./screenshots/lite-readme-header.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.0"><img src="https://img.shields.io/badge/Version-1.1.0-blue.svg?longCache=true&style=for-the-badge"></a>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=for-the-badge"></a>
-  <img src="https://img.shields.io/badge/Made With-Swift-red.svg?longCache=true&style=for-the-badge">
-  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg?style=for-the-badge"></a>
+  <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588756-bf0a9200-7871-11ea-9aba-b00284c07c21.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.1"><img src="https://img.shields.io/badge/Version-1.1.1-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
+  <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
+  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
 
 English | [中文说明](./README-Lite-zh.md)
@@ -13,18 +13,18 @@ English | [中文说明](./README-Lite-zh.md)
 ### 1) Open current directory in Terminal (or Editor)
 
 <div>
-  <img src="./screenshots/lite-run.gif" width="600px">
+  <img src="https://user-images.githubusercontent.com/11001224/78589363-b23a6e00-7872-11ea-841d-79227b1125ce.gif" width="600px">
 </div>
 
 ### 2) Open selected folder or file in Terminal (or Editor)
 
 <div>
-  <img src="./screenshots/lite-run-editor.gif" width="600px">
+  <img src="https://user-images.githubusercontent.com/11001224/78589359-afd81400-7872-11ea-8032-8035d4412b19.gif" width="600px">
 </div>
 
 ## How to install 🖥
 
-### Homebrew (current version: 1.1.0)
+### Homebrew
 
 1. Run the following command
 
@@ -39,10 +39,10 @@ brew cask install openineditor-lite
 >  ⚠️ macOS will ask your permissions to access Finder and Terminal (iTerm or Hyper) when you run the app for the first time. Please give the application permissions.
 
 <div>
-  <img src="./screenshots/lite-drag_to_toolbar.gif" width="600px">
+  <img src="https://user-images.githubusercontent.com/11001224/78590414-67215a80-7874-11ea-97a1-fb8996db6984.gif" width="600px">
 </div>
 
-### Manual (latest version: 1.1.0)
+### Manual
 
 1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 2. Move the app into `/Applications`.
@@ -54,7 +54,7 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 
 | PayPal | AliPay | WeChat Pay |
 | --- | --- | --- |
-| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | ![AliPay](./screenshots/Alipay.jpg) | ![WeChatPay](./screenshots/WeChatPay.jpg) |
+| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Support-Alipay.jpg" width="50%"> | <img src="./Support-WeChatPay.jpg" width="50%"> |
 
 ## Settings 🔨
 
@@ -63,8 +63,8 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 You are asked to set the default terminal (or editor) to open after first launch.
 
 <div>
-  <img src="./screenshots/lite-terminal-selector.png" width="45%">
-  <img src="./screenshots/lite-editor-selector.png" width="45%">
+  <img src="https://user-images.githubusercontent.com/11001224/78600459-8b396780-7885-11ea-8226-2fe45e539134.png" width="45%">
+  <img src="https://user-images.githubusercontent.com/11001224/78600438-88d70d80-7885-11ea-9bcb-d70fcaaf7334.png" width="45%">
 </div>
 
 The selection box will not appear after you have set the default terminal. If you want to reset the default terminal, please enter the following command in the terminal. Then just run the application again.
@@ -111,14 +111,19 @@ defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
 <br>
 </details>
 
+<details><summary>Set <strong>PhpStorm</strong> as the default editor:</summary><br>
+<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PhpStorm</code>
+<br>
+</details>
+
 ### 2) If you are using Dark Mode
 
 I provided several icons along with the app in the [release](https://github.com/Ji4n1ng/OpenInTerminal/releases). You can right click on the app and select `Get Info`. Drag the icon to cover the default icon.
 
 <div>
-  <img src="./screenshots/lite-icons.png" width="600px">
+  <img src="https://user-images.githubusercontent.com/11001224/78600452-8aa0d100-7885-11ea-8a90-cc88b9233dac.png" width="600px">
   <br>
-  <img src="./screenshots/lite-change_icon.gif" width="600px">
+  <img src="https://user-images.githubusercontent.com/11001224/78590421-68eb1e00-7874-11ea-91e3-61cfd5ba3a26.gif" width="600px">
 </div>
 
 ### 3) Open in a new Tab or Window
@@ -165,6 +170,11 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 </details>
 
 ## Changes 🗒
+
+**version 1.1.0**
+
+- Support Russian and Korean.
+- Support PhpStorm.
 
 **version 1.1.0**
 
@@ -243,6 +253,7 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 
 - [Dorian Eydoux](https://github.com/dorianeydx)
 - [techinpark](https://github.com/techinpark)
+- [Egor](https://github.com/Rogue85)
 
 ### Reference projects
 

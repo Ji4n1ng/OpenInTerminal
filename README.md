@@ -1,8 +1,7 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588733-b7e38400-7871-11ea-9c3d-0f6a3c252225.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.1.1"><img src="https://img.shields.io/badge/Version-2.1.1-blue.svg"></a>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg
-  "></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.2.0"><img src="https://img.shields.io/badge/Version-2.2.0-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
@@ -72,9 +71,7 @@ Open the OpenInTerminal app. Go to `System Preferences` -> `Extensions` -> `Find
 If you have a good idea, feel welcome to open a new [issue](https://github.com/Ji4n1ng/OpenInTerminal/issues/new/choose).
 
 - Open iTerm in split pane
-- Custom 'Open in Application'
 - Fix: open multiple selected files in editor
-- Custom Context Menu
 
 ## Support ❤️
 
@@ -82,7 +79,7 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 
 | PayPal | AliPay | WeChat Pay |
 | --- | --- | --- |
-| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | ![AliPay](./Resources/screenshots/Alipay.jpg) | ![WeChatPay](./Resources/screenshots/WeChatPay.jpg) |
+| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Resources/Support-Alipay.jpg" width="50%"> | <img src="./Resources/Support-WeChatPay.jpg" width="50%"> |
 
 ## FAQ ❓
 
@@ -132,6 +129,13 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 
 ## Changes 🗒
 
+**version 2.2.0**
+
+- Custom Finder menu options.
+- Support Russian.
+- Support PhpStorm.
+- Fix: doesn't work when opening desktop in terminal.
+
 **version 2.1.1**
 
 - Signed the application with the developer account. Bundle ID has changed.
@@ -140,11 +144,11 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 - User can hide context menu items.
 - Finder context menu item's title will change to the current default terminal / editor.
 
-**version 2.0.5**
-
-- Fix: check application exist bug
-
 <details><summary>old version</summary><br>
+<p><strong>version 2.0.5</strong></p>
+<ul>
+<li>Fix: check application exist bug</li>
+</ul>
 <p><strong>version 2.0.4</strong></p>
 <ul>
 <li>Support TextMate</li>
@@ -226,6 +230,7 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 ### Translators
 
 - [Dorian Eydoux](https://github.com/dorian-eydoux)
+- [Egor](https://github.com/Rogue85)
 
 ### Reference projects
 
