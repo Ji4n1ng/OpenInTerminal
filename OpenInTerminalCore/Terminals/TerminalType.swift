@@ -28,6 +28,10 @@ public enum TerminalType: String {
         }
     }
     
+    public var fullName: String {
+        return self.rawValue
+    }
+    
     public func instance() -> Terminal {
         switch self {
         case .terminal:
@@ -38,6 +42,25 @@ public enum TerminalType: String {
             return HyperApp()
         case .alacritty:
             return AlacrittyApp()
+        }
+    }
+    
+}
+
+public extension TerminalType {
+    
+    init?(by fullName: String) {
+        switch fullName {
+        case "Terminal":
+            self = .terminal
+        case "iTerm":
+            self = .iTerm
+        case "Hyper":
+            self = .hyper
+        case "Alacritty":
+            self = .alacritty
+        default:
+            return nil
         }
     }
     

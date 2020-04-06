@@ -42,65 +42,32 @@ class FinderSync: FIFinderSync {
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
-        
         var menu = NSMenu(title: "")
-        
-        func createMenu() -> NSMenu {
-            
-            let menu = NSMenu(title: "")
-            
-            var terminalTitle = ""
-            if let terminal = DefaultsManager.shared.defaultTerminal {
-                terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + terminal.rawValue
-            } else {
-                terminalTitle = NSLocalizedString("menu.open_with_default_terminal",
-                                                  comment: "Open with default Terminal")
-            }
-            let openInTerminalItem = NSMenuItem(title: terminalTitle,
-                                                action: #selector(openDefaultTerminal),
-                                                keyEquivalent: "")
-            let terminalIcon = NSImage(named: "context_menu_icon_terminal")!
-            openInTerminalItem.image = terminalIcon
-            menu.addItem(openInTerminalItem)
-            
-            var editorTitle = ""
-            if let editor = DefaultsManager.shared.defaultEditor {
-                editorTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + editor.rawValue
-            } else {
-                editorTitle = NSLocalizedString("menu.open_with_default_editor",
-                                                comment: "Open with default Editor")
-            }
-            let openInEditorItem = NSMenuItem(title: editorTitle,
-                                                action: #selector(openDefaultEditor),
-                                                keyEquivalent: "")
-            let editorIcon = NSImage(named: "context_menu_icon_editor")!
-            openInEditorItem.image = editorIcon
-            menu.addItem(openInEditorItem)
-            
-            let copyPathItem = NSMenuItem(title: NSLocalizedString("menu.copy_path_to_clipboard",
-                                                                   comment: "Copy path to Clipboard"),
-                                                action: #selector(copyPathToClipboard),
-                                                keyEquivalent: "")
-            let copyPathIcon = NSImage(named: "context_menu_icon_path")
-            copyPathItem.image = copyPathIcon
-            menu.addItem(copyPathItem)
-            
-            return menu
-        }
         
         switch menuKind {
 
         case .contextualMenuForContainer,
              .contextualMenuForItems:
+            // need to hide or not
             let isHideContextMenuItems = DefaultsManager.shared.isHideContextMenuItems.bool
-            if isHideContextMenuItems {
-                break
+            guard !isHideContextMenuItems else { return NSMenu() }
+            
+            // show custom menu or default
+            let isCustomMenu = DefaultsManager.shared.isApplyToContext.bool
+            if isCustomMenu {
+                menu = createCustomMenu()
             } else {
-                menu = createMenu()
+                menu = createDefaultMenu()
             }
             
         case .toolbarItemMenu:
-            menu = createMenu()
+            // show custom menu or default
+            let isCustomMenu = DefaultsManager.shared.isApplyToToolbar.bool
+            if isCustomMenu {
+                menu = createCustomMenu()
+            } else {
+                menu = createDefaultMenu()
+            }
             
         default:
             break
@@ -118,11 +85,92 @@ class FinderSync: FIFinderSync {
             .appendingPathComponent(fileName)
             .appendingPathExtension("scpt")
     }
-
-    // MARK: Notification Actions
     
-    @objc func openDefaultTerminal() {
-        guard let terminal = DefaultsManager.shared.defaultTerminal else { return }
+    func createDefaultMenu() -> NSMenu {
+        let menu = NSMenu(title: "")
+        
+        var terminalTitle = ""
+        if let terminal = DefaultsManager.shared.defaultTerminal {
+            terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + terminal.rawValue
+        } else {
+            terminalTitle = NSLocalizedString("menu.open_with_default_terminal",
+                                              comment: "Open with default Terminal")
+        }
+        let openInTerminalItem = NSMenuItem(title: terminalTitle,
+                                            action: #selector(openDefaultTerminal),
+                                            keyEquivalent: "")
+        let terminalIcon = NSImage(named: "context_menu_icon_terminal")!
+        openInTerminalItem.image = terminalIcon
+        menu.addItem(openInTerminalItem)
+        
+        var editorTitle = ""
+        if let editor = DefaultsManager.shared.defaultEditor {
+            editorTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + editor.rawValue
+        } else {
+            editorTitle = NSLocalizedString("menu.open_with_default_editor",
+                                            comment: "Open with default Editor")
+        }
+        let openInEditorItem = NSMenuItem(title: editorTitle,
+                                            action: #selector(openDefaultEditor),
+                                            keyEquivalent: "")
+        let editorIcon = NSImage(named: "context_menu_icon_editor")!
+        openInEditorItem.image = editorIcon
+        menu.addItem(openInEditorItem)
+        
+        let copyPathItem = NSMenuItem(title: NSLocalizedString("menu.copy_path_to_clipboard",
+                                                               comment: "Copy path to Clipboard"),
+                                            action: #selector(copyPathToClipboard),
+                                            keyEquivalent: "")
+        let copyPathIcon = NSImage(named: "context_menu_icon_path")
+        copyPathItem.image = copyPathIcon
+        menu.addItem(copyPathItem)
+        
+        return menu
+    }
+    
+    func createCustomMenu() -> NSMenu {
+        let menu = NSMenu(title: "")
+        
+        // get saved custom apps
+        let customAppsString = DefaultsManager.shared.customMenuOptions
+        let customApps = customAppsString.components(separatedBy: ",").filter {
+            $0 != ""
+        }.sortedIgnoreCase()
+        
+        customApps.forEach { appName in
+            if let terminal = TerminalType(rawValue: appName) {
+                let terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + terminal.rawValue
+                let menuItem = NSMenuItem(title: terminalTitle,
+                                          action: #selector(CustomMenuItemClicked),
+                                          keyEquivalent: "")
+                let terminalIcon = NSImage(named: "context_menu_icon_terminal")!
+                menuItem.image = terminalIcon
+                menu.addItem(menuItem)
+            } else if let editor = EditorType(rawValue: appName) {
+                let editorTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + editor.rawValue
+                let menuItem = NSMenuItem(title: editorTitle,
+                                          action: #selector(CustomMenuItemClicked),
+                                          keyEquivalent: "")
+                let editorIcon = NSImage(named: "context_menu_icon_editor")!
+                menuItem.image = editorIcon
+                menu.addItem(menuItem)
+            }
+        }
+        
+        let copyPathItem = NSMenuItem(title: NSLocalizedString("menu.copy_path_to_clipboard",
+                                                               comment: "Copy path to Clipboard"),
+                                            action: #selector(copyPathToClipboard),
+                                            keyEquivalent: "")
+        let copyPathIcon = NSImage(named: "context_menu_icon_path")
+        copyPathItem.image = copyPathIcon
+        menu.addItem(copyPathItem)
+        
+        return menu
+    }
+
+    // MARK: - Actions
+    
+    func openTerminal(_ terminal: TerminalType) {
         var scriptPath: URL
         if terminal == .terminal,
             let newOption = DefaultsManager.shared.getNewOption(.terminal),
@@ -138,12 +186,32 @@ class FinderSync: FIFinderSync {
         script.execute(completionHandler: nil)
     }
     
-    @objc func openDefaultEditor() {
-        guard let editor = DefaultsManager.shared.defaultEditor else { return }
+    func openEditor(_ editor: EditorType) {
         guard let scriptPath = fileScriptPath(fileName: editor.rawValue) else { return }
         guard FileManager.default.fileExists(atPath: scriptPath.path) else { return }
         guard let script = try? NSUserAppleScriptTask(url: scriptPath) else { return }
         script.execute(completionHandler: nil)
+    }
+    
+    // MARK: - Menu Actions
+    
+    @objc func openDefaultTerminal() {
+        guard let terminal = DefaultsManager.shared.defaultTerminal else { return }
+        openTerminal(terminal)
+    }
+    
+    @objc func openDefaultEditor() {
+        guard let editor = DefaultsManager.shared.defaultEditor else { return }
+        openEditor(editor)
+    }
+    
+    @objc func CustomMenuItemClicked(_ sender: NSMenuItem) {
+        let appName = sender.title[8...]
+        if let terminal = TerminalType(rawValue: appName) {
+            openTerminal(terminal)
+        } else if let editor = EditorType(rawValue: appName) {
+            openEditor(editor)
+        }
     }
     
     @objc func copyPathToClipboard() {
@@ -162,3 +230,18 @@ class FinderSync: FIFinderSync {
     }
 }
 
+fileprivate extension String {
+    
+    subscript(_ range: CountableRange<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+        let end = index(start, offsetBy: min(self.count - range.lowerBound,
+                                             range.upperBound - range.lowerBound))
+        return String(self[start..<end])
+    }
+
+    subscript(_ range: CountablePartialRangeFrom<Int>) -> String {
+        let start = index(startIndex, offsetBy: max(0, range.lowerBound))
+         return String(self[start...])
+    }
+    
+}

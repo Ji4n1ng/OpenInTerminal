@@ -5,6 +5,9 @@
 /* Class = "NSTextFieldCell"; title = "⚠️ Note that this will reset all user preferences"; ObjectID = "2Rg-te-FPU"; */
 "2Rg-te-FPU.title" = "⚠️ Note that this will reset all user preferences";
 
+/* Class = "NSButtonCell"; title = "Apply to Finder Toolbar Menu"; ObjectID = "2we-f7-s2N"; */
+"2we-f7-s2N.title" = "Apply to Finder Toolbar Menu";
+
 /* Class = "NSButtonCell"; title = "Tab"; ObjectID = "4ss-CQ-brT"; */
 "4ss-CQ-brT.title" = "Tab";
 
@@ -59,6 +62,9 @@
 /* Class = "NSTextFieldCell"; title = "🐦 Twitter:"; ObjectID = "NZE-zU-6ss"; */
 "NZE-zU-6ss.title" = "🐦 Twitter:";
 
+/* Class = "NSButtonCell"; title = "Apply to Finder Context Menu"; ObjectID = "RhP-R5-Wwt"; */
+"RhP-R5-Wwt.title" = "Apply to Finder Context Menu";
+
 /* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
 "Sw7-of-ecf.title" = "Alipay";
 
@@ -110,11 +116,20 @@
 /* Class = "NSViewController"; title = "About"; ObjectID = "k6X-N1-mVu"; */
 "k6X-N1-mVu.title" = "About";
 
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "kAa-36-ubl"; */
+"kAa-36-ubl.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "keg-OV-uLJ"; */
+"keg-OV-uLJ.title" = "Table View Cell";
+
 /* Class = "NSTextFieldCell"; title = "OpenInTerminal"; ObjectID = "mOB-su-ZM1"; */
 "mOB-su-ZM1.title" = "OpenInTerminal";
 
 /* Class = "NSButtonCell"; title = "Window"; ObjectID = "mTs-8c-pgj"; */
 "mTs-8c-pgj.title" = "Window";
+
+/* Class = "NSTextFieldCell"; title = "Custom Menu Options"; ObjectID = "nWc-SM-Kes"; */
+"nWc-SM-Kes.title" = "Custom Menu Options";
 
 /* Class = "NSButtonCell"; title = "Tab"; ObjectID = "nYS-rF-JCL"; */
 "nYS-rF-JCL.title" = "Tab";

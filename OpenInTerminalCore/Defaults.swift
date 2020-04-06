@@ -32,6 +32,8 @@ extension DefaultsKeys {
     static let hideContextMenuItems = DefaultsKey<String>(Constants.Key.hideContextMenuItems)
     static let quickToggle = DefaultsKey<String>(Constants.Key.quickToggle)
     static let quickToggleType = DefaultsKey<String>(Constants.Key.quickToggleType)
+    static let customApplyToToolbarMenu = DefaultsKey<String>(Constants.Key.customApplyToToolbarMenu)
+    static let customApplyToContextMenu = DefaultsKey<String>(Constants.Key.customApplyToContextMenu)
     
     // value example: TerminalType.terminal.rawValue
     static let defaultTerminal = DefaultsKey<String>(Constants.Key.defaultTerminal)
@@ -42,6 +44,9 @@ extension DefaultsKeys {
     // value example: NewOptionType.window.rawValue
     static let terminalNewOption = DefaultsKey<String>(Constants.Key.terminalNewOption)
     static let iTermNewOption = DefaultsKey<String>(Constants.Key.iTermNewOption)
+    
+    // value example: "Terminal,VSCode,iTerm"
+    static let customMenuOptions = DefaultsKey<String>(Constants.Key.customMenuOptions)
     
 }
 

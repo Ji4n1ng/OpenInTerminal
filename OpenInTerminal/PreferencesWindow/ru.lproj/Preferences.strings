@@ -136,3 +136,12 @@
 
 /* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
 "yIW-2a-15A.title" = "iTerm";
+
+/* Class = "NSButtonCell"; title = "Apply to Finder Toolbar Memu"; ObjectID = "2we-f7-s2N"; */
+"2we-f7-s2N.title" = "Применить к меню панели инструментов Finder";
+
+/* Class = "NSButtonCell"; title = "Apply to Finder Context Memu"; ObjectID = "RhP-R5-Wwt"; */
+"RhP-R5-Wwt.title" = "Применить к контекстному меню Finder";
+
+/* Class = "NSTextFieldCell"; title = "Custom Menu Options"; ObjectID = "nWc-SM-Kes"; */
+"nWc-SM-Kes.title" = "Пользовательские параметры меню";

@@ -16,6 +16,10 @@ struct Constants {
     static let launcherAppIdentifier = "wang.jianing.app.OpenInTerminalHelper"
     static let finderExtensionIdentifier = "wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension"
     
+    struct CellIdentifier {
+        static let customMenuCell = NSUserInterfaceItemIdentifier(rawValue: "customMenuCell")
+    }
+    
     struct Key {
         static let defaultTerminalShortcut = "OIT_DefaultTerminalShortcut"
         static let defaultEditorShortcut = "OIT_DefaultEditorShortcut"

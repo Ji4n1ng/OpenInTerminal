@@ -31,6 +31,10 @@ struct Constants {
         
         static let terminalNewOption = "OIT_TerminalNewOption"
         static let iTermNewOption = "OIT_iTermNewOption"
+        
+        static let customApplyToToolbarMenu = "OIT_CustomApplyToToolbarMenu"
+        static let customApplyToContextMenu = "OIT_CustomApplyToContextMenu"
+        static let customMenuOptions = "OIT_CustomMenuOptions"
     }
 
 }

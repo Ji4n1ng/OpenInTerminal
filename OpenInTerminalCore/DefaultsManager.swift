@@ -140,7 +140,7 @@ public class DefaultsManager {
         }
     }
     
-    // MARK: - Terminal Settings
+    // MARK: - Finder Extension Settings
     
     public func getNewOption(_ terminal: TerminalType) -> NewOptionType? {
         var option: String?
@@ -182,6 +182,48 @@ public class DefaultsManager {
         }
     }
     
+    public var isApplyToToolbar: BoolType {
+        get {
+            let defaultValue = currentDefaults[.customApplyToToolbarMenu].map(BoolType.init(rawValue: )) ?? nil
+            if let boolValue = defaultValue {
+                return boolValue
+            } else {
+                currentDefaults[.customApplyToToolbarMenu] = BoolType._false.rawValue
+                return ._false
+            }
+        }
+        
+        set {
+            currentDefaults[.customApplyToToolbarMenu] = newValue.rawValue
+        }
+    }
+    
+    public var isApplyToContext: BoolType {
+        get {
+            let defaultValue = currentDefaults[.customApplyToContextMenu].map(BoolType.init(rawValue: )) ?? nil
+            if let boolValue = defaultValue {
+                return boolValue
+            } else {
+                currentDefaults[.customApplyToContextMenu] = BoolType._false.rawValue
+                return ._false
+            }
+        }
+        
+        set {
+            currentDefaults[.customApplyToContextMenu] = newValue.rawValue
+        }
+    }
+    
+    public var customMenuOptions: String {
+        get {
+            return currentDefaults[.customMenuOptions] ?? ""
+        }
+        
+        set {
+            currentDefaults[.customMenuOptions] = newValue
+        }
+    }
+    
     // MARK: - Advanced Settings
     
     public func firstSetup() {
@@ -195,6 +237,8 @@ public class DefaultsManager {
         currentDefaults.removeObject(forKey: Constants.Key.defaultEditor)
         currentDefaults[.terminalNewOption] = NewOptionType.window.rawValue
         currentDefaults[.iTermNewOption] = NewOptionType.window.rawValue
+        currentDefaults[.customApplyToToolbarMenu] = BoolType._false.rawValue
+        currentDefaults[.customApplyToContextMenu] = BoolType._false.rawValue
         currentDefaults.synchronize()
     }
     

@@ -90,6 +90,35 @@ public enum EditorType: String {
     }
 }
 
+public extension EditorType {
+    
+    init?(by fullName: String) {
+        switch fullName {
+        case "Visual Studio Code":
+            self = .vscode
+        case "Atom":
+            self = .atom
+        case "Sublime Text":
+            self = .sublime
+        case "VSCodium":
+            self = .vscodium
+        case "BBEdit":
+            self = .bbedit
+        case "Visual Studio Code - Insiders":
+            self = .vscodeInsiders
+        case "TextMate":
+            self = .textMate
+        case "CotEditor":
+            self = .cotEditor
+        case "MacVim":
+            self = .macVim
+        default:
+            return nil
+        }
+    }
+    
+}
+
 extension EditorType: Scriptable {
     
     public func getScript() -> String {

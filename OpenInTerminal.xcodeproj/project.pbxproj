@@ -69,6 +69,7 @@
 		95C6C340227AA1CB00F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
 		95C6F81C22E37D59001C6374 /* BBEditApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F81B22E37D59001C6374 /* BBEditApp.swift */; };
+		95DD6296243B211B003550B3 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD6295243B211B003550B3 /* ArrayExtensions.swift */; };
 		95DFC1242354A2C300941D3A /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DFC1232354A2C300941D3A /* DefaultsManager.swift */; };
 		95E7170C22F1370F000E331A /* VSCodeInsidersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */; };
 		95F5BED5227734E800D505A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */; };
@@ -186,7 +187,6 @@
 		951A3EBC2278A6F700E8DB61 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		951A3EBE2278A70F00E8DB61 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		951FC31223C611E600A51B50 /* MacVimApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacVimApp.swift; sourceTree = "<group>"; };
-		951FC31523C624A400A51B50 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
 		951FC31723C624A700A51B50 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
 		951FC31923C624A900A51B50 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Preferences.strings; sourceTree = "<group>"; };
 		9521EDCB226B475E008445D1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +214,8 @@
 		95BC5EC42356B48400F00391 /* ScriptProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptProtocol.swift; sourceTree = "<group>"; };
 		95C6C33A227A9EE600F157C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preferences.storyboard; sourceTree = "<group>"; };
 		95C6F81B22E37D59001C6374 /* BBEditApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBEditApp.swift; sourceTree = "<group>"; };
+		95DD6295243B211B003550B3 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		95DD629A243B3F96003550B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
 		95DFC1232354A2C300941D3A /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodeInsidersApp.swift; sourceTree = "<group>"; };
 		95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				4725253722680F13003C50DF /* Terminals */,
 				9590B68F226C6D5C00362B93 /* Editors */,
 				4725253622680F07003C50DF /* ScriptingBridge */,
+				95DD6294243B2102003550B3 /* Extensions */,
 				4725251322680E87003C50DF /* OpenInTerminalCore.h */,
 				4725251422680E87003C50DF /* Info.plist */,
 			);
@@ -438,6 +441,14 @@
 				951FC31223C611E600A51B50 /* MacVimApp.swift */,
 			);
 			path = Editors;
+			sourceTree = "<group>";
+		};
+		95DD6294243B2102003550B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95DD6295243B211B003550B3 /* ArrayExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D0C631DE227F862E002C4AA0 /* Configuration */ = {
@@ -712,6 +723,7 @@
 				4725253122680EF3003C50DF /* Constants.swift in Sources */,
 				4725254022680F5A003C50DF /* Terminal.swift in Sources */,
 				4725253C22680F4B003C50DF /* HyperApp.swift in Sources */,
+				95DD6296243B211B003550B3 /* ArrayExtensions.swift in Sources */,
 				9590B693226C6DE900362B93 /* EditorType.swift in Sources */,
 				95BC5EC52356B48400F00391 /* ScriptProtocol.swift in Sources */,
 				9590B68E226C04E000362B93 /* Defaults.swift in Sources */,
@@ -814,10 +826,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				95C6C33A227A9EE600F157C4 /* Base */,
-				951FC31523C624A400A51B50 /* en */,
 				951FC31723C624A700A51B50 /* zh-Hans */,
 				951FC31923C624A900A51B50 /* fr */,
 				E197D59823E296EB00C5A893 /* ru */,
+				95DD629A243B3F96003550B3 /* en */,
 			);
 			name = Preferences.storyboard;
 			sourceTree = "<group>";
