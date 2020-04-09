@@ -222,6 +222,8 @@
 		95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodeInsidersApp.swift; sourceTree = "<group>"; };
 		95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		95FC9243228BAAD600F51DF2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C3ACD4CF243E0FEF00462517 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Preferences.strings; sourceTree = "<group>"; };
+		C3ACD4D0243E0FEF00462517 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D0C631DF227F862E002C4AA0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D0C631E0227F862E002C4AA0 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		D0C631E1227F862E002C4AA0 /* Global.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Global.xcconfig; sourceTree = "<group>"; };
@@ -610,6 +612,7 @@
 				"zh-Hans",
 				fr,
 				ru,
+				it,
 			);
 			mainGroup = 956C38A8225F7701001CB769;
 			productRefGroup = 956C38B2225F7701001CB769 /* Products */;
@@ -822,6 +825,7 @@
 				9584EDF5226DEFC0003C7EE8 /* zh-Hans */,
 				95FC9243228BAAD600F51DF2 /* fr */,
 				E197D59A23E2973800C5A893 /* ru */,
+				C3ACD4D0243E0FEF00462517 /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -834,6 +838,7 @@
 				951FC31923C624A900A51B50 /* fr */,
 				E197D59823E296EB00C5A893 /* ru */,
 				95DD629A243B3F96003550B3 /* en */,
+				C3ACD4CF243E0FEF00462517 /* it */,
 			);
 			name = Preferences.storyboard;
 			sourceTree = "<group>";

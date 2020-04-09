@@ -1,0 +1,153 @@
+
+/* Class = "NSTextFieldCell"; title = "❤️ Special thanks to:"; ObjectID = "0Gy-jf-q6v"; */
+"0Gy-jf-q6v.title" = "❤️ Un ringraziamento speciale a:";
+
+/* Class = "NSTextFieldCell"; title = "⚠️ Note that this will reset all user preferences"; ObjectID = "2Rg-te-FPU"; */
+"2Rg-te-FPU.title" = "⚠️ Tutte le Preferenze utente saranno ripristinate";
+
+/* Class = "NSButtonCell"; title = "Apply to Finder Toolbar Menu"; ObjectID = "2we-f7-s2N"; */
+"2we-f7-s2N.title" = "Applica al Menu della Barra Strumenti del Finder";
+
+/* Class = "NSButtonCell"; title = "Tab"; ObjectID = "4ss-CQ-brT"; */
+"4ss-CQ-brT.title" = "Pannello";
+
+/* Class = "NSTextFieldCell"; title = "If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu."; ObjectID = "592-4p-Ybh"; */
+"592-4p-Ybh.title" = "Se selezionata, clicca sull'icona nella barra dei menu per eseguire l'azione rapida. Clicca con il tasto destro per aprire il menu.";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
+"5f3-UK-Rft.title" = "Preferenze";
+
+/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
+"BUH-CU-WBW.title" = "Nascondi l'icona nella Barra dei Menu";
+
+/* Class = "NSTextFieldCell"; title = "Open a new window or a new tab when opening a path in terminal."; ObjectID = "BrI-hE-Mff"; */
+"BrI-hE-Mff.title" = "Apri una nuova finestra o un nuovo pannello quando apri un percorso nel terminale.";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "Dyx-zg-hYe"; */
+"Dyx-zg-hYe.title" = "Nessuno";
+
+/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
+"FpP-Q9-flS.title" = "Scorciatoie";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "G69-k2-hgn"; */
+"G69-k2-hgn.title" = "Nessuno";
+
+/* Class = "NSViewController"; title = "General"; ObjectID = "Gn1-zC-bzB"; */
+"Gn1-zC-bzB.title" = "Generali";
+
+/* Class = "NSViewController"; title = "Advanced"; ObjectID = "H3q-JS-Bu4"; */
+"H3q-JS-Bu4.title" = "Avanzate";
+
+/* Class = "NSButtonCell"; title = "WeChat"; ObjectID = "HUx-Wz-JJm"; */
+"HUx-Wz-JJm.title" = "WeChat";
+
+/* Class = "NSTextFieldCell"; title = "👨‍💻 GitHub:"; ObjectID = "How-dP-tcX"; */
+"How-dP-tcX.title" = "👨‍💻 GitHub:";
+
+/* Class = "NSButtonCell"; title = "@Camji55"; ObjectID = "IJL-uk-uO5"; */
+"IJL-uk-uO5.title" = "@Camji55";
+
+/* Class = "NSButtonCell"; title = "contact@jianing.wang"; ObjectID = "IPL-yO-Vkp"; */
+"IPL-yO-Vkp.title" = "contact@jianing.wang";
+
+/* Class = "NSTextFieldCell"; title = "0.1.0"; ObjectID = "Jnf-AX-bIr"; */
+"Jnf-AX-bIr.title" = "0.1.0";
+
+/* Class = "NSTextFieldCell"; title = "💸 Donate:"; ObjectID = "Kua-ZD-31F"; */
+"Kua-ZD-31F.title" = "💸 Dona:";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
+"Mqt-Fp-Ssl.title" = "Apri con il Terminale di default:";
+
+/* Class = "NSTextFieldCell"; title = "🐦 Twitter:"; ObjectID = "NZE-zU-6ss"; */
+"NZE-zU-6ss.title" = "🐦 Twitter:";
+
+/* Class = "NSButtonCell"; title = "Apply to Finder Context Menu"; ObjectID = "RhP-R5-Wwt"; */
+"RhP-R5-Wwt.title" = "Applica al Menu Contestuale del Finder";
+
+/* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
+"Sw7-of-ecf.title" = "Alipay";
+
+/* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
+"Upf-HU-iaN.title" = "Riavvia l'applicazione per salvare le nuove Preferenze.";
+
+/* Class = "NSTextFieldCell"; title = "✉️ Contact:"; ObjectID = "Vu4-Wz-Agk"; */
+"Vu4-Wz-Agk.title" = "✉️ Contattaci:";
+
+/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
+"Xd9-iA-emU.title" = "Copia percorso nella Clipboard:";
+
+/* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
+"Xfc-rf-FkX.title" = "Editor di testo di default:";
+
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at Login"; ObjectID = "ZbK-xW-anT"; */
+"ZbK-xW-anT.title" = "Apri OpenInTerminal al Login";
+
+/* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
+"aRo-sy-WpK.title" = "Terminale di default:";
+
+/* Class = "NSTextFieldCell"; title = "Not Installed Applications"; ObjectID = "bCi-r8-MrK"; */
+"bCi-r8-MrK.title" = "Applicazioni Non Installate";
+
+/* Class = "NSTextFieldCell"; title = "Installed Supported Applications"; ObjectID = "bT7-LU-sov"; */
+"bT7-LU-sov.title" = "Applicazioni Supportate Installate";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
+"bvy-v3-hhf.title" = "Apri con l'Editor di default:";
+
+/* Class = "NSButtonCell"; title = "PayPal"; ObjectID = "dC4-C7-fEL"; */
+"dC4-C7-fEL.title" = "PayPal";
+
+/* Class = "NSButtonCell"; title = "github.com/Ji4n1ng/OpenInTerminal"; ObjectID = "f2V-P5-pQI"; */
+"f2V-P5-pQI.title" = "github.com/Ji4n1ng/OpenInTerminal";
+
+/* Class = "NSTextFieldCell"; title = "Terminal"; ObjectID = "fA9-Hd-yjp"; */
+"fA9-Hd-yjp.title" = "Terminale";
+
+/* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
+"gy9-lb-m8d.title" = "Azione rapida";
+
+/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
+"jcs-Ou-OZ2.title" = "Ripristina";
+
+/* Class = "NSButtonCell"; title = "Reset preferences"; ObjectID = "jyI-H7-qN3"; */
+"jyI-H7-qN3.title" = "Ripristina le preferenze";
+
+/* Class = "NSViewController"; title = "About"; ObjectID = "k6X-N1-mVu"; */
+"k6X-N1-mVu.title" = "About";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "kAa-36-ubl"; */
+"kAa-36-ubl.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "keg-OV-uLJ"; */
+"keg-OV-uLJ.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal"; ObjectID = "mOB-su-ZM1"; */
+"mOB-su-ZM1.title" = "OpenInTerminal";
+
+/* Class = "NSButtonCell"; title = "Window"; ObjectID = "mTs-8c-pgj"; */
+"mTs-8c-pgj.title" = "Finestra";
+
+/* Class = "NSTextFieldCell"; title = "Custom Menu Options"; ObjectID = "nWc-SM-Kes"; */
+"nWc-SM-Kes.title" = "Opzioni Personalizzate dei Menu";
+
+/* Class = "NSButtonCell"; title = "Tab"; ObjectID = "nYS-rF-JCL"; */
+"nYS-rF-JCL.title" = "Pannello";
+
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
+"ngT-lX-vFA.title" = "OpenInTerminal si aprirà automaticamente al login.";
+
+/* Class = "NSViewController"; title = "Toolbar"; ObjectID = "s5W-qL-1Xs"; */
+"s5W-qL-1Xs.title" = "Barra strumenti";
+
+/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
+"sG4-nK-ghj.title" = "Nascondi gli Elementi del Menu Contestuale";
+
+/* Class = "NSButtonCell"; title = "Window"; ObjectID = "sik-wU-ZF2"; */
+"sik-wU-ZF2.title" = "Finestra";
+
+/* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */
+"tR5-me-DTK.title" = "@Ji4n1ng";
+
+/* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
+"yIW-2a-15A.title" = "iTerm";

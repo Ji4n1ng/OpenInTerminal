@@ -1,0 +1,33 @@
+/*
+  Localizable.strings
+  OpenInTerminal
+
+  Created by arendruni on 2020/4/8.
+  Copyright © 2020 arendruni. All rights reserved.
+*/
+
+"general.ok" = "OK";
+"general.cancel" = "Annulla";
+"general.yes" = "Sì";
+
+"menu.open_in" = "Apri in ";
+"menu.open_with_default_terminal" = "Apri in Terminale";
+"menu.open_with_default_editor" = "Apri nell'Editor";
+"menu.copy_path_to_clipboard" = "Copia percorso";
+
+"menu.preferences" = "Preferenze...";
+"menu.quit" = "Esci";
+
+"pref.toolbar.not_installed" = "Non Installato";
+
+"alert.pick_terminal_title" = "Apri con?";
+"alert.pick_terminal_description" = "Seleziona uno dei seguenti terminali per impostarlo come terminale default.";
+
+"alert.pick_editor_title" = "Apri con?";
+"alert.pick_editor_description" = "Seleziona uno dei seguenti editor per impostarlo come editor di default.";
+
+"alert.reset_preferences_title" = "Ripristinare le Preferenze utente?";
+"alert.reset_preferences_description" = "⚠️ Tutte le Preferenze utente saranno ripristinate";
+
+"toolbar.item_name" = "Apri in Terminale";
+"toolbar.item_tooltip" = "Apri la cartella corrente in Terminale.";

@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  OpenInEditor-Lite
+
+  Created by arendruni on 2020/4/9.
+  Copyright © 2020 arendruni. All rights reserved.
+*/
+
+"general.ok" = "OK";
+"general.cancel" = "Annulla";
+"general.yes" = "Sì";
+
+"alert.pick_editor_title" = "Apri con?";
+"alert.pick_editor_description" = "Seleziona uno dei seguenti editor per impostarlo come editor di default.";
