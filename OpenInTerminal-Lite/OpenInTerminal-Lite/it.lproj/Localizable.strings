@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  OpenInTerminal-Lite
+
+  Created by arendruni on 2020/4/9.
+  Copyright © 2020 arendruni. All rights reserved.
+*/
+
+"general.ok" = "OK";
+"general.cancel" = "Annulla";
+"general.yes" = "Sì";
+
+"alert.pick_terminal_title" = "Apri con?";
+"alert.pick_terminal_description" = "Seleziona uno dei seguenti terminali per impostarlo come terminale default.";
