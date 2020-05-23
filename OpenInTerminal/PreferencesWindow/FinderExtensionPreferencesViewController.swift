@@ -29,9 +29,18 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var applyToToolbarButton: NSButton!
     @IBOutlet weak var applyToContextButton: NSButton!
     
-    var installedApps = [String]() {
+    var allInstalledApps: Set<String> = Set()
+    
+    var installedSupportedApps: Set<String> = Set() {
         didSet {
-            installedApplicationsTextField.stringValue = installedApps.joined(separator: ", ")
+            let _installedApps = Array(installedSupportedApps).sortedIgnoreCase()
+            installedApplicationsTextField.stringValue = _installedApps.joined(separator: ", ")
+        }
+    }
+    var notInstalledSupportedApps: Set<String> = Set() {
+        didSet {
+            let _notInstalledApps = Array(notInstalledSupportedApps).sortedIgnoreCase()
+            notInstalledApplicationsTextField.stringValue = _notInstalledApps.joined(separator: ", ")
         }
     }
     var customApps = [String]() {
@@ -54,19 +63,37 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        
         // get all installed apps
-        let installedTerminals = Constants.allTerminals.filter {
-            FinderManager.shared.terminalIsInstalled($0)
+        allInstalledApps = FinderManager.shared.getAllInstalledApps()
+        
+        // get all installed supported apps
+        var installedTerminals = Constants.allTerminals.filter {
+            allInstalledApps.contains($0.fullName)
         }.map {
             $0.rawValue
         }
-        let installedEditors = Constants.allEditors.filter {
-            FinderManager.shared.editorIsInstalled($0)
+        installedTerminals.append(TerminalType.terminal.rawValue)
+        var installedEditors = Constants.allEditors.filter {
+            allInstalledApps.contains($0.fullName)
         }.map {
             $0.rawValue
         }
-        installedApps = (installedTerminals + installedEditors).sortedIgnoreCase()
+        installedEditors.append(EditorType.textEdit.rawValue)
+        let installedApps = installedTerminals + installedEditors
+        installedSupportedApps = Set(installedApps)
+        
+        // get all not installed supported apps
+        let allTerminals = Constants.allTerminals.map {
+            $0.rawValue
+        }
+        let allEditors = Constants.allEditors.map {
+            $0.rawValue
+        }
+        let allApps = allTerminals + allEditors
+        let notInstalledApps = allApps.filter {
+            !installedApps.contains($0)
+        }
+        notInstalledSupportedApps = Set(notInstalledApps)
         
         // get saved custom apps
         let customAppsString = DefaultsManager.shared.customMenuOptions
@@ -74,7 +101,6 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
             $0 != ""
         }.sortedIgnoreCase()
         
-        refreshNotInstalledAppsTextField()
         refreshTextFieldEnabledState()
         refreshButtonNewOptionState()
         refreshButtonState()
@@ -86,28 +112,13 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     
     // MARK: Refresh UI
     
-    func refreshNotInstalledAppsTextField() {
-        let notInstalledTerminals = Constants.allTerminals.filter {
-            !FinderManager.shared.terminalIsInstalled($0)
-        }.map {
-            $0.rawValue
-        }
-        let notInstalledEditors = Constants.allEditors.filter {
-            !FinderManager.shared.editorIsInstalled($0)
-        }.map {
-            $0.rawValue
-        }
-        let notInstalledApps = (notInstalledTerminals + notInstalledEditors).sortedIgnoreCase()
-        notInstalledApplicationsTextField.stringValue = notInstalledApps.joined(separator: ", ")
-    }
-    
     func refreshTextFieldEnabledState() {
         let terminals: [(TerminalType, NSTextField)] =
             [(.terminal, terminalTextField),
              (.iTerm, iTermTextField)]
 
         terminals.forEach { terminal, textField in
-            let isInstalled = FinderManager.shared.terminalIsInstalled(terminal)
+            let isInstalled = installedSupportedApps.contains(terminal.fullName)
             textField.isEnabled = isInstalled
             if isInstalled {
                 textField.textColor = .labelColor
@@ -154,12 +165,12 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     }
     
     func refreshCustomMenu() {
-        let menuApps = installedApps.filter {
+        let menuApps = installedSupportedApps.filter {
             !customApps.contains($0)
         }
-        
+        let sortedmenuApps = Array(menuApps).sortedIgnoreCase()
         let menu = NSMenu(title: "")
-        menuApps.forEach {
+        sortedmenuApps.forEach {
             let menuItem = NSMenuItem(title: $0,
                 action: #selector(selectMenuApp),
                 keyEquivalent: "")

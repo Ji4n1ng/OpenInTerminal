@@ -10,6 +10,7 @@ import Foundation
 
 public enum EditorType: String {
     
+    case textEdit = "TextEdit"
     case vscode = "VSCode"
     case atom = "Atom"
     case sublime = "Sublime"
@@ -23,6 +24,8 @@ public enum EditorType: String {
     
     public var fullName: String {
         switch self {
+        case .textEdit:
+            return "TextEdit"
         case .vscode:
             return "Visual Studio Code"
         case .atom:
@@ -48,6 +51,8 @@ public enum EditorType: String {
     
     public var bundleId: String {
         switch self {
+        case .textEdit:
+            return "com.apple.TextEdit"
         case .vscode:
             return "com.microsoft.VSCode"
         case .atom:
@@ -73,6 +78,8 @@ public enum EditorType: String {
     
     public func instance() -> Editor {
         switch self {
+        case .textEdit:
+            return TextEditApp()
         case .vscode:
             return VSCodeApp()
         case .atom:

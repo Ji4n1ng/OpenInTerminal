@@ -77,43 +77,124 @@ public class FinderManager {
         return url.absoluteString
     }
     
-    /// Determine if the app exists in the `/Applications` folder
-    private func applicationExists(_ application: String) -> Bool {
-        var isInApplication = false
-        let applicationDir = "/Applications/"
-        let applicationPath = applicationDir + application + ".app"
-        if FileManager.default.fileExists(atPath: applicationPath) {
-            isInApplication = true
+//    /// Determine if the app exists in the `/Applications` folder
+//    private func applicationExists(_ application: String) -> Bool {
+//        var isInApplication = false
+//        let applicationDir = "/Applications/"
+//        let applicationPath = applicationDir + application + ".app"
+//        if FileManager.default.fileExists(atPath: applicationPath) {
+//            isInApplication = true
+//        }
+//        
+//        var isInHomeApplication = false
+//        var homeApplicationDirURL: URL
+//        if #available(OSX 10.12, *) {
+//            homeApplicationDirURL = FileManager.default.homeDirectoryForCurrentUser
+//        } else {
+//            // Fallback on earlier versions
+//            homeApplicationDirURL = URL(fileURLWithPath: NSHomeDirectory())
+//        }
+//        homeApplicationDirURL.appendPathComponent("Applications")
+//        let homeApplicationPath = homeApplicationDirURL.path + "/" + application + ".app"
+//        if FileManager.default.fileExists(atPath: homeApplicationPath) {
+//            isInHomeApplication = true
+//        }
+//        return isInApplication || isInHomeApplication
+//    }
+//    
+//    /// Determine if the user has installed the terminal
+//    public func terminalIsInstalled(_ terminalType: TerminalType) -> Bool {
+//        switch terminalType {
+//        case .terminal:
+//            return true
+//        case .iTerm, .hyper, .alacritty:
+//            return self.applicationExists(terminalType.rawValue)
+//        }
+//    }
+//    
+//    /// Determine if the user has installed the editor
+//    public func editorIsInstalled(_ editorType: EditorType) -> Bool {
+//        return self.applicationExists(editorType.fullName)
+//    }
+    
+    /// Get all installed applications
+    public func getAllInstalledApps() -> Set<String> {
+
+        var applications: Set<String> = Set()
+        
+        do {
+            var searchDirs: Set<URL> = Set()
+            let fileManager = FileManager.default
+            // search `/Applications`
+            let applicationDir = "/Applications"
+            if let applicationURL = URL(string: applicationDir) {
+                searchDirs.insert(applicationURL)
+            }
+            // search `$HOME/Applications`
+            let userApplicationDirURL = fileManager.urls(for: .applicationDirectory, in: .userDomainMask)
+            if userApplicationDirURL.count > 0 {
+                searchDirs.insert(userApplicationDirURL[0])
+            }
+            
+            var levelCount = 0
+            
+            while !searchDirs.isEmpty {
+                // to avoid an infinite loop
+                levelCount += 1
+                if levelCount > 15 {
+                    break
+                }
+                
+                var tmpDirs = searchDirs
+                for currentDir in searchDirs {
+                    let fileURLs = try fileManager.contentsOfDirectory(at: currentDir, includingPropertiesForKeys: nil)
+                    for fileURL in fileURLs {
+                        // skip the hidden
+                        let baseName = fileURL.lastPathComponent
+                        if baseName.hasPrefix(".") {
+                            continue
+                        }
+                        // add to applications
+                        if baseName.hasSuffix(".app") {
+                            let appName = fileURL.deletingPathExtension().lastPathComponent
+                            applications.insert(appName)
+                            continue
+                        }
+                        // add subdirectory to searchDirs
+                        var isDir : ObjCBool = false
+                        if fileManager.fileExists(atPath: fileURL.path, isDirectory:&isDir) {
+                            if isDir.boolValue {
+                                // file exists and is a directory
+                                
+                                // check if it is a alias
+                                var isAlias: AnyObject? = nil
+                                do {
+                                    try (fileURL as NSURL).getResourceValue(&isAlias, forKey: URLResourceKey.isAliasFileKey)
+                                } catch _ {}
+                                if let isAlias = isAlias as? Bool {
+                                    // skip alias directory
+                                    if !isAlias {
+                                        tmpDirs.insert(fileURL)
+                                    }
+                                }
+                            } else {
+                                // file exists and is not a directory
+                            }
+                        } else {
+                            // file does not exist
+                        }
+                    }
+                    tmpDirs.remove(currentDir)
+                }
+                searchDirs = tmpDirs
+            }
+            
+        } catch {
+            print(error.localizedDescription)
+            logw(error.localizedDescription)
         }
         
-        var isInHomeApplication = false
-        var homeApplicationDirURL: URL
-        if #available(OSX 10.12, *) {
-            homeApplicationDirURL = FileManager.default.homeDirectoryForCurrentUser
-        } else {
-            // Fallback on earlier versions
-            homeApplicationDirURL = URL(fileURLWithPath: NSHomeDirectory())
-        }
-        homeApplicationDirURL.appendPathComponent("Applications")
-        let homeApplicationPath = homeApplicationDirURL.path + application + ".app"
-        if FileManager.default.fileExists(atPath: homeApplicationPath) {
-            isInHomeApplication = true
-        }
-        return isInApplication || isInHomeApplication
+        return applications
     }
     
-    /// Determine if the user has installed the terminal
-    public func terminalIsInstalled(_ terminalType: TerminalType) -> Bool {
-        switch terminalType {
-        case .terminal:
-            return true
-        case .iTerm, .hyper, .alacritty:
-            return self.applicationExists(terminalType.rawValue)
-        }
-    }
-    
-    /// Determine if the user has installed the editor
-    public func editorIsInstalled(_ editorType: EditorType) -> Bool {
-        return self.applicationExists(editorType.fullName)
-    }
 }

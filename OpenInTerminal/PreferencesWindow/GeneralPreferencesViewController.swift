@@ -40,6 +40,8 @@ class GeneralPreferencesViewController: PreferencesViewController {
                           keyEquivalent: "")
     }()
     
+    var allInstalledApps: Set<String> = Set()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -49,6 +51,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        allInstalledApps = FinderManager.shared.getAllInstalledApps()
         refreshButtonState()
         refreshDefaultTerminal()
         refreshDefaultEditor()
@@ -103,7 +106,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         defaultTerminalButton.addItem(withTitle: Constants.none)
         
         Constants.allTerminals.forEach { terminal in
-            let isInstalled = FinderManager.shared.terminalIsInstalled(terminal)
+            let isInstalled = allInstalledApps.contains(terminal.fullName)
             if isInstalled {
                 defaultTerminalButton.addItem(withTitle: terminal.rawValue)
             }
@@ -124,7 +127,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         defaultEditorButton.addItem(withTitle: Constants.none)
         
         Constants.allEditors.forEach { editor in
-            let isInstalled = FinderManager.shared.editorIsInstalled(editor)
+            let isInstalled = allInstalledApps.contains(editor.fullName)
             if isInstalled {
                 defaultEditorButton.addItem(withTitle: editor.rawValue)
             }
