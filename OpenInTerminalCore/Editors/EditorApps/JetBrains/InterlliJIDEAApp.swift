@@ -17,7 +17,7 @@ final class InterlliJIDEAApp: Editor {
         }
         
         let source = """
-        do shell script "open -a InterlliJ\\\\ IDEA \(url.path.specialCharEscaped)"
+        do shell script "open -a IntelliJ\\\\ IDEA \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!

@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588756-bf0a9200-7871-11ea-9aba-b00284c07c21.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.1"><img src="https://img.shields.io/badge/Version-1.1.1-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.2"><img src="https://img.shields.io/badge/Version-1.1.2-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -77,45 +77,27 @@ defaults remove wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifie
 defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
 ```
 
-<details><summary>设置 <strong>Alacritty</strong> 为默认终端:</summary><br>
-<code>defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty</code>
-<br>
-</details>
+将下列应用设置为默认：
 
-<details><summary>设置 <strong>VSCodium</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium</code>
-<br>
-</details>
+| 应用 | 命令 |
+| --- | --- |
+| Alacritty | `defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty` |
+| TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextEdit` |
+| VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium` |
+| BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit` |
+| Visual Studio Code - Insiders | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders` |
+| TextMate | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate` |
+| CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CotEditor` |
+| MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier MacVim` |
+| AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier AppCode` |
+| CLion | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CLion` |
+| GoLand | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier GoLand` |
+| IntelliJ IDEA | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier IntelliJ_IDEA` |
+| PhpStorm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PhpStorm` |
+| PyCharm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PyCharm` |
+| RubyMine | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier RubyMine` |
+| WebStorm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier WebStorm` |
 
-<details><summary>设置 <strong>BBEdit</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit</code>
-<br>
-</details>
-
-<details><summary>设置 <strong>Visual Studio Code - Insiders</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders</code>
-<br>
-</details>
-
-<details><summary>设置 <strong>TextMate</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate</code>
-<br>
-</details>
-
-<details><summary>设置 <strong>CotEditor</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CotEditor</code>
-<br>
-</details>
-
-<details><summary>设置 <strong>MacVim</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier MacVim</code>
-<br>
-</details>
-
-<details><summary>设置 <strong>PhpStorm</strong> 为默认编辑器:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PhpStorm</code>
-<br>
-</details>
 
 ### 2) 如果你正在使用深色模式 (Dark Mode)
 

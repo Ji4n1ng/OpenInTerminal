@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588756-bf0a9200-7871-11ea-9aba-b00284c07c21.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.1"><img src="https://img.shields.io/badge/Version-1.1.1-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.2"><img src="https://img.shields.io/badge/Version-1.1.2-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -76,45 +76,26 @@ defaults remove wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifie
 defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
 ```
 
-<details><summary>Set <strong>Alacritty</strong> as the default terminal:</summary><br>
-<code>defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty</code>
-<br>
-</details>
+Set the following app as the default app to open:
 
-<details><summary>Set <strong>VSCodium</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium</code>
-<br>
-</details>
-
-<details><summary>Set <strong>BBEdit</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit</code>
-<br>
-</details>
-
-<details><summary>Set <strong>Visual Studio Code - Insiders</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders</code>
-<br>
-</details>
-
-<details><summary>Set <strong>TextMate</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate</code>
-<br>
-</details>
-
-<details><summary>Set <strong>CotEditor</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CotEditor</code>
-<br>
-</details>
-
-<details><summary>Set <strong>MacVim</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier MacVim</code>
-<br>
-</details>
-
-<details><summary>Set <strong>PhpStorm</strong> as the default editor:</summary><br>
-<code>defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PhpStorm</code>
-<br>
-</details>
+| App | Command |
+| --- | --- |
+| Alacritty | `defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty` |
+| TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextEdit` |
+| VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium` |
+| BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit` |
+| Visual Studio Code - Insiders | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders` |
+| TextMate | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate` |
+| CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CotEditor` |
+| MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier MacVim` |
+| AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier AppCode` |
+| CLion | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CLion` |
+| GoLand | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier GoLand` |
+| IntelliJ IDEA | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier IntelliJ_IDEA` |
+| PhpStorm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PhpStorm` |
+| PyCharm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PyCharm` |
+| RubyMine | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier RubyMine` |
+| WebStorm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier WebStorm` |
 
 ### 2) If you are using Dark Mode
 
@@ -171,7 +152,11 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 
 ## Changes 🗒
 
-**version 1.1.0**
+**version 1.1.2**
+
+- Support JetBrains.
+
+**version 1.1.1**
 
 - Support Russian and Korean.
 - Support PhpStorm.
