@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588733-b7e38400-7871-11ea-9c3d-0f6a3c252225.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.2.0"><img src="https://img.shields.io/badge/Version-2.2.0-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.2.1"><img src="https://img.shields.io/badge/Version-2.2.1-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg
   "></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
@@ -22,8 +22,8 @@
 
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| 支持 Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) 和 [Alacritty](https://github.com/jwilm/alacritty) | ✅ | ✅ |
-| 支持 [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim) 和 [PhpStorm](https://www.jetbrains.com/phpstorm/) | ✅ | ✅ |
+| 支持 终端, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) 和 [Alacritty](https://github.com/jwilm/alacritty) | ✅ | ✅ |
+| 支持 文本编辑, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim) 和 [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm) | ✅ | ✅ |
 | 设置为打开新的窗口或者标签页 | ✅ | ✅ |
 | 支持中文，英语，法语和俄语 | ✅ | ✅ |
 | 将已选择的文件或者访达窗口的路径拷贝到粘贴板 | ✅ | ❌ |

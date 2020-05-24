@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588733-b7e38400-7871-11ea-9c3d-0f6a3c252225.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.2.0"><img src="https://img.shields.io/badge/Version-2.2.0-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.2.1"><img src="https://img.shields.io/badge/Version-2.2.1-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -22,7 +22,7 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
 | Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
 | Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
-| Support [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim) and [PhpStorm](https://www.jetbrains.com/phpstorm/). | ✅ | ✅ |
+| Support TextEdit, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim) and [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm). | ✅ | ✅ |
 | Set to open a new tab or window. | ✅ | ✅ |
 | Support English, Chinese, French and Russian. | ✅ | ✅ |
 | Copy path of the selected file or Finder window to Clipboard | ✅ |  ❌ |
@@ -128,6 +128,11 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 </details>
 
 ## Changes 🗒
+
+**version 2.2.1**
+
+- Support JetBrains.
+- Fix: check whether an application exists.
 
 **version 2.2.0**
 
