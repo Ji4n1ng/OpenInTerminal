@@ -1,14 +1,14 @@
 //
-//  PhpStormApp.swift
+//  PyCharmApp.swift
 //  OpenInTerminalCore
 //
-//  Created by Jianing Wang on 2020/4/6.
+//  Created by Jianing Wang on 2020/5/24.
 //  Copyright © 2020 Jianing Wang. All rights reserved.
 //
 
 import Foundation
 
-final class PhpStormApp: Editor {
+final class PyCharmApp: Editor {
     
     func open(_ path: String) throws {
         
@@ -17,7 +17,7 @@ final class PhpStormApp: Editor {
         }
         
         let source = """
-        do shell script "open -a PhpStorm \(url.path.specialCharEscaped)"
+        do shell script "open -a PyCharm \(url.path.specialCharEscaped)"
         """
         
         let script = NSAppleScript(source: source)!
@@ -27,7 +27,7 @@ final class PhpStormApp: Editor {
         script.executeAndReturnError(&error)
         
         if error != nil {
-            throw OITError.cannotAccessApp(EditorType.macVim.rawValue)
+            throw OITError.cannotAccessApp(EditorType.pyCharm.rawValue)
         }
     }
     

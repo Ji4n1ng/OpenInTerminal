@@ -27,6 +27,13 @@
 		47252587226812AB003C50DF /* OpenInTerminalCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4725258A226812AB003C50DF /* OpenInTerminalFinderExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4725254A22680FEB003C50DF /* OpenInTerminalFinderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		95030E6E24797B9B0071A985 /* TextEditApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030E6D24797B9B0071A985 /* TextEditApp.swift */; };
+		95030E72247A1F3B0071A985 /* PyCharmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030E71247A1F3B0071A985 /* PyCharmApp.swift */; };
+		95030E75247A21570071A985 /* CLionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030E74247A21570071A985 /* CLionApp.swift */; };
+		95030E77247A29860071A985 /* AppCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030E76247A29860071A985 /* AppCodeApp.swift */; };
+		95030E79247A2A190071A985 /* GoLandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030E78247A2A190071A985 /* GoLandApp.swift */; };
+		95030E7B247A2A7D0071A985 /* InterlliJIDEAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030E7A247A2A7D0071A985 /* InterlliJIDEAApp.swift */; };
+		95030E7D247A2B2A0071A985 /* RubyMineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030E7C247A2B2A0071A985 /* RubyMineApp.swift */; };
+		95030E80247A2B700071A985 /* WebStormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95030E7F247A2B700071A985 /* WebStormApp.swift */; };
 		950A4E692271EEC8002A9548 /* AlacrittyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950A4E682271EEC8002A9548 /* AlacrittyApp.swift */; };
 		9511D8AC22749582008E52B9 /* LaunchNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511D8AB22749582008E52B9 /* LaunchNotifier.swift */; };
 		95163CD22269979E007C006F /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD12269979E007C006F /* Notifier.swift */; };
@@ -177,6 +184,13 @@
 		4725257F2268112F003C50DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BE6A353376D4C2E8A800E17 /* Pods-OpenInTerminal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenInTerminal.debug.xcconfig"; path = "Target Support Files/Pods-OpenInTerminal/Pods-OpenInTerminal.debug.xcconfig"; sourceTree = "<group>"; };
 		95030E6D24797B9B0071A985 /* TextEditApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditApp.swift; sourceTree = "<group>"; };
+		95030E71247A1F3B0071A985 /* PyCharmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyCharmApp.swift; sourceTree = "<group>"; };
+		95030E74247A21570071A985 /* CLionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLionApp.swift; sourceTree = "<group>"; };
+		95030E76247A29860071A985 /* AppCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCodeApp.swift; sourceTree = "<group>"; };
+		95030E78247A2A190071A985 /* GoLandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoLandApp.swift; sourceTree = "<group>"; };
+		95030E7A247A2A7D0071A985 /* InterlliJIDEAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterlliJIDEAApp.swift; sourceTree = "<group>"; };
+		95030E7C247A2B2A0071A985 /* RubyMineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyMineApp.swift; sourceTree = "<group>"; };
+		95030E7F247A2B700071A985 /* WebStormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebStormApp.swift; sourceTree = "<group>"; };
 		950A4E682271EEC8002A9548 /* AlacrittyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlacrittyApp.swift; sourceTree = "<group>"; };
 		9511D8AB22749582008E52B9 /* LaunchNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNotifier.swift; sourceTree = "<group>"; };
 		95163CD12269979E007C006F /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
@@ -314,10 +328,7 @@
 				4725253222680EF8003C50DF /* TerminalProtocol.swift */,
 				9590B690226C6DB000362B93 /* TerminalType.swift */,
 				4725252E22680EE0003C50DF /* TerminalManager.swift */,
-				4725253822680F4B003C50DF /* TerminalApp.swift */,
-				4725253A22680F4B003C50DF /* iTermApp.swift */,
-				4725253922680F4B003C50DF /* HyperApp.swift */,
-				950A4E682271EEC8002A9548 /* AlacrittyApp.swift */,
+				95030E70247A1CB20071A985 /* TerminalApps */,
 			);
 			path = Terminals;
 			sourceTree = "<group>";
@@ -356,6 +367,50 @@
 				1463FD2DA3F2CBDE5C98A8F7 /* Pods_OpenInTerminal.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95030E6F247A1C9E0071A985 /* EditorApps */ = {
+			isa = PBXGroup;
+			children = (
+				95030E6D24797B9B0071A985 /* TextEditApp.swift */,
+				9590B696226C6E8600362B93 /* VSCodeApp.swift */,
+				9590B698226C6E9600362B93 /* AtomApp.swift */,
+				9590B69A226C6EA200362B93 /* SublimeApp.swift */,
+				957B75DE2292358E00E35061 /* VSCodiumApp.swift */,
+				95C6F81B22E37D59001C6374 /* BBEditApp.swift */,
+				95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */,
+				956BCE0F22F80D6C00310B56 /* TextMateApp.swift */,
+				9595D29F23BA0E7F006CBB36 /* CotEditorApp.swift */,
+				951FC31223C611E600A51B50 /* MacVimApp.swift */,
+				95030E73247A21240071A985 /* JetBrains */,
+			);
+			path = EditorApps;
+			sourceTree = "<group>";
+		};
+		95030E70247A1CB20071A985 /* TerminalApps */ = {
+			isa = PBXGroup;
+			children = (
+				4725253822680F4B003C50DF /* TerminalApp.swift */,
+				4725253A22680F4B003C50DF /* iTermApp.swift */,
+				4725253922680F4B003C50DF /* HyperApp.swift */,
+				950A4E682271EEC8002A9548 /* AlacrittyApp.swift */,
+			);
+			path = TerminalApps;
+			sourceTree = "<group>";
+		};
+		95030E73247A21240071A985 /* JetBrains */ = {
+			isa = PBXGroup;
+			children = (
+				95030E76247A29860071A985 /* AppCodeApp.swift */,
+				95030E74247A21570071A985 /* CLionApp.swift */,
+				95030E78247A2A190071A985 /* GoLandApp.swift */,
+				95030E7A247A2A7D0071A985 /* InterlliJIDEAApp.swift */,
+				95DD629B243B4420003550B3 /* PhpStormApp.swift */,
+				95030E71247A1F3B0071A985 /* PyCharmApp.swift */,
+				95030E7C247A2B2A0071A985 /* RubyMineApp.swift */,
+				95030E7F247A2B700071A985 /* WebStormApp.swift */,
+			);
+			path = JetBrains;
 			sourceTree = "<group>";
 		};
 		9511D8AA22748FD6008E52B9 /* Assets */ = {
@@ -436,17 +491,7 @@
 				954EFA922273643C001E101E /* EditorProtocol.swift */,
 				9590B692226C6DE900362B93 /* EditorType.swift */,
 				9590B694226C6E7400362B93 /* EditorManager.swift */,
-				95030E6D24797B9B0071A985 /* TextEditApp.swift */,
-				9590B696226C6E8600362B93 /* VSCodeApp.swift */,
-				9590B698226C6E9600362B93 /* AtomApp.swift */,
-				9590B69A226C6EA200362B93 /* SublimeApp.swift */,
-				957B75DE2292358E00E35061 /* VSCodiumApp.swift */,
-				95C6F81B22E37D59001C6374 /* BBEditApp.swift */,
-				95E7170B22F1370F000E331A /* VSCodeInsidersApp.swift */,
-				956BCE0F22F80D6C00310B56 /* TextMateApp.swift */,
-				9595D29F23BA0E7F006CBB36 /* CotEditorApp.swift */,
-				951FC31223C611E600A51B50 /* MacVimApp.swift */,
-				95DD629B243B4420003550B3 /* PhpStormApp.swift */,
+				95030E6F247A1C9E0071A985 /* EditorApps */,
 			);
 			path = Editors;
 			sourceTree = "<group>";
@@ -727,10 +772,13 @@
 				95E7170C22F1370F000E331A /* VSCodeInsidersApp.swift in Sources */,
 				4725254422680F7C003C50DF /* Log.swift in Sources */,
 				4725254522680F7C003C50DF /* Error.swift in Sources */,
+				95030E75247A21570071A985 /* CLionApp.swift in Sources */,
 				4725253D22680F4B003C50DF /* iTermApp.swift in Sources */,
 				4725253522680EFD003C50DF /* FinderManager.swift in Sources */,
+				95030E80247A2B700071A985 /* WebStormApp.swift in Sources */,
 				9590B691226C6DB000362B93 /* TerminalType.swift in Sources */,
 				95030E6E24797B9B0071A985 /* TextEditApp.swift in Sources */,
+				95030E7B247A2A7D0071A985 /* InterlliJIDEAApp.swift in Sources */,
 				4725253122680EF3003C50DF /* Constants.swift in Sources */,
 				4725254022680F5A003C50DF /* Terminal.swift in Sources */,
 				4725253C22680F4B003C50DF /* HyperApp.swift in Sources */,
@@ -741,13 +789,17 @@
 				4725253322680EF9003C50DF /* TerminalProtocol.swift in Sources */,
 				9590B69B226C6EA200362B93 /* SublimeApp.swift in Sources */,
 				95C6F81C22E37D59001C6374 /* BBEditApp.swift in Sources */,
+				95030E7D247A2B2A0071A985 /* RubyMineApp.swift in Sources */,
 				95DFC1242354A2C300941D3A /* DefaultsManager.swift in Sources */,
+				95030E79247A2A190071A985 /* GoLandApp.swift in Sources */,
 				9590B695226C6E7400362B93 /* EditorManager.swift in Sources */,
 				4725254122680F5A003C50DF /* Finder.swift in Sources */,
 				9590B697226C6E8600362B93 /* VSCodeApp.swift in Sources */,
 				951FC31323C611E600A51B50 /* MacVimApp.swift in Sources */,
+				95030E72247A1F3B0071A985 /* PyCharmApp.swift in Sources */,
 				950A4E692271EEC8002A9548 /* AlacrittyApp.swift in Sources */,
 				9590B699226C6E9600362B93 /* AtomApp.swift in Sources */,
+				95030E77247A29860071A985 /* AppCodeApp.swift in Sources */,
 				957B75DF2292358E00E35061 /* VSCodiumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

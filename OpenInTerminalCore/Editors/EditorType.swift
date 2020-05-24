@@ -20,7 +20,16 @@ public enum EditorType: String {
     case textMate = "TextMate"
     case cotEditor = "CotEditor"
     case macVim = "MacVim"
+    
+    // JetBrains
+    case appCode = "AppCode"
+    case cLion = "CLion"
+    case goLand = "GoLand"
+    case intelliJIDEA = "IntelliJ_IDEA"
     case phpStorm = "PhpStorm"
+    case pyCharm = "PyCharm"
+    case rubyMine = "RubyMine"
+    case webStorm = "WebStorm"
     
     public var fullName: String {
         switch self {
@@ -44,8 +53,23 @@ public enum EditorType: String {
             return "CotEditor"
         case .macVim:
             return "MacVim"
+            
+        case .appCode:
+            return "AppCode"
+        case .cLion:
+            return "CLion"
+        case .goLand:
+            return "GoLand"
+        case .intelliJIDEA:
+            return "IntelliJ IDEA"
         case .phpStorm:
             return "PhpStorm"
+        case .pyCharm:
+            return "PyCharm"
+        case .rubyMine:
+            return "RubyMine"
+        case .webStorm:
+            return "WebStorm"
         }
     }
     
@@ -71,8 +95,23 @@ public enum EditorType: String {
             return ""
         case .macVim:
             return ""
+        
+        case .appCode:
+            return "com.jetbrains.appcode"
+        case .cLion:
+            return "com.jetbrains.clion"
+        case .goLand:
+            return "com.jetbrains.goland"
+        case .intelliJIDEA:
+            return "com.jetbrains.intellij"
         case .phpStorm:
-            return ""
+            return "com.jetbrains.PhpStorm"
+        case .pyCharm:
+            return "com.jetbrains.pycharm"
+        case .rubyMine:
+            return "com.jetbrains.rubymine"
+        case .webStorm:
+            return "com.jetbrains.webstorm"
         }
     }
     
@@ -98,8 +137,23 @@ public enum EditorType: String {
             return CotEditorApp()
         case .macVim:
             return MacVimApp()
+        
+        case .appCode:
+            return AppCodeApp()
+        case .cLion:
+            return CLionApp()
+        case .goLand:
+            return GoLandApp()
+        case .intelliJIDEA:
+            return InterlliJIDEAApp()
         case .phpStorm:
             return PhpStormApp()
+        case .pyCharm:
+            return PyCharmApp()
+        case .rubyMine:
+            return RubyMineApp()
+        case .webStorm:
+            return WebStormApp()
         }
     }
 }
@@ -108,6 +162,8 @@ public extension EditorType {
     
     init?(by fullName: String) {
         switch fullName {
+        case "TextEdit":
+            self = .textEdit
         case "Visual Studio Code":
             self = .vscode
         case "Atom":
@@ -126,8 +182,23 @@ public extension EditorType {
             self = .cotEditor
         case "MacVim":
             self = .macVim
+        
+        case "AppCode":
+            self = .appCode
+        case "CLion":
+            self = .cLion
+        case "GoLand":
+            self = .goLand
+        case "IntelliJ IDEA":
+            self = .intelliJIDEA
         case "PhpStorm":
             self = .phpStorm
+        case "PyCharm":
+            self = .pyCharm
+        case "RubyMine":
+            self = .rubyMine
+        case "WebStorm":
+            self = .webStorm
         default:
             return nil
         }

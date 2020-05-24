@@ -47,6 +47,7 @@ public class EditorManager {
         alert.addButton(withTitle: EditorType.atom.rawValue).refusesFirstResponder = true
         alert.addButton(withTitle: EditorType.vscode.rawValue).refusesFirstResponder = true
         
+        
         let modalResult = alert.runModal()
         
         switch modalResult {

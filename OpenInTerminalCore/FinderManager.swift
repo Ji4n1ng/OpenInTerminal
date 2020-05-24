@@ -141,7 +141,7 @@ public class FinderManager {
             while !searchDirs.isEmpty {
                 // to avoid an infinite loop
                 levelCount += 1
-                if levelCount > 15 {
+                if levelCount > 20 {
                     break
                 }
                 
