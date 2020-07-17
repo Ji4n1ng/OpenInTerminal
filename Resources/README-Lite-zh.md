@@ -139,7 +139,11 @@ defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 
 <details><summary>1. 我不小心点了不授权的按钮</summary><br>
 <p>你可以运行以下命令。这会重置系统设置里的权限。</p>
-<pre><code>tccutil reset AppleEvents</code></pre>
+<pre><code># 对于 OpenInTerminal-Lite:
+tccutil reset AppleEvents wang.jianing.app.OpenInTerminal-Lite
+# 对于 OpenInEditor-Lite:
+tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
+</code></pre>
 </details>
 
 <details><summary>2. 路径里的特殊字符</summary><br>

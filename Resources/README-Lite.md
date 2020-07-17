@@ -137,7 +137,10 @@ For `Alacritty` users, it is only supported to open a new window now.
 
 <details><summary>1. I accidentally clicked on the <code>Don't Allow</code>  button.</summary><br>
 <p>You can run the following command in the terminal. This will reset the permissions in the System Preferences.</p>
-<pre><code>tccutil reset AppleEvents
+<pre><code># For OpenInTerminal-Lite:
+tccutil reset AppleEvents wang.jianing.app.OpenInTerminal-Lite
+# For OpenInEditor-Lite:
+tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 </code></pre>
 </details>
 
