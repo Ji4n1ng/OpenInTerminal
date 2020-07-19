@@ -31,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		82AE667823896C4E00F4DB4D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9561BB4324C1F3ED001DE0A9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9595D2A223BAD7EE006CBB36 /* OpenInEditor-Lite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OpenInEditor-Lite.entitlements"; sourceTree = "<group>"; };
 		95A0744722C2083E00A42BC8 /* OpenInEditor-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenInEditor-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A0744C22C2083E00A42BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 				ko,
 				ru,
 				it,
+				es,
 			);
 			mainGroup = 95A0743E22C2083E00A42BC8;
 			productRefGroup = 95A0744822C2083E00A42BC8 /* Products */;
@@ -187,6 +189,7 @@
 				82AE667823896C4E00F4DB4D /* ko */,
 				95DD629D243B4694003550B3 /* ru */,
 				C3135D9E243F4CFA003323CF /* it */,
+				9561BB4324C1F3ED001DE0A9 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -327,7 +330,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInEditor-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -350,7 +353,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInEditor-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

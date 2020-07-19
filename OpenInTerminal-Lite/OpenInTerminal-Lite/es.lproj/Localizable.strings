@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  OpenInTerminal-Lite
+
+  Created by Jianing Wang on 2019/5/16.
+  Copyright © 2019 Jianing Wang. All rights reserved.
+*/
+
+"general.ok" = "OK";
+"general.cancel" = "Cancelar";
+"general.yes" = "Sí";
+
+"alert.pick_terminal_title" = "Abrir en?";
+"alert.pick_terminal_description" = "Seleccione uno de los siguientes terminales como terminal predeterminado.";

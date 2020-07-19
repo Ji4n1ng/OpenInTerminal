@@ -37,6 +37,7 @@
 		95163CEB2269F0C3007C006F /* OpenInTerminal_Lite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenInTerminal_Lite.entitlements; sourceTree = "<group>"; };
 		95163CF12269F104007C006F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95163CF32269F209007C006F /* OpenInTerminalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenInTerminalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9561BB4224C1F2FB001DE0A9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9590B69C226C715100362B93 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		9595D2A123BAD74D006CBB36 /* OpenInTerminal-Lite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OpenInTerminal-Lite.entitlements"; sourceTree = "<group>"; };
 		95ECC131228CF99F00416AA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -158,6 +159,7 @@
 				ko,
 				ru,
 				it,
+				es,
 			);
 			mainGroup = 95163CD72269F0C2007C006F;
 			productRefGroup = 95163CE12269F0C2007C006F /* Products */;
@@ -203,6 +205,7 @@
 				82AE667723896ADB00F4DB4D /* ko */,
 				E197D59B23E299B900C5A893 /* ru */,
 				C3135D9D243F4CD3003323CF /* it */,
+				9561BB4224C1F2FB001DE0A9 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -343,7 +346,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInTerminal-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -367,7 +370,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInTerminal-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -166,6 +166,8 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 - [Dorian Eydoux](https://github.com/dorianeydx)
 - [techinpark](https://github.com/techinpark)
 - [Egor](https://github.com/Rogue85)
+- [arendruni](https://github.com/arendruni)
+- [panta97](https://github.com/panta97)
 
 ### 参考项目
 
