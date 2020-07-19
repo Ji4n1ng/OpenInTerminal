@@ -24,7 +24,7 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
 | Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) and [Alacritty](https://github.com/jwilm/alacritty). | ✅ | ✅ |
 | Support TextEdit, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim) and [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm). | ✅ | ✅ |
 | Set to open a new tab or window. | ✅ | ✅ |
-| Support English, Chinese, French and Russian. | ✅ | ✅ |
+| Support English, Chinese, French, Russian, Italian and Spanish. | ✅ | ✅ |
 | Copy path of the selected file or Finder window to Clipboard | ✅ |  ❌ |
 | GUI preferences | ✅ | ❌ |
 | Support keyboard shortcuts. | ✅ | ❌ |
@@ -236,6 +236,8 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 
 - [Dorian Eydoux](https://github.com/dorian-eydoux)
 - [Egor](https://github.com/Rogue85)
+- [arendruni](https://github.com/arendruni)
+- [panta97](https://github.com/panta97)
 
 ### Reference projects
 

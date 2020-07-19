@@ -106,7 +106,10 @@ class GeneralPreferencesViewController: PreferencesViewController {
         defaultTerminalButton.addItem(withTitle: Constants.none)
         
         Constants.allTerminals.forEach { terminal in
-            let isInstalled = allInstalledApps.contains(terminal.fullName)
+            var isInstalled = allInstalledApps.contains(terminal.fullName)
+            if terminal == .terminal {
+                isInstalled = true
+            }
             if isInstalled {
                 defaultTerminalButton.addItem(withTitle: terminal.rawValue)
             }
@@ -127,7 +130,10 @@ class GeneralPreferencesViewController: PreferencesViewController {
         defaultEditorButton.addItem(withTitle: Constants.none)
         
         Constants.allEditors.forEach { editor in
-            let isInstalled = allInstalledApps.contains(editor.fullName)
+            var isInstalled = allInstalledApps.contains(editor.fullName)
+            if editor == .textEdit {
+                isInstalled = true
+            }
             if isInstalled {
                 defaultEditorButton.addItem(withTitle: editor.rawValue)
             }

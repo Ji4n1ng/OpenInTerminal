@@ -25,7 +25,7 @@
 | 支持 终端, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper) 和 [Alacritty](https://github.com/jwilm/alacritty) | ✅ | ✅ |
 | 支持 文本编辑, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim) 和 [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm) | ✅ | ✅ |
 | 设置为打开新的窗口或者标签页 | ✅ | ✅ |
-| 支持中文，英语，法语和俄语 | ✅ | ✅ |
+| 支持中文，英语，法语，俄语，意大利语和西班牙语 | ✅ | ✅ |
 | 将已选择的文件或者访达窗口的路径拷贝到粘贴板 | ✅ | ❌ |
 | 图形化设置界面 | ✅ | ❌ |
 | 支持键盘快捷键 | ✅ | ❌ |
@@ -131,6 +131,8 @@ brew cask install openinterminal
 
 - [Dorian Eydoux](https://github.com/dorianeydx)
 - [Egor](https://github.com/Rogue85)
+- [arendruni](https://github.com/arendruni)
+- [panta97](https://github.com/panta97)
 
 ### 参考项目
 
