@@ -14,6 +14,7 @@ public enum TerminalType: String {
     case iTerm = "iTerm"
     case hyper = "Hyper"
     case alacritty = "Alacritty"
+    case kitty = "Kitty"
     
     public var bundleId: String {
         switch self {
@@ -25,6 +26,8 @@ public enum TerminalType: String {
             return "co.zeit.hyper"
         case .alacritty:
             return "io.alacritty"
+        case .kitty:
+            return "net.kovidgoyal.kitty"
         }
     }
     
@@ -42,6 +45,8 @@ public enum TerminalType: String {
             return HyperApp()
         case .alacritty:
             return AlacrittyApp()
+        case .kitty:
+            return KittyApp()
         }
     }
     
@@ -59,6 +64,8 @@ public extension TerminalType {
             self = .hyper
         case "Alacritty":
             self = .alacritty
+        case "Kitty":
+            self = .kitty
         default:
             return nil
         }
@@ -74,6 +81,10 @@ extension TerminalType: Scriptable {
         case .alacritty:
             openScript = """
             do shell script "open -na Alacritty --args --working-directory " & quoted form of thePath
+            """
+        case .kitty:
+            openScript = """
+            do shell script "open -na kitty --args --directory " & quoted from thePath
             """
         default:
             let escapedName = self.rawValue.nameSpaceEscaped
