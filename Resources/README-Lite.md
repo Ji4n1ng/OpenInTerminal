@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588756-bf0a9200-7871-11ea-9aba-b00284c07c21.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.2"><img src="https://img.shields.io/badge/Version-1.1.2-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.4"><img src="https://img.shields.io/badge/Version-1.1.4-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -158,25 +158,34 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 
 ## Changes 🗒
 
-**version 1.1.2**
-
-- Support JetBrains.
-
-**version 1.1.1**
-
-- Support Russian and Korean.
-- Support PhpStorm.
-
-**version 1.1.0**
-
-- Support CotEditor and MacVim.
-
-**version 1.0.3**
-
-- Signed the application with the developer account. Bundle ID has changed.
-- Support Korean.
-
-<details><summary>old version</summary><br>
+<details><summary>show all</summary><br>
+<p><strong>version 1.1.4</strong></p>
+<ul>
+<li>Support kitty</li>
+<li>Open multi-selected files in editors</li>
+</ul>
+<p><strong>version 1.1.3</strong></p>
+<ul>
+<li>Support Italian and Spanish</li>
+</ul>
+<p><strong>version 1.1.2</strong></p>
+<ul>
+<li>Support JetBrains</li>
+</ul>
+<p><strong>version 1.1.1</strong></p>
+<ul>
+<li>Support Russian and Korean</li>
+<li>Support PhpStorm</li>
+</ul>
+<p><strong>version 1.1.0</strong></p>
+<ul>
+<li>Support CotEditor and MacVim</li>
+</ul>
+<p><strong>version 1.0.3</strong></p>
+<ul>
+<li>Signed the application with the developer account. Bundle ID has changed</li>
+<li>Support Korean</li>
+</ul>
 <p><strong>version 1.0.2</strong></p>
 <ul>
 <li>Support TextMate</li>
@@ -239,6 +248,7 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 ### Contributors
 
 - [Camji55](https://github.com/Camji55)
+- [gucheen](https://github.com/gucheen)
 
 ### Translators
 

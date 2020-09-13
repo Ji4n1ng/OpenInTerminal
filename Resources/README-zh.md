@@ -126,6 +126,7 @@ brew cask install openinterminal
 ### 贡献者
 
 - [Camji55](https://github.com/Camji55)
+- [gucheen](https://github.com/gucheen)
 
 ### 译者
 

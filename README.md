@@ -231,6 +231,7 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 ### Contributors
 
 - [Camji55](https://github.com/Camji55)
+- [gucheen](https://github.com/gucheen)
 
 ### Translators
 
