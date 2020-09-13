@@ -133,6 +133,8 @@ For `Hyper` users, it is more recommended to open a new tab.
 
 For `Alacritty` users, it is only supported to open a new window now.
 
+For `Kitty` users, it is only supported to open a new window now.
+
 ## FAQ ❓
 
 <details><summary>1. I accidentally clicked on the <code>Don't Allow</code>  button.</summary><br>

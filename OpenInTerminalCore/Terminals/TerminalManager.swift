@@ -45,6 +45,7 @@ public class TerminalManager {
         alert.addButton(withTitle: cancelString).refusesFirstResponder = true
         alert.addButton(withTitle: TerminalType.hyper.rawValue).refusesFirstResponder = true
         alert.addButton(withTitle: TerminalType.iTerm.rawValue).refusesFirstResponder = true
+        alert.addButton(withTitle: TerminalType.kitty.rawValue).refusesFirstResponder = true
         alert.addButton(withTitle: TerminalType.terminal.rawValue).refusesFirstResponder = true
         
         let modalResult = alert.runModal()

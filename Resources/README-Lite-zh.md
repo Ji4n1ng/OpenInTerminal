@@ -82,6 +82,7 @@ defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
 | 应用 | 命令 |
 | --- | --- |
 | Alacritty | `defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty` |
+| Kitty | `defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Kitty` |
 | TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextEdit` |
 | VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium` |
 | BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit` |
@@ -134,6 +135,8 @@ defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 对于 `Hyper` 用户来说，更推荐打开新的标签页。
 
 对于 `Alacritty` 用户来说，目前只支持打开新的窗口。
+
+对于 `Kitty` 用户来说，目前只支持打开新的窗口。
 
 ## 常见问题 ❓
 

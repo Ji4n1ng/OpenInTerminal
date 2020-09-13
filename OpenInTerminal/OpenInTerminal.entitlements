@@ -22,6 +22,7 @@
 		<string>com.barebones.bbedit</string>
 		<string>com.microsoft.VSCodeInsiders</string>
 		<string>com.macromates.TextMate</string>
+		<string>net.kovidgoyal.kitty</string>
 	</array>
 </dict>
 </plist>

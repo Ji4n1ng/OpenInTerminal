@@ -149,7 +149,7 @@ public class DefaultsManager {
             option = currentDefaults[.terminalNewOption]
         case .iTerm:
             option = currentDefaults[.iTermNewOption]
-        case .hyper, .alacritty:
+        case .hyper, .alacritty, .kitty:
             return nil
         }
         
@@ -177,7 +177,7 @@ public class DefaultsManager {
             if error != nil {
                 throw OITError.cannotSetItermNewOption
             }
-        case .hyper, .alacritty:
+        case .hyper, .alacritty, .kitty:
             return
         }
     }
