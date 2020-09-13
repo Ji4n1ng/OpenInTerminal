@@ -1,5 +1,5 @@
 //
-//  KittyApp.swift
+//  kittyApp.swift
 //  OpenInTerminalCore
 //
 //  Created by gucheng on 2020/9/8.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class KittyApp: Terminal {
+final class kittyApp: Terminal {
     
     func open(_ path: String, _ newOption: NewOptionType) throws {
         

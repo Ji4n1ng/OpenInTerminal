@@ -81,6 +81,7 @@ Set the following app as the default app to open:
 | App | Command |
 | --- | --- |
 | Alacritty | `defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty` |
+| kitty | `defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier kitty` |
 | TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextEdit` |
 | VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium` |
 | BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit` |

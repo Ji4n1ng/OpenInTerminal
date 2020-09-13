@@ -22,7 +22,7 @@
 
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| 支持 终端, [iTerm](https://www.iterm2.com/)， [Hyper](https://github.com/zeit/hyper)， [Alacritty](https://github.com/jwilm/alacritty) 和 [Kitty](https://sw.kovidgoyal.net/kitty/) | ✅ | ✅ |
+| 支持 终端, [iTerm](https://www.iterm2.com/)， [Hyper](https://github.com/zeit/hyper)， [Alacritty](https://github.com/jwilm/alacritty) 和 [kitty](https://sw.kovidgoyal.net/kitty/) | ✅ | ✅ |
 | 支持 文本编辑, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim) 和 [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm) | ✅ | ✅ |
 | 设置为打开新的窗口或者标签页 | ✅ | ✅ |
 | 支持中文，英语，法语，俄语，意大利语和西班牙语 | ✅ | ✅ |

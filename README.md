@@ -21,7 +21,7 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
 
 | Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty) and [Kitty](https://sw.kovidgoyal.net/kitty/). | ✅ | ✅ |
+| Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty) and [kitty](https://sw.kovidgoyal.net/kitty/). | ✅ | ✅ |
 | Support TextEdit, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim) and [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm). | ✅ | ✅ |
 | Set to open a new tab or window. | ✅ | ✅ |
 | Support English, Chinese, French, Russian, Italian and Spanish. | ✅ | ✅ |

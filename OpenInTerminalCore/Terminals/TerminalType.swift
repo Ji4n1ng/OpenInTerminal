@@ -14,7 +14,7 @@ public enum TerminalType: String {
     case iTerm = "iTerm"
     case hyper = "Hyper"
     case alacritty = "Alacritty"
-    case kitty = "Kitty"
+    case kitty = "kitty"
     
     public var bundleId: String {
         switch self {
@@ -46,7 +46,7 @@ public enum TerminalType: String {
         case .alacritty:
             return AlacrittyApp()
         case .kitty:
-            return KittyApp()
+            return kittyApp()
         }
     }
     
@@ -64,7 +64,7 @@ public extension TerminalType {
             self = .hyper
         case "Alacritty":
             self = .alacritty
-        case "Kitty":
+        case "kitty":
             self = .kitty
         default:
             return nil
