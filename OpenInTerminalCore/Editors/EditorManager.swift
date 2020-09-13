@@ -16,17 +16,18 @@ public class EditorManager {
     
     public func openEditor(_ editorType: EditorType) {
         do {
-            var path = try FinderManager.shared.getFullPathToFrontFinderWindowOrSelectedFile()
-            if path == "" {
+            var paths = try FinderManager.shared.getFullPathsToFrontFinderWindowOrSelectedFile()
+            if paths.count == 0 {
                 // No Finder window and no file selected.
                 let homePath = NSHomeDirectory()
                 guard let homeUrl = URL(string: homePath) else { return }
-                path = homeUrl.appendingPathComponent("Desktop").path
+                let desktopPath = homeUrl.appendingPathComponent("Desktop").path
+                paths.append(desktopPath)
             }
             
             let editor = editorType.instance()
             
-            try editor.open(path)
+            try editor.open(paths)
             
         } catch {
             logw(error.localizedDescription)

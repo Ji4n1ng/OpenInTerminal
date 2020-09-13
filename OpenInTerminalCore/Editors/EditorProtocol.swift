@@ -10,6 +10,6 @@ import Foundation
 
 public protocol Editor {
     
-    func open(_ path: String) throws
+    func open(_ paths: [String]) throws
     
 }

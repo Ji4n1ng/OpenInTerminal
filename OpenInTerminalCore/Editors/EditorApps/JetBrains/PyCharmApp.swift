@@ -10,14 +10,22 @@ import Foundation
 
 final class PyCharmApp: Editor {
     
-    func open(_ path: String) throws {
+    func open(_ paths: [String]) throws {
         
-        guard let url = URL(string: path) else {
+        let checkedPaths = paths.compactMap {
+            URL(string: $0)
+        }.map {
+            $0.path.specialCharEscaped
+        }
+        
+        if checkedPaths.count == 0 {
             throw OITError.wrongUrl
         }
         
+        let joinedPaths = checkedPaths.joined(separator: " ")
+        
         let source = """
-        do shell script "open -a PyCharm \(url.path.specialCharEscaped)"
+        do shell script "open -a PyCharm \(joinedPaths)"
         """
         
         let script = NSAppleScript(source: source)!

@@ -50,6 +50,43 @@ public class FinderManager {
         return url.absoluteString
     }
     
+    /// Get full paths to front Finder windows or selected files
+    public func getFullPathsToFrontFinderWindowOrSelectedFile() throws -> [String] {
+        
+        let finder = SBApplication(bundleIdentifier: Constants.Finder.id)! as FinderApplication
+        
+        var targets: [FinderItem]
+        
+        guard let selection = finder.selection,
+            let selectionItems = selection.get() else {
+                throw OITError.cannotAccessFinder
+        }
+        
+        if let items = selectionItems as? Array<FinderItem> {
+            // Files or folders are selected
+            targets = items
+        } else {
+            // Check if there are opened finder windows
+            guard let windows = finder.FinderWindows?(),
+                let firstWindow = windows.firstObject else {
+                    print("No Finder windows are opened or selected")
+                    return [""]
+            }
+            let topFinderWindow = (firstWindow as! FinderFinderWindow).target?.get() as! FinderItem
+            targets = [topFinderWindow]
+        }
+        
+        let paths = targets.compactMap {
+            $0.URL
+        }.compactMap {
+            URL(string: $0)
+        }.map {
+            $0.absoluteString
+        }
+        
+        return paths
+    }
+    
     /// Get path to front Finder window or selected file.
     /// If the selected one is file, return it's parent path.
     public func getPathToFrontFinderWindowOrSelectedFile() throws -> String {
