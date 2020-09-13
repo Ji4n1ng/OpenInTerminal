@@ -213,12 +213,9 @@ extension EditorType: Scriptable {
         
         let script = """
         tell application "Finder"
-            set finderSelList to selection as alias list
+            set pathList to {}
             
-            if finderSelList ≠ {} then
-                set theSelected to item 1 of finderSelList
-                set thePath to POSIX path of (contents of theSelected)
-            end if
+            set finderSelList to selection as alias list
             
             if finderSelList = {} then
                 tell application "Finder"
@@ -227,12 +224,26 @@ extension EditorType: Scriptable {
                     on error
                         set thePath to POSIX path of (path to desktop)
                     end try
+                    set end of pathList to thePath
                 end tell
+            end if
+            
+            if finderSelList ≠ {} then
+                repeat with theSelected in finderSelList
+                    set thePath to POSIX path of (contents of theSelected)
+                    set end of pathList to thePath
+                end repeat
             end if
             
         end tell
 
-        do shell script "open -a \(escapedName) " & quoted form of thePath
+        set scriptStr to "open -a \(escapedName)"
+
+        repeat with thePath in pathList
+            set scriptStr to scriptStr & " " & quoted form of thePath
+        end repeat
+
+        do shell script scriptStr
         """
         
         return script
