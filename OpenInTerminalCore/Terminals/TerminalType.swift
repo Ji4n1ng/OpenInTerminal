@@ -84,7 +84,7 @@ extension TerminalType: Scriptable {
             """
         case .kitty:
             openScript = """
-            do shell script "open -na kitty --args --directory " & quoted from thePath
+            do shell script "open -na kitty --args --directory " & quoted form of thePath
             """
         default:
             let escapedName = self.rawValue.nameSpaceEscaped
