@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588733-b7e38400-7871-11ea-9c3d-0f6a3c252225.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.2.1"><img src="https://img.shields.io/badge/Version-2.2.1-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.2.3"><img src="https://img.shields.io/badge/Version-2.2.3-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -124,32 +124,42 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 </ul>
 <p>Some people want OpenInTerminal to be fast and stable(the lite version), while others want OpenInTerminal to be powerful and easier to configure(the normal version). Some people hope that OpenInTerminal can automatically adapt to dark mode(the normal version), while others just want to open the terminal with one click(the lite version).</p>
 <p>When one version can no longer meet these needs, OpenInTerminal was split into a normal version and a lite version a few months ago.</p>
-<p>(BTW, I know there are apps that are sandboxed and  can achieve the same effect as OpenInTerminal. But I don't know how it implements this. If anyone knows it and is willing to talk to me, that would be great. I'm very happy to make OpenInTerminal more perfect so that one version is enough.😀)</p>
+<p>(BTW, I know there are apps that are sandboxed and can achieve the same effect as OpenInTerminal. But I don't know how it implements this. If anyone knows it and is willing to talk to me, that would be great. I'm very happy to make OpenInTerminal more perfect so that one version is enough.😀)</p>
 </details>
 
 ## Changes 🗒
 
-**version 2.2.1**
-
-- Support JetBrains.
-- Fix: check whether an application exists.
-
-**version 2.2.0**
-
-- Custom Finder menu options.
-- Support Russian.
-- Support PhpStorm.
-- Fix: doesn't work when opening desktop in terminal.
-
-**version 2.1.1**
-
-- Signed the application with the developer account. Bundle ID has changed.
-- Support Finder Extension Standalone Operation Mode.
-- Support CotEditor and MacVim.
-- User can hide context menu items.
-- Finder context menu item's title will change to the current default terminal / editor.
-
-<details><summary>old version</summary><br>
+<details><summary>show all</summary><br>
+<p><strong>version 2.2.3</strong></p>
+<ul>
+<li>Support kitty</li>
+<li>Open multi-selected files in editors</li>
+</ul>
+<p><strong>version 2.2.2</strong></p>
+<ul>
+<li>Support Italian and Spanish</li>
+<li>Fix: does not show Terminal and TextEdit</li>
+</ul>
+<p><strong>version 2.2.1</strong></p>
+<ul>
+<li>Support JetBrains</li>
+<li>Fix: check whether an application exists</li>
+</ul>
+<p><strong>version 2.2.0</strong></p>
+<ul>
+<li>Custom Finder menu options</li>
+<li>Support Russian</li>
+<li>Support PhpStorm</li>
+<li>Fix: doesn't work when opening desktop in terminal</li>
+</ul>
+<p><strong>version 2.1.1</strong></p>
+<ul>
+<li>Signed the application with the developer account. Bundle ID has changed</li>
+<li>Support Finder Extension Standalone Operation Mode</li>
+<li>Support CotEditor and MacVim</li>
+<li>User can hide context menu items</li>
+<li>Finder context menu item's title will change to the current default terminal or editor</li>
+</ul>
 <p><strong>version 2.0.5</strong></p>
 <ul>
 <li>Fix: check application exist bug</li>
