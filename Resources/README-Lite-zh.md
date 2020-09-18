@@ -178,3 +178,4 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 - [jbtule/cdto](https://github.com/jbtule/cdto)
 - [es-kumagai/OpenTerminal](https://github.com/es-kumagai/OpenTerminal)
 - [tingraldi/SwiftScripting](https://github.com/tingraldi/SwiftScripting)
+- [onmyway133/FinderGo](https://github.com/onmyway133/FinderGo)

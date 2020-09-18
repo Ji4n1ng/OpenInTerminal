@@ -255,3 +255,4 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 - [jbtule/cdto](https://github.com/jbtule/cdto)
 - [es-kumagai/OpenTerminal](https://github.com/es-kumagai/OpenTerminal)
 - [tingraldi/SwiftScripting](https://github.com/tingraldi/SwiftScripting)
+- [onmyway133/FinderGo](https://github.com/onmyway133/FinderGo)
