@@ -89,7 +89,7 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 
 <details><summary>2. I accidentally clicked on the <code>Don't Allow</code>  button.</summary><br>
 <p>You can run the following command in the terminal. This will reset the permissions in the System Preferences.</p>
-<br><code>tccutil reset AppleEvents</code><br>
+<br><code>tccutil reset AppleEvents wang.jianing.app.OpenInTerminal</code><br>
 </details>
 
 <details><summary>3. Special characters in the <code>path</code>.</summary><br>

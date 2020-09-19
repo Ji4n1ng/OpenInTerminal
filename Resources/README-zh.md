@@ -83,7 +83,7 @@ brew cask install openinterminal
 
 <details><summary>2. 我不小心点了不授权的按钮</summary><br>
 <p>你可以运行以下命令。这会重置系统设置里的权限。</p>
-<pre><code>tccutil reset AppleEvents</code></pre>
+<pre><code>tccutil reset AppleEvents wang.jianing.app.OpenInTerminal</code></pre>
 </details>
 
 <details><summary>3. 路径里的特殊字符</summary><br>
