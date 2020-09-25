@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588756-bf0a9200-7871-11ea-9aba-b00284c07c21.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.4"><img src="https://img.shields.io/badge/Version-1.1.4-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.5"><img src="https://img.shields.io/badge/Version-1.1.5-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -159,6 +159,10 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 1.1.5</strong></p>
+<ul>
+<li>fix bug in OpenInEditor-Lite</li>
+</ul>
 <p><strong>version 1.1.4</strong></p>
 <ul>
 <li>Support kitty</li>
