@@ -62,7 +62,8 @@ public class FinderManager {
                 throw OITError.cannotAccessFinder
         }
         
-        if let items = selectionItems as? Array<FinderItem> {
+        if let items = selectionItems as? Array<FinderItem>,
+            items.count > 0 {
             // Files or folders are selected
             targets = items
         } else {
@@ -70,7 +71,7 @@ public class FinderManager {
             guard let windows = finder.FinderWindows?(),
                 let firstWindow = windows.firstObject else {
                     print("No Finder windows are opened or selected")
-                    return [""]
+                    return []
             }
             let topFinderWindow = (firstWindow as! FinderFinderWindow).target?.get() as! FinderItem
             targets = [topFinderWindow]
