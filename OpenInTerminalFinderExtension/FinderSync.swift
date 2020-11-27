@@ -9,6 +9,7 @@
 import Cocoa
 import FinderSync
 import OpenInTerminalCore
+import Carbon
 
 class FinderSync: FIFinderSync {
     
@@ -187,10 +188,29 @@ class FinderSync: FIFinderSync {
     }
     
     func openEditor(_ editor: EditorType) {
-        guard let scriptPath = fileScriptPath(fileName: editor.rawValue) else { return }
-        guard FileManager.default.fileExists(atPath: scriptPath.path) else { return }
-        guard let script = try? NSUserAppleScriptTask(url: scriptPath) else { return }
-        script.execute(completionHandler: nil)
+        if (editor == .vscode) {
+            var path = "open -a Visual\\ Studio\\ Code"
+            if let items = FIFinderSyncController.default().selectedItemURLs(), items.count > 0 {
+                items.forEach { (url) in
+                    path += " \(url.path)"
+                }
+            } else if let url = FIFinderSyncController.default().targetedURL() {
+                path = url.path
+            } else {
+                return
+            }
+            let appleScript = try! NSUserAppleScriptTask(url: fileScriptPath(fileName: editor.rawValue)!)
+            appleScript.execute(withAppleEvent: getScriptEvent(functionName: "openVSCode", path)) { (appleEvent, error) in
+                if let error = error {
+                    print(error)
+                }
+            }
+        } else {
+            guard let scriptPath = fileScriptPath(fileName: editor.rawValue) else { return }
+            guard FileManager.default.fileExists(atPath: scriptPath.path) else { return }
+            guard let script = try? NSUserAppleScriptTask(url: scriptPath) else { return }
+            script.execute(completionHandler: nil)
+        }
     }
     
     // MARK: - Menu Actions
@@ -201,6 +221,7 @@ class FinderSync: FIFinderSync {
     }
     
     @objc func openDefaultEditor() {
+//        openEditor(.vscode)
         guard let editor = DefaultsManager.shared.defaultEditor else { return }
         openEditor(editor)
     }
@@ -217,7 +238,10 @@ class FinderSync: FIFinderSync {
     @objc func copyPathToClipboard() {
         var path = ""
         if let items = FIFinderSyncController.default().selectedItemURLs(), items.count > 0 {
-            path = items[0].path
+            let newItems = items.compactMap { (url) -> String? in
+                return url.path
+            }
+            path = newItems.joined(separator: "\n")
         } else if let url = FIFinderSyncController.default().targetedURL() {
             path = url.path
         } else {
@@ -227,6 +251,22 @@ class FinderSync: FIFinderSync {
         // Set string
         NSPasteboard.general.clearContents()
         NSPasteboard.general.setString(path, forType: .string)
+    }
+    
+    func getScriptEvent(functionName: String, _ parameter: String) -> NSAppleEventDescriptor {
+        let parameters = NSAppleEventDescriptor.list()
+        parameters.insert(NSAppleEventDescriptor(string: parameter), at: 0)
+
+        let event = NSAppleEventDescriptor(
+            eventClass: AEEventClass(kASAppleScriptSuite),
+            eventID: AEEventID(kASSubroutineEvent),
+            targetDescriptor: nil,
+            returnID: AEReturnID(kAutoGenerateReturnID),
+            transactionID: AETransactionID(kAnyTransactionID)
+        )
+        event.setDescriptor(NSAppleEventDescriptor(string: functionName), forKeyword: AEKeyword(keyASSubroutineName))
+        event.setDescriptor(parameters, forKeyword: AEKeyword(keyDirectObject))
+        return event
     }
 }
 
