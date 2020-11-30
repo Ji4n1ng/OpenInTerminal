@@ -192,10 +192,10 @@ class FinderSync: FIFinderSync {
             var path = "open -a Visual\\ Studio\\ Code"
             if let items = FIFinderSyncController.default().selectedItemURLs(), items.count > 0 {
                 items.forEach { (url) in
-                    path += " \(url.path)"
+                    path += " \(url.path.specialCharEscaped2)"
                 }
             } else if let url = FIFinderSyncController.default().targetedURL() {
-                path = url.path
+                path = url.path.specialCharEscaped2
             } else {
                 return
             }
