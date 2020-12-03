@@ -37,7 +37,7 @@ extension String {
     
     // FIXME: if path contains "\" or """, application will crash.
     // Special symbols have been tested, except for backslashes and double quotes.
-    var specialCharEscaped: String {
+    public var specialCharEscaped: String {
         
         var result = ""
         let set: [Character] = [" ", "(", ")", "&", "|", ";",
@@ -46,6 +46,22 @@ extension String {
         for char in self {
             if set.contains(char) {
                 result += "\\\\"
+            }
+            result.append(char)
+        }
+        
+        return result
+    }
+    
+    public var specialCharEscaped2: String {
+        
+        var result = ""
+        let set: [Character] = [" ", "(", ")", "&", "|", ";",
+                                "\"", "'", "<", ">", "`"]
+        
+        for char in self {
+            if set.contains(char) {
+                result += "\\"
             }
             result.append(char)
         }

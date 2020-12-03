@@ -209,6 +209,18 @@ public extension EditorType {
 extension EditorType: Scriptable {
     
     public func getScript() -> String {
+        if (self == .vscode) {
+            let script = """
+            on openVSCode(command)
+                tell application "Finder"
+                    activate
+                    do shell script command
+                end tell
+            end openVSCode
+            """
+            
+            return script
+        }
         let escapedName = self.fullName.nameSpaceEscaped
         
         let script = """
