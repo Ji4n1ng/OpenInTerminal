@@ -15,8 +15,8 @@ public class FinderManager {
     
     /// Get full path to front Finder window or selected file
     public func getFullPathToFrontFinderWindowOrSelectedFile() throws -> String {
-        
-        let finder = SBApplication(bundleIdentifier: Constants.Finder.id)! as FinderApplication
+
+        let finder = SBApplication(bundleIdentifier: Constants.Id.Finder)! as FinderApplication
         
         var target: FinderItem
         
@@ -53,7 +53,7 @@ public class FinderManager {
     /// Get full paths to front Finder windows or selected files
     public func getFullPathsToFrontFinderWindowOrSelectedFile() throws -> [String] {
         
-        let finder = SBApplication(bundleIdentifier: Constants.Finder.id)! as FinderApplication
+        let finder = SBApplication(bundleIdentifier: Constants.Id.Finder)! as FinderApplication
         
         var targets: [FinderItem]
         
@@ -113,6 +113,31 @@ public class FinderManager {
         }
         
         return url.absoluteString
+    }
+    
+    public func getDesktopPath() -> String? {
+        let homePath = NSHomeDirectory()
+        guard let homeUrl = URL(string: homePath) else { return nil }
+        let desktopPath = homeUrl.appendingPathComponent("Desktop").path
+        return desktopPath
+    }
+    
+    public func getScriptURL(with name: String) -> URL? {
+        do {
+            let scriptFolderURL = try FileManager.default.url(for: .applicationScriptsDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileURL = scriptFolderURL
+                .appendingPathComponent(name)
+                .appendingPathExtension("scpt")
+            return fileURL
+        } catch {
+            logw("cannot get script path")
+        }
+        return nil
+    }
+    
+    public func getGeneralScriptURL() -> URL? {
+        let generalScriptURL = getScriptURL(with: Constants.generalScript)
+        
     }
     
 //    /// Determine if the app exists in the `/Applications` folder

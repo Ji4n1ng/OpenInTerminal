@@ -10,33 +10,19 @@ import Foundation
 
 struct Constants {
     
-    static let groupIdentifier = "group.wang.jianing.app.OpenInTerminal"
-    static let openInTerminalLiteIdentifier = "wang.jianing.app.OpenInTerminal-Lite"
-    static let openInEditorLiteIdentifier = "wang.jianing.app.OpenInEditor-Lite"
-    
-    struct Finder {
-        static let id = "com.apple.Finder"
+    /// Identifier
+    struct Id {
+        static let Group = "group.wang.jianing.app.OpenInTerminal"
+        static let OpenInTerminalLite = "wang.jianing.app.OpenInTerminal-Lite"
+        static let OpenInEditorLite = "wang.jianing.app.OpenInEditor-Lite"
+        static let Finder = "com.apple.Finder"
     }
     
-    struct Key {
-        static let firstUsage = "OIT_FirstUsage"
-        static let launchAtLogin = "OIT_LaunchAtLogin"
-        static let hideStatusItem = "OIT_HideStatusItem"
-        static let hideContextMenuItems = "OIT_HideContextMenuItems"
-        static let quickToggle = "OIT_QuickToggle"
-        static let quickToggleType = "OIT_QuickToggleType"
-        
-        static let defaultTerminal = "OIT_TerminalBundleIdentifier"
-        static let defaultEditor = "OIT_EditorBundleIdentifier"
-        
-        static let terminalNewOption = "OIT_TerminalNewOption"
-        static let iTermNewOption = "OIT_iTermNewOption"
-        
-        static let customApplyToToolbarMenu = "OIT_CustomApplyToToolbarMenu"
-        static let customApplyToContextMenu = "OIT_CustomApplyToContextMenu"
-        static let customMenuOptions = "OIT_CustomMenuOptions"
-    }
-
+    /// General AppleScript for opening apps
+    static let generalScript = "generalScript"
+    /// AppleScript for opening a new tab in Terminal
+    static let terminalNewTabScript = "terminalNewTabScript"
+    
 }
 
 public enum QuickToggleType: String {
@@ -62,21 +48,5 @@ public enum NewOptionType: String {
     case window
 }
 
-public enum BoolType: String {
-    case _true
-    case _false
-    
-    public init(_ boolValue: Bool) {
-        self = boolValue ? ._true : ._false
-    }
-    
-    public var bool: Bool {
-        get {
-            return self == ._true
-        }
-        
-        set {
-            self = newValue ? ._true : ._false
-        }
-    }
-}
+let encoder = JSONEncoder()
+let decoder = JSONDecoder()
