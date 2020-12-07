@@ -122,24 +122,6 @@ public class FinderManager {
         return desktopPath
     }
     
-    public func getScriptURL(with name: String) -> URL? {
-        do {
-            let scriptFolderURL = try FileManager.default.url(for: .applicationScriptsDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            let fileURL = scriptFolderURL
-                .appendingPathComponent(name)
-                .appendingPathExtension("scpt")
-            return fileURL
-        } catch {
-            logw("cannot get script path")
-        }
-        return nil
-    }
-    
-    public func getGeneralScriptURL() -> URL? {
-        let generalScriptURL = getScriptURL(with: Constants.generalScript)
-        
-    }
-    
 //    /// Determine if the app exists in the `/Applications` folder
 //    private func applicationExists(_ application: String) -> Bool {
 //        var isInApplication = false

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum SupportedApps: String {
+public enum SupportedApps: String, CaseIterable {
     
     // MARK: - Terminals
     case terminal = "Terminal"
@@ -19,12 +19,12 @@ public enum SupportedApps: String {
     
     // MARK: - Editors
     case textEdit = "TextEdit"
-    case vscode = "VSCode"
+    case vscode = "Visual Studio Code"
     case atom = "Atom"
-    case sublime = "Sublime"
+    case sublime = "Sublime Text"
     case vscodium = "VSCodium"
     case bbedit = "BBEdit"
-    case vscodeInsiders = "VSCodeInsiders"
+    case vscodeInsiders = "Visual Studio Code - Insiders"
     case textMate = "TextMate"
     case cotEditor = "CotEditor"
     case macVim = "MacVim"
@@ -32,25 +32,25 @@ public enum SupportedApps: String {
     case appCode = "AppCode"
     case cLion = "CLion"
     case goLand = "GoLand"
-    case intelliJIDEA = "IntelliJ_IDEA"
+    case intelliJIDEA = "IntelliJ IDEA"
     case phpStorm = "PhpStorm"
     case pyCharm = "PyCharm"
     case rubyMine = "RubyMine"
     case webStorm = "WebStorm"
     
     public var name: String {
-        switch self {
-        case .vscode: return "Visual Studio Code"
-        case .sublime: return "Sublime Text"
-        case .vscodeInsiders: return "Visual Studio Code - Insiders"
-        case .intelliJIDEA: return "IntelliJ IDEA"
-        default:
-            return self.rawValue
-        }
+        return self.rawValue
     }
     
     public var shortName: String {
-        return self.rawValue
+        switch self {
+        case .vscode: return "VSCode"
+        case .sublime: return "Sublime"
+        case .vscodeInsiders: return "VSCodeInsiders"
+        case .intelliJIDEA: return "IntelliJ_IDEA"
+        default:
+            return self.rawValue
+        }
     }
     
     public var type: AppType {
@@ -63,15 +63,16 @@ public enum SupportedApps: String {
     }
     
     public static func isSupported(app: App) -> Bool {
-        guard let shortName = app.shortName else { return false }
-        guard let _ = SupportedApps(rawValue: shortName) else { return false }
-        return true
+        for sa in SupportedApps.allCases {
+            if sa.name == app.name {
+                return true
+            }
+        }
+        return false
     }
     
     public static func `is`(_ app: App, is supported: SupportedApps) -> Bool {
-        guard let shortName = app.shortName else { return false }
-        guard let sa = SupportedApps(rawValue: shortName) else { return false }
-        return sa == supported
+        return app.name == supported.name
     }
     
     public var bundleId: String {

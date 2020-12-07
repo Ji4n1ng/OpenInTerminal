@@ -13,6 +13,7 @@ enum OITError: Error {
     case cannotAccessApp(_ appName: String)
     case wrongUrl
     case cannotCreateAppleScript(_ source: String)
+    case cannotExcuteAppleScript(_ error: Error)
 }
 
 extension OITError : CustomStringConvertible {
@@ -26,6 +27,8 @@ extension OITError : CustomStringConvertible {
             return "Oops, got a wrong url"
         case .cannotCreateAppleScript(let source):
             return "Cannot create AppleScript:\n\(source)"
+        case .cannotExcuteAppleScript(let error):
+            return "Cannot excute AppleScript:\n\(error)"
         }
     }
 }

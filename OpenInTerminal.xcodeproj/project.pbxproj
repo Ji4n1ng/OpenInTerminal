@@ -79,6 +79,7 @@
 		95C6F81C22E37D59001C6374 /* BBEditApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F81B22E37D59001C6374 /* BBEditApp.swift */; };
 		95C7C2EE257B7D63004C8355 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7C2ED257B7D63004C8355 /* App.swift */; };
 		95C7C2F2257B7E1E004C8355 /* SupportedApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7C2F1257B7E1E004C8355 /* SupportedApps.swift */; };
+		95CE277E257E470F0053D76A /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE277D257E470F0053D76A /* ScriptManager.swift */; };
 		95DD6296243B211B003550B3 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD6295243B211B003550B3 /* ArrayExtensions.swift */; };
 		95DD629C243B4420003550B3 /* PhpStormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD629B243B4420003550B3 /* PhpStormApp.swift */; };
 		95DFC1242354A2C300941D3A /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DFC1232354A2C300941D3A /* DefaultsManager.swift */; };
@@ -235,6 +236,7 @@
 		95C6F81B22E37D59001C6374 /* BBEditApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBEditApp.swift; sourceTree = "<group>"; };
 		95C7C2ED257B7D63004C8355 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		95C7C2F1257B7E1E004C8355 /* SupportedApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedApps.swift; sourceTree = "<group>"; };
+		95CE277D257E470F0053D76A /* ScriptManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptManager.swift; sourceTree = "<group>"; };
 		95DD6295243B211B003550B3 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		95DD629A243B3F96003550B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
 		95DD629B243B4420003550B3 /* PhpStormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhpStormApp.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				4725253422680EFD003C50DF /* FinderManager.swift */,
 				95C7C2ED257B7D63004C8355 /* App.swift */,
 				95C7C2F1257B7E1E004C8355 /* SupportedApps.swift */,
+				95CE277D257E470F0053D76A /* ScriptManager.swift */,
 				4725253722680F13003C50DF /* Terminals */,
 				9590B68F226C6D5C00362B93 /* Editors */,
 				4725253622680F07003C50DF /* ScriptingBridge */,
@@ -772,6 +775,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CE277E257E470F0053D76A /* ScriptManager.swift in Sources */,
 				95DD629C243B4420003550B3 /* PhpStormApp.swift in Sources */,
 				9595D2A023BA0E7F006CBB36 /* CotEditorApp.swift in Sources */,
 				956BCE1022F80D6C00310B56 /* TextMateApp.swift in Sources */,
