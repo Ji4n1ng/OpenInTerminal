@@ -164,9 +164,11 @@ public class FinderManager {
     
     /// Get all installed applications
     public func getAllInstalledApps() -> Set<String> {
-
         var applications: Set<String> = Set()
-        
+        // add system application
+        applications.insert("Terminal")
+        applications.insert("TextEdit")
+        // search
         do {
             var searchDirs: Set<URL> = Set()
             let fileManager = FileManager.default

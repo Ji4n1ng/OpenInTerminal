@@ -80,12 +80,12 @@ extension AppDelegate {
     }
     
     func setStatusItemVisible() {
-        let isHideStatusItem = DefaultsManager.shared.isHideStatusItem.bool
+        let isHideStatusItem = DefaultsManager.shared.isHideStatusItem
         statusItem.isVisible = !isHideStatusItem
     }
     
     func setStatusToggle() {
-        let isQuickToogle = DefaultsManager.shared.isQuickToggle.bool
+        let isQuickToogle = DefaultsManager.shared.isQuickToggle
         if isQuickToogle {
             statusItem.menu = nil
             if let button = statusItem.button {
@@ -122,7 +122,7 @@ extension AppDelegate {
     
     func terminateOpenInTerminalHelper() {
         let isRunning = NSWorkspace.shared.runningApplications.contains {
-            $0.bundleIdentifier == Constants.launcherAppIdentifier
+            $0.bundleIdentifier == Constants.Id.LauncherApp
         }
         
         if isRunning {
@@ -153,46 +153,62 @@ extension AppDelegate {
     // MARK: Notification Actions
     
     @objc func openDefaultTerminal() {
-        if let terminalType = DefaultsManager.shared.defaultTerminal {
-            TerminalManager.shared.openTerminal(terminalType)
+        var defaultTerminal: App
+        if let terminal = DefaultsManager.shared.defaultTerminal {
+            defaultTerminal = terminal
         } else {
-            guard let selectedTerminal = TerminalManager.shared.pickTerminalAlert() else {
+            // if there is no defualt terminal, then pick one
+            guard let selectedTerminal = AppManager.shared.pickTerminalAlert() else {
                 return
             }
             DefaultsManager.shared.defaultTerminal = selectedTerminal
-            TerminalManager.shared.openTerminal(selectedTerminal)
+            defaultTerminal = selectedTerminal
+        }
+        do {
+            try defaultTerminal.openOutsideSandbox()
+        } catch {
+            logw("\(error)")
         }
     }
     
     @objc func openDefaultEditor() {
-        if let editorType = DefaultsManager.shared.defaultEditor {
-            EditorManager.shared.openEditor(editorType)
+        var defaultEditor: App
+        if let editor = DefaultsManager.shared.defaultEditor {
+            defaultEditor = editor
         } else {
-            guard let selectedEditor = EditorManager.shared.pickEditorAlert() else {
+            // if there is no defualt editor, then pick one
+            guard let selectedEditor = AppManager.shared.pickEditorAlert() else {
                 return
             }
             DefaultsManager.shared.defaultEditor = selectedEditor
-            EditorManager.shared.openEditor(selectedEditor)
+            defaultEditor = selectedEditor
+        }
+        do {
+            try defaultEditor.openOutsideSandbox()
+        } catch {
+            logw("\(error)")
         }
     }
     
     @objc func copyPathToClipboard() {
         do {
-            var path = try FinderManager.shared.getFullPathToFrontFinderWindowOrSelectedFile()
-            if path == "" {
+            var paths = try FinderManager.shared.getFullPathsToFrontFinderWindowOrSelectedFile()
+            if paths.count == 0 {
                 // No Finder window and no file selected.
                 let homePath = NSHomeDirectory()
                 guard let homeUrl = URL(string: homePath) else { return }
-                path = homeUrl.appendingPathComponent("Desktop").path
+                paths.append(homeUrl.appendingPathComponent("Desktop").path)
             } else {
-                guard let url = URL(string: path) else { return }
-                path = url.path
+                paths = paths.compactMap {
+                    URL(string: $0)
+                }.map {
+                    $0.path
+                }
             }
-            
+            let pathString = paths.joined(separator: "\n")
             // Set string
             NSPasteboard.general.clearContents()
-            NSPasteboard.general.setString(path, forType: .string)
-            
+            NSPasteboard.general.setString(pathString, forType: .string)
         } catch {
             logw(error.localizedDescription)
         }

@@ -75,6 +75,18 @@ public enum SupportedApps: String, CaseIterable {
         return app.name == supported.name
     }
     
+    public static var terminals: [SupportedApps] {
+        return SupportedApps.allCases.filter {
+            $0.type == .terminal
+        }
+    }
+    
+    public static var editors: [SupportedApps] {
+        return SupportedApps.allCases.filter {
+            $0.type == .editor
+        }
+    }
+    
     public var bundleId: String {
         switch self {
         // Terminals

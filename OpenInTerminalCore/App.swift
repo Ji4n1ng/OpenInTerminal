@@ -15,11 +15,11 @@ public enum AppType: String, Codable {
 }
 
 public struct App: Codable {
-    var name: String
-    var shortName: String?
-    var path: String?
-    var bundleId: String?
-    var type: AppType
+    public var name: String
+    public var shortName: String?
+    public var path: String?
+    public var bundleId: String?
+    public var type: AppType
     
     init(name: String, type: AppType) {
         self.name = name
@@ -35,14 +35,14 @@ extension App: Equatable {
 
 // MARK: - Openable
 
-protocol Openable {
+public protocol Openable {
     func openOutsideSandbox() throws
     func openInSandbox(_ paths: [String]) throws
 }
 
 extension App: Openable {
     
-    func openOutsideSandbox() throws {
+    public func openOutsideSandbox() throws {
         
         func excute(_ source: String) throws {
             guard let script = NSAppleScript(source: source) else {
@@ -115,7 +115,7 @@ extension App: Openable {
         }
     }
     
-    func openInSandbox(_ paths: [String]) throws {
+    public func openInSandbox(_ paths: [String]) throws {
         switch self.type {
         case .terminal:
             guard var path = paths.first else { return }

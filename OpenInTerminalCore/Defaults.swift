@@ -49,6 +49,9 @@ public extension DefaultsKeys {
     static let customMenuOptions = DefaultsKey<Data>("CustomMenuOptions")
     static let customMenuApplyToToolbar = DefaultsKey<Bool>("CustomMenuApplyToToolbar")
     static let customMenuApplyToContext = DefaultsKey<Bool>("CustomMenuApplyToContext")
+    // for Lite
+    static let liteDefaultTerminal = DefaultsKey<String>("LiteDefaultTerminal")
+    static let liteDefaultEditor = DefaultsKey<String>("LiteDefaultEditor")
 }
 
 public extension UserDefaults {

@@ -16,7 +16,7 @@ public class ScriptManager {
     // MARK: - Get AppleScript
     
     /// get `open` command
-    func getOpenCommand(_ app: App, escapeCount: Int = 1) -> String {
+    public func getOpenCommand(_ app: App, escapeCount: Int = 1) -> String {
         if SupportedApps.is(app, is: .alacritty) {
             return "open -na Alacritty --args --working-directory"
         } else if SupportedApps.is(app, is: .kitty) {
@@ -28,7 +28,7 @@ public class ScriptManager {
     
     /// This script requires parameters to be passed in.
     /// `parameter`: open -a
-    func getAppleScript() -> String {
+    public func getGeneralScript() -> String {
         let script = """
         on openApp(command)
             tell application "Finder"
@@ -40,8 +40,13 @@ public class ScriptManager {
         return script
     }
     
+    public func getGeneralScriptName() -> String {
+        return Constants.generalScript
+    }
+    
     /// **[Deprecated]** This script can run independently without additional parameters.
-    func getAppleScript2(app: App) -> String {
+    @available(*, deprecated, message: "Use getGeneralScript()")
+    func getAppleScript(app: App) -> String {
         switch app.type {
         case .terminal:
             let openCommand = self.getOpenCommand(app, escapeCount: 2)
@@ -114,7 +119,7 @@ public class ScriptManager {
     }
     
     /// Open path in a new tab of Terminal
-    func getTerminalNewTabAppleScript() -> String {
+    public func getTerminalNewTabAppleScript() -> String {
         let script = """
         on openApp(command)
             if not application "Terminal" is running then
@@ -142,13 +147,17 @@ public class ScriptManager {
         return script
     }
     
-    func getTerminalNewTabCommand(path: String) -> String {
+    public func getTerminalNewTabScriptName() -> String {
+        return Constants.terminalNewTabScript
+    }
+    
+    public func getTerminalNewTabCommand(path: String) -> String {
         let command = "cd \(path.terminalPathEscaped())"
         return command
     }
     
     /// Open path in a new tab of Terminal
-    func getTerminalNewTabAppleScript(url: URL) -> String {
+    public func getTerminalNewTabAppleScript(url: URL) -> String {
         let script = """
         if not application "Terminal" is running then
             tell application "Terminal"
@@ -289,7 +298,6 @@ extension String {
     func terminalPathEscaped() -> String {
         var result = ""
         let set = CharacterSet.alphanumerics
-        
         for char in self.unicodeScalars {
             if set.contains(char) || char == "/" {
                 result.unicodeScalars.append(char)
@@ -298,7 +306,6 @@ extension String {
                 result.unicodeScalars.append(char)
             }
         }
-        
         return result
     }
 }

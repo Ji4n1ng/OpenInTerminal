@@ -24,6 +24,8 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var iTermWindowButton: NSButton!
     @IBOutlet weak var iTermTabButton: NSButton!
     
+    @IBOutlet weak var customAppTableView: NSTableView!
+    @IBOutlet weak var addAppButton: NSButton!
     @IBOutlet weak var customMenuTableView: NSTableView!
     @IBOutlet weak var addMenuOptionButton: NSButton!
     @IBOutlet weak var applyToToolbarButton: NSButton!
@@ -43,10 +45,15 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
             notInstalledApplicationsTextField.stringValue = _notInstalledApps.joined(separator: ", ")
         }
     }
-    var customApps = [String]() {
+    var customApps = [App]() {
         didSet {
-            refreshCustomMenu()
-            DefaultsManager.shared.customMenuOptions = customApps.joined(separator: ",")
+            
+        }
+    }
+    var customMenuOptions = [App]() {
+        didSet {
+//            refreshCustomMenu()
+//            DefaultsManager.shared.customApps = customApps
             customMenuTableView.reloadData()
         }
     }
@@ -56,7 +63,8 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        customAppTableView.dataSource = self
+        customAppTableView.delegate = self
         customMenuTableView.dataSource = self
         customMenuTableView.delegate = self
     }
@@ -67,27 +75,25 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
         allInstalledApps = FinderManager.shared.getAllInstalledApps()
         
         // get all installed supported apps
-        var installedTerminals = Constants.allTerminals.filter {
-            allInstalledApps.contains($0.fullName)
+        let installedTerminals = SupportedApps.terminals.filter {
+            allInstalledApps.contains($0.name)
         }.map {
-            $0.rawValue
+            $0.shortName
         }
-        installedTerminals.append(TerminalType.terminal.rawValue)
-        var installedEditors = Constants.allEditors.filter {
-            allInstalledApps.contains($0.fullName)
+        let installedEditors = SupportedApps.editors.filter {
+            allInstalledApps.contains($0.name)
         }.map {
-            $0.rawValue
+            $0.shortName
         }
-        installedEditors.append(EditorType.textEdit.rawValue)
         let installedApps = installedTerminals + installedEditors
         installedSupportedApps = Set(installedApps)
-        
+
         // get all not installed supported apps
-        let allTerminals = Constants.allTerminals.map {
-            $0.rawValue
+        let allTerminals = SupportedApps.terminals.map {
+            $0.name
         }
-        let allEditors = Constants.allEditors.map {
-            $0.rawValue
+        let allEditors = SupportedApps.editors.map {
+            $0.name
         }
         let allApps = allTerminals + allEditors
         let notInstalledApps = allApps.filter {
@@ -96,10 +102,14 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
         notInstalledSupportedApps = Set(notInstalledApps)
         
         // get saved custom apps
-        let customAppsString = DefaultsManager.shared.customMenuOptions
-        customApps = customAppsString.components(separatedBy: ",").filter {
-            $0 != ""
-        }.sortedIgnoreCase()
+        if let customApps = DefaultsManager.shared.customApps {
+            self.customApps = customApps
+        }
+        
+        // get saved custom menu options
+        if let customMenuOptions = DefaultsManager.shared.customMenuOptions {
+            self.customMenuOptions = customMenuOptions
+        }
         
         refreshTextFieldEnabledState()
         refreshButtonNewOptionState()
@@ -113,20 +123,20 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     // MARK: Refresh UI
     
     func refreshTextFieldEnabledState() {
-        let terminals: [(TerminalType, NSTextField)] =
+        let terminals: [(SupportedApps, NSTextField)] =
             [(.terminal, terminalTextField),
              (.iTerm, iTermTextField)]
 
         terminals.forEach { terminal, textField in
-            let isInstalled = installedSupportedApps.contains(terminal.fullName)
+            let isInstalled = installedSupportedApps.contains(terminal.name)
             textField.isEnabled = isInstalled
             if isInstalled {
                 textField.textColor = .labelColor
-                textField.stringValue = "\(terminal.rawValue)"
+                textField.stringValue = "\(terminal.name)"
             } else {
                 textField.textColor = .secondaryLabelColor
                 let notInstalledString = NSLocalizedString("pref.toolbar.not_installed", comment: "Not Installed")
-                textField.stringValue = "\(terminal.rawValue) (\(notInstalledString))"
+                textField.stringValue = "\(terminal.name) (\(notInstalledString))"
             }
         }
     }
@@ -137,19 +147,19 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
 
         iTermWindowButton.isEnabled = iTermTextField.isEnabled
         iTermTabButton.isEnabled = iTermTextField.isEnabled
-        
-        let isApplyToToolbar = DefaultsManager.shared.isApplyToToolbar.bool
+
+        let isApplyToToolbar = DefaultsManager.shared.isCustomMenuApplyToToolbar
         applyToToolbarButton.state = isApplyToToolbar ? .on : .off
-        
-        let isApplyToContext = DefaultsManager.shared.isApplyToContext.bool
+
+        let isApplyToContext = DefaultsManager.shared.isCustomMenuApplyToContext
         applyToContextButton.state = isApplyToContext ? .on : .off
     }
     
     func refreshButtonNewOptionState() {
-        let terminals: [(TerminalType, NSButton, NSButton)] =
+        let terminals: [(SupportedApps, NSButton, NSButton)] =
             [(.terminal, terminalWindowButton, terminalTabButton),
              (.iTerm, iTermWindowButton, iTermTabButton)]
-        
+
         terminals.forEach { terminal, windowButton, tabButton in
             let _newOption = DefaultsManager.shared.getNewOption(terminal)
             if let newOption = _newOption {
@@ -163,59 +173,43 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
             }
         }
     }
-    
-    func refreshCustomMenu() {
-        let menuApps = installedSupportedApps.filter {
-            !customApps.contains($0)
-        }
-        let sortedmenuApps = Array(menuApps).sortedIgnoreCase()
-        let menu = NSMenu(title: "")
-        sortedmenuApps.forEach {
-            let menuItem = NSMenuItem(title: $0,
-                action: #selector(selectMenuApp),
-                keyEquivalent: "")
-            menuItem.target = self
-            menu.addItem(menuItem)
-        }
-        customMenu = menu
-    }
+
+//    func refreshCustomMenu() {
+//        let menuApps = installedSupportedApps.filter {
+//            !customApps.contains($0)
+//        }
+//        let sortedmenuApps = Array(menuApps).sortedIgnoreCase()
+//        let menu = NSMenu(title: "")
+//        sortedmenuApps.forEach {
+//            let menuItem = NSMenuItem(title: $0,
+//                action: #selector(selectMenuApp),
+//                keyEquivalent: "")
+//            menuItem.target = self
+//            menu.addItem(menuItem)
+//        }
+//        customMenu = menu
+//    }
     
     // MARK: Button Actions
     
     @IBAction func terminalWindowButtonClicked(_ sender: NSButton) {
         terminalTabButton.state = .off
-        do {
-            try DefaultsManager.shared.setNewOption(.terminal, .window)
-        } catch {
-            logw(error.localizedDescription)
-        }
+        DefaultsManager.shared.setNewOption(.terminal, .window)
     }
     
     @IBAction func terminalTabButtonClicked(_ sender: NSButton) {
         terminalWindowButton.state = .off
-        do {
-            try DefaultsManager.shared.setNewOption(.terminal, .tab)
-        } catch {
-            logw(error.localizedDescription)
-        }
+        DefaultsManager.shared.setNewOption(.terminal, .tab)
     }
     
     @IBAction func iTermWindowButtonClicked(_ sender: NSButton) {
         iTermTabButton.state = .off
-        do {
-            try DefaultsManager.shared.setNewOption(.iTerm, .window)
-        } catch {
-            logw(error.localizedDescription)
-        }
+        DefaultsManager.shared.setNewOption(.iTerm, .window)
     }
     
     @IBAction func iTermTabButtonClicked(_ sender: NSButton) {
         iTermWindowButton.state = .off
-        do {
-            try DefaultsManager.shared.setNewOption(.iTerm, .tab)
-        } catch {
-            logw(error.localizedDescription)
-        }
+        DefaultsManager.shared.setNewOption(.iTerm, .tab)
     }
     
     @IBAction func addMenuOptionButtonClicked(_ sender: NSButton) {
@@ -224,38 +218,44 @@ class FinderExtensionPreferencesViewController: PreferencesViewController {
     }
     
     @objc func selectMenuApp(_ sender: NSMenuItem) {
-        let appName = sender.title
-        customApps.append(appName)
-        customApps.sortIgnoreCase()
+//        let appName = sender.title
+//        customApps.append(appName)
+//        customApps.sortIgnoreCase()
     }
     
     @IBAction func removeMenuOptionButtonClicked(_ sender: NSButton) {
-        let row = customMenuTableView.selectedRow
-        guard row >= 0 else { return }
-        
-        if let view = customMenuTableView.view(atColumn: 0, row: row, makeIfNecessary: false) as? NSTableCellView {
-            let appName = view.textField?.stringValue ?? ""
-            if customApps.contains(appName) {
-                customApps.remove(element: appName)
-            }
-        }
+//        let row = customMenuTableView.selectedRow
+//        guard row >= 0 else { return }
+//
+//        if let view = customMenuTableView.view(atColumn: 0, row: row, makeIfNecessary: false) as? NSTableCellView {
+//            let appName = view.textField?.stringValue ?? ""
+//            if customApps.contains(appName) {
+//                customApps.remove(element: appName)
+//            }
+//        }
     }
     
     @IBAction func applyToToolbarButtonClicked(_ sender: NSButton) {
         let isApplyTo = applyToToolbarButton.state == .on
-        DefaultsManager.shared.isApplyToToolbar.bool = isApplyTo
+        DefaultsManager.shared.isCustomMenuApplyToToolbar = isApplyTo
     }
     
     @IBAction func applyToContextButtonClicked(_ sender: NSButton) {
         let isApplyTo = applyToContextButton.state == .on
-        DefaultsManager.shared.isApplyToContext.bool = isApplyTo
+        DefaultsManager.shared.isCustomMenuApplyToContext = isApplyTo
     }
 }
 
 extension FinderExtensionPreferencesViewController: NSTableViewDataSource {
 
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return customApps.count
+        if tableView == customAppTableView {
+            return customApps.count
+        } else if tableView == customMenuTableView {
+            return customMenuOptions.count
+        } else {
+            return 0
+        }
     }
 
 }
@@ -264,10 +264,10 @@ extension FinderExtensionPreferencesViewController: NSTableViewDelegate {
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        if let cell = tableView.makeView(withIdentifier: Constants.CellIdentifier.customMenuCell, owner: nil) as? NSTableCellView {
-            cell.textField?.stringValue = customApps[row]
-            return cell
-        }
+//        if let cell = tableView.makeView(withIdentifier: Constants.CellIdentifier.customMenuCell, owner: nil) as? NSTableCellView {
+//            cell.textField?.stringValue = customApps[row]
+//            return cell
+//        }
         return nil
     }
 }

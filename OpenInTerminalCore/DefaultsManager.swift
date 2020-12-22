@@ -100,6 +100,26 @@ public class DefaultsManager {
         }
     }
     
+    public var liteDefaultTerminal: String? {
+        get {
+            return Defaults[.liteDefaultTerminal]
+        }
+        
+        set {
+            Defaults[.liteDefaultTerminal] = newValue
+        }
+    }
+    
+    public var liteDefaultEditor: String? {
+        get {
+            return Defaults[.liteDefaultEditor]
+        }
+        
+        set {
+            Defaults[.liteDefaultEditor] = newValue
+        }
+    }
+    
     // MARK: - Preferences - Custom
     
     public func getNewOption(_ app: SupportedApps) -> NewOptionType? {

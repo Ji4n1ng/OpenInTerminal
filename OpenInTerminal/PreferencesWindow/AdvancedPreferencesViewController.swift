@@ -51,7 +51,7 @@ class AdvancedPreferencesViewController: PreferencesViewController {
             print("Cancel Resetting User Preferences")
         case .alertSecondButtonReturn:
             logw("Reset User Preferences")
-            SMLoginItemSetEnabled(Constants.launcherAppIdentifier as CFString, false)
+            SMLoginItemSetEnabled(Constants.Id.LauncherApp as CFString, false)
             DefaultsManager.shared.removeAllUserDefaults()
             DefaultsManager.shared.firstSetup()
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
