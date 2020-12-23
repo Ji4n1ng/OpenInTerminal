@@ -47,7 +47,7 @@ Please check the document: [OpenInTerminal-Lite English](./Resources/README-Lite
 #### a) Homebrew
 
 ```
-brew cask install openinterminal
+brew install --cask openinterminal
 ```
 
 #### b) Manual
