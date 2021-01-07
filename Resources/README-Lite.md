@@ -29,9 +29,9 @@ English | [中文说明](./README-Lite-zh.md)
 1. Run the following command
 
 ```
-brew cask install openinterminal-lite
+brew install --cask openinterminal-lite
 # or
-brew cask install openineditor-lite
+brew install --cask openineditor-lite
 ```
 
 2. In `/Applications` folder, hold down the `Cmd` key and drag the app into Finder Toolbar.
