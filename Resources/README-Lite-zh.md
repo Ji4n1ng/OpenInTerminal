@@ -30,9 +30,9 @@
 1. 运行以下命令
 
 ```
-brew cask install openinterminal-lite
+brew install --cask openinterminal-lite
 # 或者
-brew cask install openineditor-lite
+brew install --cask openineditor-lite
 ```
 
 2. 在 `应用程序` 文件夹中，按住 `Cmd` 键，然后将应用拖到访达工具栏中。
