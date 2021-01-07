@@ -48,7 +48,7 @@
 #### a) Homebrew
 
 ```
-brew cask install openinterminal
+brew install --cask openinterminal
 ```
 
 #### b) 手动
