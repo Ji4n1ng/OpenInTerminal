@@ -100,13 +100,71 @@ Set the following app as the default app to open:
 
 ### 2) If you are using Dark Mode
 
-I provided several icons along with the app in the [release](https://github.com/Ji4n1ng/OpenInTerminal/releases). You can right click on the app and select `Get Info`. Drag the icon to cover the default icon.
+I provided several icons along with the app in the [release](https://github.com/Ji4n1ng/OpenInTerminal/releases). Updated icons for macOS Big Sur can be temporarily downloaded from [here](https://github.com/Ji4n1ng/OpenInTerminal/files/5746137/Icons.for.Big.Sur.zip).
 
 <div>
   <img src="https://user-images.githubusercontent.com/11001224/78600452-8aa0d100-7885-11ea-8a90-cc88b9233dac.png" width="600px">
-  <br>
+</div>
+
+#### Changing the icon manually
+
+You can right click on the app and select `Get Info`. Drag the icon to cover the default icon.
+
+<div>
   <img src="https://user-images.githubusercontent.com/11001224/78590421-68eb1e00-7874-11ea-91e3-61cfd5ba3a26.gif" width="600px">
 </div>
+
+#### Changing the icon automatically with [Hammerspoon](https://www.hammerspoon.org)
+
+This procedure is particularly useful for those using the automatic dark/light mode switching feature of macOS.
+
+1. Install Hammerspoon either by [downloading the latest release](https://github.com/Hammerspoon/hammerspoon/releases/latest) and dragging it in the `/Applications` folder, or by using Homebrew:
+```
+brew cask install hammerspoon
+```
+
+2. Install the [fileicon](https://github.com/mklement0/fileicon) utility to change the app icon programmatically:
+```
+brew install fileicon
+```
+
+3. Create the `~/.hammerspoon/Icons` folder and put the icons there
+
+4. Create the `~/.hammerspoon/init.lua` file (if it doesn't already exist) and add the following code:
+```lua
+local function setOpenInEditorLiteIcon(dark)
+  -- Change the path in case of a different install location
+  local appPath = "/Applications/OpenInEditor-Lite.app"
+  -- Change the type accordingly to the icon you want to use (editor, atom, sublime, vscode)
+  local iconType = "editor"
+  local iconsFolder = hs.fs.currentDir() .. "/Icons"
+  local theme = dark and "dark" or "light"
+  hs.execute('fileicon set "' .. appPath .. '" "' .. iconsFolder .. "/icon_" .. iconType .. "_" .. theme .. '.icns"', true)
+end
+
+local function setOpenInTerminalLiteIcon(dark)
+  -- Change the path in case of a different install location
+  local appPath = "/Applications/OpenInTerminal-Lite.app"
+  -- Change the type accordingly to the icon you want to use (terminal, iterm, hyper)
+  local iconType = "terminal"
+  local iconsFolder = hs.fs.currentDir() .. "/Icons"
+  local theme = dark and "dark" or "light"
+  hs.execute('fileicon set "' .. appPath .. '" "' .. iconsFolder .. "/icon_" .. iconType .. "_" .. theme .. '.icns"', true)
+end
+
+local function updateIcons()
+  darkMode = (hs.settings.get("AppleInterfaceStyle") == "Dark")
+  setOpenInEditorLiteIcon(darkMode)
+  setOpenInTerminalLiteIcon(darkMode)
+end
+
+updateIcons()
+hs.settings.watchKey("dark_mode", "AppleInterfaceStyle", function()
+  updateIcons()
+end)
+```
+
+You can now reload the config file (or restart hammerspoon) and you're done! The icons should automatically update when switching from light to dark mode and vice versa. Don't forget to check the "Launch Hammerspoon at login" option.
 
 ### 3) Open in a new Tab or Window
 
