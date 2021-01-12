@@ -164,7 +164,7 @@ hs.settings.watchKey("dark_mode", "AppleInterfaceStyle", function()
 end)
 ```
 
-You're done! Now the icons should automatically update when switching from light to dark mode and vice versa. Don't forget to check the "Launch Hammerspoon at login" option.
+You can now reload the config file (or restart hammerspoon) and you're done! The icons should automatically update when switching from light to dark mode and vice versa. Don't forget to check the "Launch Hammerspoon at login" option.
 
 ### 3) Open in a new Tab or Window
 
