@@ -20,6 +20,19 @@ public extension Array where Element == String {
     
 }
 
+public extension Array where Element == App {
+    
+    func sortedIgnoreCase() -> [App] {
+        return sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == ComparisonResult.orderedAscending }
+    }
+    
+    mutating func sortIgnoreCase() {
+        sort { $0.name.localizedCaseInsensitiveCompare($1.name) == ComparisonResult.orderedAscending }
+    }
+    
+}
+
+
 public extension Array where Element: Equatable {
     
     mutating func remove(element: Element) {

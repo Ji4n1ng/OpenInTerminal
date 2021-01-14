@@ -119,7 +119,6 @@ public enum SupportedApps: String, CaseIterable {
     
     public var app: App {
         var app = App(name: self.name, type: self.type)
-        app.shortName = self.shortName
         app.bundleId = self.bundleId
         return app
     }

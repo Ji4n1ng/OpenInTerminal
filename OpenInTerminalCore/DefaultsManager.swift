@@ -159,28 +159,6 @@ public class DefaultsManager {
         }
     }
     
-    public var customApps: [App]? {
-        get {
-            guard let appsData = Defaults[.customApps] else { return nil }
-            do {
-                let apps = try decoder.decode([App].self, from: appsData)
-                return apps
-            } catch {
-                return nil
-            }
-        }
-        
-        set {
-            guard let newValue = newValue else { return }
-            do {
-                let data = try encoder.encode(newValue)
-                Defaults[.customApps] = data
-            } catch {
-                logw("save custom app failed: \(error)")
-            }
-        }
-    }
-    
     public var customMenuOptions: [App]? {
         get {
             guard let appsData = Defaults[.customMenuOptions] else { return nil }

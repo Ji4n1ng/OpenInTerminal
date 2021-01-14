@@ -15,7 +15,9 @@ struct Constants {
     struct Id {
         static let LauncherApp = "wang.jianing.app.OpenInTerminalHelper"
         static let FinderExtension = "wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension"
+        static let CustomAppCell = NSUserInterfaceItemIdentifier(rawValue: "customAppCell")
         static let CustomMenuCell = NSUserInterfaceItemIdentifier(rawValue: "customMenuCell")
+        static let CustomInputViewController = "CustomInputViewController"
     }
     
     static let none = "None"
@@ -28,6 +30,7 @@ struct Constants {
     
 //    static let allTerminals: [SupportedApps] = [.terminal, .iTerm, .hyper, .alacritty, .kitty]
 //    static let allEditors: [SupportedApps] = [.textEdit, .vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate, .cotEditor, .macVim, .appCode, .cLion, .goLand, .intelliJIDEA, .phpStorm, .pyCharm, .rubyMine, .webStorm]
+    static let PreferencesStoryboard = NSStoryboard(name: "Preferences", bundle: nil)
 }
 
 extension NSImage {

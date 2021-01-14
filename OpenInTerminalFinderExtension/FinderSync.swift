@@ -92,7 +92,7 @@ class FinderSync: FIFinderSync {
         
         var terminalTitle = ""
         if let terminal = DefaultsManager.shared.defaultTerminal {
-            terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + (terminal.shortName ?? "")
+            terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + terminal.name
         } else {
             terminalTitle = NSLocalizedString("menu.open_with_default_terminal",
                                               comment: "Open with default Terminal")
@@ -106,7 +106,7 @@ class FinderSync: FIFinderSync {
         
         var editorTitle = ""
         if let editor = DefaultsManager.shared.defaultEditor {
-            editorTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + (editor.shortName ?? "")
+            editorTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + editor.name
         } else {
             editorTitle = NSLocalizedString("menu.open_with_default_editor",
                                             comment: "Open with default Editor")
@@ -137,7 +137,7 @@ class FinderSync: FIFinderSync {
             return menu
         }
         customApps.forEach { app in
-            let itemTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + (app.shortName ?? app.name)
+            let itemTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + app.name
             let menuItem = NSMenuItem(title: itemTitle,
                                       action: #selector(CustomMenuItemClicked),
                                       keyEquivalent: "")
@@ -243,7 +243,7 @@ class FinderSync: FIFinderSync {
         guard let customApps = DefaultsManager.shared.customMenuOptions else { return }
         let appName = sender.title[8...]
         for app in customApps {
-            if app.name == appName || app.shortName == appName {
+            if app.name == appName {
                 open(app)
                 break
             }

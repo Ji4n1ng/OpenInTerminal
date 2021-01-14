@@ -58,4 +58,43 @@ public class AppManager {
         }
     }
     
+    public static func getApplicationName(from path: String?) -> String {
+        guard let validPath = path else {
+            return "Invalid Name"
+        }
+        guard let validBundle = Bundle.init(url: URL.init(fileURLWithPath: validPath)) else {
+            return getApplicationFileName(from: validPath)
+        }
+        let CFBundleDisplayName = validBundle.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
+        let CFBundleName = validBundle.object(forInfoDictionaryKey: "CFBundleName") as? String
+        let FileName = getApplicationFileName(from: validPath)
+        return CFBundleDisplayName ?? CFBundleName ?? FileName
+    }
+    
+    public static func getApplicationName(from path: URL) -> String {
+        return getApplicationName(from: path.path)
+    }
+    
+    public static func getApplicationFileName(from path: String) -> String {
+        var rawName = FileManager().displayName(atPath: path).removingPercentEncoding!
+        let lowercased = rawName.lowercased()
+        if lowercased.hasSuffix(".app") {
+            let start = rawName.startIndex
+            let end = rawName.index(rawName.endIndex, offsetBy: -4)
+            rawName = String(rawName[start..<end])
+        }
+        return rawName
+    }
+    
+    // 从路径获取应用图标
+    public static func getApplicationIcon(from path: String?) -> NSImage {
+        guard let validPath = path else {
+            return #imageLiteral(resourceName: "SF.cube")
+        }
+        return NSWorkspace.shared.icon(forFile: validPath)
+    }
+    
+    public static func getApplicationIcon(from path: URL) -> NSImage {
+        return getApplicationIcon(from: path.path)
+    }
 }

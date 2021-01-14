@@ -45,7 +45,6 @@ public extension DefaultsKeys {
     // Preferences - Custom
     static let terminalNewOption = DefaultsKey<String>("TerminalNewOption")
     static let iTermNewOption = DefaultsKey<String>("iTermNewOption")
-    static let customApps = DefaultsKey<Data>("CustomApps")
     static let customMenuOptions = DefaultsKey<Data>("CustomMenuOptions")
     static let customMenuApplyToToolbar = DefaultsKey<Bool>("CustomMenuApplyToToolbar")
     static let customMenuApplyToContext = DefaultsKey<Bool>("CustomMenuApplyToContext")

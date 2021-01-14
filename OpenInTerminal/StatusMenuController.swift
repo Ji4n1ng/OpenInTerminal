@@ -24,7 +24,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     func setMenuItemTitle() {
         var terminalTitle = ""
         if let terminal = DefaultsManager.shared.defaultTerminal {
-            terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + (terminal.shortName ?? terminal.name)
+            terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + terminal.name
         } else {
             terminalTitle = NSLocalizedString("menu.open_with_default_terminal",
                                               comment: "Open with default Terminal")
@@ -33,7 +33,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         
         var editorTitle = ""
         if let editor = DefaultsManager.shared.defaultEditor {
-            editorTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + (editor.shortName ?? editor.name)
+            editorTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + editor.name
         } else {
             editorTitle = NSLocalizedString("menu.open_with_default_editor",
                                             comment: "Open with default Editor")

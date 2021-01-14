@@ -16,12 +16,11 @@ public enum AppType: String, Codable {
 
 public struct App: Codable {
     public var name: String
-    public var shortName: String?
     public var path: String?
     public var bundleId: String?
     public var type: AppType
     
-    init(name: String, type: AppType) {
+    public init(name: String, type: AppType) {
         self.name = name
         self.type = type
     }

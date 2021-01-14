@@ -109,17 +109,12 @@ class GeneralPreferencesViewController: PreferencesViewController {
         terminals = terminals.filter {
             allInstalledApps.contains($0.name)
         }
-        // add custom terminals
-        let customTerminals = DefaultsManager.shared.customApps?.filter { $0.type == .terminal }
-        if let customTerminals = customTerminals {
-            terminals += customTerminals
-        }
         // sort
         terminals.sort {
             $0.name.localizedCaseInsensitiveCompare($1.name) == ComparisonResult.orderedAscending
         }
         terminals.forEach {
-            defaultTerminalButton.addItem(withTitle: $0.shortName ?? $0.name)
+            defaultTerminalButton.addItem(withTitle: $0.name)
         }
         installedTerminals = terminals
 //        Constants.allTerminals.forEach { terminal in
@@ -133,7 +128,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
 //        }
 //
         if let defaultTerminal = DefaultsManager.shared.defaultTerminal {
-            let index = defaultTerminalButton.indexOfItem(withTitle: defaultTerminal.shortName ?? defaultTerminal.name)
+            let index = defaultTerminalButton.indexOfItem(withTitle: defaultTerminal.name)
             defaultTerminalButton.selectItem(at: index)
         }
     }
@@ -145,17 +140,17 @@ class GeneralPreferencesViewController: PreferencesViewController {
         editors = editors.filter {
             allInstalledApps.contains($0.name)
         }
-        // add custom terminals
-        let customEditors = DefaultsManager.shared.customApps?.filter { $0.type == .editor }
-        if let customEditors = customEditors {
-            editors += customEditors
-        }
+//        // add custom terminals
+//        let customEditors = DefaultsManager.shared.customApps?.filter { $0.type == .editor }
+//        if let customEditors = customEditors {
+//            editors += customEditors
+//        }
         // sort
         editors.sort {
             $0.name.localizedCaseInsensitiveCompare($1.name) == ComparisonResult.orderedAscending
         }
         editors.forEach {
-            defaultEditorButton.addItem(withTitle: $0.shortName ?? $0.name)
+            defaultEditorButton.addItem(withTitle: $0.name)
         }
         installedEditors = editors
 //        Constants.allEditors.forEach { editor in
@@ -169,7 +164,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
 //        }
 //
         if let defaultEditor = DefaultsManager.shared.defaultEditor {
-            let index = defaultEditorButton.indexOfItem(withTitle: defaultEditor.shortName ?? defaultEditor.name)
+            let index = defaultEditorButton.indexOfItem(withTitle: defaultEditor.name)
             defaultEditorButton.selectItem(at: index)
         }
     }
@@ -212,8 +207,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         let index = sender.indexOfSelectedItem
         let title = itemTitles[index]
         installedTerminals.forEach {
-            let name = $0.shortName ?? $0.name
-            if name == title {
+            if $0.name == title {
                 DefaultsManager.shared.defaultTerminal = $0
             }
         }
@@ -230,8 +224,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
         let index = sender.indexOfSelectedItem
         let title = itemTitles[index]
         installedEditors.forEach {
-            let name = $0.shortName ?? $0.name
-            if name == title {
+            if $0.name == title {
                 DefaultsManager.shared.defaultEditor = $0
             }
         }
