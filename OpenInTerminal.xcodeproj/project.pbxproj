@@ -37,6 +37,9 @@
 		9521EDCC226B475E008445D1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCB226B475E008445D1 /* PreferencesViewController.swift */; };
 		9521EDD0226B4BE6008445D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521EDCF226B4BE6008445D1 /* Constants.swift */; };
 		95294CE625B0270700CC995D /* CustomInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95294CE525B0270700CC995D /* CustomInputViewController.swift */; };
+		95294CEB25B3252900CC995D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4725257E2268112F003C50DF /* Assets.xcassets */; };
+		95294CFD25B3293F00CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
+		95294CFE25B3293F00CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
 		954D67CF235570D5007702D0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67CE235570D5007702D0 /* Error.swift */; };
 		954D67D12355AD36007702D0 /* ScriptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67D02355AD36007702D0 /* ScriptGenerator.swift */; };
 		954D67D22355F80E007702D0 /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
@@ -170,6 +173,7 @@
 		9521EDCB226B475E008445D1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		9521EDCF226B4BE6008445D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		95294CE525B0270700CC995D /* CustomInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputViewController.swift; sourceTree = "<group>"; };
+		95294CFC25B3293F00CC995D /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		954D67CE235570D5007702D0 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		954D67D02355AD36007702D0 /* ScriptGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptGenerator.swift; sourceTree = "<group>"; };
 		9557D3D42274A78C00CE34FA /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
@@ -319,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				4725257E2268112F003C50DF /* Assets.xcassets */,
+				95294CFC25B3293F00CC995D /* Icons.xcassets */,
 				4725257F2268112F003C50DF /* Info.plist */,
 				4725257D2268112F003C50DF /* OpenInTerminal.entitlements */,
 				9584EDF4226DEF79003C7EE8 /* Localizable.strings */,
@@ -583,7 +588,9 @@
 			files = (
 				95FC9244228BAD6900F51DF2 /* Preferences.storyboard in Resources */,
 				472525592268100F003C50DF /* FinderAssets.xcassets in Resources */,
+				95294CEB25B3252900CC995D /* Assets.xcassets in Resources */,
 				95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */,
+				95294CFE25B3293F00CC995D /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +602,7 @@
 				951A3EBF2278A70F00E8DB61 /* MainMenu.xib in Resources */,
 				9584EDF2226DEF79003C7EE8 /* Localizable.strings in Resources */,
 				472525812268112F003C50DF /* Assets.xcassets in Resources */,
+				95294CFD25B3293F00CC995D /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

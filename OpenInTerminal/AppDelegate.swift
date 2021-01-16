@@ -48,6 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } catch {
             logw(error.localizedDescription)
         }
+        writeimage()
     }
     
     func applicationWillTerminate(_ notification: Notification) {
@@ -213,6 +214,27 @@ extension AppDelegate {
             logw(error.localizedDescription)
         }
     }
+    
+//    func writeimage() {
+//        SupportedApps.allCases.forEach {
+//            let path = "/Applications/\($0.name).app"
+//            guard FileManager.default.fileExists(atPath: path) else { return }
+//
+//            let desktopURL = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
+//            let destinationURL = desktopURL.appendingPathComponent("\($0.name).png")
+//            let icon = AppManager.getApplicationIcon(from: path)
+//
+//            guard let tiffRepresentation = icon.tiffRepresentation,
+//                  let bitmapImage = NSBitmapImageRep(data: tiffRepresentation) else { return }
+//            let pngData = bitmapImage.representation(using: .png, properties: [:])
+//            do {
+//                try pngData?.write(to: destinationURL, options: .atomic)
+//            } catch {
+//                print("\($0.name)")
+//                print(error)
+//            }
+//        }
+//    }
 }
 
 extension AppDelegate {

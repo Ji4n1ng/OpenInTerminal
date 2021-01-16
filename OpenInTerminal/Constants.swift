@@ -28,8 +28,6 @@ struct Constants {
         static let copyPathShortcut = "OIT_CopyPathShortcut"
     }
     
-//    static let allTerminals: [SupportedApps] = [.terminal, .iTerm, .hyper, .alacritty, .kitty]
-//    static let allEditors: [SupportedApps] = [.textEdit, .vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate, .cotEditor, .macVim, .appCode, .cLion, .goLand, .intelliJIDEA, .phpStorm, .pyCharm, .rubyMine, .webStorm]
     static let PreferencesStoryboard = NSStoryboard(name: "Preferences", bundle: nil)
 }
 

@@ -125,8 +125,8 @@ public class DefaultsManager {
     public func getNewOption(_ app: SupportedApps) -> NewOptionType? {
         var option: String?
         switch app {
-        case .terminal:
-            option = Defaults[.terminalNewOption]
+//        case .terminal:
+//            option = Defaults[.terminalNewOption]
         case .iTerm:
             option = Defaults[.iTermNewOption]
         default:
@@ -137,11 +137,11 @@ public class DefaultsManager {
     
     public func setNewOption(_ app: SupportedApps, _ newOption: NewOptionType) {
         switch app {
-        case .terminal:
-            Defaults[.terminalNewOption] = newOption.rawValue
-            if let groupDefaults = GroupDefaults {
-                groupDefaults[.terminalNewOption] = newOption.rawValue
-            }
+//        case .terminal:
+//            Defaults[.terminalNewOption] = newOption.rawValue
+//            if let groupDefaults = GroupDefaults {
+//                groupDefaults[.terminalNewOption] = newOption.rawValue
+//            }
         case .iTerm:
             Defaults[.iTermNewOption] = newOption.rawValue
             let option = newOption == .window ? "true" : "false"

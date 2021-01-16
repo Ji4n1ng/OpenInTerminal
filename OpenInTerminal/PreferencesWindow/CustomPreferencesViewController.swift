@@ -16,9 +16,9 @@ class CustomPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var installedApplicationsTextField: NSTextField!
     @IBOutlet weak var notInstalledApplicationsTextField: NSTextField!
     
-    @IBOutlet weak var terminalTextField: NSTextField!
-    @IBOutlet weak var terminalWindowButton: NSButton!
-    @IBOutlet weak var terminalTabButton: NSButton!
+//    @IBOutlet weak var terminalTextField: NSTextField!
+//    @IBOutlet weak var terminalWindowButton: NSButton!
+//    @IBOutlet weak var terminalTabButton: NSButton!
     
     @IBOutlet weak var iTermTextField: NSTextField!
     @IBOutlet weak var iTermWindowButton: NSButton!
@@ -112,9 +112,10 @@ class CustomPreferencesViewController: PreferencesViewController {
     // MARK: Refresh UI
     
     func refreshTextFieldEnabledState() {
-        let terminals: [(SupportedApps, NSTextField)] =
-            [(.terminal, terminalTextField),
-             (.iTerm, iTermTextField)]
+        let terminals: [(SupportedApps, NSTextField)] = [
+//            (.terminal, terminalTextField),
+            (.iTerm, iTermTextField)
+        ]
 
         terminals.forEach { terminal, textField in
             let isInstalled = installedSupportedApps.contains(terminal.app)
@@ -131,8 +132,8 @@ class CustomPreferencesViewController: PreferencesViewController {
     }
     
     func refreshButtonState() {
-        terminalWindowButton.isEnabled = terminalTextField.isEnabled
-        terminalTabButton.isEnabled = terminalTextField.isEnabled
+//        terminalWindowButton.isEnabled = terminalTextField.isEnabled
+//        terminalTabButton.isEnabled = terminalTextField.isEnabled
 
         iTermWindowButton.isEnabled = iTermTextField.isEnabled
         iTermTabButton.isEnabled = iTermTextField.isEnabled
@@ -145,9 +146,10 @@ class CustomPreferencesViewController: PreferencesViewController {
     }
     
     func refreshButtonNewOptionState() {
-        let terminals: [(SupportedApps, NSButton, NSButton)] =
-            [(.terminal, terminalWindowButton, terminalTabButton),
-             (.iTerm, iTermWindowButton, iTermTabButton)]
+        let terminals: [(SupportedApps, NSButton, NSButton)] = [
+//            (.terminal, terminalWindowButton, terminalTabButton),
+            (.iTerm, iTermWindowButton, iTermTabButton)
+        ]
 
         terminals.forEach { terminal, windowButton, tabButton in
             let _newOption = DefaultsManager.shared.getNewOption(terminal)
@@ -260,15 +262,15 @@ class CustomPreferencesViewController: PreferencesViewController {
     
     // MARK: Button Actions
     
-    @IBAction func terminalWindowButtonClicked(_ sender: NSButton) {
-        terminalTabButton.state = .off
-        DefaultsManager.shared.setNewOption(.terminal, .window)
-    }
-    
-    @IBAction func terminalTabButtonClicked(_ sender: NSButton) {
-        terminalWindowButton.state = .off
-        DefaultsManager.shared.setNewOption(.terminal, .tab)
-    }
+//    @IBAction func terminalWindowButtonClicked(_ sender: NSButton) {
+//        terminalTabButton.state = .off
+//        DefaultsManager.shared.setNewOption(.terminal, .window)
+//    }
+//
+//    @IBAction func terminalTabButtonClicked(_ sender: NSButton) {
+//        terminalWindowButton.state = .off
+//        DefaultsManager.shared.setNewOption(.terminal, .tab)
+//    }
     
     @IBAction func iTermWindowButtonClicked(_ sender: NSButton) {
         iTermTabButton.state = .off

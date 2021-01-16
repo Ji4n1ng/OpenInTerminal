@@ -212,9 +212,6 @@ class GeneralPreferencesViewController: PreferencesViewController {
             }
         }
         
-//        if let terminal = TerminalType(rawValue: title) {
-//            DefaultsManager.shared.defaultTerminal = terminal
-//        }
     }
     
     @IBAction func defaultEditorButtonClicked(_ sender: NSPopUpButton) {

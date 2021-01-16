@@ -87,34 +87,36 @@ class FinderSync: FIFinderSync {
             .appendingPathExtension("scpt")
     }
     
+    func getIcon(_ app: App) -> NSImage? {
+        if SupportedApps.isSupported(app: app),
+           let icon = NSImage(named: app.name) {
+            return icon
+        }
+        if app.type == .terminal {
+            return NSImage(named: "context_menu_icon_terminal")
+        } else {
+            return NSImage(named: "context_menu_icon_editor")
+        }
+    }
+    
     func createDefaultMenu() -> NSMenu {
         let menu = NSMenu(title: "")
         
-        var terminalTitle = ""
-        if let terminal = DefaultsManager.shared.defaultTerminal {
-            terminalTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + terminal.name
-        } else {
-            terminalTitle = NSLocalizedString("menu.open_with_default_terminal",
-                                              comment: "Open with default Terminal")
-        }
+        guard let terminal = DefaultsManager.shared.defaultTerminal else { return menu }
+        let terminalTitle = terminal.name
         let openInTerminalItem = NSMenuItem(title: terminalTitle,
                                             action: #selector(openDefaultTerminal),
                                             keyEquivalent: "")
-        let terminalIcon = NSImage(named: "context_menu_icon_terminal")!
+        let terminalIcon = getIcon(terminal)
         openInTerminalItem.image = terminalIcon
         menu.addItem(openInTerminalItem)
         
-        var editorTitle = ""
-        if let editor = DefaultsManager.shared.defaultEditor {
-            editorTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + editor.name
-        } else {
-            editorTitle = NSLocalizedString("menu.open_with_default_editor",
-                                            comment: "Open with default Editor")
-        }
+        guard let editor = DefaultsManager.shared.defaultEditor else { return menu }
+        let editorTitle = editor.name
         let openInEditorItem = NSMenuItem(title: editorTitle,
                                             action: #selector(openDefaultEditor),
                                             keyEquivalent: "")
-        let editorIcon = NSImage(named: "context_menu_icon_editor")!
+        let editorIcon = getIcon(editor)
         openInEditorItem.image = editorIcon
         menu.addItem(openInEditorItem)
         
@@ -137,17 +139,12 @@ class FinderSync: FIFinderSync {
             return menu
         }
         customApps.forEach { app in
-            let itemTitle = NSLocalizedString("menu.open_in", comment: "Open in ") + app.name
+            let itemTitle = app.name
             let menuItem = NSMenuItem(title: itemTitle,
-                                      action: #selector(CustomMenuItemClicked),
+                                      action: #selector(customMenuItemClicked),
                                       keyEquivalent: "")
-            if app.type == .terminal {
-                let terminalIcon = NSImage(named: "context_menu_icon_terminal")!
-                menuItem.image = terminalIcon
-            } else if app.type == .editor {
-                let editorIcon = NSImage(named: "context_menu_icon_editor")!
-                menuItem.image = editorIcon
-            }
+            let appIcon = getIcon(app)
+            menuItem.image = appIcon
             menu.addItem(menuItem)
         }
         
@@ -239,9 +236,11 @@ class FinderSync: FIFinderSync {
         open(editor)
     }
     
-    @objc func CustomMenuItemClicked(_ sender: NSMenuItem) {
+    @objc func customMenuItemClicked(_ sender: NSMenuItem) {
         guard let customApps = DefaultsManager.shared.customMenuOptions else { return }
-        let appName = sender.title[8...]
+        let prefix = NSLocalizedString("menu.open_in", comment: "Open in ")
+        let startIndex = sender.title.index(sender.title.startIndex, offsetBy: prefix.count)
+        let appName = sender.title[startIndex...]
         for app in customApps {
             if app.name == appName {
                 open(app)

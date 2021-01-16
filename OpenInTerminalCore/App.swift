@@ -69,21 +69,27 @@ extension App: Openable {
                 guard let url = URL(string: path) else {
                     throw OITError.wrongUrl
                 }
-                let newOption = DefaultsManager.shared.getNewOption(.terminal) ?? .window
-                switch newOption {
-                case .window:
-                    // open in a new window
-                    guard let terminal = SBApplication(bundleIdentifier: SupportedApps.terminal.bundleId) as TerminalApplication?,
-                          let open = terminal.open else {
-                        throw OITError.cannotAccessApp(self.name)
-                    }
-                    open([url])
-                    terminal.activate()
-                case .tab:
-                    // open in a new tab
-                    let source = ScriptManager.shared.getTerminalNewTabAppleScript(url: url)
-                    try excute(source)
+                guard let terminal = SBApplication(bundleIdentifier: SupportedApps.terminal.bundleId) as TerminalApplication?,
+                      let open = terminal.open else {
+                    throw OITError.cannotAccessApp(self.name)
                 }
+                open([url])
+                terminal.activate()
+//                let newOption = DefaultsManager.shared.getNewOption(.terminal) ?? .window
+//                switch newOption {
+//                case .window:
+//                    // open in a new window
+//                    guard let terminal = SBApplication(bundleIdentifier: SupportedApps.terminal.bundleId) as TerminalApplication?,
+//                          let open = terminal.open else {
+//                        throw OITError.cannotAccessApp(self.name)
+//                    }
+//                    open([url])
+//                    terminal.activate()
+//                case .tab:
+//                    // open in a new tab
+//                    let source = ScriptManager.shared.getTerminalNewTabAppleScript(url: url)
+//                    try excute(source)
+//                }
             } else {
                 // this app is general
                 var openCommand = ScriptManager.shared.getOpenCommand(self, escapeCount: 2)
@@ -132,18 +138,18 @@ extension App: Openable {
             }
             // get open command, e.g. "open -a Terminal /Users/user/Desktop/test\ folder"
             var openCommand = ScriptManager.shared.getOpenCommand(self)
-            openCommand += path.specialCharEscaped()
+            openCommand += " " + path.specialCharEscaped()
             // script
-            guard var scriptURL = ScriptManager.shared.getScriptURL(with: Constants.generalScript) else { return }
-            // handle exceptional case
-            if SupportedApps.is(self, is: .terminal) {
-                if let newOption = DefaultsManager.shared.getNewOption(.terminal),
-                   newOption == .tab {
-                    openCommand = ScriptManager.shared.getTerminalNewTabCommand(path: path)
-                    guard let tabScriptURL = ScriptManager.shared.getScriptURL(with: Constants.terminalNewTabScript) else { return }
-                    scriptURL = tabScriptURL
-                }
-            }
+            guard let scriptURL = ScriptManager.shared.getScriptURL(with: Constants.generalScript) else { return }
+//            // handle exceptional case
+//            if SupportedApps.is(self, is: .terminal) {
+//                if let newOption = DefaultsManager.shared.getNewOption(.terminal),
+//                   newOption == .tab {
+//                    openCommand = ScriptManager.shared.getTerminalNewTabCommand(path: path)
+//                    guard let tabScriptURL = ScriptManager.shared.getScriptURL(with: Constants.terminalNewTabScript) else { return }
+//                    scriptURL = tabScriptURL
+//                }
+//            }
             // excute
             guard FileManager.default.fileExists(atPath: scriptURL.path) else { return }
             guard let script = try? NSUserAppleScriptTask(url: scriptURL) else { return }

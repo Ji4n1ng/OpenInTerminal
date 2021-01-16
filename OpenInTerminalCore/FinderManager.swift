@@ -26,12 +26,9 @@ public class FinderManager {
         }
         
         if let firstItem = (selectionItems as! Array<AnyObject>).first {
-            
             // Files or folders are selected
             target = firstItem as! FinderItem
-        }
-        else {
-            
+        } else {
             // Check if there are opened finder windows
             guard let windows = finder.FinderWindows?(),
                 let firstWindow = windows.firstObject else {
@@ -162,7 +159,7 @@ public class FinderManager {
 //        return self.applicationExists(editorType.fullName)
 //    }
     
-    /// Get all installed applications
+    /// Get all installed applications' names
     public func getAllInstalledApps() -> Set<String> {
         var applications: Set<String> = Set()
         // add system application
