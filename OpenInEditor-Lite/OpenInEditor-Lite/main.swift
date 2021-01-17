@@ -10,15 +10,16 @@ import Foundation
 import OpenInTerminalCore
 
 do {
-
-    if let editorType = DefaultsManager.shared.defaultEditor {
-        EditorManager.shared.openEditor(editorType)
+    
+    if let editorName = DefaultsManager.shared.liteDefaultEditor {
+        let editor = App(name: editorName, type: .editor)
+        try editor.openOutsideSandbox()
     } else {
-        guard let selectedEditor = EditorManager.shared.pickEditorAlert() else {
+        guard let selectedEditor = AppManager.shared.pickEditorAlert() else {
             throw OITLError.cannotGetEditor
         }
-        DefaultsManager.shared.defaultEditor = selectedEditor
-        EditorManager.shared.openEditor(selectedEditor)
+        DefaultsManager.shared.liteDefaultTerminal = selectedEditor.name
+        try selectedEditor.openOutsideSandbox()
     }
     
 } catch {

@@ -231,9 +231,7 @@ class FinderSync: FIFinderSync {
     
     @objc func customMenuItemClicked(_ sender: NSMenuItem) {
         guard let customApps = DefaultsManager.shared.customMenuOptions else { return }
-        let prefix = NSLocalizedString("menu.open_in", comment: "Open in ")
-        let startIndex = sender.title.index(sender.title.startIndex, offsetBy: prefix.count)
-        let appName = sender.title[startIndex...]
+        let appName = sender.title
         for app in customApps {
             if app.name == appName {
                 open(app)

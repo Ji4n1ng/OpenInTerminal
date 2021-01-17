@@ -114,7 +114,7 @@ extension App: Openable {
                 openCommand += " \($0.specialCharEscaped(2))"
             }
             let source = """
-            do shell script "\(openCommand))"
+            do shell script "\(openCommand)"
             """
             try excute(source)
         }

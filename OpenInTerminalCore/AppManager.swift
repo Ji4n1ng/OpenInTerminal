@@ -19,19 +19,19 @@ public class AppManager {
         // Add button and avoid the focus ring
         let cancelString = NSLocalizedString("general.cancel", comment: "Cancel")
         alert.addButton(withTitle: cancelString).refusesFirstResponder = true
-        alert.addButton(withTitle: SupportedApps.hyper.shortName).refusesFirstResponder = true
-        alert.addButton(withTitle: SupportedApps.iTerm.shortName).refusesFirstResponder = true
-        alert.addButton(withTitle: SupportedApps.terminal.shortName).refusesFirstResponder = true
+        alert.addButton(withTitle: SupportedApps.terminal.name).refusesFirstResponder = true
+        alert.addButton(withTitle: SupportedApps.iTerm.name).refusesFirstResponder = true
+        alert.addButton(withTitle: SupportedApps.hyper.name).refusesFirstResponder = true
         let modalResult = alert.runModal()
         switch modalResult {
         case .alertFirstButtonReturn:
             return nil
         case .alertSecondButtonReturn:
-            return SupportedApps.hyper.app
+            return SupportedApps.terminal.app
         case .alertThirdButtonReturn:
             return SupportedApps.iTerm.app
         default:
-            return SupportedApps.terminal.app
+            return SupportedApps.hyper.app
         }
     }
     
@@ -42,19 +42,19 @@ public class AppManager {
         // Add button and avoid the focus ring
         let cancelString = NSLocalizedString("general.cancel", comment: "Cancel")
         alert.addButton(withTitle: cancelString).refusesFirstResponder = true
-        alert.addButton(withTitle: SupportedApps.sublime.shortName).refusesFirstResponder = true
-        alert.addButton(withTitle: SupportedApps.atom.shortName).refusesFirstResponder = true
-        alert.addButton(withTitle: SupportedApps.vscode.shortName).refusesFirstResponder = true
+        alert.addButton(withTitle: SupportedApps.vscode.name).refusesFirstResponder = true
+        alert.addButton(withTitle: SupportedApps.sublime.name).refusesFirstResponder = true
+        alert.addButton(withTitle: SupportedApps.atom.name).refusesFirstResponder = true
         let modalResult = alert.runModal()
         switch modalResult {
         case .alertFirstButtonReturn:
             return nil
         case .alertSecondButtonReturn:
-            return SupportedApps.sublime.app
-        case .alertThirdButtonReturn:
-            return SupportedApps.atom.app
-        default:
             return SupportedApps.vscode.app
+        case .alertThirdButtonReturn:
+            return SupportedApps.sublime.app
+        default:
+            return SupportedApps.atom.app
         }
     }
     

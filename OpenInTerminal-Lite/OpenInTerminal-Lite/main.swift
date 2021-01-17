@@ -10,15 +10,16 @@ import Foundation
 import OpenInTerminalCore
 
 do {
-
-    if let terminalType = DefaultsManager.shared.defaultTerminal {
-        TerminalManager.shared.openTerminal(terminalType)
+    
+    if let terminalName = DefaultsManager.shared.liteDefaultTerminal {
+        let terminal = App(name: terminalName, type: .terminal)
+        try terminal.openOutsideSandbox()
     } else {
-        guard let selectedTerminal = TerminalManager.shared.pickTerminalAlert() else {
+        guard let selectedTerminal = AppManager.shared.pickTerminalAlert() else {
             throw OITLError.cannotGetTerminal
         }
-        DefaultsManager.shared.defaultTerminal = selectedTerminal
-        TerminalManager.shared.openTerminal(selectedTerminal)
+        DefaultsManager.shared.liteDefaultTerminal = selectedTerminal.name
+        try selectedTerminal.openOutsideSandbox()
     }
     
 } catch {
