@@ -201,6 +201,41 @@ public class DefaultsManager {
         }
     }
     
+    public var customMenuIconOption: CustomMenuIconOption {
+        get {
+            let optionValue = Defaults[.customMenuIconOption] ?? "no"
+            let option = CustomMenuIconOption(rawValue: optionValue)
+            return option ?? .no
+        }
+        
+        set {
+            Defaults[.customMenuIconOption] = newValue.rawValue
+        }
+    }
+    
+    public func getAppIcon(_ app: App) -> NSImage? {
+        switch customMenuIconOption {
+        case .no:
+            return nil
+        case .simple:
+            if app.type == .terminal {
+                return NSImage(named: "context_menu_icon_terminal")
+            } else {
+                return NSImage(named: "context_menu_icon_editor")
+            }
+        case .original:
+            if SupportedApps.isSupported(app),
+               let icon = NSImage(named: app.name) {
+                return icon
+            }
+            if app.type == .terminal {
+                return NSImage(named: "context_menu_icon_terminal")
+            } else {
+                return NSImage(named: "context_menu_icon_editor")
+            }
+        }
+    }
+    
     // MARK: - Advanced Settings
     
     public func firstSetup() {
@@ -218,6 +253,7 @@ public class DefaultsManager {
         setNewOption(.iTerm, .window)
         isCustomMenuApplyToToolbar = false
         isCustomMenuApplyToContext = false
+        customMenuIconOption = .no
         Defaults.synchronize()
     }
     

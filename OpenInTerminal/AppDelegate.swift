@@ -48,7 +48,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } catch {
             logw(error.localizedDescription)
         }
-        writeimage()
     }
     
     func applicationWillTerminate(_ notification: Notification) {

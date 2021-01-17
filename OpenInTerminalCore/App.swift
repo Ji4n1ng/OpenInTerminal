@@ -179,5 +179,4 @@ extension App: Openable {
         }
     }
     
-    
 }

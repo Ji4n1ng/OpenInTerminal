@@ -40,6 +40,7 @@
 		95294CEB25B3252900CC995D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4725257E2268112F003C50DF /* Assets.xcassets */; };
 		95294CFD25B3293F00CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
 		95294CFE25B3293F00CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
+		95294D0825B3E17900CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
 		954D67CF235570D5007702D0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67CE235570D5007702D0 /* Error.swift */; };
 		954D67D12355AD36007702D0 /* ScriptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67D02355AD36007702D0 /* ScriptGenerator.swift */; };
 		954D67D22355F80E007702D0 /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
@@ -578,6 +579,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95294D0825B3E17900CC995D /* Icons.xcassets in Resources */,
 				95C6C340227AA1CB00F157C4 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

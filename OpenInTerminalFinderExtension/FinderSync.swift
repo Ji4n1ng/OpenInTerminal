@@ -87,17 +87,20 @@ class FinderSync: FIFinderSync {
             .appendingPathExtension("scpt")
     }
     
-    func getIcon(_ app: App) -> NSImage? {
-        if SupportedApps.isSupported(app: app),
-           let icon = NSImage(named: app.name) {
-            return icon
-        }
-        if app.type == .terminal {
-            return NSImage(named: "context_menu_icon_terminal")
-        } else {
-            return NSImage(named: "context_menu_icon_editor")
+    var copyPathItem: NSMenuItem {
+        get {
+            let copyPathItem = NSMenuItem(title: NSLocalizedString("menu.copy_path_to_clipboard",
+                                                                   comment: "Copy path to Clipboard"),
+                                                action: #selector(copyPathToClipboard),
+                                                keyEquivalent: "")
+            if DefaultsManager.shared.customMenuIconOption != .no {
+                let copyPathIcon = NSImage(named: "context_menu_icon_path")
+                copyPathItem.image = copyPathIcon
+            }
+            return copyPathItem
         }
     }
+        
     
     func createDefaultMenu() -> NSMenu {
         let menu = NSMenu(title: "")
@@ -107,7 +110,7 @@ class FinderSync: FIFinderSync {
         let openInTerminalItem = NSMenuItem(title: terminalTitle,
                                             action: #selector(openDefaultTerminal),
                                             keyEquivalent: "")
-        let terminalIcon = getIcon(terminal)
+        let terminalIcon = DefaultsManager.shared.getAppIcon(terminal)
         openInTerminalItem.image = terminalIcon
         menu.addItem(openInTerminalItem)
         
@@ -116,17 +119,12 @@ class FinderSync: FIFinderSync {
         let openInEditorItem = NSMenuItem(title: editorTitle,
                                             action: #selector(openDefaultEditor),
                                             keyEquivalent: "")
-        let editorIcon = getIcon(editor)
+        let editorIcon = DefaultsManager.shared.getAppIcon(editor)
         openInEditorItem.image = editorIcon
         menu.addItem(openInEditorItem)
         
-        let copyPathItem = NSMenuItem(title: NSLocalizedString("menu.copy_path_to_clipboard",
-                                                               comment: "Copy path to Clipboard"),
-                                            action: #selector(copyPathToClipboard),
-                                            keyEquivalent: "")
-        let copyPathIcon = NSImage(named: "context_menu_icon_path")
-        copyPathItem.image = copyPathIcon
-        menu.addItem(copyPathItem)
+        // add "Copy Path"
+        menu.addItem(self.copyPathItem)
         
         return menu
     }
@@ -143,18 +141,13 @@ class FinderSync: FIFinderSync {
             let menuItem = NSMenuItem(title: itemTitle,
                                       action: #selector(customMenuItemClicked),
                                       keyEquivalent: "")
-            let appIcon = getIcon(app)
+            let appIcon = DefaultsManager.shared.getAppIcon(app)
             menuItem.image = appIcon
             menu.addItem(menuItem)
         }
         
-        let copyPathItem = NSMenuItem(title: NSLocalizedString("menu.copy_path_to_clipboard",
-                                                               comment: "Copy path to Clipboard"),
-                                            action: #selector(copyPathToClipboard),
-                                            keyEquivalent: "")
-        let copyPathIcon = NSImage(named: "context_menu_icon_path")
-        copyPathItem.image = copyPathIcon
-        menu.addItem(copyPathItem)
+        // add "Copy Path"
+        menu.addItem(self.copyPathItem)
         
         return menu
     }

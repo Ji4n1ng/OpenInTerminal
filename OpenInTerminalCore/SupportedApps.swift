@@ -62,7 +62,7 @@ public enum SupportedApps: String, CaseIterable {
         }
     }
     
-    public static func isSupported(app: App) -> Bool {
+    public static func isSupported(_ app: App) -> Bool {
         for sa in SupportedApps.allCases {
             if sa.name == app.name {
                 return true

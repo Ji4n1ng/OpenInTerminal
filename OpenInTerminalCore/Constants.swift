@@ -50,3 +50,9 @@ public enum NewOptionType: String {
 
 let encoder = JSONEncoder()
 let decoder = JSONDecoder()
+
+public enum CustomMenuIconOption: String {
+    case no
+    case simple
+    case original
+}

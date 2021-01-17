@@ -30,6 +30,10 @@ class CustomPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var applyToToolbarButton: NSButton!
     @IBOutlet weak var applyToContextButton: NSButton!
     
+    @IBOutlet weak var noIconButton: NSButton!
+    @IBOutlet weak var simpleIconButton: NSButton!
+    @IBOutlet weak var originalIconButton: NSButton!
+    
     var allInstalledAppNames: Set<String> = Set()
     var installedSupportedApps = [App]() {
         didSet {
@@ -103,6 +107,7 @@ class CustomPreferencesViewController: PreferencesViewController {
         refreshTextFieldEnabledState()
         refreshButtonNewOptionState()
         refreshButtonState()
+        refreshIconTypeOptionState()
     }
     
     override func viewDidAppear() {
@@ -165,6 +170,25 @@ class CustomPreferencesViewController: PreferencesViewController {
         }
     }
     
+    func offIconTypeButtons() {
+        noIconButton.state = .off
+        simpleIconButton.state = .off
+        originalIconButton.state = .off
+    }
+    
+    func refreshIconTypeOptionState() {
+        offIconTypeButtons()
+        let option = DefaultsManager.shared.customMenuIconOption
+        switch option {
+        case .no:
+            noIconButton.state = .on
+        case .simple:
+            simpleIconButton.state = .on
+        case .original:
+            originalIconButton.state = .on
+        }
+    }
+    
     func refreshAddOptionMenu() {
         addOptionMenu.removeAllItems()
         
@@ -175,6 +199,8 @@ class CustomPreferencesViewController: PreferencesViewController {
               action: #selector(selectSupportedApp),
               keyEquivalent: "")
             menuItem.target = self
+            menuItem.image = NSImage(named: $0.name)
+            menuItem.image?.size = NSSize(width: 14, height: 14)
             installedSupportedMenu.addItem(menuItem)
         }
         let installedSupportedMenuItem = NSMenuItem()
@@ -189,6 +215,8 @@ class CustomPreferencesViewController: PreferencesViewController {
                                       action: #selector(selectSupportedApp),
                                       keyEquivalent: "")
             menuItem.target = self
+            menuItem.image = NSImage(named: $0.name)
+            menuItem.image?.size = NSSize(width: 14, height: 14)
             supportedMenu.addItem(menuItem)
         }
         let supportedMenuItem = NSMenuItem()
@@ -210,6 +238,7 @@ class CustomPreferencesViewController: PreferencesViewController {
                                       keyEquivalent: "")
             menuItem.target = self
             menuItem.image = icon
+            menuItem.image?.size = NSSize(width: 14, height: 14)
             runningMenu.addItem(menuItem)
             let app = App(name: name, type: .terminal)
             runningApps.append(app)
@@ -351,6 +380,24 @@ class CustomPreferencesViewController: PreferencesViewController {
             customInputViewController.appName = appName
         }
         self.presentAsSheet(customInputViewController)
+    }
+    
+    @IBAction func noIconButtonClicked(_ sender: NSButton) {
+        offIconTypeButtons()
+        noIconButton.state = .on
+        DefaultsManager.shared.customMenuIconOption = .no
+    }
+    
+    @IBAction func simpleIconButtonClicked(_ sender: NSButton) {
+        offIconTypeButtons()
+        simpleIconButton.state = .on
+        DefaultsManager.shared.customMenuIconOption = .simple
+    }
+    
+    @IBAction func originalIconButtonClicked(_ sender: NSButton) {
+        offIconTypeButtons()
+        originalIconButton.state = .on
+        DefaultsManager.shared.customMenuIconOption = .original
     }
 }
 
