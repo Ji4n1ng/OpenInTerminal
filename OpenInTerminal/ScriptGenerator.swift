@@ -15,7 +15,7 @@ func checkScripts() throws {
         throw OITMError.cannotAccessPath("$HOME/Library/Application Scripts/wang.jianing.app.OpenInTerminal")
     }
     scriptFolderPath.deleteLastPathComponent()
-    let finderExScriptPath = scriptFolderPath.appendingPathComponent(Constants.finderExtensionIdentifier)
+    let finderExScriptPath = scriptFolderPath.appendingPathComponent(Constants.Id.FinderExtension)
     if !FileManager.default.fileExists(atPath: finderExScriptPath.path) {
         try FileManager.default.createDirectory(atPath: finderExScriptPath.path,
                                                 withIntermediateDirectories: true,
@@ -34,73 +34,20 @@ func checkScripts() throws {
         try script.write(to: path, atomically: true, encoding: String.Encoding.utf8)
     }
     
-    // write terminal scripts
-    let terminals: [TerminalType] = Constants.allTerminals
-    try terminals.forEach { terminal in
-        let scriptPath = finderExScriptPath
-            .appendingPathComponent(terminal.rawValue)
-            .appendingPathExtension("scpt")
-        try writeScriptIfNeeded(at: scriptPath, with: terminal.getScript())
-    }
-    
-    // write editor scripts
-    let editors: [EditorType] = Constants.allEditors
-    try editors.forEach { editor in
-        let scriptPath = finderExScriptPath
-            .appendingPathComponent(editor.rawValue)
-            .appendingPathExtension("scpt")
-        try writeScriptIfNeeded(at: scriptPath, with: editor.getScript())
-    }
+    // write general script
+    let generalScriptName = ScriptManager.shared.getGeneralScriptName()
+    let generalScriptPath = finderExScriptPath
+        .appendingPathComponent(generalScriptName)
+        .appendingPathExtension("scpt")
+    let generalScript = ScriptManager.shared.getGeneralScript()
+    try writeScriptIfNeeded(at: generalScriptPath, with: generalScript)
     
     // write terminal new tab script
-    let terminalTabScriptPath = finderExScriptPath
-        .appendingPathComponent(TerminalType.terminal.rawValue + "-tab")
+    let tabScriptName = ScriptManager.shared.getTerminalNewTabScriptName()
+    let tabScriptPath = finderExScriptPath
+        .appendingPathComponent(tabScriptName)
         .appendingPathExtension("scpt")
-    let terminalTabScript = """
-    tell application "Finder"
-        set finderSelList to selection as alias list
-        
-        if finderSelList ≠ {} then
-            set theSelected to item 1 of finderSelList
-            set thePath to POSIX path of (contents of theSelected)
-            try
-                do shell script "cd " & quoted form of thePath
-            on error
-                set thePath to POSIX path of ((container of theSelected) as text)
-            end try
-        end if
-        
-        if finderSelList = {} then
-            tell application "Finder"
-                try
-                    set thePath to POSIX path of ((target of front Finder window) as text)
-                on error
-                    set thePath to POSIX path of (path to desktop)
-                end try
-            end tell
-        end if
-    end tell
-
-    if not application "Terminal" is running then
-        tell application "Terminal"
-            do script "cd " & quoted form of thePath
-            activate
-        end tell
-    else
-        tell application "Terminal"
-            if not (exists window 1) then
-                do script "cd " & quoted form of thePath
-                activate
-            else
-                activate
-                tell application "System Events" to keystroke "t" using command down
-                repeat while contents of selected tab of window 1 starts with linefeed
-                    delay 0.01
-                end repeat
-                do script "cd " & quoted form of thePath in window 1
-            end if
-        end tell
-    end if
-    """
-    try writeScriptIfNeeded(at: terminalTabScriptPath, with: terminalTabScript)
+    let tabScript = ScriptManager.shared.getTerminalNewTabAppleScript()
+    try writeScriptIfNeeded(at: tabScriptPath, with: tabScript)
+    
 }

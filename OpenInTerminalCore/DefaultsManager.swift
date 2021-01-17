@@ -12,240 +12,255 @@ public class DefaultsManager {
     
     public static var shared = DefaultsManager()
     
-    public var currentDefaults: UserDefaults {
-        if Bundle.main.bundleIdentifier == Constants.openInTerminalLiteIdentifier || Bundle.main.bundleIdentifier == Constants.openInEditorLiteIdentifier {
-            return Defaults
-        } else {
-            return GroupDefaults ?? Defaults
-        }
-    }
+    // MARK: - Preferences - General
     
-    public var isFirstUsage: BoolType {
-        if Defaults[.firstUsage] == nil {
-            Defaults[.firstUsage] = BoolType._false.rawValue
-            return ._true
-        } else {
-            return ._false
-        }
-    }
-    
-    // MARK: - General Settings
-    
-    public var defaultTerminal: TerminalType? {
+    public var isFirstSetup: Bool {
         get {
-            return currentDefaults[.defaultTerminal]
-                .map(TerminalType.init(rawValue: )) ?? nil
+            return Defaults[.firstSetup]
         }
         
         set {
-            guard let newValue = newValue else { return }
-            currentDefaults[.defaultTerminal] = newValue.rawValue
+            Defaults[.firstSetup] = newValue
         }
     }
     
-    public func removeDefaultTerminal() {
-        currentDefaults.removeObject(forKey: Constants.Key.defaultTerminal)
-    }
-    
-    public var defaultEditor: EditorType? {
+    public var isLaunchAtLogin: Bool {
         get {
-            return currentDefaults[.defaultEditor]
-                .map(EditorType.init(rawValue: )) ?? nil
+            return Defaults[.launchAtLogin]
         }
         
         set {
-            guard let newValue = newValue else { return }
-            currentDefaults[.defaultEditor] = newValue.rawValue
+            Defaults[.launchAtLogin] = newValue
         }
     }
     
-    public func removeDefaultEditor() {
-        currentDefaults.removeObject(forKey: Constants.Key.defaultEditor)
-    }
-    
-    public var isLaunchAtLogin: BoolType {
+    public var isQuickToggle: Bool {
         get {
-            let defaultValue = currentDefaults[.launchAtLogin].map(BoolType.init(rawValue: )) ?? nil
-            if let boolValue = defaultValue {
-                return boolValue
-            } else {
-                // Since we have initialized all the values at first setup, if we still get a nil value,
-                // that means bad guys changed it to arbitrarily string.
-                // We should changed it to default value.
-                currentDefaults[.launchAtLogin] = BoolType._false.rawValue
-                return ._false
-            }
+            return Defaults[.quickToggle]
         }
         
         set {
-            currentDefaults[.launchAtLogin] = newValue.rawValue
-        }
-    }
-    
-    public var isHideStatusItem: BoolType {
-        get {
-            let defaultValue = currentDefaults[.hideStatusItem].map(BoolType.init(rawValue: )) ?? nil
-            if let boolValue = defaultValue {
-                return boolValue
-            } else {
-                currentDefaults[.hideStatusItem] = BoolType._false.rawValue
-                return ._false
-            }
-        }
-        
-        set {
-            currentDefaults[.hideStatusItem] = newValue.rawValue
-        }
-    }
-    
-    public var isHideContextMenuItems: BoolType {
-        get {
-            let defaultValue = currentDefaults[.hideContextMenuItems].map(BoolType.init(rawValue: )) ?? nil
-            if let boolValue = defaultValue {
-                return boolValue
-            } else {
-                currentDefaults[.hideContextMenuItems] = BoolType._false.rawValue
-                return ._false
-            }
-        }
-        
-        set {
-            currentDefaults[.hideContextMenuItems] = newValue.rawValue
-        }
-    }
-    
-    public var isQuickToggle: BoolType {
-        get {
-            let defaultValue = currentDefaults[.quickToggle].map(BoolType.init(rawValue: )) ?? nil
-            if let boolValue = defaultValue {
-                return boolValue
-            } else {
-                currentDefaults[.quickToggle] = BoolType._false.rawValue
-                return ._false
-            }
-        }
-        
-        set {
-            currentDefaults[.quickToggle] = newValue.rawValue
+            Defaults[.quickToggle] = newValue
         }
     }
     
     public var quickToggleType: QuickToggleType? {
         get {
-            return currentDefaults[.quickToggleType].map(QuickToggleType.init(rawValue: )) ?? nil
+            return Defaults[.quickToggleType].map(QuickToggleType.init(rawValue: )) ?? nil
         }
         
         set {
-            currentDefaults[.quickToggleType] = newValue?.rawValue
+            Defaults[.quickToggleType] = newValue?.rawValue
         }
     }
     
-    // MARK: - Finder Extension Settings
-    
-    public func getNewOption(_ terminal: TerminalType) -> NewOptionType? {
-        var option: String?
-        switch terminal {
-        case .terminal:
-            option = currentDefaults[.terminalNewOption]
-        case .iTerm:
-            option = currentDefaults[.iTermNewOption]
-        case .hyper, .alacritty, .kitty:
-            return nil
+    public var isHideStatusItem: Bool {
+        get {
+            return Defaults[.hideStatusItem]
         }
         
+        set {
+            Defaults[.hideStatusItem] = newValue
+        }
+    }
+    
+    public var isHideContextMenuItems: Bool {
+        get {
+            return Defaults[.hideContextMenuItems]
+        }
+        
+        set {
+            Defaults[.hideContextMenuItems] = newValue
+        }
+    }
+    
+    public var defaultTerminal: App? {
+        get {
+            guard let terminalName = Defaults[.defaultTerminal] else { return nil }
+            let app = App(name: terminalName, type: .terminal)
+            return app
+        }
+        
+        set {
+            guard let newValue = newValue else { return }
+            Defaults[.defaultTerminal] = newValue.name
+        }
+    }
+    
+    public var defaultEditor: App? {
+        get {
+            guard let editorName = Defaults[.defaultEditor] else { return nil }
+            let app = App(name: editorName, type: .editor)
+            return app
+        }
+        
+        set {
+            guard let newValue = newValue else { return }
+            Defaults[.defaultEditor] = newValue.name
+        }
+    }
+    
+    public var liteDefaultTerminal: String? {
+        get {
+            return Defaults[.liteDefaultTerminal]
+        }
+        
+        set {
+            Defaults[.liteDefaultTerminal] = newValue
+        }
+    }
+    
+    public var liteDefaultEditor: String? {
+        get {
+            return Defaults[.liteDefaultEditor]
+        }
+        
+        set {
+            Defaults[.liteDefaultEditor] = newValue
+        }
+    }
+    
+    // MARK: - Preferences - Custom
+    
+    public func getNewOption(_ app: SupportedApps) -> NewOptionType? {
+        var option: String?
+        switch app {
+//        case .terminal:
+//            option = Defaults[.terminalNewOption]
+        case .iTerm:
+            option = Defaults[.iTermNewOption]
+        default:
+            return nil
+        }
         return option.map(NewOptionType.init(rawValue: )) ?? nil
     }
     
-    public func setNewOption(_ terminal: TerminalType, _ newOption: NewOptionType) throws {
-        switch terminal {
-        case .terminal:
-            Defaults[.terminalNewOption] = newOption.rawValue
-            if let groupDefaults = GroupDefaults {
-                groupDefaults[.terminalNewOption] = newOption.rawValue
-            }
+    public func setNewOption(_ app: SupportedApps, _ newOption: NewOptionType) {
+        switch app {
+//        case .terminal:
+//            Defaults[.terminalNewOption] = newOption.rawValue
+//            if let groupDefaults = GroupDefaults {
+//                groupDefaults[.terminalNewOption] = newOption.rawValue
+//            }
         case .iTerm:
-            currentDefaults[.iTermNewOption] = newOption.rawValue
-            
+            Defaults[.iTermNewOption] = newOption.rawValue
             let option = newOption == .window ? "true" : "false"
-            
             let source = """
-            do shell script "defaults write \(TerminalType.iTerm.bundleId) OpenFileInNewWindows -bool \(option)"
+            do shell script "defaults write \(SupportedApps.iTerm.bundleId) OpenFileInNewWindows -bool \(option)"
             """
             let script = NSAppleScript(source: source)!
             var error: NSDictionary?
             script.executeAndReturnError(&error)
             if error != nil {
-                throw OITError.cannotSetItermNewOption
+                logw("Setting iTerm new option failed: \(String(describing: error))")
             }
-        case .hyper, .alacritty, .kitty:
+        default:
             return
         }
     }
     
-    public var isApplyToToolbar: BoolType {
+    public var customMenuOptions: [App]? {
         get {
-            let defaultValue = currentDefaults[.customApplyToToolbarMenu].map(BoolType.init(rawValue: )) ?? nil
-            if let boolValue = defaultValue {
-                return boolValue
-            } else {
-                currentDefaults[.customApplyToToolbarMenu] = BoolType._false.rawValue
-                return ._false
+            guard let appsData = Defaults[.customMenuOptions] else { return nil }
+            do {
+                let apps = try decoder.decode([App].self, from: appsData)
+                return apps
+            } catch {
+                return nil
             }
         }
         
         set {
-            currentDefaults[.customApplyToToolbarMenu] = newValue.rawValue
-        }
-    }
-    
-    public var isApplyToContext: BoolType {
-        get {
-            let defaultValue = currentDefaults[.customApplyToContextMenu].map(BoolType.init(rawValue: )) ?? nil
-            if let boolValue = defaultValue {
-                return boolValue
-            } else {
-                currentDefaults[.customApplyToContextMenu] = BoolType._false.rawValue
-                return ._false
+            guard let newValue = newValue else { return }
+            do {
+                let data = try encoder.encode(newValue)
+                Defaults[.customMenuOptions] = data
+            } catch {
+                logw("save custom menu options failed: \(error)")
             }
         }
+    }
+    
+    public var isCustomMenuApplyToToolbar: Bool {
+        get {
+            return Defaults[.customMenuApplyToToolbar]
+        }
         
         set {
-            currentDefaults[.customApplyToContextMenu] = newValue.rawValue
+            Defaults[.customMenuApplyToToolbar] = newValue
         }
     }
     
-    public var customMenuOptions: String {
+    public var isCustomMenuApplyToContext: Bool {
         get {
-            return currentDefaults[.customMenuOptions] ?? ""
+            return Defaults[.customMenuApplyToContext]
         }
         
         set {
-            currentDefaults[.customMenuOptions] = newValue
+            Defaults[.customMenuApplyToContext] = newValue
+        }
+    }
+    
+    public var customMenuIconOption: CustomMenuIconOption {
+        get {
+            let optionValue = Defaults[.customMenuIconOption] ?? "no"
+            let option = CustomMenuIconOption(rawValue: optionValue)
+            return option ?? .no
+        }
+        
+        set {
+            Defaults[.customMenuIconOption] = newValue.rawValue
+        }
+    }
+    
+    public func getAppIcon(_ app: App) -> NSImage? {
+        switch customMenuIconOption {
+        case .no:
+            return nil
+        case .simple:
+            if app.type == .terminal {
+                return NSImage(named: "context_menu_icon_terminal")
+            } else {
+                return NSImage(named: "context_menu_icon_editor")
+            }
+        case .original:
+            if SupportedApps.isSupported(app),
+               let icon = NSImage(named: app.name) {
+                return icon
+            }
+            if app.type == .terminal {
+                return NSImage(named: "context_menu_icon_terminal")
+            } else {
+                return NSImage(named: "context_menu_icon_editor")
+            }
         }
     }
     
     // MARK: - Advanced Settings
     
     public func firstSetup() {
-        guard isFirstUsage == ._true else { return }
+        guard isFirstSetup == false else { return }
         logw("First Setup")
-        currentDefaults[.launchAtLogin] = BoolType._false.rawValue
-        currentDefaults[.hideStatusItem] = BoolType._false.rawValue
-        currentDefaults[.quickToggle] = BoolType._false.rawValue
-        currentDefaults[.quickToggleType] = QuickToggleType.openWithDefaultTerminal.rawValue
-        currentDefaults.removeObject(forKey: Constants.Key.defaultTerminal)
-        currentDefaults.removeObject(forKey: Constants.Key.defaultEditor)
-        currentDefaults[.terminalNewOption] = NewOptionType.window.rawValue
-        currentDefaults[.iTermNewOption] = NewOptionType.window.rawValue
-        currentDefaults[.customApplyToToolbarMenu] = BoolType._false.rawValue
-        currentDefaults[.customApplyToContextMenu] = BoolType._false.rawValue
-        currentDefaults.synchronize()
+        isFirstSetup = true
+        isLaunchAtLogin = false
+        isQuickToggle = false
+        quickToggleType = .openWithDefaultTerminal
+        isHideStatusItem = false
+        isHideContextMenuItems = false
+        defaultTerminal = SupportedApps.terminal.app
+        defaultEditor = SupportedApps.textEdit.app
+        setNewOption(.terminal, .window)
+        setNewOption(.iTerm, .window)
+        isCustomMenuApplyToToolbar = false
+        isCustomMenuApplyToContext = false
+        customMenuIconOption = .no
+        Defaults.synchronize()
     }
     
     public func removeAllUserDefaults() {
         logw("Remove all UserDefaults")
-        currentDefaults.removePersistentDomain(forName: Constants.groupIdentifier)
-        currentDefaults.synchronize()
+        Defaults.removePersistentDomain(forName: Constants.Id.Group)
+        Defaults.synchronize()
     }
     
 }

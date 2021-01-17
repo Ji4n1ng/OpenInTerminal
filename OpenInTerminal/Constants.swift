@@ -12,13 +12,15 @@ import OpenInTerminalCore
 
 struct Constants {
     
-    static let none = "None"
-    static let launcherAppIdentifier = "wang.jianing.app.OpenInTerminalHelper"
-    static let finderExtensionIdentifier = "wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension"
-    
-    struct CellIdentifier {
-        static let customMenuCell = NSUserInterfaceItemIdentifier(rawValue: "customMenuCell")
+    struct Id {
+        static let LauncherApp = "wang.jianing.app.OpenInTerminalHelper"
+        static let FinderExtension = "wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension"
+        static let CustomAppCell = NSUserInterfaceItemIdentifier(rawValue: "customAppCell")
+        static let CustomMenuCell = NSUserInterfaceItemIdentifier(rawValue: "customMenuCell")
+        static let CustomInputViewController = "CustomInputViewController"
     }
+    
+    static let none = "None"
     
     struct Key {
         static let defaultTerminalShortcut = "OIT_DefaultTerminalShortcut"
@@ -26,10 +28,7 @@ struct Constants {
         static let copyPathShortcut = "OIT_CopyPathShortcut"
     }
     
-    /// .terminal, .iTerm, .hyper, .alacritty
-    static let allTerminals: [TerminalType] = [.terminal, .iTerm, .hyper, .alacritty, .kitty]
-    /// .vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate, .cotEditor, .macVim, .phpStorm
-    static let allEditors: [EditorType] = [.textEdit, .vscode, .atom, .sublime, .vscodium, .bbedit, .vscodeInsiders, .textMate, .cotEditor, .macVim, .appCode, .cLion, .goLand, .intelliJIDEA, .phpStorm, .pyCharm, .rubyMine, .webStorm]
+    static let PreferencesStoryboard = NSStoryboard(name: "Preferences", bundle: nil)
 }
 
 extension NSImage {

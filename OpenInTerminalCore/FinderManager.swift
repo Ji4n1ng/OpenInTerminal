@@ -15,8 +15,8 @@ public class FinderManager {
     
     /// Get full path to front Finder window or selected file
     public func getFullPathToFrontFinderWindowOrSelectedFile() throws -> String {
-        
-        let finder = SBApplication(bundleIdentifier: Constants.Finder.id)! as FinderApplication
+
+        let finder = SBApplication(bundleIdentifier: Constants.Id.Finder)! as FinderApplication
         
         var target: FinderItem
         
@@ -26,12 +26,9 @@ public class FinderManager {
         }
         
         if let firstItem = (selectionItems as! Array<AnyObject>).first {
-            
             // Files or folders are selected
             target = firstItem as! FinderItem
-        }
-        else {
-            
+        } else {
             // Check if there are opened finder windows
             guard let windows = finder.FinderWindows?(),
                 let firstWindow = windows.firstObject else {
@@ -53,7 +50,7 @@ public class FinderManager {
     /// Get full paths to front Finder windows or selected files
     public func getFullPathsToFrontFinderWindowOrSelectedFile() throws -> [String] {
         
-        let finder = SBApplication(bundleIdentifier: Constants.Finder.id)! as FinderApplication
+        let finder = SBApplication(bundleIdentifier: Constants.Id.Finder)! as FinderApplication
         
         var targets: [FinderItem]
         
@@ -115,6 +112,13 @@ public class FinderManager {
         return url.absoluteString
     }
     
+    public func getDesktopPath() -> String? {
+        let homePath = NSHomeDirectory()
+        guard let homeUrl = URL(string: homePath) else { return nil }
+        let desktopPath = homeUrl.appendingPathComponent("Desktop").path
+        return desktopPath
+    }
+    
 //    /// Determine if the app exists in the `/Applications` folder
 //    private func applicationExists(_ application: String) -> Bool {
 //        var isInApplication = false
@@ -155,11 +159,13 @@ public class FinderManager {
 //        return self.applicationExists(editorType.fullName)
 //    }
     
-    /// Get all installed applications
+    /// Get all installed applications' names
     public func getAllInstalledApps() -> Set<String> {
-
         var applications: Set<String> = Set()
-        
+        // add system application
+        applications.insert("Terminal")
+        applications.insert("TextEdit")
+        // search
         do {
             var searchDirs: Set<URL> = Set()
             let fileManager = FileManager.default
