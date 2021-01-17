@@ -169,7 +169,6 @@
 		95187395227DF493000CCB3A /* OpenInTerminalHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenInTerminalHelper.entitlements; sourceTree = "<group>"; };
 		951A3EBC2278A6F700E8DB61 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		951A3EBE2278A70F00E8DB61 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		951FC31723C624A700A51B50 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
 		951FC31923C624A900A51B50 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Preferences.strings; sourceTree = "<group>"; };
 		9521EDCB226B475E008445D1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		9521EDCF226B4BE6008445D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -191,8 +190,9 @@
 		95C7C2F1257B7E1E004C8355 /* SupportedApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedApps.swift; sourceTree = "<group>"; };
 		95CE277D257E470F0053D76A /* ScriptManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptManager.swift; sourceTree = "<group>"; };
 		95CE2788257F2F3A0053D76A /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		95DAC9C225B4736600DB729C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
+		95DAC9C425B473D400DB729C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
 		95DD6295243B211B003550B3 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
-		95DD629A243B3F96003550B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
 		95DFC1232354A2C300941D3A /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		95FC9243228BAAD600F51DF2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -770,12 +770,12 @@
 			isa = PBXVariantGroup;
 			children = (
 				95C6C33A227A9EE600F157C4 /* Base */,
-				951FC31723C624A700A51B50 /* zh-Hans */,
 				951FC31923C624A900A51B50 /* fr */,
 				E197D59823E296EB00C5A893 /* ru */,
-				95DD629A243B3F96003550B3 /* en */,
 				C3ACD4CF243E0FEF00462517 /* it */,
 				C1FB06712493518B004AF7B7 /* es */,
+				95DAC9C225B4736600DB729C /* en */,
+				95DAC9C425B473D400DB729C /* zh-Hans */,
 			);
 			name = Preferences.storyboard;
 			sourceTree = "<group>";

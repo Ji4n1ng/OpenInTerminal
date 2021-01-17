@@ -17,8 +17,8 @@
 /* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
 "BUH-CU-WBW.title" = "隐藏状态栏图标";
 
-/* Class = "NSTextFieldCell"; title = "Open a new window or a new tab when opening a path in terminal."; ObjectID = "BrI-hE-Mff"; */
-"BrI-hE-Mff.title" = "当打开终端时，打开一个新的窗口或者标签页。";
+/* Class = "NSTextFieldCell"; title = "Open a new window or a new tab."; ObjectID = "BrI-hE-Mff"; */
+"BrI-hE-Mff.title" = "打开一个新的窗口或者标签。";
 
 /* Class = "NSTextFieldCell"; title = "None"; ObjectID = "Dyx-zg-hYe"; */
 "Dyx-zg-hYe.title" = "无";
@@ -123,7 +123,7 @@
 "ngT-lX-vFA.title" = "启用后，OpenInTerminal 将会在登录时自动启动。";
 
 /* Class = "NSViewController"; title = "Toolbar"; ObjectID = "s5W-qL-1Xs"; */
-"s5W-qL-1Xs.title" = "工具栏";
+"s5W-qL-1Xs.title" = "自定义";
 
 /* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
 "sG4-nK-ghj.title" = "隐藏上下文菜单项";
@@ -145,3 +145,33 @@
 
 /* Class = "NSTextFieldCell"; title = "Custom Menu Options"; ObjectID = "nWc-SM-Kes"; */
 "nWc-SM-Kes.title" = "自定义菜单选项";
+
+/* Class = "NSTextFieldCell"; title = "Icon Type:"; ObjectID = "CP0-Xv-uYl"; */
+"CP0-Xv-uYl.title" = "图标类型:";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Cp7-6g-ngj"; */
+"Cp7-6g-ngj.title" = "取消";
+
+/* Class = "NSButtonCell"; title = "Terminal"; ObjectID = "M3w-T0-vi7"; */
+"M3w-T0-vi7.title" = "终端";
+
+/* Class = "NSTextFieldCell"; title = "Application Type:"; ObjectID = "UCM-Ds-LYN"; */
+"UCM-Ds-LYN.title" = "应用类型:";
+
+/* Class = "NSButtonCell"; title = "Editor"; ObjectID = "fb4-Xq-he0"; */
+"fb4-Xq-he0.title" = "编辑器";
+
+/* Class = "NSTextFieldCell"; title = "Application Name:"; ObjectID = "h5X-oY-gqy"; */
+"h5X-oY-gqy.title" = "应用名称:";
+
+/* Class = "NSButtonCell"; title = "original"; ObjectID = "uok-iD-wXY"; */
+"uok-iD-wXY.title" = "原始";
+
+/* Class = "NSButtonCell"; title = "Confirm"; ObjectID = "wpb-Gv-KAp"; */
+"wpb-Gv-KAp.title" = "确认";
+
+/* Class = "NSButtonCell"; title = "no"; ObjectID = "x6U-9Q-ujh"; */
+"x6U-9Q-ujh.title" = "无";
+
+/* Class = "NSButtonCell"; title = "simple"; ObjectID = "yrq-LZ-XDr"; */
+"yrq-LZ-XDr.title" = "简单";

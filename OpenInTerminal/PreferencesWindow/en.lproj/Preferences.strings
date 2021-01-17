@@ -8,9 +8,6 @@
 /* Class = "NSButtonCell"; title = "Apply to Finder Toolbar Menu"; ObjectID = "2we-f7-s2N"; */
 "2we-f7-s2N.title" = "Apply to Finder Toolbar Menu";
 
-/* Class = "NSButtonCell"; title = "Tab"; ObjectID = "4ss-CQ-brT"; */
-"4ss-CQ-brT.title" = "Tab";
-
 /* Class = "NSTextFieldCell"; title = "If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu."; ObjectID = "592-4p-Ybh"; */
 "592-4p-Ybh.title" = "If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu.";
 
@@ -20,8 +17,14 @@
 /* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
 "BUH-CU-WBW.title" = "Hide Status Bar Icon";
 
-/* Class = "NSTextFieldCell"; title = "Open a new window or a new tab when opening a path in terminal."; ObjectID = "BrI-hE-Mff"; */
-"BrI-hE-Mff.title" = "Open a new window or a new tab when opening a path in terminal.";
+/* Class = "NSTextFieldCell"; title = "Open a new window or a new tab."; ObjectID = "BrI-hE-Mff"; */
+"BrI-hE-Mff.title" = "Open a new window or a new tab.";
+
+/* Class = "NSTextFieldCell"; title = "Icon Type:"; ObjectID = "CP0-Xv-uYl"; */
+"CP0-Xv-uYl.title" = "Icon Type:";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Cp7-6g-ngj"; */
+"Cp7-6g-ngj.title" = "Cancel";
 
 /* Class = "NSTextFieldCell"; title = "None"; ObjectID = "Dyx-zg-hYe"; */
 "Dyx-zg-hYe.title" = "None";
@@ -56,6 +59,9 @@
 /* Class = "NSTextFieldCell"; title = "💸 Donate:"; ObjectID = "Kua-ZD-31F"; */
 "Kua-ZD-31F.title" = "💸 Donate:";
 
+/* Class = "NSButtonCell"; title = "Terminal"; ObjectID = "M3w-T0-vi7"; */
+"M3w-T0-vi7.title" = "Terminal";
+
 /* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
 "Mqt-Fp-Ssl.title" = "Open with default Terminal:";
 
@@ -67,6 +73,9 @@
 
 /* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
 "Sw7-of-ecf.title" = "Alipay";
+
+/* Class = "NSTextFieldCell"; title = "Application Type:"; ObjectID = "UCM-Ds-LYN"; */
+"UCM-Ds-LYN.title" = "Application Type:";
 
 /* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
 "Upf-HU-iaN.title" = "You need to reopen the app to display Preferences.";
@@ -101,11 +110,14 @@
 /* Class = "NSButtonCell"; title = "github.com/Ji4n1ng/OpenInTerminal"; ObjectID = "f2V-P5-pQI"; */
 "f2V-P5-pQI.title" = "github.com/Ji4n1ng/OpenInTerminal";
 
-/* Class = "NSTextFieldCell"; title = "Terminal"; ObjectID = "fA9-Hd-yjp"; */
-"fA9-Hd-yjp.title" = "Terminal";
+/* Class = "NSButtonCell"; title = "Editor"; ObjectID = "fb4-Xq-he0"; */
+"fb4-Xq-he0.title" = "Editor";
 
 /* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
 "gy9-lb-m8d.title" = "Quick Toggle";
+
+/* Class = "NSTextFieldCell"; title = "Application Name:"; ObjectID = "h5X-oY-gqy"; */
+"h5X-oY-gqy.title" = "Application Name:";
 
 /* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
 "jcs-Ou-OZ2.title" = "Reset";
@@ -137,17 +149,26 @@
 /* Class = "NSTextFieldCell"; title = "OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
 "ngT-lX-vFA.title" = "OpenInTerminal will automatically launch at login.";
 
-/* Class = "NSViewController"; title = "Toolbar"; ObjectID = "s5W-qL-1Xs"; */
-"s5W-qL-1Xs.title" = "Toolbar";
+/* Class = "NSViewController"; title = "Custom"; ObjectID = "s5W-qL-1Xs"; */
+"s5W-qL-1Xs.title" = "Custom";
 
 /* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
 "sG4-nK-ghj.title" = "Hide Context Menu Items";
 
-/* Class = "NSButtonCell"; title = "Window"; ObjectID = "sik-wU-ZF2"; */
-"sik-wU-ZF2.title" = "Window";
-
 /* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */
 "tR5-me-DTK.title" = "@Ji4n1ng";
 
+/* Class = "NSButtonCell"; title = "original"; ObjectID = "uok-iD-wXY"; */
+"uok-iD-wXY.title" = "original";
+
+/* Class = "NSButtonCell"; title = "Confirm"; ObjectID = "wpb-Gv-KAp"; */
+"wpb-Gv-KAp.title" = "Confirm";
+
+/* Class = "NSButtonCell"; title = "no"; ObjectID = "x6U-9Q-ujh"; */
+"x6U-9Q-ujh.title" = "no";
+
 /* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
 "yIW-2a-15A.title" = "iTerm";
+
+/* Class = "NSButtonCell"; title = "simple"; ObjectID = "yrq-LZ-XDr"; */
+"yrq-LZ-XDr.title" = "simple";
