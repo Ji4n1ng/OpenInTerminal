@@ -31,3 +31,9 @@
 
 "toolbar.item_name" = "Open in Terminal";
 "toolbar.item_tooltip" = "打开当前路径到终端";
+
+"pref.custom.menu.installed_supported" = "已安装的受支持的应用";
+"pref.custom.menu.all_supported" = "所有受支持的应用";
+"pref.custom.menu.running_apps" = "正在运行的应用";
+"pref.custom.menu.manually_select" = "从访达中手动选择";
+"pref.custom.menu.manually_input" = "手动输入";

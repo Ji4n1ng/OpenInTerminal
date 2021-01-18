@@ -204,7 +204,7 @@ class CustomPreferencesViewController: PreferencesViewController {
             installedSupportedMenu.addItem(menuItem)
         }
         let installedSupportedMenuItem = NSMenuItem()
-        installedSupportedMenuItem.title = "Installed Supported Apps"
+        installedSupportedMenuItem.title = NSLocalizedString("pref.custom.menu.installed_supported", comment: "Installed Supported Apps")
         addOptionMenu.addItem(installedSupportedMenuItem)
         addOptionMenu.setSubmenu(installedSupportedMenu, for: installedSupportedMenuItem)
         
@@ -220,7 +220,7 @@ class CustomPreferencesViewController: PreferencesViewController {
             supportedMenu.addItem(menuItem)
         }
         let supportedMenuItem = NSMenuItem()
-        supportedMenuItem.title = "All Supported Apps"
+        supportedMenuItem.title = NSLocalizedString("pref.custom.menu.all_supported", comment: "All Supported Apps")
         addOptionMenu.addItem(supportedMenuItem)
         addOptionMenu.setSubmenu(supportedMenu, for: supportedMenuItem)
         
@@ -244,19 +244,21 @@ class CustomPreferencesViewController: PreferencesViewController {
             runningApps.append(app)
         }
         let runningMenuItem = NSMenuItem()
-        runningMenuItem.title = "Running Apps"
+        runningMenuItem.title = NSLocalizedString("pref.custom.menu.running_apps", comment: "Running Apps")
         addOptionMenu.addItem(runningMenuItem)
         addOptionMenu.setSubmenu(runningMenu, for: runningMenuItem)
         
         // 4. Manually Select From Finder
-        let manuallySelectMenuItem = NSMenuItem(title: "Manually Select From Finder",
+        let manuallySelectTitle = NSLocalizedString("pref.custom.menu.manually_select", comment: "Manually Select From Finder")
+        let manuallySelectMenuItem = NSMenuItem(title: manuallySelectTitle,
                                                 action: #selector(selectManuallySelect),
                                                 keyEquivalent: "")
         manuallySelectMenuItem.target = self
         addOptionMenu.addItem(manuallySelectMenuItem)
         
         // 5. Manually Input
-        let manuallyInputMenuItem = NSMenuItem(title: "Manually Input",
+        let manuallyInputTitle = NSLocalizedString("pref.custom.menu.manually_input", comment: "Manually Input")
+        let manuallyInputMenuItem = NSMenuItem(title: manuallyInputTitle,
                                                 action: #selector(selectManuallyInput),
                                                 keyEquivalent: "")
         manuallyInputMenuItem.target = self
@@ -438,9 +440,7 @@ extension CustomPreferencesViewController: NSMenuDelegate {
             result in
             if result.rawValue == NSFileHandlingPanelOKButton && result == NSApplication.ModalResponse.OK {
                 if let appPath = openPanel.url?.path,
-                   let appBundleId = Bundle(url: openPanel.url!)?.bundleIdentifier {
-                    print("appPath: \(appPath)")
-                    print("appBundleId: \(appBundleId)")
+                   let _ = Bundle(url: openPanel.url!)?.bundleIdentifier {
                     let name = AppManager.getApplicationFileName(from: appPath)
                     self.showCustomInputViewController(name)
                 } else {
