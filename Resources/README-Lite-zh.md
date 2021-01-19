@@ -210,6 +210,11 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 <p>对于 <code>OpenInTerminal</code> 来说，访达工具栏里的图标是访达扩展图标，所以支持根据深色模式自动切换图标。</p>
 </details>
 
+<details><summary>4. 我的自定义应用不工作</summary><br>
+<p>如果你的自定义应用不能通过运行以下命令正常运行，那么该应用不支持通过 OpenInTerminal 打开。例如，GitHub Desktop:</p>
+<code>open -a GitHub\ Desktop ~/Desktop</code>
+</details>
+
 ## 特别感谢 ❤️
 
 ### 贡献者

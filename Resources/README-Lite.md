@@ -210,6 +210,11 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder extension icon. It can change automatically when switching between dark mode and light mode. So you can try to use OpenInTerminal.</p>
 </details>
 
+<details><summary>4. My custom app doesn't work.</summary><br>
+<p>If your custom application cannot work by running the following command, then the application cannot be supported. For example, GitHub Desktop:</p>
+<code>open -a GitHub\ Desktop ~/Desktop</code>
+</details>
+
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
