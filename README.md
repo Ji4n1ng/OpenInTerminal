@@ -1,6 +1,6 @@
 <p align="center">
-  <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588733-b7e38400-7871-11ea-9c3d-0f6a3c252225.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.2.3"><img src="https://img.shields.io/badge/Version-2.2.3-blue.svg"></a>
+  <img width="100%" src="https://user-images.githubusercontent.com/11001224/104892170-d18f2b80-59ac-11eb-96b1-0293acfde4e5.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.0"><img src="https://img.shields.io/badge/Version-2.3.0-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -12,10 +12,10 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
 
 ## How to use 🚀
 
-| Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
-| --- | --- | --- |
-| Open current directory in Terminal (or Editor) | ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif) | ![](https://user-images.githubusercontent.com/11001224/78589363-b23a6e00-7872-11ea-841d-79227b1125ce.gif) |
-| Open selected folder or file in Terminal (or Editor) | ![](https://user-images.githubusercontent.com/11001224/78589369-b36b9b00-7872-11ea-8a9e-e3f23e7ce80e.gif) | ![](https://user-images.githubusercontent.com/11001224/78589359-afd81400-7872-11ea-8032-8035d4412b19.gif) |
+| Core Features | OpenInTerminal |
+| --- | --- |
+| Open X (e.g., folders or files) in Terminal or Editor | ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif) | 
+| Open the selected in X (e.g., Github Desktop) | ![](https://user-images.githubusercontent.com/11001224/104891620-28483580-59ac-11eb-9fb5-3e4dec7863cc.gif) |
 
 ### More features
 
@@ -23,12 +23,10 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md)
 | --- | --- | --- |
 | Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty) and [kitty](https://sw.kovidgoyal.net/kitty/). | ✅ | ✅ |
 | Support TextEdit, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim) and [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm). | ✅ | ✅ |
-| Set to open a new tab or window. | ✅ | ✅ |
+| Open in custom apps. (⚠️ Not all apps support.) | ✅ | ✅ |
 | Support English, Chinese, French, Russian, Italian and Spanish. | ✅ | ✅ |
-| Copy path of the selected file or Finder window to Clipboard | ✅ |  ❌ |
 | GUI preferences | ✅ | ❌ |
 | Support keyboard shortcuts. | ✅ | ❌ |
-| Support Dark Mode. | ✅ | ❌ |
 
 ## OpenInTerminal and OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
@@ -70,12 +68,9 @@ Open the OpenInTerminal app. Go to `System Preferences` -> `Extensions` -> `Find
 
 If you have a good idea, feel welcome to open a new [issue](https://github.com/Ji4n1ng/OpenInTerminal/issues/new/choose).
 
-- Open iTerm in split pane
-- Fix: open multiple selected files in editor
-
 ## Support ❤️
 
-Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project I maintain in my spare time. It is free and open source. I will be very grateful that you can support me in purchasing an Apple Developer account. $99/year is not a small expense for students. It's close to my three-week living expenses. Thanks a lot!
+Thank you for your support!
 
 | PayPal | AliPay | WeChat Pay |
 | --- | --- | --- |
@@ -100,8 +95,9 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 <p>This problem usually occurs when Terminal is first started. So you can use <code>⌘W</code> to close Terminal window instead of using <code>⌘Q</code> to quit Terminal.</p>
 </details>
 
-<details><summary>5. Finder Extension Standalone Operation Mode</summary><br>
+<details><summary>5. OpenInTerminal Finder extension doesn't work.</summary><br>
 <p>Currently Finder extension is completely dependent on AppleScript in order to run independently. So it is hard to guarantee its stability. When you find that Finder extension doesn't work properly, you need to hold down the <code>Option(⌥)</code> key, right-click on Finder, and select <code>Relaunch</code>.</p>
+<p>If your Mac model is a bit old like mine, I suggest you cancel the icon in the context menu in Preferences. If it still crashes frequently, it is recommended to use OpenInTerminal-Lite.</p>
 </details>
 
 <details><summary>6. OpenInTerminal doesn't work as I expected</summary><br>
@@ -127,9 +123,19 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 <p>(BTW, I know there are apps that are sandboxed and can achieve the same effect as OpenInTerminal. But I don't know how it implements this. If anyone knows it and is willing to talk to me, that would be great. I'm very happy to make OpenInTerminal more perfect so that one version is enough.😀)</p>
 </details>
 
+<details><summary>8. My custom app doesn't work.</summary><br>
+<p>If your custom application cannot work by running the following command, then the application cannot be supported. For example, GitHub Desktop:</p>
+<code>open -a GitHub\ Desktop ~/Desktop</code>
+</details>
+
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 2.3.0</strong></p>
+<ul>
+<li>Open custom apps. (Not all apps support)</li>
+<li>Show icon in context menu. (For stability, old Mac models are not recommended to display icons)</li>
+</ul>
 <p><strong>version 2.2.3</strong></p>
 <ul>
 <li>Support kitty</li>
@@ -238,14 +244,19 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 
 ## Special Thanks to ❤️
 
+Thanks to all contributors. Your work makes OpenInTerminal better.
+
 ### Contributors
 
 - [Camji55](https://github.com/Camji55)
 - [gucheen](https://github.com/gucheen)
+- [uclort](https://github.com/uclort)
+- [MatteoCarnelos](https://github.com/MatteoCarnelos)
 
 ### Translators
 
 - [Dorian Eydoux](https://github.com/dorian-eydoux)
+- [techinpark](https://github.com/techinpark)
 - [Egor](https://github.com/Rogue85)
 - [arendruni](https://github.com/arendruni)
 - [panta97](https://github.com/panta97)
@@ -256,3 +267,4 @@ Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project
 - [es-kumagai/OpenTerminal](https://github.com/es-kumagai/OpenTerminal)
 - [tingraldi/SwiftScripting](https://github.com/tingraldi/SwiftScripting)
 - [onmyway133/FinderGo](https://github.com/onmyway133/FinderGo)
+- [Caldis/Mos](https://github.com/Caldis/Mos/)

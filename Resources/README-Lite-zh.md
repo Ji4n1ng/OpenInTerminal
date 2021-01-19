@@ -1,6 +1,6 @@
 <p align="center">
-  <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588756-bf0a9200-7871-11ea-9aba-b00284c07c21.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.5"><img src="https://img.shields.io/badge/Version-1.1.5-blue.svg"></a>
+  <img width="100%" src="https://user-images.githubusercontent.com/11001224/104892184-d522b280-59ac-11eb-9c06-5ffd044dce7d.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v1.2.0"><img src="https://img.shields.io/badge/Version-1.2.0-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -21,6 +21,12 @@
 
 <div>
   <img src="https://user-images.githubusercontent.com/11001224/78589359-afd81400-7872-11ea-8032-8035d4412b19.gif" width="600px">
+</div>
+
+### 3) 在自定义应用中打开 (例如, GitHub Desktop)
+
+<div>
+  <img src="https://user-images.githubusercontent.com/11001224/104891620-28483580-59ac-11eb-9fb5-3e4dec7863cc.gif" width="600px">
 </div>
 
 ## 如何安装 🖥
@@ -51,7 +57,7 @@ brew install --cask openineditor-lite
 
 ## 支持 ❤️
 
-你好，我是 Ji4n1ng。我是一名学生，OpenInTerminal 是我空余时间维护的一个开源项目。它是免费且开源的。如果你能支持我购买苹果开发者账号，我将非常感激。一年 99 美元的花费对于学生来说，并不是一个小的数字，它几乎是我三个星期的生活费。非常感谢！
+感谢你的支持！
 
 | PayPal | 支付宝 | 微信 |
 | --- | --- | --- |
@@ -61,44 +67,49 @@ brew install --cask openineditor-lite
 
 ### 1) 设置默认终端（或编辑器）
 
-在第一次运行应用的时候，你需要选择默认终端。
+在第一次运行应用的时候，需要选择默认终端。
 
 <div>
   <img src="https://user-images.githubusercontent.com/11001224/78600459-8b396780-7885-11ea-8226-2fe45e539134.png" width="45%">
   <img src="https://user-images.githubusercontent.com/11001224/78600438-88d70d80-7885-11ea-9bcb-d70fcaaf7334.png" width="45%">
 </div>
 
-当你设置了默认终端之后，选择框将不会再出现。如果你想要重新设置默认终端，请在终端中输入以下命令。然后重新运行应用。
+当设置了默认终端之后，选择框将不会再出现。如果想要重新设置默认终端，请在终端中输入以下命令。然后重新运行应用。
 
 ```
 # 对于 OpenInTerminal-Lite:
-defaults remove wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
+defaults remove wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal
 # 对于 OpenInEditor-Lite:
-defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
+defaults remove wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor
 ```
 
 将下列应用设置为默认：
 
 | 应用 | 命令 |
 | --- | --- |
-| Alacritty | `defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty` |
-| kitty | `defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier kitty` |
-| TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextEdit` |
-| VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium` |
-| BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit` |
-| Visual Studio Code - Insiders | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders` |
-| TextMate | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate` |
-| CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CotEditor` |
-| MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier MacVim` |
-| AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier AppCode` |
-| CLion | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CLion` |
-| GoLand | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier GoLand` |
-| IntelliJ IDEA | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier IntelliJ_IDEA` |
-| PhpStorm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PhpStorm` |
-| PyCharm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PyCharm` |
-| RubyMine | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier RubyMine` |
-| WebStorm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier WebStorm` |
+| Alacritty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal Alacritty` |
+| kitty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal kitty` |
+| TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextEdit` |
+| VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor VSCodium` |
+| BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor BBEdit` |
+| Visual Studio Code - Insiders | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Visual\ Studio\ Code\ -\ Insiders` |
+| TextMate | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextMate` |
+| CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CotEditor` |
+| MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor MacVim` |
+| AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor AppCode` |
+| CLion | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CLion` |
+| GoLand | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor GoLand` |
+| IntelliJ IDEA | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor IntelliJ\ IDEA` |
+| PhpStorm | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor PhpStorm` |
+| PyCharm | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor PyCharm` |
+| RubyMine | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor RubyMine` |
+| WebStorm | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor WebStorm` |
 
+如果你想要使用自定义应用，那么你可以下面的命令。以 GitHub Desktop 为例。
+
+```
+defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal GitHub\ Desktop
+```
 
 ### 2) 如果你正在使用深色模式 (Dark Mode)
 
@@ -107,36 +118,76 @@ defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
 <div>
   <img src="https://user-images.githubusercontent.com/11001224/78600452-8aa0d100-7885-11ea-8a90-cc88b9233dac.png" width="600px">
   <br>
+</div>
+
+#### a. 手动更换图标
+
+<div>
   <img src="https://user-images.githubusercontent.com/11001224/78590421-68eb1e00-7874-11ea-91e3-61cfd5ba3a26.gif" width="600px">
 </div>
 
-### 3) 打开新的标签页或者窗口
+#### b. 利用 [Hammerspoon](https://www.hammerspoon.org) 自动更换图标
 
-当你在使用 `Terminal` 或者 `iTerm`，你可以设置默认打开一个新的标签页或者窗口。**默认**是打开新的窗口。
+对于使用 macOS 的自动 Dark mode 功能的用户来说，下面的步骤特别有用。
 
-#### 对于 Terminal:
-
+1. 通过[下载最新版本](https://github.com/Hammerspoon/hammerspoon/releases/latest) 并将其拖动到 `/Applications` 文件夹中，或使用 Homebrew 安装 Hammerspoon: 
 ```
-# 打开新的标签页
-defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalNewOption tab
-# 打开新的窗口
-defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalNewOption window
+brew cask install hammerspoon
 ```
 
-#### 对于 iTerm:
+2. 安装 [fileicon](https://github.com/mklement0/fileicon) 程序，以编程的方式更改图标: 
+```
+brew install fileicon
+```
+
+3. 创建 `~/.hammerspoon/Icons` 文件夹，并将图标放在此处
+
+4. 创建 `~/.hammerspoon/init.lua` 文件（如果该文件不存在），并添加以下代码：
+```lua
+local function setOpenInEditorLiteIcon(dark)
+  -- 如果安装到其他路径，请替换下面的路径
+  local appPath = "/Applications/OpenInEditor-Lite.app"
+  -- 根据你想使用的图标(editor, atom, sublime, vscode)来更改下面的类型
+  local iconType = "editor"
+  local iconsFolder = hs.fs.currentDir() .. "/Icons"
+  local theme = dark and "dark" or "light"
+  hs.execute('fileicon set "' .. appPath .. '" "' .. iconsFolder .. "/icon_" .. iconType .. "_" .. theme .. '.icns"', true)
+end
+
+local function setOpenInTerminalLiteIcon(dark)
+  -- 如果安装到其他路径，请替换下面的路径
+  local appPath = "/Applications/OpenInTerminal-Lite.app"
+  -- 根据你想使用的图标(terminal, iterm, hyper)来更改下面的类型
+  local iconType = "terminal"
+  local iconsFolder = hs.fs.currentDir() .. "/Icons"
+  local theme = dark and "dark" or "light"
+  hs.execute('fileicon set "' .. appPath .. '" "' .. iconsFolder .. "/icon_" .. iconType .. "_" .. theme .. '.icns"', true)
+end
+
+local function updateIcons()
+  darkMode = (hs.settings.get("AppleInterfaceStyle") == "Dark")
+  setOpenInEditorLiteIcon(darkMode)
+  setOpenInTerminalLiteIcon(darkMode)
+end
+
+updateIcons()
+hs.settings.watchKey("dark_mode", "AppleInterfaceStyle", function()
+  updateIcons()
+end)
+```
+
+现在可以重新加载配置文件（或重新启动 Hammerspoon），就完成了！从亮模式切换为暗模式时，图标应自动更新，反之亦然。不要忘记勾选 "登录时启动 Hammerspoon" 选项。
+
+### 3) 使用 iTerm 时，打开新的标签页或者窗口
+
+当你在使用 `iTerm` 时，你可以设置默认打开一个新的标签或者窗口。**默认**是打开新的窗口。
 
 ```
-# 打开新的标签页
+# 打开新的标签
 defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool false
 # 打开新的窗口
 defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 ```
-
-对于 `Hyper` 用户来说，更推荐打开新的标签页。
-
-对于 `Alacritty` 用户来说，目前只支持打开新的窗口。
-
-对于 `Kitty` 用户来说，目前只支持打开新的窗口。
 
 ## 常见问题 ❓
 
@@ -154,7 +205,8 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 </details>
 
 <details><summary>3. 为什么不能根据深色模式自动切换图标</summary><br>
-<p>对于 <code>OpenInTerminal-Lite</code> 来说，访达工具栏里的图标是应用图标，而不是访达扩展图标。目前我还没找到 API 可以更换应用图标（如果你有好的建议，请告诉我谢谢）。因此，目前不支持根据深色模式自动切换图标。<br>
+<p>对于 <code>OpenInTerminal-Lite</code> 来说，访达工具栏里的图标是应用图标，而不是访达扩展图标。目前我还没找到 API 可以更换应用图标（如果你有好的建议，请告诉我谢谢）。</p>
+<p>补充：感谢 @MatteoCarnelos 的贡献(#126)，<code>OpenInTerminal-Lite</code>现在可以通过 Hammerspoon 来自动更换图标。</p><br>
 <p>对于 <code>OpenInTerminal</code> 来说，访达工具栏里的图标是访达扩展图标，所以支持根据深色模式自动切换图标。</p>
 </details>
 
@@ -164,6 +216,8 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 
 - [Camji55](https://github.com/Camji55)
 - [gucheen](https://github.com/gucheen)
+- [uclort](https://github.com/uclort)
+- [MatteoCarnelos](https://github.com/MatteoCarnelos)
 
 ### 译者
 
@@ -179,3 +233,4 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 - [es-kumagai/OpenTerminal](https://github.com/es-kumagai/OpenTerminal)
 - [tingraldi/SwiftScripting](https://github.com/tingraldi/SwiftScripting)
 - [onmyway133/FinderGo](https://github.com/onmyway133/FinderGo)
+- [Caldis/Mos](https://github.com/Caldis/Mos/)

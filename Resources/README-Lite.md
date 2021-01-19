@@ -1,6 +1,6 @@
 <p align="center">
-  <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588756-bf0a9200-7871-11ea-9aba-b00284c07c21.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/1.1.5"><img src="https://img.shields.io/badge/Version-1.1.5-blue.svg"></a>
+  <img width="100%" src="https://user-images.githubusercontent.com/11001224/104892184-d522b280-59ac-11eb-9c06-5ffd044dce7d.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v1.2.0"><img src="https://img.shields.io/badge/Version-1.2.0-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -20,6 +20,12 @@ English | [中文说明](./README-Lite-zh.md)
 
 <div>
   <img src="https://user-images.githubusercontent.com/11001224/78589359-afd81400-7872-11ea-8032-8035d4412b19.gif" width="600px">
+</div>
+
+### 3) Open the selected in X (e.g., GitHub Desktop)
+
+<div>
+  <img src="https://user-images.githubusercontent.com/11001224/104891620-28483580-59ac-11eb-9fb5-3e4dec7863cc.gif" width="600px">
 </div>
 
 ## How to install 🖥
@@ -50,7 +56,7 @@ brew install --cask openineditor-lite
 
 ## Support ❤️
 
-Hello, I am Ji4n1ng. I am a student and OpenInTerminal is an open source project I maintain in my spare time. It is free and open source. I will be very grateful that you can support me in purchasing an Apple Developer account. $99/year is not a small expense for students. It's close to my three-week living expenses. Thanks a lot!
+Thank you for your support!
 
 | PayPal | AliPay | WeChat Pay |
 | --- | --- | --- |
@@ -71,32 +77,38 @@ The selection box will not appear after you have set the default terminal. If yo
 
 ```
 # For OpenInTerminal-Lite:
-defaults remove wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier
+defaults remove wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal
 # For OpenInEditor-Lite:
-defaults remove wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier
+defaults remove wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor
 ```
 
 Set the following app as the default app to open:
 
 | App | Command |
 | --- | --- |
-| Alacritty | `defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier Alacritty` |
-| kitty | `defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalBundleIdentifier kitty` |
-| TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextEdit` |
-| VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodium` |
-| BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier BBEdit` |
-| Visual Studio Code - Insiders | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier VSCodeInsiders` |
-| TextMate | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier TextMate` |
-| CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CotEditor` |
-| MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier MacVim` |
-| AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier AppCode` |
-| CLion | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier CLion` |
-| GoLand | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier GoLand` |
-| IntelliJ IDEA | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier IntelliJ_IDEA` |
-| PhpStorm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PhpStorm` |
-| PyCharm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier PyCharm` |
-| RubyMine | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier RubyMine` |
-| WebStorm | `defaults write wang.jianing.app.OpenInEditor-Lite OIT_EditorBundleIdentifier WebStorm` |
+| Alacritty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal Alacritty` |
+| kitty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal kitty` |
+| TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextEdit` |
+| VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor VSCodium` |
+| BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor BBEdit` |
+| Visual Studio Code - Insiders | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Visual\ Studio\ Code\ -\ Insiders` |
+| TextMate | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextMate` |
+| CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CotEditor` |
+| MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor MacVim` |
+| AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor AppCode` |
+| CLion | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CLion` |
+| GoLand | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor GoLand` |
+| IntelliJ IDEA | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor IntelliJ\ IDEA` |
+| PhpStorm | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor PhpStorm` |
+| PyCharm | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor PyCharm` |
+| RubyMine | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor RubyMine` |
+| WebStorm | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor WebStorm` |
+
+In particular, if you want to use a custom application as the default, then you can also use this command. Take `GitHub Desktop` as an example.
+
+```
+defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal GitHub\ Desktop
+```
 
 ### 2) If you are using Dark Mode
 
@@ -106,7 +118,7 @@ I provided several icons along with the app in the [release](https://github.com/
   <img src="https://user-images.githubusercontent.com/11001224/78600452-8aa0d100-7885-11ea-8a90-cc88b9233dac.png" width="600px">
 </div>
 
-#### Changing the icon manually
+#### a. Changing the icon manually
 
 You can right click on the app and select `Get Info`. Drag the icon to cover the default icon.
 
@@ -114,7 +126,7 @@ You can right click on the app and select `Get Info`. Drag the icon to cover the
   <img src="https://user-images.githubusercontent.com/11001224/78590421-68eb1e00-7874-11ea-91e3-61cfd5ba3a26.gif" width="600px">
 </div>
 
-#### Changing the icon automatically with [Hammerspoon](https://www.hammerspoon.org)
+#### b. Changing the icon automatically with [Hammerspoon](https://www.hammerspoon.org)
 
 This procedure is particularly useful for those using the automatic dark/light mode switching feature of macOS.
 
@@ -166,20 +178,9 @@ end)
 
 You can now reload the config file (or restart hammerspoon) and you're done! The icons should automatically update when switching from light to dark mode and vice versa. Don't forget to check the "Launch Hammerspoon at login" option.
 
-### 3) Open in a new Tab or Window
+### 3) Open in a new Tab or Window when using iTerm
 
-When you are using `Terminal` and `iTerm`, you can set a default to open a new tab or window. The **default** is to open a new window. 
-
-#### For Terminal:
-
-```
-# Open a new Tab
-defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalNewOption tab
-# Open a new Window
-defaults write wang.jianing.app.OpenInTerminal-Lite OIT_TerminalNewOption window
-```
-
-#### For iTerm:
+When you are using `iTerm`, you can set a default to open a new tab or window. The **default** is to open a new window. 
 
 ```
 # Open a new Tab
@@ -187,12 +188,6 @@ defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool false
 # Open a new Window
 defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 ```
-
-For `Hyper` users, it is more recommended to open a new tab.
-
-For `Alacritty` users, it is only supported to open a new window now.
-
-For `Kitty` users, it is only supported to open a new window now.
 
 ## FAQ ❓
 
@@ -206,17 +201,23 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 </details>
 
 <details><summary>2. Special characters in the <code>path</code>.</summary><br>
-<p>Please do not use backslash <code>\</code> and double quotes <code>"</code>   in the path</p>
+<p>Please do not use backslash <code>\</code> and double quotes <code>"</code> in the path</p>
 </details>
 
 <details><summary>3. Why it cannot automatically switch icons when switching from/to Dark mode</summary><br>
-<p>As for <code>OpenInTerminal-Lite</code>, the icon in Finder Toolbar is app icon not Finder extension icon. And I have not found a API to change the app icon (If you have any good idea, please let me know). Therefore, it is not currently possible to replace it automatically based on Dark mode.<br>
+<p>As for <code>OpenInTerminal-Lite</code>, the icon in Finder Toolbar is app icon not Finder extension icon. And I have not found a API to change the app icon (If you have any good idea, please let me know). 
+<p>Added: Thanks to the contribution (#126) of @MatteoCarnelos, <code>OpenInTerminal-Lite</code> can now automatically switch icons using Hammerspoon.</p><br>
 As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder extension icon. It can change automatically when switching between dark mode and light mode. So you can try to use OpenInTerminal.</p>
 </details>
 
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 1.2.0</strong></p>
+<ul>
+<li>Support setting custom app (Not all apps support)</li>
+<li>BigSur-style icon</li>
+</ul>
 <p><strong>version 1.1.5</strong></p>
 <ul>
 <li>fix bug in OpenInEditor-Lite</li>
@@ -311,6 +312,8 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 
 - [Camji55](https://github.com/Camji55)
 - [gucheen](https://github.com/gucheen)
+- [uclort](https://github.com/uclort)
+- [MatteoCarnelos](https://github.com/MatteoCarnelos)
 
 ### Translators
 
@@ -326,3 +329,4 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 - [es-kumagai/OpenTerminal](https://github.com/es-kumagai/OpenTerminal)
 - [tingraldi/SwiftScripting](https://github.com/tingraldi/SwiftScripting)
 - [onmyway133/FinderGo](https://github.com/onmyway133/FinderGo)
+- [Caldis/Mos](https://github.com/Caldis/Mos/)

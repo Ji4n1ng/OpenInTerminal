@@ -1,6 +1,6 @@
 <p align="center">
-  <img width="100%" src="https://user-images.githubusercontent.com/11001224/78588733-b7e38400-7871-11ea-9c3d-0f6a3c252225.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/2.2.3"><img src="https://img.shields.io/badge/Version-2.2.3-blue.svg"></a>
+  <img width="100%" src="https://user-images.githubusercontent.com/11001224/104892170-d18f2b80-59ac-11eb-96b1-0293acfde4e5.png"><br/><br/>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.0"><img src="https://img.shields.io/badge/Version-2.3.0-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg
   "></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
@@ -13,10 +13,10 @@
 
 ## 如何使用 🚀
 
-| 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
-| --- | --- | --- |
-| 在终端（或编辑器）中打开当前目录 | ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif) | ![](https://user-images.githubusercontent.com/11001224/78589363-b23a6e00-7872-11ea-841d-79227b1125ce.gif) |
-| 在终端（或编辑器）中打开选择的文件夹或文件 | ![](https://user-images.githubusercontent.com/11001224/78589369-b36b9b00-7872-11ea-8a9e-e3f23e7ce80e.gif) | ![](https://user-images.githubusercontent.com/11001224/78589359-afd81400-7872-11ea-8032-8035d4412b19.gif) |
+| 核心功能 | OpenInTerminal |
+| --- | --- |
+| 在终端（或编辑器）中打开目录或文件 | ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif) |
+| 在自定义应用中打开（以 GitHub Desktop 为例） | ![](https://user-images.githubusercontent.com/11001224/104891620-28483580-59ac-11eb-9fb5-3e4dec7863cc.gif) |
 
 ### 更多功能
 
@@ -24,12 +24,10 @@
 | --- | --- | --- |
 | 支持 终端, [iTerm](https://www.iterm2.com/)， [Hyper](https://github.com/zeit/hyper)， [Alacritty](https://github.com/jwilm/alacritty) 和 [kitty](https://sw.kovidgoyal.net/kitty/) | ✅ | ✅ |
 | 支持 文本编辑, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim) 和 [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm) | ✅ | ✅ |
-| 设置为打开新的窗口或者标签页 | ✅ | ✅ |
+| 打开自定义应用（⚠️ 并不是所有的应用都支持） | ✅ | ✅ |
 | 支持中文，英语，法语，俄语，意大利语和西班牙语 | ✅ | ✅ |
-| 将已选择的文件或者访达窗口的路径拷贝到粘贴板 | ✅ | ❌ |
 | 图形化设置界面 | ✅ | ❌ |
 | 支持键盘快捷键 | ✅ | ❌ |
-| 支持 Dark Mode | ✅ | ❌ |
 
 ## OpenInTerminal 和 OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
@@ -68,7 +66,7 @@ brew install --cask openinterminal
 
 ## 支持 ❤️
 
-你好，我是 Ji4n1ng。我是一名学生，OpenInTerminal 是我空余时间维护的一个开源项目。它是免费且开源的。如果你能支持我购买苹果开发者账号，我将非常感激。一年 99 美元的花费对于学生来说，并不是一个小的数字，它几乎是我三个星期的生活费。非常感谢！
+感谢各位的支持！
 
 | PayPal | 支付宝 | 微信 |
 | --- | --- | --- |
@@ -94,8 +92,9 @@ brew install --cask openinterminal
 <p>这个问题只发生在第一次启动终端的时候。所以，你可以通过 <code>⌘W</code> 来关闭终端的窗口，而不是用 <code>⌘Q</code> 来退出终端。</p>
 </details>
 
-<details><summary>5. 访达扩展独立运行模式</summary><br>
+<details><summary>5. 访达扩展不工作</summary><br>
 <p>访达扩展目前完全依赖于 AppleScript 以便于能够独立运行。所以很难保证它的稳定性。当你发现访达扩展不能正常工作的时候，你需要按住 <code>Option(⌥)</code> 键，右键点击访达并选择 <code>重启</code>。</p>
+<p>如果你的 Mac 型号比较老，建议取消在上下文菜单中显示图标。如果访达扩展仍旧频繁崩溃，强烈建议使用 OpenInTerminal-Lite</p>
 </details>
 
 <details><summary>6. OpenInTerminal 并不按照我的预期来工作</summary><br>
@@ -110,7 +109,7 @@ brew install --cask openinterminal
 <p>答：选中一个文件（文件夹）或者打开一个访达窗口。因为当你右键点击桌面的时候，没有任何东西是被选中的状态，所以系统并不能把选中文件的路径提供给程序使用。在这种情况下，程序将不能正常工作。<br>目前访达扩展和状态栏菜单中的功能并不是同一种方式来实现的。访达扩展为了能够独立运行，现在完全基于 AppleScript。然而状态栏菜单中的功能的实现方式还和以前一样。所以它们会有不同的表现行为。这个问题会在未来得到改进。</p>
 </details>
 
-<details><summary>7. OpenInTerminal 的实现机制以及为什么会有两个版本。</summary><br>
+<details><summary>7. OpenInTerminal 的实现机制以及为什么会有两个版本</summary><br>
 <p>有两种方法可以实现“打开终端”。</p>
 <ul>
 <li>1. ScriptingBridge。它比第二种方式更快更稳定，尽管两者差异很小。<code>OpenInTerminal-Lite</code> 和 <code>OpenInTerminal</code> 中的状态栏菜单操作都是基于这种方式的。它的缺点是使用 ScriptingBridge 访问用户目录信息或其他内容的应用程序不能是沙盒的。</li>
@@ -121,16 +120,26 @@ brew install --cask openinterminal
 <p>（顺便说一句，我知道有些应用程序是沙盒化的，并且可以达到和 OpenInTerminal 相同的效果。但是我不知道它是怎么实现的。如果有人知道它并愿意与我交谈，那就太好了。我非常愿意使 OpenInTerminal 变得更加完美，以至于一个版本就足够了。😀）</p>
 </details>
 
+<details><summary>8. 我的自定义应用不工作</summary><br>
+<p>如果你的自定义应用不能通过运行以下命令正常运行，那么该应用不支持通过 OpenInTerminal 打开。例如，GitHub Desktop:</p>
+<code>open -a GitHub\ Desktop ~/Desktop</code>
+</details>
+
 ## 特别感谢 ❤️
+
+感谢所有的贡献者。你们的付出让 OpenInTerminal 更棒了。
 
 ### 贡献者
 
 - [Camji55](https://github.com/Camji55)
 - [gucheen](https://github.com/gucheen)
+- [uclort](https://github.com/uclort)
+- [MatteoCarnelos](https://github.com/MatteoCarnelos)
 
 ### 译者
 
 - [Dorian Eydoux](https://github.com/dorianeydx)
+- [techinpark](https://github.com/techinpark)
 - [Egor](https://github.com/Rogue85)
 - [arendruni](https://github.com/arendruni)
 - [panta97](https://github.com/panta97)
@@ -141,3 +150,4 @@ brew install --cask openinterminal
 - [es-kumagai/OpenTerminal](https://github.com/es-kumagai/OpenTerminal)
 - [tingraldi/SwiftScripting](https://github.com/tingraldi/SwiftScripting)
 - [onmyway133/FinderGo](https://github.com/onmyway133/FinderGo)
+- [Caldis/Mos](https://github.com/Caldis/Mos/)
