@@ -112,7 +112,7 @@ defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal GitHub\ 
 
 ### 2) If you are using Dark Mode
 
-I provided several icons along with the app in the [release](https://github.com/Ji4n1ng/OpenInTerminal/releases). Updated icons for macOS Big Sur can be temporarily downloaded from [here](https://github.com/Ji4n1ng/OpenInTerminal/files/5746137/Icons.for.Big.Sur.zip).
+I provided several icons along with the app in the [release page](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
 <div>
   <img src="https://user-images.githubusercontent.com/11001224/78600452-8aa0d100-7885-11ea-8a90-cc88b9233dac.png" width="600px">
@@ -132,7 +132,7 @@ This procedure is particularly useful for those using the automatic dark/light m
 
 1. Install Hammerspoon either by [downloading the latest release](https://github.com/Hammerspoon/hammerspoon/releases/latest) and dragging it in the `/Applications` folder, or by using Homebrew:
 ```
-brew cask install hammerspoon
+brew install --cask hammerspoon
 ```
 
 2. Install the [fileicon](https://github.com/mklement0/fileicon) utility to change the app icon programmatically:
