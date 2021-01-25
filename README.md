@@ -1,6 +1,6 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/104892170-d18f2b80-59ac-11eb-96b1-0293acfde4e5.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.0"><img src="https://img.shields.io/badge/Version-2.3.0-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.1"><img src="https://img.shields.io/badge/Version-2.3.1-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -131,6 +131,11 @@ Thank you for your support!
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 2.3.1</strong></p>
+<ul>
+<li>Fix: cannot open alacritty</li>
+<li>Feat: add quit button in preferences</li>
+</ul>
 <p><strong>version 2.3.0</strong></p>
 <ul>
 <li>Open custom apps. (Not all apps support)</li>
