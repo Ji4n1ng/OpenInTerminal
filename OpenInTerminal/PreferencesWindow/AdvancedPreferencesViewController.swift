@@ -61,4 +61,9 @@ class AdvancedPreferencesViewController: PreferencesViewController {
         }
     }
     
+    @IBAction func quitButtonClicked(_ sender: NSButton) {
+        LaunchNotifier.postNotification(.terminateApp, object: Bundle.main.bundleIdentifier!)
+        NSApp.terminate(self)
+    }
+    
 }

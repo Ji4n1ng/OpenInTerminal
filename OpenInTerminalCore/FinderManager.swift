@@ -44,7 +44,7 @@ public class FinderManager {
                 return ""
         }
         
-        return url.absoluteString
+        return url.path
     }
     
     /// Get full paths to front Finder windows or selected files
@@ -79,7 +79,7 @@ public class FinderManager {
         }.compactMap {
             URL(string: $0)
         }.map {
-            $0.absoluteString
+            $0.path
         }
         
         return paths
@@ -106,10 +106,10 @@ public class FinderManager {
         
         // if the selected is a file, then delete last path component
         guard isDirectory.boolValue else {
-            return url.deletingLastPathComponent().absoluteString
+            return url.deletingLastPathComponent().path
         }
         
-        return url.absoluteString
+        return url.path
     }
     
     public func getDesktopPath() -> String? {

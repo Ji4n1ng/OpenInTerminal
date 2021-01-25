@@ -29,6 +29,9 @@
 /* Class = "NSTextFieldCell"; title = "None"; ObjectID = "Dyx-zg-hYe"; */
 "Dyx-zg-hYe.title" = "None";
 
+/* Class = "NSTextFieldCell"; title = "Quit"; ObjectID = "FBK-9S-cZf"; */
+"FBK-9S-cZf.title" = "Quit";
+
 /* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
 "FpP-Q9-flS.title" = "Shortcuts";
 
@@ -148,6 +151,9 @@
 
 /* Class = "NSTextFieldCell"; title = "OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
 "ngT-lX-vFA.title" = "OpenInTerminal will automatically launch at login.";
+
+/* Class = "NSButtonCell"; title = "Quit OpenInTerminal"; ObjectID = "ofD-rA-gib"; */
+"ofD-rA-gib.title" = "Quit OpenInTerminal";
 
 /* Class = "NSViewController"; title = "Custom"; ObjectID = "s5W-qL-1Xs"; */
 "s5W-qL-1Xs.title" = "Custom";

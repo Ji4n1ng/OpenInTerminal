@@ -175,3 +175,10 @@
 
 /* Class = "NSButtonCell"; title = "simple"; ObjectID = "yrq-LZ-XDr"; */
 "yrq-LZ-XDr.title" = "简单";
+
+/* Class = "NSTextFieldCell"; title = "Quit"; ObjectID = "FBK-9S-cZf"; */
+"FBK-9S-cZf.title" = "退出";
+
+/* Class = "NSButtonCell"; title = "Quit OpenInTerminal"; ObjectID = "ofD-rA-gib"; */
+"ofD-rA-gib.title" = "退出 OpenInTerminal";
+

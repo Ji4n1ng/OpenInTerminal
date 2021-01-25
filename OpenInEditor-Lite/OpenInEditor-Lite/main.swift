@@ -18,7 +18,7 @@ do {
         guard let selectedEditor = AppManager.shared.pickEditorAlert() else {
             throw OITLError.cannotGetEditor
         }
-        DefaultsManager.shared.liteDefaultTerminal = selectedEditor.name
+        DefaultsManager.shared.liteDefaultEditor = selectedEditor.name
         try selectedEditor.openOutsideSandbox()
     }
     
