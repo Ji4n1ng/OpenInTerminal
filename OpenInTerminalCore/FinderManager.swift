@@ -13,8 +13,8 @@ public class FinderManager {
     
     public static var shared = FinderManager()
     
-    /// Get full path to front Finder window or selected file
-    public func getFullPathToFrontFinderWindowOrSelectedFile() throws -> String {
+    /// Get full url to front Finder window or selected file
+    public func getFullUrlToFrontFinderWindowOrSelectedFile() throws -> URL? {
 
         let finder = SBApplication(bundleIdentifier: Constants.Id.Finder)! as FinderApplication
         
@@ -33,7 +33,7 @@ public class FinderManager {
             guard let windows = finder.FinderWindows?(),
                 let firstWindow = windows.firstObject else {
                     print("No Finder windows are opened or selected")
-                    return ""
+                    return nil
             }
             target = (firstWindow as! FinderFinderWindow).target?.get() as! FinderItem
         }
@@ -41,14 +41,22 @@ public class FinderManager {
         guard let targetUrl = target.URL,
             let url = URL(string: targetUrl) else {
                 print("target url nil")
-                return ""
+                return nil
         }
         
+        return url
+    }
+    
+    /// Get full path to front Finder window or selected file
+    public func getFullPathToFrontFinderWindowOrSelectedFile() throws -> String {
+        guard let url = try getFullUrlToFrontFinderWindowOrSelectedFile() else {
+            return ""
+        }
         return url.path
     }
     
-    /// Get full paths to front Finder windows or selected files
-    public func getFullPathsToFrontFinderWindowOrSelectedFile() throws -> [String] {
+    /// Get full urls to front Finder windows or selected files
+    public func getFullUrlsToFrontFinderWindowOrSelectedFile() throws -> [URL] {
         
         let finder = SBApplication(bundleIdentifier: Constants.Id.Finder)! as FinderApplication
         
@@ -78,10 +86,17 @@ public class FinderManager {
             $0.URL
         }.compactMap {
             URL(string: $0)
-        }.map {
-            $0.path
         }
         
+        return paths
+    }
+    
+    /// Get full paths to front Finder windows or selected files
+    public func getFullPathsToFrontFinderWindowOrSelectedFile() throws -> [String] {
+        let urls = try getFullUrlsToFrontFinderWindowOrSelectedFile()
+        let paths = urls.map {
+            $0.path
+        }
         return paths
     }
     
@@ -89,27 +104,23 @@ public class FinderManager {
     /// If the selected one is file, return it's parent path.
     public func getPathToFrontFinderWindowOrSelectedFile() throws -> String {
         
-        let fullPath = try getFullPathToFrontFinderWindowOrSelectedFile()
-        
-        guard fullPath != "" else { return "" }
-        
-        guard let url = URL(string: fullPath) else {
-            throw OITError.wrongUrl
+        guard let fullUrl = try getFullUrlToFrontFinderWindowOrSelectedFile() else {
+            return ""
         }
         
         var isDirectory: ObjCBool = false
         
-        guard FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory) else {
+        guard FileManager.default.fileExists(atPath: fullUrl.path, isDirectory: &isDirectory) else {
             print("file does not exist")
             return ""
         }
         
         // if the selected is a file, then delete last path component
         guard isDirectory.boolValue else {
-            return url.deletingLastPathComponent().path
+            return fullUrl.deletingLastPathComponent().path
         }
         
-        return url.path
+        return fullUrl.path
     }
     
     public func getDesktopPath() -> String? {

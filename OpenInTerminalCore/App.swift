@@ -36,7 +36,7 @@ extension App: Equatable {
 
 public protocol Openable {
     func openOutsideSandbox() throws
-    func openInSandbox(_ paths: [String]) throws
+    func openInSandbox(_ urls: [URL]) throws
 }
 
 extension App: Openable {
@@ -117,17 +117,15 @@ extension App: Openable {
             let source = """
             do shell script "\(openCommand)"
             """
+            print(source)
             try excute(source)
         }
     }
     
-    public func openInSandbox(_ paths: [String]) throws {
+    public func openInSandbox(_ urls: [URL]) throws {
         switch self.type {
         case .terminal:
-            guard var path = paths.first else { return }
-            guard let url = URL(string: path) else {
-                throw OITError.wrongUrl
-            }
+            guard var url = urls.first else { return }
             // check the path is directory or not
             var isDirectory: ObjCBool = false
             guard FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory) else {
@@ -135,11 +133,11 @@ extension App: Openable {
             }
             // if the selected is a file, then delete last path component
             if isDirectory.boolValue == false {
-                path = url.deletingLastPathComponent().path
+                url.deleteLastPathComponent()
             }
             // get open command, e.g. "open -a Terminal /Users/user/Desktop/test\ folder"
             var openCommand = ScriptManager.shared.getOpenCommand(self)
-            openCommand += " " + path.specialCharEscaped()
+            openCommand += " " + url.path.specialCharEscaped()
             // script
             guard let scriptURL = ScriptManager.shared.getScriptURL(with: Constants.generalScript) else { return }
 //            // handle exceptional case
@@ -163,7 +161,9 @@ extension App: Openable {
         case .editor:
             // get open command, e.g. "open -a TextEdit /Users/user/Desktop/test\ folder /Users/user/Documents"
             var openCommand = ScriptManager.shared.getOpenCommand(self)
-            paths.forEach {
+            urls.map {
+                $0.path
+            }.forEach {
                 openCommand += " " + $0.specialCharEscaped()
             }
             // script

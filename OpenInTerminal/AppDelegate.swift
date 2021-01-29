@@ -192,19 +192,14 @@ extension AppDelegate {
     
     @objc func copyPathToClipboard() {
         do {
-            var paths = try FinderManager.shared.getFullPathsToFrontFinderWindowOrSelectedFile()
-            if paths.count == 0 {
+            var urls = try FinderManager.shared.getFullUrlsToFrontFinderWindowOrSelectedFile()
+            if urls.count == 0 {
                 // No Finder window and no file selected.
                 let homePath = NSHomeDirectory()
                 guard let homeUrl = URL(string: homePath) else { return }
-                paths.append(homeUrl.appendingPathComponent("Desktop").path)
-            } else {
-                paths = paths.compactMap {
-                    URL(string: $0)
-                }.map {
-                    $0.path
-                }
+                urls.append(homeUrl.appendingPathComponent("Desktop"))
             }
+            let paths = urls.map { $0.path }
             let pathString = paths.joined(separator: "\n")
             // Set string
             NSPasteboard.general.clearContents()

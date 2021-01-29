@@ -154,24 +154,24 @@ class FinderSync: FIFinderSync {
 
     // MARK: - Actions
     
-    func getSelectedPathsFromFinder() -> [String] {
-        var paths = [String]()
+    func getSelectedPathsFromFinder() -> [URL] {
+        var urls = [URL]()
         if let items = FIFinderSyncController.default().selectedItemURLs(), items.count > 0 {
-            items.forEach { (url) in
-                paths.append(url.path)
+            items.forEach {
+                urls.append($0)
             }
         } else if let url = FIFinderSyncController.default().targetedURL() {
-            paths.append(url.path)
+            urls.append(url)
         }
-        return paths
+        return urls
     }
     
     func open(_ app: App) {
-        let paths = getSelectedPathsFromFinder()
+        let urls = getSelectedPathsFromFinder()
         do {
-            try app.openInSandbox(paths)
+            try app.openInSandbox(urls)
         } catch {
-            logw("Failed to open \(app.name) with \(paths)")
+            logw("Failed to open \(app.name) with \(urls)")
         }
     }
     
@@ -241,7 +241,8 @@ class FinderSync: FIFinderSync {
     }
     
     @objc func copyPathToClipboard() {
-        let paths = getSelectedPathsFromFinder()
+        let urls = getSelectedPathsFromFinder()
+        let paths = urls.map { $0.path }
         let pathString = paths.joined(separator: "\n")
         // Set string
         NSPasteboard.general.clearContents()
