@@ -66,9 +66,7 @@ extension App: Openable {
             
             if SupportedApps.is(self, is: .terminal) {
                 // this app is supported: Terminal
-                guard let url = URL(string: path) else {
-                    throw OITError.wrongUrl
-                }
+                let url = URL(fileURLWithPath: path)
                 guard let terminal = SBApplication(bundleIdentifier: SupportedApps.terminal.bundleId) as TerminalApplication?,
                       let open = terminal.open else {
                     throw OITError.cannotAccessApp(self.name)
