@@ -229,9 +229,9 @@ public class DefaultsManager {
                 return icon
             }
             if app.type == .terminal {
-                return NSImage(named: "context_menu_icon_terminal")
+                return NSImage(named: "context_menu_icon_color_terminal")
             } else {
-                return NSImage(named: "context_menu_icon_editor")
+                return NSImage(named: "context_menu_icon_color_editor")
             }
         }
     }

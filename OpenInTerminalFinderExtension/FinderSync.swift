@@ -93,8 +93,11 @@ class FinderSync: FIFinderSync {
                                                                    comment: "Copy path to Clipboard"),
                                                 action: #selector(copyPathToClipboard),
                                                 keyEquivalent: "")
-            if DefaultsManager.shared.customMenuIconOption != .no {
+            if DefaultsManager.shared.customMenuIconOption == .simple {
                 let copyPathIcon = NSImage(named: "context_menu_icon_path")
+                copyPathItem.image = copyPathIcon
+            } else if DefaultsManager.shared.customMenuIconOption == .original {
+                let copyPathIcon = NSImage(named: "context_menu_icon_color_path")
                 copyPathItem.image = copyPathIcon
             }
             return copyPathItem

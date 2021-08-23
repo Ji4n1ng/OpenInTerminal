@@ -851,7 +851,7 @@
 		4725255422680FEB003C50DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OpenInTerminalFinderExtension/OpenInTerminalFinderExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -876,7 +876,7 @@
 		4725255522680FEB003C50DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OpenInTerminalFinderExtension/OpenInTerminalFinderExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
