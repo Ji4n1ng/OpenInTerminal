@@ -14,29 +14,29 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md) | [OpenInTermi
 
 | Temel Özellikler | OpenInTerminal |
 | --- | --- |
-| X'i (örn, klasörler veya dosyalar) terminalde veya düzenleyicide aç | ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif) | 
+| X'i (örn, bir klasör veya dosya) terminalde veya düzenleyicide aç | ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif) | 
 | Seçileni X'de aç (örn, Github Desktop)  | ![](https://user-images.githubusercontent.com/11001224/104891620-28483580-59ac-11eb-9fb5-3e4dec7863cc.gif) |
 
 ### Daha fazla özellik
 
 | Özellikler | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| Terminal Desteği, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty) and [kitty](https://sw.kovidgoyal.net/kitty/). | ✅ | ✅ |
+| Terminal Desteği, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty) ve [kitty](https://sw.kovidgoyal.net/kitty/). | ✅ | ✅ |
 | TextEdit Desteği, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim) and [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm). | ✅ | ✅ |
-| Özelleştirilmiş uygulamalarda aç. (⚠️ Bütün uygulamar desteklenmemektedir.) | ✅ | ✅ |
-| Türkçe, İngilizce, Çince, Fransızca, Rusça, İtalyanca and İspanyolca dil desteği. | ✅ | ✅ |
-| GUI tercihleri | ✅ | ❌ |
+| Özelleştirilmiş uygulamalarda aç. (⚠️Bütün uygulamar desteklenmemektedir.) | ✅ | ✅ |
+| Türkçe, İngilizce, Çince, Fransızca, Rusça, İtalyanca ve İspanyolca dil desteği. | ✅ | ✅ |
+| GUI ile özelleştirme | ✅ | ❌ |
 | Klavye kısayolu desteği. | ✅ | ❌ |
 
 ## OpenInTerminal ve OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
-Hangisini seçmeliyim? İki uygulamada benim için çocuklarım gibi. Eğer daha güçlü özellikler ve GUI tercihlerini seviyorsanız, `OpenInTerminal`'i kullanın. Ancak sadece terminal açmak istiyorsanız `OpenInTerminal-Lite`, daha hızlı ve stabil şekilde çalışacaktır.
+Hangisini seçmeliyim? İki sürüm de benim için değerli. Eğer daha güçlü özellikler ve GUI tercihlerini seviyorsanız, `OpenInTerminal`'i kullanın. Ancak sadece terminal açmak istiyorsanız `OpenInTerminal-Lite`, daha hızlı ve stabil şekilde çalışacaktır.
 
-Şahsen ben`OpenInTerminal-Lite`'ı tercih ediyorum. Terminalı sadece bir tıkla açabiliyorsunuz (diğeri ise iki tıkla bu işi yapıyor 😂) ve daha hafif bir yazılım.
+Şahsen ben`OpenInTerminal-Lite`'ı tercih ediyorum. Terminalı sadece bir tıkla açabiliyorsunuz (diğeri ise iki tıkla bu işi yapıyor 😂) ve daha hafif bir yazılım olma vantajına sahip.
 
 `OpenInTerminal-Lite` kullanıcıları için:
 
-Lütfen bu dökümanlara göz atın: [OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./Resources/README-Lite-tr.md)
+İlişkin döküman: [OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./Resources/README-Lite-tr.md)
 
 ## Nasıl Yüklenir 🖥
 
@@ -70,7 +70,7 @@ Eğer iyi bir fikriniz varsa lütfen [issue](https://github.com/Ji4n1ng/OpenInTe
 
 ## Projeyi Destekleme ❤️
 
-Desteğinix için teşekkürler!
+Desteğiniz için teşekkürler!
 
 | PayPal | AliPay | WeChat Pay |
 | --- | --- | --- |
@@ -118,8 +118,8 @@ Desteğinix için teşekkürler!
 <li>1. ScriptingBridge. İkinciye oranla daha hızlı ve daha stabil her ne kadar aralarındaki fark az olsa da.. <code>OpenInTerminal-Lite</code> ve <code>OpenInTerminal</code>'nin işlevi durum çubuğunda bu yolla sağlanmakta. Dezavantajı ise bunu kullanan uygulamalar eğer bunu kullanıcının (depolama konumu olarak) konumuna erişmek veya başka bir amaçla kullanıyorsa sandbox içinde çalıştırılamamakta.</li>
 <li>2. AppleScript. Finder uzantısı olan <code>OpenInTerminal</code> bağımsız çalışabilmek için AppleScript'e bağlı. İlk yol bu amaçla kullanılamıyor çünkü Finder uzantıları sandbox içinde çalışıtırılamamakta.</li>
 </ul>
-<p>Bazı kişiler OpenInTerminal'in hızlı ve stabil olmasını isterken(lite sürümü), bazıları ise OpenInTerminal'in güçlü ve daha kolay ayrlanabilir olmasını (normal sürüm) istiyor. Bazıları OpenInTerminal'in otomatik olarak karanlık moda geçebilmesini isterken (normal sürüm), bazıları ise tek tıkla OpenInTerminal'i (lite sürüm) açabilmek istiyor.</p>
-<p>Bir sürümü ihtiyaçaları artık karşılayamamaya başlayınca, OpenInTerminal normal ve lite olmak üzere iki sürüm olarak ayrıldı.</p>
+<p>Bazı kişiler OpenInTerminal'in hızlı ve stabil olmasını isterken(lite sürümü), bazıları ise OpenInTerminal'in güçlü ve daha kolay ayarlanabilir olmasını (normal sürüm) istiyor. Bazıları OpenInTerminal'in otomatik olarak karanlık moda geçebilmesini isterken (normal sürüm), bazıları ise tek tıkla OpenInTerminal'i (lite sürüm) açabilmek istiyor.</p>
+<p>Bir sürümü ihtiyaçları artık karşılayamamaya başlayınca, OpenInTerminal normal ve lite olmak üzere iki sürüm olarak ayrıldı.</p>
 <p>(Bu arada, sandbox içinde olup OpenInTerminal ile aynı işleve sahip olan uygulamar olduğunu biliyorum. Ancak bunu nasıl başardıklarını anlayamadım eğer birisi bana nasıl yapıldığını açıklarsa memnun olurum. OpenInTerminal'i tek bir sürümün yeterli geleceği bir düzeye getirmekten mutluluk duyacağıma emin olabilirisiniz.😀)</p>
 </details>
 
@@ -133,7 +133,7 @@ Desteğinix için teşekkürler!
 <details><summary>Tamamını göster</summary><br>
 <p><strong>sürüm 2.3.4</strong></p>
 <ul>
-<li>İöerik menüsündeki simgeler güncellendi</li>
+<li>İçerik menüsündeki simgeler güncellendi</li>
 </ul>
 <p><strong>sürüm 2.3.3</strong></p>
 <ul>
@@ -272,7 +272,7 @@ Katkıda bulunan herkese teşekkürler... Uğraşlarınızla OpenInTerminal daha
 
 ### Çevirmenler
 
-- [bkzspam] (https://github.com/bkzspam)
+- [bkzspam](https://github.com/bkzspam)
 - [Dorian Eydoux](https://github.com/dorian-eydoux)
 - [techinpark](https://github.com/techinpark)
 - [Egor](https://github.com/Rogue85)
