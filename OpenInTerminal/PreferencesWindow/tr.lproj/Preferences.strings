@@ -1,0 +1,180 @@
+
+/* Class = "NSTextFieldCell"; title = "❤️ Special thanks to:"; ObjectID = "0Gy-jf-q6v"; */
+"0Gy-jf-q6v.title" = "❤️ Özel olarak teşekkürler:";
+
+/* Class = "NSTextFieldCell"; title = "⚠️ Note that this will reset all user preferences"; ObjectID = "2Rg-te-FPU"; */
+"2Rg-te-FPU.title" = "⚠️ Bu bütün kullanıcı tercihlerini sıfırlayacaktır";
+
+/* Class = "NSButtonCell"; title = "Apply to Finder Toolbar Menu"; ObjectID = "2we-f7-s2N"; */
+"2we-f7-s2N.title" = "Finder Araç Menüsüne uygula";
+
+/* Class = "NSTextFieldCell"; title = "If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu."; ObjectID = "592-4p-Ybh"; */
+"592-4p-Ybh.title" = "Eğer etkinleştirilirse Menu Çubuğundaki simge üzerinden yapılması istenen aksiyon seçilir. Menüyü açmak için sağ tıklayın";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
+"5f3-UK-Rft.title" = "Tercihler";
+
+/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
+"BUH-CU-WBW.title" = "Durum Çubuğu Simgesini Gizle";
+
+/* Class = "NSTextFieldCell"; title = "Open a new window or a new tab."; ObjectID = "BrI-hE-Mff"; */
+"BrI-hE-Mff.title" = "Yeni bir pencere veya sekme aç.";
+
+/* Class = "NSTextFieldCell"; title = "Icon Type:"; ObjectID = "CP0-Xv-uYl"; */
+"CP0-Xv-uYl.title" = "Simge Tipi:";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Cp7-6g-ngj"; */
+"Cp7-6g-ngj.title" = "İptal";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "Dyx-zg-hYe"; */
+"Dyx-zg-hYe.title" = "Hiçbiri";
+
+/* Class = "NSTextFieldCell"; title = "Quit"; ObjectID = "FBK-9S-cZf"; */
+"FBK-9S-cZf.title" = "Çıkış";
+
+/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
+"FpP-Q9-flS.title" = "Kısayollar";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "G69-k2-hgn"; */
+"G69-k2-hgn.title" = "Hiçbiri";
+
+/* Class = "NSViewController"; title = "General"; ObjectID = "Gn1-zC-bzB"; */
+"Gn1-zC-bzB.title" = "Genel";
+
+/* Class = "NSViewController"; title = "Advanced"; ObjectID = "H3q-JS-Bu4"; */
+"H3q-JS-Bu4.title" = "Gelişmiş";
+
+/* Class = "NSButtonCell"; title = "WeChat"; ObjectID = "HUx-Wz-JJm"; */
+"HUx-Wz-JJm.title" = "WeChat";
+
+/* Class = "NSTextFieldCell"; title = "👨‍💻 GitHub:"; ObjectID = "How-dP-tcX"; */
+"How-dP-tcX.title" = "👨‍💻 GitHub:";
+
+/* Class = "NSButtonCell"; title = "@Camji55"; ObjectID = "IJL-uk-uO5"; */
+"IJL-uk-uO5.title" = "@Camji55";
+
+/* Class = "NSButtonCell"; title = "contact@jianing.wang"; ObjectID = "IPL-yO-Vkp"; */
+"IPL-yO-Vkp.title" = "contact@jianing.wang";
+
+/* Class = "NSTextFieldCell"; title = "0.1.0"; ObjectID = "Jnf-AX-bIr"; */
+"Jnf-AX-bIr.title" = "0.1.0";
+
+/* Class = "NSTextFieldCell"; title = "💸 Donate:"; ObjectID = "Kua-ZD-31F"; */
+"Kua-ZD-31F.title" = "💸 Bağış:";
+
+/* Class = "NSButtonCell"; title = "Terminal"; ObjectID = "M3w-T0-vi7"; */
+"M3w-T0-vi7.title" = "Terminal";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
+"Mqt-Fp-Ssl.title" = "Varsayılan Terminal ile Aç:";
+
+/* Class = "NSTextFieldCell"; title = "🐦 Twitter:"; ObjectID = "NZE-zU-6ss"; */
+"NZE-zU-6ss.title" = "🐦 Twitter:";
+
+/* Class = "NSButtonCell"; title = "Apply to Finder Context Menu"; ObjectID = "RhP-R5-Wwt"; */
+"RhP-R5-Wwt.title" = "Finder İçerik Menüsüne Uygula";
+
+/* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
+"Sw7-of-ecf.title" = "Alipay";
+
+/* Class = "NSTextFieldCell"; title = "Application Type:"; ObjectID = "UCM-Ds-LYN"; */
+"UCM-Ds-LYN.title" = "Uygulama Tipi:";
+
+/* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
+"Upf-HU-iaN.title" = "Tercihleri görüntüleyebilmek için uygulama tekrar açılmalı.";
+
+/* Class = "NSTextFieldCell"; title = "✉️ Contact:"; ObjectID = "Vu4-Wz-Agk"; */
+"Vu4-Wz-Agk.title" = "✉️ İletişim:";
+
+/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
+"Xd9-iA-emU.title" = "Yolu Clipboard'a kopyala:";
+
+/* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
+"Xfc-rf-FkX.title" = "Varsayılan Yazı Düzenleyecisi:";
+
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at Login"; ObjectID = "ZbK-xW-anT"; */
+"ZbK-xW-anT.title" = "OpenInTerminal girişte çalıştır";
+
+/* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
+"aRo-sy-WpK.title" = "Varsayılan Terminal:";
+
+/* Class = "NSTextFieldCell"; title = "Not Installed Applications"; ObjectID = "bCi-r8-MrK"; */
+"bCi-r8-MrK.title" = "Yüklü Olmayan Uygulamalar";
+
+/* Class = "NSTextFieldCell"; title = "Installed Supported Applications"; ObjectID = "bT7-LU-sov"; */
+"bT7-LU-sov.title" = "Yüklünmiş Desteklenen Uygulamalar";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
+"bvy-v3-hhf.title" = "Varsayılan düzenleyici ile aç:";
+
+/* Class = "NSButtonCell"; title = "PayPal"; ObjectID = "dC4-C7-fEL"; */
+"dC4-C7-fEL.title" = "PayPal";
+
+/* Class = "NSButtonCell"; title = "github.com/Ji4n1ng/OpenInTerminal"; ObjectID = "f2V-P5-pQI"; */
+"f2V-P5-pQI.title" = "github.com/Ji4n1ng/OpenInTerminal";
+
+/* Class = "NSButtonCell"; title = "Editor"; ObjectID = "fb4-Xq-he0"; */
+"fb4-Xq-he0.title" = "Düzenleyici";
+
+/* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
+"gy9-lb-m8d.title" = "Hızlı Seçim";
+
+/* Class = "NSTextFieldCell"; title = "Application Name:"; ObjectID = "h5X-oY-gqy"; */
+"h5X-oY-gqy.title" = "Uygulama Adı:";
+
+/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
+"jcs-Ou-OZ2.title" = "Sıfırla";
+
+/* Class = "NSButtonCell"; title = "Reset preferences"; ObjectID = "jyI-H7-qN3"; */
+"jyI-H7-qN3.title" = "Tercihleri sıfırla";
+
+/* Class = "NSViewController"; title = "About"; ObjectID = "k6X-N1-mVu"; */
+"k6X-N1-mVu.title" = "Hakkında";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "kAa-36-ubl"; */
+"kAa-36-ubl.title" = "Yazı Hücresi";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "keg-OV-uLJ"; */
+"keg-OV-uLJ.title" = "Tablo Görünüm Hücresi";
+
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal"; ObjectID = "mOB-su-ZM1"; */
+"mOB-su-ZM1.title" = "OpenInTerminal";
+
+/* Class = "NSButtonCell"; title = "Window"; ObjectID = "mTs-8c-pgj"; */
+"mTs-8c-pgj.title" = "Pencere";
+
+/* Class = "NSTextFieldCell"; title = "Custom Menu Options"; ObjectID = "nWc-SM-Kes"; */
+"nWc-SM-Kes.title" = "Özel Menü Ayarları";
+
+/* Class = "NSButtonCell"; title = "Tab"; ObjectID = "nYS-rF-JCL"; */
+"nYS-rF-JCL.title" = "Sekme";
+
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
+"ngT-lX-vFA.title" = "OpenInTerminal oturum açma sırasında otomatik başlatılacaktır.";
+
+/* Class = "NSButtonCell"; title = "Quit OpenInTerminal"; ObjectID = "ofD-rA-gib"; */
+"ofD-rA-gib.title" = "OpenInTerminal'den Çık";
+
+/* Class = "NSViewController"; title = "Custom"; ObjectID = "s5W-qL-1Xs"; */
+"s5W-qL-1Xs.title" = "Özel";
+
+/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
+"sG4-nK-ghj.title" = "İçerik Menüsü Ögelerini Sil";
+
+/* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */
+"tR5-me-DTK.title" = "@Ji4n1ng";
+
+/* Class = "NSButtonCell"; title = "original"; ObjectID = "uok-iD-wXY"; */
+"uok-iD-wXY.title" = "orijinal";
+
+/* Class = "NSButtonCell"; title = "Confirm"; ObjectID = "wpb-Gv-KAp"; */
+"wpb-Gv-KAp.title" = "Onayla";
+
+/* Class = "NSButtonCell"; title = "no"; ObjectID = "x6U-9Q-ujh"; */
+"x6U-9Q-ujh.title" = "hayır";
+
+/* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
+"yIW-2a-15A.title" = "iTerm";
+
+/* Class = "NSButtonCell"; title = "simple"; ObjectID = "yrq-LZ-XDr"; */
+"yrq-LZ-XDr.title" = "basit";
