@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  OpenInEditor-Lite
+
+  Created by Jianing Wang on 2019/6/25.
+  Copyright © 2019 Jianing Wang. All rights reserved.
+*/
+
+"general.ok" = "Tamam";
+"general.cancel" = "İptal";
+"general.yes" = "Evet";
+
+"alert.pick_editor_title" = "Şununla Aç?";
+"alert.pick_editor_description" = "Lütfen gösterilen düzenleyicilerden birini varsayılan düzenleyici olarak seçin.";
