@@ -28,6 +28,7 @@ public enum SupportedApps: String, CaseIterable {
     case textMate = "TextMate"
     case cotEditor = "CotEditor"
     case macVim = "MacVim"
+    case typora = "Typora"
     // JetBrains
     case appCode = "AppCode"
     case cLion = "CLion"
@@ -106,6 +107,7 @@ public enum SupportedApps: String, CaseIterable {
         case .textMate: return "com.macromates.TextMate"
         case .cotEditor: return ""
         case .macVim: return "org.vim.MacVim"
+        case .typora: return "abnerworks.Typora"
         case .appCode: return "com.jetbrains.appcode"
         case .cLion: return "com.jetbrains.clion"
         case .goLand: return "com.jetbrains.goland"
