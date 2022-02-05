@@ -16,10 +16,6 @@ class CustomPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var installedApplicationsTextField: NSTextField!
     @IBOutlet weak var notInstalledApplicationsTextField: NSTextField!
     
-//    @IBOutlet weak var terminalTextField: NSTextField!
-//    @IBOutlet weak var terminalWindowButton: NSButton!
-//    @IBOutlet weak var terminalTabButton: NSButton!
-    
     @IBOutlet weak var iTermTextField: NSTextField!
     @IBOutlet weak var iTermWindowButton: NSButton!
     @IBOutlet weak var iTermTabButton: NSButton!
@@ -33,6 +29,8 @@ class CustomPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var noIconButton: NSButton!
     @IBOutlet weak var simpleIconButton: NSButton!
     @IBOutlet weak var originalIconButton: NSButton!
+    
+    private var dragDropType = NSPasteboard.PasteboardType(rawValue: "private.table-row")
     
     var allInstalledAppNames: Set<String> = Set()
     var installedSupportedApps = [App]() {
@@ -67,6 +65,7 @@ class CustomPreferencesViewController: PreferencesViewController {
         super.viewDidLoad()
         customMenuTableView.dataSource = self
         customMenuTableView.delegate = self
+        customMenuTableView.registerForDraggedTypes([dragDropType])
     }
     
     override func viewWillAppear() {
@@ -118,7 +117,6 @@ class CustomPreferencesViewController: PreferencesViewController {
     
     func refreshTextFieldEnabledState() {
         let terminals: [(SupportedApps, NSTextField)] = [
-//            (.terminal, terminalTextField),
             (.iTerm, iTermTextField)
         ]
 
@@ -137,9 +135,6 @@ class CustomPreferencesViewController: PreferencesViewController {
     }
     
     func refreshButtonState() {
-//        terminalWindowButton.isEnabled = terminalTextField.isEnabled
-//        terminalTabButton.isEnabled = terminalTextField.isEnabled
-
         iTermWindowButton.isEnabled = iTermTextField.isEnabled
         iTermTabButton.isEnabled = iTermTextField.isEnabled
 
@@ -152,7 +147,6 @@ class CustomPreferencesViewController: PreferencesViewController {
     
     func refreshButtonNewOptionState() {
         let terminals: [(SupportedApps, NSButton, NSButton)] = [
-//            (.terminal, terminalWindowButton, terminalTabButton),
             (.iTerm, iTermWindowButton, iTermTabButton)
         ]
 
@@ -264,44 +258,9 @@ class CustomPreferencesViewController: PreferencesViewController {
         manuallyInputMenuItem.target = self
         addOptionMenu.addItem(manuallyInputMenuItem)
         
-//        SupportedApps.allCases.forEach {
-//            let menuItem = NSMenuItem(title: $0.name,
-//              action: #selector(selectAddOptionApp),
-//              keyEquivalent: "")
-//            menuItem.target = self
-//            supportedMenu.addItem(menuItem)
-//        }
-//        let supportedMenuItem = NSMenuItem()
-//        supportedMenuItem.title = "All Supported Apps"
-//        addOptionMenu.addItem(supportedMenuItem)
-//        addOptionMenu.setSubmenu(supportedMenu, for: supportedMenuItem)
-        
-//        addOptionApps = (installedSupportedApps + customApps).filter {
-//            !customMenuOptions.contains($0)
-//        }
-//        let sorted = addOptionApps.map {
-//            $0.name
-//        }.sortedIgnoreCase()
-//        sorted.forEach {
-//            let menuItem = NSMenuItem(title: $0,
-//                action: #selector(selectAddOptionApp),
-//                keyEquivalent: "")
-//            menuItem.target = self
-//            addOptionMenu.addItem(menuItem)
-//        }
     }
     
     // MARK: Button Actions
-    
-//    @IBAction func terminalWindowButtonClicked(_ sender: NSButton) {
-//        terminalTabButton.state = .off
-//        DefaultsManager.shared.setNewOption(.terminal, .window)
-//    }
-//
-//    @IBAction func terminalTabButtonClicked(_ sender: NSButton) {
-//        terminalWindowButton.state = .off
-//        DefaultsManager.shared.setNewOption(.terminal, .tab)
-//    }
     
     @IBAction func iTermWindowButtonClicked(_ sender: NSButton) {
         iTermTabButton.state = .off
@@ -411,6 +370,50 @@ extension CustomPreferencesViewController: NSTableViewDataSource {
         } else {
             return 0
         }
+    }
+    
+    func tableView(_ tableView: NSTableView, pasteboardWriterForRow row: Int) -> NSPasteboardWriting? {
+        let item = NSPasteboardItem()
+        item.setString(String(row), forType: self.dragDropType)
+        return item
+    }
+    
+    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
+        if dropOperation == .above {
+            return .move
+        }
+        return []
+    }
+
+    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
+        var oldIndexes = [Int]()
+        info.enumerateDraggingItems(options: [], for: tableView, classes: [NSPasteboardItem.self], searchOptions: [:]) { dragItem, _, _ in
+            if let str = (dragItem.item as! NSPasteboardItem).string(forType: self.dragDropType), let index = Int(str) {
+                oldIndexes.append(index)
+            }
+        }
+        var oldIndexOffset = 0
+        var newIndexOffset = 0
+        
+        customMenuOptions.move(with: IndexSet(oldIndexes), to: row)
+
+        // For simplicity, the code below uses `tableView.moveRowAtIndex` to move rows around directly.
+        // You may want to move rows in your content array and then call `tableView.reloadData()` instead.
+        tableView.beginUpdates()
+        for oldIndex in oldIndexes {
+            if oldIndex < row {
+                // ⬇️
+                tableView.moveRow(at: oldIndex + oldIndexOffset, to: row - 1)
+                oldIndexOffset -= 1
+            } else {
+                // ⬆️
+                tableView.moveRow(at: oldIndex, to: row + newIndexOffset)
+                newIndexOffset += 1
+            }
+        }
+        tableView.endUpdates()
+
+        return true
     }
 
 }
