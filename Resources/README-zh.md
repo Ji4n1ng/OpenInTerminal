@@ -22,9 +22,9 @@
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
 | 支持 终端, [iTerm](https://www.iterm2.com/)， [Hyper](https://github.com/zeit/hyper)， [Alacritty](https://github.com/jwilm/alacritty) 和 [kitty](https://sw.kovidgoyal.net/kitty/) | ✅ | ✅ |
-| 支持 文本编辑, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim) 和 [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm) | ✅ | ✅ |
+| 支持 文本编辑, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm) 和 [Typora](https://typora.io/) | ✅ | ✅ |
 | 打开自定义应用（⚠️ 并不是所有的应用都支持） | ✅ | ✅ |
-| 支持中文，英语，法语，俄语，意大利语和西班牙语 | ✅ | ✅ |
+| 支持中文，英语，法语，俄语，意大利语，西班牙语和土耳其语 | ✅ | ✅ |
 | 图形化设置界面 | ✅ | ❌ |
 | 支持键盘快捷键 | ✅ | ❌ |
 
@@ -142,6 +142,7 @@ brew install --cask openinterminal
 - [Egor](https://github.com/Rogue85)
 - [arendruni](https://github.com/arendruni)
 - [panta97](https://github.com/panta97)
+- [bkzspam](https://github.com/bkzspam)
 
 ### 参考项目
 

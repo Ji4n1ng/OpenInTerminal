@@ -341,6 +341,7 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 - [Egor](https://github.com/Rogue85)
 - [arendruni](https://github.com/arendruni)
 - [panta97](https://github.com/panta97)
+- [bkzspam](https://github.com/bkzspam)
 
 ### Reference projects
 
