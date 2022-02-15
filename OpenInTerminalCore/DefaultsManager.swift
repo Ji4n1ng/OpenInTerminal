@@ -129,6 +129,8 @@ public class DefaultsManager {
 //            option = Defaults[.terminalNewOption]
         case .iTerm:
             option = Defaults[.iTermNewOption]
+        case .kitty:
+            option = Defaults[.kittyNewOption]
         default:
             return nil
         }
@@ -154,6 +156,8 @@ public class DefaultsManager {
             if error != nil {
                 logw("Setting iTerm new option failed: \(String(describing: error))")
             }
+        case .kitty:
+            Defaults[.kittyNewOption] = newOption.rawValue
         default:
             return
         }
@@ -251,6 +255,7 @@ public class DefaultsManager {
         defaultEditor = SupportedApps.textEdit.app
         setNewOption(.terminal, .window)
         setNewOption(.iTerm, .window)
+        setNewOption(.kitty, .tab)
         isCustomMenuApplyToToolbar = false
         isCustomMenuApplyToContext = false
         customMenuIconOption = .no
