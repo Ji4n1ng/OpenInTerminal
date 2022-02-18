@@ -24,7 +24,7 @@ public class ScriptManager {
             let newOption = DefaultsManager.shared.getNewOption(.kitty) ?? .tab
             switch newOption {
             case .tab:
-                return "zsh -c '/Applications/kitty.app/Contents/MacOS/kitty @ --to unix:/tmp/openkittytab launch --type=tab --cwd \(escapedPath) zsh || /Applications/kitty.app/Contents/MacOS/kitty --listen-on=unix:/tmp/openkittytab -o allow_remote_control=yes -d \(escapedPath) > /dev/null 2>&1 &'"
+                return "zsh -c '/Applications/kitty.app/Contents/MacOS/kitty @ --to unix:/tmp/openkittytab launch --type=tab --cwd \(escapedPath) zsh && /Applications/kitty.app/Contents/MacOS/kitty @ --to unix:/tmp/openkittytab focus-window || /Applications/kitty.app/Contents/MacOS/kitty --listen-on=unix:/tmp/openkittytab -o allow_remote_control=yes -d \(escapedPath) > /dev/null 2>&1 &'"
             case .window:
                 return "open -na kitty --args --directory \(escapedPath)"
             }
