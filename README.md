@@ -6,9 +6,9 @@
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
 
-English | [OpenInTerminal 中文说明](./Resources/README-zh.md) | [OpenInTerminal Türkçe](./Resources/README-tr.md)
+English | [OpenInTerminal 中文说明](./Resources/README-zh.md) | [OpenInTerminal Türkçe](./Resources/README-tr.md) | [OpenInTerminal Deutsch](./Resources/README-de.md)
 
-[OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md)
+[OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Deutsch](./Resources/README-Lite-de.md)
 
 ## How to use 🚀
 
@@ -36,7 +36,7 @@ For me, I prefer `OpenInTerminal-Lite` which only needs to click once to complet
 
 For `OpenInTerminal-Lite` users:
 
-Please check the document: [OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./Resources/README-Lite-tr.md)
+Please check the document: [OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./Resources/README-Lite-tr.md) | [OpenInTerminal-Lite Deutsch](./Resources/README-Lite-de.md)
 
 ## How to install 🖥
 

@@ -138,6 +138,8 @@
 
 /* Begin PBXFileReference section */
 		1463FD2DA3F2CBDE5C98A8F7 /* Pods_OpenInTerminal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenInTerminal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2594E99A27EF523300AF84D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Preferences.strings; sourceTree = "<group>"; };
+		2594E99B27EF523300AF84D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4725251122680E87003C50DF /* OpenInTerminalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenInTerminalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4725251322680E87003C50DF /* OpenInTerminalCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenInTerminalCore.h; sourceTree = "<group>"; };
 		4725251422680E87003C50DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 				it,
 				es,
 				tr,
+				de,
 			);
 			mainGroup = 956C38A8225F7701001CB769;
 			productRefGroup = 956C38B2225F7701001CB769 /* Products */;
@@ -766,6 +769,7 @@
 				C3ACD4D0243E0FEF00462517 /* it */,
 				C1FB06722493518B004AF7B7 /* es */,
 				95B0613E27AFABD5009C2B4E /* tr */,
+				2594E99B27EF523300AF84D5 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -781,6 +785,7 @@
 				95DAC9C425B473D400DB729C /* zh-Hans */,
 				958D0D6625BEC9310085EBEE /* en */,
 				95B0613C27AFAA3C009C2B4E /* tr */,
+				2594E99A27EF523300AF84D5 /* de */,
 			);
 			name = Preferences.storyboard;
 			sourceTree = "<group>";

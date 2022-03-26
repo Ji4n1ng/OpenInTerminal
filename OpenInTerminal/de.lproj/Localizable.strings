@@ -1,0 +1,41 @@
+/*
+  Localizable.strings
+  OpenInTerminal
+
+  Created by Jianing Wang on 2019/4/22.
+  Copyright © 2019 Jianing Wang. All rights reserved.
+*/
+
+"general.ok" = "Okay";
+"general.cancel" = "Abbrechen";
+"general.yes" = "Ja";
+
+"menu.open_in" = "Öffnen mit ";
+"menu.open_with_default_terminal" = "Im Terminal öffnen";
+"menu.open_with_default_editor" = "Im Editor öffnen";
+"menu.copy_path_to_clipboard" = "Pfad kopieren";
+
+"menu.preferences" = "Einstellungen...";
+"menu.quit" = "Beenden";
+
+"pref.toolbar.not_installed" = "Nicht installiert";
+
+"alert.pick_terminal_title" = "Öffnen mit?";
+"alert.pick_terminal_description" = "Bitte wählen Sie eines der folgenden Terminals als Standard zum Öffnen.";
+
+"alert.pick_editor_title" = "Öffnen mit?";
+"alert.pick_editor_description" = "Bitte wählen Sie eines der folgenden Editoren als Standard zum Öffnen.";
+
+"alert.reset_preferences_title" = "Benutzereinstellungen zurücksetzen?";
+"alert.reset_preferences_description" = "⚠️ Beachten Sie, dass dadurch alle Benutzereinstellungen zurückgesetzt werden";
+
+"toolbar.item_name" = "Im Terminal öffnen";
+"toolbar.item_tooltip" = "Aktuellen Ordner im Terminal öffnen.";
+
+"pref.custom.menu.installed_supported" = "Installierte unterstützte Programme";
+"pref.custom.menu.all_supported" = "Alle unterstützten Programme";
+"pref.custom.menu.running_apps" = "Laufende Programme";
+"pref.custom.menu.manually_select" = "Manuell vom Finder auswählen";
+"pref.custom.menu.manually_input" = "Manuelle Eingabe";
+
+
