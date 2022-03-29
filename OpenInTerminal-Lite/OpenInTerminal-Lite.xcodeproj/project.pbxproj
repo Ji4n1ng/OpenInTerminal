@@ -30,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2594E99727EF381A00AF84D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		82AE667723896ADB00F4DB4D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95163CE02269F0C2007C006F /* OpenInTerminal-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenInTerminal-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95163CE52269F0C3007C006F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 				it,
 				es,
 				tr,
+				de,
 			);
 			mainGroup = 95163CD72269F0C2007C006F;
 			productRefGroup = 95163CE12269F0C2007C006F /* Products */;
@@ -209,6 +211,7 @@
 				C3135D9D243F4CD3003323CF /* it */,
 				9561BB4224C1F2FB001DE0A9 /* es */,
 				95B0613F27AFACA9009C2B4E /* tr */,
+				2594E99727EF381A00AF84D5 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
