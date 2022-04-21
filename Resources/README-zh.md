@@ -30,7 +30,7 @@
 
 ## OpenInTerminal 和 OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
-选择哪个？这两个应用都是我的孩子。如果你喜欢更强大的功能和图形化设置界面，那么你可以选择 `OpenInTerminal`。如果你仅仅需要更快速且更稳定地打开终端或编辑器，那么你可以选择 `OpenInTerminal-Lite`。
+选择哪个？如果你喜欢更强大的功能和图形化设置界面，那么你可以选择 `OpenInTerminal`。如果你仅仅需要更快速且更稳定地打开终端或编辑器，那么你可以选择 `OpenInTerminal-Lite`。
 
 对于我而言，我更喜欢 `OpenInTerminal-Lite`，它只需要点击一次来完成功能（另一个需要点击两次😂），而且它更轻量一些。
 
@@ -67,10 +67,15 @@ brew install --cask openinterminal
 
 感谢各位的支持！
 
+通过 [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 支持 💖。
+
 | PayPal | 支付宝 | 微信 |
 | --- | --- | --- |
 | [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Support-Alipay.jpg" width="50%"> | <img src="./Support-WeChatPay.jpg" width="50%"> |
 
+### 赞助商
+
+<a href="https://github.com/sparrowcode"><img src="https://avatars.githubusercontent.com/u/98487302?s=200&v=4" width="70px" style="border-radius:10px;" /></a>
 
 ## 常见问题 ❓
 

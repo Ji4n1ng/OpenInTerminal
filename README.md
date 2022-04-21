@@ -30,7 +30,7 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md) | [OpenInTermi
 
 ## OpenInTerminal and OpenInTerminal-Lite (OpenInEditor-Lite) 👀
 
-Which one to choose? Both of these apps are my children. If you like more powerful features and GUI preferences, then you can use `OpenInTerminal`. If you just need to open terminal faster and more stably, then you can use `OpenInTerminal-Lite`.
+Which one to choose? If you like more powerful features and GUI preferences, then you can use `OpenInTerminal`. If you just need to open terminal faster and more stably, then you can use `OpenInTerminal-Lite`.
 
 For me, I prefer `OpenInTerminal-Lite` which only needs to click once to complete the function (and the other needs to click twice 😂) and it is more lightweight.
 
@@ -64,17 +64,19 @@ Open the OpenInTerminal app. Go to `System Preferences` -> `Extensions` -> `Find
   <img src="https://user-images.githubusercontent.com/11001224/78590336-448f4180-7874-11ea-827c-ad3a7bffca5e.png" width="400px">
 </div>
 
-## Todo 👨‍💻
-
-If you have a good idea, feel welcome to open a new [issue](https://github.com/Ji4n1ng/OpenInTerminal/issues/new/choose).
-
 ## Support ❤️
 
-Thank you for your support!
+Open-source projects cannot live long without your help. If you like OpenInTerminal, please consider supporting this project by becoming a sponsor. Your user icon or company logo shows up on the README with a link to your home page.
+
+Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 💖.
 
 | PayPal | AliPay | WeChat Pay |
 | --- | --- | --- |
 | [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Resources/Support-Alipay.jpg" width="50%"> | <img src="./Resources/Support-WeChatPay.jpg" width="50%"> |
+
+### Backers & Sponsors
+
+<a href="https://github.com/sparrowcode"><img src="https://avatars.githubusercontent.com/u/98487302?s=200&v=4" width="70px" style="border-radius:10px;" /></a>
 
 ## FAQ ❓
 
@@ -267,7 +269,7 @@ Thank you for your support!
 
 ## Special Thanks to ❤️
 
-Thanks to all contributors. Your work makes OpenInTerminal better.
+Thanks to all backers and contributors. Your work makes OpenInTerminal better.
 
 ### Contributors
 
