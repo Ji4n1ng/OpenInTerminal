@@ -75,7 +75,7 @@ brew install --cask openinterminal
 
 ### 赞助商
 
-<a href="https://github.com/sparrowcode"><img src="https://avatars.githubusercontent.com/u/98487302?s=200&v=4" width="70px" style="border-radius:10px;" /></a>
+<a href="https://github.com/sparrowcode"><img src="https://avatars.githubusercontent.com/u/98487302?s=200&v=4" width="10%" style="border-radius:10px;" /></a>
 
 ## 常见问题 ❓
 
