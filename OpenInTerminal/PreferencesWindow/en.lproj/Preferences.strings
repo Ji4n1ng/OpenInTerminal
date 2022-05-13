@@ -107,8 +107,8 @@
 /* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
 "bvy-v3-hhf.title" = "Open with default Editor:";
 
-/* Class = "NSButtonCell"; title = "PayPal"; ObjectID = "dC4-C7-fEL"; */
-"dC4-C7-fEL.title" = "PayPal";
+/* Class = "NSButtonCell"; title = "GitHub Sponsors"; ObjectID = "dC4-C7-fEL"; */
+"dC4-C7-fEL.title" = "GitHub Sponsors";
 
 /* Class = "NSButtonCell"; title = "github.com/Ji4n1ng/OpenInTerminal"; ObjectID = "f2V-P5-pQI"; */
 "f2V-P5-pQI.title" = "github.com/Ji4n1ng/OpenInTerminal";
@@ -127,6 +127,9 @@
 
 /* Class = "NSButtonCell"; title = "Reset preferences"; ObjectID = "jyI-H7-qN3"; */
 "jyI-H7-qN3.title" = "Reset preferences";
+
+/* Class = "NSButtonCell"; title = "PayPal"; ObjectID = "k3X-F7-Gpb"; */
+"k3X-F7-Gpb.title" = "PayPal";
 
 /* Class = "NSViewController"; title = "About"; ObjectID = "k6X-N1-mVu"; */
 "k6X-N1-mVu.title" = "About";
