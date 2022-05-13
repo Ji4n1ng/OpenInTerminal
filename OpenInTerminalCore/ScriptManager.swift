@@ -16,20 +16,13 @@ public class ScriptManager {
     // MARK: - Get AppleScript
     
     /// get `open` command
-    public func getOpenCommand(_ app: App, path: String = "", escapeCount: Int = 1) -> String {
-        let escapedPath = path.specialCharEscaped(escapeCount)
+    public func getOpenCommand(_ app: App, escapeCount: Int = 1) -> String {
         if SupportedApps.is(app, is: .alacritty) {
-            return "open -na Alacritty --args --working-directory \(escapedPath)"
+            return "open -na Alacritty --args --working-directory"
         } else if SupportedApps.is(app, is: .kitty) {
-            let newOption = DefaultsManager.shared.getNewOption(.kitty) ?? .tab
-            switch newOption {
-            case .tab:
-                return "zsh -c '/Applications/kitty.app/Contents/MacOS/kitty @ --to unix:/tmp/openkittytab launch --type=tab --cwd \(escapedPath) zsh && /Applications/kitty.app/Contents/MacOS/kitty @ --to unix:/tmp/openkittytab focus-window || /Applications/kitty.app/Contents/MacOS/kitty --listen-on=unix:/tmp/openkittytab -o allow_remote_control=yes -d \(escapedPath) > /dev/null 2>&1 &'"
-            case .window:
-                return "open -na kitty --args --directory \(escapedPath)"
-            }
+            return "open -na kitty --args --directory"
         } else {
-            return "open -a \(app.name.nameSpaceEscaped(escapeCount)) \(escapedPath)"
+            return "open -a \(app.name.nameSpaceEscaped(escapeCount))"
         }
     }
     

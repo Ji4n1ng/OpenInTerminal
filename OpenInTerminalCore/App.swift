@@ -90,7 +90,8 @@ extension App: Openable {
 //                }
             } else {
                 // this app is general
-                let openCommand = ScriptManager.shared.getOpenCommand(self, path: path, escapeCount: 2)
+                var openCommand = ScriptManager.shared.getOpenCommand(self, escapeCount: 2)
+                openCommand += " " + path.specialCharEscaped(2)
                 let source = """
                 do shell script "\(openCommand)"
                 """
@@ -107,8 +108,10 @@ extension App: Openable {
                 paths.append(desktopPath)
             }
             
-            let path = paths.joined(separator: " ")
-            let openCommand = ScriptManager.shared.getOpenCommand(self, path: path, escapeCount: 2)
+            var openCommand = ScriptManager.shared.getOpenCommand(self, escapeCount: 2)
+            paths.forEach {
+                openCommand += " \($0.specialCharEscaped(2))"
+            }
             let source = """
             do shell script "\(openCommand)"
             """
@@ -131,7 +134,8 @@ extension App: Openable {
                 url.deleteLastPathComponent()
             }
             // get open command, e.g. "open -a Terminal /Users/user/Desktop/test\ folder"
-            let openCommand = ScriptManager.shared.getOpenCommand(self, path: url.path)
+            var openCommand = ScriptManager.shared.getOpenCommand(self)
+            openCommand += " " + url.path.specialCharEscaped()
             // script
             guard let scriptURL = ScriptManager.shared.getScriptURL(with: Constants.generalScript) else { return }
 //            // handle exceptional case
@@ -154,10 +158,12 @@ extension App: Openable {
             }
         case .editor:
             // get open command, e.g. "open -a TextEdit /Users/user/Desktop/test\ folder /Users/user/Documents"
-            let path = urls.map {
+            var openCommand = ScriptManager.shared.getOpenCommand(self)
+            urls.map {
                 $0.path
-            }.joined(separator: " ")
-            let openCommand = ScriptManager.shared.getOpenCommand(self, path: path)
+            }.forEach {
+                openCommand += " " + $0.specialCharEscaped()
+            }
             // script
             guard let scriptURL = ScriptManager.shared.getScriptURL(with: Constants.generalScript) else { return }
             // excute
