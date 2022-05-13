@@ -38,6 +38,7 @@ public enum SupportedApps: String, CaseIterable {
     case pyCharm = "PyCharm"
     case rubyMine = "RubyMine"
     case webStorm = "WebStorm"
+    case androidstudio = "Android Studio"
     
     public var name: String {
         return self.rawValue
@@ -49,6 +50,7 @@ public enum SupportedApps: String, CaseIterable {
         case .sublime: return "Sublime"
         case .vscodeInsiders: return "VSCodeInsiders"
         case .intelliJIDEA: return "IntelliJ_IDEA"
+        case .androidstudio: return "Android_Studio"
         default:
             return self.rawValue
         }
@@ -116,6 +118,7 @@ public enum SupportedApps: String, CaseIterable {
         case .pyCharm: return "com.jetbrains.pycharm"
         case .rubyMine: return "com.jetbrains.rubymine"
         case .webStorm: return "com.jetbrains.webstorm"
+        case .androidstudio: return ""
         }
     }
     
