@@ -190,6 +190,17 @@ public class FinderManager {
             if userApplicationDirURL.count > 0 {
                 searchDirs.insert(userApplicationDirURL[0])
             }
+            // search `$HOME/Library/Application Support/JetBrains/Toolbox
+            let libraryDirURL = fileManager.urls(for: .libraryDirectory, in: .userDomainMask)
+            if libraryDirURL.count > 0 {
+                let libDirURL = libraryDirURL[0]
+                let toolboxURL = libDirURL.appendingPathComponent("Application Support")
+                    .appendingPathComponent("JetBrains")
+                    .appendingPathComponent("Toolbox")
+                if fileManager.fileExists(atPath: toolboxURL.path) {
+                    searchDirs.insert(toolboxURL)
+                }
+            }
             
             var levelCount = 0
             
