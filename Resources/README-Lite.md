@@ -1,12 +1,12 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/104892184-d522b280-59ac-11eb-9c06-5ffd044dce7d.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v1.2.4"><img src="https://img.shields.io/badge/Version-1.2.4-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v1.2.5"><img src="https://img.shields.io/badge/Version-1.2.5-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
 
-English | [中文说明](./README-Lite-zh.md)
+English | [中文说明](./README-Lite-zh.md) | [Deutsch](./README-Lite-de.md)
 
 ## How to use 🚀
 
@@ -103,6 +103,7 @@ Set the following app as the default app to open:
 | PyCharm | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor PyCharm` |
 | RubyMine | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor RubyMine` |
 | WebStorm | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor WebStorm` |
+| Android Studio | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Android\ Studio` |
 
 In particular, if you want to use a custom application as the default, then you can also use this command. Take `GitHub Desktop` as an example.
 

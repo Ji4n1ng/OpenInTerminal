@@ -1,12 +1,12 @@
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/104892184-d522b280-59ac-11eb-9c06-5ffd044dce7d.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v1.2.4"><img src="https://img.shields.io/badge/Version-1.2.4-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v1.2.5"><img src="https://img.shields.io/badge/Version-1.2.5-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
 
-[English](./README-Lite.md) | 中文说明
+[English](./README-Lite.md) | 中文说明 | [Deutsch](./README-Lite-de.md)
 
 ## 如何使用 🚀
 
@@ -104,6 +104,7 @@ defaults remove wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor
 | PyCharm | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor PyCharm` |
 | RubyMine | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor RubyMine` |
 | WebStorm | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor WebStorm` |
+| Android Studio | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Android\ Studio` |
 
 如果你想要使用自定义应用，那么你可以下面的命令。以 GitHub Desktop 为例。
 
