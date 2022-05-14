@@ -1,6 +1,6 @@
 <p align="center">
   <img width="80%" src="https://user-images.githubusercontent.com/11001224/104892170-d18f2b80-59ac-11eb-96b1-0293acfde4e5.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.5"><img src="https://img.shields.io/badge/Version-2.3.5-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.6"><img src="https://img.shields.io/badge/Version-2.3.6-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -128,137 +128,6 @@ Desteğiniz için teşekkürler!
 <code>open -a GitHub\ Desktop ~/Desktop</code>
 </details>
 
-## Değişiklikler 🗒
-
-<details><summary>Tamamını göster</summary><br>
-<p><strong>sürüm 2.3.4</strong></p>
-<ul>
-<li>İçerik menüsündeki simgeler güncellendi</li>
-</ul>
-<p><strong>sürüm 2.3.3</strong></p>
-<ul>
-<li>Düzeltme: Kısayol kullanılırken boşluklu yollar açılmıyor.</li>
-</ul>
-<p><strong>sürüm 2.3.2</strong></p>
-<ul>
-<li>Düzeltme: Boşluklu yollar açılmıyor.</li>
-</ul>
-<p><strong>sürüm 2.3.1</strong></p>
-<ul>
-<li>Düzeltme: alacritty açılmıyor.</li>
-<li>Ekleme: Tercihlerd menüsüne çıkış butonu eklendi.</li>
-</ul>
-<p><strong>sürüm 2.3.0</strong></p>
-<ul>
-<li>Özel uygulamaları aç. (Bütün uygulamalar desteklenmemektedir.)</li>
-<li>Simgeyi içerik menüsünde göster. (Stabilite adına eski Mac'ler için bu özellik tavsiye edilmemektedir.)</li>
-</ul>
-<p><strong>sürüm 2.2.3</strong></p>
-<ul>
-<li>kitty Desteği</li>
-<li>Artık çoklu seçilmiş dosylar düzenleyicide açılıyor./li>
-</ul>
-<p><strong>sürüm 2.2.2</strong></p>
-<ul>
-<li> İtalyanca and İspanyolca desteği eklendi</li>
-<li>Düzeltme: Terminal ve TextEdit gözükmüyor.</li>
-</ul>
-<p><strong>sürüm 2.2.1</strong></p>
-<ul>
-<li>JetBrains Desteği</li>
-<li>Düzeltme: Uygulama aslında var mı diye kontrol etme fonksiyonu.</li>
-</ul>
-<p><strong>sürüm 2.2.0</strong></p>
-<ul>
-<li>Özelleştirilmiş Finder menü seçenekleri</li>
-<li>Rusça Desteği getirildi.</li>
-<li>PhpStorm Desteği</li>
-<li>Düzeltme: Terminalde masaüstünü açınca çalışmıyor.</li>
-</ul>
-<p><strong>sürüm 2.1.1</strong></p>
-<ul>
-<li>Uygulama geliştirici hesabı ile imzalandı. Bundle ID değiştirildi.</li>
-<li>Finder Uzantı eklentisine, tek başına çalışabilme özelliği getirildi.</li>
-<li>CotEditor ve MacVim Desteği</li>
-<li>Artık; kullanıcı, içerik menüsü içeriklerini gizleyebilir.</li>
-<li>Finder içerik menüsü başlığı şuankine göre değişir hale getirildi. </li>
-</ul>
-<p><strong>sürüm 2.0.5</strong></p>
-<ul>
-<li>Düzeltme: Hata var mı diye uygulamayı kontrol etme</li>
-</ul>
-<p><strong>sürüm 2.0.4</strong></p>
-<ul>
-<li>TextMate Desteği</li>
-<li>Düzeltme: Klavye kısayol hatası</li>
-</ul>
-<p><strong>sürüm 2.0.3</strong></p>
-<ul>
-<li>Düzeltme: Finder içerik menüsü simgesine karanlık mod seçeneği</li>
-</ul>
-<p><strong>sürüm 2.0.2</strong></p>
-<ul>
-<li>Visual Studio Code - Insiders Desteği</li>
-<li>Durum çubuğu simgesini gizleme seçeneği getirildi.</li>
-</ul>
-<p><strong>sürüm 2.0.1</strong></p>
-<ul>
-<li>BBEdit Desteği</li>
-<li>Finder içerik menüsüne simge ekleme getirildi.</li>
-<li>Düzeltme: Ev konumunda uygulama klasörğnğ kontrol et.</li>
-</ul>
-<p><strong>sürüm 0.10.2</strong></p>
-<ul>
-<li>Düzeltme: Finder içerik menüsü diğer disklerde gözükmüyor.</li>
-</ul>
-<p><strong>sürüm 0.10.1</strong></p>
-<ul>
-<li>iTerm `cd xxx` ifadesini geçmişte saklamaaycak.</li>
-<li>iTerm'in `pencere` veya `tab` butonuna `Tercihler`'de tekrar tıklamak gerekiyor..</li>
-</ul>
-<p><strong>sürüm 0.10.0</strong></p>
-<ul>
-<li>Klayve kısayolu desteği eklendi..</li>
-<li>VSCodium Desteği.</li>
-</ul>
-<p><strong>sürüm 0.9.1</strong></p>
-<ul>
-<li>Fransızca desteği eklendi.</li>
-</ul>
-<p><strong>sürüm 0.9.0</strong></p>
-<ul>
-<li>OpenInTerminal bir kaç haftalık geliştirme sürecisinden sonra yayınlandı. Eğer herhangi bir öneriniz ya da fark ettiğiniz bir sorun varsa lütfen `issue` açın.</li>
-</ul>
-<p><strong>sürüm 0.4.1</strong></p>
-<ul>
-<li><code>Alacritty</code> Desteği</li>
-</ul>
-<p><strong>sürüm 0.4.0</strong></p>
-<ul>
-<li><code>Terminal</code> and <code>Hyper</code> kullanırken yeni bir penceremi yoksa yeni bir sekme mi açılacağını varsayılan davranış olarak seçebilme özelliği sağlandı.</li>
-</ul>
-<p><strong>sürüm 0.3.0</strong></p>
-<ul>
-<li>İsim <code>OpenInTerminal-Lite</code> olarak değiştirilerek (<code>OpenInTerminal</code> ismi daha güçlü olacak bir versiyon için rezerve edildi.)</li>
-<li>Hyper'ı açarken yolda bulunan bazı özel karakterlerin çökmeye sebep verdiği bir hata çözüldü.</li>
-</ul>
-<p><strong>sürüm 0.2.0</strong></p>
-<ul>
-<li>Terminal seçme seçeneği</li>
-<li><code>clear</code>iTerm açılırken komut çalıştırmayı iptal etme getirildi.</li>
-</ul>
-<p><strong>sürüm 0.1.1</strong></p>
-<ul>
-<li><code>Hyper</code> Desteği</li>
-<li>iTerm açılırken yeni bir pencere oluşturmaya önceleik</li>
-</ul>
-<p><strong>sürüm 0.1.0</strong></p>
-<ul>
-<li>İlk sürüm</li>
-</ul>
-<br>
-</details>
-
 ## Özel Olarak Teşekkürler ❤️
 
 Katkıda bulunan herkese teşekkürler... Uğraşlarınızla OpenInTerminal daha iyi bir hale geliyor.
@@ -279,6 +148,7 @@ Katkıda bulunan herkese teşekkürler... Uğraşlarınızla OpenInTerminal daha
 - [arendruni](https://github.com/arendruni)
 - [panta97](https://github.com/panta97)
 - [bkzspam](https://github.com/bkzspam)
+- [ystolzenburg](https://github.com/ystolzenburg)
 
 ### Referans Projeler
 

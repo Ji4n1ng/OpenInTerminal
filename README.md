@@ -1,6 +1,6 @@
 <p align="center">
   <img width="80%" src="https://user-images.githubusercontent.com/11001224/104892170-d18f2b80-59ac-11eb-96b1-0293acfde4e5.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.5"><img src="https://img.shields.io/badge/Version-2.3.5-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.6"><img src="https://img.shields.io/badge/Version-2.3.6-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -22,9 +22,9 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md) | [OpenInTermi
 | Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
 | Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty) and [kitty](https://sw.kovidgoyal.net/kitty/). | ✅ | ✅ |
-| Support TextEdit, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm), and [Typora](https://typora.io/). | ✅ | ✅ |
+| Support TextEdit, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm, Android Studio), and [Typora](https://typora.io/). | ✅ | ✅ |
 | Open in custom apps. (⚠️ Not all apps support.) | ✅ | ✅ |
-| Support English, Chinese, French, Russian, Italian, Spanish and Turkish | ✅ | ✅ |
+| Support English, Chinese, French, Russian, Italian, Spanish, Turkish and German | ✅ | ✅ |
 | GUI preferences | ✅ | ❌ |
 | Support keyboard shortcuts. | ✅ | ❌ |
 
@@ -133,6 +133,12 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 2.3.6</strong></p>
+<ul>
+<li>Support German</li>
+<li>Search apps installed by JetBrains Toolbox</li>
+<li>Support Android Studio</li>
+</ul>
 <p><strong>version 2.3.5</strong></p>
 <ul>
 <li>Support dragging to reorder custom menu</li>
@@ -286,6 +292,7 @@ Thanks to all backers and contributors. Your work makes OpenInTerminal better.
 - [arendruni](https://github.com/arendruni)
 - [panta97](https://github.com/panta97)
 - [bkzspam](https://github.com/bkzspam)
+- [ystolzenburg](https://github.com/ystolzenburg)
 
 ### Reference projects
 

@@ -219,6 +219,10 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 1.2.5</strong></p>
+<ul>
+<li>Support German</li>
+</ul>
 <p><strong>version 1.2.4</strong></p>
 <ul>
 <li>Support Turkish</li>
@@ -347,6 +351,7 @@ As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder e
 - [arendruni](https://github.com/arendruni)
 - [panta97](https://github.com/panta97)
 - [bkzspam](https://github.com/bkzspam)
+- [ystolzenburg](https://github.com/ystolzenburg)
 
 ### Reference projects
 

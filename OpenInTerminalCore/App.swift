@@ -95,7 +95,6 @@ extension App: Openable {
                 let source = """
                 do shell script "\(openCommand)"
                 """
-                print(source)
                 try excute(source)
             }
             
@@ -115,7 +114,6 @@ extension App: Openable {
             let source = """
             do shell script "\(openCommand)"
             """
-            print(source)
             try excute(source)
         }
     }

@@ -1,6 +1,6 @@
 <p align="center">
   <img width="80%" src="https://user-images.githubusercontent.com/11001224/104892170-d18f2b80-59ac-11eb-96b1-0293acfde4e5.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.5"><img src="https://img.shields.io/badge/Version-2.3.5-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.6"><img src="https://img.shields.io/badge/Version-2.3.6-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -22,9 +22,9 @@
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
 | 支持 终端, [iTerm](https://www.iterm2.com/)， [Hyper](https://github.com/zeit/hyper)， [Alacritty](https://github.com/jwilm/alacritty) 和 [kitty](https://sw.kovidgoyal.net/kitty/) | ✅ | ✅ |
-| 支持 文本编辑, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm) 和 [Typora](https://typora.io/) | ✅ | ✅ |
+| 支持 文本编辑, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm, Android Studio) 和 [Typora](https://typora.io/) | ✅ | ✅ |
 | 打开自定义应用（⚠️ 并不是所有的应用都支持） | ✅ | ✅ |
-| 支持中文，英语，法语，俄语，意大利语，西班牙语和土耳其语 | ✅ | ✅ |
+| 支持中文，英语，法语，俄语，意大利语，西班牙语，土耳其语和德语 | ✅ | ✅ |
 | 图形化设置界面 | ✅ | ❌ |
 | 支持键盘快捷键 | ✅ | ❌ |
 
@@ -148,6 +148,7 @@ brew install --cask openinterminal
 - [arendruni](https://github.com/arendruni)
 - [panta97](https://github.com/panta97)
 - [bkzspam](https://github.com/bkzspam)
+- [ystolzenburg](https://github.com/ystolzenburg)
 
 ### 参考项目
 

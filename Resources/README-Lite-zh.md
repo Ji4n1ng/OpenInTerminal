@@ -233,6 +233,7 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 - [arendruni](https://github.com/arendruni)
 - [panta97](https://github.com/panta97)
 - [bkzspam](https://github.com/bkzspam)
+- [ystolzenburg](https://github.com/ystolzenburg)
 
 ### 参考项目
 

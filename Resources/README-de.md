@@ -1,6 +1,6 @@
 <p align="center">
   <img width="80%" src="https://user-images.githubusercontent.com/11001224/104892170-d18f2b80-59ac-11eb-96b1-0293acfde4e5.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.5"><img src="https://img.shields.io/badge/Version-2.3.5-blue.svg"></a>
+  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.6"><img src="https://img.shields.io/badge/Version-2.3.6-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
@@ -128,143 +128,6 @@ Danke für Ihre Unterstützung!
 <code>open -a GitHub\ Desktop ~/Desktop</code>
 </details>
 
-## Änderungen 🗒
-
-<details><summary>Alle anzeigen</summary><br>
-<p><strong>Version 2.3.5</strong></p>
-<ul>
-<li>Unterstützung des Ziehens zur Neuordnung des benutzerdefinierten Menüs</li>
-<li>Unterstützung von Türkisch</li>
-<li>Unterstützung von Typora</li>
-</ul>
-<p><strong>Version 2.3.4</strong></p>
-<ul>
-<li>Aktualisieren von Symbolen im Kontextmenü</li>
-</ul>
-<p><strong>Version 2.3.3</strong></p>
-<ul>
-<li>Fehlerbehebung: Pfad mit Leerzeichen kann nicht geöffnet werden, wenn ein Shortcut verwendet wird</li>
-</ul>
-<p><strong>Version 2.3.2</strong></p>
-<ul>
-<li>Fehlerbehebung: kann Pfad mit Leerzeichen nicht öffnen</li>
-</ul>
-<p><strong>Version 2.3.1</strong></p>
-<ul>
-<li>Fehlerbehebung: Pfad mit Leerzeichen kann nicht geöffnet werden</li>
-<li>Funktion: Beenden-Schaltfläche in den Einstellungen hinzugefügt</li>
-</ul>
-<p><strong>Version 2.3.0</strong></p>
-<ul>
-<li>Öffnen von benutzerdefinierten Programmen. (Nicht alle werden unterstützt)</li>
-<li>Symbol im Kontextmenü anzeigen. (Aus Stabilitätsgründen wird die Anzeige von Symbolen bei älteren Mac-Modellen nicht empfohlen)</li>
-</ul>
-<p><strong>Version 2.2.3</strong></p>
-<ul>
-<li>Unterstützung von kitty</li>
-<li>Öffnen mehrerer ausgewählter Dateien in Editoren</li>
-</ul>
-<p><strong>Version 2.2.2</strong></p>
-<ul>
-<li>Unterstützung von Italienisch und Spanisch</li>
-<li>Fehlerbehebung: zeigt Terminal und TextEdit nicht an</li>
-</ul>
-<p><strong>Version 2.2.1</strong></p>
-<ul>
-<li>Unterstützung von JetBrains</li>
-<li>Fehlerbehebung: Prüfen, ob ein Programm existiert</li>
-</ul>
-<p><strong>Version 2.2.0</strong></p>
-<ul>
-<li>Benutzerdefinierte Finder-Menüoptionen</li>
-<li>Unterstützung von Russisch</li>
-<li>Unterstützung von PhpStorm</li>
-<li>Fehlerbehebung: funktioniert nicht, wenn der Schreibtisch im Terminal geöffnet wird</li>
-</ul>
-<p><strong>Version 2.1.1</strong></p>
-<ul>
-<li>Programm wurde mit dem Entwicklerkonto signiert. Bundle ID hat sich geändert</li>
-<li>Unterstützung des Finder-Erweiterung Standalone-Betriebsmodus</li>
-<li>Unterstützung von CotEditor und MacVim</li>
-<li>Benutzer kann Kontextmenüeinträge ausblenden</li>
-<li>Der Titel des Finder-Kontextmenüeintrags ändert sich in das aktuelle Standardterminal oder den Standardeditor</li>
-</ul>
-<p><strong>Version 2.0.5</strong></p>
-<ul>
-<li>Fehlerbehebung: Fehler beim Überprüfen ob Programm existiert</li>
-</ul>
-<p><strong>Version 2.0.4</strong></p>
-<ul>
-<li>Unterstützung von TextMate</li>
-<li>Fehlerbehebung: Tastaturkurzbefehl-Fehler</li>
-</ul>
-<p><strong>Version 2.0.3</strong></p>
-<ul>
-<li>Fehlerbehebung: Finder-Kontextmenü-Symbol unterstützt Dunkelmodus</li>
-</ul>
-<p><strong>Version 2.0.2</strong></p>
-<ul>
-<li>Unterstützung von Visual Studio Code - Insiders</li>
-<li>Unterstützung für das Ausblenden des Statusleistensymbols</li>
-</ul>
-<p><strong>Version 2.0.1</strong></p>
-<ul>
-<li>Unterstützung von BBEdit</li>
-<li>Symbol im Finder-Kontextmenü hinzufügen</li>
-<li>Fehlerbehebung: Anwendungsordner im Home-Verzeichnis prüfen</li>
-</ul>
-<p><strong>Version 0.10.2</strong></p>
-<ul>
-<li>Fehlerbehebung: Das Finder-Kontextmenü erscheint nicht auf anderen Festplatten.</li>
-</ul>
-<p><strong>Version 0.10.1</strong></p>
-<ul>
-<li>iTerm hinterlässt nicht mehr `cd xxx` im Verlauf.</li>
-<li>Sie müssen die `window` oder `tab` Schaltfläche von iTerm erneut in `Preferences` betätigen.</li>
-</ul>
-<p><strong>Version 0.10.0</strong></p>
-<ul>
-<li>Unterstützung von Tastaturkürzeln.</li>
-<li>Unterstützung von VSCodium.</li>
-</ul>
-<p><strong>Version 0.9.1</strong></p>
-<ul>
-<li>Unterstützung von Französisch.</li>
-</ul>
-<p><strong>Version 0.9.0</strong></p>
-<ul>
-<li>OpenInTerminal wurde nach mehreren Wochen Entwicklungszeit veröffentlicht. Wenn Sie Vorschläge haben oder es Fehler gibt, können Sie gerne einen Fehler melden.</li>
-</ul>
-<p><strong>Version 0.4.1</strong></p>
-<ul>
-<li>Unterstützung von <code>Alacritty</code></li>
-</ul>
-<p><strong>Version 0.4.0</strong></p>
-<ul>
-<li>Sie können festlegen, dass ein neuer Tab oder ein neues Fenster geöffnet wird, wenn Sie <code>Terminal</code> und <code>Hyper</code> verwenden.</li>
-</ul>
-<p><strong>Version 0.3.0</strong></p>
-<ul>
-<li>Name zu <code>OpenInTerminal-Lite</code> geändert. (<code>OpenInTerminal</code> wird in Zukunft in einer leistungsfähigeren Version erscheinen.)</li>
-<li>Behebung eines Fehlers, bei dem einige Sonderzeichen im Pfad zum Absturz des Programms beim Öffnen von Hyper führten.</li>
-</ul>
-<p><strong>Version 0.2.0</strong></p>
-<ul>
-<li>Terminalauswahl hinzugefügt</li>
-<li>Abbrechen des Befehls <code>clear</code> beim Öffnen von iTerm</li>
-</ul>
-<p><strong>Version 0.1.1</strong></p>
-<ul>
-<li>Unterstützung von <code>Hyper</code></li>
-<li>Beim Öffnen von iTerm der Erstellung eines neuen Tabs Priorität einräumen</li>
-</ul>
-<p><strong>Version 0.1.0</strong></p>
-<ul>
-<li>Erste Veröffentlichung</li>
-</ul>
-<br>
-</details>
-
 ## Besonderen Dank an ❤️
 
 Vielen Dank an alle Mitwirkenden. Ihre Arbeit macht OpenInTerminal besser.
@@ -284,6 +147,7 @@ Vielen Dank an alle Mitwirkenden. Ihre Arbeit macht OpenInTerminal besser.
 - [arendruni](https://github.com/arendruni)
 - [panta97](https://github.com/panta97)
 - [bkzspam](https://github.com/bkzspam)
+- [ystolzenburg](https://github.com/ystolzenburg)
 
 ### Referenzprojekte
 
