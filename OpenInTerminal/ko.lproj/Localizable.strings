@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  OpenInTerminal
+
+  Created by Jianing Wang on 2019/4/22.
+  Copyright © 2019 Jianing Wang. All rights reserved.
+*/
+
+"general.ok" = "확인";
+"general.cancel" = "취소";
+"general.yes" = "승인";
+
+"menu.open_in" = "다음으로 열기: ";
+"menu.open_with_default_terminal" = "터미널에서 열기";
+"menu.open_with_default_editor" = "에디터에서 열기";
+"menu.copy_path_to_clipboard" = "위치 복사하기";
+
+"menu.preferences" = "설정...";
+"menu.quit" = "종료";
+
+"pref.toolbar.not_installed" = "설치되지 않음";
+
+"alert.pick_terminal_title" = "어디서 열까요?";
+"alert.pick_terminal_description" = "다음 터미널 중 기본 터미널로 사용할 하나를 선택해주세요.";
+
+"alert.pick_editor_title" = "어디서 열까요?";
+"alert.pick_editor_description" = "다음 에디터들 중 기본 에디터로 사용할 하나를 선택해주세요.";
+
+"alert.reset_preferences_title" = "사용자 설정을 초기화할까요?";
+"alert.reset_preferences_description" = "⚠️ 모든 사용자 설정이 초기화됩니다.";
+
+"toolbar.item_name" = "터미널에서 열기";
+"toolbar.item_tooltip" = "현재 디렉토리를 터미널에서 엽니다.";
+
+"pref.custom.menu.installed_supported" = "설치된 지원되는 앱";
+"pref.custom.menu.all_supported" = "모든 지원되는 앱";
+"pref.custom.menu.running_apps" = "실행중인 앱";
+"pref.custom.menu.manually_select" = "Finder에서 수동으로 선택";
+"pref.custom.menu.manually_input" = "수동으로 입력";
+
+
