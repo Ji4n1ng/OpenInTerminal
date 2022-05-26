@@ -1,0 +1,183 @@
+
+/* Class = "NSTextFieldCell"; title = "❤️ Special thanks to:"; ObjectID = "0Gy-jf-q6v"; */
+"0Gy-jf-q6v.title" = "❤️ 특별히 감사드립니다:";
+
+/* Class = "NSTextFieldCell"; title = "⚠️ Note that this will reset all user preferences"; ObjectID = "2Rg-te-FPU"; */
+"2Rg-te-FPU.title" = "⚠️ 모든 사용자 설정이 초기화됩니다";
+
+/* Class = "NSButtonCell"; title = "Apply to Finder Toolbar Menu"; ObjectID = "2we-f7-s2N"; */
+"2we-f7-s2N.title" = "Finder 툴바 메뉴에 적용하기";
+
+/* Class = "NSTextFieldCell"; title = "If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu."; ObjectID = "592-4p-Ybh"; */
+"592-4p-Ybh.title" = "만약 활성화되면 메뉴 바 아이콘을 클릭하여 선택한 작업을 실행할 수 있고, 우클릭하여 메뉴를 열 수 있습니다.";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
+"5f3-UK-Rft.title" = "설정";
+
+/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
+"BUH-CU-WBW.title" = "상태 바 아이콘 가리기";
+
+/* Class = "NSTextFieldCell"; title = "Open a new window or a new tab."; ObjectID = "BrI-hE-Mff"; */
+"BrI-hE-Mff.title" = "새 창 또는 탭 열기.";
+
+/* Class = "NSTextFieldCell"; title = "Icon Type:"; ObjectID = "CP0-Xv-uYl"; */
+"CP0-Xv-uYl.title" = "아이콘 타입:";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Cp7-6g-ngj"; */
+"Cp7-6g-ngj.title" = "취소";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "Dyx-zg-hYe"; */
+"Dyx-zg-hYe.title" = "없음";
+
+/* Class = "NSTextFieldCell"; title = "Quit"; ObjectID = "FBK-9S-cZf"; */
+"FBK-9S-cZf.title" = "종료";
+
+/* Class = "NSTextFieldCell"; title = "Shortcuts"; ObjectID = "FpP-Q9-flS"; */
+"FpP-Q9-flS.title" = "단축키";
+
+/* Class = "NSTextFieldCell"; title = "None"; ObjectID = "G69-k2-hgn"; */
+"G69-k2-hgn.title" = "없음";
+
+/* Class = "NSViewController"; title = "General"; ObjectID = "Gn1-zC-bzB"; */
+"Gn1-zC-bzB.title" = "일반";
+
+/* Class = "NSViewController"; title = "Advanced"; ObjectID = "H3q-JS-Bu4"; */
+"H3q-JS-Bu4.title" = "고급";
+
+/* Class = "NSButtonCell"; title = "WeChat"; ObjectID = "HUx-Wz-JJm"; */
+"HUx-Wz-JJm.title" = "WeChat";
+
+/* Class = "NSTextFieldCell"; title = "👨‍💻 GitHub:"; ObjectID = "How-dP-tcX"; */
+"How-dP-tcX.title" = "👨‍💻 GitHub:";
+
+/* Class = "NSButtonCell"; title = "@Camji55"; ObjectID = "IJL-uk-uO5"; */
+"IJL-uk-uO5.title" = "@Camji55";
+
+/* Class = "NSButtonCell"; title = "contact@jianing.wang"; ObjectID = "IPL-yO-Vkp"; */
+"IPL-yO-Vkp.title" = "contact@jianing.wang";
+
+/* Class = "NSTextFieldCell"; title = "0.1.0"; ObjectID = "Jnf-AX-bIr"; */
+"Jnf-AX-bIr.title" = "0.1.0";
+
+/* Class = "NSTextFieldCell"; title = "💸 Donate:"; ObjectID = "Kua-ZD-31F"; */
+"Kua-ZD-31F.title" = "💸 후원:";
+
+/* Class = "NSButtonCell"; title = "Terminal"; ObjectID = "M3w-T0-vi7"; */
+"M3w-T0-vi7.title" = "터미널";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Terminal:"; ObjectID = "Mqt-Fp-Ssl"; */
+"Mqt-Fp-Ssl.title" = "기본 터미널로 열기:";
+
+/* Class = "NSTextFieldCell"; title = "🐦 Twitter:"; ObjectID = "NZE-zU-6ss"; */
+"NZE-zU-6ss.title" = "🐦 Twitter:";
+
+/* Class = "NSButtonCell"; title = "Apply to Finder Context Menu"; ObjectID = "RhP-R5-Wwt"; */
+"RhP-R5-Wwt.title" = "Finder 우클릭 메뉴에 적용하기";
+
+/* Class = "NSButtonCell"; title = "Alipay"; ObjectID = "Sw7-of-ecf"; */
+"Sw7-of-ecf.title" = "Alipay";
+
+/* Class = "NSTextFieldCell"; title = "Application Type:"; ObjectID = "UCM-Ds-LYN"; */
+"UCM-Ds-LYN.title" = "애플리케이션 타입:";
+
+/* Class = "NSTextFieldCell"; title = "You need to reopen the app to display Preferences."; ObjectID = "Upf-HU-iaN"; */
+"Upf-HU-iaN.title" = "설정을 표시하려면 앱을 다시 열어야 합니다.";
+
+/* Class = "NSTextFieldCell"; title = "✉️ Contact:"; ObjectID = "Vu4-Wz-Agk"; */
+"Vu4-Wz-Agk.title" = "✉️ 연락처:";
+
+/* Class = "NSTextFieldCell"; title = "Copy path in Clipboard:"; ObjectID = "Xd9-iA-emU"; */
+"Xd9-iA-emU.title" = "위치를 클립보드에 복사:";
+
+/* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
+"Xfc-rf-FkX.title" = "기본 텍스트 에디터:";
+
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at Login"; ObjectID = "ZbK-xW-anT"; */
+"ZbK-xW-anT.title" = "OpenInTerminal를 로그인 시에 열기";
+
+/* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
+"aRo-sy-WpK.title" = "기본 터미널:";
+
+/* Class = "NSTextFieldCell"; title = "Not Installed Applications"; ObjectID = "bCi-r8-MrK"; */
+"bCi-r8-MrK.title" = "설치되지 않은 앱";
+
+/* Class = "NSTextFieldCell"; title = "Installed Supported Applications"; ObjectID = "bT7-LU-sov"; */
+"bT7-LU-sov.title" = "설치된 지원되는 앱";
+
+/* Class = "NSTextFieldCell"; title = "Open with default Editor:"; ObjectID = "bvy-v3-hhf"; */
+"bvy-v3-hhf.title" = "기본 에디터로 열기:";
+
+/* Class = "NSButtonCell"; title = "GitHub Sponsors"; ObjectID = "dC4-C7-fEL"; */
+"dC4-C7-fEL.title" = "GitHub 스폰서";
+
+/* Class = "NSButtonCell"; title = "github.com/Ji4n1ng/OpenInTerminal"; ObjectID = "f2V-P5-pQI"; */
+"f2V-P5-pQI.title" = "github.com/Ji4n1ng/OpenInTerminal";
+
+/* Class = "NSButtonCell"; title = "Editor"; ObjectID = "fb4-Xq-he0"; */
+"fb4-Xq-he0.title" = "에디터";
+
+/* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
+"gy9-lb-m8d.title" = "빠른 전환";
+
+/* Class = "NSTextFieldCell"; title = "Application Name:"; ObjectID = "h5X-oY-gqy"; */
+"h5X-oY-gqy.title" = "애플리케이션 이름:";
+
+/* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
+"jcs-Ou-OZ2.title" = "초기화";
+
+/* Class = "NSButtonCell"; title = "Reset preferences"; ObjectID = "jyI-H7-qN3"; */
+"jyI-H7-qN3.title" = "설정 초기화";
+
+/* Class = "NSButtonCell"; title = "PayPal"; ObjectID = "k3X-F7-Gpb"; */
+"k3X-F7-Gpb.title" = "PayPal";
+
+/* Class = "NSViewController"; title = "About"; ObjectID = "k6X-N1-mVu"; */
+"k6X-N1-mVu.title" = "정보";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "kAa-36-ubl"; */
+"kAa-36-ubl.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "keg-OV-uLJ"; */
+"keg-OV-uLJ.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal"; ObjectID = "mOB-su-ZM1"; */
+"mOB-su-ZM1.title" = "OpenInTerminal";
+
+/* Class = "NSButtonCell"; title = "Window"; ObjectID = "mTs-8c-pgj"; */
+"mTs-8c-pgj.title" = "윈도우";
+
+/* Class = "NSTextFieldCell"; title = "Custom Menu Options"; ObjectID = "nWc-SM-Kes"; */
+"nWc-SM-Kes.title" = "사용자 지정 메뉴 구성";
+
+/* Class = "NSButtonCell"; title = "Tab"; ObjectID = "nYS-rF-JCL"; */
+"nYS-rF-JCL.title" = "탭";
+
+/* Class = "NSTextFieldCell"; title = "OpenInTerminal will automatically launch at login."; ObjectID = "ngT-lX-vFA"; */
+"ngT-lX-vFA.title" = "OpenInTerminal가 로그인시에 자동으로 실행됩니다.";
+
+/* Class = "NSButtonCell"; title = "Quit OpenInTerminal"; ObjectID = "ofD-rA-gib"; */
+"ofD-rA-gib.title" = "OpenInTerminal 종료";
+
+/* Class = "NSViewController"; title = "Custom"; ObjectID = "s5W-qL-1Xs"; */
+"s5W-qL-1Xs.title" = "사용자 지정";
+
+/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
+"sG4-nK-ghj.title" = "우클릭 메뉴에서 숨기기";
+
+/* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */
+"tR5-me-DTK.title" = "@Ji4n1ng";
+
+/* Class = "NSButtonCell"; title = "original"; ObjectID = "uok-iD-wXY"; */
+"uok-iD-wXY.title" = "원래대로";
+
+/* Class = "NSButtonCell"; title = "Confirm"; ObjectID = "wpb-Gv-KAp"; */
+"wpb-Gv-KAp.title" = "확인";
+
+/* Class = "NSButtonCell"; title = "no"; ObjectID = "x6U-9Q-ujh"; */
+"x6U-9Q-ujh.title" = "없음";
+
+/* Class = "NSTextFieldCell"; title = "iTerm"; ObjectID = "yIW-2a-15A"; */
+"yIW-2a-15A.title" = "iTerm";
+
+/* Class = "NSButtonCell"; title = "simple"; ObjectID = "yrq-LZ-XDr"; */
+"yrq-LZ-XDr.title" = "간단하게";
