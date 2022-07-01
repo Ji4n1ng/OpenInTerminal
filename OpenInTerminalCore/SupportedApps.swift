@@ -16,6 +16,7 @@ public enum SupportedApps: String, CaseIterable {
     case hyper = "Hyper"
     case alacritty = "Alacritty"
     case kitty = "kitty"
+    case wezterm = "WezTerm"
     
     // MARK: - Editors
     case textEdit = "TextEdit"
@@ -58,7 +59,7 @@ public enum SupportedApps: String, CaseIterable {
     
     public var type: AppType {
         switch self {
-        case .terminal, .iTerm, .hyper, .alacritty, .kitty:
+		case .terminal, .iTerm, .hyper, .alacritty, .kitty, .wezterm:
             return .terminal
         default:
             return .editor
@@ -98,6 +99,7 @@ public enum SupportedApps: String, CaseIterable {
         case .hyper: return "co.zeit.hyper"
         case .alacritty: return "io.alacritty"
         case .kitty: return "net.kovidgoyal.kitty"
+        case .wezterm: return "com.github.wez.wezterm"
         // Editors
         case .textEdit: return "com.apple.TextEdit"
         case .vscode: return "com.microsoft.VSCode"
