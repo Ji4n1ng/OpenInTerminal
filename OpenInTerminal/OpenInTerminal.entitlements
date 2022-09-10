@@ -17,6 +17,7 @@
 		<string>co.zeit.hyper</string>
 		<string>io.alacritty</string>
 		<string>com.github.wez.wezterm</string>
+		<string>org.tabby</string>
 		<string>com.microsoft.VSCode</string>
 		<string>com.github.atom</string>
 		<string>com.sublimetext.3</string>

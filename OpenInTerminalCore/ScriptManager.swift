@@ -23,6 +23,8 @@ public class ScriptManager {
             return "open -na kitty --args --directory"
         } else if SupportedApps.is(app, is: .wezterm) {
             return "open -na wezterm --args start --cwd"
+        } else if SupportedApps.is(app, is: .tabby) {
+            return "open -na tabby --args --directory"
         } else {
             return "open -a \(app.name.nameSpaceEscaped(escapeCount))"
         }
