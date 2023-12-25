@@ -18,9 +18,11 @@ public enum SupportedApps: String, CaseIterable {
     case kitty = "kitty"
     case wezterm = "WezTerm"
     case tabby = "Tabby"
+    case warp = "Warp"
     
     // MARK: - Editors
     case textEdit = "TextEdit"
+    case xcode = "Xcode"
     case vscode = "Visual Studio Code"
     case atom = "Atom"
     case sublime = "Sublime Text"
@@ -31,9 +33,11 @@ public enum SupportedApps: String, CaseIterable {
     case cotEditor = "CotEditor"
     case macVim = "MacVim"
     case typora = "Typora"
+    case nova = "Nova"
     // JetBrains
     case appCode = "AppCode"
     case cLion = "CLion"
+    case fleet = "Fleet"
     case goLand = "GoLand"
     case intelliJIDEA = "IntelliJ IDEA"
     case phpStorm = "PhpStorm"
@@ -60,7 +64,7 @@ public enum SupportedApps: String, CaseIterable {
     
     public var type: AppType {
         switch self {
-		case .terminal, .iTerm, .hyper, .alacritty, .kitty, .wezterm, .tabby:
+        case .terminal, .iTerm, .hyper, .alacritty, .kitty, .wezterm, .tabby, .warp:
             return .terminal
         default:
             return .editor
@@ -102,8 +106,10 @@ public enum SupportedApps: String, CaseIterable {
         case .kitty: return "net.kovidgoyal.kitty"
         case .wezterm: return "com.github.wez.wezterm"
         case .tabby: return "org.tabby"
+        case .warp: return "dev.warp"
         // Editors
         case .textEdit: return "com.apple.TextEdit"
+        case .xcode: return "com.apple.Xcode"
         case .vscode: return "com.microsoft.VSCode"
         case .atom: return "com.github.atom"
         case .sublime: return "com.sublimetext.3"
@@ -114,8 +120,10 @@ public enum SupportedApps: String, CaseIterable {
         case .cotEditor: return ""
         case .macVim: return "org.vim.MacVim"
         case .typora: return "abnerworks.Typora"
+        case .nova: return "com.panic.Nova"
         case .appCode: return "com.jetbrains.appcode"
         case .cLion: return "com.jetbrains.clion"
+        case .fleet: return "com.jetbrains.fleet"
         case .goLand: return "com.jetbrains.goland"
         case .intelliJIDEA: return "com.jetbrains.intellij"
         case .phpStorm: return "com.jetbrains.PhpStorm"

@@ -133,6 +133,17 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 2.3.7</strong></p>
+<ul>
+<li>Support Korean</li>
+<li>Support Warp</li>
+<li>Support WezTerm</li>
+<li>Support Tabby</li>
+<li>Support Fleet</li>
+<li>Support Nova</li>
+<li>Support Xcode</li>
+<li>For kitty users: open in a signle instance instead of a new one</li>
+</ul>
 <p><strong>version 2.3.6</strong></p>
 <ul>
 <li>Support German</li>

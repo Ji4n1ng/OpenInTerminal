@@ -20,7 +20,7 @@ public class ScriptManager {
         if SupportedApps.is(app, is: .alacritty) {
             return "open -na Alacritty --args --working-directory"
         } else if SupportedApps.is(app, is: .kitty) {
-            return "open -na kitty --args --directory"
+            return "open -na kitty --args --single-instance --instance-group 1 --directory"
         } else if SupportedApps.is(app, is: .wezterm) {
             return "open -na wezterm --args start --cwd"
         } else if SupportedApps.is(app, is: .tabby) {

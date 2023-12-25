@@ -26,10 +26,10 @@ public class FinderManager {
         }
         
         if let firstItem = (selectionItems as! Array<AnyObject>).first {
-            // Files or folders are selected
+            // Files or folders selected
             target = firstItem as! FinderItem
         } else {
-            // Check if there are opened finder windows
+            // Check if there are finder windows opened
             guard let windows = finder.FinderWindows?(),
                 let firstWindow = windows.firstObject else {
                     print("No Finder windows are opened or selected")
