@@ -222,7 +222,22 @@ public class FinderManager {
                         }
                         // add to applications
                         if baseName.hasSuffix(".app") {
-                            let appName = fileURL.deletingPathExtension().lastPathComponent
+                            var appName = fileURL.deletingPathExtension().lastPathComponent
+                            
+                            // nixpkgs fixes
+                            do {
+                                // iTerm is installed as iTerm2.app
+                                if appName == "iTerm2" {
+                                    appName = "iTerm"
+                                }
+                                // IntelliJ IDEA and PyCharm community edition have CE appended
+                                else if appName == "IntelliJ IDEA CE" {
+                                    appName = "IntelliJ IDEA"
+                                } else if appName == "PyCharm CE" {
+                                    appName = "PyCharm"
+                                }
+                            }
+                            
                             applications.insert(appName)
                             continue
                         }
