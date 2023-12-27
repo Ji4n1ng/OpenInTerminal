@@ -36,7 +36,6 @@ English | [中文说明](./README-Lite-zh.md) | [Deutsch](./README-Lite-de.md)
 
 ```
 brew install --cask openinterminal-lite
-# or
 brew install --cask openineditor-lite
 ```
 
@@ -56,11 +55,17 @@ brew install --cask openineditor-lite
 
 ## Support ❤️
 
-Thank you for your support!
+Open-source projects cannot live long without your help. If you like OpenInTerminal, please consider supporting this project by becoming a sponsor. Your user icon or company logo shows up on the README with a link to your home page.
+
+Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 💖.
 
 | PayPal | AliPay | WeChat Pay |
 | --- | --- | --- |
 | [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Support-Alipay.jpg" width="50%"> | <img src="./Support-WeChatPay.jpg" width="50%"> |
+
+### Backers & Sponsors
+
+<a href="https://github.com/sparrowcode"><img src="https://avatars.githubusercontent.com/u/98487302?s=200&v=4" width="10%" style="border-radius:10px;" /></a>
 
 ## Settings 🔨
 
@@ -192,8 +197,8 @@ defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 
 ## FAQ ❓
 
-<details><summary>1. I accidentally clicked on the <code>Don't Allow</code>  button.</summary><br>
-<p>You can run the following command in the terminal. This will reset the permissions in the System Preferences.</p>
+<details><summary>1. Oops, hit <code>Don't Allow</code> button by mistake.</summary><br>
+<p>No sweat! Just run the following command in your terminal, and it'll reset the permissions in System Preferences.</p>
 <pre><code># For OpenInTerminal-Lite:
 tccutil reset AppleEvents wang.jianing.app.OpenInTerminal-Lite
 # For OpenInEditor-Lite:
@@ -205,20 +210,24 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 <p>Please do not use backslash <code>\</code> and double quotes <code>"</code> in the path</p>
 </details>
 
-<details><summary>3. Why it cannot automatically switch icons when switching from/to Dark mode</summary><br>
-<p>As for <code>OpenInTerminal-Lite</code>, the icon in Finder Toolbar is app icon not Finder extension icon. And I have not found a API to change the app icon (If you have any good idea, please let me know). 
-<p>Added: Thanks to the contribution (#126) of @MatteoCarnelos, <code>OpenInTerminal-Lite</code> can now automatically switch icons using Hammerspoon.</p><br>
-As for <code>OpenInTerminal</code>, the icon of it in Finder Toolbar is Finder extension icon. It can change automatically when switching between dark mode and light mode. So you can try to use OpenInTerminal.</p>
+<details><summary>3. Why it cannot automatically switch icons in Dark mode</summary><br>
+<p>As for <code>OpenInTerminal-Lite</code>, the icon you see in the Finder Toolbar is actually the app icon, not the Finder extension icon. And I haven't found an API yet that lets you swtich the app icon on the fly (got any cool ideas? Do share!). 
+<p>But hey, good news! Thanks to @MatteoCarnelos's awesome contribution (#126), <code>OpenInTerminal-Lite</code> can now automatically switch icons using Hammerspoon.</p>
 </details>
 
 <details><summary>4. My custom app doesn't work.</summary><br>
-<p>If your custom application cannot work by running the following command, then the application cannot be supported. For example, GitHub Desktop:</p>
+<p>If your custom application doesn't work with the following command, then it's not supported. For example, GitHub Desktop:</p>
 <code>open -a GitHub\ Desktop ~/Desktop</code>
 </details>
 
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 1.2.6</strong></p>
+<ul>
+<li>Support Korean</li>
+<li>For kitty users: open in a signle instance instead of a new one</li>
+</ul>
 <p><strong>version 1.2.5</strong></p>
 <ul>
 <li>Support German</li>

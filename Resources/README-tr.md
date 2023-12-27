@@ -112,18 +112,7 @@ Desteğiniz için teşekkürler!
 <p>A: Bir dosyayı(klasörü) seçerek ya da Finder penceresi açarak işlem yapabilirsiniz. Çünkü sağ tık yapıldığında bir öge seçili değilse sistem seçilmiş dosyaların yoluna dair bir program paylaşmaz. Bu durumda da program çalışmaz.<br>Şu anda bazı(Finder uzantıları ve durum çubuğundaki işlevler) aynı şekilde çalışmıyor. Durum çubuğu simgelerinin aksine Finder uzantıları bağımsız çalışabilmek için AppleScript'e bağlı. Bu yüzden farklı davranış bimileri sergiliyorlar. Bu problem gelecekte iyileştirilecektir.</p>
 </details>
 
-<details><summary>7. OpenInTerminal'in entergrasyon mekanizması ve neden iki versiyon olduğuna dair açıklama.</summary><br>
-<p>"Terminalde aç" işlevini elde etmenin iki yolu var.</p>
-<ul>
-<li>1. ScriptingBridge. İkinciye oranla daha hızlı ve daha stabil her ne kadar aralarındaki fark az olsa da.. <code>OpenInTerminal-Lite</code> ve <code>OpenInTerminal</code>'nin işlevi durum çubuğunda bu yolla sağlanmakta. Dezavantajı ise bunu kullanan uygulamalar eğer bunu kullanıcının (depolama konumu olarak) konumuna erişmek veya başka bir amaçla kullanıyorsa sandbox içinde çalıştırılamamakta.</li>
-<li>2. AppleScript. Finder uzantısı olan <code>OpenInTerminal</code> bağımsız çalışabilmek için AppleScript'e bağlı. İlk yol bu amaçla kullanılamıyor çünkü Finder uzantıları sandbox içinde çalışıtırılamamakta.</li>
-</ul>
-<p>Bazı kişiler OpenInTerminal'in hızlı ve stabil olmasını isterken(lite sürümü), bazıları ise OpenInTerminal'in güçlü ve daha kolay ayarlanabilir olmasını (normal sürüm) istiyor. Bazıları OpenInTerminal'in otomatik olarak karanlık moda geçebilmesini isterken (normal sürüm), bazıları ise tek tıkla OpenInTerminal'i (lite sürüm) açabilmek istiyor.</p>
-<p>Bir sürümü ihtiyaçları artık karşılayamamaya başlayınca, OpenInTerminal normal ve lite olmak üzere iki sürüm olarak ayrıldı.</p>
-<p>(Bu arada, sandbox içinde olup OpenInTerminal ile aynı işleve sahip olan uygulamar olduğunu biliyorum. Ancak bunu nasıl başardıklarını anlayamadım eğer birisi bana nasıl yapıldığını açıklarsa memnun olurum. OpenInTerminal'i tek bir sürümün yeterli geleceği bir düzeye getirmekten mutluluk duyacağıma emin olabilirisiniz.😀)</p>
-</details>
-
-<details><summary>8. Benim özel uygulamam çalışmıyor.</summary><br>
+<details><summary>7. Benim özel uygulamam çalışmıyor.</summary><br>
 <p>Eğer aşağıdaki komutla kullanmak istediğiniz program açılmıyorsa, o program bu uygulama tarafından desteklenmiyor demektir. Örneğin, GitHub Desktop için:</p>
 <code>open -a GitHub\ Desktop ~/Desktop</code>
 </details>
@@ -131,24 +120,6 @@ Desteğiniz için teşekkürler!
 ## Özel Olarak Teşekkürler ❤️
 
 Katkıda bulunan herkese teşekkürler... Uğraşlarınızla OpenInTerminal daha iyi bir hale geliyor.
-
-### Katkıda Bulunanlar
-
-- [Camji55](https://github.com/Camji55)
-- [gucheen](https://github.com/gucheen)
-- [uclort](https://github.com/uclort)
-- [MatteoCarnelos](https://github.com/MatteoCarnelos)
-
-### Çevirmenler
-
-- [bkzspam](https://github.com/bkzspam)
-- [Dorian Eydoux](https://github.com/dorian-eydoux)
-- [techinpark](https://github.com/techinpark)
-- [Egor](https://github.com/Rogue85)
-- [arendruni](https://github.com/arendruni)
-- [panta97](https://github.com/panta97)
-- [bkzspam](https://github.com/bkzspam)
-- [ystolzenburg](https://github.com/ystolzenburg)
 
 ### Referans Projeler
 

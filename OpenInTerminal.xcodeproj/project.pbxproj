@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -934,7 +934,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.3.6;
+				MARKETING_VERSION = 2.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -960,7 +960,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.3.6;
+				MARKETING_VERSION = 2.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -983,7 +983,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.3.5;
+				MARKETING_VERSION = 2.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminalHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1007,7 +1007,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.3.5;
+				MARKETING_VERSION = 2.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminalHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

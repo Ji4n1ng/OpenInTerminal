@@ -34,6 +34,7 @@ public enum SupportedApps: String, CaseIterable {
     case macVim = "MacVim"
     case typora = "Typora"
     case nova = "Nova"
+    case cursor = "Cursor"
     // JetBrains
     case appCode = "AppCode"
     case cLion = "CLion"
@@ -121,6 +122,7 @@ public enum SupportedApps: String, CaseIterable {
         case .macVim: return "org.vim.MacVim"
         case .typora: return "abnerworks.Typora"
         case .nova: return "com.panic.Nova"
+        case .cursor: return "com.todesktop.230313mzl4w4u92"
         case .appCode: return "com.jetbrains.appcode"
         case .cLion: return "com.jetbrains.clion"
         case .fleet: return "com.jetbrains.fleet"

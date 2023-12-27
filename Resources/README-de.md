@@ -112,18 +112,7 @@ Danke für Ihre Unterstützung!
 <p>A: Versuchen Sie, eine Datei (oder einen Ordner) auszuwählen oder ein Finder-Fenster zu öffnen. Wenn Sie mit der rechten Maustaste auf den Desktop klicken und nichts ausgewählt ist, stellt das System dem Programm den Pfad der ausgewählten Dateien nicht zur Verfügung. In dieser Situation funktioniert das Programm nicht. Derzeit funktionieren sie (Finder-Erweiterung und Aktionen im Statusleistenmenü) nicht auf die gleiche Weise. Die Finder-Erweiterung ist vollständig abhängig von AppleScript, um unabhängig zu laufen, während das Statusleistensymbol wie bisher funktioniert. Sie haben also unterschiedliche Verhaltensweisen. Dieses Problem wird in Zukunft verbessert werden.</p>
 </details>
 
-<details><summary>7. Der Implementierungsmechanismus von OpenInTerminal und warum es zwei Versionen gibt.</summary><br>
-<p>Es gibt zwei Möglichkeiten, "im Terminal öffnen" zu erreichen.</p>
-<ul>
-<li>1. ScriptingBridge. Er ist schneller und stabiler als der zweite, obwohl die Unterschiede gering sind. <code>OpenInTerminal-Lite</code> und Aktionen von <code>OpenInTerminal</code> im Statusleistenmenü basieren darauf. Der Nachteil ist, dass Anwendungen, die ScriptingBridge verwenden, um auf die Verzeichnisinformationen des Benutzers oder etwas anderes zuzugreifen, nicht in einer Sandbox untergebracht werden können.</li>
-<li>2. AppleScript. Die Finder-Erweiterung von <code>OpenInTerminal</code> ist komplett von AppleScript abhängig, um unabhängig zu laufen. Der erste Weg kann nicht auf die Finder-Erweiterung angewandt werden, da diese in einer Sandbox laufen muss.</li>
-</ul>
-<p>Einige Leute wollen, dass OpenInTerminal schnell und stabil ist (die Lite-Version), während andere wollen, dass OpenInTerminal leistungsstark und einfacher zu konfigurieren ist (die normale Version). Einige Leute hoffen, dass OpenInTerminal sich automatisch an den Dunkelmodus anpassen kann (die normale Version), während andere nur das Terminal mit einem Klick öffnen wollen (die lite Version).</p>
-<p>Da eine Version diese Anforderungen nicht mehr erfüllen kann, wurde OpenInTerminal vor einigen Monaten in eine normale Version und eine Lite-Version aufgeteilt.</p>
-<p>(Übrigens weiß ich, dass es Anwendungen gibt, die in einer Sandbox laufen und den gleichen Effekt wie OpenInTerminal erzielen können. Aber ich weiß nicht, wie sie das implementieren. Wenn jemand es weiß und bereit ist, mit mir zu sprechen, wäre das großartig. Ich wäre sehr froh, OpenInTerminal zu perfektionieren, damit eine Version ausreicht 😀)</p>
-</details>
-
-<details><summary>8. Mein benutzerdefiniertes Programm funktioniert nicht.</summary><br>
+<details><summary>7. Mein benutzerdefiniertes Programm funktioniert nicht.</summary><br>
 <p>Wenn Ihre benutzerdefinierte Anwendung nicht mit dem folgenden Befehl funktioniert, kann die Anwendung nicht unterstützt werden. Zum Beispiel, GitHub Desktop:</p>
 <code>open -a GitHub\ Desktop ~/Desktop</code>
 </details>
@@ -131,23 +120,6 @@ Danke für Ihre Unterstützung!
 ## Besonderen Dank an ❤️
 
 Vielen Dank an alle Mitwirkenden. Ihre Arbeit macht OpenInTerminal besser.
-
-### Mitwirkende
-
-- [Camji55](https://github.com/Camji55)
-- [gucheen](https://github.com/gucheen)
-- [uclort](https://github.com/uclort)
-- [MatteoCarnelos](https://github.com/MatteoCarnelos)
-
-### Übersetzer
-
-- [Dorian Eydoux](https://github.com/dorian-eydoux)
-- [techinpark](https://github.com/techinpark)
-- [Egor](https://github.com/Rogue85)
-- [arendruni](https://github.com/arendruni)
-- [panta97](https://github.com/panta97)
-- [bkzspam](https://github.com/bkzspam)
-- [ystolzenburg](https://github.com/ystolzenburg)
 
 ### Referenzprojekte
 

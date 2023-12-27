@@ -21,10 +21,10 @@
 
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| 支持 终端, [iTerm](https://www.iterm2.com/)， [Hyper](https://github.com/zeit/hyper)， [Alacritty](https://github.com/jwilm/alacritty) 和 [kitty](https://sw.kovidgoyal.net/kitty/) | ✅ | ✅ |
-| 支持 文本编辑, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/)，[TextMate](https://macromates.com)，[CotEditor](https://coteditor.com/)，[MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm, Android Studio) 和 [Typora](https://typora.io/) | ✅ | ✅ |
+| 支持 终端, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty), [kitty](https://sw.kovidgoyal.net/kitty/), [Warp](https://www.warp.dev), [WezTerm](https://wezfurlong.org/wezterm/index.html), [Tabby](https://tabby.sh). | ✅ | ✅ |
+| 支持 文本编辑, Xcode, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm, Android Studio, Fleet), [Typora](https://typora.io/), [Nova](https://nova.app/), [Cursor](https://cursor.sh/). | ✅ | ✅ |
 | 打开自定义应用（⚠️ 并不是所有的应用都支持） | ✅ | ✅ |
-| 支持中文，英语，法语，俄语，意大利语，西班牙语，土耳其语和德语 | ✅ | ✅ |
+| 支持中文，英语，法语，俄语，意大利语，西班牙语，土耳其语, 德语, 韩语 | ✅ | ✅ |
 | 图形化设置界面 | ✅ | ❌ |
 | 支持键盘快捷键 | ✅ | ❌ |
 
@@ -108,23 +108,9 @@ brew install --cask openinterminal
 <li>2. 打开最上面的访达窗口。</li>
 <li>3. 都不是。那么打开桌面。</li>
 </ul>
-<p>例如，当你在下面的访达窗口中选中了一个文件而你想打开最上面的访达窗口到终端中，按照上面的顺序，这将不会按照你所预期的来工作。</p>
-<p>问：我右键点击了桌面，但是没有打开终端或者编辑器。但是状态栏菜单里的功能却能正常运行。</p>
-<p>答：选中一个文件（文件夹）或者打开一个访达窗口。因为当你右键点击桌面的时候，没有任何东西是被选中的状态，所以系统并不能把选中文件的路径提供给程序使用。在这种情况下，程序将不能正常工作。<br>目前访达扩展和状态栏菜单中的功能并不是同一种方式来实现的。访达扩展为了能够独立运行，现在完全基于 AppleScript。然而状态栏菜单中的功能的实现方式还和以前一样。所以它们会有不同的表现行为。这个问题会在未来得到改进。</p>
 </details>
 
-<details><summary>7. OpenInTerminal 的实现机制以及为什么会有两个版本</summary><br>
-<p>有两种方法可以实现“打开终端”。</p>
-<ul>
-<li>1. ScriptingBridge。它比第二种方式更快更稳定，尽管两者差异很小。<code>OpenInTerminal-Lite</code> 和 <code>OpenInTerminal</code> 中的状态栏菜单操作都是基于这种方式的。它的缺点是使用 ScriptingBridge 访问用户目录信息或其他内容的应用程序不能是沙盒的。</li>
-<li>2. AppleScript。为了能够独立运行，<code>OpenInTerminal</code> 的访达扩展完全依赖 AppleScript。第一种方法不能应用于访达扩展，因为它必须是沙盒的。</li>
-</ul>
-<p>有些人希望 OpenInTerminal 快速且稳定（精简版），而另一些人希望 OpenInTerminal 功能强大且易于配置（普通版）。有些人希望 OpenInTerminal 能够自动适配黑暗模式（普通版），而另一些人只想一键打开终端（精简版）。</p>
-<p>当一个版本不再满足这些需求时，OpenInTerminal 在几个月之前分化为普通版和精简版。</p>
-<p>（顺便说一句，我知道有些应用程序是沙盒化的，并且可以达到和 OpenInTerminal 相同的效果。但是我不知道它是怎么实现的。如果有人知道它并愿意与我交谈，那就太好了。我非常愿意使 OpenInTerminal 变得更加完美，以至于一个版本就足够了。😀）</p>
-</details>
-
-<details><summary>8. 我的自定义应用不工作</summary><br>
+<details><summary>7. 我的自定义应用不工作</summary><br>
 <p>如果你的自定义应用不能通过运行以下命令正常运行，那么该应用不支持通过 OpenInTerminal 打开。例如，GitHub Desktop:</p>
 <code>open -a GitHub\ Desktop ~/Desktop</code>
 </details>
@@ -132,23 +118,6 @@ brew install --cask openinterminal
 ## 特别感谢 ❤️
 
 感谢所有的贡献者。你们的付出让 OpenInTerminal 更棒了。
-
-### 贡献者
-
-- [Camji55](https://github.com/Camji55)
-- [gucheen](https://github.com/gucheen)
-- [uclort](https://github.com/uclort)
-- [MatteoCarnelos](https://github.com/MatteoCarnelos)
-
-### 译者
-
-- [Dorian Eydoux](https://github.com/dorianeydx)
-- [techinpark](https://github.com/techinpark)
-- [Egor](https://github.com/Rogue85)
-- [arendruni](https://github.com/arendruni)
-- [panta97](https://github.com/panta97)
-- [bkzspam](https://github.com/bkzspam)
-- [ystolzenburg](https://github.com/ystolzenburg)
 
 ### 参考项目
 

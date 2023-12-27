@@ -6,9 +6,9 @@
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
 
-English | [OpenInTerminal 中文说明](./Resources/README-zh.md) | [OpenInTerminal Türkçe](./Resources/README-tr.md) | [OpenInTerminal Deutsch](./Resources/README-de.md)
+**OpenInTerminal**: English | [中文说明](./Resources/README-zh.md) | [Türkçe](./Resources/README-tr.md) | [OpenInTerminal Deutsch](./Resources/README-de.md)
 
-[OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Deutsch](./Resources/README-Lite-de.md)
+**OpenInTerminal-Lite**: [English](./Resources/README-Lite.md) | [中文说明](./Resources/README-Lite-zh.md) | [Deutsch](./Resources/README-Lite-de.md)
 
 ## How to use 🚀
 
@@ -21,22 +21,21 @@ English | [OpenInTerminal 中文说明](./Resources/README-zh.md) | [OpenInTermi
 
 | Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty) and [kitty](https://sw.kovidgoyal.net/kitty/). | ✅ | ✅ |
-| Support TextEdit, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm, Android Studio), and [Typora](https://typora.io/). | ✅ | ✅ |
+| Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty), [kitty](https://sw.kovidgoyal.net/kitty/), [Warp](https://www.warp.dev), [WezTerm](https://wezfurlong.org/wezterm/index.html), [Tabby](https://tabby.sh). | ✅ | ✅ |
+| Support TextEdit, Xcode, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm, Android Studio, Fleet), [Typora](https://typora.io/), [Nova](https://nova.app/), [Cursor](https://cursor.sh/). | ✅ | ✅ |
 | Open in custom apps. (⚠️ Not all apps support.) | ✅ | ✅ |
-| Support English, Chinese, French, Russian, Italian, Spanish, Turkish and German | ✅ | ✅ |
+| Support English, Chinese, French, Russian, Italian, Spanish, Turkish, German and Korean | ✅ | ✅ |
 | GUI preferences | ✅ | ❌ |
 | Support keyboard shortcuts. | ✅ | ❌ |
 
-## OpenInTerminal and OpenInTerminal-Lite (OpenInEditor-Lite) 👀
+## OpenInTerminal vs OpenInTerminal-Lite and OpenInEditor-Lite 👀
 
-Which one to choose? If you like more powerful features and GUI preferences, then you can use `OpenInTerminal`. If you just need to open terminal faster and more stably, then you can use `OpenInTerminal-Lite`.
+Wondering which one to choose? If you're all about fancy features and GUI settings, go for `OpenInTerminal`. But if you just want to open your terminal quickly and without fuss, `OpenInTerminal-Lite` is your buddy.
 
-For me, I prefer `OpenInTerminal-Lite` which only needs to click once to complete the function (and the other needs to click twice 😂) and it is more lightweight.
+I personally prefer `OpenInTerminal-Lite`. Why? It's a one-click wonder (while the other makes you click twice 😂) and it's more lightweight.
 
-For `OpenInTerminal-Lite` users:
+Check **OpenInTerminal-Lite**: [English](./Resources/README-Lite.md) | [中文说明](./Resources/README-Lite-zh.md) | [Deutsch](./Resources/README-Lite-de.md)
 
-Please check the document: [OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./Resources/README-Lite-tr.md) | [OpenInTerminal-Lite Deutsch](./Resources/README-Lite-de.md)
 
 ## How to install 🖥
 
@@ -81,11 +80,11 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 ## FAQ ❓
 
 <details><summary>1. What is the difference between OpenInTerminal and OpenInTerminal-Lite?</summary><br>
-<p>OpenInTerminal currently has a normal version and a lite version. If you like more powerful features and GUI preferences, then you can use OpenInTerminal. If you just need to open terminal faster and more stably, then you can use OpenInTerminal-Lite.</p>
+<p>OpenInTerminal's got two flavors: the regular and the lite. If you're into fancy features and GUI preferences, stick with the standard OpenInTerminal. But if you just wanna open terminal in a quick and stably way, OpenInTerminal-Lite is your friend.</p>
 </details>
 
-<details><summary>2. I accidentally clicked on the <code>Don't Allow</code>  button.</summary><br>
-<p>You can run the following command in the terminal. This will reset the permissions in the System Preferences.</p>
+<details><summary>2. Oops, hit <code>Don't Allow</code> button by mistake.</summary><br>
+<p>No sweat! Just run the following command in your terminal, and it'll reset the permissions in System Preferences.</p>
 <br><code>tccutil reset AppleEvents wang.jianing.app.OpenInTerminal</code><br>
 </details>
 
@@ -94,39 +93,25 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 </details>
 
 <details><summary>4. Open two Terminal windows on Mojave</summary><br>
-<p>This problem usually occurs when Terminal is first started. So you can use <code>⌘W</code> to close Terminal window instead of using <code>⌘Q</code> to quit Terminal.</p>
+<p>This problem usually occurs when you first start Terminal. Try using <code>⌘W</code> to close Terminal window, instead of using <code>⌘Q</code> to quit Terminal.</p>
 </details>
 
-<details><summary>5. OpenInTerminal Finder extension doesn't work.</summary><br>
-<p>Currently Finder extension is completely dependent on AppleScript in order to run independently. So it is hard to guarantee its stability. When you find that Finder extension doesn't work properly, you need to hold down the <code>Option(⌥)</code> key, right-click on Finder, and select <code>Relaunch</code>.</p>
-<p>If your Mac model is a bit old like mine, I suggest you cancel the icon in the context menu in Preferences. If it still crashes frequently, it is recommended to use OpenInTerminal-Lite.</p>
+<details><summary>5. OpenInTerminal's Finder extension doesn't work.</summary><br>
+<p>The Finder extension relies on AppleScript. So it's hard to guarantee its stability. When the extension doesn't work properly, try this: hold down the <code>Option(⌥)</code> key, right-click on Finder, and select <code>Relaunch</code>.</p>
+<p>Got an older Mac like me? Maybe cancel showing the icon in the context menu in Preferences. If it still crashes frequently, consider switching to OpenInTerminal-Lite.</p>
 </details>
 
 <details><summary>6. OpenInTerminal doesn't work as I expected</summary><br>
-<p>OpenInTerminal will open terminal or editor as the following order:</p>
+<p>OpenInTerminal works as the following order:</p>
 <ul>
-<li>1. Open the file or folder that you selected.</li>
-<li>2. Open the top Finder window.</li>
-<li>3. Neither. Then open the desktop.</li>
+<li>1. Open the file or folder you selected.</li>
+<li>2. If nothing's selected, it opens the top Finder window.</li>
+<li>3. If there's no Finder window. it opens the desktop.</li>
 </ul>
-<p>For example, if you select a file in the bottom Finder window and you want to open the above Finder window in terminal, this will not work as you expected according to the above order.</p>
-<p>Q: I right-click on the desktop but no terminal or editor appears. But actions in status bar menu work.</p>
-<p>A: Try to select a file(folder) or open a Finder window. Because when you right-click on the desktop and nothing is selected, system does not provide program with the path of selected files. Under this situation, the program does not work.<br>Currently they(Fidner extension and actions in status bar menu) do not work as the same way. Finder extension is completely dependent on AppleScript in order to run independently, while status bar icon works as before. So they have different behaviors. This problem will be improved in the future.</p>
 </details>
 
-<details><summary>7. The implementation mechanism of OpenInTerminal and why there are two versions.</summary><br>
-<p>There are two ways to achieve "open in terminal".</p>
-<ul>
-<li>1. ScriptingBridge. It's faster and more stable than the second one, although the differences are small. <code>OpenInTerminal-Lite</code> and actions of <code>OpenInTerminal</code> in status bar menu are based on this way. Its disadvantage is that applications which use ScriptingBridge to access user's directory infomation or something else cannot be sandboxed.</li>
-<li>2. AppleScript. Finder extension of <code>OpenInTerminal</code> is completely dependent on AppleScript in order to run independently. The first way cannot be applied to Finder extension because it is required to be sandboxed.</li>
-</ul>
-<p>Some people want OpenInTerminal to be fast and stable(the lite version), while others want OpenInTerminal to be powerful and easier to configure(the normal version). Some people hope that OpenInTerminal can automatically adapt to dark mode(the normal version), while others just want to open the terminal with one click(the lite version).</p>
-<p>When one version can no longer meet these needs, OpenInTerminal was split into a normal version and a lite version a few months ago.</p>
-<p>(BTW, I know there are apps that are sandboxed and can achieve the same effect as OpenInTerminal. But I don't know how it implements this. If anyone knows it and is willing to talk to me, that would be great. I'm very happy to make OpenInTerminal more perfect so that one version is enough.😀)</p>
-</details>
-
-<details><summary>8. My custom app doesn't work.</summary><br>
-<p>If your custom application cannot work by running the following command, then the application cannot be supported. For example, GitHub Desktop:</p>
+<details><summary>7. My custom app doesn't work.</summary><br>
+<p>If your custom application doesn't work with the following command, then it's not supported. For example, GitHub Desktop:</p>
 <code>open -a GitHub\ Desktop ~/Desktop</code>
 </details>
 
@@ -141,6 +126,7 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 <li>Support Tabby</li>
 <li>Support Fleet</li>
 <li>Support Nova</li>
+<li>Support Cursor</li>
 <li>Support Xcode</li>
 <li>For kitty users: open in a signle instance instead of a new one</li>
 </ul>
@@ -286,24 +272,7 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 
 ## Special Thanks to ❤️
 
-Thanks to all backers and contributors. Your work makes OpenInTerminal better.
-
-### Contributors
-
-- [Camji55](https://github.com/Camji55)
-- [gucheen](https://github.com/gucheen)
-- [uclort](https://github.com/uclort)
-- [MatteoCarnelos](https://github.com/MatteoCarnelos)
-
-### Translators
-
-- [Dorian Eydoux](https://github.com/dorian-eydoux)
-- [techinpark](https://github.com/techinpark)
-- [Egor](https://github.com/Rogue85)
-- [arendruni](https://github.com/arendruni)
-- [panta97](https://github.com/panta97)
-- [bkzspam](https://github.com/bkzspam)
-- [ystolzenburg](https://github.com/ystolzenburg)
+Thanks to all [backers](https://github.com/sponsors/Ji4n1ng) and [contributors](https://github.com/Ji4n1ng/OpenInTerminal/graphs/contributors). Your work makes OpenInTerminal better.
 
 ### Reference projects
 
