@@ -211,7 +211,7 @@ public class FinderManager {
                     break
                 }
                 
-                var tmpDirs = searchDirs
+                var tmpSearchDirs = searchDirs
                 for currentDir in searchDirs {
                     let fileURLs = try fileManager.contentsOfDirectory(at: currentDir, includingPropertiesForKeys: nil)
                     for fileURL in fileURLs {
@@ -222,7 +222,22 @@ public class FinderManager {
                         }
                         // add to applications
                         if baseName.hasSuffix(".app") {
-                            let appName = fileURL.deletingPathExtension().lastPathComponent
+                            var appName = fileURL.deletingPathExtension().lastPathComponent
+                            
+                            // nixpkgs fixes
+                            do {
+                                // iTerm is installed as iTerm2.app
+                                if appName == "iTerm2" {
+                                    appName = "iTerm"
+                                }
+                                // IntelliJ IDEA and PyCharm community edition have CE appended
+                                else if appName == "IntelliJ IDEA CE" {
+                                    appName = "IntelliJ IDEA"
+                                } else if appName == "PyCharm CE" {
+                                    appName = "PyCharm"
+                                }
+                            }
+                            
                             applications.insert(appName)
                             continue
                         }
@@ -238,9 +253,14 @@ public class FinderManager {
                                     try (fileURL as NSURL).getResourceValue(&isAlias, forKey: URLResourceKey.isAliasFileKey)
                                 } catch _ {}
                                 if let isAlias = isAlias as? Bool {
+                                    // for nix-darwin users, applications installed through nix will be installed into a symlinked (alias) directory called "Nix Apps"
+                                    if fileURL.lastPathComponent == "Nix Apps" {
+                                        // symlink needs to be resolved first
+                                        tmpSearchDirs.insert(URL(string: try fileManager.destinationOfSymbolicLink(atPath: fileURL.absoluteString.removingPercentEncoding!.replacingOccurrences(of: "file://", with: "")))!)
+                                    }
                                     // skip alias directory
-                                    if !isAlias {
-                                        tmpDirs.insert(fileURL)
+                                    else if !isAlias {
+                                        tmpSearchDirs.insert(fileURL)
                                     }
                                 }
                             } else {
@@ -250,9 +270,9 @@ public class FinderManager {
                             // file does not exist
                         }
                     }
-                    tmpDirs.remove(currentDir)
+                    tmpSearchDirs.remove(currentDir)
                 }
-                searchDirs = tmpDirs
+                searchDirs = tmpSearchDirs
             }
             
         } catch {
