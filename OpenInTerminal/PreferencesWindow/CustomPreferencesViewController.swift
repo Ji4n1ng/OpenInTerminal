@@ -30,6 +30,9 @@ class CustomPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var simpleIconButton: NSButton!
     @IBOutlet weak var originalIconButton: NSButton!
     
+    @IBOutlet weak var pathNoButton: NSButton!
+    @IBOutlet weak var pathYesButton: NSButton!
+    
     private var dragDropType = NSPasteboard.PasteboardType(rawValue: "private.table-row")
     
     var allInstalledAppNames: Set<String> = Set()
@@ -143,6 +146,15 @@ class CustomPreferencesViewController: PreferencesViewController {
 
         let isApplyToContext = DefaultsManager.shared.isCustomMenuApplyToContext
         applyToContextButton.state = isApplyToContext ? .on : .off
+        
+        let isPathEscaped = DefaultsManager.shared.isPathEscaped
+        if isPathEscaped {
+            pathYesButton.state = .on
+            pathNoButton.state = .off
+        } else {
+            pathYesButton.state = .off
+            pathNoButton.state = .on
+        }
     }
     
     func refreshButtonNewOptionState() {
@@ -270,6 +282,16 @@ class CustomPreferencesViewController: PreferencesViewController {
     @IBAction func iTermTabButtonClicked(_ sender: NSButton) {
         iTermWindowButton.state = .off
         DefaultsManager.shared.setNewOption(.iTerm, .tab)
+    }
+    
+    @IBAction func pathNoButtonClicked(_ sender: NSButton) {
+        pathYesButton.state = .off
+        DefaultsManager.shared.isPathEscaped = false
+    }
+    
+    @IBAction func pathYesButtonClicked(_ sender: NSButton) {
+        pathNoButton.state = .off
+        DefaultsManager.shared.isPathEscaped = true
     }
     
     @IBAction func addMenuOptionButtonClicked(_ sender: NSButton) {

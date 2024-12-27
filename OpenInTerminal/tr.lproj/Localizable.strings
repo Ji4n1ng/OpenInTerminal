@@ -14,6 +14,7 @@
 "menu.open_with_default_terminal" = "Terminal ile aç";
 "menu.open_with_default_editor" = "Düzenleyici ile aç";
 "menu.copy_path_to_clipboard" = "Yolu kopyala";
+"menu.new_file" = "Yeni dosya";
 
 "menu.preferences" = "Tercihler...";
 "menu.quit" = "Çık";

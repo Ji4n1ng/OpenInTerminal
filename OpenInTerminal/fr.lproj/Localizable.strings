@@ -14,6 +14,7 @@
 "menu.open_with_default_terminal" = "Ouvrir dans le terminal";
 "menu.open_with_default_editor" = "Ouvrir dans l'éditeur";
 "menu.copy_path_to_clipboard" = "Copier le chemin d’accès";
+"menu.new_file" = "Nouveau fichier";
 
 "menu.preferences" = "Préférences...";
 "menu.quit" = "Quitter";

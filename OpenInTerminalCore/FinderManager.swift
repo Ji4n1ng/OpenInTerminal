@@ -130,46 +130,6 @@ public class FinderManager {
         return desktopPath
     }
     
-//    /// Determine if the app exists in the `/Applications` folder
-//    private func applicationExists(_ application: String) -> Bool {
-//        var isInApplication = false
-//        let applicationDir = "/Applications/"
-//        let applicationPath = applicationDir + application + ".app"
-//        if FileManager.default.fileExists(atPath: applicationPath) {
-//            isInApplication = true
-//        }
-//        
-//        var isInHomeApplication = false
-//        var homeApplicationDirURL: URL
-//        if #available(OSX 10.12, *) {
-//            homeApplicationDirURL = FileManager.default.homeDirectoryForCurrentUser
-//        } else {
-//            // Fallback on earlier versions
-//            homeApplicationDirURL = URL(fileURLWithPath: NSHomeDirectory())
-//        }
-//        homeApplicationDirURL.appendPathComponent("Applications")
-//        let homeApplicationPath = homeApplicationDirURL.path + "/" + application + ".app"
-//        if FileManager.default.fileExists(atPath: homeApplicationPath) {
-//            isInHomeApplication = true
-//        }
-//        return isInApplication || isInHomeApplication
-//    }
-//    
-//    /// Determine if the user has installed the terminal
-//    public func terminalIsInstalled(_ terminalType: TerminalType) -> Bool {
-//        switch terminalType {
-//        case .terminal:
-//            return true
-//        case .iTerm, .hyper, .alacritty:
-//            return self.applicationExists(terminalType.rawValue)
-//        }
-//    }
-//    
-//    /// Determine if the user has installed the editor
-//    public func editorIsInstalled(_ editorType: EditorType) -> Bool {
-//        return self.applicationExists(editorType.fullName)
-//    }
-    
     /// Get all installed applications' names
     public func getAllInstalledApps() -> Set<String> {
         var applications: Set<String> = Set()

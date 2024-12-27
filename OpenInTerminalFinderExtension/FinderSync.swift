@@ -103,7 +103,6 @@ class FinderSync: FIFinderSync {
             return copyPathItem
         }
     }
-        
     
     func createDefaultMenu() -> NSMenu {
         let menu = NSMenu(title: "")
@@ -245,28 +244,16 @@ class FinderSync: FIFinderSync {
     
     @objc func copyPathToClipboard() {
         let urls = getSelectedPathsFromFinder()
-        let paths = urls.map { $0.path }
+        var paths = urls.map { $0.path }
+        if DefaultsManager.shared.isPathEscaped {
+            paths = paths.map { $0.specialCharEscaped() }
+        }
         let pathString = paths.joined(separator: "\n")
         // Set string
         NSPasteboard.general.clearContents()
         NSPasteboard.general.setString(pathString, forType: .string)
     }
     
-//    func getScriptEvent(functionName: String, _ parameter: String) -> NSAppleEventDescriptor {
-//        let parameters = NSAppleEventDescriptor.list()
-//        parameters.insert(NSAppleEventDescriptor(string: parameter), at: 0)
-//
-//        let event = NSAppleEventDescriptor(
-//            eventClass: AEEventClass(kASAppleScriptSuite),
-//            eventID: AEEventID(kASSubroutineEvent),
-//            targetDescriptor: nil,
-//            returnID: AEReturnID(kAutoGenerateReturnID),
-//            transactionID: AETransactionID(kAnyTransactionID)
-//        )
-//        event.setDescriptor(NSAppleEventDescriptor(string: functionName), forKeyword: AEKeyword(keyASSubroutineName))
-//        event.setDescriptor(parameters, forKeyword: AEKeyword(keyDirectObject))
-//        return event
-//    }
 }
 
 fileprivate extension String {

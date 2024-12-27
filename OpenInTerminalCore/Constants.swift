@@ -23,6 +23,18 @@ struct Constants {
     /// AppleScript for opening a new tab in Terminal
     static let terminalNewTabScript = "terminalNewTabScript"
     
+    struct Commands {
+        static let alacritty = "open -na Alacritty --args --working-directory"
+        static let kitty = "open -na kitty --args --single-instance --instance-group 1 --directory"
+        static let wezterm = "open -na wezterm --args start --cwd"
+        static let tabby = "open -na tabby --args --directory"
+        /// "Open In NeoVim" only supports Alacritty, wezterm, and kitty.
+        static let neovim = "open -na kitty --args /opt/homebrew/bin/nvim PATH"
+//        static let neovim = "open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
+//        static let neovim = "open -na Alacritty --args -e /opt/homebrew/bin/nvim PATH"
+
+    }
+    
 }
 
 public enum QuickToggleType: String {

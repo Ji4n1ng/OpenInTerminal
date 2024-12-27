@@ -90,7 +90,7 @@ extension App: Openable {
 //                }
             } else {
                 // this app is general
-                var openCommand = ScriptManager.shared.getOpenCommand(self, escapeCount: 2)
+                var openCommand = DefaultsManager.shared.getOpenCommand(self, escapeCount: 2)
                 openCommand += " " + path.specialCharEscaped(2)
                 let source = """
                 do shell script "\(openCommand)"
@@ -107,10 +107,19 @@ extension App: Openable {
                 paths.append(desktopPath)
             }
             
-            var openCommand = ScriptManager.shared.getOpenCommand(self, escapeCount: 2)
+            var openCommand = DefaultsManager.shared.getOpenCommand(self, escapeCount: 2)
+            var path = ""
             paths.forEach {
-                openCommand += " \($0.specialCharEscaped(2))"
+                path += " \($0.specialCharEscaped(2))"
             }
+            // fix for neovim
+            if SupportedApps.is(self, is: .neovim) {
+                openCommand = openCommand.replacingOccurrences(of: "PATH", with: path)
+            } else {
+                openCommand += path
+            }
+            logw(openCommand)
+            
             let source = """
             do shell script "\(openCommand)"
             """
@@ -122,17 +131,9 @@ extension App: Openable {
         switch self.type {
         case .terminal:
             guard var url = urls.first else { return }
-            // check the path is directory or not
-            var isDirectory: ObjCBool = false
-            guard FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory) else {
-                return
-            }
-            // if the selected is a file, then delete last path component
-            if isDirectory.boolValue == false {
-                url.deleteLastPathComponent()
-            }
+            url.getDirectory()
             // get open command, e.g. "open -a Terminal /Users/user/Desktop/test\ folder"
-            var openCommand = ScriptManager.shared.getOpenCommand(self)
+            var openCommand = DefaultsManager.shared.getOpenCommand(self)
             openCommand += " " + url.path.specialCharEscaped()
             // script
             guard let scriptURL = ScriptManager.shared.getScriptURL(with: Constants.generalScript) else { return }
@@ -156,11 +157,17 @@ extension App: Openable {
             }
         case .editor:
             // get open command, e.g. "open -a TextEdit /Users/user/Desktop/test\ folder /Users/user/Documents"
-            var openCommand = ScriptManager.shared.getOpenCommand(self)
+            var openCommand = DefaultsManager.shared.getOpenCommand(self)
+            var path = ""
             urls.map {
                 $0.path
             }.forEach {
-                openCommand += " " + $0.specialCharEscaped()
+                path += " " + $0.specialCharEscaped()
+            }
+            if SupportedApps.is(self, is: .neovim) {
+                openCommand = openCommand.replacingOccurrences(of: "PATH", with: path)
+            } else {
+                openCommand += path
             }
             // script
             guard let scriptURL = ScriptManager.shared.getScriptURL(with: Constants.generalScript) else { return }
@@ -177,3 +184,4 @@ extension App: Openable {
     }
     
 }
+

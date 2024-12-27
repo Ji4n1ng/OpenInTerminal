@@ -13,9 +13,15 @@ let GroupDefaults = UserDefaults(suiteName: Constants.Id.Group)
 
 /// current defaults
 public var Defaults: UserDefaults = {
-    if Bundle.main.bundleIdentifier == Constants.Id.OpenInTerminalLite || Bundle.main.bundleIdentifier == Constants.Id.OpenInEditorLite {
+    if Bundle.main.bundleIdentifier == Constants.Id.OpenInTerminalLite ||
+        Bundle.main.bundleIdentifier == Constants.Id.OpenInEditorLite {
         return UserDefaults.standard
     } else {
+        if let allPreferences = GroupDefaults?.dictionaryRepresentation() as? [String: Any] {
+                for (key, value) in allPreferences {
+                    print("\(key): \(value)")
+                }
+            }
         return GroupDefaults ?? UserDefaults.standard
     }
 }()
@@ -49,6 +55,10 @@ public extension DefaultsKeys {
     static let customMenuApplyToToolbar = DefaultsKey<Bool>("CustomMenuApplyToToolbar")
     static let customMenuApplyToContext = DefaultsKey<Bool>("CustomMenuApplyToContext")
     static let customMenuIconOption = DefaultsKey<String>("CustomMenuIconOption")
+    static let pathEscapeOption = DefaultsKey<Bool>("PathEscapeOption")
+    static let kittyCommand = DefaultsKey<String>("KittyCommand")
+    static let neovimCommand = DefaultsKey<String>("NeovimCommand")
+    
     // for Lite
     static let liteDefaultTerminal = DefaultsKey<String>("LiteDefaultTerminal")
     static let liteDefaultEditor = DefaultsKey<String>("LiteDefaultEditor")

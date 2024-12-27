@@ -125,8 +125,6 @@ public class DefaultsManager {
     public func getNewOption(_ app: SupportedApps) -> NewOptionType? {
         var option: String?
         switch app {
-//        case .terminal:
-//            option = Defaults[.terminalNewOption]
         case .iTerm:
             option = Defaults[.iTermNewOption]
         default:
@@ -137,11 +135,6 @@ public class DefaultsManager {
     
     public func setNewOption(_ app: SupportedApps, _ newOption: NewOptionType) {
         switch app {
-//        case .terminal:
-//            Defaults[.terminalNewOption] = newOption.rawValue
-//            if let groupDefaults = GroupDefaults {
-//                groupDefaults[.terminalNewOption] = newOption.rawValue
-//            }
         case .iTerm:
             Defaults[.iTermNewOption] = newOption.rawValue
             let option = newOption == .window ? "true" : "false"
@@ -213,6 +206,16 @@ public class DefaultsManager {
         }
     }
     
+    public var isPathEscaped: Bool {
+        get {
+            return Defaults[.pathEscapeOption]
+        }
+        
+        set {
+            Defaults[.pathEscapeOption] = newValue
+        }
+    }
+
     public func getAppIcon(_ app: App) -> NSImage? {
         switch customMenuIconOption {
         case .no:
@@ -236,6 +239,44 @@ public class DefaultsManager {
         }
     }
     
+    // MARK: - Open Commands
+    
+    public var kittyCommand: String {
+        get {
+            return Defaults[.kittyCommand] ?? Constants.Commands.kitty
+        }
+        
+        set {
+            Defaults[.kittyCommand] = newValue
+        }
+    }
+
+    public var neovimCommand: String {
+        get {
+            return Defaults[.neovimCommand] ?? Constants.Commands.neovim
+        }
+        
+        set {
+            Defaults[.neovimCommand] = newValue
+        }
+    }
+
+    public func getOpenCommand(_ app: App, escapeCount: Int = 1) -> String {
+        if SupportedApps.is(app, is: .alacritty) {
+            return Constants.Commands.alacritty
+        } else if SupportedApps.is(app, is: .kitty) {
+            return kittyCommand
+        } else if SupportedApps.is(app, is: .wezterm) {
+            return Constants.Commands.wezterm
+        } else if SupportedApps.is(app, is: .tabby) {
+            return Constants.Commands.tabby
+        } else if SupportedApps.is(app, is: .neovim) {
+            return neovimCommand
+        } else {
+            return "open -a \(app.name.nameSpaceEscaped(escapeCount))"
+        }
+    }
+    
     // MARK: - Advanced Settings
     
     public func firstSetup() {
@@ -254,6 +295,7 @@ public class DefaultsManager {
         isCustomMenuApplyToToolbar = false
         isCustomMenuApplyToContext = false
         customMenuIconOption = .no
+        isPathEscaped = true
         Defaults.synchronize()
     }
     
