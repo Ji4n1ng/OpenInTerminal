@@ -1,12 +1,7 @@
-<p align="center">
+<div align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/104892184-d522b280-59ac-11eb-9c06-5ffd044dce7d.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v1.2.5"><img src="https://img.shields.io/badge/Version-1.2.5-blue.svg"></a>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
-  <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
-  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
-</p>
-
-[English](./README-Lite.md) | 中文说明 | [Deutsch](./README-Lite-de.md)
+  <a href="./README-Lite.md">English</a> | 中文 | <a href="./README-Lite-de.md">Deutsch</a>
+</div>
 
 ## 如何使用 🚀
 
@@ -96,6 +91,9 @@ defaults remove wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor
 | TextMate | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextMate` |
 | CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CotEditor` |
 | MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor MacVim` |
+| Typora | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Typora` |
+| Nova | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Nova` |
+| Cursor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Cursor` |
 | AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor AppCode` |
 | CLion | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CLion` |
 | GoLand | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor GoLand` |
@@ -110,6 +108,39 @@ defaults remove wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor
 
 ```
 defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal GitHub\ Desktop
+```
+
+#### 针对 Neovim 用户
+
+如果您选择 Neovim 作为编辑器，应用将默认使用 Kitty 作为终端。要切换到其他终端（支持的选项包括 Alacritty、WezTerm 和 Kitty），请使用以下命令更新配置。根据您的安装调整 Neovim 路径（此示例为 /opt/homebrew/bin/nvim）：
+
+```
+defaults write wang.jianing.app.OpenInEditor-Lite NeovimCommand "open -na Alacritty --args -e /opt/homebrew/bin/nvim PATH"
+```
+
+其他终端配置：
+
+```
+// Kitty:
+"open -na kitty --args /opt/homebrew/bin/nvim PATH"
+// WezTerm:
+"open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
+// Alacritty:
+"open -na Alacritty --args -e /opt/homebrew/bin/nvim PATH"
+```
+
+#### 针对 Kitty 用户
+
+Kitty 的默认启动行为是为每个命令打开一个新实例，如下所示：
+
+```
+open -na kitty --args --single-instance --instance-group 1 --directory
+```
+
+如果您想自定义此行为，可以在终端中运行以下命令。请根据需要调整 open 命令：
+
+```
+defaults write wang.jianing.app.OpenInTerminal-Lite KittyCommand "open -na kitty --args --single-instance --instance-group 1 --directory"
 ```
 
 ### 2) 如果你正在使用深色模式 (Dark Mode)
@@ -218,22 +249,7 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 
 ## 特别感谢 ❤️
 
-### 贡献者
-
-- [Camji55](https://github.com/Camji55)
-- [gucheen](https://github.com/gucheen)
-- [uclort](https://github.com/uclort)
-- [MatteoCarnelos](https://github.com/MatteoCarnelos)
-
-### 译者
-
-- [Dorian Eydoux](https://github.com/dorianeydx)
-- [techinpark](https://github.com/techinpark)
-- [Egor](https://github.com/Rogue85)
-- [arendruni](https://github.com/arendruni)
-- [panta97](https://github.com/panta97)
-- [bkzspam](https://github.com/bkzspam)
-- [ystolzenburg](https://github.com/ystolzenburg)
+所有贡献者和支持者！
 
 ### 参考项目
 

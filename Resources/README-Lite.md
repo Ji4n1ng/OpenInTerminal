@@ -1,12 +1,7 @@
-<p align="center">
+<div align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/11001224/104892184-d522b280-59ac-11eb-9c06-5ffd044dce7d.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v1.2.5"><img src="https://img.shields.io/badge/Version-1.2.5-blue.svg"></a>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
-  <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
-  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
-</p>
-
-English | [中文说明](./README-Lite-zh.md) | [Deutsch](./README-Lite-de.md)
+  English | <a href="./README-Lite-zh.md">中文</a> | <a href="./README-Lite-de.md">Deutsch</a>
+</div>
 
 ## How to use 🚀
 
@@ -63,9 +58,9 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 | --- | --- | --- |
 | [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Support-Alipay.jpg" width="50%"> | <img src="./Support-WeChatPay.jpg" width="50%"> |
 
-### Backers & Sponsors
-
-<a href="https://github.com/sparrowcode"><img src="https://avatars.githubusercontent.com/u/98487302?s=200&v=4" width="10%" style="border-radius:10px;" /></a>
+<!-- ### Backers & Sponsors -->
+<!---->
+<!-- <a href="https://github.com/sparrowcode"><img src="https://avatars.githubusercontent.com/u/98487302?s=200&v=4" width="10%" style="border-radius:10px;" /></a> -->
 
 ## Settings 🔨
 
@@ -100,6 +95,9 @@ Set the following app as the default app to open:
 | TextMate | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextMate` |
 | CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CotEditor` |
 | MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor MacVim` |
+| Typora | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Typora` |
+| Nova | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Nova` |
+| Cursor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Cursor` |
 | AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor AppCode` |
 | CLion | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CLion` |
 | GoLand | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor GoLand` |
@@ -114,6 +112,39 @@ In particular, if you want to use a custom application as the default, then you 
 
 ```
 defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal GitHub\ Desktop
+```
+
+#### For Neovim Users
+
+If you select Neovim as your editor, the app will use Kitty as the default terminal. To switch to a different terminal (supported options: Alacritty, WezTerm, and Kitty), update the configuration with the following command. Adjust the Neovim path (`/opt/homebrew/bin/nvim` in this example) to match your installation:
+
+```
+defaults write wang.jianing.app.OpenInEditor-Lite NeovimCommand "open -na Alacritty --args -e /opt/homebrew/bin/nvim PATH"
+```
+
+Other terminal configurations:
+
+```
+// kitty:
+"open -na kitty --args /opt/homebrew/bin/nvim PATH"
+// WezTerm:
+"open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
+// Alacritty:
+"open -na Alacritty --args -e /opt/homebrew/bin/nvim PATH"
+```
+
+#### For Kitty Users
+
+The default launch behavior for kitty is to open a new instance for each command, like the following:
+
+```
+open -na kitty --args --single-instance --instance-group 1 --directory
+```
+
+If you want to customize this behavior, you can run the following command in your terminal. Make sure to replace the open command as what you want:
+
+```
+defaults write wang.jianing.app.OpenInTerminal-Lite KittyCommand "open -na kitty --args --single-instance --instance-group 1 --directory"
 ```
 
 ### 2) If you are using Dark Mode
@@ -223,6 +254,11 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 1.2.7</strong></p>
+<ul>
+<li>Support "open in neovim" for Alacritty, WezTerm, and kitty users.</li>
+<li>Customize open command for kitty users</li>
+</ul>
 <p><strong>version 1.2.6</strong></p>
 <ul>
 <li>Support Korean</li>
@@ -345,22 +381,7 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 
 ## Special Thanks to ❤️
 
-### Contributors
-
-- [Camji55](https://github.com/Camji55)
-- [gucheen](https://github.com/gucheen)
-- [uclort](https://github.com/uclort)
-- [MatteoCarnelos](https://github.com/MatteoCarnelos)
-
-### Translators
-
-- [Dorian Eydoux](https://github.com/dorianeydx)
-- [techinpark](https://github.com/techinpark)
-- [Egor](https://github.com/Rogue85)
-- [arendruni](https://github.com/arendruni)
-- [panta97](https://github.com/panta97)
-- [bkzspam](https://github.com/bkzspam)
-- [ystolzenburg](https://github.com/ystolzenburg)
+All the contributors who have helped with the development of OpenInTerminal-Lite.
 
 ### Reference projects
 

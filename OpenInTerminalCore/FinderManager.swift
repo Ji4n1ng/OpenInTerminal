@@ -136,6 +136,7 @@ public class FinderManager {
         // add system application
         applications.insert("Terminal")
         applications.insert("TextEdit")
+        applications.insert("neovim")
         // search
         do {
             var searchDirs: Set<URL> = Set()

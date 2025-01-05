@@ -1,67 +1,46 @@
-<p align="center">
+<div align="center">
   <img width="80%" src="https://user-images.githubusercontent.com/11001224/104892170-d18f2b80-59ac-11eb-96b1-0293acfde4e5.png"><br/><br/>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.6"><img src="https://img.shields.io/badge/Version-2.3.6-blue.svg"></a>
-  <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
-  <img src="https://img.shields.io/badge/Made With-Swift-red.svg">
-  <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
-</p>
-
-**OpenInTerminal**: English | [中文说明](./Resources/README-zh.md) | [Türkçe](./Resources/README-tr.md) | [OpenInTerminal Deutsch](./Resources/README-de.md)
-
-**OpenInTerminal-Lite**: [English](./Resources/README-Lite.md) | [中文说明](./Resources/README-Lite-zh.md) | [Deutsch](./Resources/README-Lite-de.md)
+  English | <a href="./Resources/README-zh.md">中文</a> | <a href="./Resources/README-tr.md">Türkçe</a> | <a href="./Resources/README-de.md">Deutsch</a>
+</div>
 
 ## How to use 🚀
 
 | Core Features | OpenInTerminal |
 | --- | --- |
-| Open X (e.g., folders or files) in Terminal or Editor | ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif) | 
-| Open the selected in X (e.g., Github Desktop) | ![](https://user-images.githubusercontent.com/11001224/104891620-28483580-59ac-11eb-9fb5-3e4dec7863cc.gif) |
+| Open items (e.g., folders or files) in Terminal or Editor. | ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif) | 
+| Open the selected item in your preferred apps (e.g., Github Desktop, Fork). | ![](https://user-images.githubusercontent.com/11001224/104891620-28483580-59ac-11eb-9fb5-3e4dec7863cc.gif) |
 
 ### More features
 
 | Features | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty), [kitty](https://sw.kovidgoyal.net/kitty/), [Warp](https://www.warp.dev), [WezTerm](https://wezfurlong.org/wezterm/index.html), [Tabby](https://tabby.sh). | ✅ | ✅ |
-| Support TextEdit, Xcode, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm, Android Studio, Fleet), [Typora](https://typora.io/), [Nova](https://nova.app/), [Cursor](https://cursor.sh/). | ✅ | ✅ |
+| Support Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty), [kitty](https://sw.kovidgoyal.net/kitty/), [Warp](https://www.warp.dev), [WezTerm](https://wezfurlong.org/wezterm/index.html), [Tabby](https://tabby.sh), [Ghostty](https://ghostty.org/). | ✅ | ✅ |
+| Support TextEdit, Xcode, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm, Android Studio, Fleet), [Typora](https://typora.io/), [Nova](https://nova.app/), [Cursor](https://cursor.sh/), [notepad--](https://github.com/cxasm/notepad--), [neovim](https://neovim.io/). | ✅ | ✅ |
 | Open in custom apps. (⚠️ Not all apps support.) | ✅ | ✅ |
 | Support English, Chinese, French, Russian, Italian, Spanish, Turkish, German and Korean | ✅ | ✅ |
 | GUI preferences | ✅ | ❌ |
 | Support keyboard shortcuts. | ✅ | ❌ |
 
-## OpenInTerminal vs OpenInTerminal-Lite and OpenInEditor-Lite 👀
+## OpenInTerminal vs OpenInTerminal-Lite 👀
 
 Wondering which one to choose? If you're all about fancy features and GUI settings, go for `OpenInTerminal`. But if you just want to open your terminal quickly and without fuss, `OpenInTerminal-Lite` is your buddy.
 
 I personally prefer `OpenInTerminal-Lite`. Why? It's a one-click wonder (while the other makes you click twice 😂) and it's more lightweight.
 
-Check **OpenInTerminal-Lite**: [English](./Resources/README-Lite.md) | [中文说明](./Resources/README-Lite-zh.md) | [Deutsch](./Resources/README-Lite-de.md)
+Check **OpenInTerminal-Lite** Docs: [English](./Resources/README-Lite.md) | [中文](./Resources/README-Lite-zh.md) | [Deutsch](./Resources/README-Lite-de.md)
 
 
-## How to install 🖥
-
-### 1. Download
-
-#### a) Homebrew
+## Installation 🖥
 
 ```
 brew install --cask openinterminal
 ```
 
-#### b) Manual
+Or manually download it from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
-1. Download from [release](https://github.com/Ji4n1ng/OpenInTerminal/releases).
+## Configuration and FAQ ⚙️
 
-2. Move the app into `/Applications`.
-
-> ⚠️ macOS will ask your permissions to access Finder and other applications when you run the app for the first time. Please give OpenInTerminal the permissions.
-
-### 2. Check Finder Extension permission
-
-Open the OpenInTerminal app. Go to `System Preferences` -> `Extensions` -> `Finder Extensions`, check the permission button as below.
-
-<div>
-  <img src="https://user-images.githubusercontent.com/11001224/78590336-448f4180-7874-11ea-827c-ad3a7bffca5e.png" width="400px">
-</div>
+Please check the [Configuration](./Resources/README-Config.md) document.
 
 ## Support ❤️
 
@@ -73,51 +52,22 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 | --- | --- | --- |
 | [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Resources/Support-Alipay.jpg" width="50%"> | <img src="./Resources/Support-WeChatPay.jpg" width="50%"> |
 
-### Backers & Sponsors
+<!-- ### Backers & Sponsors -->
+<!---->
+<!-- <a href="https://github.com/wcoder"><img src="https://avatars.githubusercontent.com/u/766193?v=4" width="10%" style="border-radius:10px;" /></a> -->
 
-<a href="https://github.com/wcoder"><img src="https://avatars.githubusercontent.com/u/766193?v=4" width="10%" style="border-radius:10px;" /></a>
-
-## FAQ ❓
-
-<details><summary>1. What is the difference between OpenInTerminal and OpenInTerminal-Lite?</summary><br>
-<p>OpenInTerminal's got two flavors: the regular and the lite. If you're into fancy features and GUI preferences, stick with the standard OpenInTerminal. But if you just wanna open terminal in a quick and stably way, OpenInTerminal-Lite is your friend.</p>
-</details>
-
-<details><summary>2. Oops, hit <code>Don't Allow</code> button by mistake.</summary><br>
-<p>No sweat! Just run the following command in your terminal, and it'll reset the permissions in System Preferences.</p>
-<br><code>tccutil reset AppleEvents wang.jianing.app.OpenInTerminal</code><br>
-</details>
-
-<details><summary>3. Special characters in the <code>path</code>.</summary><br>
-<p>Please do not use backslash <code>\</code> and double quotes <code>"</code> in the path.</p>
-</details>
-
-<details><summary>4. Open two Terminal windows on Mojave</summary><br>
-<p>This problem usually occurs when you first start Terminal. Try using <code>⌘W</code> to close Terminal window, instead of using <code>⌘Q</code> to quit Terminal.</p>
-</details>
-
-<details><summary>5. OpenInTerminal's Finder extension doesn't work.</summary><br>
-<p>The Finder extension relies on AppleScript. So it's hard to guarantee its stability. When the extension doesn't work properly, try this: hold down the <code>Option(⌥)</code> key, right-click on Finder, and select <code>Relaunch</code>.</p>
-<p>Got an older Mac like me? Maybe cancel showing the icon in the context menu in Preferences. If it still crashes frequently, consider switching to OpenInTerminal-Lite.</p>
-</details>
-
-<details><summary>6. OpenInTerminal doesn't work as I expected</summary><br>
-<p>OpenInTerminal works as the following order:</p>
-<ul>
-<li>1. Open the file or folder you selected.</li>
-<li>2. If nothing's selected, it opens the top Finder window.</li>
-<li>3. If there's no Finder window. it opens the desktop.</li>
-</ul>
-</details>
-
-<details><summary>7. My custom app doesn't work.</summary><br>
-<p>If your custom application doesn't work with the following command, then it's not supported. For example, GitHub Desktop:</p>
-<code>open -a GitHub\ Desktop ~/Desktop</code>
-</details>
 
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 2.3.8</strong></p>
+<ul>
+<li>Support "open in neovim" for Alacritty, WezTerm, and kitty users.</li>
+<li>Customize open command for kitty users</li>
+<li>Copy path with escaping</li>
+<li>Support fork, notepad--, Ghostty</li>
+<li>Support nix installed applications</li>
+</ul>
 <p><strong>version 2.3.7</strong></p>
 <ul>
 <li>Support Korean</li>
