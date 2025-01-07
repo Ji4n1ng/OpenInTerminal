@@ -23,7 +23,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
-	<true/>
+	<string>YES</string>
 	<key>NSAppleEventsUsageDescription</key>
 	<string>Please give permissions to access your Finder &amp; Terminal</string>
 	<key>NSExtension</key>

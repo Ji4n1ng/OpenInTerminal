@@ -15,6 +15,12 @@ class PreferencesViewController: NSViewController {
         
         // Set the size for each views
         self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height)
+        
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
     }
     
     override func viewDidAppear() {

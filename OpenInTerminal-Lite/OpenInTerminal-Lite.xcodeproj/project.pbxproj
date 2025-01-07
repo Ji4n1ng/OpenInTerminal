@@ -46,9 +46,6 @@
 		95ECC133228CF9A100416AA2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		95ECC134228CF9A200416AA2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3135D9D243F4CD3003323CF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D0C631E3227F8637002C4AA0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		D0C631E4227F8637002C4AA0 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		D0C631E5227F8637002C4AA0 /* Global.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Global.xcconfig; sourceTree = "<group>"; };
 		E197D59B23E299B900C5A893 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +66,6 @@
 			children = (
 				95163CF32269F209007C006F /* OpenInTerminalCore.framework */,
 				95163CE22269F0C2007C006F /* OpenInTerminal-Lite */,
-				D0C631E2227F8637002C4AA0 /* Configuration */,
 				95163CE12269F0C2007C006F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,17 +90,6 @@
 				95ECC132228CF99F00416AA2 /* Localizable.strings */,
 			);
 			path = "OpenInTerminal-Lite";
-			sourceTree = "<group>";
-		};
-		D0C631E2227F8637002C4AA0 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				D0C631E3227F8637002C4AA0 /* Debug.xcconfig */,
-				D0C631E4227F8637002C4AA0 /* Release.xcconfig */,
-				D0C631E5227F8637002C4AA0 /* Global.xcconfig */,
-			);
-			name = Configuration;
-			path = ../Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +206,6 @@
 /* Begin XCBuildConfiguration section */
 		95163CEC2269F0C3007C006F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0C631E5227F8637002C4AA0 /* Global.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -284,7 +268,6 @@
 		};
 		95163CED2269F0C3007C006F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0C631E5227F8637002C4AA0 /* Global.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -353,7 +336,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInTerminal-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -377,7 +360,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInTerminal-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";

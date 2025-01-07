@@ -8,7 +8,7 @@
 
 import Cocoa
 import OpenInTerminalCore
-import MASShortcut
+import ShortcutRecorder
 
 class StatusMenuController: NSObject, NSMenuDelegate {
     
@@ -70,12 +70,11 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         }
     }
     
-    func assignKeyboardShortcutToMenuItem(_ menuItem: NSMenuItem, userDefaultsKey: String) {
-        if let data = UserDefaults.standard.value(forKey: userDefaultsKey),
-            let shortcut = NSKeyedUnarchiver.unarchiveObject(with: data as! Data) as? MASShortcut {
-            let flags = NSEvent.ModifierFlags.init(rawValue: shortcut.modifierFlags.rawValue)
-            menuItem.keyEquivalentModifierMask = flags
-            menuItem.keyEquivalent = shortcut.keyCodeString.lowercased()
+    func assignKeyboardShortcutToMenuItem(_ menuItem: NSMenuItem, userDefaultsKey key: String) {
+        if let shortcutDict = Defaults.value(forKey: key),
+           let shortcut = Shortcut(dictionary: shortcutDict as! [AnyHashable : Any]) {
+            menuItem.keyEquivalentModifierMask = shortcut.modifierFlags
+            menuItem.keyEquivalent = shortcut.characters ?? ""
         } else {
             menuItem.keyEquivalentModifierMask = []
             menuItem.keyEquivalent = ""
@@ -97,9 +96,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
     
     @IBAction func showPreferences(_ sender: NSMenuItem) {
-        let preferencesWindowController = (NSApplication.shared.delegate as? AppDelegate)?.preferencesWindowController
-        NSApp.activate(ignoringOtherApps: true)
-        preferencesWindowController?.showWindow(sender)
+        (NSApplication.shared.delegate as? AppDelegate)?.showPreferencesWindow()
     }
     
     @IBAction func quit(_ sender: NSMenuItem) {

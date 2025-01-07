@@ -41,6 +41,7 @@
 		95294CFD25B3293F00CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
 		95294CFE25B3293F00CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
 		95294D0825B3E17900CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
+		9542C14F2D2A91ED00631D7F /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = 9542C14E2D2A91ED00631D7F /* ShortcutRecorder */; };
 		954D67CF235570D5007702D0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67CE235570D5007702D0 /* Error.swift */; };
 		954D67D12355AD36007702D0 /* ScriptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67D02355AD36007702D0 /* ScriptGenerator.swift */; };
 		954D67D22355F80E007702D0 /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
@@ -64,7 +65,6 @@
 		95DD6296243B211B003550B3 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD6295243B211B003550B3 /* ArrayExtensions.swift */; };
 		95DFC1242354A2C300941D3A /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DFC1232354A2C300941D3A /* DefaultsManager.swift */; };
 		95F5BED5227734E800D505A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BED4227734E800D505A0 /* PreferencesWindowController.swift */; };
-		CF7258BBE507C21AABDF27E6 /* Pods_OpenInTerminal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1463FD2DA3F2CBDE5C98A8F7 /* Pods_OpenInTerminal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,7 +138,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1463FD2DA3F2CBDE5C98A8F7 /* Pods_OpenInTerminal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenInTerminal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2594E99B27EF523300AF84D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4725251122680E87003C50DF /* OpenInTerminalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenInTerminalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4725251322680E87003C50DF /* OpenInTerminalCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenInTerminalCore.h; sourceTree = "<group>"; };
@@ -159,7 +158,6 @@
 		4725257D2268112F003C50DF /* OpenInTerminal.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = OpenInTerminal.entitlements; sourceTree = "<group>"; };
 		4725257E2268112F003C50DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4725257F2268112F003C50DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7BE6A353376D4C2E8A800E17 /* Pods-OpenInTerminal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenInTerminal.debug.xcconfig"; path = "Target Support Files/Pods-OpenInTerminal/Pods-OpenInTerminal.debug.xcconfig"; sourceTree = "<group>"; };
 		9511D8AB22749582008E52B9 /* LaunchNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNotifier.swift; sourceTree = "<group>"; };
 		95163CD12269979E007C006F /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		95163CD3226998ED007C006F /* OpenNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNotifier.swift; sourceTree = "<group>"; };
@@ -201,10 +199,6 @@
 		C1FB06722493518B004AF7B7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3ACD4D0243E0FEF00462517 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE8306A1283D111D00C32E36 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D0C631DF227F862E002C4AA0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		D0C631E0227F862E002C4AA0 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		D0C631E1227F862E002C4AA0 /* Global.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Global.xcconfig; sourceTree = "<group>"; };
-		DF259B7197D7D4AF21BFC5F5 /* Pods-OpenInTerminal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenInTerminal.release.xcconfig"; path = "Target Support Files/Pods-OpenInTerminal/Pods-OpenInTerminal.release.xcconfig"; sourceTree = "<group>"; };
 		E197D59A23E2973800C5A893 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,8 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9518739B227DF5A1000CCB3A /* ServiceManagement.framework in Frameworks */,
+				9542C14F2D2A91ED00631D7F /* ShortcutRecorder in Frameworks */,
 				47252586226812AB003C50DF /* OpenInTerminalCore.framework in Frameworks */,
-				CF7258BBE507C21AABDF27E6 /* Pods_OpenInTerminal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,15 +238,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		232E86BEAF47BEDD64E1355E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7BE6A353376D4C2E8A800E17 /* Pods-OpenInTerminal.debug.xcconfig */,
-				DF259B7197D7D4AF21BFC5F5 /* Pods-OpenInTerminal.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		4725251222680E87003C50DF /* OpenInTerminalCore */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +300,6 @@
 			children = (
 				4725254322680F7C003C50DF /* Error.swift */,
 				9557D3D42274A78C00CE34FA /* ServiceManagement.framework */,
-				1463FD2DA3F2CBDE5C98A8F7 /* Pods_OpenInTerminal.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -372,14 +356,12 @@
 		956C38A8225F7701001CB769 = {
 			isa = PBXGroup;
 			children = (
-				D0C631DE227F862E002C4AA0 /* Configuration */,
 				4725256022681098003C50DF /* OpenInTerminal */,
 				4725251222680E87003C50DF /* OpenInTerminalCore */,
 				4725254B22680FEB003C50DF /* OpenInTerminalFinderExtension */,
 				9518738A227DF492000CCB3A /* OpenInTerminalHelper */,
 				956C38B2225F7701001CB769 /* Products */,
 				4725258F22681424003C50DF /* Frameworks */,
-				232E86BEAF47BEDD64E1355E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -401,16 +383,6 @@
 				9584EAB72CF06A500080F94F /* PathExtensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D0C631DE227F862E002C4AA0 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				D0C631DF227F862E002C4AA0 /* Debug.xcconfig */,
-				D0C631E0227F862E002C4AA0 /* Release.xcconfig */,
-				D0C631E1227F862E002C4AA0 /* Global.xcconfig */,
-			);
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,14 +440,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4725257722681099003C50DF /* Build configuration list for PBXNativeTarget "OpenInTerminal" */;
 			buildPhases = (
-				27E283B36A7FA6E17473A321 /* [CP] Check Pods Manifest.lock */,
 				4725255B22681098003C50DF /* Sources */,
 				4725255C22681098003C50DF /* Frameworks */,
 				4725255D22681098003C50DF /* Resources */,
 				4725258D226812AB003C50DF /* Embed Frameworks */,
 				4725258E226812AB003C50DF /* Embed App Extensions */,
 				9511D8B32274A25A008E52B9 /* CopyFiles */,
-				28C39870383F66029090BE36 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -566,6 +536,9 @@
 				ko,
 			);
 			mainGroup = 956C38A8225F7701001CB769;
+			packageReferences = (
+				9542C14D2D2A91ED00631D7F /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
+			);
 			productRefGroup = 956C38B2225F7701001CB769 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -622,48 +595,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		27E283B36A7FA6E17473A321 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OpenInTerminal-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		28C39870383F66029090BE36 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OpenInTerminal/Pods-OpenInTerminal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OpenInTerminal/Pods-OpenInTerminal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenInTerminal/Pods-OpenInTerminal-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4725250D22680E87003C50DF /* Sources */ = {
@@ -806,7 +737,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminalCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -839,7 +770,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminalCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -867,7 +798,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 2.3.8;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -894,7 +825,7 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 2.3.8;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -906,7 +837,6 @@
 		};
 		4725257822681099003C50DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BE6A353376D4C2E8A800E17 /* Pods-OpenInTerminal.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -921,7 +851,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 2.3.8;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -932,7 +862,6 @@
 		};
 		4725257922681099003C50DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF259B7197D7D4AF21BFC5F5 /* Pods-OpenInTerminal.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -947,7 +876,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 2.3.8;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -970,7 +899,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 2.3.8;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminalHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -994,7 +923,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 2.3.8;
 				PRODUCT_BUNDLE_IDENTIFIER = wang.jianing.app.OpenInTerminalHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1006,7 +935,6 @@
 		};
 		956C38BD225F7701001CB769 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0C631E1227F862E002C4AA0 /* Global.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1069,7 +997,6 @@
 		};
 		956C38BE225F7701001CB769 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0C631E1227F862E002C4AA0 /* Global.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1172,6 +1099,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9542C14D2D2A91ED00631D7F /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kentzo/ShortcutRecorder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9542C14E2D2A91ED00631D7F /* ShortcutRecorder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9542C14D2D2A91ED00631D7F /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
+			productName = ShortcutRecorder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 956C38A9225F7701001CB769 /* Project object */;
 }

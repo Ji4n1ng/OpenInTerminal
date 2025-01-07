@@ -463,7 +463,7 @@ extension CustomPreferencesViewController: NSMenuDelegate {
         openPanel.allowedFileTypes = ["app", "App", "APP"]
         openPanel.beginSheetModal(for: view.window!, completionHandler: {
             result in
-            if result.rawValue == NSFileHandlingPanelOKButton && result == NSApplication.ModalResponse.OK {
+            if result == NSApplication.ModalResponse.OK {
                 if let appPath = openPanel.url?.path,
                    let _ = Bundle(url: openPanel.url!)?.bundleIdentifier {
                     let name = AppManager.getApplicationFileName(from: appPath)

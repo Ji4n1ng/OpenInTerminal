@@ -1,8 +1,0 @@
-// This the base configuration for any project configuration.
-
-//
-// Code Signing
-//
-CODE_SIGN_IDENTITY = Mac Developer
-CODE_SIGN_STYLE = Automatic
-DEVELOPMENT_TEAM = C8VX3ZLX5U

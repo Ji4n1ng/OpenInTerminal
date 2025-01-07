@@ -2,6 +2,8 @@
 
 ### Finder Extension Not Showing Up in System Settings on macOS 15
 
+#### 1) Manually Enable the Finder Extension
+
 Starting with macOS 15, Apple removed the Finder Sync Extension configuration from System Settings. To enable the Finder Extension, use the `pluginkit` command-line tool as follows:
 
 ```
@@ -28,6 +30,8 @@ To manually enable the Finder Extension, run the following command with the UUID
 ```
 $ pluginkit -e "use" -u "F2547F13-4E43-4E88-9D8F-56DF05C020D8"
 ```
+
+#### 2) Use FinderSyncer
 
 Alternatively, you could use a GUI tool called [FinderSyncer](https://zigz.ag/FinderSyncer/) to enable the extension.
 

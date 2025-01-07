@@ -17,11 +17,6 @@ public var Defaults: UserDefaults = {
         Bundle.main.bundleIdentifier == Constants.Id.OpenInEditorLite {
         return UserDefaults.standard
     } else {
-        if let allPreferences = GroupDefaults?.dictionaryRepresentation() as? [String: Any] {
-                for (key, value) in allPreferences {
-                    print("\(key): \(value)")
-                }
-            }
         return GroupDefaults ?? UserDefaults.standard
     }
 }()

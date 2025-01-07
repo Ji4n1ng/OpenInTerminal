@@ -8,7 +8,7 @@
 
 import Cocoa
 import OpenInTerminalCore
-import MASShortcut
+import ShortcutRecorder
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -18,11 +18,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     @IBOutlet weak var statusBarMenu: NSMenu!
-    
-    lazy var preferencesWindowController: PreferencesWindowController = {
-        let storyboard = NSStoryboard(storyboardIdentifier: .Preferences)
-        return storyboard.instantiateInitialController() as? PreferencesWindowController ?? PreferencesWindowController()
-    }()
     
     // MARK: - Lifecycle
     
@@ -59,9 +54,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if !flag {
-            preferencesWindowController.window?.makeKeyAndOrderFront(self)
+            showPreferencesWindow()
         }
-        
         return true
     }
     
@@ -128,6 +122,19 @@ extension AppDelegate {
         if isRunning {
             LaunchNotifier.postNotification(.terminateApp, object: Bundle.main.bundleIdentifier!)
         }
+    }
+    
+    func showPreferencesWindow() {
+        NSApp.setActivationPolicy(.regular) // show icon in Dock
+        let preferencesWindowController: PreferencesWindowController = {
+            let storyboard = NSStoryboard(storyboardIdentifier: .Preferences)
+            let windowController = storyboard.instantiateInitialController() as? PreferencesWindowController ?? PreferencesWindowController()
+            return windowController
+        }()
+        preferencesWindowController.window?.delegate = self
+        NSApp.activate(ignoringOtherApps: true)
+        preferencesWindowController.showWindow(self)
+        preferencesWindowController.window?.makeKeyAndOrderFront(self)
     }
     
     // MARK: - Notification
@@ -236,19 +243,32 @@ extension AppDelegate {
     // MARK: - Global Shortcuts
     
     func bindShortcuts() {
-        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.defaultTerminalShortcut) {
+        let oitAction = ShortcutAction(keyPath: Constants.Key.defaultTerminalShortcut, of: Defaults) { _ in
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.openDefaultTerminal()
+            return true
         }
+        GlobalShortcutMonitor.shared.addAction(oitAction, forKeyEvent: .down)
         
-        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.defaultEditorShortcut) {
+        let oieAction = ShortcutAction(keyPath: Constants.Key.defaultEditorShortcut, of: Defaults) { _ in
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.openDefaultEditor()
+            return true
         }
+        GlobalShortcutMonitor.shared.addAction(oieAction, forKeyEvent: .down)
         
-        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: Constants.Key.copyPathShortcut) {
+        let copyPathAction = ShortcutAction(keyPath: Constants.Key.copyPathShortcut, of: Defaults) { _ in
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.copyPathToClipboard()
+            return true
         }
+        GlobalShortcutMonitor.shared.addAction(copyPathAction, forKeyEvent: .down)
+    }
+}
+
+extension AppDelegate: NSWindowDelegate {
+    
+    func windowWillClose(_ notification: Notification) {
+        NSApp.setActivationPolicy(.accessory) // hide icon in Dock
     }
 }

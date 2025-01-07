@@ -9,13 +9,13 @@
 import Cocoa
 import OpenInTerminalCore
 import ServiceManagement
-import MASShortcut
+import ShortcutRecorder
 
 class AdvancedPreferencesViewController: PreferencesViewController {
     
-    @IBOutlet weak var defaultTerminalShortcut: MASShortcutView!
-    @IBOutlet weak var defaultEditorShortcut: MASShortcutView!
-    @IBOutlet weak var copyPathShortcut: MASShortcutView!
+    @IBOutlet weak var defaultTerminalShortcut: RecorderControl!
+    @IBOutlet weak var defaultEditorShortcut: RecorderControl!
+    @IBOutlet weak var copyPathShortcut: RecorderControl!
     @IBOutlet weak var resetPreferencesButton: NSButton!
     
     // MARK: Lifecycle
@@ -23,9 +23,9 @@ class AdvancedPreferencesViewController: PreferencesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        defaultTerminalShortcut.associatedUserDefaultsKey = Constants.Key.defaultTerminalShortcut
-        defaultEditorShortcut.associatedUserDefaultsKey = Constants.Key.defaultEditorShortcut
-        copyPathShortcut.associatedUserDefaultsKey = Constants.Key.copyPathShortcut
+        defaultTerminalShortcut.bind(.value, to: Defaults, withKeyPath: Constants.Key.defaultTerminalShortcut)
+        defaultEditorShortcut.bind(.value, to: Defaults, withKeyPath: Constants.Key.defaultEditorShortcut)
+        copyPathShortcut.bind(.value, to: Defaults, withKeyPath: Constants.Key.copyPathShortcut)
     }
     
     

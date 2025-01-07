@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="oOf-8k-ODW">
     <dependencies>
-        <deployment version="101202" identifier="macosx"/>
+        <deployment version="101304" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23504"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -755,7 +755,7 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="9ud-I5-Kam" customClass="MASShortcutView">
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="9ud-I5-Kam" customClass="SRRecorderControl">
                                                 <rect key="frame" x="200" y="0.0" width="140" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="Nge-TH-6NC"/>
@@ -783,7 +783,7 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="TL3-ol-bGi" customClass="MASShortcutView">
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="TL3-ol-bGi" customClass="SRRecorderControl">
                                                 <rect key="frame" x="200" y="0.0" width="140" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="7Si-YW-rx9"/>
@@ -814,7 +814,7 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="WBc-IR-x3y" customClass="MASShortcutView">
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="WBc-IR-x3y" customClass="SRRecorderControl">
                                                 <rect key="frame" x="200" y="0.0" width="140" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="CZo-Ks-W7J"/>
@@ -918,7 +918,7 @@
                     <connections>
                         <outlet property="copyPathShortcut" destination="WBc-IR-x3y" id="tBb-rV-Cyb"/>
                         <outlet property="defaultEditorShortcut" destination="TL3-ol-bGi" id="F42-pz-UNZ"/>
-                        <outlet property="defaultTerminalShortcut" destination="9ud-I5-Kam" id="6PL-OX-8mv"/>
+                        <outlet property="defaultTerminalShortcut" destination="9ud-I5-Kam" id="l0e-EE-0qn"/>
                         <outlet property="resetPreferencesButton" destination="qri-L6-ZRL" id="cHB-aG-Whi"/>
                     </connections>
                 </viewController>
