@@ -1,4 +1,18 @@
-## OpenInTerminal Configurations
+# OpenInTerminal Configurations
+
+## Finder Extension Configuration
+
+To enable Finder Extension, right click on Finder toolbar, select `Customize Toolbar...` as shown below:
+
+<div>
+  <img src="https://github.com/user-attachments/assets/c834f0d1-2f9d-4200-984c-3f6330eaeb2d" width="400px">
+</div>
+
+Then drag the `OpenInTerminal` icon to the toolbar:
+
+<div>
+  <img src="https://github.com/user-attachments/assets/261eb747-27f0-4484-9654-40cab8a52008" width="400px">
+</div>
 
 ### Finder Extension Not Showing Up in System Settings on macOS 15
 
@@ -47,6 +61,8 @@ For macOS 14 and earlier, ensure the Finder Extension is enabled via System Pref
   <img src="https://user-images.githubusercontent.com/11001224/78590336-448f4180-7874-11ea-827c-ad3a7bffca5e.png" width="400px">
 </div>
 
+## Custom Configuration
+
 ### For Neovim Users
 
 If you select Neovim as your editor in OpenInTerminal, the app will use Kitty as the default terminal. To switch to a different terminal (supported options: Alacritty, WezTerm, and Kitty), update the configuration with the following command. Replace `<Your Name>` with your username and adjust the Neovim path (`/opt/homebrew/bin/nvim` in this example) to match your installation:
@@ -82,29 +98,20 @@ defaults write /Users/<Your Name>/Library/Group\ Containers/group.wang.jianing.a
 
 ## FAQ ❓
 
-<details><summary>1. What is the difference between OpenInTerminal and OpenInTerminal-Lite?</summary><br>
-<p>OpenInTerminal's got two flavors: the regular and the lite. If you're into fancy features and GUI preferences, stick with the standard OpenInTerminal. But if you just wanna open terminal in a quick and stably way, OpenInTerminal-Lite is your friend.</p>
-</details>
-
-<details><summary>2. Oops, hit <code>Don't Allow</code> button by mistake.</summary><br>
+<details><summary>Oops, hit <code>Don't Allow</code> button by mistake.</summary><br>
 <p>No sweat! Just run the following command in your terminal, and it'll reset the permissions in System Preferences.</p>
 <br><code>tccutil reset AppleEvents wang.jianing.app.OpenInTerminal</code><br>
 </details>
 
-<details><summary>3. Special characters in the <code>path</code>.</summary><br>
+<details><summary>Special characters in the <code>path</code>.</summary><br>
 <p>Please do not use backslash <code>\</code> and double quotes <code>"</code> in the path.</p>
 </details>
 
-<details><summary>4. Open two Terminal windows on Mojave</summary><br>
+<details><summary>Open two Terminal windows on Mojave</summary><br>
 <p>This problem usually occurs when you first start Terminal. Try using <code>⌘W</code> to close Terminal window, instead of using <code>⌘Q</code> to quit Terminal.</p>
 </details>
 
-<details><summary>5. OpenInTerminal's Finder extension doesn't work.</summary><br>
-<p>The Finder extension relies on AppleScript. So it's hard to guarantee its stability. When the extension doesn't work properly, try this: hold down the <code>Option(⌥)</code> key, right-click on Finder, and select <code>Relaunch</code>.</p>
-<p>Got an older Mac like me? Maybe cancel showing the icon in the context menu in Preferences. If it still crashes frequently, consider switching to OpenInTerminal-Lite.</p>
-</details>
-
-<details><summary>6. OpenInTerminal doesn't work as I expected</summary><br>
+<details><summary>OpenInTerminal doesn't work as I expected</summary><br>
 <p>OpenInTerminal works as the following order:</p>
 <ul>
 <li>1. Open the file or folder you selected.</li>
@@ -113,7 +120,7 @@ defaults write /Users/<Your Name>/Library/Group\ Containers/group.wang.jianing.a
 </ul>
 </details>
 
-<details><summary>7. My custom app doesn't work.</summary><br>
+<details><summary>My custom app doesn't work.</summary><br>
 <p>If your custom application doesn't work with the following command, then it's not supported. For example, GitHub Desktop:</p>
 <code>open -a GitHub\ Desktop ~/Desktop</code>
 </details>
