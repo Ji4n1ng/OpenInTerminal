@@ -30,7 +30,6 @@
 		95187393227DF493000CCB3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95187391227DF493000CCB3A /* Main.storyboard */; };
 		95187399227DF563000CCB3A /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD12269979E007C006F /* Notifier.swift */; };
 		9518739A227DF565000CCB3A /* LaunchNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511D8AB22749582008E52B9 /* LaunchNotifier.swift */; };
-		9518739B227DF5A1000CCB3A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9557D3D42274A78C00CE34FA /* ServiceManagement.framework */; };
 		9518739C227DF655000CCB3A /* OpenInTerminalHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95187389227DF492000CCB3A /* OpenInTerminalHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		951A3EBD2278A6F700E8DB61 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A3EBC2278A6F700E8DB61 /* StatusMenuController.swift */; };
 		951A3EBF2278A70F00E8DB61 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951A3EBE2278A70F00E8DB61 /* MainMenu.xib */; };
@@ -41,13 +40,14 @@
 		95294CFD25B3293F00CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
 		95294CFE25B3293F00CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
 		95294D0825B3E17900CC995D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95294CFC25B3293F00CC995D /* Icons.xcassets */; };
-		9542C14F2D2A91ED00631D7F /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = 9542C14E2D2A91ED00631D7F /* ShortcutRecorder */; };
 		954D67CF235570D5007702D0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67CE235570D5007702D0 /* Error.swift */; };
 		954D67D12355AD36007702D0 /* ScriptGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D67D02355AD36007702D0 /* ScriptGenerator.swift */; };
 		954D67D22355F80E007702D0 /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
 		954D67D32355F80E007702D0 /* OpenInTerminalCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		955A93BF2D1C31C7001C7A45 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A93BE2D1C31C7001C7A45 /* Preferences.storyboard */; };
 		955A93C02D1C31C7001C7A45 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955A93BE2D1C31C7001C7A45 /* Preferences.storyboard */; };
+		955C01322D3C3C6E003AF605 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9557D3D42274A78C00CE34FA /* ServiceManagement.framework */; };
+		955C01352D3C3C9A003AF605 /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = 955C01342D3C3C9A003AF605 /* ShortcutRecorder */; };
 		9571DA84227E6FFF0076AA64 /* AdvancedPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571DA83227E6FFF0076AA64 /* AdvancedPreferencesViewController.swift */; };
 		9584EAB82CF06A500080F94F /* PathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9584EAB72CF06A500080F94F /* PathExtensions.swift */; };
 		9584EDF2226DEF79003C7EE8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9584EDF4226DEF79003C7EE8 /* Localizable.strings */; };
@@ -222,9 +222,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9518739B227DF5A1000CCB3A /* ServiceManagement.framework in Frameworks */,
-				9542C14F2D2A91ED00631D7F /* ShortcutRecorder in Frameworks */,
 				47252586226812AB003C50DF /* OpenInTerminalCore.framework in Frameworks */,
+				955C01352D3C3C9A003AF605 /* ShortcutRecorder in Frameworks */,
+				955C01322D3C3C6E003AF605 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +537,7 @@
 			);
 			mainGroup = 956C38A8225F7701001CB769;
 			packageReferences = (
-				9542C14D2D2A91ED00631D7F /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
+				955C01332D3C3C87003AF605 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
 			);
 			productRefGroup = 956C38B2225F7701001CB769 /* Products */;
 			projectDirPath = "";
@@ -1101,7 +1101,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9542C14D2D2A91ED00631D7F /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
+		955C01332D3C3C87003AF605 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Kentzo/ShortcutRecorder";
 			requirement = {
@@ -1112,9 +1112,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9542C14E2D2A91ED00631D7F /* ShortcutRecorder */ = {
+		955C01342D3C3C9A003AF605 /* ShortcutRecorder */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9542C14D2D2A91ED00631D7F /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
+			package = 955C01332D3C3C87003AF605 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
 			productName = ShortcutRecorder;
 		};
 /* End XCSwiftPackageProductDependency section */
