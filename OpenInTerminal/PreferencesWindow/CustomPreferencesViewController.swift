@@ -35,23 +35,15 @@ class CustomPreferencesViewController: PreferencesViewController {
     
     private var dragDropType = NSPasteboard.PasteboardType(rawValue: "private.table-row")
     
-    var allInstalledAppNames: Set<String> = Set()
-    var installedSupportedApps = [App]() {
+    var allInstalledAppNames: Set<String> = Set() {
         didSet {
-            let _installedApps = installedSupportedApps.map {
-                $0.name
-            }.sortedIgnoreCase()
-            installedApplicationsTextField.stringValue = _installedApps.joined(separator: ", ")
+            DispatchQueue.main.async {
+                self.refreshSupportedApps()
+            }
         }
     }
-    var notInstalledSupportedApps = [App]() {
-        didSet {
-            let _notInstalledApps = notInstalledSupportedApps.map {
-                $0.name
-            }.sortedIgnoreCase()
-            notInstalledApplicationsTextField.stringValue = _notInstalledApps.joined(separator: ", ")
-        }
-    }
+    var installedSupportedAppNames: [String] = []
+        
     var customMenuOptions = [App]() {
         didSet {
             customMenuTableView.reloadData()
@@ -73,42 +65,16 @@ class CustomPreferencesViewController: PreferencesViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        // get all installed apps
-        allInstalledAppNames = FinderManager.shared.getAllInstalledApps()
-        
-        // get all installed supported apps
-        let installedTerminals = SupportedApps.terminals.filter {
-            allInstalledAppNames.contains($0.name)
-        }.map {
-            $0.app
+        // fetch installed apps
+        DispatchQueue.global(qos: .background).async {
+            self.allInstalledAppNames = FinderManager.shared.getAllInstalledApps()
         }
-        let installedEditors = SupportedApps.editors.filter {
-            allInstalledAppNames.contains($0.name)
-        }.map {
-            $0.app
-        }
-        installedSupportedApps = (installedTerminals + installedEditors).sortedIgnoreCase()
-
-        // get all not installed supported apps
-        let allTerminals = SupportedApps.terminals.map {
-            $0.app
-        }
-        let allEditors = SupportedApps.editors.map {
-            $0.app
-        }
-        let allApps = allTerminals + allEditors
-        notInstalledSupportedApps = allApps.filter {
-            !installedSupportedApps.contains($0)
-        }.sortedIgnoreCase()
-        
         // get saved custom menu apps
         if let customMenuOptions = DefaultsManager.shared.customMenuOptions {
             self.customMenuOptions = customMenuOptions
         }
-        
-        refreshTextFieldEnabledState()
-        refreshButtonNewOptionState()
-        refreshButtonState()
+        refreshSupportedApps()
+        refreshCustomButtons()
         refreshIconTypeOptionState()
     }
     
@@ -118,13 +84,25 @@ class CustomPreferencesViewController: PreferencesViewController {
     
     // MARK: Refresh UI
     
-    func refreshTextFieldEnabledState() {
+    func refreshSupportedApps() {
+        // get all installed supported apps
+        installedSupportedAppNames = SupportedApps.allCases.map(\.name)
+            .filter(allInstalledAppNames.contains)
+            .sortedIgnoreCase()
+        installedApplicationsTextField.stringValue = installedSupportedAppNames.joined(separator: ", ")
+        
+        // get all not installed supported apps
+        let notInstalledSupportedApps = SupportedApps.allCases.map(\.name)
+            .filter { !installedSupportedAppNames.contains($0) }
+            .sortedIgnoreCase()
+        notInstalledApplicationsTextField.stringValue = notInstalledSupportedApps.joined(separator: ", ")
+        
+        // refresh text field enabled state
         let terminals: [(SupportedApps, NSTextField)] = [
             (.iTerm, iTermTextField)
         ]
-
         terminals.forEach { terminal, textField in
-            let isInstalled = installedSupportedApps.contains(terminal.app)
+            let isInstalled = installedSupportedAppNames.contains(terminal.name)
             textField.isEnabled = isInstalled
             if isInstalled {
                 textField.textColor = .labelColor
@@ -135,12 +113,29 @@ class CustomPreferencesViewController: PreferencesViewController {
                 textField.stringValue = "\(terminal.name) (\(notInstalledString))"
             }
         }
-    }
-    
-    func refreshButtonState() {
+        
+        // refresh button state
         iTermWindowButton.isEnabled = iTermTextField.isEnabled
         iTermTabButton.isEnabled = iTermTextField.isEnabled
-
+        
+        let terminalStates: [(SupportedApps, NSButton, NSButton)] = [
+            (.iTerm, iTermWindowButton, iTermTabButton)
+        ]
+        terminalStates.forEach { terminal, windowButton, tabButton in
+            let _newOption = DefaultsManager.shared.getNewOption(terminal)
+            if let newOption = _newOption {
+                if newOption == .window {
+                    windowButton.state = .on
+                    tabButton.state = .off
+                } else {
+                    windowButton.state = .off
+                    tabButton.state = .on
+                }
+            }
+        }
+    }
+    
+    func refreshCustomButtons() {
         let isApplyToToolbar = DefaultsManager.shared.isCustomMenuApplyToToolbar
         applyToToolbarButton.state = isApplyToToolbar ? .on : .off
 
@@ -154,25 +149,6 @@ class CustomPreferencesViewController: PreferencesViewController {
         } else {
             pathYesButton.state = .off
             pathNoButton.state = .on
-        }
-    }
-    
-    func refreshButtonNewOptionState() {
-        let terminals: [(SupportedApps, NSButton, NSButton)] = [
-            (.iTerm, iTermWindowButton, iTermTabButton)
-        ]
-
-        terminals.forEach { terminal, windowButton, tabButton in
-            let _newOption = DefaultsManager.shared.getNewOption(terminal)
-            if let newOption = _newOption {
-                if newOption == .window {
-                    windowButton.state = .on
-                    tabButton.state = .off
-                } else {
-                    windowButton.state = .off
-                    tabButton.state = .on
-                }
-            }
         }
     }
     
@@ -200,12 +176,12 @@ class CustomPreferencesViewController: PreferencesViewController {
         
         // 1. Installed Supported Apps
         let installedSupportedMenu = NSMenu()
-        installedSupportedApps.forEach {
-            let menuItem = NSMenuItem(title: $0.name,
+        installedSupportedAppNames.forEach {
+            let menuItem = NSMenuItem(title: $0,
               action: #selector(selectSupportedApp),
               keyEquivalent: "")
             menuItem.target = self
-            menuItem.image = NSImage(named: $0.name)
+            menuItem.image = NSImage(named: $0)
             menuItem.image?.size = NSSize(width: 14, height: 14)
             installedSupportedMenu.addItem(menuItem)
         }
