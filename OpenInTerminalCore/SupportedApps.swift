@@ -39,6 +39,7 @@ public enum SupportedApps: String, CaseIterable {
     case nova = "Nova"
     case cursor = "Cursor"
     case neovim = "neovim"
+    case zed = "Zed"
     // JetBrains
     case appCode = "AppCode"
     case cLion = "CLion"
@@ -141,6 +142,7 @@ public enum SupportedApps: String, CaseIterable {
         case .webStorm: return "com.jetbrains.webstorm"
         case .androidstudio: return ""
         case .neovim: return ""
+        case .zed: return ""
         }
     }
     
