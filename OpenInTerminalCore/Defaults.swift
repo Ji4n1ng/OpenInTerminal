@@ -53,6 +53,7 @@ public extension DefaultsKeys {
     static let pathEscapeOption = DefaultsKey<Bool>("PathEscapeOption")
     static let kittyCommand = DefaultsKey<String>("KittyCommand")
     static let neovimCommand = DefaultsKey<String>("NeovimCommand")
+    static let gitkrakenCommand = DefaultsKey<String>("GitkrakenCommand")
     
     // for Lite
     static let liteDefaultTerminal = DefaultsKey<String>("LiteDefaultTerminal")
