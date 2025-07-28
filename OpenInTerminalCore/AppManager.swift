@@ -19,20 +19,20 @@ public class AppManager {
         // Add button and avoid the focus ring
         let cancelString = NSLocalizedString("general.cancel", comment: "Cancel")
         alert.addButton(withTitle: cancelString).refusesFirstResponder = true
-        alert.addButton(withTitle: SupportedApps.terminal.name).refusesFirstResponder = true
-        alert.addButton(withTitle: SupportedApps.iTerm.name).refusesFirstResponder = true
-        alert.addButton(withTitle: SupportedApps.hyper.name).refusesFirstResponder = true
-        let modalResult = alert.runModal()
-        switch modalResult {
-        case .alertFirstButtonReturn:
-            return nil
-        case .alertSecondButtonReturn:
-            return SupportedApps.terminal.app
-        case .alertThirdButtonReturn:
-            return SupportedApps.iTerm.app
-        default:
-            return SupportedApps.hyper.app
+        
+        let terminals = Array(SupportedApps.terminals.reversed())
+        for app in terminals {
+            alert.addButton(withTitle: app.name).refusesFirstResponder = true
         }
+        let modalResult = alert.runModal()
+        
+        let selectedAppIndex = modalResult.rawValue - NSApplication.ModalResponse.alertSecondButtonReturn.rawValue
+        
+        if selectedAppIndex >= 0 && selectedAppIndex < terminals.count {
+            let selectedApp = terminals[selectedAppIndex].app
+            return selectedApp
+        }
+        return nil
     }
     
     public func pickEditorAlert() -> App? {
