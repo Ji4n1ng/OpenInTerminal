@@ -834,6 +834,13 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fnd-On-Chk">
+                                        <rect key="frame" x="-2" y="113" width="216" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Only activate shortcuts in Finder" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Cel-Fnd-On">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
                                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0uu-e7-m1W">
                                         <rect key="frame" x="-2" y="102" width="40" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Reset" id="jcs-Ou-OZ2">
@@ -894,8 +901,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -917,6 +926,7 @@
                     </view>
                     <connections>
                         <outlet property="copyPathShortcut" destination="WBc-IR-x3y" id="tBb-rV-Cyb"/>
+                        <outlet property="finderOnlyCheckbox" destination="Fnd-On-Chk" id="Out-Fnd-Chk"/>
                         <outlet property="defaultEditorShortcut" destination="TL3-ol-bGi" id="F42-pz-UNZ"/>
                         <outlet property="defaultTerminalShortcut" destination="9ud-I5-Kam" id="l0e-EE-0qn"/>
                         <outlet property="resetPreferencesButton" destination="qri-L6-ZRL" id="cHB-aG-Whi"/>

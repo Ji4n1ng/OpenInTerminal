@@ -74,6 +74,16 @@ public class DefaultsManager {
         }
     }
     
+    public var shouldOnlyActivateShortcutsInFinder: Bool {
+        get {
+            return Defaults[.onlyActivateShortcutsInFinder]
+        }
+        
+        set {
+            Defaults[.onlyActivateShortcutsInFinder] = newValue
+        }
+    }
+    
     public var defaultTerminal: App? {
         get {
             guard let terminalName = Defaults[.defaultTerminal] else { return nil }
