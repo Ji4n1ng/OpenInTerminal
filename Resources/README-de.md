@@ -36,7 +36,7 @@ Ich bevorzuge `OpenInTerminal-Lite`, bei dem man nur einmal klicken muss, um die
 
 Für `OpenInTerminal-Lite` Nutzer:
 
-Bitte lesen Sie das Dokument: [OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./README-Lite-tr.md) | [OpenInTerminal-Lite Deutsch](./README-Lite-de.md)
+Bitte lesen Sie das Dokument: [OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md) | [OpenInTerminal-Lite Deutsch](./README-Lite-de.md)
 
 ## Installation 🖥
 

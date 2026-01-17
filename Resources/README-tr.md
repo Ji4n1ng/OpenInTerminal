@@ -8,7 +8,7 @@
 
 [English](../README.md) | [OpenInTerminal 中文说明](./README-zh.md) | [OpenInTerminal Türkçe](./README-tr.md) | [OpenInTerminal Deutsch](./README-de.md)
 
-[OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./README-Lite-tr.md) | [OpenInTerminal-Lite Deutsch](./README-Lite-de.md)
+[OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md) | [OpenInTerminal-Lite Deutsch](./README-Lite-de.md)
 
 ## Nasıl kullanılır 🚀
 
@@ -36,7 +36,7 @@ Hangisini seçmeliyim? İki sürüm de benim için değerli. Eğer daha güçlü
 
 `OpenInTerminal-Lite` kullanıcıları için:
 
-İlişkin döküman: [OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./README-Lite-tr.md) | [OpenInTerminal-Lite Deutsch](./README-Lite-de.md)
+İlişkin döküman: [OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md) | [OpenInTerminal-Lite Deutsch](./README-Lite-de.md)
 
 ## Nasıl Yüklenir 🖥
 
