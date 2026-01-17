@@ -41,7 +41,7 @@ brew install --cask openinterminal
 
 ## 配置和常见问题 ⚙️
 
-请看文档 [配置](./Resources/README-Config-zh.md)
+请看文档 [配置](./README-Config-zh.md)
 
 ## 支持 ❤️
 

@@ -6,9 +6,9 @@
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
 
-English | [OpenInTerminal 中文说明](./Resources/README-zh.md) | [OpenInTerminal Türkçe](./Resources/README-tr.md) 
+[English](../README.md) | [OpenInTerminal 中文说明](./README-zh.md) | [OpenInTerminal Türkçe](./README-tr.md) | [OpenInTerminal Deutsch](./README-de.md)
 
-[OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./Resources/README-Lite-tr.md)
+[OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./README-Lite-tr.md) | [OpenInTerminal-Lite Deutsch](./README-Lite-de.md)
 
 ## Nasıl kullanılır 🚀
 
@@ -36,7 +36,7 @@ Hangisini seçmeliyim? İki sürüm de benim için değerli. Eğer daha güçlü
 
 `OpenInTerminal-Lite` kullanıcıları için:
 
-İlişkin döküman: [OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./Resources/README-Lite-tr.md)
+İlişkin döküman: [OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./README-Lite-tr.md) | [OpenInTerminal-Lite Deutsch](./README-Lite-de.md)
 
 ## Nasıl Yüklenir 🖥
 
