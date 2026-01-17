@@ -1,6 +1,6 @@
 <div align="center">
   <img width="80%" src="https://user-images.githubusercontent.com/11001224/104892170-d18f2b80-59ac-11eb-96b1-0293acfde4e5.png"><br/><br/>
-  <a href="../README.md">English</a> | 中文
+  <a href="../README.md">English</a> | <a href="./README-zh.md">中文</a>
 </div>
 
 ## 如何使用 🚀
@@ -41,7 +41,7 @@ brew install --cask openinterminal
 
 ## 配置和常见问题 ⚙️
 
-请看文档 [配置](./Resources/README-Config-zh.md)
+请看文档 [配置](./README-Config-zh.md)
 
 ## 支持 ❤️
 
