@@ -270,6 +270,8 @@ public class DefaultsManager {
             return Constants.Commands.wezterm
         } else if SupportedApps.is(app, is: .tabby) {
             return Constants.Commands.tabby
+        } else if SupportedApps.is(app, is: .ghostty) {
+            return Constants.Commands.ghostty
         } else if SupportedApps.is(app, is: .neovim) {
             return neovimCommand
         } else {
