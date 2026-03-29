@@ -19,6 +19,7 @@ public enum SupportedApps: String, CaseIterable {
     case wezterm = "WezTerm"
     case tabby = "Tabby"
     case warp = "Warp"
+    case cmux = "cmux"
     case githubDesktop = "GitHub Desktop"
     case gitKraken = "GitKraken"
     case fork = "Fork"
@@ -73,7 +74,7 @@ public enum SupportedApps: String, CaseIterable {
     
     public var type: AppType {
         switch self {
-        case .terminal, .iTerm, .hyper, .alacritty, .kitty, .wezterm, .tabby, .warp, .githubDesktop, .fork, .ghostty, .gitKraken, .kaku:
+        case .terminal, .iTerm, .hyper, .alacritty, .kitty, .wezterm, .tabby, .warp, .cmux, .githubDesktop, .fork, .ghostty, .gitKraken, .kaku:
             return .terminal
         default:
             return .editor
@@ -116,6 +117,7 @@ public enum SupportedApps: String, CaseIterable {
         case .wezterm: return "com.github.wez.wezterm"
         case .tabby: return "org.tabby"
         case .warp: return "dev.warp"
+        case .cmux: return "com.cmuxterm.app"
         case .githubDesktop: return ""
         case .gitKraken: return "com.axosoft.gitkraken"
         case .fork: return ""
