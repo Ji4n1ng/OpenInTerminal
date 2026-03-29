@@ -193,6 +193,16 @@ public class DefaultsManager {
             Defaults[.customMenuApplyToContext] = newValue
         }
     }
+
+    public var isCustomMenuOverwriteExistingCommands: Bool {
+        get {
+            return Defaults[.customMenuOverwriteExistingCommands]
+        }
+
+        set {
+            Defaults[.customMenuOverwriteExistingCommands] = newValue
+        }
+    }
     
     public var customMenuIconOption: CustomMenuIconOption {
         get {
@@ -294,6 +304,7 @@ public class DefaultsManager {
         setNewOption(.iTerm, .window)
         isCustomMenuApplyToToolbar = false
         isCustomMenuApplyToContext = false
+        isCustomMenuOverwriteExistingCommands = false
         customMenuIconOption = .no
         isPathEscaped = true
         Defaults.synchronize()

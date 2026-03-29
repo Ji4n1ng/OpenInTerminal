@@ -93,6 +93,7 @@ class FinderSync: FIFinderSync {
                                                                    comment: "Copy path to Clipboard"),
                                                 action: #selector(copyPathToClipboard),
                                                 keyEquivalent: "")
+            copyPathItem.target = self
             if DefaultsManager.shared.customMenuIconOption == .simple {
                 let copyPathIcon = NSImage(named: "context_menu_icon_path")
                 copyPathItem.image = copyPathIcon
@@ -103,28 +104,56 @@ class FinderSync: FIFinderSync {
             return copyPathItem
         }
     }
+
+    func addDefaultMenuItems(to menu: NSMenu) {
+        if let terminal = DefaultsManager.shared.defaultTerminal {
+            let terminalTitle = terminal.name
+            let openInTerminalItem = NSMenuItem(title: terminalTitle,
+                                                action: #selector(openDefaultTerminal),
+                                                keyEquivalent: "")
+            openInTerminalItem.target = self
+            let terminalIcon = DefaultsManager.shared.getAppIcon(terminal)
+            openInTerminalItem.image = terminalIcon
+            menu.addItem(openInTerminalItem)
+        }
+
+        if let editor = DefaultsManager.shared.defaultEditor {
+            let editorTitle = editor.name
+            let openInEditorItem = NSMenuItem(title: editorTitle,
+                                              action: #selector(openDefaultEditor),
+                                              keyEquivalent: "")
+            openInEditorItem.target = self
+            let editorIcon = DefaultsManager.shared.getAppIcon(editor)
+            openInEditorItem.image = editorIcon
+            menu.addItem(openInEditorItem)
+        }
+    }
+
+    @discardableResult
+    func addCustomMenuItems(to menu: NSMenu) -> Bool {
+        guard let customApps = DefaultsManager.shared.customMenuOptions,
+              !customApps.isEmpty else {
+            return false
+        }
+
+        customApps.forEach { app in
+            let itemTitle = app.name
+            let menuItem = NSMenuItem(title: itemTitle,
+                                      action: #selector(customMenuItemClicked),
+                                      keyEquivalent: "")
+            menuItem.target = self
+            let appIcon = DefaultsManager.shared.getAppIcon(app)
+            menuItem.image = appIcon
+            menu.addItem(menuItem)
+        }
+
+        return true
+    }
     
     func createDefaultMenu() -> NSMenu {
         let menu = NSMenu(title: "")
-        
-        guard let terminal = DefaultsManager.shared.defaultTerminal else { return menu }
-        let terminalTitle = terminal.name
-        let openInTerminalItem = NSMenuItem(title: terminalTitle,
-                                            action: #selector(openDefaultTerminal),
-                                            keyEquivalent: "")
-        let terminalIcon = DefaultsManager.shared.getAppIcon(terminal)
-        openInTerminalItem.image = terminalIcon
-        menu.addItem(openInTerminalItem)
-        
-        guard let editor = DefaultsManager.shared.defaultEditor else { return menu }
-        let editorTitle = editor.name
-        let openInEditorItem = NSMenuItem(title: editorTitle,
-                                            action: #selector(openDefaultEditor),
-                                            keyEquivalent: "")
-        let editorIcon = DefaultsManager.shared.getAppIcon(editor)
-        openInEditorItem.image = editorIcon
-        menu.addItem(openInEditorItem)
-        
+
+        addDefaultMenuItems(to: menu)
         // add "Copy Path"
         menu.addItem(self.copyPathItem)
         
@@ -133,21 +162,19 @@ class FinderSync: FIFinderSync {
     
     func createCustomMenu() -> NSMenu {
         let menu = NSMenu(title: "")
-        
-        // get saved custom apps
-        guard let customApps = DefaultsManager.shared.customMenuOptions else {
-            return menu
+
+        let isOverwriteExistingCommands = DefaultsManager.shared.isCustomMenuOverwriteExistingCommands
+        let defaultItemCount = menu.items.count
+        if !isOverwriteExistingCommands {
+            addDefaultMenuItems(to: menu)
         }
-        customApps.forEach { app in
-            let itemTitle = app.name
-            let menuItem = NSMenuItem(title: itemTitle,
-                                      action: #selector(customMenuItemClicked),
-                                      keyEquivalent: "")
-            let appIcon = DefaultsManager.shared.getAppIcon(app)
-            menuItem.image = appIcon
-            menu.addItem(menuItem)
+
+        let hasCustomItems = addCustomMenuItems(to: menu)
+
+        if menu.items.count > 0 {
+            menu.addItem(.separator())
         }
-        
+
         // add "Copy Path"
         menu.addItem(self.copyPathItem)
         

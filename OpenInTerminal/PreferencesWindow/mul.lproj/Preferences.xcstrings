@@ -2641,6 +2641,18 @@
         }
       }
     },
+    "o7G-Xu-dc8.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Overwrite existing commands\"; ObjectID = \"o7G-Xu-dc8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Overwrite existing commands"
+          }
+        }
+      }
+    },
     "OET-MK-jpV.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"No\"; ObjectID = \"OET-MK-jpV\";",
       "extractionState" : "extracted_with_value",

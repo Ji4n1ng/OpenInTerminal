@@ -49,6 +49,7 @@ public extension DefaultsKeys {
     static let customMenuOptions = DefaultsKey<Data>("CustomMenuOptions")
     static let customMenuApplyToToolbar = DefaultsKey<Bool>("CustomMenuApplyToToolbar")
     static let customMenuApplyToContext = DefaultsKey<Bool>("CustomMenuApplyToContext")
+    static let customMenuOverwriteExistingCommands = DefaultsKey<Bool>("CustomMenuOverwriteExistingCommands")
     static let customMenuIconOption = DefaultsKey<String>("CustomMenuIconOption")
     static let pathEscapeOption = DefaultsKey<Bool>("PathEscapeOption")
     static let kittyCommand = DefaultsKey<String>("KittyCommand")

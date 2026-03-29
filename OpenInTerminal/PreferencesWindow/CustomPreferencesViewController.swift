@@ -25,6 +25,7 @@ class CustomPreferencesViewController: PreferencesViewController {
     var addOptionMenu: NSMenu = NSMenu()
     @IBOutlet weak var applyToToolbarButton: NSButton!
     @IBOutlet weak var applyToContextButton: NSButton!
+    @IBOutlet weak var overwriteExistingCommandsButton: NSButton!
     
     @IBOutlet weak var noIconButton: NSButton!
     @IBOutlet weak var simpleIconButton: NSButton!
@@ -141,6 +142,9 @@ class CustomPreferencesViewController: PreferencesViewController {
 
         let isApplyToContext = DefaultsManager.shared.isCustomMenuApplyToContext
         applyToContextButton.state = isApplyToContext ? .on : .off
+
+        let isOverwriteExistingCommands = DefaultsManager.shared.isCustomMenuOverwriteExistingCommands
+        overwriteExistingCommandsButton.state = isOverwriteExistingCommands ? .on : .off
         
         let isPathEscaped = DefaultsManager.shared.isPathEscaped
         if isPathEscaped {
@@ -329,6 +333,11 @@ class CustomPreferencesViewController: PreferencesViewController {
     @IBAction func applyToContextButtonClicked(_ sender: NSButton) {
         let isApplyTo = applyToContextButton.state == .on
         DefaultsManager.shared.isCustomMenuApplyToContext = isApplyTo
+    }
+
+    @IBAction func overwriteExistingCommandsButtonClicked(_ sender: NSButton) {
+        let isOverwriteExistingCommands = overwriteExistingCommandsButton.state == .on
+        DefaultsManager.shared.isCustomMenuOverwriteExistingCommands = isOverwriteExistingCommands
     }
     
     func showCustomInputViewController(_ appName: String = "") {

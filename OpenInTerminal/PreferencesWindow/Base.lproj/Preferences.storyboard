@@ -553,8 +553,18 @@
                                             <action selector="applyToContextButtonClicked:" target="s5W-qL-1Xs" id="hiv-kz-pHw"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3er-uP-KiS">
+                                        <rect key="frame" x="18" y="47" width="235" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Overwrite existing commands" bezelStyle="regularSquare" imagePosition="left" inset="2" id="o7G-Xu-dc8">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="overwriteExistingCommandsButtonClicked:" target="s5W-qL-1Xs" id="rYH-w2-9aN"/>
+                                        </connections>
+                                    </button>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4us-6x-3pQ">
-                                        <rect key="frame" x="20" y="48" width="260" height="16"/>
+                                        <rect key="frame" x="20" y="24" width="260" height="16"/>
                                         <subviews>
                                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hH5-GT-YX7">
                                                 <rect key="frame" x="-2" y="0.0" width="67" height="16"/>
@@ -669,6 +679,7 @@
                                 <constraints>
                                     <constraint firstItem="4us-6x-3pQ" firstAttribute="leading" secondItem="pxi-dF-LO8" secondAttribute="leading" constant="20" id="CRm-C6-eJK"/>
                                     <constraint firstItem="5GI-nM-TKa" firstAttribute="leading" secondItem="pxi-dF-LO8" secondAttribute="leading" constant="20" id="Erw-fg-klC"/>
+                                    <constraint firstItem="3er-uP-KiS" firstAttribute="leading" secondItem="pxi-dF-LO8" secondAttribute="leading" constant="20" id="J8h-c1-VgJ"/>
                                     <constraint firstItem="teH-Uy-YOq" firstAttribute="leading" secondItem="pxi-dF-LO8" secondAttribute="leading" constant="20" id="hcZ-Kv-8Sj"/>
                                     <constraint firstAttribute="trailing" secondItem="5GI-nM-TKa" secondAttribute="trailing" constant="20" id="kNC-OB-Jgy"/>
                                     <constraint firstItem="jia-nD-S9J" firstAttribute="leading" secondItem="pxi-dF-LO8" secondAttribute="leading" constant="20" id="wim-XS-cz0"/>
@@ -683,8 +694,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -716,6 +729,7 @@
                         <outlet property="noIconButton" destination="B10-NC-B1J" id="2P9-Ma-BMt"/>
                         <outlet property="notInstalledApplicationsTextField" destination="e8s-z7-dmZ" id="g9m-4p-nHb"/>
                         <outlet property="originalIconButton" destination="qzh-XC-5Ni" id="dpl-2W-ZJn"/>
+                        <outlet property="overwriteExistingCommandsButton" destination="3er-uP-KiS" id="DZE-Ar-8F5"/>
                         <outlet property="pathNoButton" destination="M2J-AU-iO9" id="cCz-pG-pfn"/>
                         <outlet property="pathYesButton" destination="vhd-Cy-Io7" id="8se-Hp-u2x"/>
                         <outlet property="simpleIconButton" destination="Lag-Yy-a4i" id="HWS-9U-Hbk"/>
