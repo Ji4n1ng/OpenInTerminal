@@ -171,10 +171,6 @@ class FinderSync: FIFinderSync {
 
         let hasCustomItems = addCustomMenuItems(to: menu)
 
-        if menu.items.count > 0 {
-            menu.addItem(.separator())
-        }
-
         // add "Copy Path"
         menu.addItem(self.copyPathItem)
         
