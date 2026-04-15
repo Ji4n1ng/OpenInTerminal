@@ -84,6 +84,7 @@ defaults remove wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor
 | --- | --- |
 | Alacritty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal Alacritty` |
 | kitty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal kitty` |
+| Ghostty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal ghostty` |
 | TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextEdit` |
 | VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor VSCodium` |
 | BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor BBEdit` |
