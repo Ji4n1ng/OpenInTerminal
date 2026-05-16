@@ -261,6 +261,17 @@ public class DefaultsManager {
         }
     }
 
+    public var gitKrakenCommand: String {
+        get {
+            return Defaults[.gitkrakenCommand] ?? Constants.Commands.gitkraken
+        }
+        
+        set {
+            Defaults[.gitkrakenCommand] = newValue
+        }
+    }
+    
+
     public func getOpenCommand(_ app: App, escapeCount: Int = 1) -> String {
         if SupportedApps.is(app, is: .alacritty) {
             return Constants.Commands.alacritty
@@ -272,6 +283,8 @@ public class DefaultsManager {
             return Constants.Commands.tabby
         } else if SupportedApps.is(app, is: .neovim) {
             return neovimCommand
+        } else if SupportedApps.is(app, is: .gitKraken) {
+            return gitKrakenCommand
         } else {
             return "open -a \(app.name.nameSpaceEscaped(escapeCount))"
         }
