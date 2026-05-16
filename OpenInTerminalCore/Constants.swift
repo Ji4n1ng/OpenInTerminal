@@ -32,7 +32,7 @@ struct Constants {
         static let neovim = "open -na kitty --args /opt/homebrew/bin/nvim PATH"
 //        static let neovim = "open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
 //        static let neovim = "open -na Alacritty --args -e /opt/homebrew/bin/nvim PATH"
-
+        static let gitkraken = "open -na GitKraken --args --path"
     }
     
 }

@@ -1,6 +1,6 @@
 <div align="center">
   <img width="80%" src="https://user-images.githubusercontent.com/11001224/104892170-d18f2b80-59ac-11eb-96b1-0293acfde4e5.png"><br/><br/>
-  <a href="../README.md">English</a> | 中文
+  <a href="../README.md">English</a> | <a href="./README-zh.md">中文</a>
 </div>
 
 ## 如何使用 🚀
@@ -14,7 +14,7 @@
 
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| 支持 终端, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty), [kitty](https://sw.kovidgoyal.net/kitty/), [Warp](https://www.warp.dev), [WezTerm](https://wezfurlong.org/wezterm/index.html), [Tabby](https://tabby.sh), [Ghostty](https://ghostty). | ✅ | ✅ |
+| 支持 终端, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty), [kitty](https://sw.kovidgoyal.net/kitty/), [Warp](https://www.warp.dev), [WezTerm](https://wezfurlong.org/wezterm/index.html), [Tabby](https://tabby.sh), [Ghostty](https://ghostty.org). | ✅ | ✅ |
 | 支持 文本编辑, Xcode, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm, Android Studio, Fleet), [Typora](https://typora.io/), [Nova](https://nova.app/), [Cursor](https://cursor.sh/), [notepad--](https://github.com/cxasm/notepad--), [neovim](https://neovim.io/). | ✅ | ✅ |
 | 打开自定义应用（⚠️ 并不是所有的应用都支持） | ✅ | ✅ |
 | 支持中文，英语，法语，俄语，意大利语，西班牙语，土耳其语, 德语, 韩语 | ✅ | ✅ |
@@ -41,7 +41,7 @@ brew install --cask openinterminal
 
 ## 配置和常见问题 ⚙️
 
-请看文档 [配置](./Resources/README-Config-zh.md)
+请看文档 [配置](./README-Config-zh.md)
 
 ## 支持 ❤️
 
