@@ -6,9 +6,9 @@
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
 
-[English](../README.md) | [OpenInTerminal 中文说明](./Resources/README-zh.md) | [OpenInTerminal Türkçe](./Resources/README-tr.md) | OpenInTerminal Deutsch
+[English](../README.md) | [OpenInTerminal 中文说明](./README-zh.md) | [OpenInTerminal Türkçe](./README-tr.md) | [OpenInTerminal Deutsch](./README-de.md)
 
-[OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Deutsch](./Resources/README-Lite-de.md)
+[OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md) | [OpenInTerminal-Lite Deutsch](./README-Lite-de.md)
 
 ## Verwendung 🚀
 
@@ -36,7 +36,7 @@ Ich bevorzuge `OpenInTerminal-Lite`, bei dem man nur einmal klicken muss, um die
 
 Für `OpenInTerminal-Lite` Nutzer:
 
-Bitte lesen Sie das Dokument: [OpenInTerminal-Lite English](./Resources/README-Lite.md) | [OpenInTerminal-Lite 中文说明](./Resources/README-Lite-zh.md) | [OpenInTerminal-Lite Türkçe](./Resources/README-Lite-tr.md) | [OpenInTerminal-Lite Deutsch](./Resources/README-Lite-de.md)
+Bitte lesen Sie das Dokument: [OpenInTerminal-Lite English](./README-Lite.md) | [OpenInTerminal-Lite 中文说明](./README-Lite-zh.md) | [OpenInTerminal-Lite Deutsch](./README-Lite-de.md)
 
 ## Installation 🖥
 
@@ -74,7 +74,7 @@ Danke für Ihre Unterstützung!
 
 | PayPal | AliPay | WeChat Pay |
 | --- | --- | --- |
-| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Resources/Support-Alipay.jpg" width="50%"> | <img src="./Resources/Support-WeChatPay.jpg" width="50%"> |
+| [paypal.me/ji4ning](https://www.paypal.me/ji4ning) | <img src="./Support-Alipay.jpg" width="50%"> | <img src="./Support-WeChatPay.jpg" width="50%"> |
 
 ## FAQ ❓
 

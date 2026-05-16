@@ -6,7 +6,7 @@
   <a href="https://travis-ci.org/Ji4n1ng/OpenInTerminal"><img src="https://img.shields.io/travis/Ji4n1ng/OpenInTerminal.svg"></a>
 </p>
 
-[English](./README-Lite.md) | [中文说明](./README-Lite-zh.md) | Deutsch
+[English](./README-Lite.md) | [中文说明](./README-Lite-zh.md) | [Deutsch](./README-Lite-de.md)
 
 ## Verwendung 🚀
 
