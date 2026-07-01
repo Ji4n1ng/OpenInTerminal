@@ -15,6 +15,7 @@ struct Constants {
         static let Group = "group.wang.jianing.app.OpenInTerminal"
         static let OpenInTerminalLite = "wang.jianing.app.OpenInTerminal-Lite"
         static let OpenInEditorLite = "wang.jianing.app.OpenInEditor-Lite"
+        static let OpenInTerminalFinderExtension = "wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension"
         static let Finder = "com.apple.Finder"
     }
     

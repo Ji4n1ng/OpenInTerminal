@@ -8,17 +8,27 @@
 
 import Foundation
 
-/// group defaults
-let GroupDefaults = UserDefaults(suiteName: Constants.Id.Group)
-
 /// current defaults
+///
+/// All targets share the same backing plist at:
+///   ~/Library/Preferences/wang.jianing.app.OpenInTerminal.plist
+///
+/// - Main app (`wang.jianing.app.OpenInTerminal`): UserDefaults.standard
+/// - Finder Extension: reads via UserDefaults(suiteName:) with the main
+///   app's bundle ID so both processes use the same plist file.
+/// - Lite variants: UserDefaults.standard (their own plist).
 public var Defaults: UserDefaults = {
-    if Bundle.main.bundleIdentifier == Constants.Id.OpenInTerminalLite ||
-        Bundle.main.bundleIdentifier == Constants.Id.OpenInEditorLite {
+    let bundleId = Bundle.main.bundleIdentifier
+    if bundleId == Constants.Id.OpenInTerminalLite ||
+        bundleId == Constants.Id.OpenInEditorLite {
         return UserDefaults.standard
-    } else {
-        return GroupDefaults ?? UserDefaults.standard
     }
+    if bundleId == Constants.Id.OpenInTerminalFinderExtension {
+        // Read the main app's domain so settings are shared.
+        return UserDefaults(suiteName: "wang.jianing.app.OpenInTerminal")
+            ?? UserDefaults.standard
+    }
+    return UserDefaults.standard
 }()
 
 public class DefaultsKeys {
