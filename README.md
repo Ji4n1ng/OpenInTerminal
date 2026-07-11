@@ -42,6 +42,8 @@ Or manually download it from [release](https://github.com/Ji4n1ng/OpenInTerminal
 
 Please check the [Configuration](./Resources/README-Config.md) document.
 
+Note: If you're on macOS 15 and above then you must follow the instructions in this document to make the context menu items appear.
+
 ## Support ❤️
 
 Open-source projects cannot live long without your help. If you like OpenInTerminal, please consider supporting this project by becoming a sponsor. Your user icon or company logo shows up on the README with a link to your home page.
