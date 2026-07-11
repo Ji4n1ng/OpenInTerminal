@@ -16,6 +16,7 @@ class AdvancedPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var defaultTerminalShortcut: RecorderControl!
     @IBOutlet weak var defaultEditorShortcut: RecorderControl!
     @IBOutlet weak var copyPathShortcut: RecorderControl!
+    @IBOutlet weak var finderOnlyCheckbox: NSButton!
     @IBOutlet weak var resetPreferencesButton: NSButton!
     
     // MARK: Lifecycle
@@ -26,6 +27,7 @@ class AdvancedPreferencesViewController: PreferencesViewController {
         defaultTerminalShortcut.bind(.value, to: Defaults, withKeyPath: Constants.Key.defaultTerminalShortcut)
         defaultEditorShortcut.bind(.value, to: Defaults, withKeyPath: Constants.Key.defaultEditorShortcut)
         copyPathShortcut.bind(.value, to: Defaults, withKeyPath: Constants.Key.copyPathShortcut)
+        finderOnlyCheckbox.bind(.value, to: Defaults, withKeyPath: Constants.Key.onlyActivateShortcutsInFinder)
     }
     
     

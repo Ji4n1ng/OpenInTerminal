@@ -19,6 +19,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var statusBarMenu: NSMenu!
     
+    var terminalShortcutAction: ShortcutAction?
+    var editorShortcutAction: ShortcutAction?
+    var copyPathShortcutAction: ShortcutAction?
+    var areShortcutsRegistered = false
+    
     // MARK: - Lifecycle
     
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -57,6 +62,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             showPreferencesWindow()
         }
         return true
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == Constants.Key.onlyActivateShortcutsInFinder {
+            updateShortcutRegistration()
+            return
+        }
+        
+        super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
     }
     
 }
@@ -149,12 +163,28 @@ extension AppDelegate {
         OpenNotifier.addObserver(observer: self,
                                  selector: #selector(copyPathToClipboard),
                                  notification: .copyPathToClipboard)
+        
+        Defaults.addObserver(self, 
+                             forKeyPath: Constants.Key.onlyActivateShortcutsInFinder, 
+                             options: .new, 
+                             context: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, 
+                                                          selector: #selector(activeAppDidChange), 
+                                                          name: NSWorkspace.didActivateApplicationNotification, 
+                                                          object: nil)
     }
     
     func removeObserver() {
         OpenNotifier.removeObserver(observer: self, notification: .openDefaultTerminal)
         OpenNotifier.removeObserver(observer: self, notification: .openDefaultEditor)
         OpenNotifier.removeObserver(observer: self, notification: .copyPathToClipboard)
+        
+        Defaults.removeObserver(self, forKeyPath: Constants.Key.onlyActivateShortcutsInFinder)
+        NSWorkspace.shared.notificationCenter.removeObserver(self)
+    }
+    
+    @objc func activeAppDidChange(_ notification: Notification) {
+        updateShortcutRegistration()
     }
     
     // MARK: Notification Actions
@@ -243,26 +273,48 @@ extension AppDelegate {
     // MARK: - Global Shortcuts
     
     func bindShortcuts() {
-        let oitAction = ShortcutAction(keyPath: Constants.Key.defaultTerminalShortcut, of: Defaults) { _ in
+        terminalShortcutAction = ShortcutAction(keyPath: Constants.Key.defaultTerminalShortcut, of: Defaults) { _ in
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.openDefaultTerminal()
             return true
         }
-        GlobalShortcutMonitor.shared.addAction(oitAction, forKeyEvent: .down)
         
-        let oieAction = ShortcutAction(keyPath: Constants.Key.defaultEditorShortcut, of: Defaults) { _ in
+        editorShortcutAction = ShortcutAction(keyPath: Constants.Key.defaultEditorShortcut, of: Defaults) { _ in
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.openDefaultEditor()
             return true
         }
-        GlobalShortcutMonitor.shared.addAction(oieAction, forKeyEvent: .down)
         
-        let copyPathAction = ShortcutAction(keyPath: Constants.Key.copyPathShortcut, of: Defaults) { _ in
+        copyPathShortcutAction = ShortcutAction(keyPath: Constants.Key.copyPathShortcut, of: Defaults) { _ in
             let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.copyPathToClipboard()
             return true
         }
-        GlobalShortcutMonitor.shared.addAction(copyPathAction, forKeyEvent: .down)
+        
+        updateShortcutRegistration()
+    }
+    
+    func updateShortcutRegistration() {
+        let shouldRegister: Bool
+        if DefaultsManager.shared.shouldOnlyActivateShortcutsInFinder {
+            shouldRegister = NSWorkspace.shared.frontmostApplication?.bundleIdentifier == "com.apple.finder"
+        } else {
+            shouldRegister = true
+        }
+        
+        guard shouldRegister != areShortcutsRegistered else { return }
+        
+        if shouldRegister {
+            if let action = terminalShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.addAction(action, forKeyEvent: .down) }
+            if let action = editorShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.addAction(action, forKeyEvent: .down) }
+            if let action = copyPathShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.addAction(action, forKeyEvent: .down) }
+        } else {
+            if let action = terminalShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.removeAction(action, forKeyEvent: .down) }
+            if let action = editorShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.removeAction(action, forKeyEvent: .down) }
+            if let action = copyPathShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.removeAction(action, forKeyEvent: .down) }
+        }
+        
+        areShortcutsRegistered = shouldRegister
     }
 }
 

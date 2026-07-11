@@ -26,6 +26,7 @@ struct Constants {
         static let defaultTerminalShortcut = "OIT_DefaultTerminalShortcut"
         static let defaultEditorShortcut = "OIT_DefaultEditorShortcut"
         static let copyPathShortcut = "OIT_CopyPathShortcut"
+        static let onlyActivateShortcutsInFinder = "OnlyActivateShortcutsInFinder"
     }
     
     static let PreferencesStoryboard = NSStoryboard(name: "Preferences", bundle: nil)

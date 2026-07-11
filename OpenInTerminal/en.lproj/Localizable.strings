@@ -39,4 +39,4 @@
 "pref.custom.menu.manually_select" = "Manually Select From Finder";
 "pref.custom.menu.manually_input" = "Manually Input";
 
-
+"pref.shortcuts_finder_only" = "Only activate shortcuts in Finder";
