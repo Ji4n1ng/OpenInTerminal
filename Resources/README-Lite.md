@@ -164,9 +164,17 @@ You can right click on the app and select `Get Info`. Drag the icon to cover the
   <img src="https://user-images.githubusercontent.com/11001224/78590421-68eb1e00-7874-11ea-91e3-61cfd5ba3a26.gif" width="600px">
 </div>
 
-#### b. Changing the icon automatically with [Hammerspoon](https://www.hammerspoon.org)
+#### b. Using a dynamic icon (macOS Big Sur and later, recommended)
 
-This procedure is particularly useful for those using the automatic dark/light mode switching feature of macOS.
+Dynamic icons automatically adapt to light and dark mode without any extra tooling. They are available in [`Resources/dynamic-icons/`](../Resources/dynamic-icons/).
+
+Simply apply the icon of your choice once manually, as shown above.
+
+The icon will switch automatically with the system appearance — no Hammerspoon required.
+
+#### c. Changing the icon automatically with [Hammerspoon](https://www.hammerspoon.org)
+
+This procedure is for macOS Catalina and earlier, or if you prefer separate light/dark icon files.
 
 1. Install Hammerspoon either by [downloading the latest release](https://github.com/Hammerspoon/hammerspoon/releases/latest) and dragging it in the `/Applications` folder, or by using Homebrew:
 ```
@@ -218,7 +226,7 @@ You can now reload the config file (or restart hammerspoon) and you're done! The
 
 ### 3) Open in a new Tab or Window when using iTerm
 
-When you are using `iTerm`, you can set a default to open a new tab or window. The **default** is to open a new window. 
+When you are using `iTerm`, you can set a default to open a new tab or window. The **default** is to open a new window.
 
 ```
 # Open a new Tab
@@ -243,8 +251,9 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 </details>
 
 <details><summary>3. Why it cannot automatically switch icons in Dark mode</summary><br>
-<p>As for <code>OpenInTerminal-Lite</code>, the icon you see in the Finder Toolbar is actually the app icon, not the Finder extension icon. And I haven't found an API yet that lets you swtich the app icon on the fly (got any cool ideas? Do share!). 
-<p>But hey, good news! Thanks to @MatteoCarnelos's awesome contribution (#126), <code>OpenInTerminal-Lite</code> can now automatically switch icons using Hammerspoon.</p>
+<p>As for <code>OpenInTerminal-Lite</code>, the icon you see in the Finder Toolbar is actually the app icon, not the Finder extension icon. There is no API to switch the app icon on the fly.</p>
+<p>On macOS Big Sur and later, you can use the <strong>dynamic icons</strong> in <code>Resources/dynamic-icons/</code> — a single <code>.icns</code> file that contains both appearances and switches automatically with the system. See section 2b above.</p>
+<p>On older macOS, thanks to @MatteoCarnelos's contribution (#126), you can use Hammerspoon to switch icons automatically. See section 2c above.</p>
 </details>
 
 <details><summary>4. My custom app doesn't work.</summary><br>
