@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9509DBE33003D57800AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBE23003D57800AE88FA /* AppIcon.icon */; };
 		95163CE62269F0C3007C006F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95163CE52269F0C3007C006F /* Assets.xcassets */; };
 		95163CF22269F104007C006F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CF12269F104007C006F /* main.swift */; };
 		95163CF42269F209007C006F /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95163CF32269F209007C006F /* OpenInTerminalCore.framework */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		2594E99727EF381A00AF84D5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		82AE667723896ADB00F4DB4D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9509DBE23003D57800AE88FA /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		95163CE02269F0C2007C006F /* OpenInTerminal-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenInTerminal-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95163CE52269F0C3007C006F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95163CEA2269F0C3007C006F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				95163CF12269F104007C006F /* main.swift */,
 				9590B69C226C715100362B93 /* Error.swift */,
 				95163CE52269F0C3007C006F /* Assets.xcassets */,
+				9509DBE23003D57800AE88FA /* AppIcon.icon */,
 				95163CEA2269F0C3007C006F /* Info.plist */,
 				95163CEB2269F0C3007C006F /* OpenInTerminal_Lite.entitlements */,
 				95ECC132228CF99F00416AA2 /* Localizable.strings */,
@@ -167,6 +170,7 @@
 			files = (
 				95163CE62269F0C3007C006F /* Assets.xcassets in Resources */,
 				95ECC130228CF99F00416AA2 /* Localizable.strings in Resources */,
+				9509DBE33003D57800AE88FA /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,11 +329,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "OpenInTerminal-Lite/OpenInTerminal-Lite.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q33U8R4U57;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "OpenInTerminal-Lite/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -349,11 +354,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "OpenInTerminal-Lite/OpenInTerminal-Lite.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q33U8R4U57;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "OpenInTerminal-Lite/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

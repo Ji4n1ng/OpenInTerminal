@@ -20,6 +20,10 @@
 		47252586226812AB003C50DF /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
 		47252587226812AB003C50DF /* OpenInTerminalCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4725258A226812AB003C50DF /* OpenInTerminalFinderExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4725254A22680FEB003C50DF /* OpenInTerminalFinderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9509DBDE300269CC00AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBDD300269CC00AE88FA /* AppIcon.icon */; };
+		9509DBDF300269CC00AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBDD300269CC00AE88FA /* AppIcon.icon */; };
+		9509DBE0300269CC00AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBDD300269CC00AE88FA /* AppIcon.icon */; };
+		9509DBE13002801900AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBDD300269CC00AE88FA /* AppIcon.icon */; };
 		9511D8AC22749582008E52B9 /* LaunchNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511D8AB22749582008E52B9 /* LaunchNotifier.swift */; };
 		95163CD22269979E007C006F /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD12269979E007C006F /* Notifier.swift */; };
 		95163CD4226998ED007C006F /* OpenNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD3226998ED007C006F /* OpenNotifier.swift */; };
@@ -158,6 +162,7 @@
 		4725257D2268112F003C50DF /* OpenInTerminal.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = OpenInTerminal.entitlements; sourceTree = "<group>"; };
 		4725257E2268112F003C50DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4725257F2268112F003C50DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9509DBDD300269CC00AE88FA /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		9511D8AB22749582008E52B9 /* LaunchNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNotifier.swift; sourceTree = "<group>"; };
 		95163CD12269979E007C006F /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		95163CD3226998ED007C006F /* OpenNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenNotifier.swift; sourceTree = "<group>"; };
@@ -307,6 +312,7 @@
 		9511D8AA22748FD6008E52B9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				9509DBDD300269CC00AE88FA /* AppIcon.icon */,
 				4725257E2268112F003C50DF /* Assets.xcassets */,
 				95294CFC25B3293F00CC995D /* Icons.xcassets */,
 				4725257F2268112F003C50DF /* Info.plist */,
@@ -558,6 +564,7 @@
 			files = (
 				95294D0825B3E17900CC995D /* Icons.xcassets in Resources */,
 				95C6C340227AA1CB00F157C4 /* Localizable.strings in Resources */,
+				9509DBDF300269CC00AE88FA /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +577,7 @@
 				95294CEB25B3252900CC995D /* Assets.xcassets in Resources */,
 				95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */,
 				95294CFE25B3293F00CC995D /* Icons.xcassets in Resources */,
+				9509DBDE300269CC00AE88FA /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +590,7 @@
 				9584EDF2226DEF79003C7EE8 /* Localizable.strings in Resources */,
 				472525812268112F003C50DF /* Assets.xcassets in Resources */,
 				95294CFD25B3293F00CC995D /* Icons.xcassets in Resources */,
+				9509DBE0300269CC00AE88FA /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +600,7 @@
 			files = (
 				95187390227DF493000CCB3A /* Assets.xcassets in Resources */,
 				95187393227DF493000CCB3A /* Main.storyboard in Resources */,
+				9509DBE13002801900AE88FA /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +736,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Q33U8R4U57;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = C8VX3ZLX5U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -758,7 +769,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Q33U8R4U57;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -790,7 +801,7 @@
 				CODE_SIGN_ENTITLEMENTS = OpenInTerminalFinderExtension/OpenInTerminalFinderExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q33U8R4U57;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminalFinderExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -817,7 +828,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q33U8R4U57;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminalFinderExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -844,7 +855,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q33U8R4U57;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -869,7 +880,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q33U8R4U57;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -892,7 +903,7 @@
 				CODE_SIGN_ENTITLEMENTS = OpenInTerminalHelper/OpenInTerminalHelper.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q33U8R4U57;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminalHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -916,7 +927,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q33U8R4U57;
+				DEVELOPMENT_TEAM = C8VX3ZLX5U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OpenInTerminalHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

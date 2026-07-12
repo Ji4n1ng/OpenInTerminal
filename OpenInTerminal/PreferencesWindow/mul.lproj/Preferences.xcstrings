@@ -661,6 +661,18 @@
         }
       }
     },
+    "Cel-Fnd-On.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Only activate shortcuts in Finder\"; ObjectID = \"Cel-Fnd-On\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Only activate shortcuts in Finder"
+          }
+        }
+      }
+    },
     "CP0-Xv-uYl.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Icon Type:\"; ObjectID = \"CP0-Xv-uYl\";",
       "extractionState" : "extracted_with_value",

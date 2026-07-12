@@ -1,0 +1,127 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "display-p3:0.07843,0.76863,0.98431,1.00000",
+      "srgb:0.08627,0.39216,0.94118,1.00000"
+    ],
+    "orientation" : {
+      "start" : {
+        "x" : 0.5,
+        "y" : 0
+      },
+      "stop" : {
+        "x" : 0.5,
+        "y" : 0.7
+      }
+    }
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "glass" : true,
+          "image-name" : "Group 3@2x.png",
+          "name" : "chevron",
+          "opacity-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : 0.9
+            }
+          ],
+          "position" : {
+            "scale" : 1.24,
+            "translation-in-points" : [
+              -243.34318705826217,
+              -181.12
+            ]
+          }
+        }
+      ],
+      "name" : "default",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    },
+    {
+      "hidden" : false,
+      "layers" : [
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : {
+                "linear-gradient" : [
+                  "display-p3:0.28638,0.28589,0.28638,1.00000",
+                  "display-p3:0.07758,0.07758,0.07770,1.00000"
+                ],
+                "orientation" : {
+                  "start" : {
+                    "x" : 0.4999999999999989,
+                    "y" : 0.24962186655751042
+                  },
+                  "stop" : {
+                    "x" : 0.4999999999999989,
+                    "y" : 0.7815947807512783
+                  }
+                }
+              }
+            }
+          ],
+          "hidden" : false,
+          "image-name" : "Vector (1).svg",
+          "name" : "lighting",
+          "opacity-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : 0.8
+            }
+          ],
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              232.59556198255132,
+              215.5
+            ]
+          }
+        },
+        {
+          "image-name" : "Ellipse 1.svg",
+          "name" : "Ellipse 1",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              232.59558602353718,
+              215.5
+            ]
+          }
+        }
+      ],
+      "name" : "light",
+      "opacity-specializations" : [
+        {
+          "appearance" : "dark",
+          "value" : 1
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
