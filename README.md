@@ -239,8 +239,6 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 
 Thanks to all [backers](https://github.com/sponsors/Ji4n1ng) and [contributors](https://github.com/Ji4n1ng/OpenInTerminal/graphs/contributors). Your work makes OpenInTerminal better.
 
-Thanks to [Sonar](https://www.sonarsource.com) and Paul Gerste for the security audit and responsible disclosure.
-
 ### Reference projects
 
 - [jbtule/cdto](https://github.com/jbtule/cdto)
