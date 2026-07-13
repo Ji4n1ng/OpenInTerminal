@@ -94,7 +94,7 @@ defaults remove wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor
 | CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CotEditor` |
 | MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor MacVim` |
 | Typora | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Typora` |
-| Neovim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor neovim` |
+| Neovim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Neovim` |
 | Nova | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Nova` |
 | Cursor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Cursor` |
 | AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor AppCode` |
@@ -148,26 +148,42 @@ defaults write wang.jianing.app.OpenInTerminal-Lite KittyCommand "open -na kitty
 
 ### 2) 如果你正在使用深色模式 (Dark Mode)
 
-我在 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中提供了几个图标。 您可以右键单击该应用程序并选择 `显示简介`。 拖动图标进行更改。
+#### macOS Tahoe 及更高版本
+
+依次进入 `系统设置` -> `外观` -> `图标与小组件样式`，然后选择 `自动`。请注意，这会自动切换所有应用的图标。如果你只想切换 OpenInTerminal-Lite 的图标，请按照下面的步骤操作。
+
+#### macOS Tahoe 之前
+
+我在 [release](https://github.com/Ji4n1ng/OpenInTerminal/releases) 中提供了几个图标。
 
 <div>
   <img src="https://user-images.githubusercontent.com/11001224/78600452-8aa0d100-7885-11ea-8a90-cc88b9233dac.png" width="600px">
   <br>
 </div>
 
-#### a. 手动更换图标
+##### **a)** 手动更换图标
+
+您可以右键单击该应用程序并选择 `显示简介`，然后拖动图标以覆盖默认图标。
 
 <div>
   <img src="https://user-images.githubusercontent.com/11001224/78590421-68eb1e00-7874-11ea-91e3-61cfd5ba3a26.gif" width="600px">
 </div>
 
-#### b. 利用 [Hammerspoon](https://www.hammerspoon.org) 自动更换图标
+##### **b)** 使用动态图标（macOS Big Sur 及更高版本，推荐）
 
-对于使用 macOS 的自动 Dark mode 功能的用户来说，下面的步骤特别有用。
+动态图标无需任何额外工具即可自动适配浅色与深色模式。它们位于 [`Resources/dynamic-icons/`](../Resources/dynamic-icons/)。
+
+只需按照上面的方法，手动应用一次你所选择的图标即可。
+
+图标会随系统外观自动切换——无需 Hammerspoon。
+
+##### **c)** 利用 [Hammerspoon](https://www.hammerspoon.org) 自动更换图标
+
+此方法适用于 macOS Catalina 及更早版本，或当你更倾向于使用独立的浅色/深色图标文件时。
 
 1. 通过[下载最新版本](https://github.com/Hammerspoon/hammerspoon/releases/latest) 并将其拖动到 `/Applications` 文件夹中，或使用 Homebrew 安装 Hammerspoon: 
 ```
-brew cask install hammerspoon
+brew install --cask hammerspoon
 ```
 
 2. 安装 [fileicon](https://github.com/mklement0/fileicon) 程序，以编程的方式更改图标: 
@@ -240,9 +256,9 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 </details>
 
 <details><summary>3. 为什么不能根据深色模式自动切换图标</summary><br>
-<p>对于 <code>OpenInTerminal-Lite</code> 来说，访达工具栏里的图标是应用图标，而不是访达扩展图标。目前我还没找到 API 可以更换应用图标（如果你有好的建议，请告诉我谢谢）。</p>
-<p>补充：感谢 @MatteoCarnelos 的贡献(#126)，<code>OpenInTerminal-Lite</code>现在可以通过 Hammerspoon 来自动更换图标。</p><br>
-<p>对于 <code>OpenInTerminal</code> 来说，访达工具栏里的图标是访达扩展图标，所以支持根据深色模式自动切换图标。</p>
+<p>对于 <code>OpenInTerminal-Lite</code> 来说，访达工具栏里的图标是应用图标，而不是访达扩展图标。目前没有 API 可以实时切换应用图标。</p>
+<p>在 macOS Big Sur 及更高版本上，你可以使用 <code>Resources/dynamic-icons/</code> 中的<strong>动态图标</strong>——单个 <code>.icns</code> 文件同时包含两种外观，并会随系统自动切换。参见上文 2b 小节。</p>
+<p>在更旧的 macOS 上，感谢 @MatteoCarnelos 的贡献(#126)，你可以使用 Hammerspoon 来自动切换图标。参见上文 2c 小节。</p>
 </details>
 
 <details><summary>4. 我的自定义应用不工作</summary><br>

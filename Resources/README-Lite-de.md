@@ -96,7 +96,7 @@ Legen Sie die folgende Anwendung als Standardanwendung zum Öffnen fest:
 | CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CotEditor` |
 | MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor MacVim` |
 | Typora | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Typora` |
-| Neovim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor neovim` |
+| Neovim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Neovim` |
 | Nova | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Nova` |
 | Cursor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Cursor` |
 | AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor AppCode` |
@@ -117,13 +117,19 @@ defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal GitHub\ 
 
 ### 2) Wenn Sie den Dunkelmodus verwenden
 
+#### macOS Tahoe und neuer
+
+Gehen Sie zu `Systemeinstellungen` -> `Erscheinungsbild` -> `Symbol- & Widget-Stil` und wählen Sie `Automatisch`. Beachten Sie, dass dadurch die Symbole aller Apps automatisch umgeschaltet werden. Wenn Sie nur das Symbol von OpenInTerminal-Lite umschalten möchten, folgen Sie den nachstehenden Schritten.
+
+#### Vor macOS Tahoe
+
 Ich habe mehrere Icons zusammen mit der App auf der [release Seite](https://github.com/Ji4n1ng/OpenInTerminal/releases) bereitgestellt.
 
 <div>
   <img src="https://user-images.githubusercontent.com/11001224/78600452-8aa0d100-7885-11ea-8a90-cc88b9233dac.png" width="600px">
 </div>
 
-#### a. Manuelle Änderung des Symbols
+##### **a)** Manuelle Änderung des Symbols
 
 Klicken Sie mit der rechten Maustaste auf die Anwendung und wählen Sie `Informationen`. Ziehen Sie das neue Symbol über das alte.
 
@@ -131,9 +137,17 @@ Klicken Sie mit der rechten Maustaste auf die Anwendung und wählen Sie `Informa
   <img src="https://user-images.githubusercontent.com/11001224/78590421-68eb1e00-7874-11ea-91e3-61cfd5ba3a26.gif" width="600px">
 </div>
 
-#### b. Automatisches Ändern des Symbols mit [Hammerspoon](https://www.hammerspoon.org)
+##### **b)** Ein dynamisches Symbol verwenden (macOS Big Sur und neuer, empfohlen)
 
-Dieses Verfahren ist besonders nützlich für diejenigen, die den automatischen Wechsel zwischen Hell- und Dunkelmodus von macOS nutzen.
+Dynamische Symbole passen sich automatisch an den Hell- und Dunkelmodus an, ohne zusätzliche Hilfsmittel. Sie sind unter [`Resources/dynamic-icons/`](../Resources/dynamic-icons/) verfügbar.
+
+Wenden Sie einfach das Symbol Ihrer Wahl einmal manuell an, wie oben gezeigt.
+
+Das Symbol wechselt automatisch mit dem Erscheinungsbild des Systems — Hammerspoon ist nicht erforderlich.
+
+##### **c)** Automatisches Ändern des Symbols mit [Hammerspoon](https://www.hammerspoon.org)
+
+Dieses Verfahren ist für macOS Catalina und älter gedacht, oder wenn Sie separate Hell-/Dunkel-Symboldateien bevorzugen.
 
 1. Installieren Sie Hammerspoon indem Sie entweder [den neuesten Release herunterladen](https://github.com/Hammerspoon/hammerspoon/releases/latest) und es in den `/Programme` Ordner ziehen, oder mithilfe von Homebrew:
 ```
@@ -210,9 +224,9 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 </details>
 
 <details><summary>3. Warum können die Symbole beim Wechsel vom/zum dunklen Modus nicht automatisch gewechselt werden?</summary><br>
-<p>Was <code>OpenInTerminal-Lite</code> betrifft, so ist das Symbol in der Finder-Symbolleiste das Symbol der Anwendung und nicht das Symbol der Finder-Erweiterung. Und ich habe keine API gefunden um das Programmsymbol zu ändern (Wenn Sie eine gute Idee haben, lassen Sie es mich bitte wissen).  
-<p>Hinzugefügt: Dank des Beitrags (#126) von @MatteoCarnelos kann <code>OpenInTerminal-Lite</code> nun automatisch Icons mit Hammerspoon wechseln.</p><br>
-Was <code>OpenInTerminal</code> betrifft, so ist das Symbol in der Finder-Symbolleiste das Symbol der Finder-Erweiterung. Es kann sich automatisch ändern, wenn Sie zwischen dunklem und hellem Modus wechseln. Sie können also versuchen, OpenInTerminal zu verwenden.</p>
+<p>Was <code>OpenInTerminal-Lite</code> betrifft, so ist das Symbol in der Finder-Symbolleiste das Symbol der Anwendung und nicht das Symbol der Finder-Erweiterung. Es gibt keine API, um das App-Symbol im laufenden Betrieb zu wechseln.</p>
+<p>Unter macOS Big Sur und neuer können Sie die <strong>dynamischen Symbole</strong> in <code>Resources/dynamic-icons/</code> verwenden — eine einzige <code>.icns</code>-Datei, die beide Erscheinungsbilder enthält und automatisch mit dem System wechselt. Siehe Abschnitt 2b oben.</p>
+<p>Unter älteren macOS-Versionen können Sie dank des Beitrags (#126) von @MatteoCarnelos Hammerspoon verwenden, um die Symbole automatisch zu wechseln. Siehe Abschnitt 2c oben.</p>
 </details>
 
 <details><summary>4. Mein benutzerdefiniertes Programm funktioniert nicht.</summary><br>

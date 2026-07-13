@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="80%" src="https://github.com/user-attachments/assets/812d36ab-576f-425f-a012-eeae15047685"><br/><br/>
+  <img width="80%" src="https://github.com/user-attachments/assets/43667e33-d02d-4a0e-8ca9-fd1cf411b24a"><br/><br/>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/releases/tag/v2.3.6"><img src="https://img.shields.io/badge/Version-2.3.6-blue.svg"></a>
   <a href="https://github.com/Ji4n1ng/OpenInTerminal/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
   <img src="https://img.shields.io/badge/Made With-Swift-red.svg">

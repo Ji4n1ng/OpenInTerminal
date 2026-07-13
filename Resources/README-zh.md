@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="80%" src="https://github.com/user-attachments/assets/812d36ab-576f-425f-a012-eeae15047685"><br/><br/>
+  <img width="80%" src="https://github.com/user-attachments/assets/43667e33-d02d-4a0e-8ca9-fd1cf411b24a"><br/><br/>
   <a href="../README.md">English</a> | <a href="./README-zh.md">中文</a>
 </div>
 

@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="80%" src="https://github.com/user-attachments/assets/812d36ab-576f-425f-a012-eeae15047685"><br/><br/>
+  <img width="80%" src="https://github.com/user-attachments/assets/43667e33-d02d-4a0e-8ca9-fd1cf411b24a"><br/><br/>
   <a href="./README.md">English</a> | <a href="./Resources/README-zh.md">中文</a> | <a href="./Resources/README-tr.md">Türkçe</a> | <a href="./Resources/README-de.md">Deutsch</a>
 </div>
 
@@ -32,6 +32,8 @@ Check **OpenInTerminal-Lite** Docs: [English](./Resources/README-Lite.md) | [中
 
 ## Installation 🖥
 
+> ⚠️ **Important:** Signed builds are no longer provided for **OpenInTerminal**, **OpenInTerminal-Lite**, or **OpenInEditor-Lite**. Before using these apps, please either trust the unsigned binaries or sign them yourself. See the [Configuration](./Resources/README-Config.md) document for how to install and trust unsigned apps.
+
 ```
 brew install --cask openinterminal
 ```
@@ -62,6 +64,15 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 2.3.9</strong></p>
+<ul>
+<li>Added support for Zed, Emacs, Kakoune, GitKraken, and cmux.</li>
+<li>Added an option to limit global keyboard shortcuts to Finder-only shortcuts. (#251, #243)</li>
+<li>Introduced a new default app icon with automatic light/dark mode support.</li>
+<li>Added an option to display the Finder context menu items in a submenu.</li>
+<li>Fixed the Finder extension icon being rendered as a template icon.</li>
+<li>Improved startup responsiveness by fetching installed applications on a background thread.</li>
+</ul>
 <p><strong>version 2.3.8</strong></p>
 <ul>
 <li>Support "open in neovim" for Alacritty, WezTerm, and kitty users.</li>

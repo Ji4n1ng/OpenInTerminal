@@ -25,6 +25,8 @@
 
 ## How to install 🖥
 
+> ⚠️ **Important:** Signed builds are no longer provided for **OpenInTerminal**, **OpenInTerminal-Lite**, or **OpenInEditor-Lite**. Before using these apps, please either trust the unsigned binaries or sign them yourself.
+
 ### Homebrew
 
 1. Run the following command
@@ -97,7 +99,7 @@ Set the following app as the default app to open:
 | CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CotEditor` |
 | MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor MacVim` |
 | Typora | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Typora` |
-| Neovim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor neovim` |
+| Neovim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Neovim` |
 | Nova | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Nova` |
 | Cursor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Cursor` |
 | AppCode | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor AppCode` |
@@ -151,13 +153,19 @@ defaults write wang.jianing.app.OpenInTerminal-Lite KittyCommand "open -na kitty
 
 ### 2) If you are using Dark Mode
 
+#### macOS Tahoe and later
+
+Go to `System Settings` -> `Appearance` -> `Icon & widget style` and select `Auto`. Note that this switches the icons of all apps automatically. If you want to switch only the OpenInTerminal-Lite icon, follow the steps below.
+
+#### Before macOS Tahoe
+
 I provided several icons along with the app in the [release page](https://github.com/Ji4n1ng/OpenInTerminal/releases).
 
 <div>
   <img src="https://user-images.githubusercontent.com/11001224/78600452-8aa0d100-7885-11ea-8a90-cc88b9233dac.png" width="600px">
 </div>
 
-#### a. Changing the icon manually
+##### **a)** Changing the icon manually
 
 You can right click on the app and select `Get Info`. Drag the icon to cover the default icon.
 
@@ -165,7 +173,7 @@ You can right click on the app and select `Get Info`. Drag the icon to cover the
   <img src="https://user-images.githubusercontent.com/11001224/78590421-68eb1e00-7874-11ea-91e3-61cfd5ba3a26.gif" width="600px">
 </div>
 
-#### b. Using a dynamic icon (macOS Big Sur and later, recommended)
+##### **b)** Using a dynamic icon (macOS Big Sur and later, recommended)
 
 Dynamic icons automatically adapt to light and dark mode without any extra tooling. They are available in [`Resources/dynamic-icons/`](../Resources/dynamic-icons/).
 
@@ -173,7 +181,7 @@ Simply apply the icon of your choice once manually, as shown above.
 
 The icon will switch automatically with the system appearance — no Hammerspoon required.
 
-#### c. Changing the icon automatically with [Hammerspoon](https://www.hammerspoon.org)
+##### **c)** Changing the icon automatically with [Hammerspoon](https://www.hammerspoon.org)
 
 This procedure is for macOS Catalina and earlier, or if you prefer separate light/dark icon files.
 
@@ -265,6 +273,12 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 ## Changes 🗒
 
 <details><summary>show all</summary><br>
+<p><strong>version 1.2.8</strong></p>
+<ul>
+<li>Updated the first-launch prompt to display all supported terminal applications.</li>
+<li>Introduced a new default app icon with automatic light/dark mode support.</li>
+<li>Added support for Zed, Emacs, Kakoune, GitKraken, and cmux.</li>
+</ul>
 <p><strong>version 1.2.7</strong></p>
 <ul>
 <li>Support "open in neovim" for Alacritty, WezTerm, and kitty users.</li>
