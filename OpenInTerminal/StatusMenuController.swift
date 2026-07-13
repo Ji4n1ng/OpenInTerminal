@@ -74,7 +74,12 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         if let shortcutDict = Defaults.value(forKey: key),
            let shortcut = Shortcut(dictionary: shortcutDict as! [AnyHashable : Any]) {
             menuItem.keyEquivalentModifierMask = shortcut.modifierFlags
-            menuItem.keyEquivalent = shortcut.characters ?? ""
+            // Use the base key (without modifiers applied) for the keyEquivalent; the
+            // modifiers are already conveyed by keyEquivalentModifierMask. Passing
+            // `characters` (the modifier-applied glyph, e.g. an uppercase or Option-composed
+            // character) makes AppKit mis-measure the shortcut column, causing the shortcut
+            // to overlap the "Open in xxx" title in the status bar menu.
+            menuItem.keyEquivalent = shortcut.charactersIgnoringModifiers ?? ""
         } else {
             menuItem.keyEquivalentModifierMask = []
             menuItem.keyEquivalent = ""

@@ -275,6 +275,7 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 <details><summary>show all</summary><br>
 <p><strong>version 1.2.8</strong></p>
 <ul>
+<li>Security: Fixed an AppleScript/command injection vulnerability that allowed arbitrary command execution via a crafted folder name when opening it in a non-default terminal or an editor. Thanks to Paul Gerste (<a href="https://www.sonarsource.com">Sonar</a>) for the responsible disclosure.</li>
 <li>Updated the first-launch prompt to display all supported terminal applications.</li>
 <li>Introduced a new default app icon with automatic light/dark mode support.</li>
 <li>Added support for Zed, Emacs, Kakoune, GitKraken, and cmux.</li>
@@ -407,6 +408,8 @@ tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 ## Special Thanks to ❤️
 
 All the contributors who have helped with the development of OpenInTerminal-Lite.
+
+Thanks to [Sonar](https://www.sonarsource.com) and Paul Gerste for the security audit and responsible disclosure.
 
 ### Reference projects
 

@@ -66,12 +66,14 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 <details><summary>show all</summary><br>
 <p><strong>version 2.3.9</strong></p>
 <ul>
+<li>Security: Fixed an AppleScript/command injection vulnerability that allowed arbitrary command execution via a crafted folder name when opening it in a non-default terminal or an editor. Thanks to Paul Gerste (<a href="https://www.sonarsource.com">Sonar</a>) for the responsible disclosure.</li>
 <li>Added support for Zed, Emacs, Kakoune, GitKraken, and cmux.</li>
 <li>Added an option to limit global keyboard shortcuts to Finder-only shortcuts. (#251, #243)</li>
 <li>Introduced a new default app icon with automatic light/dark mode support.</li>
 <li>Added an option to display the Finder context menu items in a submenu.</li>
 <li>Fixed the Finder extension icon being rendered as a template icon.</li>
 <li>Improved startup responsiveness by fetching installed applications on a background thread.</li>
+<li>Fixed the keyboard shortcut overlapping the "Open in ..." title in the status bar menu.</li>
 </ul>
 <p><strong>version 2.3.8</strong></p>
 <ul>
@@ -236,6 +238,8 @@ Become a sponsor through [GitHub Sponsors](https://github.com/sponsors/Ji4n1ng) 
 ## Special Thanks to ❤️
 
 Thanks to all [backers](https://github.com/sponsors/Ji4n1ng) and [contributors](https://github.com/Ji4n1ng/OpenInTerminal/graphs/contributors). Your work makes OpenInTerminal better.
+
+Thanks to [Sonar](https://www.sonarsource.com) and Paul Gerste for the security audit and responsible disclosure.
 
 ### Reference projects
 
