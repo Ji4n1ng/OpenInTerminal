@@ -26,8 +26,11 @@ public extension String {
     func specialCharEscaped(_ count: Int = 1) -> String {
         let escapeChar = String(repeating: "\\", count: count)
         var result = ""
-        let set: [Character] = [" ", "(", ")", "&", "|", ";",
-                                "\"", "'", "<", ">", "`"]
+        // Escape the backslash and newline too: the newline is a shell command
+        // separator (command injection) and the backslash must be escaped first
+        // so the other escapes cannot be neutralized by a crafted path.
+        let set: [Character] = ["\\", " ", "(", ")", "&", "|", ";",
+                                "\"", "'", "<", ">", "`", "\n"]
         for char in self {
             if set.contains(char) {
                 result += escapeChar

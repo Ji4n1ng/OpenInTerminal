@@ -319,7 +319,41 @@ public class DefaultsManager {
             return "open -a \(app.name.nameSpaceEscaped(escapeCount))"
         }
     }
-    
+
+    /// Returns the `open` invocation split into argument tokens, excluding the
+    /// leading "open" program name and excluding any target path.
+    ///
+    /// Paths must be appended by the caller as discrete `Process` arguments so
+    /// that they are never interpreted by a shell or by AppleScript. This is the
+    /// injection-safe counterpart to `getOpenCommand`.
+    public func getOpenArguments(_ app: App) -> [String] {
+        let command: String
+        if SupportedApps.is(app, is: .alacritty) {
+            command = Constants.Commands.alacritty
+        } else if SupportedApps.is(app, is: .kitty) {
+            command = kittyCommand
+        } else if SupportedApps.is(app, is: .wezterm) {
+            command = Constants.Commands.wezterm
+        } else if SupportedApps.is(app, is: .tabby) {
+            command = Constants.Commands.tabby
+        } else if SupportedApps.is(app, is: .neovim) {
+            command = neovimCommand
+        } else if SupportedApps.is(app, is: .gitKraken) {
+            command = gitKrakenCommand
+        } else {
+            // Generic case (`open -a <name>`): keep the app name as a single
+            // argument so names containing spaces are preserved without escaping.
+            return ["-a", app.name]
+        }
+        // The custom command templates above are trusted config with no spaces
+        // inside individual tokens, so splitting on spaces is safe here.
+        var tokens = command.split(separator: " ").map(String.init)
+        if !tokens.isEmpty {
+            tokens.removeFirst()  // drop leading "open"
+        }
+        return tokens
+    }
+
     // MARK: - Advanced Settings
     
     public func firstSetup() {

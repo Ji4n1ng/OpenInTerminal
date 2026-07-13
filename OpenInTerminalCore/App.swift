@@ -42,18 +42,24 @@ public protocol Openable {
 extension App: Openable {
     
     public func openOutsideSandbox() throws {
-        
-        func excute(_ source: String) throws {
-            guard let script = NSAppleScript(source: source) else {
-                throw OITError.cannotCreateAppleScript(source)
-            }
-            var error: NSDictionary?
-            script.executeAndReturnError(&error)
-            if error != nil {
+
+        // Launch the `open` command directly, passing each path as a discrete
+        // argument. This avoids building a shell command string or an AppleScript
+        // source string from an untrusted path, which was exploitable for both
+        // AppleScript injection and shell command injection via crafted folder
+        // names. See the security advisory (Findings 1 & 2).
+        func runOpen(_ arguments: [String]) throws {
+            let process = Process()
+            process.executableURL = URL(fileURLWithPath: "/usr/bin/open")
+            process.arguments = arguments
+            logw("open " + arguments.joined(separator: " "))
+            do {
+                try process.run()
+            } catch {
                 throw OITError.cannotAccessApp(self.name)
             }
         }
-        
+
         switch self.type {
         case .terminal:
             // get path
@@ -63,7 +69,7 @@ extension App: Openable {
                 guard let desktopPath = FinderManager.shared.getDesktopPath() else { return }
                 path = desktopPath
             }
-            
+
             if SupportedApps.is(self, is: .terminal) {
                 // this app is supported: Terminal
                 let url = URL(fileURLWithPath: path)
@@ -73,31 +79,13 @@ extension App: Openable {
                 }
                 open([url])
                 terminal.activate()
-//                let newOption = DefaultsManager.shared.getNewOption(.terminal) ?? .window
-//                switch newOption {
-//                case .window:
-//                    // open in a new window
-//                    guard let terminal = SBApplication(bundleIdentifier: SupportedApps.terminal.bundleId) as TerminalApplication?,
-//                          let open = terminal.open else {
-//                        throw OITError.cannotAccessApp(self.name)
-//                    }
-//                    open([url])
-//                    terminal.activate()
-//                case .tab:
-//                    // open in a new tab
-//                    let source = ScriptManager.shared.getTerminalNewTabAppleScript(url: url)
-//                    try excute(source)
-//                }
             } else {
-                // this app is general
-                var openCommand = DefaultsManager.shared.getOpenCommand(self, escapeCount: 2)
-                openCommand += " " + path.specialCharEscaped(2)
-                let source = """
-                do shell script "\(openCommand)"
-                """
-                try excute(source)
+                // this app is general (e.g. iTerm, Alacritty, kitty)
+                var arguments = DefaultsManager.shared.getOpenArguments(self)
+                arguments.append(path)
+                try runOpen(arguments)
             }
-            
+
         case .editor:
             // get paths
             var paths = try FinderManager.shared.getFullPathsToFrontFinderWindowOrSelectedFile()
@@ -106,24 +94,16 @@ extension App: Openable {
                 guard let desktopPath = FinderManager.shared.getDesktopPath() else { return }
                 paths.append(desktopPath)
             }
-            
-            var openCommand = DefaultsManager.shared.getOpenCommand(self, escapeCount: 2)
-            var path = ""
-            paths.forEach {
-                path += " \($0.specialCharEscaped(2))"
-            }
-            // fix for neovim
+
+            var arguments = DefaultsManager.shared.getOpenArguments(self)
+            // fix for neovim: the command template carries a "PATH" placeholder
+            // token that must be replaced by the actual path arguments.
             if SupportedApps.is(self, is: .neovim) {
-                openCommand = openCommand.replacingOccurrences(of: "PATH", with: path)
+                arguments = arguments.flatMap { $0 == "PATH" ? paths : [$0] }
             } else {
-                openCommand += path
+                arguments.append(contentsOf: paths)
             }
-            logw(openCommand)
-            
-            let source = """
-            do shell script "\(openCommand)"
-            """
-            try excute(source)
+            try runOpen(arguments)
         }
     }
     
