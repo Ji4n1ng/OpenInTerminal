@@ -1,5 +1,23 @@
 # OpenInTerminal Configurations
 
+## Installing Unsigned Apps
+
+On first launch, macOS may refuse to open the app — for example `"OpenInTerminal" is damaged and can't be opened`, or `cannot be opened because Apple cannot check it for malicious software`.
+
+1. Move the app (`OpenInTerminal.app`, `OpenInTerminal-Lite.app` or `OpenInEditor-Lite.app`) into `/Applications`.
+
+2. Remove the quarantine flag macOS attaches to downloaded or copied apps (repeat for each app, changing the name):
+
+   ```
+   xattr -dr com.apple.quarantine /Applications/OpenInTerminal.app
+   ```
+
+   This step matters: besides clearing the "damaged" warning, it stops macOS from running the app from a random read-only location (*App Translocation*), which would otherwise prevent the Finder extension from registering.
+
+3. Launch the app.
+
+Prefer not to use the command line? Control-click (right-click) the app in Finder, choose `Open`, and confirm in the dialog. On macOS 15 (Sequoia) or later, open `System Settings` -> `Privacy & Security`, scroll to the **Security** section, and click `Open Anyway` after the first blocked launch.
+
 ## Finder Extension Configuration
 
 To enable Finder Extension, right click on Finder toolbar, select `Customize Toolbar...` as shown below:
@@ -14,9 +32,13 @@ Then drag the `OpenInTerminal` icon to the toolbar:
   <img src="https://github.com/user-attachments/assets/261eb747-27f0-4484-9654-40cab8a52008" width="400px">
 </div>
 
-### Finder Extension Not Showing Up in System Settings on macOS 15
+### Finder Extension Not Showing Up in System Settings on macOS 15 and later
 
-#### 1) Manually Enable the Finder Extension
+#### 1) Enable the Finder Extension in Settings (Tahoe)
+
+Go to `System Settings` -> `General` -> `Login Items & Extensions` -> `OpenInTerminal Extensions`, and enable `File Provider`.
+
+#### 2) Manually Enable the Finder Extension (macOS 15)
 
 Starting with macOS 15, Apple removed the Finder Sync Extension configuration from System Settings. To enable the Finder Extension, use the `pluginkit` command-line tool as follows:
 
@@ -45,7 +67,7 @@ To manually enable the Finder Extension, run the following command with the UUID
 $ pluginkit -e "use" -u "F2547F13-4E43-4E88-9D8F-56DF05C020D8"
 ```
 
-#### 2) Use FinderSyncer
+#### 3) Use FinderSyncer
 
 Alternatively, you could use a GUI tool called [FinderSyncer](https://zigz.ag/FinderSyncer/) to enable the extension.
 

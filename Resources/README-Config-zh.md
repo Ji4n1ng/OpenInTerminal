@@ -1,5 +1,23 @@
 # OpenInTerminal 配置
 
+## 安装未签名的应用
+
+首次启动时，macOS 可能会拒绝打开应用，例如提示 `“OpenInTerminal”已损坏，无法打开` 或 `无法打开，因为 Apple 无法检查其是否包含恶意软件`。
+
+1. 将应用（`OpenInTerminal.app`、`OpenInTerminal-Lite.app` 或 `OpenInEditor-Lite.app`）移动到 `/Applications` 文件夹。
+
+2. 移除 macOS 为下载或拷贝的应用附加的隔离（quarantine）属性（对每个已安装的应用重复执行，并替换名称）：
+
+   ```
+   xattr -dr com.apple.quarantine /Applications/OpenInTerminal.app
+   ```
+
+   这一步很重要：除了消除“已损坏”提示外，它还能阻止 macOS 从随机的只读位置运行应用（*App Translocation*，应用位置随机化），否则 Finder 扩展将无法注册。
+
+3. 启动应用。
+
+不想使用命令行？可在访达中按住 Control 键点按（右键点按）应用并选择 `打开`，然后在弹窗中确认。在 macOS 15 (Sequoia) 及更高版本中，请在首次被拦截后进入 `系统设置` -> `隐私与安全性`，找到 **安全性** 部分并点击 `仍要打开`。
+
 ## Finder 扩展配置
 
 要启用 Finder 扩展，请右键单击 Finder 工具栏，然后选择 自定义工具栏...，如下图所示：
@@ -14,9 +32,13 @@
   <img src="https://github.com/user-attachments/assets/261eb747-27f0-4484-9654-40cab8a52008" width="400px">
 </div>
 
-### macOS 15 中 Finder 扩展未显示在系统设置中
+### macOS 15 及更高版本中 Finder 扩展未显示在系统设置中
 
-#### 1) 手动启用 Finder 扩展
+#### 1) 在设置中启用 Finder 扩展（Tahoe）
+
+依次进入 `系统设置` -> `通用` -> `登录项与扩展` -> `OpenInTerminal Extensions`，然后启用 `File Provider`。
+
+#### 2) 手动启用 Finder 扩展（macOS 15）
 
 从 macOS 15 开始，Apple 从系统设置中移除了 Finder 同步扩展的配置。要启用 Finder 扩展，可以使用 `pluginkit` 命令行工具，如下所示：
 
@@ -45,7 +67,7 @@ wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension(2.3.5)
 $ pluginkit -e "use" -u "F2547F13-4E43-4E88-9D8F-56DF05C020D8"
 ```
 
-#### 2) 使用 FinderSyncer
+#### 3) 使用 FinderSyncer
 
 或者，您可以使用一个名为 [FinderSyncer](https://zigz.ag/FinderSyncer/) 的图形界面工具来启用扩展。
 

@@ -43,3 +43,5 @@
 
 "menu.submenu_title" = "Öffnen in …";
 "pref.general.context_menu_use_submenu" = "Kontextmenü-Einträge in einem Untermenü gruppieren";
+
+"pref.shortcuts_finder_only" = "Tastenkürzel nur im Finder aktivieren";

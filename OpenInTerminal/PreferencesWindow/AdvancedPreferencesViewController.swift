@@ -28,6 +28,9 @@ class AdvancedPreferencesViewController: PreferencesViewController {
         defaultEditorShortcut.bind(.value, to: Defaults, withKeyPath: Constants.Key.defaultEditorShortcut)
         copyPathShortcut.bind(.value, to: Defaults, withKeyPath: Constants.Key.copyPathShortcut)
         finderOnlyCheckbox.bind(.value, to: Defaults, withKeyPath: Constants.Key.onlyActivateShortcutsInFinder)
+        // set the localized title programmatically so it follows the app language
+        finderOnlyCheckbox.title = NSLocalizedString("pref.shortcuts_finder_only",
+                                                     comment: "Only activate shortcuts in Finder")
     }
     
     

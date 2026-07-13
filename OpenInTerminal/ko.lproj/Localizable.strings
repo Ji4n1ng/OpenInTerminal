@@ -43,3 +43,5 @@
 
 "menu.submenu_title" = "다음으로 열기…";
 "pref.general.context_menu_use_submenu" = "컨텍스트 메뉴 항목을 하위 메뉴로 그룹화";
+
+"pref.shortcuts_finder_only" = "Finder에서만 단축키 활성화";

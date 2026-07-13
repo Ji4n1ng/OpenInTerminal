@@ -35,3 +35,5 @@
 
 "menu.submenu_title" = "Открыть в…";
 "pref.general.context_menu_use_submenu" = "Группировать пункты контекстного меню в подменю";
+
+"pref.shortcuts_finder_only" = "Активировать сочетания клавиш только в Finder";

@@ -35,3 +35,5 @@
 
 "menu.submenu_title" = "Apri in…";
 "pref.general.context_menu_use_submenu" = "Raggruppa le voci del menu contestuale in un sottomenu";
+
+"pref.shortcuts_finder_only" = "Attiva le scorciatoie solo nel Finder";

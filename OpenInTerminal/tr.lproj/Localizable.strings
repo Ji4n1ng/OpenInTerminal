@@ -43,3 +43,5 @@
 
 "menu.submenu_title" = "Şununla aç…";
 "pref.general.context_menu_use_submenu" = "Bağlam menüsü öğelerini bir alt menüde grupla";
+
+"pref.shortcuts_finder_only" = "Kısayolları yalnızca Finder'da etkinleştir";

@@ -41,3 +41,5 @@
 
 "menu.submenu_title" = "打开...";
 "pref.general.context_menu_use_submenu" = "将右键菜单项归入子菜单";
+
+"pref.shortcuts_finder_only" = "仅在访达中激活快捷键";

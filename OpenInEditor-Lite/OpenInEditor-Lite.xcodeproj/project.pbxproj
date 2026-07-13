@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		9509DBE53003DB6900AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBE43003DB6900AE88FA /* AppIcon.icon */; };
 		95A0744D22C2083E00A42BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A0744C22C2083E00A42BC8 /* Assets.xcassets */; };
-		AAAA2222CCCC2222CCCC0001 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA2222CCCC2222CCCC0002 /* Icons.xcassets */; };
 		95A0745922C2140700A42BC8 /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A0745822C2140700A42BC8 /* OpenInTerminalCore.framework */; };
 		95A0745A22C2140700A42BC8 /* OpenInTerminalCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A0745822C2140700A42BC8 /* OpenInTerminalCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95A0745D22C2141700A42BC8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0745C22C2141700A42BC8 /* main.swift */; };
 		95A0745F22C2155800A42BC8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A0745E22C2155800A42BC8 /* Error.swift */; };
 		95A0746222C217E800A42BC8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95A0746422C217E800A42BC8 /* Localizable.strings */; };
+		AAAA2222CCCC2222CCCC0001 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA2222CCCC2222CCCC0002 /* Icons.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +39,6 @@
 		9595D2A223BAD7EE006CBB36 /* OpenInEditor-Lite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "OpenInEditor-Lite.entitlements"; sourceTree = "<group>"; };
 		95A0744722C2083E00A42BC8 /* OpenInEditor-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenInEditor-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A0744C22C2083E00A42BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AAAA2222CCCC2222CCCC0002 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Icons.xcassets; path = "../OpenInTerminal/Icons.xcassets"; sourceTree = SOURCE_ROOT; };
 		95A0745122C2083E00A42BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95A0745222C2083E00A42BC8 /* OpenInEditor_Lite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenInEditor_Lite.entitlements; sourceTree = "<group>"; };
 		95A0745822C2140700A42BC8 /* OpenInTerminalCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenInTerminalCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +49,7 @@
 		95A0746622C217EF00A42BC8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95B0614027AFAD1E009C2B4E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95DD629D243B4694003550B3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AAAA2222CCCC2222CCCC0002 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Icons.xcassets; path = ../OpenInTerminal/Icons.xcassets; sourceTree = SOURCE_ROOT; };
 		C3135D9E243F4CFA003323CF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -346,7 +346,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInEditor-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -369,7 +369,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "wang.jianing.app.OpenInEditor-Lite";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

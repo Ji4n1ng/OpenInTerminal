@@ -123,3 +123,5 @@ iOSInjectionProject/
 
 # End of https://www.gitignore.io/api/macos,xcode,swift
 n
+
+export/
