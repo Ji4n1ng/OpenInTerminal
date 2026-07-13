@@ -107,6 +107,12 @@ class FinderSync: FIFinderSync {
     func createDefaultMenu() -> NSMenu {
         let menu = NSMenu(title: "")
         
+        // 添加一级菜单项
+        let menuItem = NSMenuItem(title: "Open in...", action: nil, keyEquivalent: "")
+
+        // 创建二级菜单
+        let subMenu = NSMenu(title: "")
+
         guard let terminal = DefaultsManager.shared.defaultTerminal else { return menu }
         let terminalTitle = terminal.name
         let openInTerminalItem = NSMenuItem(title: terminalTitle,
@@ -114,7 +120,7 @@ class FinderSync: FIFinderSync {
                                             keyEquivalent: "")
         let terminalIcon = DefaultsManager.shared.getAppIcon(terminal)
         openInTerminalItem.image = terminalIcon
-        menu.addItem(openInTerminalItem)
+        subMenu.addItem(openInTerminalItem)
         
         guard let editor = DefaultsManager.shared.defaultEditor else { return menu }
         let editorTitle = editor.name
@@ -123,10 +129,15 @@ class FinderSync: FIFinderSync {
                                             keyEquivalent: "")
         let editorIcon = DefaultsManager.shared.getAppIcon(editor)
         openInEditorItem.image = editorIcon
-        menu.addItem(openInEditorItem)
+        subMenu.addItem(openInEditorItem)
         
         // add "Copy Path"
-        menu.addItem(self.copyPathItem)
+        subMenu.addItem(self.copyPathItem)
+
+        // 将二级菜单关联到一级菜单项
+        menuItem.submenu = subMenu
+        
+        menu.addItem(menuItem)
         
         return menu
     }
