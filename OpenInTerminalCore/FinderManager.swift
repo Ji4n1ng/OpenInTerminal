@@ -136,7 +136,10 @@ public class FinderManager {
         // add system application
         applications.insert("Terminal")
         applications.insert("TextEdit")
-        applications.insert("neovim")
+        // neovim is a command-line program (`nvim`), not a `.app`, so probe for its binary
+        if isCommandLineToolInstalled("nvim") {
+            applications.insert("neovim")
+        }
         // search
         do {
             var searchDirs: Set<URL> = Set()
@@ -243,5 +246,32 @@ public class FinderManager {
         
         return applications
     }
-    
+
+    /// Check whether a command-line tool is actually installed, by looking in the
+    /// common install locations (Homebrew, MacPorts, Nix, system, user-local) and
+    /// on the user's `PATH`.
+    public func isCommandLineToolInstalled(_ tool: String) -> Bool {
+        let fileManager = FileManager.default
+        var searchPaths = [
+            "/opt/homebrew/bin",            // Apple Silicon Homebrew
+            "/usr/local/bin",              // Intel Homebrew
+            "/usr/bin",
+            "/bin",
+            "/opt/local/bin",             // MacPorts
+            "/run/current-system/sw/bin", // Nix
+            NSHomeDirectory() + "/.local/bin",
+        ]
+        // Also honor the directories on the user's PATH, if it is available.
+        if let envPath = ProcessInfo.processInfo.environment["PATH"] {
+            searchPaths.append(contentsOf: envPath.split(separator: ":").map(String.init))
+        }
+        for dir in searchPaths {
+            let fullPath = (dir as NSString).appendingPathComponent(tool)
+            if fileManager.isExecutableFile(atPath: fullPath) {
+                return true
+            }
+        }
+        return false
+    }
+
 }

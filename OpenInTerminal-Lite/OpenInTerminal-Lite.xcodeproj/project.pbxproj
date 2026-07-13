@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9509DBE33003D57800AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBE23003D57800AE88FA /* AppIcon.icon */; };
 		95163CE62269F0C3007C006F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95163CE52269F0C3007C006F /* Assets.xcassets */; };
+		AAAA1111CCCC1111CCCC0001 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA1111CCCC1111CCCC0002 /* Icons.xcassets */; };
 		95163CF22269F104007C006F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CF12269F104007C006F /* main.swift */; };
 		95163CF42269F209007C006F /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95163CF32269F209007C006F /* OpenInTerminalCore.framework */; };
 		95163CF52269F209007C006F /* OpenInTerminalCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95163CF32269F209007C006F /* OpenInTerminalCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -36,6 +37,7 @@
 		9509DBE23003D57800AE88FA /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		95163CE02269F0C2007C006F /* OpenInTerminal-Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenInTerminal-Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95163CE52269F0C3007C006F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAAA1111CCCC1111CCCC0002 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Icons.xcassets; path = "../OpenInTerminal/Icons.xcassets"; sourceTree = SOURCE_ROOT; };
 		95163CEA2269F0C3007C006F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95163CEB2269F0C3007C006F /* OpenInTerminal_Lite.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenInTerminal_Lite.entitlements; sourceTree = "<group>"; };
 		95163CF12269F104007C006F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				95163CF12269F104007C006F /* main.swift */,
 				9590B69C226C715100362B93 /* Error.swift */,
 				95163CE52269F0C3007C006F /* Assets.xcassets */,
+				AAAA1111CCCC1111CCCC0002 /* Icons.xcassets */,
 				9509DBE23003D57800AE88FA /* AppIcon.icon */,
 				95163CEA2269F0C3007C006F /* Info.plist */,
 				95163CEB2269F0C3007C006F /* OpenInTerminal_Lite.entitlements */,
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95163CE62269F0C3007C006F /* Assets.xcassets in Resources */,
+				AAAA1111CCCC1111CCCC0001 /* Icons.xcassets in Resources */,
 				95ECC130228CF99F00416AA2 /* Localizable.strings in Resources */,
 				9509DBE33003D57800AE88FA /* AppIcon.icon in Resources */,
 			);
