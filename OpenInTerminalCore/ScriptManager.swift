@@ -97,6 +97,51 @@ public class ScriptManager {
         """
         return script
     }
+
+    /// Open path in iTerm using its scripting API.
+    public func getITermAppleScript(path: String, newOption: NewOptionType) -> String {
+        let path = path.appleScriptStringEscaped()
+        switch newOption {
+        case .window:
+            return """
+            set targetPath to "\(path)"
+            set commandText to "cd " & quoted form of targetPath
+            tell application "iTerm"
+                set newWindow to (create window with default profile)
+                activate
+                delay 0.5
+                tell current session of newWindow
+                    write text commandText
+                end tell
+            end tell
+            """
+        case .tab:
+            return """
+            set targetPath to "\(path)"
+            set commandText to "cd " & quoted form of targetPath
+            tell application "iTerm"
+                if not (exists current window) then
+                    set newWindow to (create window with default profile)
+                    activate
+                    delay 0.5
+                    tell current session of newWindow
+                        write text commandText
+                    end tell
+                else
+                    set targetWindow to current window
+                    tell targetWindow
+                        set newTab to (create tab with default profile)
+                    end tell
+                    activate
+                    delay 0.5
+                    tell current session of newTab
+                        write text commandText
+                    end tell
+                end if
+            end tell
+            """
+        }
+    }
     
     
     // MARK: - Utils
@@ -254,3 +299,10 @@ public class ScriptManager {
     }
 }
 
+private extension String {
+    func appleScriptStringEscaped() -> String {
+        return self
+            .replacingOccurrences(of: "\\", with: "\\\\")
+            .replacingOccurrences(of: "\"", with: "\\\"")
+    }
+}

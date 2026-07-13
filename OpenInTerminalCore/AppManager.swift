@@ -6,6 +6,7 @@
 //  Copyright © 2020 Jianing Wang. All rights reserved.
 //
 
+import AppKit
 import Foundation
 
 public class AppManager {
@@ -45,6 +46,7 @@ public class AppManager {
         alert.addButton(withTitle: SupportedApps.vscode.name).refusesFirstResponder = true
         alert.addButton(withTitle: SupportedApps.sublime.name).refusesFirstResponder = true
         alert.addButton(withTitle: SupportedApps.atom.name).refusesFirstResponder = true
+        alert.addButton(withTitle: SupportedApps.obsidian.name).refusesFirstResponder = true
         let modalResult = alert.runModal()
         switch modalResult {
         case .alertFirstButtonReturn:
@@ -53,8 +55,10 @@ public class AppManager {
             return SupportedApps.vscode.app
         case .alertThirdButtonReturn:
             return SupportedApps.sublime.app
-        default:
+        case NSApplication.ModalResponse(rawValue: NSApplication.ModalResponse.alertThirdButtonReturn.rawValue + 1):
             return SupportedApps.atom.app
+        default:
+            return SupportedApps.obsidian.app
         }
     }
     
