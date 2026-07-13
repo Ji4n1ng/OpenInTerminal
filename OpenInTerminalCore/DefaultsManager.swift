@@ -74,6 +74,18 @@ public class DefaultsManager {
         }
     }
     
+    /// Whether the Finder context menu items are grouped into a submenu.
+    /// This option only applies to the Finder context menu, not the toolbar menu.
+    public var isContextMenuUseSubmenu: Bool {
+        get {
+            return Defaults[.contextMenuUseSubmenu]
+        }
+
+        set {
+            Defaults[.contextMenuUseSubmenu] = newValue
+        }
+    }
+
     public var shouldOnlyActivateShortcutsInFinder: Bool {
         get {
             return Defaults[.onlyActivateShortcutsInFinder]
@@ -311,6 +323,7 @@ public class DefaultsManager {
         quickToggleType = .openWithDefaultTerminal
         isHideStatusItem = false
         isHideContextMenuItems = false
+        isContextMenuUseSubmenu = false
         defaultTerminal = SupportedApps.terminal.app
         defaultEditor = SupportedApps.textEdit.app
         setNewOption(.terminal, .window)

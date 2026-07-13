@@ -38,3 +38,6 @@
 "pref.custom.menu.running_apps" = "正在运行的应用";
 "pref.custom.menu.manually_select" = "从访达中手动选择";
 "pref.custom.menu.manually_input" = "手动输入";
+
+"menu.submenu_title" = "打开...";
+"pref.general.context_menu_use_submenu" = "将右键菜单项归入子菜单";

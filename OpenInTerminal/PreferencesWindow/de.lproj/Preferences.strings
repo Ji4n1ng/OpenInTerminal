@@ -14,7 +14,7 @@
 /* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
 "5f3-UK-Rft.title" = "Einstellungen";
 
-/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
+/* Class = "NSButtonCell"; title = "Hide status bar icon"; ObjectID = "BUH-CU-WBW"; */
 "BUH-CU-WBW.title" = "Statusleistensymbol ausblenden";
 
 /* Class = "NSTextFieldCell"; title = "Open a new window or a new tab."; ObjectID = "BrI-hE-Mff"; */
@@ -92,7 +92,7 @@
 /* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
 "Xfc-rf-FkX.title" = "Standard Text-Editor:";
 
-/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at Login"; ObjectID = "ZbK-xW-anT"; */
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at login"; ObjectID = "ZbK-xW-anT"; */
 "ZbK-xW-anT.title" = "OpenInTerminal bei der Anmeldung starten";
 
 /* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
@@ -116,7 +116,7 @@
 /* Class = "NSButtonCell"; title = "Editor"; ObjectID = "fb4-Xq-he0"; */
 "fb4-Xq-he0.title" = "Editor";
 
-/* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
+/* Class = "NSButtonCell"; title = "Quick toggle"; ObjectID = "gy9-lb-m8d"; */
 "gy9-lb-m8d.title" = "Schnellwechsler";
 
 /* Class = "NSTextFieldCell"; title = "Application Name:"; ObjectID = "h5X-oY-gqy"; */
@@ -158,7 +158,7 @@
 /* Class = "NSViewController"; title = "Custom"; ObjectID = "s5W-qL-1Xs"; */
 "s5W-qL-1Xs.title" = "Benutzerdefiniert";
 
-/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
+/* Class = "NSButtonCell"; title = "Hide context menu items"; ObjectID = "sG4-nK-ghj"; */
 "sG4-nK-ghj.title" = "Kontextmenüeinträge ausblenden";
 
 /* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */

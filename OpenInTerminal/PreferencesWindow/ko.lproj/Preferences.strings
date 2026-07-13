@@ -14,7 +14,7 @@
 /* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
 "5f3-UK-Rft.title" = "설정";
 
-/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
+/* Class = "NSButtonCell"; title = "Hide status bar icon"; ObjectID = "BUH-CU-WBW"; */
 "BUH-CU-WBW.title" = "상태 바 아이콘 가리기";
 
 /* Class = "NSTextFieldCell"; title = "Open a new window or a new tab."; ObjectID = "BrI-hE-Mff"; */
@@ -92,7 +92,7 @@
 /* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
 "Xfc-rf-FkX.title" = "기본 텍스트 에디터:";
 
-/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at Login"; ObjectID = "ZbK-xW-anT"; */
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at login"; ObjectID = "ZbK-xW-anT"; */
 "ZbK-xW-anT.title" = "OpenInTerminal를 로그인 시에 열기";
 
 /* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
@@ -116,7 +116,7 @@
 /* Class = "NSButtonCell"; title = "Editor"; ObjectID = "fb4-Xq-he0"; */
 "fb4-Xq-he0.title" = "에디터";
 
-/* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
+/* Class = "NSButtonCell"; title = "Quick toggle"; ObjectID = "gy9-lb-m8d"; */
 "gy9-lb-m8d.title" = "빠른 전환";
 
 /* Class = "NSTextFieldCell"; title = "Application Name:"; ObjectID = "h5X-oY-gqy"; */
@@ -161,7 +161,7 @@
 /* Class = "NSViewController"; title = "Custom"; ObjectID = "s5W-qL-1Xs"; */
 "s5W-qL-1Xs.title" = "사용자 지정";
 
-/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
+/* Class = "NSButtonCell"; title = "Hide context menu items"; ObjectID = "sG4-nK-ghj"; */
 "sG4-nK-ghj.title" = "우클릭 메뉴에서 숨기기";
 
 /* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */

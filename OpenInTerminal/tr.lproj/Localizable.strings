@@ -40,3 +40,6 @@
 "pref.custom.menu.manually_input" = "Elle Giriş";
 
 
+
+"menu.submenu_title" = "Şununla aç…";
+"pref.general.context_menu_use_submenu" = "Bağlam menüsü öğelerini bir alt menüde grupla";

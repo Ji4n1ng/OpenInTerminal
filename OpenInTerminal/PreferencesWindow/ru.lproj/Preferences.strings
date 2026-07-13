@@ -14,7 +14,7 @@
 /* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
 "5f3-UK-Rft.title" = "Настройки";
 
-/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
+/* Class = "NSButtonCell"; title = "Hide status bar icon"; ObjectID = "BUH-CU-WBW"; */
 "BUH-CU-WBW.title" = "Скрыть иконку в строке состояния";
 
 /* Class = "NSTextFieldCell"; title = "Open a new window or a new tab when opening a path in terminal."; ObjectID = "BrI-hE-Mff"; */
@@ -74,7 +74,7 @@
 /* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
 "Xfc-rf-FkX.title" = "Текстовый редактор по-умолчанию:";
 
-/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at Login"; ObjectID = "ZbK-xW-anT"; */
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at login"; ObjectID = "ZbK-xW-anT"; */
 "ZbK-xW-anT.title" = "Запускать OpenInTerminal автоматически";
 
 /* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
@@ -98,7 +98,7 @@
 /* Class = "NSTextFieldCell"; title = "Terminal"; ObjectID = "fA9-Hd-yjp"; */
 "fA9-Hd-yjp.title" = "Терминал";
 
-/* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
+/* Class = "NSButtonCell"; title = "Quick toggle"; ObjectID = "gy9-lb-m8d"; */
 "gy9-lb-m8d.title" = "Быстрое переключение";
 
 /* Class = "NSTextFieldCell"; title = "Reset"; ObjectID = "jcs-Ou-OZ2"; */
@@ -125,7 +125,7 @@
 /* Class = "NSViewController"; title = "Toolbar"; ObjectID = "s5W-qL-1Xs"; */
 "s5W-qL-1Xs.title" = "Панель инструментов";
 
-/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
+/* Class = "NSButtonCell"; title = "Hide context menu items"; ObjectID = "sG4-nK-ghj"; */
 "sG4-nK-ghj.title" = "Скрыть строки из контекстного меню";
 
 /* Class = "NSButtonCell"; title = "Window"; ObjectID = "sik-wU-ZF2"; */

@@ -40,3 +40,6 @@
 "pref.custom.menu.manually_input" = "Manually Input";
 
 "pref.shortcuts_finder_only" = "Only activate shortcuts in Finder";
+
+"menu.submenu_title" = "Open in...";
+"pref.general.context_menu_use_submenu" = "Group context menu items into a submenu";

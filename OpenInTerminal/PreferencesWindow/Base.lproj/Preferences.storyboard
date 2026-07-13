@@ -63,15 +63,15 @@
             <objects>
                 <viewController title="General" id="Gn1-zC-bzB" customClass="GeneralPreferencesViewController" customModule="OpenInTerminal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" focusRingType="none" id="T7Z-PU-Qyb">
-                        <rect key="frame" x="0.0" y="0.0" width="382" height="358"/>
+                        <rect key="frame" x="0.0" y="0.0" width="382" height="382"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mA5-EO-f9U">
-                                <rect key="frame" x="20" y="138" width="342" height="200"/>
+                                <rect key="frame" x="20" y="138" width="342" height="224"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sat-kH-K8O">
-                                        <rect key="frame" x="0.0" y="184" width="216" height="16"/>
-                                        <buttonCell key="cell" type="check" title="Launch OpenInTerminal at Login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ZbK-xW-anT">
+                                        <rect key="frame" x="0.0" y="208" width="213" height="16"/>
+                                        <buttonCell key="cell" type="check" title="Launch OpenInTerminal at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ZbK-xW-anT">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -80,7 +80,7 @@
                                         </connections>
                                     </button>
                                     <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ct1-0Y-gVn">
-                                        <rect key="frame" x="18" y="162" width="262" height="14"/>
+                                        <rect key="frame" x="18" y="186" width="262" height="14"/>
                                         <textFieldCell key="cell" selectable="YES" title="OpenInTerminal will automatically launch at login." id="ngT-lX-vFA">
                                             <font key="font" metaFont="menu" size="11"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -88,8 +88,8 @@
                                         </textFieldCell>
                                     </textField>
                                     <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VGA-Ho-z5c">
-                                        <rect key="frame" x="0.0" y="138" width="102" height="16"/>
-                                        <buttonCell key="cell" type="check" title="Quick Toggle" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gy9-lb-m8d">
+                                        <rect key="frame" x="0.0" y="162" width="99" height="16"/>
+                                        <buttonCell key="cell" type="check" title="Quick toggle" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gy9-lb-m8d">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -98,7 +98,7 @@
                                         </connections>
                                     </button>
                                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kdm-9l-2u4">
-                                        <rect key="frame" x="20" y="106" width="322" height="24"/>
+                                        <rect key="frame" x="20" y="130" width="322" height="24"/>
                                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Bct-qW-a6h">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="message"/>
@@ -106,7 +106,7 @@
                                         </popUpButtonCell>
                                     </popUpButton>
                                     <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ybg-LK-qWi">
-                                        <rect key="frame" x="18" y="70" width="326" height="28"/>
+                                        <rect key="frame" x="18" y="94" width="326" height="28"/>
                                         <textFieldCell key="cell" title="If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu." id="592-4p-Ybh">
                                             <font key="font" metaFont="menu" size="11"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -114,8 +114,8 @@
                                         </textFieldCell>
                                     </textField>
                                     <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r3V-mR-QUG">
-                                        <rect key="frame" x="0.0" y="46" width="146" height="16"/>
-                                        <buttonCell key="cell" type="check" title="Hide Status Bar Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="BUH-CU-WBW">
+                                        <rect key="frame" x="0.0" y="70" width="144" height="16"/>
+                                        <buttonCell key="cell" type="check" title="Hide status bar icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="BUH-CU-WBW">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -124,7 +124,7 @@
                                         </connections>
                                     </button>
                                     <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="6Fo-aC-2Mp">
-                                        <rect key="frame" x="18" y="24" width="273" height="14"/>
+                                        <rect key="frame" x="18" y="48" width="273" height="14"/>
                                         <textFieldCell key="cell" title="You need to reopen the app to display Preferences." id="Upf-HU-iaN">
                                             <font key="font" metaFont="menu" size="11"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -132,13 +132,23 @@
                                         </textFieldCell>
                                     </textField>
                                     <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ahb-Ye-oiL">
-                                        <rect key="frame" x="0.0" y="0.0" width="176" height="16"/>
-                                        <buttonCell key="cell" type="check" title="Hide Context Menu Items" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="sG4-nK-ghj">
+                                        <rect key="frame" x="0.0" y="24" width="173" height="16"/>
+                                        <buttonCell key="cell" type="check" title="Hide context menu items" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="sG4-nK-ghj">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="hideContextMenuItemsButtonTapped:" target="Gn1-zC-bzB" id="dK0-f3-OU3"/>
+                                        </connections>
+                                    </button>
+                                    <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sub-Me-Ctx">
+                                        <rect key="frame" x="0.0" y="0.0" width="279" height="16"/>
+                                        <buttonCell key="cell" type="check" title="Group context menu items into a submenu" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Sub-Me-Cel">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="contextMenuUseSubmenuButtonTapped:" target="Gn1-zC-bzB" id="Sub-Me-Act"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -158,8 +168,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -247,6 +259,7 @@
                     </view>
                     <connections>
                         <outlet property="chooseToggleActionButton" destination="Kdm-9l-2u4" id="FlA-5C-clg"/>
+                        <outlet property="contextMenuUseSubmenuButton" destination="Sub-Me-Ctx" id="Sub-Me-Otl"/>
                         <outlet property="defaultEditorButton" destination="R8D-f0-J22" id="krg-qv-BAe"/>
                         <outlet property="defaultTerminalButton" destination="AaU-k8-Gb7" id="bmA-od-3vf"/>
                         <outlet property="hideContextMemuItemsButton" destination="ahb-Ye-oiL" id="pGz-wd-uOe"/>

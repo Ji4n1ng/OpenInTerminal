@@ -32,3 +32,6 @@
 
 "toolbar.item_name" = "Ouvrir dans le terminal";
 "toolbar.item_tooltip" = "Ouvrir le dossier actuel dans le terminal";
+
+"menu.submenu_title" = "Ouvrir dans…";
+"pref.general.context_menu_use_submenu" = "Regrouper les éléments du menu contextuel dans un sous-menu";

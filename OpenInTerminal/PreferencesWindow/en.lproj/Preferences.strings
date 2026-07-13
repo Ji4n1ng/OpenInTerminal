@@ -14,8 +14,8 @@
 /* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
 "5f3-UK-Rft.title" = "Preferences";
 
-/* Class = "NSButtonCell"; title = "Hide Status Bar Icon"; ObjectID = "BUH-CU-WBW"; */
-"BUH-CU-WBW.title" = "Hide Status Bar Icon";
+/* Class = "NSButtonCell"; title = "Hide status bar icon"; ObjectID = "BUH-CU-WBW"; */
+"BUH-CU-WBW.title" = "Hide status bar icon";
 
 /* Class = "NSTextFieldCell"; title = "Open a new window or a new tab."; ObjectID = "BrI-hE-Mff"; */
 "BrI-hE-Mff.title" = "Open a new window or a new tab.";
@@ -92,8 +92,8 @@
 /* Class = "NSTextFieldCell"; title = "Default Text Editor:"; ObjectID = "Xfc-rf-FkX"; */
 "Xfc-rf-FkX.title" = "Default Text Editor:";
 
-/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at Login"; ObjectID = "ZbK-xW-anT"; */
-"ZbK-xW-anT.title" = "Launch OpenInTerminal at Login";
+/* Class = "NSButtonCell"; title = "Launch OpenInTerminal at login"; ObjectID = "ZbK-xW-anT"; */
+"ZbK-xW-anT.title" = "Launch OpenInTerminal at login";
 
 /* Class = "NSTextFieldCell"; title = "Default Terminal:"; ObjectID = "aRo-sy-WpK"; */
 "aRo-sy-WpK.title" = "Default Terminal:";
@@ -116,8 +116,8 @@
 /* Class = "NSButtonCell"; title = "Editor"; ObjectID = "fb4-Xq-he0"; */
 "fb4-Xq-he0.title" = "Editor";
 
-/* Class = "NSButtonCell"; title = "Quick Toggle"; ObjectID = "gy9-lb-m8d"; */
-"gy9-lb-m8d.title" = "Quick Toggle";
+/* Class = "NSButtonCell"; title = "Quick toggle"; ObjectID = "gy9-lb-m8d"; */
+"gy9-lb-m8d.title" = "Quick toggle";
 
 /* Class = "NSTextFieldCell"; title = "Application Name:"; ObjectID = "h5X-oY-gqy"; */
 "h5X-oY-gqy.title" = "Application Name:";
@@ -161,8 +161,8 @@
 /* Class = "NSViewController"; title = "Custom"; ObjectID = "s5W-qL-1Xs"; */
 "s5W-qL-1Xs.title" = "Custom";
 
-/* Class = "NSButtonCell"; title = "Hide Context Menu Items"; ObjectID = "sG4-nK-ghj"; */
-"sG4-nK-ghj.title" = "Hide Context Menu Items";
+/* Class = "NSButtonCell"; title = "Hide context menu items"; ObjectID = "sG4-nK-ghj"; */
+"sG4-nK-ghj.title" = "Hide context menu items";
 
 /* Class = "NSButtonCell"; title = "@Ji4n1ng"; ObjectID = "tR5-me-DTK"; */
 "tR5-me-DTK.title" = "@Ji4n1ng";

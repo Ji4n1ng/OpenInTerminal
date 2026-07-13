@@ -52,22 +52,25 @@ class FinderSync: FIFinderSync {
             // need to hide or not
             let isHideContextMenuItems = DefaultsManager.shared.isHideContextMenuItems
             guard !isHideContextMenuItems else { return NSMenu() }
-            
+
+            // the submenu grouping only applies to the Finder context menu
+            let useSubmenu = DefaultsManager.shared.isContextMenuUseSubmenu
+
             // show custom menu or default
             let isCustomMenuApplyToContext = DefaultsManager.shared.isCustomMenuApplyToContext
             if isCustomMenuApplyToContext {
-                menu = createCustomMenu()
+                menu = createCustomMenu(useSubmenu: useSubmenu)
             } else {
-                menu = createDefaultMenu()
+                menu = createDefaultMenu(useSubmenu: useSubmenu)
             }
-            
+
         case .toolbarItemMenu:
-            // show custom menu or default
+            // the toolbar menu never groups items into a submenu
             let isCustomMenuApplyToToolbar = DefaultsManager.shared.isCustomMenuApplyToToolbar
             if isCustomMenuApplyToToolbar {
-                menu = createCustomMenu()
+                menu = createCustomMenu(useSubmenu: false)
             } else {
-                menu = createDefaultMenu()
+                menu = createDefaultMenu(useSubmenu: false)
             }
             
         default:
@@ -104,14 +107,22 @@ class FinderSync: FIFinderSync {
         }
     }
     
-    func createDefaultMenu() -> NSMenu {
-        let menu = NSMenu(title: "")
-        
-        // 添加一级菜单项
-        let menuItem = NSMenuItem(title: "Open in...", action: nil, keyEquivalent: "")
+    /// Wraps the given items into a single "Open in..." submenu.
+    func makeSubmenuItem(with itemsMenu: NSMenu) -> NSMenuItem {
+        let submenuItem = NSMenuItem(title: NSLocalizedString("menu.submenu_title",
+                                                              comment: "Open in..."),
+                                     action: nil,
+                                     keyEquivalent: "")
+        submenuItem.submenu = itemsMenu
+        return submenuItem
+    }
 
-        // 创建二级菜单
-        let subMenu = NSMenu(title: "")
+    func createDefaultMenu(useSubmenu: Bool) -> NSMenu {
+        let menu = NSMenu(title: "")
+
+        // when submenu grouping is enabled, add the items into a separate
+        // menu that will be attached under a single top level item
+        let itemsMenu = useSubmenu ? NSMenu(title: "") : menu
 
         guard let terminal = DefaultsManager.shared.defaultTerminal else { return menu }
         let terminalTitle = terminal.name
@@ -120,8 +131,8 @@ class FinderSync: FIFinderSync {
                                             keyEquivalent: "")
         let terminalIcon = DefaultsManager.shared.getAppIcon(terminal)
         openInTerminalItem.image = terminalIcon
-        subMenu.addItem(openInTerminalItem)
-        
+        itemsMenu.addItem(openInTerminalItem)
+
         guard let editor = DefaultsManager.shared.defaultEditor else { return menu }
         let editorTitle = editor.name
         let openInEditorItem = NSMenuItem(title: editorTitle,
@@ -129,26 +140,31 @@ class FinderSync: FIFinderSync {
                                             keyEquivalent: "")
         let editorIcon = DefaultsManager.shared.getAppIcon(editor)
         openInEditorItem.image = editorIcon
-        subMenu.addItem(openInEditorItem)
-        
-        // add "Copy Path"
-        subMenu.addItem(self.copyPathItem)
+        itemsMenu.addItem(openInEditorItem)
 
-        // 将二级菜单关联到一级菜单项
-        menuItem.submenu = subMenu
-        
-        menu.addItem(menuItem)
-        
+        // add "Copy Path"
+        itemsMenu.addItem(self.copyPathItem)
+
+        // attach the items menu under a single top level item when needed
+        if useSubmenu {
+            menu.addItem(makeSubmenuItem(with: itemsMenu))
+        }
+
         return menu
     }
-    
-    func createCustomMenu() -> NSMenu {
+
+    func createCustomMenu(useSubmenu: Bool) -> NSMenu {
         let menu = NSMenu(title: "")
-        
+
         // get saved custom apps
         guard let customApps = DefaultsManager.shared.customMenuOptions else {
             return menu
         }
+
+        // when submenu grouping is enabled, add the items into a separate
+        // menu that will be attached under a single top level item
+        let itemsMenu = useSubmenu ? NSMenu(title: "") : menu
+
         customApps.forEach { app in
             let itemTitle = app.name
             let menuItem = NSMenuItem(title: itemTitle,
@@ -156,12 +172,17 @@ class FinderSync: FIFinderSync {
                                       keyEquivalent: "")
             let appIcon = DefaultsManager.shared.getAppIcon(app)
             menuItem.image = appIcon
-            menu.addItem(menuItem)
+            itemsMenu.addItem(menuItem)
         }
-        
+
         // add "Copy Path"
-        menu.addItem(self.copyPathItem)
-        
+        itemsMenu.addItem(self.copyPathItem)
+
+        // attach the items menu under a single top level item when needed
+        if useSubmenu {
+            menu.addItem(makeSubmenuItem(with: itemsMenu))
+        }
+
         return menu
     }
 

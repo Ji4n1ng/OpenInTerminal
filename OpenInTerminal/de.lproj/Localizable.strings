@@ -40,3 +40,6 @@
 "pref.custom.menu.manually_input" = "Manuelle Eingabe";
 
 
+
+"menu.submenu_title" = "Öffnen in …";
+"pref.general.context_menu_use_submenu" = "Kontextmenü-Einträge in einem Untermenü gruppieren";

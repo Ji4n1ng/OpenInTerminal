@@ -542,7 +542,7 @@
       }
     },
     "BUH-CU-WBW.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Hide Status Bar Icon\"; ObjectID = \"BUH-CU-WBW\";",
+      "comment" : "Class = \"NSButtonCell\"; title = \"Hide status bar icon\"; ObjectID = \"BUH-CU-WBW\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
@@ -554,7 +554,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Hide Status Bar Icon"
+            "value" : "Hide status bar icon"
           }
         },
         "es" : {
@@ -1334,7 +1334,7 @@
       }
     },
     "gy9-lb-m8d.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Quick Toggle\"; ObjectID = \"gy9-lb-m8d\";",
+      "comment" : "Class = \"NSButtonCell\"; title = \"Quick toggle\"; ObjectID = \"gy9-lb-m8d\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
@@ -1346,7 +1346,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Quick Toggle"
+            "value" : "Quick toggle"
           }
         },
         "es" : {
@@ -2894,7 +2894,7 @@
       }
     },
     "sG4-nK-ghj.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Hide Context Menu Items\"; ObjectID = \"sG4-nK-ghj\";",
+      "comment" : "Class = \"NSButtonCell\"; title = \"Hide context menu items\"; ObjectID = \"sG4-nK-ghj\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
@@ -2906,7 +2906,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Hide Context Menu Items"
+            "value" : "Hide context menu items"
           }
         },
         "es" : {
@@ -2949,6 +2949,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "隐藏上下文菜单项"
+          }
+        }
+      }
+    },
+    "Sub-Me-Cel.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Group context menu items into a submenu\"; ObjectID = \"Sub-Me-Cel\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Group context menu items into a submenu"
           }
         }
       }
@@ -3674,7 +3686,7 @@
       }
     },
     "ZbK-xW-anT.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Launch OpenInTerminal at Login\"; ObjectID = \"ZbK-xW-anT\";",
+      "comment" : "Class = \"NSButtonCell\"; title = \"Launch OpenInTerminal at login\"; ObjectID = \"ZbK-xW-anT\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "de" : {
@@ -3686,7 +3698,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Launch OpenInTerminal at Login"
+            "value" : "Launch OpenInTerminal at login"
           }
         },
         "es" : {

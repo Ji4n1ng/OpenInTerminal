@@ -41,6 +41,7 @@ public extension DefaultsKeys {
     static let quickToggleType = DefaultsKey<String>("QuickToggleType")
     static let hideStatusItem = DefaultsKey<Bool>("HideStatusItem")
     static let hideContextMenuItems = DefaultsKey<Bool>("HideContextMenuItems")
+    static let contextMenuUseSubmenu = DefaultsKey<Bool>("ContextMenuUseSubmenu")
     static let defaultTerminal = DefaultsKey<String>("DefaultTerminal")
     static let defaultEditor = DefaultsKey<String>("DefaultEditor")
     // Preferences - Custom

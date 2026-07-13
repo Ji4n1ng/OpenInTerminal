@@ -40,3 +40,6 @@
 "pref.custom.menu.manually_input" = "수동으로 입력";
 
 
+
+"menu.submenu_title" = "다음으로 열기…";
+"pref.general.context_menu_use_submenu" = "컨텍스트 메뉴 항목을 하위 메뉴로 그룹화";

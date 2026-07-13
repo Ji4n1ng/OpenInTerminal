@@ -19,6 +19,7 @@ class GeneralPreferencesViewController: PreferencesViewController {
     @IBOutlet weak var chooseToggleActionButton: NSPopUpButton!
     @IBOutlet weak var hideStatusItemButton: NSButton!
     @IBOutlet weak var hideContextMemuItemsButton: NSButton!
+    @IBOutlet weak var contextMenuUseSubmenuButton: NSButton!
     @IBOutlet weak var defaultTerminalButton: NSPopUpButton!
     @IBOutlet weak var defaultEditorButton: NSPopUpButton!
     
@@ -49,6 +50,9 @@ class GeneralPreferencesViewController: PreferencesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initQuickToggleAction()
+        // set the localized title programmatically so it follows the app language
+        contextMenuUseSubmenuButton.title = NSLocalizedString("pref.general.context_menu_use_submenu",
+                                                              comment: "Group context menu items into a submenu")
     }
     
     override func viewWillAppear() {
@@ -85,7 +89,10 @@ class GeneralPreferencesViewController: PreferencesViewController {
         
         let isHideContextMenuItems = DefaultsManager.shared.isHideContextMenuItems
         hideContextMemuItemsButton.state = isHideContextMenuItems ? .on : .off
-        
+
+        let isContextMenuUseSubmenu = DefaultsManager.shared.isContextMenuUseSubmenu
+        contextMenuUseSubmenuButton.state = isContextMenuUseSubmenu ? .on : .off
+
         let isQuickToggle = DefaultsManager.shared.isQuickToggle
         quickToggleButton.state = isQuickToggle ? .on : .off
         chooseToggleActionButton.isEnabled = isQuickToggle
@@ -188,6 +195,11 @@ class GeneralPreferencesViewController: PreferencesViewController {
     @IBAction func hideContextMenuItemsButtonTapped(_ sender: NSButton) {
         let isHide = hideContextMemuItemsButton.state == .on
         DefaultsManager.shared.isHideContextMenuItems = isHide
+    }
+
+    @IBAction func contextMenuUseSubmenuButtonTapped(_ sender: NSButton) {
+        let isUseSubmenu = contextMenuUseSubmenuButton.state == .on
+        DefaultsManager.shared.isContextMenuUseSubmenu = isUseSubmenu
     }
     
     @IBAction func quickToggleButtonClicked(_ sender: NSButton) {

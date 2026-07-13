@@ -32,3 +32,6 @@
 
 "toolbar.item_name" = "Apri in Terminale";
 "toolbar.item_tooltip" = "Apri la cartella corrente in Terminale.";
+
+"menu.submenu_title" = "Apri in…";
+"pref.general.context_menu_use_submenu" = "Raggruppa le voci del menu contestuale in un sottomenu";
