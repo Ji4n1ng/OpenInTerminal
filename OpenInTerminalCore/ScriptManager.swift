@@ -16,13 +16,24 @@ public class ScriptManager {
     // MARK: - Get AppleScript
     
     /// This script requires parameters to be passed in.
-    /// `parameter`: open -a
+    ///
+    /// `argv`: the full command as a list of discrete argument strings, e.g.
+    /// `{"/usr/bin/open", "-a", "Terminal", "/Users/user/My Folder"}`. Each
+    /// element is shell-quoted individually with `quoted form of`, so an
+    /// argument that contains spaces or shell metacharacters (for example a
+    /// crafted file/folder name) is passed to `open` verbatim and can never be
+    /// interpreted as shell syntax. This is the injection-safe replacement for
+    /// the previous single pre-escaped command string.
     public func getGeneralScript() -> String {
         let script = """
-        on openApp(command)
+        on openApp(argv)
+            set theCommand to ""
+            repeat with theArgument in argv
+                set theCommand to theCommand & quoted form of (theArgument as text) & " "
+            end repeat
             tell application "Finder"
                 activate
-                do shell script command
+                do shell script theCommand
             end tell
         end openApp
         """
@@ -110,9 +121,18 @@ public class ScriptManager {
         return fileURL
     }
     
-    func getScriptEvent(functionName: String, _ parameter: String) -> NSAppleEventDescriptor {
+    func getScriptEvent(functionName: String, arguments: [String]) -> NSAppleEventDescriptor {
+        // The handler takes a single parameter that is itself a list of
+        // argument strings. Build that inner list, delivering each argument as
+        // a discrete descriptor so no shell-sensitive concatenation happens on
+        // this side, then wrap it as the sole positional parameter.
+        let argumentList = NSAppleEventDescriptor.list()
+        for (index, argument) in arguments.enumerated() {
+            argumentList.insert(NSAppleEventDescriptor(string: argument), at: index + 1)
+        }
+
         let parameters = NSAppleEventDescriptor.list()
-        parameters.insert(NSAppleEventDescriptor(string: parameter), at: 0)
+        parameters.insert(argumentList, at: 1)
 
         let event = NSAppleEventDescriptor(
             eventClass: AEEventClass(kASAppleScriptSuite),

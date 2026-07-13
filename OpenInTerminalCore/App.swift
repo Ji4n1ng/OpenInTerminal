@@ -108,57 +108,41 @@ extension App: Openable {
     }
     
     public func openInSandbox(_ urls: [URL]) throws {
+        // Build the invocation as a list of discrete arguments — the leading
+        // program, the app-specific option tokens (trusted config from
+        // getOpenArguments), then the raw target paths as individual elements.
+        // The installed AppleScript shell-quotes every element via
+        // `quoted form of`, so nothing here is manually escaped and a crafted
+        // file/folder name cannot inject shell commands. This mirrors the
+        // argument-array approach used by openOutsideSandbox.
+        var arguments = ["/usr/bin/open"]
+        arguments.append(contentsOf: DefaultsManager.shared.getOpenArguments(self))
+
         switch self.type {
         case .terminal:
             guard var url = urls.first else { return }
             url.getDirectory()
-            // get open command, e.g. "open -a Terminal /Users/user/Desktop/test\ folder"
-            var openCommand = DefaultsManager.shared.getOpenCommand(self)
-            openCommand += " " + url.path.specialCharEscaped()
-            // script
-            guard let scriptURL = ScriptManager.shared.getScriptURL(with: Constants.generalScript) else { return }
-//            // handle exceptional case
-//            if SupportedApps.is(self, is: .terminal) {
-//                if let newOption = DefaultsManager.shared.getNewOption(.terminal),
-//                   newOption == .tab {
-//                    openCommand = ScriptManager.shared.getTerminalNewTabCommand(path: path)
-//                    guard let tabScriptURL = ScriptManager.shared.getScriptURL(with: Constants.terminalNewTabScript) else { return }
-//                    scriptURL = tabScriptURL
-//                }
-//            }
-            // excute
-            guard FileManager.default.fileExists(atPath: scriptURL.path) else { return }
-            guard let script = try? NSUserAppleScriptTask(url: scriptURL) else { return }
-            let event = ScriptManager.shared.getScriptEvent(functionName: "openApp", openCommand)
-            script.execute(withAppleEvent: event) { (appleEvent, error) in
-                if let error = error {
-                    logw("cannot execute applescript: \(error)")
-                }
-            }
+            arguments.append(url.path)
         case .editor:
-            // get open command, e.g. "open -a TextEdit /Users/user/Desktop/test\ folder /Users/user/Documents"
-            var openCommand = DefaultsManager.shared.getOpenCommand(self)
-            var path = ""
-            urls.map {
-                $0.path
-            }.forEach {
-                path += " " + $0.specialCharEscaped()
-            }
+            let paths = urls.map { $0.path }
+            // fix for neovim: the command template carries a "PATH" placeholder
+            // token that must be replaced by the actual path arguments.
             if SupportedApps.is(self, is: .neovim) {
-                openCommand = openCommand.replacingOccurrences(of: "PATH", with: path)
+                arguments = arguments.flatMap { $0 == "PATH" ? paths : [$0] }
             } else {
-                openCommand += path
+                arguments.append(contentsOf: paths)
             }
-            // script
-            guard let scriptURL = ScriptManager.shared.getScriptURL(with: Constants.generalScript) else { return }
-            // excute
-            guard FileManager.default.fileExists(atPath: scriptURL.path) else { return }
-            guard let script = try? NSUserAppleScriptTask(url: scriptURL) else { return }
-            let event = ScriptManager.shared.getScriptEvent(functionName: "openApp", openCommand)
-            script.execute(withAppleEvent: event) { (appleEvent, error) in
-                if let error = error {
-                    logw("cannot execute applescript: \(error)")
-                }
+        }
+
+        // script
+        guard let scriptURL = ScriptManager.shared.getScriptURL(with: Constants.generalScript) else { return }
+        // excute
+        guard FileManager.default.fileExists(atPath: scriptURL.path) else { return }
+        guard let script = try? NSUserAppleScriptTask(url: scriptURL) else { return }
+        let event = ScriptManager.shared.getScriptEvent(functionName: "openApp", arguments: arguments)
+        script.execute(withAppleEvent: event) { (appleEvent, error) in
+            if let error = error {
+                logw("cannot execute applescript: \(error)")
             }
         }
     }
