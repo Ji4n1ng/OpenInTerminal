@@ -41,7 +41,7 @@ public enum SupportedApps: String, CaseIterable {
     case typora = "Typora"
     case nova = "Nova"
     case cursor = "Cursor"
-    case neovim = "neovim"
+    case neovim = "Neovim"
     case zed = "Zed"
     case emacs = "Emacs"
     // JetBrains
@@ -81,17 +81,19 @@ public enum SupportedApps: String, CaseIterable {
         }
     }
     
-    public static func isSupported(_ app: App) -> Bool {
-        for sa in SupportedApps.allCases {
-            if sa.name == app.name {
-                return true
-            }
+    /// Finds a supported app whose name matches the given name, ignoring case.
+    public static func from(name: String) -> SupportedApps? {
+        return SupportedApps.allCases.first {
+            $0.name.caseInsensitiveCompare(name) == .orderedSame
         }
-        return false
     }
-    
+
+    public static func isSupported(_ app: App) -> Bool {
+        return from(name: app.name) != nil
+    }
+
     public static func `is`(_ app: App, is supported: SupportedApps) -> Bool {
-        return app.name == supported.name
+        return app.name.caseInsensitiveCompare(supported.name) == .orderedSame
     }
     
     public static var terminals: [SupportedApps] {

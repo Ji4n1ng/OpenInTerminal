@@ -138,7 +138,7 @@ public class FinderManager {
         applications.insert("TextEdit")
         // neovim is a command-line program (`nvim`), not a `.app`, so probe for its binary
         if isCommandLineToolInstalled("nvim") {
-            applications.insert("neovim")
+            applications.insert("Neovim")
         }
         // search
         do {
