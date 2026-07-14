@@ -57,10 +57,22 @@ class GeneralPreferencesViewController: PreferencesViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        allInstalledApps = FinderManager.shared.getAllInstalledApps()
         refreshButtonState()
-        refreshDefaultTerminal()
-        refreshDefaultEditor()
+
+        if let applications = FinderManager.shared.getCachedInstalledApps() {
+            updateInstalledApps(applications)
+        } else {
+            showCurrentDefaultsWhileLoading()
+        }
+
+        FinderManager.shared.refreshInstalledApps { [weak self] applications in
+            guard let self = self else { return }
+            if self.allInstalledApps != applications || self.installedTerminals == nil {
+                self.updateInstalledApps(applications)
+            }
+            self.defaultTerminalButton.isEnabled = true
+            self.defaultEditorButton.isEnabled = true
+        }
     }
     
     override func viewDidAppear() {
@@ -79,6 +91,31 @@ class GeneralPreferencesViewController: PreferencesViewController {
     }
     
     // MARK: Refresh UI
+
+    func showCurrentDefaultsWhileLoading() {
+        defaultTerminalButton.removeAllItems()
+        defaultEditorButton.removeAllItems()
+
+        if let terminal = DefaultsManager.shared.defaultTerminal {
+            defaultTerminalButton.addItem(withTitle: terminal.name)
+        }
+        if let editor = DefaultsManager.shared.defaultEditor {
+            defaultEditorButton.addItem(withTitle: editor.name)
+        }
+
+        installedTerminals = nil
+        installedEditors = nil
+        defaultTerminalButton.isEnabled = false
+        defaultEditorButton.isEnabled = false
+    }
+
+    func updateInstalledApps(_ applications: Set<String>) {
+        allInstalledApps = applications
+        refreshDefaultTerminal()
+        refreshDefaultEditor()
+        defaultTerminalButton.isEnabled = true
+        defaultEditorButton.isEnabled = true
+    }
     
     func refreshButtonState() {
         let isLaunchAtLogin = DefaultsManager.shared.isLaunchAtLogin
