@@ -12,6 +12,14 @@ import ScriptingBridge
 public class FinderManager {
     
     public static var shared = FinderManager()
+
+    private let installedAppsQueue = DispatchQueue(label: "wang.jianing.app.OpenInTerminal.installed-apps",
+                                                    qos: .utility)
+    private let installedAppsScanQueue = DispatchQueue(label: "wang.jianing.app.OpenInTerminal.installed-apps-scan",
+                                                        qos: .utility)
+    private var installedAppsCache: Set<String>?
+    private var installedAppsCallbacks = [(Set<String>) -> Void]()
+    private var isRefreshingInstalledApps = false
     
     /// Get full url to front Finder window or selected file
     public func getFullUrlToFrontFinderWindowOrSelectedFile() throws -> URL? {
@@ -130,8 +138,47 @@ public class FinderManager {
         return desktopPath
     }
     
-    /// Get all installed applications' names
+    /// Get the most recently scanned installed applications, if available.
+    public func getCachedInstalledApps() -> Set<String>? {
+        return installedAppsQueue.sync {
+            installedAppsCache
+        }
+    }
+
+    /// Refresh installed applications off the main thread.
+    /// Concurrent callers share the same scan. Completions run on the main thread.
+    public func refreshInstalledApps(completion: @escaping (Set<String>) -> Void) {
+        installedAppsQueue.async {
+            self.installedAppsCallbacks.append(completion)
+            guard !self.isRefreshingInstalledApps else { return }
+
+            self.isRefreshingInstalledApps = true
+            self.installedAppsScanQueue.async {
+                let applications = self.scanInstalledApps()
+                self.installedAppsQueue.async {
+                    self.installedAppsCache = applications
+                    self.isRefreshingInstalledApps = false
+
+                    let callbacks = self.installedAppsCallbacks
+                    self.installedAppsCallbacks.removeAll()
+                    DispatchQueue.main.async {
+                        callbacks.forEach { $0(applications) }
+                    }
+                }
+            }
+        }
+    }
+
+    /// Get all installed applications' names synchronously.
     public func getAllInstalledApps() -> Set<String> {
+        let applications = scanInstalledApps()
+        installedAppsQueue.sync {
+            installedAppsCache = applications
+        }
+        return applications
+    }
+
+    private func scanInstalledApps() -> Set<String> {
         var applications: Set<String> = Set()
         // add system application
         applications.insert("Terminal")

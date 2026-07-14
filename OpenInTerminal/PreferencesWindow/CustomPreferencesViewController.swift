@@ -35,13 +35,7 @@ class CustomPreferencesViewController: PreferencesViewController {
     
     private var dragDropType = NSPasteboard.PasteboardType(rawValue: "private.table-row")
     
-    var allInstalledAppNames: Set<String> = Set() {
-        didSet {
-            DispatchQueue.main.async {
-                self.refreshSupportedApps()
-            }
-        }
-    }
+    var allInstalledAppNames: Set<String> = Set()
     var installedSupportedAppNames: [String] = []
         
     var customMenuOptions = [App]() {
@@ -65,10 +59,16 @@ class CustomPreferencesViewController: PreferencesViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        // fetch installed apps
-        DispatchQueue.global(qos: .background).async {
-            self.allInstalledAppNames = FinderManager.shared.getAllInstalledApps()
+
+        if let applications = FinderManager.shared.getCachedInstalledApps() {
+            allInstalledAppNames = applications
         }
+        FinderManager.shared.refreshInstalledApps { [weak self] applications in
+            guard let self = self, self.allInstalledAppNames != applications else { return }
+            self.allInstalledAppNames = applications
+            self.refreshSupportedApps()
+        }
+
         // get saved custom menu apps
         if let customMenuOptions = DefaultsManager.shared.customMenuOptions {
             self.customMenuOptions = customMenuOptions
