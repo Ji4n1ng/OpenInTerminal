@@ -13,12 +13,25 @@ This repo ships three apps. Their releases and casks are grouped as follows:
 | OpenInTerminal-Lite | `OpenInTerminal-Lite.zip` | `OpenInTerminal-Lite vA.B.C` / `vA.B.C` | `openinterminal-lite` |
 | OpenInEditor-Lite | `OpenInEditor-Lite.zip` | (bundled in the Lite release above) | `openineditor-lite` |
 
-**Two GitHub releases, not three:** the main app gets its own release; **both Lite apps ride together in the Lite release** (both zips attached to the `vA.B.C` tag). Confirm the version numbers with the user or read them from the changelogs — main app version is in `README.md` (`## Changes`), Lite version is in `Resources/README-Lite.md`. The user builds the `.app`s and zips into `./export` before invoking this.
+**Two GitHub releases, not three:** the main app gets its own release; **both Lite apps ride together in the Lite release** (both zips attached to the `vA.B.C` tag). Confirm the version numbers with the user or read them from the changelogs — main app version is in `README.md` (`## Changes`), Lite version is in `Resources/README-Lite.md`.
+
+**Artifacts must be Developer-ID signed AND notarized** (Homebrew rejects anything else — see Step 0). Do not release ad-hoc/`build-unsigned.sh` output to GitHub or Homebrew.
 
 ## Prerequisites (check first)
-- Zips exist: `ls ./export/*.zip` → the three zips above.
 - `gh auth status` is authenticated for `Ji4n1ng/OpenInTerminal`.
 - The Homebrew fork is checked out at `/Users/jianing/GitHub/homebrew-cask` (remote `origin` = `git@github.com:Ji4n1ng/homebrew-cask.git`).
+
+## Step 0 — Build signed + notarized artifacts
+Run `./build-signed.sh` (repo root). It Developer-ID signs (hardened runtime + timestamp), submits to Apple's notary service, staples, and writes `export/<App>.zip` for all three apps. Needs the `Developer ID Application: Jianing Wang (C8VX3ZLX5U)` cert and the `OpenInTerminal-notary` keychain profile — both already set up; the script auto-detects them and fails fast if missing. (`build-unsigned.sh` is local-testing only — never release its output.)
+
+Verify each built app before releasing:
+```bash
+for a in OpenInTerminal OpenInTerminal-Lite OpenInEditor-Lite; do
+  spctl -a -t exec -vv "export/$a.app"      # must say: accepted / source=Notarized Developer ID
+  xcrun stapler validate "export/$a.app"    # must say: The validate action worked!
+done
+ls ./export/*.zip                            # the three zips above must exist
+```
 
 ## Step 1 — Inspect existing releases (match the house style)
 ```bash
@@ -55,11 +68,19 @@ gh release edit vX.Y.Z --latest
 ```
 Verify assets: `gh release view vX.Y.Z --json assets -q '[.assets[].name]'` (note: this `gh` build has no `isLatest` JSON field — use `gh release list` to see the Latest marker).
 
+**Re-releasing an existing tag** (e.g. replacing unsigned assets with signed ones): don't create — clobber the assets in place. Tags/notes stay untouched:
+```bash
+gh release upload vX.Y.Z export/OpenInTerminal.zip --clobber
+gh release upload vA.B.C export/OpenInTerminal-Lite.zip export/OpenInEditor-Lite.zip --clobber
+```
+Large uploads (the main zip is ~25MB) can take minutes — run in the background and wait. The API-reported `digest` (`gh release view … --json assets`) is the server-side sha256 of the stored asset, so it's authoritative for the cask checksums.
+
 ## Step 5 — Verify the uploads before touching Homebrew
-Download each asset from its release URL and confirm the sha256 matches step 2 — this catches a corrupted upload and guarantees the cask checksums are correct:
+Download each asset from its release URL and confirm the sha256 matches step 2 — this catches a corrupted upload and guarantees the cask checksums are correct. Also unzip and re-check Gatekeeper on the downloaded artifact, so you know notarization survived the round-trip (this is what users receive):
 ```bash
 curl -sL -o dl.zip "https://github.com/Ji4n1ng/OpenInTerminal/releases/download/vX.Y.Z/OpenInTerminal.zip"
 shasum -a 256 dl.zip
+ditto -x -k dl.zip dl && spctl -a -t exec -vv dl/OpenInTerminal.app   # accepted / source=Notarized Developer ID
 ```
 
 ## Step 6 — Homebrew cask PR
@@ -70,6 +91,12 @@ git remote add upstream https://github.com/Homebrew/homebrew-cask.git   # once
 git fetch upstream main --quiet
 git checkout -b openinterminal-X.Y.Z upstream/main
 ```
+**Reusing an existing PR branch** (e.g. re-pushing signed builds onto an open PR): recreate it fresh from current `upstream/main`, don't rebase the stale tip — then force-push (`git push --force-with-lease`). The PR keeps its number and thread.
+```bash
+git checkout -f upstream/main && git branch -D openinterminal-X.Y.Z
+git checkout -b openinterminal-X.Y.Z upstream/main   # now apply the cask edits below
+```
+⚠️ Do **not** `git reset --soft upstream/main` from the old branch tip to "move" it forward — the old tip's tree is stale, so the reset stages the entire upstream divergence (hundreds of unrelated casks). Always recreate the branch from a fresh `upstream/main` checkout as above.
 Cask files live under `Casks/o/`: `openinterminal.rb`, `openinterminal-lite.rb`, `openineditor-lite.rb`. In each, edit **only** the `version` and `sha256` lines (the `url` uses `v#{version}`, so it tracks automatically). Commit one cask per commit, Homebrew style `<cask> <version>`:
 ```
 openinterminal 2.3.9
@@ -100,18 +127,13 @@ A bot auto-closes any PR that doesn't use the **current** template verbatim, and
 ```bash
 git show upstream/main:.github/PULL_REQUEST_TEMPLATE.md
 ```
-- Tick "stable version" and "`brew style --fix` reports no offenses".
+- Tick "stable version", "`brew style --fix` reports no offenses", and — with Step-0 notarized artifacts — "`brew audit --cask --online` is error-free" (run the audit below first; only tick if it actually passes).
 - The "new cask" section is N/A for version bumps — leave unticked.
 - There is an **AI-disclosure checkbox** — tick it and describe how AI helped + manual verification (including that `zap` paths are unchanged).
 - Edit the body with `gh pr edit <num> --repo Homebrew/homebrew-cask --body-file ...`; the reopen workflow runs within ~1 min.
 
 ## Known blockers / gotchas
-- **Signing is a hard wall.** `homebrew/cask` requires every app to be **Developer-ID signed AND notarized**. `brew audit --cask --online` and CI `test` jobs fail with *"not signed by a distributor that meets the system Gatekeeper requirements… requires all casks to be signed and notarized by Apple."* Check the artifacts first:
-  ```bash
-  codesign -dv export/OpenInTerminal.app 2>&1 | grep -iE 'Signature|TeamIdentifier'   # adhoc / not set == will fail
-  spctl -a -t exec -vv export/OpenInTerminal.app                                        # "rejected" == will fail
-  ```
-  Ad-hoc signed builds cannot pass. To fix: re-sign with Developer ID, `xcrun notarytool submit` + `xcrun stapler staple`, re-zip, re-upload to the releases, recompute sha256, update casks. If signed builds aren't available, warn the user the Homebrew PR will fail CI and won't merge — the GitHub releases still work for direct download.
+- **Signing/notarization** — `homebrew/cask` requires every app to be **Developer-ID signed AND notarized**; ad-hoc builds fail `brew audit --cask --online` and CI `test` jobs with *"not signed by a distributor that meets the system Gatekeeper requirements."* This is handled by Step 0 (`build-signed.sh` → notarized artifacts), so it is no longer a blocker as long as you release Step-0 output. If you ever see the Gatekeeper failure, the artifacts are unsigned/ad-hoc — rebuild via Step 0, don't hand-patch. (History: v2.3.9/v1.2.8 first shipped ad-hoc and were rejected in [PR #274726](https://github.com/Homebrew/homebrew-cask/pull/274726); re-uploading notarized builds made CI pass.)
 - **One cask per PR:** Homebrew prefers a single cask per PR; a three-cask PR gets an `automerge-skip` label and a "must not modify multiple casks" note. Maintainers may ask to split into three. Do the combined PR only if the user explicitly wants one PR.
 - **Cleanup:** the force-tap adds ~560MB; offer `brew untap --force homebrew/cask` when done.
 
