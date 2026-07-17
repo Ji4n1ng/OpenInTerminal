@@ -14,7 +14,7 @@
 
 | 功能 | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| 支持 终端, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty), [kitty](https://sw.kovidgoyal.net/kitty/), [Warp](https://www.warp.dev), [WezTerm](https://wezfurlong.org/wezterm/index.html), [Tabby](https://tabby.sh), [Ghostty](https://ghostty.org), [cmux](https://github.com/manaflow-ai/cmux). | ✅ | ✅ |
+| 支持 终端, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty), [kitty](https://sw.kovidgoyal.net/kitty/), [Warp](https://www.warp.dev), [WezTerm](https://wezfurlong.org/wezterm/index.html), [Tabby](https://tabby.sh), [Ghostty](https://ghostty.org), [cmux](https://github.com/manaflow-ai/cmux), [Otty](https://otty.sh/). | ✅ | ✅ |
 | 支持 文本编辑, Xcode, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm, Android Studio, Fleet), [Typora](https://typora.io/), [Nova](https://nova.app/), [Cursor](https://cursor.sh/), [notepad--](https://github.com/cxasm/notepad--), [neovim](https://neovim.io/). | ✅ | ✅ |
 | 打开自定义应用（⚠️ 并不是所有的应用都支持） | ✅ | ✅ |
 | 支持中文，英语，法语，俄语，意大利语，西班牙语，土耳其语, 德语, 韩语 | ✅ | ✅ |
