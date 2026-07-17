@@ -25,6 +25,7 @@ public enum SupportedApps: String, CaseIterable {
     case fork = "Fork"
     case ghostty = "Ghostty"
     case kaku = "Kaku"
+    case otty = "Otty"
     
     // MARK: - Editors
     case textEdit = "TextEdit"
@@ -74,7 +75,7 @@ public enum SupportedApps: String, CaseIterable {
     
     public var type: AppType {
         switch self {
-        case .terminal, .iTerm, .hyper, .alacritty, .kitty, .wezterm, .tabby, .warp, .cmux, .githubDesktop, .fork, .ghostty, .gitKraken, .kaku:
+        case .terminal, .iTerm, .hyper, .alacritty, .kitty, .wezterm, .tabby, .warp, .cmux, .githubDesktop, .fork, .ghostty, .gitKraken, .kaku, .otty:
             return .terminal
         default:
             return .editor
@@ -125,6 +126,7 @@ public enum SupportedApps: String, CaseIterable {
         case .fork: return ""
         case .ghostty: return "com.mitchellh.ghostty"
         case .kaku: return "fun.tw93.kaku"
+        case .otty: return "io.appmakes.otty"
         // Editors
         case .textEdit: return "com.apple.TextEdit"
         case .xcode: return "com.apple.Xcode"
