@@ -7,12 +7,44 @@
 //
 
 import Foundation
+import Security
 
 struct Constants {
     
     /// Identifier
     struct Id {
-        static let Group = "group.wang.jianing.app.OpenInTerminal"
+        /// Historical app group name, without a Team ID prefix.
+        static let BaseGroup = "group.wang.jianing.app.OpenInTerminal"
+
+        /// Shared suite used by the unsandboxed host and the sandboxed Finder extension.
+        ///
+        /// Unsandboxed macOS processes only own an app group when the identifier is
+        /// prefixed with the Team ID. The bare `group.` form is silently dropped by
+        /// cfprefsd starting with macOS 26, so settings never reached the extension
+        /// and the toolbar menu was built empty. Both entitlements declare
+        /// `$(TeamIdentifierPrefix)` + BaseGroup; this resolves the same string from
+        /// the running code's signature. Ad-hoc builds have no team and fall back to
+        /// the bare name.
+        static let Group: String = {
+            guard let team = teamIdentifier() else { return BaseGroup }
+            return "\(team).\(BaseGroup)"
+        }()
+
+        /// Team ID of the certificate this bundle is signed with, if any.
+        private static func teamIdentifier() -> String? {
+            var code: SecCode?
+            guard SecCodeCopySelf([], &code) == errSecSuccess, let code else { return nil }
+            var staticCode: SecStaticCode?
+            guard SecCodeCopyStaticCode(code, [], &staticCode) == errSecSuccess,
+                  let staticCode else { return nil }
+            var info: CFDictionary?
+            guard SecCodeCopySigningInformation(staticCode,
+                                                SecCSFlags(rawValue: kSecCSSigningInformation),
+                                                &info) == errSecSuccess,
+                  let dict = info as? [String: Any] else { return nil }
+            return dict[kSecCodeInfoTeamIdentifier as String] as? String
+        }
+
         static let OpenInTerminalLite = "wang.jianing.app.OpenInTerminal-Lite"
         static let OpenInEditorLite = "wang.jianing.app.OpenInEditor-Lite"
         static let Finder = "com.apple.Finder"

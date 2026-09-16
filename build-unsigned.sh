@@ -33,8 +33,25 @@ TARGETS=(
 # Ad-hoc sign an .app bundle strictly leaf-first so every inner signature is
 # sealed before the bundle that contains it:
 #   dylibs -> frameworks -> app extensions -> nested (helper) apps -> the app
+# Ad-hoc signatures have no Team ID, so strip $(TeamIdentifierPrefix) and leave
+# the historical bare `group.` identifier that runtime falls back to.
+ADHOC_ENT_DIR="$(mktemp -d)"
+trap 'rm -rf "$ADHOC_ENT_DIR"' EXIT
+
+expand_adhoc_entitlements() {  # $1 = entitlements file
+  local src="$1"
+  local out="$ADHOC_ENT_DIR/$(echo "$src" | tr '/' '_')"
+  if [[ ! -f "$out" ]]; then
+    sed 's/$(TeamIdentifierPrefix)//g' "$src" > "$out"
+  fi
+  echo "$out"
+}
+
 adhoc_sign() {  # $1 = .app bundle, $2 = app entitlements
-  local app="$1" ent="$2"
+  local app="$1" ent
+  ent="$(expand_adhoc_entitlements "$2")"
+  local ext_ent
+  ext_ent="$(expand_adhoc_entitlements "$EXT_ENT")"
   find "$app" -type f -name "*.dylib" -print0 | while IFS= read -r -d '' d; do
     codesign --force --sign - "$d"
   done
@@ -42,7 +59,7 @@ adhoc_sign() {  # $1 = .app bundle, $2 = app entitlements
     codesign --force --sign - "$fw"
   done
   find "$app" -type d -name "*.appex" -print0 | while IFS= read -r -d '' ext; do
-    codesign --force --sign - --entitlements "$EXT_ENT" "$ext"
+    codesign --force --sign - --entitlements "$ext_ent" "$ext"
   done
   # nested apps (e.g. the login-item helper); signed plain ad-hoc
   find "$app" -mindepth 1 -type d -name "*.app" -print0 | while IFS= read -r -d '' sub; do

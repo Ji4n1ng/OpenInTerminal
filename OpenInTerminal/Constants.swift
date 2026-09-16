@@ -14,7 +14,20 @@ struct Constants {
     
     struct Id {
         static let LauncherApp = "wang.jianing.app.OpenInTerminalHelper"
-        static let FinderExtension = "wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension"
+
+        /// Bundle identifier of the embedded Finder extension.
+        ///
+        /// Derived from the host app so `checkScripts()` installs AppleScripts
+        /// into the folder the running extension actually looks in. A hardcoded
+        /// id would write scripts to the original developer's folder when a fork
+        /// changes `PRODUCT_BUNDLE_IDENTIFIER`.
+        static let FinderExtension: String = {
+            let suffix = "OpenInTerminalFinderExtension"
+            guard let appId = Bundle.main.bundleIdentifier else {
+                return "wang.jianing.app.OpenInTerminal." + suffix
+            }
+            return appId + "." + suffix
+        }()
         static let CustomAppCell = NSUserInterfaceItemIdentifier(rawValue: "customAppCell")
         static let CustomMenuCell = NSUserInterfaceItemIdentifier(rawValue: "customMenuCell")
         static let CustomInputViewController = "CustomInputViewController"

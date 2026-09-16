@@ -16,9 +16,18 @@ class FinderSync: FIFinderSync {
     override init() {
         super.init()
         let finderSync = FIFinderSyncController.default()
+
+        // Always include `/`. skipHiddenVolumes omits the APFS Data volume
+        // (`/System/Volumes/Data`, nobrowse), which on recent macOS can leave
+        // the extension running with no useful Finder locations in scope.
+        var directoryURLs: Set<URL> = [URL(fileURLWithPath: "/", isDirectory: true)]
         if let mountedVolumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: [.skipHiddenVolumes]) {
-            finderSync.directoryURLs = Set<URL>(mountedVolumes)
+            directoryURLs.formUnion(mountedVolumes)
         }
+        finderSync.directoryURLs = directoryURLs
+        NSLog("OpenInTerminal Finder extension monitoring: %@",
+              directoryURLs.map(\.path).sorted().joined(separator: ", "))
+
         // Monitor volumes
         let notificationCenter = NSWorkspace.shared.notificationCenter
         notificationCenter.addObserver(forName: NSWorkspace.didMountNotification, object: nil, queue: .main) { notification in
@@ -65,6 +74,17 @@ class FinderSync: FIFinderSync {
             }
 
         case .toolbarItemMenu:
+            // Finder Sync has no separate toolbar-click callback; this method
+            // is invoked when the user clicks the toolbar item. Run the Quick
+            // Toggle action immediately and return an empty menu so Finder
+            // does not present the Terminal / Editor / Copy Path picker.
+            // selectedItemURLs is only valid inside this call, so the action
+            // must run synchronously.
+            if DefaultsManager.shared.isQuickToggle {
+                performQuickToggleAction()
+                return NSMenu()
+            }
+
             // the toolbar menu never groups items into a submenu
             let isCustomMenuApplyToToolbar = DefaultsManager.shared.isCustomMenuApplyToToolbar
             if isCustomMenuApplyToToolbar {
@@ -124,7 +144,9 @@ class FinderSync: FIFinderSync {
         // menu that will be attached under a single top level item
         let itemsMenu = useSubmenu ? NSMenu(title: "") : menu
 
-        guard let terminal = DefaultsManager.shared.defaultTerminal else { return menu }
+        // Fall back to Terminal/TextEdit so the menu is never empty when the
+        // shared suite has not been written yet (macOS 26+ unowned app groups).
+        let terminal = DefaultsManager.shared.defaultTerminal ?? SupportedApps.terminal.app
         let terminalTitle = terminal.name
         let openInTerminalItem = NSMenuItem(title: terminalTitle,
                                             action: #selector(openDefaultTerminal),
@@ -133,7 +155,7 @@ class FinderSync: FIFinderSync {
         openInTerminalItem.image = terminalIcon
         itemsMenu.addItem(openInTerminalItem)
 
-        guard let editor = DefaultsManager.shared.defaultEditor else { return menu }
+        let editor = DefaultsManager.shared.defaultEditor ?? SupportedApps.textEdit.app
         let editorTitle = editor.name
         let openInEditorItem = NSMenuItem(title: editorTitle,
                                             action: #selector(openDefaultEditor),
@@ -252,14 +274,25 @@ class FinderSync: FIFinderSync {
 //    }
     
     // MARK: - Menu Actions
+
+    func performQuickToggleAction() {
+        switch DefaultsManager.shared.quickToggleType {
+        case .openWithDefaultEditor:
+            openDefaultEditor()
+        case .copyPathToClipboard:
+            copyPathToClipboard()
+        default:
+            openDefaultTerminal()
+        }
+    }
     
     @objc func openDefaultTerminal() {
-        guard let terminal = DefaultsManager.shared.defaultTerminal else { return }
+        let terminal = DefaultsManager.shared.defaultTerminal ?? SupportedApps.terminal.app
         open(terminal)
     }
     
     @objc func openDefaultEditor() {
-        guard let editor = DefaultsManager.shared.defaultEditor else { return }
+        let editor = DefaultsManager.shared.defaultEditor ?? SupportedApps.textEdit.app
         open(editor)
     }
     

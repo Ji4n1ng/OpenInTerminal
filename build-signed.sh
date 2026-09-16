@@ -37,6 +37,9 @@
 #
 # Configuration (override via environment):
 #   SIGN_ID         signing identity; default: auto-detected Developer ID Application
+#   TEAM_ID         10-character Team ID written into app-group entitlements.
+#                   Default: the (XXXXXXXXXX) suffix of SIGN_ID. Override this for
+#                   Apple Development identities, where that suffix is not the Team ID.
 #   NOTARY_PROFILE  notarytool keychain profile name; default: OpenInTerminal-notary
 #   SKIP_NOTARIZE   set to 1 to sign only (no notarization/stapling) — for testing
 # ---------------------------------------------------------------------------
@@ -74,6 +77,37 @@ if [[ -z "${SIGN_ID:-}" ]]; then
 fi
 echo "==> Signing identity: $SIGN_ID"
 
+# --- Team ID + entitlements expansion ---------------------------------------
+# The entitlements files use $(TeamIdentifierPrefix) for the app group, because
+# on macOS a non-sandboxed process (the main app) only owns an app group whose
+# identifier is prefixed with the Team ID. Xcode expands that variable when it
+# signs; plain `codesign` does not, so it is expanded here into temporary copies
+# before signing. TeamIdentifierPrefix includes the trailing dot.
+if [[ -z "${TEAM_ID:-}" ]]; then
+  TEAM_ID="$(sed -n 's/.*(\([A-Z0-9]\{10\}\))$/\1/p' <<<"$SIGN_ID")"
+fi
+if [[ -z "$TEAM_ID" ]]; then
+  echo "!! Could not read a Team ID out of the signing identity: $SIGN_ID" >&2
+  echo "   Expected a trailing \"(TEAMID)\", or set TEAM_ID explicitly." >&2
+  echo "   Apple Development identities often need TEAM_ID=<your 10-char team>." >&2
+  exit 1
+fi
+echo "==> Team ID: $TEAM_ID"
+
+EXPANDED_ENT_DIR="$(mktemp -d)"
+trap 'rm -rf "$EXPANDED_ENT_DIR"' EXIT
+
+# Expand $(TeamIdentifierPrefix) in an entitlements file, echoing the path of
+# the expanded copy. Results are cached per source file.
+expand_entitlements() {  # $1 = entitlements file
+  local src="$1"
+  local out="$EXPANDED_ENT_DIR/$(echo "$src" | tr '/' '_')"
+  if [[ ! -f "$out" ]]; then
+    sed 's/$(TeamIdentifierPrefix)/'"${TEAM_ID}."'/g' "$src" > "$out"
+  fi
+  echo "$out"
+}
+
 # --- Verify notary credentials up front (fail fast, before the long build) --
 if [[ "$SKIP_NOTARIZE" != "1" ]]; then
   if ! xcrun notarytool history --keychain-profile "$NOTARY_PROFILE" >/dev/null 2>&1; then
@@ -91,7 +125,10 @@ fi
 # Every signature uses the hardened runtime (--options runtime) and a secure
 # timestamp (--timestamp); both are required by the notary service.
 sign() {  # $1 = .app bundle, $2 = app entitlements
-  local app="$1" ent="$2"
+  local app="$1" ent
+  ent="$(expand_entitlements "$2")"
+  local ext_ent
+  ext_ent="$(expand_entitlements "$EXT_ENT")"
   local common=(--force --options runtime --timestamp --sign "$SIGN_ID")
   find "$app" -type f -name "*.dylib" -print0 | while IFS= read -r -d '' d; do
     codesign "${common[@]}" "$d"
@@ -100,7 +137,7 @@ sign() {  # $1 = .app bundle, $2 = app entitlements
     codesign "${common[@]}" "$fw"
   done
   find "$app" -type d -name "*.appex" -print0 | while IFS= read -r -d '' ext; do
-    codesign "${common[@]}" --entitlements "$EXT_ENT" "$ext"
+    codesign "${common[@]}" --entitlements "$ext_ent" "$ext"
   done
   # nested apps (e.g. the login-item helper)
   find "$app" -mindepth 1 -type d -name "*.app" -print0 | while IFS= read -r -d '' sub; do
