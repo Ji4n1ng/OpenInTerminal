@@ -20,10 +20,7 @@
 		47252586226812AB003C50DF /* OpenInTerminalCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; };
 		47252587226812AB003C50DF /* OpenInTerminalCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4725251122680E87003C50DF /* OpenInTerminalCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4725258A226812AB003C50DF /* OpenInTerminalFinderExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4725254A22680FEB003C50DF /* OpenInTerminalFinderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9509DBDE300269CC00AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBDD300269CC00AE88FA /* AppIcon.icon */; };
-		9509DBDF300269CC00AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBDD300269CC00AE88FA /* AppIcon.icon */; };
 		9509DBE0300269CC00AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBDD300269CC00AE88FA /* AppIcon.icon */; };
-		9509DBE13002801900AE88FA /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9509DBDD300269CC00AE88FA /* AppIcon.icon */; };
 		9511D8AC22749582008E52B9 /* LaunchNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9511D8AB22749582008E52B9 /* LaunchNotifier.swift */; };
 		95163CD22269979E007C006F /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD12269979E007C006F /* Notifier.swift */; };
 		95163CD4226998ED007C006F /* OpenNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95163CD3226998ED007C006F /* OpenNotifier.swift */; };
@@ -564,7 +561,6 @@
 			files = (
 				95294D0825B3E17900CC995D /* Icons.xcassets in Resources */,
 				95C6C340227AA1CB00F157C4 /* Localizable.strings in Resources */,
-				9509DBDF300269CC00AE88FA /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,7 +573,6 @@
 				95294CEB25B3252900CC995D /* Assets.xcassets in Resources */,
 				95C6C341227AA1D000F157C4 /* Localizable.strings in Resources */,
 				95294CFE25B3293F00CC995D /* Icons.xcassets in Resources */,
-				9509DBDE300269CC00AE88FA /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +595,6 @@
 			files = (
 				95187390227DF493000CCB3A /* Assets.xcassets in Resources */,
 				95187393227DF493000CCB3A /* Main.storyboard in Resources */,
-				9509DBE13002801900AE88FA /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
