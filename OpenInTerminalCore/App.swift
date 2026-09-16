@@ -73,12 +73,13 @@ extension App: Openable {
             if SupportedApps.is(self, is: .terminal) {
                 // this app is supported: Terminal
                 let url = URL(fileURLWithPath: path)
-                guard let terminal = SBApplication(bundleIdentifier: SupportedApps.terminal.bundleId) as TerminalApplication?,
-                      let open = terminal.open else {
-                    throw OITError.cannotAccessApp(self.name)
+                if let terminal = SBApplication(bundleIdentifier: SupportedApps.terminal.bundleId) as TerminalApplication?,
+                   let open = terminal.open {
+                    open([url])
+                    terminal.activate()
+                } else {
+                    try runOpen(["-a", "Terminal", path])
                 }
-                open([url])
-                terminal.activate()
             } else {
                 // this app is general (e.g. iTerm, Alacritty, kitty)
                 var arguments = DefaultsManager.shared.getOpenArguments(self)
