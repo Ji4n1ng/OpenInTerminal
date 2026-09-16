@@ -16,6 +16,7 @@ struct Constants {
         static let OpenInTerminalLite = "wang.jianing.app.OpenInTerminal-Lite"
         static let OpenInEditorLite = "wang.jianing.app.OpenInEditor-Lite"
         static let Finder = "com.apple.Finder"
+        static let FinderExtension = "wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension"
     }
     
     /// General AppleScript for opening apps
