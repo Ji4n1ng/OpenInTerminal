@@ -107,7 +107,7 @@
                                     </popUpButton>
                                     <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ybg-LK-qWi">
                                         <rect key="frame" x="18" y="94" width="326" height="28"/>
-                                        <textFieldCell key="cell" title="If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu." id="592-4p-Ybh">
+                                        <textFieldCell key="cell" title="If enabled, click the Menu Bar icon or the Finder toolbar icon to run the action you choose. Right-click the Menu Bar icon to open the menu." id="592-4p-Ybh">
                                             <font key="font" metaFont="menu" size="11"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

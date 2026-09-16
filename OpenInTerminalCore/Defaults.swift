@@ -8,7 +8,10 @@
 
 import Foundation
 
-/// group defaults
+private let defaultsMigrationVersionKey = "OIT_DefaultsMigrationVersion"
+private let currentDefaultsMigrationVersion = 1
+
+/// Shared suite for the host app and Finder extension.
 let GroupDefaults = UserDefaults(suiteName: Constants.Id.Group)
 
 /// current defaults
@@ -16,10 +19,40 @@ public var Defaults: UserDefaults = {
     if Bundle.main.bundleIdentifier == Constants.Id.OpenInTerminalLite ||
         Bundle.main.bundleIdentifier == Constants.Id.OpenInEditorLite {
         return UserDefaults.standard
-    } else {
-        return GroupDefaults ?? UserDefaults.standard
     }
+
+    let store = GroupDefaults ?? UserDefaults.standard
+    migrateLegacyGroupDefaultsIfNeeded(to: store)
+    logw("Using defaults suite \(Constants.Id.Group)")
+    return store
 }()
+
+/// Copy keys from the unprefixed `group.` suite used before macOS 26.
+private func migrateLegacyGroupDefaultsIfNeeded(to destination: UserDefaults) {
+    guard destination.integer(forKey: defaultsMigrationVersionKey) < currentDefaultsMigrationVersion else {
+        return
+    }
+
+    if Constants.Id.Group != Constants.Id.BaseGroup,
+       let legacy = UserDefaults(suiteName: Constants.Id.BaseGroup),
+       let values = legacy.persistentDomain(forName: Constants.Id.BaseGroup) {
+        for (key, value) in values where destination.object(forKey: key) == nil {
+            destination.set(value, forKey: key)
+        }
+    }
+
+    destination.set(currentDefaultsMigrationVersion, forKey: defaultsMigrationVersionKey)
+    destination.synchronize()
+}
+
+func removeAllDefaults() {
+    Defaults.removePersistentDomain(forName: Constants.Id.Group)
+    if Constants.Id.Group != Constants.Id.BaseGroup {
+        UserDefaults(suiteName: Constants.Id.BaseGroup)?
+            .removePersistentDomain(forName: Constants.Id.BaseGroup)
+    }
+    Defaults.synchronize()
+}
 
 public class DefaultsKeys {
     fileprivate init() {}

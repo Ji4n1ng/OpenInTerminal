@@ -379,8 +379,7 @@ public class DefaultsManager {
     
     public func removeAllUserDefaults() {
         logw("Remove all UserDefaults")
-        Defaults.removePersistentDomain(forName: Constants.Id.Group)
-        Defaults.synchronize()
+        removeAllDefaults()
     }
     
 }

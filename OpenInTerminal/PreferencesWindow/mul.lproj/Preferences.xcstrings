@@ -254,7 +254,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu."
+            "value" : "If enabled, click the Menu Bar icon or the Finder toolbar icon to run the action you choose. Right-click the Menu Bar icon to open the menu."
           }
         },
         "es" : {
@@ -296,7 +296,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "启用后，点击系统状态栏图标以快速启动你所选择的操作。辅助点按（右键）以打开菜单。"
+            "value" : "启用后，点击系统状态栏图标或 Finder 工具栏图标即可执行所选操作。状态栏图标可用右键打开菜单。"
           }
         }
       }

@@ -9,7 +9,7 @@
 "2we-f7-s2N.title" = "Apply to Finder Toolbar Menu";
 
 /* Class = "NSTextFieldCell"; title = "If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu."; ObjectID = "592-4p-Ybh"; */
-"592-4p-Ybh.title" = "If enabled, click the Menu Bar icon to toggle the action you choose. Right click to open the menu.";
+"592-4p-Ybh.title" = "If enabled, click the Menu Bar icon or the Finder toolbar icon to run the action you choose. Right-click the Menu Bar icon to open the menu.";
 
 /* Class = "NSWindow"; title = "Preferences"; ObjectID = "5f3-UK-Rft"; */
 "5f3-UK-Rft.title" = "Preferences";

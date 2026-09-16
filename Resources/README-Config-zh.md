@@ -85,12 +85,14 @@ $ pluginkit -e "use" -u "F2547F13-4E43-4E88-9D8F-56DF05C020D8"
 
 ## 自定义配置
 
+正式的 Developer ID 构建会把共享偏好写到带 Team ID 前缀的 App Group：`C8VX3ZLX5U.group.wang.jianing.app.OpenInTerminal`。首次启动时会从旧的无前缀 `group.` 容器迁移已有设置。
+
 ### 针对 Neovim 用户
 
 如果您在 OpenInTerminal 中选择 Neovim 作为编辑器，应用将使用 Kitty 作为默认终端。要切换到其他终端（支持的选项包括 Alacritty、WezTerm 和 Kitty），请使用以下命令更新配置。将 `<Your Name>` 替换为您的用户名，并根据您的安装调整 Neovim 路径（此示例为 `/opt/homebrew/bin/nvim`）：
 
 ```
-defaults write /Users/<Your Name>/Library/Group\ Containers/group.wang.jianing.app.OpenInTerminal/Library/Preferences/group.wang.jianing.app.OpenInTerminal.plist NeovimCommand "open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
+defaults write /Users/<Your Name>/Library/Group\ Containers/C8VX3ZLX5U.group.wang.jianing.app.OpenInTerminal/Library/Preferences/C8VX3ZLX5U.group.wang.jianing.app.OpenInTerminal.plist NeovimCommand "open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
 ```
 
 其他终端配置：
@@ -115,7 +117,7 @@ open -na kitty --args --single-instance --instance-group 1 --directory
 如果您想自定义此行为，可以在终端中运行以下命令。请确保将 <Your Name> 替换为您的用户名，并根据需要调整命令：
 
 ```
-defaults write /Users/<Your Name>/Library/Group\ Containers/group.wang.jianing.app.OpenInTerminal/Library/Preferences/group.wang.jianing.app.OpenInTerminal.plist KittyCommand "open -na kitty --args --single-instance --instance-group 1 --directory"
+defaults write /Users/<Your Name>/Library/Group\ Containers/C8VX3ZLX5U.group.wang.jianing.app.OpenInTerminal/Library/Preferences/C8VX3ZLX5U.group.wang.jianing.app.OpenInTerminal.plist KittyCommand "open -na kitty --args --single-instance --instance-group 1 --directory"
 ```
 
 ## 常见问题 ❓
