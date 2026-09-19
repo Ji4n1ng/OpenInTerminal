@@ -210,13 +210,15 @@ defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 
 ### 4) In einem neuen Tab oder Fenster öffnen, wenn Sie cmux verwenden
 
-Wenn Sie `cmux` verwenden, können Sie festlegen, ob ein Ordner in einem neuen Workspace (Tab) des aktuellen cmux-Fensters oder in einem neuen cmux-Fenster geöffnet wird. Die **Standardeinstellung** ist ein neuer Tab.
+Wenn Sie `cmux` verwenden, können Sie festlegen, ob ein Ordner in einem neuen cmux-Fenster, in einem neuen Arbeitsbereich des aktuellen Fensters oder in einem neuen Tab des aktuellen Arbeitsbereichs geöffnet wird. Die **Standardeinstellung** ist ein neuer Arbeitsbereich.
 
 ```
-# Einen neuen Tab öffnen
-defaults write wang.jianing.app.OpenInTerminal-Lite CmuxNewOption tab
 # Ein neues Fenster öffnen
 defaults write wang.jianing.app.OpenInTerminal-Lite CmuxNewOption window
+# Einen neuen Arbeitsbereich öffnen
+defaults write wang.jianing.app.OpenInTerminal-Lite CmuxNewOption workspace
+# Einen neuen Tab öffnen
+defaults write wang.jianing.app.OpenInTerminal-Lite CmuxNewOption tab
 ```
 
 ## FAQ ❓

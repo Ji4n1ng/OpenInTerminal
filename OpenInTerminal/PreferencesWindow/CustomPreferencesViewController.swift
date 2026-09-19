@@ -22,6 +22,7 @@ class CustomPreferencesViewController: PreferencesViewController {
     
     @IBOutlet weak var cmuxTextField: NSTextField!
     @IBOutlet weak var cmuxWindowButton: NSButton!
+    @IBOutlet weak var cmuxWorkspaceButton: NSButton!
     @IBOutlet weak var cmuxTabButton: NSButton!
     
     @IBOutlet weak var customMenuTableView: NSTableView!
@@ -123,11 +124,11 @@ class CustomPreferencesViewController: PreferencesViewController {
         iTermWindowButton.isEnabled = iTermTextField.isEnabled
         iTermTabButton.isEnabled = iTermTextField.isEnabled
         cmuxWindowButton.isEnabled = cmuxTextField.isEnabled
+        cmuxWorkspaceButton.isEnabled = cmuxTextField.isEnabled
         cmuxTabButton.isEnabled = cmuxTextField.isEnabled
         
         let terminalStates: [(SupportedApps, NSButton, NSButton)] = [
-            (.iTerm, iTermWindowButton, iTermTabButton),
-            (.cmux, cmuxWindowButton, cmuxTabButton)
+            (.iTerm, iTermWindowButton, iTermTabButton)
         ]
         terminalStates.forEach { terminal, windowButton, tabButton in
             let _newOption = DefaultsManager.shared.getNewOption(terminal)
@@ -141,6 +142,15 @@ class CustomPreferencesViewController: PreferencesViewController {
                 }
             }
         }
+        
+        // cmux has a third choice: a new workspace in the current window (the default).
+        refreshCmuxButtons(DefaultsManager.shared.getNewOption(.cmux) ?? .workspace)
+    }
+    
+    func refreshCmuxButtons(_ option: NewOptionType) {
+        cmuxWindowButton.state = option == .window ? .on : .off
+        cmuxWorkspaceButton.state = option == .workspace ? .on : .off
+        cmuxTabButton.state = option == .tab ? .on : .off
     }
     
     func refreshCustomButtons() {
@@ -269,12 +279,17 @@ class CustomPreferencesViewController: PreferencesViewController {
     }
     
     @IBAction func cmuxWindowButtonClicked(_ sender: NSButton) {
-        cmuxTabButton.state = .off
+        refreshCmuxButtons(.window)
         DefaultsManager.shared.setNewOption(.cmux, .window)
     }
     
+    @IBAction func cmuxWorkspaceButtonClicked(_ sender: NSButton) {
+        refreshCmuxButtons(.workspace)
+        DefaultsManager.shared.setNewOption(.cmux, .workspace)
+    }
+    
     @IBAction func cmuxTabButtonClicked(_ sender: NSButton) {
-        cmuxWindowButton.state = .off
+        refreshCmuxButtons(.tab)
         DefaultsManager.shared.setNewOption(.cmux, .tab)
     }
     

@@ -734,67 +734,6 @@
       }
     },
 
-    "Cmx-nc-010.title" : {
-      "comment" : "Class = \"NSTextFieldCell\"; title = \"Open a new window or a new tab.\"; ObjectID = \"Cmx-nc-010\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Öffnen Sie ein neues Fenster oder einen neuen Tab."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Open a new window or a new tab."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abra una nueva ventana o una nueva pestaña."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ouvre une nouvelle fenêtre ou un nouvel onglet à l’ouverture du chemin d’accès dans le terminal."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apri una nuova finestra o un nuovo pannello quando apri un percorso nel terminale."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "새 창 또는 탭 열기."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Открыть новое окно или новую вкладку при открытии пути в терминале."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yeni bir pencere veya sekme aç."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打开一个新的窗口或者标签。"
-          }
-        }
-      }
-    },
-
     "Cmx-tc-008.title" : {
       "comment" : "Class = \"NSButtonCell\"; title = \"Tab\"; ObjectID = \"Cmx-tc-008\";",
       "extractionState" : "extracted_with_value",
@@ -912,6 +851,126 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "窗口"
+          }
+        }
+      }
+    },
+    "Cmx-nc-010.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Open a new window, a new workspace, or a new tab.\"; ObjectID = \"Cmx-nc-010\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffnen Sie ein neues Fenster, einen neuen Arbeitsbereich oder einen neuen Tab."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open a new window, a new workspace, or a new tab."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abra una nueva ventana, un nuevo espacio de trabajo o una nueva pestaña."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre une nouvelle fenêtre, un nouvel espace de travail ou un nouvel onglet."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri una nuova finestra, una nuova area di lavoro o un nuovo pannello."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 창, 새 워크스페이스 또는 새 탭 열기."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть новое окно, новую рабочую область или новую вкладку."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni bir pencere, yeni bir çalışma alanı veya yeni bir sekme açın."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开新窗口、新工作区或新标签页。"
+          }
+        }
+      }
+    },
+    "Cmx-kc-019.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Workspace\"; ObjectID = \"Cmx-kc-019\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arbeitsbereich"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Workspace"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espacio de trabajo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espace de travail"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Area di lavoro"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "워크스페이스"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рабочая область"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çalışma alanı"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "工作区"
           }
         }
       }

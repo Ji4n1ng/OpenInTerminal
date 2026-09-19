@@ -52,16 +52,7 @@ extension App: Openable {
         //
         // `argv` is the full invocation: the program first, then its arguments.
         func run(_ argv: [String]) throws {
-            guard let program = argv.first else { return }
-            let process = Process()
-            process.executableURL = URL(fileURLWithPath: program)
-            process.arguments = Array(argv.dropFirst())
-            logw(argv.joined(separator: " "))
-            do {
-                try process.run()
-            } catch {
-                throw OITError.cannotAccessApp(self.name)
-            }
+            try App.run(argv, for: self.name)
         }
 
         switch self.type {
@@ -83,9 +74,9 @@ extension App: Openable {
                 }
                 open([url])
                 terminal.activate()
-            } else if wantsCmuxNewWindow, let arguments = App.cmuxNewWindowArguments(path: path) {
-                // cmux with the "new window" preference: drive the cmux CLI
-                try run(arguments)
+            } else if let cmuxOption = cmuxCLIOption {
+                // cmux with the "new window" / "new tab" preference: drive the cmux CLI
+                try App.openCmux(path: path, option: cmuxOption)
             } else {
                 // this app is general (e.g. iTerm, Alacritty, kitty)
                 var arguments = ["/usr/bin/open"] + DefaultsManager.shared.getOpenArguments(self)
@@ -129,13 +120,17 @@ extension App: Openable {
         case .terminal:
             guard var url = urls.first else { return }
             url.getDirectory()
-            if wantsCmuxNewWindow, let cmuxArguments = App.cmuxNewWindowArguments(path: url.path) {
-                // cmux with the "new window" preference: drive the cmux CLI
-                // instead of `open -a cmux`. Same argv discipline applies.
-                arguments = cmuxArguments
-            } else {
-                arguments.append(url.path)
+            if let cmuxOption = cmuxCLIOption,
+               let requestURL = App.cmuxRequestURL(path: url.path, option: cmuxOption) {
+                // cmux with the "new window" / "new tab" preference. The shell
+                // started by the Finder extension's AppleScript is sandboxed: it
+                // can neither reach cmux's control socket nor pass arguments
+                // through `open`, so hand the request to the unsandboxed main
+                // app, which runs the cmux CLI (see AppDelegate.application(_:open:)).
+                NSWorkspace.shared.open(requestURL)
+                return
             }
+            arguments.append(url.path)
         case .editor:
             let paths = urls.map { $0.path }
             // fix for neovim: the command template carries a "PATH" placeholder
@@ -162,34 +157,86 @@ extension App: Openable {
     
     // MARK: - cmux
     
-    /// True when this app is cmux and the user asked for folders to open in a
-    /// new cmux window rather than a new workspace (tab) of the current window.
-    var wantsCmuxNewWindow: Bool {
-        return SupportedApps.is(self, is: .cmux)
-            && DefaultsManager.shared.getNewOption(.cmux) == .window
+    /// The cmux "new" option that needs the cmux CLI, i.e. `.window` or `.tab`,
+    /// when this app is cmux and the user chose one of them. `nil` for other
+    /// apps and for the default `.workspace` behaviour, which plain
+    /// `open -a cmux <dir>` already provides.
+    var cmuxCLIOption: NewOptionType? {
+        guard SupportedApps.is(self, is: .cmux),
+              let option = DefaultsManager.shared.getNewOption(.cmux),
+              option == .window || option == .tab else {
+            return nil
+        }
+        return option
     }
     
-    /// The full argv (program first) that opens `path` in a new cmux window via
-    /// the cmux CLI bundled inside cmux.app, or `nil` when that CLI cannot be
-    /// found — callers then fall back to the regular `open -a cmux` path.
+    /// Opens `path` in cmux in a new window or a new tab by running the cmux
+    /// CLI bundled in cmux.app (see `Constants.Commands.cmuxOpen`). Only works
+    /// from an unsandboxed process; the Finder extension goes through
+    /// `cmuxRequestURL(path:option:)` instead.
+    public static func openCmux(path: String, option: NewOptionType) throws {
+        try run(cmuxArguments(path: path, option: option), for: SupportedApps.cmux.name)
+    }
+    
+    /// `openinterminal://cmux/<path>?mode=<window|tab>` — the request the Finder
+    /// extension sends to the main app. The path travels in the URL path
+    /// component, so `URLComponents` percent-encodes it in full.
+    public static func cmuxRequestURL(path: String, option: NewOptionType) -> URL? {
+        var components = URLComponents()
+        components.scheme = Constants.urlScheme
+        components.host = Constants.cmuxURLHost
+        components.path = path
+        components.queryItems = [URLQueryItem(name: Constants.cmuxURLModeQueryItem, value: option.rawValue)]
+        return components.url
+    }
+    
+    /// The directory and option named by a `cmuxRequestURL(path:option:)` URL,
+    /// or `nil` when the URL is not such a request, names an unsupported mode,
+    /// or does not name an existing directory.
+    public static func cmuxRequest(from url: URL) -> (path: String, option: NewOptionType)? {
+        guard url.scheme == Constants.urlScheme,
+              url.host == Constants.cmuxURLHost,
+              let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let mode = components.queryItems?.first(where: { $0.name == Constants.cmuxURLModeQueryItem })?.value,
+              let option = NewOptionType(rawValue: mode),
+              option == .window || option == .tab else {
+            return nil
+        }
+        let path = components.path
+        var isDirectory: ObjCBool = false
+        guard !path.isEmpty,
+              FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory),
+              isDirectory.boolValue else {
+            return nil
+        }
+        return (path, option)
+    }
+    
+    /// The full argv (program first) that opens `path` in cmux with `option`.
     ///
-    /// The script text is a fixed constant; `path` is handed over as a discrete
-    /// positional argument, so it is never interpreted by the shell.
-    static func cmuxNewWindowArguments(path: String) -> [String]? {
-        var appURLs: [URL] = []
-        if let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: SupportedApps.cmux.bundleId) {
-            appURLs.append(url)
+    /// The script text is a fixed constant; the CLI path, the mode and `path`
+    /// are handed over as discrete positional arguments, so they are never
+    /// interpreted by the shell. The script itself falls back to
+    /// `open -b com.cmuxterm.app` when the CLI is not where we expect it.
+    static func cmuxArguments(path: String, option: NewOptionType) -> [String] {
+        let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: SupportedApps.cmux.bundleId)
+            ?? URL(fileURLWithPath: "/Applications/cmux.app")
+        let cli = appURL.appendingPathComponent("Contents/Resources/bin/cmux").path
+        return ["/bin/sh", "-c", Constants.Commands.cmuxOpen, "openinterminal-cmux", cli, option.rawValue, path]
+    }
+    
+    /// Runs `argv` (program first) as a child process without any shell.
+    private static func run(_ argv: [String], for appName: String) throws {
+        guard let program = argv.first else { return }
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: program)
+        process.arguments = Array(argv.dropFirst())
+        logw(argv.joined(separator: " "))
+        do {
+            try process.run()
+        } catch {
+            throw OITError.cannotAccessApp(appName)
         }
-        appURLs.append(URL(fileURLWithPath: "/Applications/cmux.app"))
-        for appURL in appURLs {
-            let cli = appURL.appendingPathComponent("Contents/Resources/bin/cmux")
-            if FileManager.default.isExecutableFile(atPath: cli.path) {
-                return ["/bin/sh", "-c", Constants.Commands.cmuxNewWindow, "openinterminal-cmux", cli.path, path]
-            }
-        }
-        logw("cmux CLI not found; falling back to open -a")
-        return nil
     }
     
 }
-

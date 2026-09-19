@@ -427,7 +427,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="40" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-hs-004">
-                                                <rect key="frame" x="20" y="22" width="155" height="16"/>
+                                                <rect key="frame" x="20" y="22" width="285" height="16"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-wb-005">
                                                         <rect key="frame" x="0.0" y="0.0" width="71" height="16"/>
@@ -439,9 +439,19 @@
                                                             <action selector="cmuxWindowButtonClicked:" target="s5W-qL-1Xs" id="Cmx-a1-013"/>
                                                         </connections>
                                                     </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-kb-018">
+                                                        <rect key="frame" x="111" y="0.0" width="90" height="16"/>
+                                                        <buttonCell key="cell" type="radio" title="Workspace" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Cmx-kc-019">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="cmuxWorkspaceButtonClicked:" target="s5W-qL-1Xs" id="Cmx-a3-020"/>
+                                                        </connections>
+                                                    </button>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-tb-007">
-                                                        <rect key="frame" x="111" y="0.0" width="44" height="16"/>
-                                                        <buttonCell key="cell" type="radio" title="Tab" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Cmx-tc-008">
+                                                        <rect key="frame" x="241" y="0.0" width="44" height="16"/>
+                                                        <buttonCell key="cell" type="radio" title="Tab" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Cmx-tc-008">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
@@ -453,15 +463,17 @@
                                                 <visibilityPriorities>
                                                     <integer value="1000"/>
                                                     <integer value="1000"/>
+                                                    <integer value="1000"/>
                                                 </visibilityPriorities>
                                                 <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
                                                 </customSpacing>
                                             </stackView>
                                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-nt-009">
                                                 <rect key="frame" x="18" y="0.0" width="181" height="14"/>
-                                                <textFieldCell key="cell" title="Open a new window or a new tab." id="Cmx-nc-010">
+                                                <textFieldCell key="cell" title="Open a new window, a new workspace, or a new tab." id="Cmx-nc-010">
                                                     <font key="font" metaFont="message" size="11"/>
                                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -794,6 +806,7 @@
                         <outlet property="cmuxTabButton" destination="Cmx-tb-007" id="Cmx-o1-015"/>
                         <outlet property="cmuxTextField" destination="Cmx-lb-002" id="Cmx-o2-016"/>
                         <outlet property="cmuxWindowButton" destination="Cmx-wb-005" id="Cmx-o3-017"/>
+                        <outlet property="cmuxWorkspaceButton" destination="Cmx-kb-018" id="Cmx-o4-021"/>
                         <outlet property="customMenuTableView" destination="zAU-AM-qPB" id="TAv-cq-hfF"/>
                         <outlet property="iTermTabButton" destination="Lmz-5e-p2j" id="Vr0-XJ-pnx"/>
                         <outlet property="iTermTextField" destination="wVI-dH-WOK" id="oeJ-Rq-h9e"/>

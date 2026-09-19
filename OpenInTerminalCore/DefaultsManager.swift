@@ -376,7 +376,7 @@ public class DefaultsManager {
         defaultEditor = SupportedApps.textEdit.app
         setNewOption(.terminal, .window)
         setNewOption(.iTerm, .window)
-        setNewOption(.cmux, .tab)
+        setNewOption(.cmux, .workspace)
         isCustomMenuApplyToToolbar = false
         isCustomMenuApplyToContext = false
         customMenuIconOption = .no
