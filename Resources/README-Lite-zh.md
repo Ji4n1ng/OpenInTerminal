@@ -240,6 +240,17 @@ defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool false
 defaults write com.googlecode.iterm2 OpenFileInNewWindows -bool true
 ```
 
+### 4) 使用 cmux 时，打开新的标签页或者窗口
+
+当你在使用 `cmux` 时，你可以设置在当前 cmux 窗口中新建一个工作区（标签页），或者打开一个新的 cmux 窗口。**默认**是打开新的标签页。
+
+```
+# 打开新的标签
+defaults write wang.jianing.app.OpenInTerminal-Lite CmuxNewOption tab
+# 打开新的窗口
+defaults write wang.jianing.app.OpenInTerminal-Lite CmuxNewOption window
+```
+
 ## 常见问题 ❓
 
 <details><summary>1. 我不小心点了不授权的按钮</summary><br>

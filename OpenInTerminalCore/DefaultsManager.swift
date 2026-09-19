@@ -157,6 +157,8 @@ public class DefaultsManager {
         switch app {
         case .iTerm:
             option = Defaults[.iTermNewOption]
+        case .cmux:
+            option = Defaults[.cmuxNewOption]
         default:
             return nil
         }
@@ -177,6 +179,10 @@ public class DefaultsManager {
             if error != nil {
                 logw("Setting iTerm new option failed: \(String(describing: error))")
             }
+        case .cmux:
+            // Honored by App.openOutsideSandbox / openInSandbox, which drive the
+            // cmux CLI when a new window is requested.
+            Defaults[.cmuxNewOption] = newOption.rawValue
         default:
             return
         }
@@ -370,6 +376,7 @@ public class DefaultsManager {
         defaultEditor = SupportedApps.textEdit.app
         setNewOption(.terminal, .window)
         setNewOption(.iTerm, .window)
+        setNewOption(.cmux, .tab)
         isCustomMenuApplyToToolbar = false
         isCustomMenuApplyToContext = false
         customMenuIconOption = .no

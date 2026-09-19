@@ -33,6 +33,33 @@ struct Constants {
 //        static let neovim = "open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
 //        static let neovim = "open -na Alacritty --args -e /opt/homebrew/bin/nvim PATH"
         static let gitkraken = "open -na GitKraken --args --path"
+        /// Opens a directory in a *new* cmux window through the cmux CLI.
+        ///
+        /// Executed as `/bin/sh -c <script> <argv0> <cmux-cli-path> <directory>`.
+        /// The directory is only ever read from the positional parameter `$2`
+        /// and is never interpolated into the script text, so a crafted folder
+        /// name cannot inject shell commands. Steps: create a window, add a
+        /// workspace at the directory, close the blank workspace the window was
+        /// created with. When cmux is not running (no control socket) the plain
+        /// `cmux <directory>` form launches it, which already yields a new window.
+        static let cmuxNewWindow = """
+        export CMUX_QUIET=1
+        cli="$1"
+        dir="$2"
+        if "$cli" ping >/dev/null 2>&1; then
+            wid=$("$cli" new-window 2>/dev/null | awk '$1 == "OK" { print $2; exit }')
+            if [ -n "$wid" ]; then
+                initial=$("$cli" list-workspaces --window "$wid" --json 2>/dev/null | sed -n 's/^[[:space:]]*"id"[[:space:]]*:[[:space:]]*"\\([^"]*\\)".*/\\1/p' | head -n 1)
+                if "$cli" new-workspace --cwd "$dir" --window "$wid" --focus true >/dev/null 2>&1; then
+                    if [ -n "$initial" ]; then
+                        "$cli" close-workspace --workspace "$initial" --window "$wid" >/dev/null 2>&1
+                    fi
+                    exit 0
+                fi
+            fi
+        fi
+        exec "$cli" "$dir"
+        """
     }
     
 }
