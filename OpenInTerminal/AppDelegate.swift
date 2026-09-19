@@ -57,6 +57,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         logw("App terminated")
     }
     
+    /// Handles `openinterminal://` requests. Currently the only request is
+    /// `cmux/<directory>?mode=window|tab`, sent by the sandboxed Finder
+    /// extension, which cannot drive the cmux CLI itself.
+    func application(_ application: NSApplication, open urls: [URL]) {
+        for url in urls {
+            guard let request = App.cmuxRequest(from: url) else {
+                logw("Ignoring unsupported URL: \(url)")
+                continue
+            }
+            do {
+                try App.openCmux(path: request.path, option: request.option)
+            } catch {
+                logw("Failed to open \(request.path) in cmux (\(request.option.rawValue)): \(error)")
+            }
+        }
+    }
+    
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if !flag {
             showPreferencesWindow()
