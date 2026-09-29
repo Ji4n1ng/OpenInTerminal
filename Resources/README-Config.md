@@ -90,7 +90,7 @@ For macOS 14 and earlier, ensure the Finder Extension is enabled via System Pref
 If you select Neovim as your editor in OpenInTerminal, the app will use Kitty as the default terminal. To switch to a different terminal (supported options: Alacritty, WezTerm, and Kitty), update the configuration with the following command. Replace `<Your Name>` with your username and adjust the Neovim path (`/opt/homebrew/bin/nvim` in this example) to match your installation:
 
 ```
-defaults write /Users/<Your Name>/Library/Group\ Containers/group.wang.jianing.app.OpenInTerminal/Library/Preferences/group.wang.jianing.app.OpenInTerminal.plist NeovimCommand "open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
+defaults write /Users/<Your Name>/Library/Group\ Containers/C8VX3ZLX5U.group.wang.jianing.app.OpenInTerminal/Library/Preferences/C8VX3ZLX5U.group.wang.jianing.app.OpenInTerminal.plist NeovimCommand "open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
 ```
 
 Other terminal configurations:
@@ -115,7 +115,7 @@ open -na kitty --args --single-instance --instance-group 1 --directory
 If you want to customize this behavior, you can run the following command in your terminal. Make sure to replace `<Your Name>` with your username and adjust the open command as what you want:
 
 ```
-defaults write /Users/<Your Name>/Library/Group\ Containers/group.wang.jianing.app.OpenInTerminal/Library/Preferences/group.wang.jianing.app.OpenInTerminal.plist KittyCommand "open -na kitty --args --single-instance --instance-group 1 --directory"
+defaults write /Users/<Your Name>/Library/Group\ Containers/C8VX3ZLX5U.group.wang.jianing.app.OpenInTerminal/Library/Preferences/C8VX3ZLX5U.group.wang.jianing.app.OpenInTerminal.plist KittyCommand "open -na kitty --args --single-instance --instance-group 1 --directory"
 ```
 
 ## FAQ ❓

@@ -81,7 +81,8 @@ class GeneralPreferencesViewController: PreferencesViewController {
     // MARK: Refresh UI
     
     func refreshButtonState() {
-        let isLaunchAtLogin = DefaultsManager.shared.isLaunchAtLogin
+        let isLaunchAtLogin = LaunchAtLoginManager.isEnabledOrAwaitingApproval
+        DefaultsManager.shared.isLaunchAtLogin = isLaunchAtLogin
         launchButton.state = isLaunchAtLogin ? .on : .off
         
         let isHideStatusItem = DefaultsManager.shared.isHideStatusItem
@@ -179,9 +180,10 @@ class GeneralPreferencesViewController: PreferencesViewController {
     // MARK: Button Actions
     
     @IBAction func launchButtonClicked(_ sender: NSButton) {
-        let isLaunch = launchButton.state == .on
-        DefaultsManager.shared.isLaunchAtLogin = isLaunch
-        SMLoginItemSetEnabled(Constants.Id.LauncherApp as CFString, isLaunch)
+        let requestedState = launchButton.state == .on
+        let actualState = LaunchAtLoginManager.setEnabled(requestedState)
+        DefaultsManager.shared.isLaunchAtLogin = actualState
+        launchButton.state = actualState ? .on : .off
     }
     
     @IBAction func hideStatusItemButtonTapped(_ sender: NSButton) {

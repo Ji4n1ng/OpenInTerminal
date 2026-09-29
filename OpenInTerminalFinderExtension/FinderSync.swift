@@ -16,9 +16,19 @@ class FinderSync: FIFinderSync {
     override init() {
         super.init()
         let finderSync = FIFinderSyncController.default()
+
+        // Always include the filesystem root. On recent macOS releases the
+        // startup/data volume may be omitted from mountedVolumeURLs when hidden
+        // APFS volumes are skipped, which leaves the extension running but with
+        // no Finder locations in scope.
+        var directoryURLs: Set<URL> = [URL(fileURLWithPath: "/", isDirectory: true)]
         if let mountedVolumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: [.skipHiddenVolumes]) {
-            finderSync.directoryURLs = Set<URL>(mountedVolumes)
+            directoryURLs.formUnion(mountedVolumes)
         }
+        finderSync.directoryURLs = directoryURLs
+        NSLog("OpenInTerminal Finder extension monitoring: %@",
+              directoryURLs.map(\.path).sorted().joined(separator: ", "))
+
         // Monitor volumes
         let notificationCenter = NSWorkspace.shared.notificationCenter
         notificationCenter.addObserver(forName: NSWorkspace.didMountNotification, object: nil, queue: .main) { notification in
@@ -124,7 +134,7 @@ class FinderSync: FIFinderSync {
         // menu that will be attached under a single top level item
         let itemsMenu = useSubmenu ? NSMenu(title: "") : menu
 
-        guard let terminal = DefaultsManager.shared.defaultTerminal else { return menu }
+        let terminal = DefaultsManager.shared.defaultTerminal ?? SupportedApps.terminal.app
         let terminalTitle = terminal.name
         let openInTerminalItem = NSMenuItem(title: terminalTitle,
                                             action: #selector(openDefaultTerminal),
@@ -133,7 +143,7 @@ class FinderSync: FIFinderSync {
         openInTerminalItem.image = terminalIcon
         itemsMenu.addItem(openInTerminalItem)
 
-        guard let editor = DefaultsManager.shared.defaultEditor else { return menu }
+        let editor = DefaultsManager.shared.defaultEditor ?? SupportedApps.textEdit.app
         let editorTitle = editor.name
         let openInEditorItem = NSMenuItem(title: editorTitle,
                                             action: #selector(openDefaultEditor),
@@ -254,12 +264,12 @@ class FinderSync: FIFinderSync {
     // MARK: - Menu Actions
     
     @objc func openDefaultTerminal() {
-        guard let terminal = DefaultsManager.shared.defaultTerminal else { return }
+        let terminal = DefaultsManager.shared.defaultTerminal ?? SupportedApps.terminal.app
         open(terminal)
     }
     
     @objc func openDefaultEditor() {
-        guard let editor = DefaultsManager.shared.defaultEditor else { return }
+        let editor = DefaultsManager.shared.defaultEditor ?? SupportedApps.textEdit.app
         open(editor)
     }
     

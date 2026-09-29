@@ -125,3 +125,7 @@ iOSInjectionProject/
 n
 
 export/
+
+# Local validation artifacts, preference snapshots, and application backups
+outputs/
+__pycache__/

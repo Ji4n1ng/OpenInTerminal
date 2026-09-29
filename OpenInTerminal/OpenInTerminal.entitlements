@@ -4,7 +4,9 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.wang.jianing.app.OpenInTerminal</string>
+		<string>C8VX3ZLX5U.group.wang.jianing.app.OpenInTerminal</string>
+		<!-- Host-only access for migration from earlier #281 builds. -->
+		<string>C8VX3ZLX5U.wang.jianing.app.OpenInTerminal</string>
 	</array>
 	<key>com.apple.security.automation.apple-events</key>
 	<true/>

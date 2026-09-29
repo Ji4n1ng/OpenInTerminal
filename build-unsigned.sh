@@ -6,7 +6,9 @@
 # Strategy: build each app with signing turned off (so Xcode never demands a
 # provisioning profile for the app-groups / sandbox capabilities), then re-sign
 # the finished bundles ad-hoc ("Sign to Run Locally"). Ad-hoc signing is enough
-# for the apps to launch and for the Finder extension to be enabled locally.
+# for local execution, but does not authorize the Team-prefixed App Group.
+# Finder cannot share the main app preferences in this build; see
+# docs/ad-hoc-build.md for the signing requirements and expected limitation.
 #
 # For the full OpenInTerminal app the login-item helper is embedded into
 # Contents/Library/LoginItems and signed too, so "Launch at Login" works.

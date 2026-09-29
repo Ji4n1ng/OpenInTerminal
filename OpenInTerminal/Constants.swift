@@ -9,6 +9,7 @@
 import Cocoa
 import Foundation
 import OpenInTerminalCore
+import ServiceManagement
 
 struct Constants {
     
@@ -30,6 +31,68 @@ struct Constants {
     }
     
     static let PreferencesStoryboard = NSStoryboard(name: "Preferences", bundle: nil)
+}
+
+enum LaunchAtLoginManager {
+    static var isEnabledOrAwaitingApproval: Bool {
+        if #available(macOS 13.0, *) {
+            let status = SMAppService.mainApp.status
+            return status == .enabled || status == .requiresApproval
+        }
+
+        // The legacy API does not expose registration status. The saved value
+        // remains the source of truth on macOS 12 and earlier.
+        return DefaultsManager.shared.isLaunchAtLogin
+    }
+
+    /// Applies a user-requested login-item state and returns the state that the
+    /// preferences UI should display.
+    @discardableResult
+    static func setEnabled(_ enabled: Bool, openSettingsIfApprovalIsRequired: Bool = true) -> Bool {
+        if #available(macOS 13.0, *) {
+            let service = SMAppService.mainApp
+
+            do {
+                if enabled {
+                    switch service.status {
+                    case .enabled, .requiresApproval:
+                        break
+                    case .notRegistered, .notFound:
+                        try service.register()
+                    @unknown default:
+                        try service.register()
+                    }
+                } else if service.status != .notRegistered {
+                    try service.unregister()
+                }
+            } catch {
+                logw("Unable to \(enabled ? "register" : "unregister") launch at login: \(error.localizedDescription)")
+            }
+
+            if enabled && service.status == .requiresApproval {
+                logw("Launch at login requires approval in System Settings")
+                if openSettingsIfApprovalIsRequired {
+                    SMAppService.openSystemSettingsLoginItems()
+                }
+            }
+
+            return service.status == .enabled || service.status == .requiresApproval
+        }
+
+        let succeeded = SMLoginItemSetEnabled(Constants.Id.LauncherApp as CFString, enabled)
+        if !succeeded {
+            logw("Unable to \(enabled ? "enable" : "disable") the legacy launch-at-login helper")
+        }
+        return succeeded ? enabled : DefaultsManager.shared.isLaunchAtLogin
+    }
+
+    /// Upgrades a previously saved launch-at-login preference to SMAppService
+    /// without repeatedly registering an already-known service.
+    static func reconcileSavedPreference() {
+        guard DefaultsManager.shared.isLaunchAtLogin else { return }
+        let actualState = setEnabled(true, openSettingsIfApprovalIsRequired: false)
+        DefaultsManager.shared.isLaunchAtLogin = actualState
+    }
 }
 
 extension NSImage {
