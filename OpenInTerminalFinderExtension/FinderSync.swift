@@ -10,15 +10,23 @@ import Cocoa
 import FinderSync
 import OpenInTerminalCore
 import Carbon
+import os
+
+private let finderLog = Logger(subsystem: "wang.jianing.app.OpenInTerminal", category: "FinderSync")
 
 class FinderSync: FIFinderSync {
     
     override init() {
         super.init()
         let finderSync = FIFinderSyncController.default()
+        var directories = Set<URL>()
+        // Always cover the root volume: the toolbar item is offered for every
+        // window Finder thinks the extension belongs to.
+        directories.insert(URL(fileURLWithPath: "/"))
         if let mountedVolumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: [.skipHiddenVolumes]) {
-            finderSync.directoryURLs = Set<URL>(mountedVolumes)
+            directories.formUnion(mountedVolumes)
         }
+        finderSync.directoryURLs = directories
         // Monitor volumes
         let notificationCenter = NSWorkspace.shared.notificationCenter
         notificationCenter.addObserver(forName: NSWorkspace.didMountNotification, object: nil, queue: .main) { notification in
@@ -26,6 +34,14 @@ class FinderSync: FIFinderSync {
                 finderSync.directoryURLs.insert(volumeURL)
             }
         }
+
+        // Diagnostics: this line tells us whether the sandboxed extension can
+        // actually see the configuration published by the host app.
+        let terminalName = DefaultsManager.shared.defaultTerminal?.name ?? "nil"
+        let editorName = DefaultsManager.shared.defaultEditor?.name ?? "nil"
+        let configPath = SharedConfig.fileURL?.path ?? "nil"
+        logw("FinderSync started. config=\(configPath) terminal=\(terminalName) editor=\(editorName) customMenu=\(DefaultsManager.shared.customMenuOptions?.count ?? 0)")
+        finderLog.notice("FinderSync started config=\(configPath, privacy: .public) terminal=\(terminalName, privacy: .public) editor=\(editorName, privacy: .public)")
     }
 
     override var toolbarItemName: String {
@@ -48,6 +64,7 @@ class FinderSync: FIFinderSync {
         switch menuKind {
 
         case .contextualMenuForContainer,
+             .contextualMenuForSidebar,
              .contextualMenuForItems:
             // need to hide or not
             let isHideContextMenuItems = DefaultsManager.shared.isHideContextMenuItems
@@ -76,7 +93,26 @@ class FinderSync: FIFinderSync {
         default:
             break
         }
-        
+
+        // An empty menu is indistinguishable from a dead toolbar button:
+        // Finder simply shows nothing. Never hand it an empty menu.
+        if menu.items.isEmpty {
+            menu = createFallbackMenu()
+        }
+        logw("menu(for:) kind=\(menuKind.rawValue): \(menu.items.map { $0.title })")
+        finderLog.notice("menu(for:) kind=\(menuKind.rawValue) items=\(menu.items.map { $0.title }, privacy: .public)")
+
+        return menu
+    }
+
+    /// Minimal but functional menu used when no configuration could be read.
+    func createFallbackMenu() -> NSMenu {
+        let menu = NSMenu(title: "")
+        let openItem = NSMenuItem(title: SupportedApps.terminal.name,
+                                  action: #selector(openDefaultTerminal),
+                                  keyEquivalent: "")
+        menu.addItem(openItem)
+        menu.addItem(copyPathItem)
         return menu
     }
     
@@ -124,16 +160,18 @@ class FinderSync: FIFinderSync {
         // menu that will be attached under a single top level item
         let itemsMenu = useSubmenu ? NSMenu(title: "") : menu
 
-        guard let terminal = DefaultsManager.shared.defaultTerminal else { return menu }
-        let terminalTitle = terminal.name
-        let openInTerminalItem = NSMenuItem(title: terminalTitle,
+        let terminalOptional = DefaultsManager.shared.defaultTerminal
+        let editorOptional = DefaultsManager.shared.defaultEditor
+
+        guard let terminal = terminalOptional else { return menu }
+        let openInTerminalItem = NSMenuItem(title: terminal.name,
                                             action: #selector(openDefaultTerminal),
                                             keyEquivalent: "")
         let terminalIcon = DefaultsManager.shared.getAppIcon(terminal)
         openInTerminalItem.image = terminalIcon
         itemsMenu.addItem(openInTerminalItem)
 
-        guard let editor = DefaultsManager.shared.defaultEditor else { return menu }
+        guard let editor = editorOptional else { return menu }
         let editorTitle = editor.name
         let openInEditorItem = NSMenuItem(title: editorTitle,
                                             action: #selector(openDefaultEditor),

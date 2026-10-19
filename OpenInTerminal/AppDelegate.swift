@@ -27,7 +27,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Lifecycle
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        // Bring preferences that only live in the legacy App Group suite into
+        // the shared file the sandboxed Finder extension can read, then publish
+        // the complete snapshot so the toolbar/context menus never start empty.
+        SharedConfig.migrateFromLegacyAppGroup()
         DefaultsManager.shared.firstSetup()
+        SharedConfig.publish(from: Defaults)
         addObserver()
         terminateOpenInTerminalHelper()
         setStatusItemIcon()

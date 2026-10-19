@@ -98,7 +98,12 @@ public class DefaultsManager {
     
     public var defaultTerminal: App? {
         get {
-            guard let terminalName = Defaults[.defaultTerminal] else { return nil }
+            guard let terminalName = Defaults[.defaultTerminal] else {
+                // Never hand an empty configuration to the Finder extension:
+                // fall back to the system Terminal so the toolbar menu always
+                // has at least one working action.
+                return SupportedApps.terminal.app
+            }
             // resolve supported apps case-insensitively so the canonical name and bundleId are used
             if let supported = SupportedApps.from(name: terminalName) {
                 return supported.app
@@ -115,7 +120,9 @@ public class DefaultsManager {
     
     public var defaultEditor: App? {
         get {
-            guard let editorName = Defaults[.defaultEditor] else { return nil }
+            guard let editorName = Defaults[.defaultEditor] else {
+                return SupportedApps.textEdit.app
+            }
             // resolve supported apps case-insensitively so the canonical name and bundleId are used
             if let supported = SupportedApps.from(name: editorName) {
                 return supported.app
@@ -381,6 +388,7 @@ public class DefaultsManager {
         logw("Remove all UserDefaults")
         Defaults.removePersistentDomain(forName: Constants.Id.Group)
         Defaults.synchronize()
+        SharedConfig.removeAll()
     }
     
 }
