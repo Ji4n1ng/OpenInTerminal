@@ -16,6 +16,10 @@ struct Constants {
         static let OpenInTerminalLite = "wang.jianing.app.OpenInTerminal-Lite"
         static let OpenInEditorLite = "wang.jianing.app.OpenInEditor-Lite"
         static let Finder = "com.apple.Finder"
+        /// Bundle identifier of the Finder Sync extension that is embedded in
+        /// the main app. The extension's `Application Scripts` directory is
+        /// used as the shared, sandbox-readable configuration directory.
+        static let FinderExtension = "wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension"
     }
     
     /// General AppleScript for opening apps

@@ -22,14 +22,15 @@ public var Defaults: UserDefaults = {
 }()
 
 public class DefaultsKeys {
-    fileprivate init() {}
+    let _key: String
+    fileprivate init(_ key: String) {
+        self._key = key
+    }
 }
 
 public class DefaultsKey<ValueType>: DefaultsKeys {
-    let _key: String
-    
-    init(_ key: String) {
-        self._key = key
+    override init(_ key: String) {
+        super.init(key)
     }
 }
 
@@ -62,49 +63,142 @@ public extension DefaultsKeys {
     static let liteDefaultEditor = DefaultsKey<String>("LiteDefaultEditor")
 }
 
+/// Values written by the host app are mirrored into `SharedConfig` so the
+/// sandboxed Finder extension - which cannot read the host's preferences -
+/// still sees the current configuration. Inside the extension the mirror is the
+/// primary source.
+private enum SharedMirror {
+    static func object(_ key: String) -> Any? {
+        guard SharedConfig.isSandboxedExtension else { return nil }
+        return SharedConfig.object(forKey: key)
+    }
+
+    static func store(_ value: Any?, forKey key: String) {
+        SharedConfig.set(value, forKey: key)
+    }
+}
+
 public extension UserDefaults {
     subscript(key: DefaultsKey<String>) -> String? {
-        get { return string(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) { return value as? String }
+            return string(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
     subscript(key: DefaultsKey<Bool>) -> Bool {
-        get { return bool(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) {
+                if let number = value as? NSNumber { return number.boolValue }
+                return value as? Bool ?? false
+            }
+            return bool(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
     subscript(key: DefaultsKey<Int>) -> Int {
-        get { return integer(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) {
+                if let number = value as? NSNumber { return number.intValue }
+                return value as? Int ?? 0
+            }
+            return integer(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
     subscript(key: DefaultsKey<Float>) -> Float {
-        get { return float(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) {
+                if let number = value as? NSNumber { return number.floatValue }
+                return value as? Float ?? 0
+            }
+            return float(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
     subscript(key: DefaultsKey<Double>) -> Double {
-        get { return double(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) {
+                if let number = value as? NSNumber { return number.doubleValue }
+                return value as? Double ?? 0
+            }
+            return double(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
     subscript(key: DefaultsKey<URL>) -> URL? {
-        get { return url(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) { return value as? URL }
+            return url(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
     subscript(key: DefaultsKey<Any>) -> Any? {
-        get { return value(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) { return value }
+            return value(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
     subscript(key: DefaultsKey<[Any]>) -> [Any]? {
-        get { return array(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) { return value as? [Any] }
+            return array(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
     subscript(key: DefaultsKey<Data>) -> Data? {
-        get { return data(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) { return value as? Data }
+            return data(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
     subscript(key: DefaultsKey<[String : Any]>) -> [String : Any]? {
-        get { return dictionary(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) { return value as? [String : Any] }
+            return dictionary(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
     subscript(key: DefaultsKey<[String]>) -> [String]? {
-        get { return stringArray(forKey: key._key) }
-        set { set(newValue, forKey: key._key) }
+        get {
+            if let value = SharedMirror.object(key._key) { return value as? [String] }
+            return stringArray(forKey: key._key)
+        }
+        set {
+            SharedMirror.store(newValue, forKey: key._key)
+            set(newValue, forKey: key._key)
+        }
     }
 }
