@@ -98,7 +98,7 @@ public class DefaultsManager {
     
     public var defaultTerminal: App? {
         get {
-            guard let terminalName = Defaults[.defaultTerminal] else { return nil }
+            let terminalName = Defaults[.defaultTerminal] ?? SupportedApps.terminal.name
             // resolve supported apps case-insensitively so the canonical name and bundleId are used
             if let supported = SupportedApps.from(name: terminalName) {
                 return supported.app
@@ -115,7 +115,7 @@ public class DefaultsManager {
     
     public var defaultEditor: App? {
         get {
-            guard let editorName = Defaults[.defaultEditor] else { return nil }
+            let editorName = Defaults[.defaultEditor] ?? SupportedApps.textEdit.name
             // resolve supported apps case-insensitively so the canonical name and bundleId are used
             if let supported = SupportedApps.from(name: editorName) {
                 return supported.app
@@ -379,8 +379,13 @@ public class DefaultsManager {
     
     public func removeAllUserDefaults() {
         logw("Remove all UserDefaults")
-        Defaults.removePersistentDomain(forName: Constants.Id.Group)
+        if let domain = Bundle.main.bundleIdentifier {
+            Defaults.removePersistentDomain(forName: domain)
+        }
+        // Reset must not re-import the legacy preferences on the next launch.
+        Defaults.set(true, forKey: SharedPreferences.migrationKey)
         Defaults.synchronize()
+        SharedPreferences.publish()
     }
     
 }
