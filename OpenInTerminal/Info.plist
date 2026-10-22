@@ -26,15 +26,6 @@
 	<string>YES</string>
 	<key>NSAppleEventsUsageDescription</key>
 	<string>Please give permissions to access your Finder &amp; Terminal</string>
-	<key>NSExtension</key>
-	<dict>
-		<key>NSExtensionAttributes</key>
-		<dict/>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.FinderSync</string>
-		<key>NSExtensionPrincipalClass</key>
-		<string>$(PRODUCT_MODULE_NAME).FinderSync</string>
-	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 Jianing Wang. All rights reserved.</string>
 	<key>NSMainNibFile</key>

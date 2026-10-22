@@ -27,7 +27,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Lifecycle
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        SharedPreferences.startHost()
         DefaultsManager.shared.firstSetup()
+        SharedPreferences.publish()
         addObserver()
         terminateOpenInTerminalHelper()
         setStatusItemIcon()
@@ -51,6 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationWillTerminate(_ notification: Notification) {
+        SharedPreferences.publish()
         NSStatusBar.system.removeStatusItem(statusItem)
         
         removeObserver()

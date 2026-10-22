@@ -83,6 +83,31 @@ For macOS 14 and earlier, ensure the Finder Extension is enabled via System Pref
   <img src="https://user-images.githubusercontent.com/11001224/78590336-448f4180-7874-11ea-827c-ad3a7bffca5e.png" width="400px">
 </div>
 
+## Preferences on macOS 26 and later
+
+The full app saves preferences in its own `wang.jianing.app.OpenInTerminal`
+UserDefaults domain. It copies accessible preferences from the legacy App Group
+once, without deleting them or overwriting settings already saved in the new domain.
+If the old installation could not save settings, choose your terminal and editor
+again after updating.
+
+The host publishes Finder preferences as `shared-settings.plist` in
+`~/Library/Application Scripts/wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension/`.
+The Finder extension reads that snapshot whenever it builds a menu. This uses the
+same directory as its existing AppleScripts and works with ad-hoc signing; an App
+Group provisioning profile or Full Disk Access is not required. Launch the host
+once after installation to publish preferences and install its scripts.
+
+To run the preference regression checks:
+
+```sh
+Tests/SharedPreferences/run.sh
+```
+
+For a local build with Xcode 27, pass `MACOSX_DEPLOYMENT_TARGET=12.0` to
+`xcodebuild`. Older deployment targets are rejected by that toolchain. This local
+build setting does not change the deployment targets stored in the project.
+
 ## Custom Configuration
 
 ### For Neovim Users
