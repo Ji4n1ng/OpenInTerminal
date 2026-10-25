@@ -21,8 +21,8 @@
 
 | Özellikler | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| Terminal Desteği, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty) ve [kitty](https://sw.kovidgoyal.net/kitty/). | ✅ | ✅ |
-| TextEdit Desteği, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim) and [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm). | ✅ | ✅ |
+| Terminal Desteği, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty), [kitty](https://sw.kovidgoyal.net/kitty/) ve [Otty](https://otty.sh/). | ✅ | ✅ |
+| TextEdit Desteği, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/)(AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm), [Glim](https://github.com/NeoPanic/Glim) ve [Obsidian](https://obsidian.md/). | ✅ | ✅ |
 | Özelleştirilmiş uygulamalarda aç. (⚠️Bütün uygulamar desteklenmemektedir.) | ✅ | ✅ |
 | Türkçe, İngilizce, Çince, Fransızca, Rusça, İtalyanca ve İspanyolca dil desteği. | ✅ | ✅ |
 | GUI ile özelleştirme | ✅ | ❌ |

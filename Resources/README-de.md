@@ -21,8 +21,8 @@
 
 | Funktionen | OpenInTerminal | OpenInTerminal-Lite & OpenInEditor-Lite |
 | --- | --- | --- |
-| Unterstützt Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty) und [kitty](https://sw.kovidgoyal.net/kitty/). | ✅ | ✅ |
-| Unterstützt TextEdit, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/) (AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm), und [Typora](https://typora.io/). | ✅ | ✅ |
+| Unterstützt Terminal, [iTerm](https://www.iterm2.com/), [Hyper](https://github.com/zeit/hyper), [Alacritty](https://github.com/jwilm/alacritty), [kitty](https://sw.kovidgoyal.net/kitty/) und [Otty](https://otty.sh/). | ✅ | ✅ |
+| Unterstützt TextEdit, [Visual Studio Code](https://code.visualstudio.com/), [VSCode Insiders](https://code.visualstudio.com/insiders/), [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/), [VSCodium](https://github.com/VSCodium/vscodium), [BBEdit](https://www.barebones.com/products/bbedit/), [TextMate](https://macromates.com), [CotEditor](https://coteditor.com/), [MacVim](https://github.com/macvim-dev/macvim), [JetBrains](https://www.jetbrains.com/) (AppCode, CLion, GoLand, IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm), [Glim](https://github.com/NeoPanic/Glim), [Typora](https://typora.io/) und [Obsidian](https://obsidian.md/). | ✅ | ✅ |
 | In benutzerdefinierten Programmen öffnen. (⚠️ Es werden nicht alle Apps unterstützt.) | ✅ | ✅ |
 | Unterstützt Englisch, Chinesisch, Französisch, Russisch, Italienisch, Spanisch and Türkisch | ✅ | ✅ |
 | GUI-Einstellungen | ✅ | ❌ |

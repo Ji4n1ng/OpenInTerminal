@@ -63,14 +63,20 @@ extension App: Openable {
         switch self.type {
         case .terminal:
             // get path
-            var path = try FinderManager.shared.getPathToFrontFinderWindowOrSelectedFile()
+            let obsidianDirectoryPath = FinderManager.shared.getFrontmostObsidianDirectoryPath()
+            var path: String
+            if let obsidianDirectoryPath = obsidianDirectoryPath {
+                path = obsidianDirectoryPath
+            } else {
+                path = try FinderManager.shared.getPathToFrontFinderWindowOrSelectedFile()
+            }
             if path == "" {
                 // No Finder window and no file selected.
                 guard let desktopPath = FinderManager.shared.getDesktopPath() else { return }
                 path = desktopPath
             }
 
-            if SupportedApps.is(self, is: .terminal) {
+            if SupportedApps.is(self, is: .terminal), obsidianDirectoryPath == nil {
                 // this app is supported: Terminal
                 let url = URL(fileURLWithPath: path)
                 guard let terminal = SBApplication(bundleIdentifier: SupportedApps.terminal.bundleId) as TerminalApplication?,
@@ -80,7 +86,8 @@ extension App: Openable {
                 open([url])
                 terminal.activate()
             } else {
-                // this app is general (e.g. iTerm, Alacritty, kitty)
+                // this app is general (e.g. iTerm, Alacritty, kitty). Terminal also
+                // opens an Obsidian note folder here, as `open -a Terminal <path>`.
                 var arguments = DefaultsManager.shared.getOpenArguments(self)
                 arguments.append(path)
                 try runOpen(arguments)
@@ -88,7 +95,12 @@ extension App: Openable {
 
         case .editor:
             // get paths
-            var paths = try FinderManager.shared.getFullPathsToFrontFinderWindowOrSelectedFile()
+            var paths: [String]
+            if let obsidianFileUrl = FinderManager.shared.getFrontmostObsidianFileUrl() {
+                paths = [obsidianFileUrl.path]
+            } else {
+                paths = try FinderManager.shared.getFullPathsToFrontFinderWindowOrSelectedFile()
+            }
             if paths.count == 0 {
                 // No Finder window and no file selected.
                 guard let desktopPath = FinderManager.shared.getDesktopPath() else { return }
@@ -148,4 +160,3 @@ extension App: Openable {
     }
     
 }
-

@@ -91,6 +91,7 @@ Set the following app as the default app to open:
 | Alacritty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal Alacritty` |
 | cmux | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal cmux` |
 | kitty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal kitty` |
+| Otty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal Otty` |
 | TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextEdit` |
 | VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor VSCodium` |
 | BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor BBEdit` |
@@ -98,7 +99,9 @@ Set the following app as the default app to open:
 | TextMate | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextMate` |
 | CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CotEditor` |
 | MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor MacVim` |
+| Glim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Glim` |
 | Typora | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Typora` |
+| Obsidian | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Obsidian` |
 | Neovim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Neovim` |
 | Nova | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Nova` |
 | Cursor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Cursor` |

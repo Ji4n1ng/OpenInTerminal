@@ -112,6 +112,22 @@ build setting does not change the deployment targets stored in the project.
 
 ## Custom Configuration
 
+### For Obsidian Users
+
+When Obsidian is the frontmost app, OpenInTerminal can open terminals in the directory of the active note and editors with the active note file. This applies to the keyboard shortcuts and the menu bar menu. The Finder toolbar and the Finder context menu still use the Finder selection.
+
+This requires Obsidian's official command-line tool, which is bundled with recent Obsidian desktop releases. Turn it on in Obsidian under **Settings → General → Command line interface**.
+
+OpenInTerminal checks the following paths:
+
+```
+/Applications/Obsidian.app/Contents/MacOS/obsidian-cli
+/opt/homebrew/bin/obsidian
+/usr/local/bin/obsidian
+```
+
+If the Obsidian CLI is unavailable, does not answer within 2 seconds, or cannot resolve the active file, OpenInTerminal falls back to the normal Finder-based behavior.
+
 ### For Neovim Users
 
 If you select Neovim as your editor in OpenInTerminal, the app will use Kitty as the default terminal. To switch to a different terminal (supported options: Alacritty, WezTerm, and Kitty), update the configuration with the following command. Adjust the Neovim path (`/opt/homebrew/bin/nvim` in this example) to match your installation, then quit and reopen OpenInTerminal so the Finder extension receives the change:

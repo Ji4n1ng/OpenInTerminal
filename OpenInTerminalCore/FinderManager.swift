@@ -12,7 +12,197 @@ import ScriptingBridge
 public class FinderManager {
     
     public static var shared = FinderManager()
-    
+
+    public func getFrontmostObsidianFileUrl() -> URL? {
+        guard NSWorkspace.shared.frontmostApplication?.bundleIdentifier == SupportedApps.obsidian.bundleId else {
+            return nil
+        }
+
+        // Ask the CLI for the vault of the active file first. `obsidian.json`
+        // is only a fallback: it cannot tell which of several open vaults is in front.
+        guard let activeFile = getFrontmostObsidianActiveFile(),
+              let vaultPath = getObsidianCliVaultPath(activeFile.cliUrl) ?? getFrontmostObsidianVaultPath() else {
+            return nil
+        }
+
+        let vaultUrl = URL(fileURLWithPath: vaultPath).standardizedFileURL
+        let activeFileUrl = vaultUrl.appendingPathComponent(activeFile.path).standardizedFileURL
+        guard activeFileUrl.path.hasPrefix(vaultUrl.path + "/"),
+              FileManager.default.fileExists(atPath: activeFileUrl.path) else {
+            return nil
+        }
+
+        return activeFileUrl
+    }
+
+    public func getFrontmostObsidianDirectoryPath() -> String? {
+        guard let activeFileUrl = getFrontmostObsidianFileUrl() else { return nil }
+        var isDirectory: ObjCBool = false
+        guard FileManager.default.fileExists(atPath: activeFileUrl.path, isDirectory: &isDirectory) else {
+            return nil
+        }
+
+        if isDirectory.boolValue {
+            return activeFileUrl.path
+        }
+
+        return activeFileUrl.deletingLastPathComponent().path
+    }
+
+    private func getFrontmostObsidianVaultPath() -> String? {
+        let obsidianConfigUrl = FileManager.default
+            .homeDirectoryForCurrentUser
+            .appendingPathComponent("Library")
+            .appendingPathComponent("Application Support")
+            .appendingPathComponent("obsidian")
+            .appendingPathComponent("obsidian.json")
+
+        guard let data = try? Data(contentsOf: obsidianConfigUrl),
+              let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let vaults = json["vaults"] as? [String: [String: Any]] else {
+            return nil
+        }
+
+        func timestamp(_ vault: [String: Any]) -> Double {
+            if let doubleValue = vault["ts"] as? Double {
+                return doubleValue
+            }
+            if let intValue = vault["ts"] as? Int {
+                return Double(intValue)
+            }
+            return 0
+        }
+
+        let openVault = vaults.values.filter { vault in
+            vault["open"] as? Bool == true
+        }.max { left, right in
+            timestamp(left) < timestamp(right)
+        }
+        let latestVault = vaults.values.max { left, right in
+            timestamp(left) < timestamp(right)
+        }
+
+        guard let path = (openVault ?? latestVault)?["path"] as? String else {
+            return nil
+        }
+
+        var isDirectory: ObjCBool = false
+        guard FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory),
+              isDirectory.boolValue else {
+            return nil
+        }
+
+        return path
+    }
+
+    /// Returns the vault-relative path of the active file and the CLI that found it.
+    private func getFrontmostObsidianActiveFile() -> (cliUrl: URL, path: String)? {
+        for cliUrl in obsidianCliUrls {
+            guard FileManager.default.isExecutableFile(atPath: cliUrl.path),
+                  let output = runObsidianCli(cliUrl, arguments: ["file"]) else {
+                continue
+            }
+
+            for line in output.components(separatedBy: .newlines) {
+                let columns = line.split(separator: "\t", maxSplits: 1, omittingEmptySubsequences: false)
+                guard columns.count == 2,
+                      columns[0] == "path" else {
+                    continue
+                }
+
+                let path = String(columns[1])
+                guard !path.isEmpty,
+                      !path.hasPrefix("/") else {
+                    return nil
+                }
+
+                return (cliUrl, path)
+            }
+        }
+
+        return nil
+    }
+
+    /// Returns the path of the active vault from `obsidian vault info=path`.
+    private func getObsidianCliVaultPath(_ cliUrl: URL) -> String? {
+        guard let output = runObsidianCli(cliUrl, arguments: ["vault", "info=path"]) else {
+            return nil
+        }
+
+        let path = output.trimmingCharacters(in: .newlines)
+        var isDirectory: ObjCBool = false
+        guard path.hasPrefix("/"),
+              FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory),
+              isDirectory.boolValue else {
+            return nil
+        }
+
+        return path
+    }
+
+    private var obsidianCliUrls: [URL] {
+        var urls = [
+            URL(fileURLWithPath: "/Applications/Obsidian.app/Contents/MacOS/obsidian-cli"),
+            URL(fileURLWithPath: "/opt/homebrew/bin/obsidian"),
+            URL(fileURLWithPath: "/usr/local/bin/obsidian")
+        ]
+
+        if let appUrl = NSWorkspace.shared.urlForApplication(withBundleIdentifier: SupportedApps.obsidian.bundleId) {
+            urls.insert(appUrl.appendingPathComponent("Contents/MacOS/obsidian-cli"), at: 0)
+        }
+
+        return urls.reduce(into: [URL]()) { result, url in
+            // CLI registration links /usr/local/bin/obsidian to the bundled CLI.
+            let url = url.resolvingSymlinksInPath()
+            if !result.contains(url) {
+                result.append(url)
+            }
+        }
+    }
+
+    /// Runs the Obsidian CLI and returns its output. Returns nil if the CLI fails
+    /// or does not finish in time, so a hung CLI cannot block OpenInTerminal.
+    private func runObsidianCli(_ cliUrl: URL, arguments: [String]) -> String? {
+        let process = Process()
+        let outputPipe = Pipe()
+
+        process.executableURL = cliUrl
+        process.arguments = arguments
+        // The CLI picks the vault from its working directory if that is a vault;
+        // use "/" so it always answers for the active vault.
+        process.currentDirectoryURL = URL(fileURLWithPath: "/")
+        process.standardOutput = outputPipe
+        process.standardError = FileHandle.nullDevice
+
+        do {
+            try process.run()
+        } catch {
+            return nil
+        }
+
+        // Read the output while the CLI runs, so it cannot block on a full pipe.
+        var data = Data()
+        let reading = DispatchGroup()
+        reading.enter()
+        DispatchQueue.global(qos: .userInitiated).async {
+            data = outputPipe.fileHandleForReading.readDataToEndOfFile()
+            reading.leave()
+        }
+        guard reading.wait(timeout: .now() + obsidianCliTimeout) == .success else {
+            process.terminate()
+            return nil
+        }
+
+        process.waitUntilExit()
+        guard process.terminationStatus == 0 else {
+            return nil
+        }
+
+        return String(data: data, encoding: .utf8)
+    }
+
+    private let obsidianCliTimeout: TimeInterval = 2
+
     /// Get full url to front Finder window or selected file
     public func getFullUrlToFrontFinderWindowOrSelectedFile() throws -> URL? {
 

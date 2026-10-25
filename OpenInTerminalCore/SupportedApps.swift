@@ -25,6 +25,7 @@ public enum SupportedApps: String, CaseIterable {
     case fork = "Fork"
     case ghostty = "Ghostty"
     case kaku = "Kaku"
+    case otty = "Otty"
     
     // MARK: - Editors
     case textEdit = "TextEdit"
@@ -38,7 +39,9 @@ public enum SupportedApps: String, CaseIterable {
     case textMate = "TextMate"
     case cotEditor = "CotEditor"
     case macVim = "MacVim"
+    case glim = "Glim"
     case typora = "Typora"
+    case obsidian = "Obsidian"
     case nova = "Nova"
     case cursor = "Cursor"
     case neovim = "Neovim"
@@ -74,7 +77,7 @@ public enum SupportedApps: String, CaseIterable {
     
     public var type: AppType {
         switch self {
-        case .terminal, .iTerm, .hyper, .alacritty, .kitty, .wezterm, .tabby, .warp, .cmux, .githubDesktop, .fork, .ghostty, .gitKraken, .kaku:
+        case .terminal, .iTerm, .hyper, .alacritty, .kitty, .wezterm, .tabby, .warp, .cmux, .githubDesktop, .fork, .ghostty, .gitKraken, .kaku, .otty:
             return .terminal
         default:
             return .editor
@@ -125,6 +128,7 @@ public enum SupportedApps: String, CaseIterable {
         case .fork: return ""
         case .ghostty: return "com.mitchellh.ghostty"
         case .kaku: return "fun.tw93.kaku"
+        case .otty: return "io.appmakes.otty"
         // Editors
         case .textEdit: return "com.apple.TextEdit"
         case .xcode: return "com.apple.Xcode"
@@ -137,7 +141,9 @@ public enum SupportedApps: String, CaseIterable {
         case .textMate: return "com.macromates.TextMate"
         case .cotEditor: return ""
         case .macVim: return "org.vim.MacVim"
+        case .glim: return "io.github.jony4.glimpse"
         case .typora: return "abnerworks.Typora"
+        case .obsidian: return "md.obsidian"
         case .nova: return "com.panic.Nova"
         case .cursor: return "com.todesktop.230313mzl4w4u92"
         case .appCode: return "com.jetbrains.appcode"
