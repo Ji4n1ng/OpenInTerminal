@@ -162,6 +162,21 @@ defaults write wang.jianing.app.OpenInTerminal KittyCommand "open -na kitty --ar
 <details><summary>Oops, hit <code>Don't Allow</code> button by mistake.</summary><br>
 <p>No sweat! Just run the following command in your terminal, and it'll reset the permissions in System Preferences.</p>
 <br><code>tccutil reset AppleEvents wang.jianing.app.OpenInTerminal</code><br>
+<p>If no prompt appears after the reset, see the next question.</p>
+</details>
+
+<details><summary>Nothing happens, and no prompt asks to control Finder.</summary><br>
+<p>Opening a terminal or editor from the menu bar or with a global shortcut does nothing. macOS never shows the prompt that says “OpenInTerminal” wants access to control “Finder”. OpenInTerminal is not listed in System Settings > Privacy & Security > Automation, and <code>tccutil reset AppleEvents wang.jianing.app.OpenInTerminal</code> does not help. The log <code>~/Library/Logs/OpenInTerminal/OpenInTerminal-0.log</code> shows <code>Cannot access Finder, please check permissions.</code></p>
+<p>This happens when System Integrity Protection (SIP) is disabled and the boot-arg <code>amfi_get_out_of_my_way=1</code> is set. With AMFI off, macOS does not show this prompt for apps that Apple did not sign. It denies the access instead. This affects all such apps that control other apps; it is not a bug in OpenInTerminal.</p>
+<p>To check, run these commands. This is the cause if SIP is <code>disabled</code> and boot-args contains <code>amfi_get_out_of_my_way=1</code>.</p>
+<pre><code>csrutil status
+nvram boot-args</code></pre>
+<p>The system log also shows it (use the full path, because <code>log</code> is a zsh builtin). Look for <code>Policy disallows prompt for wang.jianing.app.OpenInTerminal</code>.</p>
+<pre><code>/usr/bin/log show --last 5m --predicate 'process == "tccd" AND eventMessage CONTAINS "Policy disallows"'</code></pre>
+<p>To fix it, remove the boot-arg and restart your Mac. This command removes all boot-args. If you need other boot-args, set them again without <code>amfi_get_out_of_my_way=1</code>.</p>
+<pre><code>sudo nvram -d boot-args</code></pre>
+<p>After the restart, open a Finder window, use OpenInTerminal again, and click <code>Allow</code> (or <code>OK</code>) in the prompt.</p>
+<p>If you must keep AMFI off, there is no supported fix. Apps that got the permission before you set the boot-arg keep it, so they still work.</p>
 </details>
 
 <details><summary>Special characters in the <code>path</code>.</summary><br>

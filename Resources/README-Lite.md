@@ -256,19 +256,34 @@ tccutil reset AppleEvents wang.jianing.app.OpenInTerminal-Lite
 # For OpenInEditor-Lite:
 tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 </code></pre>
+<p>If no prompt appears after the reset, see the next question.</p>
 </details>
 
-<details><summary>2. Special characters in the <code>path</code>.</summary><br>
+<details><summary>2. Nothing happens, and no prompt asks to control Finder.</summary><br>
+<p>You click the app in the Finder toolbar, and nothing happens. macOS never shows the prompt that says “OpenInTerminal-Lite” (or “OpenInEditor-Lite”) wants access to control “Finder”. The app is not listed in System Settings > Privacy & Security > Automation, and the <code>tccutil reset</code> commands above do not help. The log <code>~/Library/Logs/logfile-0.log</code> shows <code>The operation couldn’t be completed. (OpenInTerminalCore.OITError error 3.)</code></p>
+<p>This happens when System Integrity Protection (SIP) is disabled and the boot-arg <code>amfi_get_out_of_my_way=1</code> is set. With AMFI off, macOS does not show this prompt for apps that Apple did not sign. It denies the access instead. This affects all such apps that control other apps; it is not a bug in OpenInTerminal-Lite.</p>
+<p>To check, run these commands. This is the cause if SIP is <code>disabled</code> and boot-args contains <code>amfi_get_out_of_my_way=1</code>.</p>
+<pre><code>csrutil status
+nvram boot-args</code></pre>
+<p>The system log also shows it (use the full path, because <code>log</code> is a zsh builtin). Look for <code>Policy disallows prompt for wang.jianing.app.OpenInTerminal-Lite</code> (or <code>wang.jianing.app.OpenInEditor-Lite</code>).</p>
+<pre><code>/usr/bin/log show --last 5m --predicate 'process == "tccd" AND eventMessage CONTAINS "Policy disallows"'</code></pre>
+<p>To fix it, remove the boot-arg and restart your Mac. This command removes all boot-args. If you need other boot-args, set them again without <code>amfi_get_out_of_my_way=1</code>.</p>
+<pre><code>sudo nvram -d boot-args</code></pre>
+<p>After the restart, open a Finder window, click the app again, and click <code>Allow</code> (or <code>OK</code>) in the prompt.</p>
+<p>If you must keep AMFI off, there is no supported fix. Apps that got the permission before you set the boot-arg keep it, so they still work.</p>
+</details>
+
+<details><summary>3. Special characters in the <code>path</code>.</summary><br>
 <p>Please do not use backslash <code>\</code> and double quotes <code>"</code> in the path</p>
 </details>
 
-<details><summary>3. Why it cannot automatically switch icons in Dark mode</summary><br>
+<details><summary>4. Why it cannot automatically switch icons in Dark mode</summary><br>
 <p>As for <code>OpenInTerminal-Lite</code>, the icon you see in the Finder Toolbar is actually the app icon, not the Finder extension icon. There is no API to switch the app icon on the fly.</p>
 <p>On macOS Big Sur and later, you can use the <strong>dynamic icons</strong> in <code>Resources/dynamic-icons/</code> — a single <code>.icns</code> file that contains both appearances and switches automatically with the system. See section 2b above.</p>
 <p>On older macOS, thanks to @MatteoCarnelos's contribution (#126), you can use Hammerspoon to switch icons automatically. See section 2c above.</p>
 </details>
 
-<details><summary>4. My custom app doesn't work.</summary><br>
+<details><summary>5. My custom app doesn't work.</summary><br>
 <p>If your custom application doesn't work with the following command, then it's not supported. For example, GitHub Desktop:</p>
 <code>open -a GitHub\ Desktop ~/Desktop</code>
 </details>

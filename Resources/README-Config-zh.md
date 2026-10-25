@@ -139,6 +139,21 @@ defaults write wang.jianing.app.OpenInTerminal KittyCommand "open -na kitty --ar
 <details><summary>我不小心点了不授权的按钮</summary><br>
 <p>你可以运行以下命令。这会重置系统设置里的权限。</p>
 <pre><code>tccutil reset AppleEvents wang.jianing.app.OpenInTerminal</code></pre>
+<p>如果重置后仍然没有弹出授权提示，请参阅下一个问题。</p>
+</details>
+
+<details><summary>什么都没有发生，也没有弹出控制访达的授权提示</summary><br>
+<p>通过菜单栏或全局快捷键打开终端或编辑器时，什么都没有发生。macOS 从未弹出“OpenInTerminal”想要控制“访达”的授权提示。OpenInTerminal 也没有出现在 系统设置 > 隐私与安全性 > 自动化 中，运行 <code>tccutil reset AppleEvents wang.jianing.app.OpenInTerminal</code> 也没有用。日志 <code>~/Library/Logs/OpenInTerminal/OpenInTerminal-0.log</code> 中显示 <code>Cannot access Finder, please check permissions.</code></p>
+<p>这是因为系统完整性保护 (SIP) 已关闭，并且设置了启动参数 <code>amfi_get_out_of_my_way=1</code>。关闭 AMFI 后，对于不是由 Apple 签名的应用，macOS 不会显示这个提示，而是直接拒绝访问。所有需要控制其他应用的此类应用都会受到影响，这不是 OpenInTerminal 的 bug。</p>
+<p>运行以下命令来检查。如果 SIP 是 <code>disabled</code>，并且 boot-args 中包含 <code>amfi_get_out_of_my_way=1</code>，就是这个原因。</p>
+<pre><code>csrutil status
+nvram boot-args</code></pre>
+<p>系统日志中也能看到这个问题（请使用完整路径，因为 <code>log</code> 是 zsh 的内置命令）。请查找 <code>Policy disallows prompt for wang.jianing.app.OpenInTerminal</code>。</p>
+<pre><code>/usr/bin/log show --last 5m --predicate 'process == "tccd" AND eventMessage CONTAINS "Policy disallows"'</code></pre>
+<p>解决方法：移除这个启动参数并重启 Mac。注意：以下命令会删除所有启动参数。如果你还需要其他启动参数，请重新设置它们，但不要包含 <code>amfi_get_out_of_my_way=1</code>。</p>
+<pre><code>sudo nvram -d boot-args</code></pre>
+<p>重启后，打开一个访达窗口，再次使用 OpenInTerminal，然后在提示中点击 <code>允许</code>（或 <code>好</code>）。</p>
+<p>如果你必须保持 AMFI 关闭，目前没有受支持的解决方法。在设置这个启动参数之前已经获得权限的应用会保留权限，所以它们仍然可以正常工作。</p>
 </details>
 
 <details><summary>路径里的特殊字符</summary><br>

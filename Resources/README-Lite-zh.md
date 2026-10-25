@@ -252,19 +252,34 @@ tccutil reset AppleEvents wang.jianing.app.OpenInTerminal-Lite
 # 对于 OpenInEditor-Lite:
 tccutil reset AppleEvents wang.jianing.app.OpenInEditor-Lite
 </code></pre>
+<p>如果重置后仍然没有弹出授权提示，请参阅下一个问题。</p>
 </details>
 
-<details><summary>2. 路径里的特殊字符</summary><br>
+<details><summary>2. 什么都没有发生，也没有弹出控制访达的授权提示</summary><br>
+<p>点按访达工具栏中的应用后，什么都没有发生。macOS 从未弹出“OpenInTerminal-Lite”（或“OpenInEditor-Lite”）想要控制“访达”的授权提示。该应用也没有出现在 系统设置 > 隐私与安全性 > 自动化 中，上面的 <code>tccutil reset</code> 命令也没有用。日志 <code>~/Library/Logs/logfile-0.log</code> 中会出现 <code>OpenInTerminalCore.OITError</code> 错误 3。</p>
+<p>这是因为系统完整性保护 (SIP) 已关闭，并且设置了启动参数 <code>amfi_get_out_of_my_way=1</code>。关闭 AMFI 后，对于不是由 Apple 签名的应用，macOS 不会显示这个提示，而是直接拒绝访问。所有需要控制其他应用的此类应用都会受到影响，这不是 OpenInTerminal-Lite 的 bug。</p>
+<p>运行以下命令来检查。如果 SIP 是 <code>disabled</code>，并且 boot-args 中包含 <code>amfi_get_out_of_my_way=1</code>，就是这个原因。</p>
+<pre><code>csrutil status
+nvram boot-args</code></pre>
+<p>系统日志中也能看到这个问题（请使用完整路径，因为 <code>log</code> 是 zsh 的内置命令）。请查找 <code>Policy disallows prompt for wang.jianing.app.OpenInTerminal-Lite</code>（或 <code>wang.jianing.app.OpenInEditor-Lite</code>）。</p>
+<pre><code>/usr/bin/log show --last 5m --predicate 'process == "tccd" AND eventMessage CONTAINS "Policy disallows"'</code></pre>
+<p>解决方法：移除这个启动参数并重启 Mac。注意：以下命令会删除所有启动参数。如果你还需要其他启动参数，请重新设置它们，但不要包含 <code>amfi_get_out_of_my_way=1</code>。</p>
+<pre><code>sudo nvram -d boot-args</code></pre>
+<p>重启后，打开一个访达窗口，再次点按该应用，然后在提示中点击 <code>允许</code>（或 <code>好</code>）。</p>
+<p>如果你必须保持 AMFI 关闭，目前没有受支持的解决方法。在设置这个启动参数之前已经获得权限的应用会保留权限，所以它们仍然可以正常工作。</p>
+</details>
+
+<details><summary>3. 路径里的特殊字符</summary><br>
 <p>请不要在路径中使用反斜线 <code>\</code> 和双引号 <code>"</code>。</p>
 </details>
 
-<details><summary>3. 为什么不能根据深色模式自动切换图标</summary><br>
+<details><summary>4. 为什么不能根据深色模式自动切换图标</summary><br>
 <p>对于 <code>OpenInTerminal-Lite</code> 来说，访达工具栏里的图标是应用图标，而不是访达扩展图标。目前没有 API 可以实时切换应用图标。</p>
 <p>在 macOS Big Sur 及更高版本上，你可以使用 <code>Resources/dynamic-icons/</code> 中的<strong>动态图标</strong>——单个 <code>.icns</code> 文件同时包含两种外观，并会随系统自动切换。参见上文 2b 小节。</p>
 <p>在更旧的 macOS 上，感谢 @MatteoCarnelos 的贡献(#126)，你可以使用 Hammerspoon 来自动切换图标。参见上文 2c 小节。</p>
 </details>
 
-<details><summary>4. 我的自定义应用不工作</summary><br>
+<details><summary>5. 我的自定义应用不工作</summary><br>
 <p>如果你的自定义应用不能通过运行以下命令正常运行，那么该应用不支持通过 OpenInTerminal 打开。例如，GitHub Desktop:</p>
 <code>open -a GitHub\ Desktop ~/Desktop</code>
 </details>
