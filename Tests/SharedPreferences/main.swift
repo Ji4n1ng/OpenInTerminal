@@ -115,6 +115,8 @@ check(reader["LaunchAtLogin"] == nil, "host-only setting leaked into snapshot")
 check(reader["OIT_DefaultTerminalShortcut"] == nil, "shortcut leaked into snapshot")
 let mode = try FileManager.default.attributesOfItem(atPath: snapshot.path)[.posixPermissions] as! NSNumber
 check(mode.intValue == 0o600, "snapshot permissions are not private")
+let leftovers = try FileManager.default.contentsOfDirectory(atPath: snapshot.deletingLastPathComponent().path)
+check(leftovers == ["shared-settings.plist"], "snapshot temp files left behind: \(leftovers)")
 
 // Cocoa bindings and typed setters must both publish before set() returns.
 var notifications = 0

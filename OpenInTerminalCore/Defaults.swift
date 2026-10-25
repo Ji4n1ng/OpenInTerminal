@@ -105,9 +105,24 @@ public enum SharedPreferences {
         if (try? Data(contentsOf: url)) == data { return }
         try FileManager.default.createDirectory(at: url.deletingLastPathComponent(),
                                                 withIntermediateDirectories: true)
-        try data.write(to: url, options: .atomic)
-        try FileManager.default.setAttributes([.posixPermissions: 0o600],
-                                              ofItemAtPath: url.path)
+        try writePrivately(data, to: url)
+    }
+
+    /// Write through a temp file that is 0600 from the moment it is created, then
+    /// rename it over the snapshot. The write stays atomic, and the snapshot is
+    /// never readable by other users, not even briefly.
+    static func writePrivately(_ data: Data, to url: URL) throws {
+        let temp = url.deletingLastPathComponent()
+            .appendingPathComponent("." + url.lastPathComponent + "." + UUID().uuidString)
+        let fd = open(temp.path, O_WRONLY | O_CREAT | O_EXCL, 0o600)
+        guard fd >= 0 else { throw POSIXError(POSIXErrorCode(rawValue: errno) ?? .EIO) }
+        let written = data.withUnsafeBytes { write(fd, $0.baseAddress, $0.count) }
+        let closed = close(fd)
+        if written != data.count || closed != 0 || rename(temp.path, url.path) != 0 {
+            let error = POSIXError(POSIXErrorCode(rawValue: errno) ?? .EIO)
+            unlink(temp.path)
+            throw error
+        }
     }
 
     static func readSnapshot(from url: URL, into defaults: UserDefaults) {
