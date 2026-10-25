@@ -94,6 +94,7 @@ defaults remove wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor
 | TextMate | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextMate` |
 | CotEditor | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor CotEditor` |
 | MacVim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor MacVim` |
+| Glim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Glim` |
 | Typora | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Typora` |
 | Obsidian | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Obsidian` |
 | Neovim | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor Neovim` |
