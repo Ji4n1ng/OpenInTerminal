@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     public func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let mainAppIdentifier = "wang.jianing.OpenInTerminal"
+        let mainAppIdentifier = "wang.jianing.app.OpenInTerminal"
         let running = NSWorkspace.shared.runningApplications
         var alreadyRunning = false
         
