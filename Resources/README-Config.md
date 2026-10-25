@@ -106,10 +106,6 @@ To run the preference regression checks:
 Tests/SharedPreferences/run.sh
 ```
 
-For a local build with Xcode 27, pass `MACOSX_DEPLOYMENT_TARGET=12.0` to
-`xcodebuild`. Older deployment targets are rejected by that toolchain. This local
-build setting does not change the deployment targets stored in the project.
-
 ## Custom Configuration
 
 ### For Obsidian Users
