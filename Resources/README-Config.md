@@ -87,7 +87,9 @@ For macOS 14 and earlier, ensure the Finder Extension is enabled via System Pref
 
 ### For Obsidian Users
 
-When Obsidian is the frontmost app, OpenInTerminal can open terminals in the directory of the active note and editors with the active note file. This requires Obsidian's official command-line tool, which is bundled with recent Obsidian desktop releases.
+When Obsidian is the frontmost app, OpenInTerminal can open terminals in the directory of the active note and editors with the active note file. This applies to the keyboard shortcuts and the menu bar menu. The Finder toolbar and the Finder context menu still use the Finder selection.
+
+This requires Obsidian's official command-line tool, which is bundled with recent Obsidian desktop releases. Turn it on in Obsidian under **Settings → General → Command line interface**.
 
 OpenInTerminal checks the following paths:
 
@@ -97,7 +99,7 @@ OpenInTerminal checks the following paths:
 /usr/local/bin/obsidian
 ```
 
-If the Obsidian CLI is unavailable or cannot resolve the active file, OpenInTerminal falls back to the normal Finder-based behavior.
+If the Obsidian CLI is unavailable, does not answer within 2 seconds, or cannot resolve the active file, OpenInTerminal falls back to the normal Finder-based behavior.
 
 ### For Neovim Users
 

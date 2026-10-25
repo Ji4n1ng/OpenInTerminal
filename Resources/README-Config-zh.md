@@ -85,6 +85,22 @@ $ pluginkit -e "use" -u "F2547F13-4E43-4E88-9D8F-56DF05C020D8"
 
 ## 自定义配置
 
+### 针对 Obsidian 用户
+
+当 Obsidian 是最前端的应用时，OpenInTerminal 可以在当前笔记所在的目录中打开终端，并用编辑器打开当前笔记文件。此功能适用于快捷键和菜单栏菜单。Finder 工具栏和 Finder 右键菜单仍然使用 Finder 中的选择。
+
+此功能需要 Obsidian 官方的命令行工具，较新的 Obsidian 桌面版已内置该工具。请在 Obsidian 的 **设置 → 通用 → 命令行界面** 中启用它。
+
+OpenInTerminal 会检查以下路径：
+
+```
+/Applications/Obsidian.app/Contents/MacOS/obsidian-cli
+/opt/homebrew/bin/obsidian
+/usr/local/bin/obsidian
+```
+
+如果 Obsidian CLI 不可用、在 2 秒内没有响应，或无法解析当前文件，OpenInTerminal 会回退到通常的 Finder 行为。
+
 ### 针对 Neovim 用户
 
 如果您在 OpenInTerminal 中选择 Neovim 作为编辑器，应用将使用 Kitty 作为默认终端。要切换到其他终端（支持的选项包括 Alacritty、WezTerm 和 Kitty），请使用以下命令更新配置。将 `<Your Name>` 替换为您的用户名，并根据您的安装调整 Neovim 路径（此示例为 `/opt/homebrew/bin/nvim`）：
