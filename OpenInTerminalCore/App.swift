@@ -60,17 +60,47 @@ extension App: Openable {
             }
         }
 
+        func excute(_ source: String) throws {
+            guard let script = NSAppleScript(source: source) else {
+                throw OITError.cannotCreateAppleScript(source)
+            }
+            var error: NSDictionary?
+            script.executeAndReturnError(&error)
+            if error != nil {
+                throw OITError.cannotAccessApp(self.name)
+            }
+        }
+
         switch self.type {
         case .terminal:
             // get path
-            var path = try FinderManager.shared.getPathToFrontFinderWindowOrSelectedFile()
+            let obsidianDirectoryPath = FinderManager.shared.getFrontmostObsidianDirectoryPath()
+            var path: String
+            if let obsidianDirectoryPath = obsidianDirectoryPath {
+                path = obsidianDirectoryPath
+            } else {
+                path = try FinderManager.shared.getPathToFrontFinderWindowOrSelectedFile()
+            }
             if path == "" {
                 // No Finder window and no file selected.
                 guard let desktopPath = FinderManager.shared.getDesktopPath() else { return }
                 path = desktopPath
             }
 
-            if SupportedApps.is(self, is: .terminal) {
+            if SupportedApps.is(self, is: .terminal), obsidianDirectoryPath != nil {
+                let process = Process()
+                process.executableURL = URL(fileURLWithPath: "/usr/bin/open")
+                process.arguments = ["-a", self.name, path]
+                try process.run()
+                process.waitUntilExit()
+                if process.terminationStatus != 0 {
+                    throw OITError.cannotAccessApp(self.name)
+                }
+            } else if SupportedApps.is(self, is: .iTerm), obsidianDirectoryPath != nil {
+                let newOption = DefaultsManager.shared.getNewOption(.iTerm) ?? .window
+                let source = ScriptManager.shared.getITermAppleScript(path: path, newOption: newOption)
+                try excute(source)
+            } else if SupportedApps.is(self, is: .terminal) {
                 // this app is supported: Terminal
                 let url = URL(fileURLWithPath: path)
                 guard let terminal = SBApplication(bundleIdentifier: SupportedApps.terminal.bundleId) as TerminalApplication?,
@@ -88,7 +118,12 @@ extension App: Openable {
 
         case .editor:
             // get paths
-            var paths = try FinderManager.shared.getFullPathsToFrontFinderWindowOrSelectedFile()
+            var paths: [String]
+            if let obsidianFileUrl = FinderManager.shared.getFrontmostObsidianFileUrl() {
+                paths = [obsidianFileUrl.path]
+            } else {
+                paths = try FinderManager.shared.getFullPathsToFrontFinderWindowOrSelectedFile()
+            }
             if paths.count == 0 {
                 // No Finder window and no file selected.
                 guard let desktopPath = FinderManager.shared.getDesktopPath() else { return }
@@ -148,4 +183,3 @@ extension App: Openable {
     }
     
 }
-
