@@ -447,12 +447,7 @@ public class FinderManager {
     /// read-only volumes in `/Volumes` (e.g. mounted disk images) do not count.
     public func isApplicationInstalled(bundleId: String) -> Bool {
         guard !bundleId.isEmpty else { return false }
-        let urls: [URL]
-        if #available(macOS 12.0, *) {
-            urls = NSWorkspace.shared.urlsForApplications(withBundleIdentifier: bundleId)
-        } else {
-            urls = NSWorkspace.shared.urlForApplication(withBundleIdentifier: bundleId).map { [$0] } ?? []
-        }
+        let urls = NSWorkspace.shared.urlsForApplications(withBundleIdentifier: bundleId)
         return urls.contains { isInstalledLocation($0) }
     }
 
