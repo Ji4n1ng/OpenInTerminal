@@ -60,17 +60,6 @@ extension App: Openable {
             }
         }
 
-        func excute(_ source: String) throws {
-            guard let script = NSAppleScript(source: source) else {
-                throw OITError.cannotCreateAppleScript(source)
-            }
-            var error: NSDictionary?
-            script.executeAndReturnError(&error)
-            if error != nil {
-                throw OITError.cannotAccessApp(self.name)
-            }
-        }
-
         switch self.type {
         case .terminal:
             // get path
@@ -87,20 +76,7 @@ extension App: Openable {
                 path = desktopPath
             }
 
-            if SupportedApps.is(self, is: .terminal), obsidianDirectoryPath != nil {
-                let process = Process()
-                process.executableURL = URL(fileURLWithPath: "/usr/bin/open")
-                process.arguments = ["-a", self.name, path]
-                try process.run()
-                process.waitUntilExit()
-                if process.terminationStatus != 0 {
-                    throw OITError.cannotAccessApp(self.name)
-                }
-            } else if SupportedApps.is(self, is: .iTerm), obsidianDirectoryPath != nil {
-                let newOption = DefaultsManager.shared.getNewOption(.iTerm) ?? .window
-                let source = ScriptManager.shared.getITermAppleScript(path: path, newOption: newOption)
-                try excute(source)
-            } else if SupportedApps.is(self, is: .terminal) {
+            if SupportedApps.is(self, is: .terminal), obsidianDirectoryPath == nil {
                 // this app is supported: Terminal
                 let url = URL(fileURLWithPath: path)
                 guard let terminal = SBApplication(bundleIdentifier: SupportedApps.terminal.bundleId) as TerminalApplication?,
@@ -110,7 +86,8 @@ extension App: Openable {
                 open([url])
                 terminal.activate()
             } else {
-                // this app is general (e.g. iTerm, Alacritty, kitty)
+                // this app is general (e.g. iTerm, Alacritty, kitty). Terminal also
+                // opens an Obsidian note folder here, as `open -a Terminal <path>`.
                 var arguments = DefaultsManager.shared.getOpenArguments(self)
                 arguments.append(path)
                 try runOpen(arguments)
