@@ -39,6 +39,27 @@ public enum SharedPreferences {
         return directory.appendingPathComponent("shared-settings.plist")
     }
 
+    /// Earlier releases saved through the App Group entitlement, so cfprefsd kept
+    /// the suite in the group container. Without that entitlement,
+    /// UserDefaults(suiteName:) reads ~/Library/Preferences instead and finds nothing.
+    static func legacyContainerURL() -> URL {
+        return FileManager.default.homeDirectoryForCurrentUser
+            .appendingPathComponent("Library/Group Containers")
+            .appendingPathComponent(Constants.Id.Group)
+            .appendingPathComponent("Library/Preferences")
+            .appendingPathComponent(Constants.Id.Group + ".plist")
+    }
+
+    /// Keep values cfprefsd still returns for the suite (e.g. unsigned builds) and
+    /// fill the rest from the group container plist. On macOS 15 and later, the
+    /// system can ask the user once before the host reads that container.
+    static func legacyPreferences(suite: [String: Any], containerURL: URL) -> [String: Any] {
+        guard let data = try? Data(contentsOf: containerURL),
+              let plist = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil),
+              let container = plist as? [String: Any] else { return suite }
+        return suite.merging(container) { suiteValue, _ in suiteValue }
+    }
+
     /// Copy existing values once, without overwriting preferences already saved
     /// in the host domain. Leave the old domain intact for rollback.
     static func migrate(_ legacy: [String: Any], to defaults: UserDefaults) {
@@ -84,9 +105,9 @@ public enum SharedPreferences {
     public static func startHost() {
         guard Bundle.main.bundleIdentifier == hostID, observer == nil else { return }
         if !Defaults.bool(forKey: migrationKey) {
-            let legacy = UserDefaults(suiteName: Constants.Id.Group)?
+            let suite = UserDefaults(suiteName: Constants.Id.Group)?
                 .persistentDomain(forName: Constants.Id.Group) ?? [:]
-            migrate(legacy, to: Defaults)
+            migrate(legacyPreferences(suite: suite, containerURL: legacyContainerURL()), to: Defaults)
         }
         observer = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification,
                                                           object: Defaults, queue: nil) { _ in
