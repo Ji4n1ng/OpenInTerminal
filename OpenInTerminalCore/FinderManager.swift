@@ -335,108 +335,106 @@ public class FinderManager {
             applications.insert(app.name)
         }
         // search by name, for apps without a bundle id
-        do {
-            var searchDirs: Set<URL> = Set()
-            let fileManager = FileManager.default
-            // search `/Applications`
-            searchDirs.insert(URL(fileURLWithPath: "/Applications", isDirectory: true))
-            // search `$HOME/Applications` (macOS does not create it by default)
-            let userApplicationDirURL = fileManager.urls(for: .applicationDirectory, in: .userDomainMask)
-            if userApplicationDirURL.count > 0,
-               fileManager.fileExists(atPath: userApplicationDirURL[0].path) {
-                searchDirs.insert(userApplicationDirURL[0])
+        var searchDirs: Set<URL> = Set()
+        let fileManager = FileManager.default
+        // search `/Applications`
+        searchDirs.insert(URL(fileURLWithPath: "/Applications", isDirectory: true))
+        // search `$HOME/Applications` (macOS does not create it by default)
+        let userApplicationDirURL = fileManager.urls(for: .applicationDirectory, in: .userDomainMask)
+        if userApplicationDirURL.count > 0,
+           fileManager.fileExists(atPath: userApplicationDirURL[0].path) {
+            searchDirs.insert(userApplicationDirURL[0])
+        }
+        // search `$HOME/Library/Application Support/JetBrains/Toolbox
+        let libraryDirURL = fileManager.urls(for: .libraryDirectory, in: .userDomainMask)
+        if libraryDirURL.count > 0 {
+            let libDirURL = libraryDirURL[0]
+            let toolboxURL = libDirURL.appendingPathComponent("Application Support")
+                .appendingPathComponent("JetBrains")
+                .appendingPathComponent("Toolbox")
+            if fileManager.fileExists(atPath: toolboxURL.path) {
+                searchDirs.insert(toolboxURL)
             }
-            // search `$HOME/Library/Application Support/JetBrains/Toolbox
-            let libraryDirURL = fileManager.urls(for: .libraryDirectory, in: .userDomainMask)
-            if libraryDirURL.count > 0 {
-                let libDirURL = libraryDirURL[0]
-                let toolboxURL = libDirURL.appendingPathComponent("Application Support")
-                    .appendingPathComponent("JetBrains")
-                    .appendingPathComponent("Toolbox")
-                if fileManager.fileExists(atPath: toolboxURL.path) {
-                    searchDirs.insert(toolboxURL)
-                }
+        }
+        
+        var levelCount = 0
+        
+        while !searchDirs.isEmpty {
+            // to avoid an infinite loop
+            levelCount += 1
+            if levelCount > 20 {
+                break
             }
             
-            var levelCount = 0
-            
-            while !searchDirs.isEmpty {
-                // to avoid an infinite loop
-                levelCount += 1
-                if levelCount > 20 {
-                    break
+            var tmpSearchDirs = searchDirs
+            for currentDir in searchDirs {
+                defer { tmpSearchDirs.remove(currentDir) }
+                let fileURLs: [URL]
+                do {
+                    fileURLs = try fileManager.contentsOfDirectory(at: currentDir, includingPropertiesForKeys: nil)
+                } catch {
+                    // skip a missing or unreadable folder, do not stop the whole search
+                    logw("cannot search \(currentDir.path): \(error.localizedDescription)")
+                    continue
                 }
-                
-                var tmpSearchDirs = searchDirs
-                for currentDir in searchDirs {
-                    defer { tmpSearchDirs.remove(currentDir) }
-                    let fileURLs: [URL]
-                    do {
-                        fileURLs = try fileManager.contentsOfDirectory(at: currentDir, includingPropertiesForKeys: nil)
-                    } catch {
-                        // skip a missing or unreadable folder, do not stop the whole search
-                        logw("cannot search \(currentDir.path): \(error.localizedDescription)")
+                for fileURL in fileURLs {
+                    // skip the hidden
+                    let baseName = fileURL.lastPathComponent
+                    if baseName.hasPrefix(".") {
                         continue
                     }
-                    for fileURL in fileURLs {
-                        // skip the hidden
-                        let baseName = fileURL.lastPathComponent
-                        if baseName.hasPrefix(".") {
-                            continue
-                        }
-                        // add to applications
-                        if baseName.hasSuffix(".app") {
-                            var appName = fileURL.deletingPathExtension().lastPathComponent
-                            
-                            // nixpkgs fixes
-                            do {
-                                // iTerm is installed as iTerm2.app
-                                if appName == "iTerm2" {
-                                    appName = "iTerm"
-                                }
-                                // IntelliJ IDEA and PyCharm community edition have CE appended
-                                else if appName == "IntelliJ IDEA CE" {
-                                    appName = "IntelliJ IDEA"
-                                } else if appName == "PyCharm CE" {
-                                    appName = "PyCharm"
-                                }
+                    // add to applications
+                    if baseName.hasSuffix(".app") {
+                        var appName = fileURL.deletingPathExtension().lastPathComponent
+                        
+                        // nixpkgs fixes
+                        do {
+                            // iTerm is installed as iTerm2.app
+                            if appName == "iTerm2" {
+                                appName = "iTerm"
                             }
-                            
-                            applications.insert(appName)
-                            continue
+                            // IntelliJ IDEA and PyCharm community edition have CE appended
+                            else if appName == "IntelliJ IDEA CE" {
+                                appName = "IntelliJ IDEA"
+                            } else if appName == "PyCharm CE" {
+                                appName = "PyCharm"
+                            }
                         }
-                        // add subdirectory to searchDirs
-                        var isDir : ObjCBool = false
-                        if fileManager.fileExists(atPath: fileURL.path, isDirectory:&isDir) {
-                            if isDir.boolValue {
-                                // file exists and is a directory
-                                
-                                // check if it is a alias
-                                var isAlias: AnyObject? = nil
-                                do {
-                                    try (fileURL as NSURL).getResourceValue(&isAlias, forKey: URLResourceKey.isAliasFileKey)
-                                } catch _ {}
-                                if let isAlias = isAlias as? Bool {
-                                    // for nix-darwin users, applications installed through nix will be installed into a symlinked (alias) directory called "Nix Apps"
-                                    if fileURL.lastPathComponent == "Nix Apps" {
-                                        // symlink needs to be resolved first
-                                        tmpSearchDirs.insert(fileURL.resolvingSymlinksInPath())
-                                    }
-                                    // skip alias directory
-                                    else if !isAlias {
-                                        tmpSearchDirs.insert(fileURL)
-                                    }
+                        
+                        applications.insert(appName)
+                        continue
+                    }
+                    // add subdirectory to searchDirs
+                    var isDir : ObjCBool = false
+                    if fileManager.fileExists(atPath: fileURL.path, isDirectory:&isDir) {
+                        if isDir.boolValue {
+                            // file exists and is a directory
+                            
+                            // check if it is a alias
+                            var isAlias: AnyObject? = nil
+                            do {
+                                try (fileURL as NSURL).getResourceValue(&isAlias, forKey: URLResourceKey.isAliasFileKey)
+                            } catch _ {}
+                            if let isAlias = isAlias as? Bool {
+                                // for nix-darwin users, applications installed through nix will be installed into a symlinked (alias) directory called "Nix Apps"
+                                if fileURL.lastPathComponent == "Nix Apps" {
+                                    // symlink needs to be resolved first
+                                    tmpSearchDirs.insert(fileURL.resolvingSymlinksInPath())
                                 }
-                            } else {
-                                // file exists and is not a directory
+                                // skip alias directory
+                                else if !isAlias {
+                                    tmpSearchDirs.insert(fileURL)
+                                }
                             }
                         } else {
-                            // file does not exist
+                            // file exists and is not a directory
                         }
+                    } else {
+                        // file does not exist
                     }
                 }
-                searchDirs = tmpSearchDirs
             }
+            searchDirs = tmpSearchDirs
         }
 
         return applications
