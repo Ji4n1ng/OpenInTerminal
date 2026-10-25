@@ -140,18 +140,20 @@ public class FinderManager {
         if isCommandLineToolInstalled("nvim") {
             applications.insert("Neovim")
         }
-        // search
+        // ask LaunchServices by bundle id, so apps are found in any folder
+        for app in SupportedApps.allCases where isApplicationInstalled(bundleId: app.bundleId) {
+            applications.insert(app.name)
+        }
+        // search by name, for apps without a bundle id
         do {
             var searchDirs: Set<URL> = Set()
             let fileManager = FileManager.default
             // search `/Applications`
-            let applicationDir = "/Applications"
-            if let applicationURL = URL(string: applicationDir) {
-                searchDirs.insert(applicationURL)
-            }
-            // search `$HOME/Applications`
+            searchDirs.insert(URL(fileURLWithPath: "/Applications", isDirectory: true))
+            // search `$HOME/Applications` (macOS does not create it by default)
             let userApplicationDirURL = fileManager.urls(for: .applicationDirectory, in: .userDomainMask)
-            if userApplicationDirURL.count > 0 {
+            if userApplicationDirURL.count > 0,
+               fileManager.fileExists(atPath: userApplicationDirURL[0].path) {
                 searchDirs.insert(userApplicationDirURL[0])
             }
             // search `$HOME/Library/Application Support/JetBrains/Toolbox
@@ -177,7 +179,15 @@ public class FinderManager {
                 
                 var tmpSearchDirs = searchDirs
                 for currentDir in searchDirs {
-                    let fileURLs = try fileManager.contentsOfDirectory(at: currentDir, includingPropertiesForKeys: nil)
+                    defer { tmpSearchDirs.remove(currentDir) }
+                    let fileURLs: [URL]
+                    do {
+                        fileURLs = try fileManager.contentsOfDirectory(at: currentDir, includingPropertiesForKeys: nil)
+                    } catch {
+                        // skip a missing or unreadable folder, do not stop the whole search
+                        logw("cannot search \(currentDir.path): \(error.localizedDescription)")
+                        continue
+                    }
                     for fileURL in fileURLs {
                         // skip the hidden
                         let baseName = fileURL.lastPathComponent
@@ -220,7 +230,7 @@ public class FinderManager {
                                     // for nix-darwin users, applications installed through nix will be installed into a symlinked (alias) directory called "Nix Apps"
                                     if fileURL.lastPathComponent == "Nix Apps" {
                                         // symlink needs to be resolved first
-                                        tmpSearchDirs.insert(URL(string: try fileManager.destinationOfSymbolicLink(atPath: fileURL.absoluteString.removingPercentEncoding!.replacingOccurrences(of: "file://", with: "")))!)
+                                        tmpSearchDirs.insert(fileURL.resolvingSymlinksInPath())
                                     }
                                     // skip alias directory
                                     else if !isAlias {
@@ -234,17 +244,48 @@ public class FinderManager {
                             // file does not exist
                         }
                     }
-                    tmpSearchDirs.remove(currentDir)
                 }
                 searchDirs = tmpSearchDirs
             }
-            
-        } catch {
-            print(error.localizedDescription)
-            logw(error.localizedDescription)
         }
-        
+
         return applications
+    }
+
+    /// Check whether LaunchServices knows an installed copy of the app with the
+    /// given bundle id. Copies in the Trash, in Time Machine backups and on
+    /// read-only volumes in `/Volumes` (e.g. mounted disk images) do not count.
+    public func isApplicationInstalled(bundleId: String) -> Bool {
+        guard !bundleId.isEmpty else { return false }
+        let urls: [URL]
+        if #available(macOS 12.0, *) {
+            urls = NSWorkspace.shared.urlsForApplications(withBundleIdentifier: bundleId)
+        } else {
+            urls = NSWorkspace.shared.urlForApplication(withBundleIdentifier: bundleId).map { [$0] } ?? []
+        }
+        return urls.contains { isInstalledLocation($0) }
+    }
+
+    func isInstalledLocation(_ appURL: URL) -> Bool {
+        let path = appURL.standardizedFileURL.path
+        let components = appURL.standardizedFileURL.pathComponents
+        // Trash (`~/.Trash`, `/Volumes/<disk>/.Trashes`)
+        if components.contains(".Trash") || components.contains(".Trashes") {
+            return false
+        }
+        // Time Machine backups (HFS+ backup folders, APFS backup snapshots)
+        if components.contains("Backups.backupdb")
+            || path.hasPrefix("/Volumes/.timemachine/")
+            || path.hasPrefix("/Volumes/com.apple.TimeMachine.localsnapshots/") {
+            return false
+        }
+        // read-only volumes, e.g. a mounted disk image
+        if path.hasPrefix("/Volumes/"),
+           let isReadOnly = try? appURL.resourceValues(forKeys: [.volumeIsReadOnlyKey]).volumeIsReadOnly,
+           isReadOnly {
+            return false
+        }
+        return true
     }
 
     /// Check whether a command-line tool is actually installed, by looking in the
