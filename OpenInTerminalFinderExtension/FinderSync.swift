@@ -15,9 +15,11 @@ class FinderSync: FIFinderSync {
     
     override init() {
         super.init()
+        SharedPreferences.refreshExtension()
         let finderSync = FIFinderSyncController.default()
+        finderSync.directoryURLs = [URL(fileURLWithPath: "/")]
         if let mountedVolumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: [.skipHiddenVolumes]) {
-            finderSync.directoryURLs = Set<URL>(mountedVolumes)
+            finderSync.directoryURLs.formUnion(mountedVolumes)
         }
         // Monitor volumes
         let notificationCenter = NSWorkspace.shared.notificationCenter
@@ -43,11 +45,13 @@ class FinderSync: FIFinderSync {
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
+        SharedPreferences.refreshExtension()
         var menu = NSMenu(title: "")
         
         switch menuKind {
 
         case .contextualMenuForContainer,
+             .contextualMenuForSidebar,
              .contextualMenuForItems:
             // need to hide or not
             let isHideContextMenuItems = DefaultsManager.shared.isHideContextMenuItems

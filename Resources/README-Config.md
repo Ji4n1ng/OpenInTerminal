@@ -83,14 +83,41 @@ For macOS 14 and earlier, ensure the Finder Extension is enabled via System Pref
   <img src="https://user-images.githubusercontent.com/11001224/78590336-448f4180-7874-11ea-827c-ad3a7bffca5e.png" width="400px">
 </div>
 
+## Where Preferences Are Saved
+
+The full app saves preferences in its own `wang.jianing.app.OpenInTerminal`
+UserDefaults domain. On its first launch after updating, it copies the old settings
+from the legacy App Group container once, without deleting them or overwriting
+settings already saved in the new domain. On macOS 15 and later, macOS can ask
+whether OpenInTerminal may access data from other apps. Allow it to keep your old
+settings. If the old installation could not save settings, choose your terminal and
+editor again after updating.
+
+The host publishes Finder preferences as `shared-settings.plist` in
+`~/Library/Application Scripts/wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension/`.
+The Finder extension reads that snapshot whenever it builds a menu. This uses the
+same directory as its existing AppleScripts and works with ad-hoc signing; an App
+Group provisioning profile or Full Disk Access is not required. Launch the host
+once after installation to publish preferences and install its scripts.
+
+To run the preference regression checks:
+
+```sh
+Tests/SharedPreferences/run.sh
+```
+
+For a local build with Xcode 27, pass `MACOSX_DEPLOYMENT_TARGET=12.0` to
+`xcodebuild`. Older deployment targets are rejected by that toolchain. This local
+build setting does not change the deployment targets stored in the project.
+
 ## Custom Configuration
 
 ### For Neovim Users
 
-If you select Neovim as your editor in OpenInTerminal, the app will use Kitty as the default terminal. To switch to a different terminal (supported options: Alacritty, WezTerm, and Kitty), update the configuration with the following command. Replace `<Your Name>` with your username and adjust the Neovim path (`/opt/homebrew/bin/nvim` in this example) to match your installation:
+If you select Neovim as your editor in OpenInTerminal, the app will use Kitty as the default terminal. To switch to a different terminal (supported options: Alacritty, WezTerm, and Kitty), update the configuration with the following command. Adjust the Neovim path (`/opt/homebrew/bin/nvim` in this example) to match your installation, then quit and reopen OpenInTerminal so the Finder extension receives the change:
 
 ```
-defaults write /Users/<Your Name>/Library/Group\ Containers/group.wang.jianing.app.OpenInTerminal/Library/Preferences/group.wang.jianing.app.OpenInTerminal.plist NeovimCommand "open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
+defaults write wang.jianing.app.OpenInTerminal NeovimCommand "open -na wezterm --args start /opt/homebrew/bin/nvim PATH"
 ```
 
 Other terminal configurations:
@@ -112,10 +139,10 @@ The default launch behavior for kitty is to open a new instance for each command
 open -na kitty --args --single-instance --instance-group 1 --directory
 ```
 
-If you want to customize this behavior, you can run the following command in your terminal. Make sure to replace `<Your Name>` with your username and adjust the open command as what you want:
+If you want to customize this behavior, you can run the following command in your terminal. Adjust the open command as you want, then quit and reopen OpenInTerminal so the Finder extension receives the change:
 
 ```
-defaults write /Users/<Your Name>/Library/Group\ Containers/group.wang.jianing.app.OpenInTerminal/Library/Preferences/group.wang.jianing.app.OpenInTerminal.plist KittyCommand "open -na kitty --args --single-instance --instance-group 1 --directory"
+defaults write wang.jianing.app.OpenInTerminal KittyCommand "open -na kitty --args --single-instance --instance-group 1 --directory"
 ```
 
 ## FAQ ❓
