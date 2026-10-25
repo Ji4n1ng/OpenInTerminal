@@ -305,13 +305,17 @@ extension AppDelegate {
         guard shouldRegister != areShortcutsRegistered else { return }
         
         if shouldRegister {
-            if let action = terminalShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.addAction(action, forKeyEvent: .down) }
-            if let action = editorShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.addAction(action, forKeyEvent: .down) }
-            if let action = copyPathShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.addAction(action, forKeyEvent: .down) }
+            // ShortcutRecorder observes each action's shortcut and updates the
+            // Carbon registration when the bound preference changes. Register
+            // actions even when their shortcut is currently nil so shortcuts
+            // configured after launch become active immediately.
+            if let action = terminalShortcutAction { GlobalShortcutMonitor.shared.addAction(action, forKeyEvent: .down) }
+            if let action = editorShortcutAction { GlobalShortcutMonitor.shared.addAction(action, forKeyEvent: .down) }
+            if let action = copyPathShortcutAction { GlobalShortcutMonitor.shared.addAction(action, forKeyEvent: .down) }
         } else {
-            if let action = terminalShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.removeAction(action, forKeyEvent: .down) }
-            if let action = editorShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.removeAction(action, forKeyEvent: .down) }
-            if let action = copyPathShortcutAction, action.shortcut != nil { GlobalShortcutMonitor.shared.removeAction(action, forKeyEvent: .down) }
+            if let action = terminalShortcutAction { GlobalShortcutMonitor.shared.removeAction(action, forKeyEvent: .down) }
+            if let action = editorShortcutAction { GlobalShortcutMonitor.shared.removeAction(action, forKeyEvent: .down) }
+            if let action = copyPathShortcutAction { GlobalShortcutMonitor.shared.removeAction(action, forKeyEvent: .down) }
         }
         
         areShortcutsRegistered = shouldRegister
