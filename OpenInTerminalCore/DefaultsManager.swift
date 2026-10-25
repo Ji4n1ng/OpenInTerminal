@@ -6,7 +6,6 @@
 //  Copyright © 2019 Jianing Wang. All rights reserved.
 //
 
-import AppKit
 import Foundation
 
 public class DefaultsManager {
