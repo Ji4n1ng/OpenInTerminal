@@ -57,18 +57,44 @@ try FileManager.default.createDirectory(at: container.deletingLastPathComponent(
 try PropertyListSerialization.data(fromPropertyList: [
     "DefaultTerminal": "iTerm", "DefaultEditor": "Visual Studio Code", "FirstSetup": true
 ], format: .binary, options: 0).write(to: container)
-var legacy = SharedPreferences.legacyPreferences(suite: [:], containerURL: container)
+let missing = root.appendingPathComponent("missing.plist")
+var legacy = SharedPreferences.legacyPreferences(suite: [:], containerURL: container) ?? [:]
 check(legacy["DefaultEditor"] as? String == "Visual Studio Code", "group container not read")
 check(legacy["FirstSetup"] as? Bool == true, "group container FirstSetup not read")
-legacy = SharedPreferences.legacyPreferences(suite: ["DefaultTerminal": "Ghostty"], containerURL: container)
+legacy = SharedPreferences.legacyPreferences(suite: ["DefaultTerminal": "Ghostty"], containerURL: container) ?? [:]
 check(legacy["DefaultTerminal"] as? String == "Ghostty", "group container overwrote suite value")
 check(legacy["DefaultEditor"] as? String == "Visual Studio Code", "group container did not fill suite")
-legacy = SharedPreferences.legacyPreferences(suite: ["DefaultTerminal": "Ghostty"],
-                                             containerURL: root.appendingPathComponent("missing.plist"))
+legacy = SharedPreferences.legacyPreferences(suite: ["DefaultTerminal": "Ghostty"], containerURL: missing) ?? [:]
 check(legacy.count == 1 && legacy["DefaultTerminal"] as? String == "Ghostty", "missing container changed suite")
 check(SharedPreferences.legacyContainerURL().path.hasSuffix(
     "/Library/Group Containers/group.wang.jianing.app.OpenInTerminal/Library/Preferences/group.wang.jianing.app.OpenInTerminal.plist"),
     "legacy container path differs from cfprefsd's App Group location")
+
+// A container that exists but cannot be read (for example the user denied the
+// macOS 15+ prompt) keeps the migration pending. The retry must not overwrite
+// values saved in the meantime.
+let locked = root.appendingPathComponent("legacy/locked.plist")
+try FileManager.default.copyItem(at: container, to: locked)
+try FileManager.default.setAttributes([.posixPermissions: 0o000], ofItemAtPath: locked.path)
+check(SharedPreferences.legacyPreferences(suite: [:], containerURL: locked) == nil, "unreadable container treated as read")
+defaults.removePersistentDomain(forName: domain)
+SharedPreferences.migrate(suite: ["KittyCommand": "kitty"], containerURL: locked, to: defaults)
+check(!defaults.bool(forKey: SharedPreferences.migrationKey), "unreadable container ended the migration")
+check(defaults.string(forKey: "KittyCommand") == "kitty", "suite values not copied while retry is pending")
+defaults.set("Terminal", forKey: "DefaultTerminal")
+try FileManager.default.setAttributes([.posixPermissions: 0o600], ofItemAtPath: locked.path)
+SharedPreferences.migrate(suite: [:], containerURL: locked, to: defaults)
+check(defaults.string(forKey: "DefaultTerminal") == "Terminal", "retry overwrote a newer host value")
+check(defaults.string(forKey: "DefaultEditor") == "Visual Studio Code", "retry did not copy missing values")
+check(defaults.bool(forKey: SharedPreferences.migrationKey), "successful retry left the migration pending")
+defaults.removePersistentDomain(forName: domain)
+SharedPreferences.migrate(suite: [:], containerURL: missing, to: defaults)
+check(defaults.bool(forKey: SharedPreferences.migrationKey), "missing container left the migration pending")
+let corrupt = root.appendingPathComponent("legacy/corrupt.plist")
+try Data("broken plist".utf8).write(to: corrupt)
+defaults.removePersistentDomain(forName: domain)
+SharedPreferences.migrate(suite: [:], containerURL: corrupt, to: defaults)
+check(defaults.bool(forKey: SharedPreferences.migrationKey), "corrupt container left the migration pending")
 
 defaults.removePersistentDomain(forName: domain)
 SharedPreferences.migrate([
@@ -131,4 +157,4 @@ defaults.set("Visual Studio Code", forKey: "DefaultEditor")
 SharedPreferences.migrate(["DefaultTerminal": "Terminal"], to: defaults)
 check(defaults.string(forKey: "DefaultTerminal") == "Ghostty", "migration replaced existing host value")
 check(defaults.synchronize(), "host could not flush its own domain")
-print("PASS: legacy container, migration, live updates, data, deletion, reset, missing/corrupt snapshots, permissions")
+print("PASS: legacy container, unreadable-container retry, migration, live updates, data, deletion, reset, missing/corrupt snapshots, permissions")

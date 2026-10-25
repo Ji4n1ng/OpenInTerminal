@@ -53,21 +53,44 @@ public enum SharedPreferences {
     /// Keep values cfprefsd still returns for the suite (e.g. unsigned builds) and
     /// fill the rest from the group container plist. On macOS 15 and later, the
     /// system can ask the user once before the host reads that container.
-    static func legacyPreferences(suite: [String: Any], containerURL: URL) -> [String: Any] {
-        guard let data = try? Data(contentsOf: containerURL),
-              let plist = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil),
-              let container = plist as? [String: Any] else { return suite }
+    /// Returns nil when the container exists but cannot be read (for example the
+    /// user clicked Don't Allow), so the caller can try again on the next launch.
+    static func legacyPreferences(suite: [String: Any], containerURL: URL) -> [String: Any]? {
+        let data: Data
+        do {
+            data = try Data(contentsOf: containerURL)
+        } catch CocoaError.fileReadNoSuchFile {
+            return suite
+        } catch {
+            NSLog("Unable to read legacy preferences, will retry: %@", error.localizedDescription)
+            return nil
+        }
+        guard let plist = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil),
+              let container = plist as? [String: Any] else {
+            NSLog("Ignoring corrupt legacy preferences at %@", containerURL.path)
+            return suite
+        }
         return suite.merging(container) { suiteValue, _ in suiteValue }
+    }
+
+    /// Finish the migration only when the group container is missing or was read.
+    /// If it exists but cannot be read, copy the suite values now and leave the
+    /// migration pending, so the next launch tries the container again.
+    static func migrate(suite: [String: Any], containerURL: URL, to defaults: UserDefaults) {
+        let legacy = legacyPreferences(suite: suite, containerURL: containerURL)
+        migrate(legacy ?? suite, to: defaults, complete: legacy != nil)
     }
 
     /// Copy existing values once, without overwriting preferences already saved
     /// in the host domain. Leave the old domain intact for rollback.
-    static func migrate(_ legacy: [String: Any], to defaults: UserDefaults) {
+    static func migrate(_ legacy: [String: Any], to defaults: UserDefaults, complete: Bool = true) {
         guard !defaults.bool(forKey: migrationKey) else { return }
         for (key, value) in legacy where defaults.object(forKey: key) == nil {
             defaults.set(value, forKey: key)
         }
-        defaults.set(true, forKey: migrationKey)
+        if complete {
+            defaults.set(true, forKey: migrationKey)
+        }
     }
 
     static func writeSnapshot(from defaults: UserDefaults, to url: URL) throws {
@@ -107,7 +130,7 @@ public enum SharedPreferences {
         if !Defaults.bool(forKey: migrationKey) {
             let suite = UserDefaults(suiteName: Constants.Id.Group)?
                 .persistentDomain(forName: Constants.Id.Group) ?? [:]
-            migrate(legacyPreferences(suite: suite, containerURL: legacyContainerURL()), to: Defaults)
+            migrate(suite: suite, containerURL: legacyContainerURL(), to: Defaults)
         }
         observer = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification,
                                                           object: Defaults, queue: nil) { _ in
