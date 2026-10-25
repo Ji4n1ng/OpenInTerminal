@@ -83,6 +83,18 @@ $ pluginkit -e "use" -u "F2547F13-4E43-4E88-9D8F-56DF05C020D8"
   <img src="https://user-images.githubusercontent.com/11001224/78590336-448f4180-7874-11ea-827c-ad3a7bffca5e.png" width="400px">
 </div>
 
+## 偏好设置的保存位置
+
+完整版应用把偏好设置保存在它自己的 `wang.jianing.app.OpenInTerminal` UserDefaults 域中。更新后首次启动时，它会从旧的 App Group 容器中复制一次旧设置，不会删除旧设置，也不会覆盖已经保存在新域中的设置。在 macOS 15 及更高版本中，macOS 可能会询问是否允许 OpenInTerminal 访问其他 App 的数据。请选择允许，以保留您的旧设置。如果旧版本无法保存设置，请在更新后重新选择您的终端和编辑器。
+
+主应用会把 Finder 扩展使用的偏好设置发布为 `~/Library/Application Scripts/wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension/` 中的 `shared-settings.plist`。Finder 扩展每次构建菜单时都会读取这份快照。它与现有的 AppleScript 脚本使用同一个目录，并且支持 ad-hoc 签名；不需要 App Group 描述文件（provisioning profile），也不需要完全磁盘访问权限。安装后请启动一次主应用，以发布偏好设置并安装其脚本。
+
+运行偏好设置的回归测试：
+
+```sh
+Tests/SharedPreferences/run.sh
+```
+
 ## 自定义配置
 
 ### 针对 Obsidian 用户
