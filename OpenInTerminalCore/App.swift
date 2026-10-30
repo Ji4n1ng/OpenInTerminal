@@ -6,6 +6,7 @@
 //  Copyright © 2020 Jianing Wang. All rights reserved.
 //
 
+import AppKit
 import Foundation
 import ScriptingBridge
 
@@ -79,6 +80,8 @@ extension App: Openable {
                 }
                 open([url])
                 terminal.activate()
+            } else if SupportedApps.is(self, is: .herdr) {
+                try openInHerdr(path)
             } else {
                 // this app is general (e.g. iTerm, Alacritty, kitty)
                 var arguments = DefaultsManager.shared.getOpenArguments(self)
@@ -122,7 +125,14 @@ extension App: Openable {
         case .terminal:
             guard var url = urls.first else { return }
             url.getDirectory()
-            arguments.append(url.path)
+            if SupportedApps.is(self, is: .herdr) {
+                guard let herdr = App.herdrExecutableURL else {
+                    throw OITError.cannotAccessApp(self.name)
+                }
+                arguments = [herdr.path] + App.herdrOpenArguments(url.path)
+            } else {
+                arguments.append(url.path)
+            }
         case .editor:
             let paths = urls.map { $0.path }
             // fix for neovim: the command template carries a "PATH" placeholder
@@ -140,12 +150,104 @@ extension App: Openable {
         guard FileManager.default.fileExists(atPath: scriptURL.path) else { return }
         guard let script = try? NSUserAppleScriptTask(url: scriptURL) else { return }
         let event = ScriptManager.shared.getScriptEvent(functionName: "openApp", arguments: arguments)
+
+        // Herdr's CLI needs an open Herdr window: if Herdr isn't running yet,
+        // launch it first and retry while its window starts.
+        if SupportedApps.is(self, is: .herdr) && !App.isHerdrRunning {
+            let launch = ScriptManager.shared.getScriptEvent(
+                functionName: "openApp",
+                arguments: ["/usr/bin/open", "-b", SupportedApps.herdr.bundleId])
+            script.execute(withAppleEvent: launch) { (_, _) in
+                App.executeScript(at: scriptURL, event: event, retries: App.herdrLaunchRetries)
+            }
+            return
+        }
+        App.executeScript(at: scriptURL, event: event, retries: 0)
+    }
+
+    /// Runs the installed script, retrying after a short delay on failure.
+    static func executeScript(at scriptURL: URL, event: NSAppleEventDescriptor, retries: Int) {
+        guard let script = try? NSUserAppleScriptTask(url: scriptURL) else { return }
         script.execute(withAppleEvent: event) { (appleEvent, error) in
-            if let error = error {
+            guard let error = error else { return }
+            if retries > 0 {
+                DispatchQueue.global().asyncAfter(deadline: .now() + App.herdrRetryInterval) {
+                    executeScript(at: scriptURL, event: event, retries: retries - 1)
+                }
+            } else {
                 logw("cannot execute applescript: \(error)")
             }
         }
     }
-    
+
+}
+
+// MARK: - Herdr
+
+/// Herdr has no URL scheme and doesn't open folders as documents. Its app
+/// binary doubles as its CLI (`Herdr do space.new --folder <path>`), which talks
+/// to an open Herdr window, so the window has to be up first.
+extension App {
+
+    static let herdrRetryInterval: TimeInterval = 0.25
+    static let herdrLaunchRetries = 40  // ~10 s for Herdr to open its window
+
+    static var herdrExecutableURL: URL? {
+        guard let appURL = NSWorkspace.shared.urlForApplication(
+            withBundleIdentifier: SupportedApps.herdr.bundleId) else { return nil }
+        return Bundle(url: appURL)?.executableURL
+    }
+
+    static var isHerdrRunning: Bool {
+        return NSWorkspace.shared.runningApplications.contains {
+            $0.bundleIdentifier == SupportedApps.herdr.bundleId
+        }
+    }
+
+    /// Arguments for a new Herdr space at `path`; the path stays one argument.
+    static func herdrOpenArguments(_ path: String) -> [String] {
+        return ["do", "space.new", "--folder", path]
+    }
+
+    func openInHerdr(_ path: String) throws {
+        guard let herdr = App.herdrExecutableURL else {
+            throw OITError.cannotAccessApp(self.name)
+        }
+
+        func run(_ executable: URL, _ arguments: [String]) -> Int32 {
+            let process = Process()
+            process.executableURL = executable
+            process.arguments = arguments
+            process.standardOutput = FileHandle.nullDevice
+            process.standardError = FileHandle.nullDevice
+            logw(executable.path + " " + arguments.joined(separator: " "))
+            do {
+                try process.run()
+            } catch {
+                return -1
+            }
+            process.waitUntilExit()
+            return process.terminationStatus
+        }
+
+        let arguments = App.herdrOpenArguments(path)
+        if run(herdr, arguments) != 0 {
+            // No Herdr window yet: launch Herdr and retry while it starts.
+            _ = run(URL(fileURLWithPath: "/usr/bin/open"), ["-b", SupportedApps.herdr.bundleId])
+            var opened = false
+            for _ in 0..<App.herdrLaunchRetries {
+                Thread.sleep(forTimeInterval: App.herdrRetryInterval)
+                if run(herdr, arguments) == 0 {
+                    opened = true
+                    break
+                }
+            }
+            guard opened else { throw OITError.cannotAccessApp(self.name) }
+        }
+
+        NSWorkspace.shared.runningApplications
+            .first { $0.bundleIdentifier == SupportedApps.herdr.bundleId }?
+            .activate(options: .activateIgnoringOtherApps)
+    }
 }
 

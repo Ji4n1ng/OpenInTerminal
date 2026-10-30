@@ -86,6 +86,7 @@ defaults remove wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor
 | cmux | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal cmux` |
 | kitty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal kitty` |
 | Ghostty | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal ghostty` |
+| Herdr | `defaults write wang.jianing.app.OpenInTerminal-Lite LiteDefaultTerminal Herdr` |
 | TextEdit | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor TextEdit` |
 | VSCodium | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor VSCodium` |
 | BBEdit | `defaults write wang.jianing.app.OpenInEditor-Lite LiteDefaultEditor BBEdit` |
