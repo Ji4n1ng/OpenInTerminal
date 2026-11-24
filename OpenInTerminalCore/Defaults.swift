@@ -16,6 +16,7 @@ public enum SharedPreferences {
     static let hostID = "wang.jianing.app.OpenInTerminal"
     static let extensionID = hostID + ".OpenInTerminalFinderExtension"
     static let migrationKey = "LegacyPreferencesMigrated"
+    static let provisionalKey = "LegacyMigrationProvisionalValues"
     static var observer: NSObjectProtocol?
     private static let snapshotLock = NSLock()
 
@@ -82,14 +83,41 @@ public enum SharedPreferences {
     }
 
     /// Copy existing values once, without overwriting preferences already saved
-    /// in the host domain. Leave the old domain intact for rollback.
+    /// in the host domain. Defaults that first setup wrote while the migration
+    /// was pending, and that still hold the recorded value, are not the user's
+    /// choice, so the old settings replace them. Leave the old domain intact for
+    /// rollback.
     static func migrate(_ legacy: [String: Any], to defaults: UserDefaults, complete: Bool = true) {
         guard !defaults.bool(forKey: migrationKey) else { return }
-        for (key, value) in legacy where defaults.object(forKey: key) == nil {
+        let provisional = defaults.dictionary(forKey: provisionalKey) ?? [:]
+        for (key, value) in legacy {
+            let current = defaults.object(forKey: key) as? NSObject
+            guard current == nil || current?.isEqual(provisional[key]) == true else { continue }
             defaults.set(value, forKey: key)
         }
         if complete {
+            defaults.removeObject(forKey: provisionalKey)
             defaults.set(true, forKey: migrationKey)
+        }
+    }
+
+    /// First setup runs right after a migration that may still be pending. Record
+    /// the values it writes so a later successful retry can replace them. Values
+    /// already in the domain (e.g. suite values copied by the failed attempt) are
+    /// not recorded. If the user saves the same value first setup wrote, it looks
+    /// untouched and the old setting still wins.
+    static func recordProvisionalValues(in defaults: UserDefaults = Defaults,
+                                        domain: String = hostID, _ write: () -> Void) {
+        guard !defaults.bool(forKey: migrationKey) else { return write() }
+        let before = defaults.persistentDomain(forName: domain) ?? [:]
+        write()
+        var values = defaults.dictionary(forKey: provisionalKey) ?? [:]
+        for (key, value) in defaults.persistentDomain(forName: domain) ?? [:]
+            where key != provisionalKey && (before[key] as? NSObject)?.isEqual(value) != true {
+            values[key] = value
+        }
+        if !values.isEmpty {
+            defaults.set(values, forKey: provisionalKey)
         }
     }
 

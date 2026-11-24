@@ -90,8 +90,12 @@ UserDefaults domain. On its first launch after updating, it copies the old setti
 from the legacy App Group container once, without deleting them or overwriting
 settings already saved in the new domain. On macOS 15 and later, macOS can ask
 whether OpenInTerminal may access data from other apps. Allow it to keep your old
-settings. If the old installation could not save settings, choose your terminal and
-editor again after updating.
+settings. On macOS 27 (seen on 27.2.1 with an ad-hoc signed build), the read is
+denied without any prompt unless OpenInTerminal has Full Disk Access. The app then
+starts with default settings and tries again on later launches. If the old settings
+become readable later, they replace the defaults you have not changed. If the old
+installation could not save settings, choose your terminal and editor again after
+updating.
 
 The host publishes Finder preferences as `shared-settings.plist` in
 `~/Library/Application Scripts/wang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension/`.
