@@ -87,6 +87,54 @@ SharedPreferences.migrate(suite: [:], containerURL: locked, to: defaults)
 check(defaults.string(forKey: "DefaultTerminal") == "Terminal", "retry overwrote a newer host value")
 check(defaults.string(forKey: "DefaultEditor") == "Visual Studio Code", "retry did not copy missing values")
 check(defaults.bool(forKey: SharedPreferences.migrationKey), "successful retry left the migration pending")
+
+// First setup runs after the failed attempt. A later successful retry replaces
+// the defaults it wrote, unless the user changed them, and keeps suite values.
+let provisionalKey = SharedPreferences.provisionalKey
+try FileManager.default.setAttributes([.posixPermissions: 0o000], ofItemAtPath: locked.path)
+defaults.removePersistentDomain(forName: domain)
+SharedPreferences.migrate(suite: ["KittyCommand": "kitty"], containerURL: locked, to: defaults)
+SharedPreferences.recordProvisionalValues(in: defaults, domain: domain) {
+    defaults.set(true, forKey: "FirstSetup")
+    defaults.set("Terminal", forKey: "DefaultTerminal")
+    defaults.set("TextEdit", forKey: "DefaultEditor")
+    defaults.set("kitty", forKey: "KittyCommand")
+}
+let provisional = defaults.dictionary(forKey: provisionalKey) ?? [:]
+check(provisional["DefaultTerminal"] as? String == "Terminal", "first setup value not recorded")
+check(provisional["FirstSetup"] as? Bool == true, "first setup marker not recorded")
+check(provisional["KittyCommand"] == nil, "suite value recorded as provisional")
+try SharedPreferences.writeSnapshot(from: defaults, to: snapshot)
+let pendingSnapshot = try PropertyListSerialization.propertyList(
+    from: Data(contentsOf: snapshot), options: [], format: nil) as! [String: Any]
+check(pendingSnapshot["DefaultTerminal"] as? String == "Terminal", "pending snapshot missing terminal")
+check(pendingSnapshot[provisionalKey] == nil, "provisional record leaked into snapshot")
+defaults.set("Ghostty", forKey: "DefaultTerminal")
+try FileManager.default.setAttributes([.posixPermissions: 0o600], ofItemAtPath: locked.path)
+try PropertyListSerialization.data(fromPropertyList: [
+    "DefaultTerminal": "iTerm", "DefaultEditor": "Visual Studio Code", "FirstSetup": true,
+    "NeovimCommand": "nvim", "KittyCommand": "old kitty"
+], format: .binary, options: 0).write(to: locked)
+SharedPreferences.migrate(suite: [:], containerURL: locked, to: defaults)
+check(defaults.string(forKey: "DefaultEditor") == "Visual Studio Code", "retry kept an untouched first setup value")
+check(defaults.string(forKey: "DefaultTerminal") == "Ghostty", "retry overwrote a value the user changed")
+check(defaults.string(forKey: "NeovimCommand") == "nvim", "retry did not fill a key first setup skipped")
+check(defaults.string(forKey: "KittyCommand") == "kitty", "retry overwrote a suite value")
+check(defaults.bool(forKey: "FirstSetup"), "retry lost FirstSetup")
+check(defaults.object(forKey: provisionalKey) == nil, "completed migration kept the provisional record")
+check(defaults.bool(forKey: SharedPreferences.migrationKey), "successful retry left the migration pending")
+
+// A first-attempt success, or a reset, stores no provisional record.
+defaults.removePersistentDomain(forName: domain)
+SharedPreferences.migrate(suite: [:], containerURL: container, to: defaults)
+SharedPreferences.recordProvisionalValues(in: defaults, domain: domain) {
+    defaults.set("Terminal", forKey: "DefaultTerminal")
+}
+check(defaults.object(forKey: provisionalKey) == nil, "provisional record stored after a completed migration")
+defaults.set(["DefaultTerminal": "Terminal"], forKey: provisionalKey)
+defaults.removePersistentDomain(forName: domain)
+defaults.set(true, forKey: SharedPreferences.migrationKey)
+check(defaults.object(forKey: provisionalKey) == nil, "reset kept the provisional record")
 defaults.removePersistentDomain(forName: domain)
 SharedPreferences.migrate(suite: [:], containerURL: missing, to: defaults)
 check(defaults.bool(forKey: SharedPreferences.migrationKey), "missing container left the migration pending")
@@ -159,4 +207,4 @@ defaults.set("Visual Studio Code", forKey: "DefaultEditor")
 SharedPreferences.migrate(["DefaultTerminal": "Terminal"], to: defaults)
 check(defaults.string(forKey: "DefaultTerminal") == "Ghostty", "migration replaced existing host value")
 check(defaults.synchronize(), "host could not flush its own domain")
-print("PASS: legacy container, unreadable-container retry, migration, live updates, data, deletion, reset, missing/corrupt snapshots, permissions")
+print("PASS: legacy container, unreadable-container retry, first setup defaults replaced on retry, migration, live updates, data, deletion, reset, missing/corrupt snapshots, permissions")

@@ -359,21 +359,23 @@ public class DefaultsManager {
     public func firstSetup() {
         guard isFirstSetup == false else { return }
         logw("First Setup")
-        isFirstSetup = true
-        isLaunchAtLogin = false
-        isQuickToggle = false
-        quickToggleType = .openWithDefaultTerminal
-        isHideStatusItem = false
-        isHideContextMenuItems = false
-        isContextMenuUseSubmenu = false
-        defaultTerminal = SupportedApps.terminal.app
-        defaultEditor = SupportedApps.textEdit.app
-        setNewOption(.terminal, .window)
-        setNewOption(.iTerm, .window)
-        isCustomMenuApplyToToolbar = false
-        isCustomMenuApplyToContext = false
-        customMenuIconOption = .no
-        isPathEscaped = true
+        SharedPreferences.recordProvisionalValues {
+            isFirstSetup = true
+            isLaunchAtLogin = false
+            isQuickToggle = false
+            quickToggleType = .openWithDefaultTerminal
+            isHideStatusItem = false
+            isHideContextMenuItems = false
+            isContextMenuUseSubmenu = false
+            defaultTerminal = SupportedApps.terminal.app
+            defaultEditor = SupportedApps.textEdit.app
+            setNewOption(.terminal, .window)
+            setNewOption(.iTerm, .window)
+            isCustomMenuApplyToToolbar = false
+            isCustomMenuApplyToContext = false
+            customMenuIconOption = .no
+            isPathEscaped = true
+        }
         Defaults.synchronize()
     }
     
